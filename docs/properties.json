@@ -1,0 +1,232 @@
+{
+  "generated_at": "2026-06-21T18:03:52.008933+00:00",
+  "count": 2,
+  "properties": [
+    {
+      "id": "3e5aedff",
+      "address": "School Lane, Headley",
+      "postcode": "GU35 8PN",
+      "lat": 51.118,
+      "lng": -0.835,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 795000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "hd_0002",
+        "url": "",
+        "agent": "Rural Property Co",
+        "uprn": "100061234890"
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "original_price": 850000,
+          "reductions": 3,
+          "status": "reduced",
+          "dom": 104,
+          "construction_age": "before 1900"
+        },
+        "epc": {
+          "floor_area_m2": 95,
+          "rating": "F",
+          "age_band": "before 1900"
+        },
+        "plot": {
+          "area_acres": 1.2,
+          "source": "inspire"
+        },
+        "equity": {
+          "renovated_comp": 1050000,
+          "reno_cost_est": 114000,
+          "equity_gain": 141000
+        }
+      },
+      "comps": [
+        {
+          "price": 1050000,
+          "date": "2025-08",
+          "m2": 160,
+          "renovated": true,
+          "distance_mi": 0.9
+        },
+        {
+          "price": 980000,
+          "date": "2025-10",
+          "m2": 145,
+          "renovated": true,
+          "distance_mi": 1.2
+        }
+      ],
+      "signals": {
+        "equity_residual": {
+          "score": 14,
+          "max": 20,
+          "note": "Renovated comp ~\u00a31,050,000. After ~\u00a3114,000 works, est. \u00a3141,000 gain."
+        },
+        "plot_size": {
+          "score": 30,
+          "max": 30,
+          "note": "Est. 1.20 acre (inspire)."
+        },
+        "structural": {
+          "score": 11,
+          "max": 25,
+          "note": "No text signals."
+        },
+        "motivation": {
+          "score": 17,
+          "max": 20,
+          "note": "3 reduction(s); 104 days on market; reduced"
+        },
+        "competition": {
+          "score": 7,
+          "max": 10,
+          "note": "Low listing engagement / thin channel."
+        },
+        "location": {
+          "score": 0,
+          "max": 15,
+          "note": "Limited location data"
+        }
+      },
+      "score": 66,
+      "low_comp": true,
+      "scored_at": "2026-06-21T18:03:52.008088+00:00",
+      "flags": [
+        "few_photos",
+        "no_floorplan",
+        "plot_not_tagged"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "days_on_market": 0,
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 795000
+        }
+      ]
+    },
+    {
+      "id": "bbd7f9b1",
+      "address": "Beech Hill Road, Rowledge",
+      "postcode": "GU10 4AH",
+      "lat": 51.196,
+      "lng": -0.847,
+      "property_type": "bungalow",
+      "beds": 3,
+      "price": 649000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "hd_0001",
+        "url": "",
+        "agent": "Smiths Estates",
+        "uprn": "100061234567"
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "original_price": 675000,
+          "reductions": 2,
+          "status": "reduced",
+          "dom": 61,
+          "construction_age": "1950-1966"
+        },
+        "epc": {
+          "floor_area_m2": 110,
+          "rating": "E",
+          "age_band": "1950-1966"
+        },
+        "plot": {
+          "area_acres": 0.45,
+          "source": "inspire"
+        },
+        "equity": {
+          "renovated_comp": 835000,
+          "reno_cost_est": 139000,
+          "equity_gain": 47000
+        }
+      },
+      "comps": [
+        {
+          "price": 790000,
+          "date": "2025-11",
+          "m2": 118,
+          "renovated": true,
+          "distance_mi": 0.3
+        },
+        {
+          "price": 835000,
+          "date": "2025-09",
+          "m2": 132,
+          "renovated": true,
+          "distance_mi": 0.6
+        }
+      ],
+      "signals": {
+        "equity_residual": {
+          "score": 6,
+          "max": 20,
+          "note": "Renovated comp ~\u00a3835,000. After ~\u00a3139,000 works, est. \u00a347,000 gain."
+        },
+        "plot_size": {
+          "score": 24,
+          "max": 30,
+          "note": "Est. 0.45 acre (inspire)."
+        },
+        "structural": {
+          "score": 16,
+          "max": 25,
+          "note": "Bungalow \u2014 extend-up case. No text signals."
+        },
+        "motivation": {
+          "score": 15,
+          "max": 20,
+          "note": "2 reduction(s); 61 days on market; reduced"
+        },
+        "competition": {
+          "score": 5,
+          "max": 10,
+          "note": "Low listing engagement / thin channel."
+        },
+        "location": {
+          "score": 0,
+          "max": 15,
+          "note": "Limited location data"
+        }
+      },
+      "score": 55,
+      "low_comp": false,
+      "scored_at": "2026-06-21T18:03:52.007105+00:00",
+      "flags": [
+        "few_photos",
+        "no_floorplan",
+        "plot_not_tagged"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "days_on_market": 0,
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 649000
+        }
+      ]
+    }
+  ]
+}
