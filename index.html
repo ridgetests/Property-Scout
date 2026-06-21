@@ -139,7 +139,7 @@ const k = n => '£'+Math.round(n/1000)+'k';
 
 async function load(){
   try{
-    const r = await fetch('./properties.json',{cache:'no-store'});
+    const r = await fetch('https://ridgetests.github.io/Property-Scout/properties.json?t='+Date.now(),{cache:'no-store'});
     const j = await r.json();
     DATA = j.properties||[];
     document.getElementById('gen').textContent =
