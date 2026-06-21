@@ -35,7 +35,8 @@ THIN_CHANNELS = {"auction", "off-market"}
 
 HOMEDATA_API_KEY = os.environ.get("HOMEDATA_API_KEY", "")
 HOMEDATA_BASE = os.environ.get("HOMEDATA_BASE", "https://api.homedata.co.uk")
-ENRICH = True   # set False to save API credits (skips floor area / EPC / comps)
+ENRICH = True       # set False to skip floor area / EPC / comps entirely
+ENRICH_TOP_N = 25   # only enrich this many top-scored listings (cost control)
 
 ROOT = Path(__file__).parent
 DB_PATH = ROOT / "data" / "scout.db"
@@ -94,6 +95,8 @@ def fetch_listings():
         print(f"   {area}: {len(rows)} listing(s)")
         out.extend(rows)
         time.sleep(0.4)
+    if out:
+        print("   SAMPLE RAW LISTING:", json.dumps(out[0])[:1500])
     return out
 
 
@@ -354,33 +357,55 @@ def main():
     conn = db_connect()
     rows = fetch_listings()
     print(f"- {len(rows)} listing(s) fetched")
-    published = []
+
+    # Pass 1 - cheap triage: map + score everything WITHOUT paid enrichment.
+    props = []
     for row in rows:
         p = listing_to_property(row)
         if not p:
             continue
+        p["enrichment"].update(_plot_for(p))
+        score_property(p)
+        props.append(p)
+    props.sort(key=lambda x: -x["score"])
+
+    # Pass 2 - spend credits only on the top shortlist: floor area + comps.
+    enriched = 0
+    for p in props:
+        if enriched >= ENRICH_TOP_N:
+            break
+        uprn = p["source"].get("uprn")
+        if not uprn:
+            continue
         prev, prev_price = existing(conn, p["id"])
         if prev and prev_price == p["price"] and prev.get("enrichment", {}).get("epc"):
-            p["enrichment"].update({k: v for k, v in prev["enrichment"].items() if k != "market"})
+            p["enrichment"].update({k: v for k, v in prev["enrichment"].items()
+                                    if k not in ("market", "plot")})
             p["comps"] = prev.get("comps", [])
         else:
-            extra = enrich_property(p["source"].get("uprn"))
+            extra = enrich_property(uprn)
             p["comps"] = extra.pop("comps", []) or p["comps"]
             p["enrichment"].update(extra)
-            p["enrichment"].update(_plot_for(p))
         score_property(p)
+        enriched += 1
+    print(f"- enriched top {enriched} of {len(props)}")
+
+    props.sort(key=lambda x: -x["score"])
+    for p in props:
         p["flags"] = detect_flags(p)
         upsert(conn, p)
+
+    print("- top results:")
+    for p in props[:15]:
         eq = p["enrichment"].get("equity", {}).get("equity_gain", 0)
-        print(f"   scored {p['address'][:34]:34} -> {p['score']}  (£{eq:,} equity)")
-        published.append(p)
+        addr = p["address"] or f"(addr hidden) {p['property_type']}"
+        print(f"   {p['score']:>3}  GBP{p['price']:>7,}  {addr[:38]:38}  GBP{eq:,} eq")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(
         {"generated_at": datetime.now(timezone.utc).isoformat(),
-         "count": len(published), "properties": sorted(published, key=lambda x: -x["score"])},
-        indent=2))
-    print(f"- published {len(published)} properties -> {OUT_PATH}")
+         "count": len(props), "properties": props}, indent=2))
+    print(f"- published {len(props)} properties -> {OUT_PATH}")
     conn.close()
 
 
