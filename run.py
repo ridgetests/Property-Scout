@@ -1,38 +1,32 @@
 #!/usr/bin/env python3
 """
-PropertyScout — single-file runner.
+PropertyScout — single-file runner (Homedata live-listings).
 
-Everything (config, scoring, storage, Homedata adapters, pipeline) lives in this
-ONE file, so there are no package folders to upload or get wrong. Replace your
-repo's run.py with this file. The only external dependency is `requests`.
+Everything (config, scoring, storage, Homedata calls, pipeline) is in this ONE
+file. Replace your repo's run.py with it. Only external dependency: requests.
 
-Go live: set USE_MOCK = False below once a mock run has confirmed the plumbing.
+Go live: set USE_MOCK = False below.
 """
 from __future__ import annotations
-import os
-import re
-import json
-import sqlite3
-import hashlib
-import time
+import os, re, json, sqlite3, hashlib, time
 from datetime import date, datetime, timezone
 from pathlib import Path
 
 # ===========================================================================
-# CONFIG  — set this to False for real Homedata data once a mock run works
+# CONFIG  — set False for real Homedata data once a mock run works
 # ===========================================================================
 USE_MOCK = False
 
 SEARCH = {
     "max_price": 800_000,
     "min_price": 450_000,
-    "areas": ["GU10", "GU9", "GU35", "GU8", "GU27"],
+    # Boundary NAMES — resolved to Homedata boundary_ids at run time.
+    # Waverley covers GU8/9/10/27; East Hampshire covers GU35.
+    "areas": ["Waverley", "East Hampshire"],
     "min_beds": 2,
 }
-WEIGHTS = {
-    "equity_residual": 20, "plot_size": 30, "structural": 25,
-    "motivation": 20, "competition": 10, "location": 15,
-}
+WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
+           "motivation": 20, "competition": 10, "location": 15}
 MAX_TOTAL = sum(WEIGHTS.values())
 RENO_RATE_PER_M2 = {"poor": 1200, "dated": 900, "fair": 600}
 EXTENSION_ALLOWANCE = 40_000
@@ -40,9 +34,8 @@ LOW_COMP_THRESHOLD = 7
 THIN_CHANNELS = {"auction", "off-market"}
 
 HOMEDATA_API_KEY = os.environ.get("HOMEDATA_API_KEY", "")
-HOMEDATA_BASE = os.environ.get("HOMEDATA_BASE", "https://homedata.co.uk/api/v1")
-HOMEDATA_LEGACY = os.environ.get("HOMEDATA_LEGACY_BASE", "https://api.homedata.co.uk/api")
-HOMEDATA_LISTINGS_PATH = "/listings"          # confirm in their playground
+HOMEDATA_BASE = os.environ.get("HOMEDATA_BASE", "https://api.homedata.co.uk")
+ENRICH = True   # set False to save API credits (skips floor area / EPC / comps)
 
 ROOT = Path(__file__).parent
 DB_PATH = ROOT / "data" / "scout.db"
@@ -53,101 +46,130 @@ MOTIVATION_TERMS = ["executor", "probate", "estate of", "sold as seen",
 STRUCTURAL_TERMS = ["planning permission", "pp granted", "development potential",
                     "scope to", "potential to", "annexe", "outbuilding",
                     "workshop", "barn", "in need of modernisation"]
-AGE_BAND_YEAR = {"before 1900": 1890, "1900-1929": 1915, "1930-1949": 1940,
-                 "1950-1966": 1958, "1967-1975": 1971}
 
 
-# ===========================================================================
-# HOMEDATA  (listing discovery + per-property enrichment)
-# ===========================================================================
 def _headers():
     return {"Authorization": f"Api-Key {HOMEDATA_API_KEY}", "Accept": "application/json"}
 
 
+# ===========================================================================
+# HOMEDATA  (boundary lookup -> live listings -> per-property enrichment)
+# ===========================================================================
+def resolve_boundary(name):
+    import requests
+    try:
+        r = requests.get(f"{HOMEDATA_BASE}/boundaries/autocomplete/",
+                         params={"q": name}, headers=_headers(), timeout=20)
+        r.raise_for_status()
+        results = r.json().get("results", [])
+        if results:
+            print(f"   boundary '{name}' -> id {results[0]['id']} ({results[0].get('name')})")
+            return results[0]["id"]
+        print(f"   no boundary found for '{name}'")
+    except Exception as e:
+        print(f"   boundary lookup failed for '{name}': {e}")
+    return None
+
+
 def fetch_listings():
-    """Return a list of listing dicts (real or mock)."""
     if USE_MOCK or not HOMEDATA_API_KEY:
         return _mock_listings()
     import requests
     out = []
     for area in SEARCH["areas"]:
-        params = {"outcode": area, "min_price": SEARCH["min_price"],
-                  "max_price": SEARCH["max_price"], "min_bedrooms": SEARCH["min_beds"],
-                  "property_type": "detached,bungalow", "status": "live", "rows": 100}
+        bid = resolve_boundary(area)
+        if not bid:
+            continue
+        params = {"boundary_id": bid, "transaction_type": "Sale",
+                  "min_price": SEARCH["min_price"], "max_price": SEARCH["max_price"],
+                  "bedrooms": SEARCH["min_beds"], "page_size": 200}
         try:
-            r = requests.get(HOMEDATA_BASE + HOMEDATA_LISTINGS_PATH,
-                             params=params, headers=_headers(), timeout=25)
+            r = requests.get(f"{HOMEDATA_BASE}/live-listings/search/",
+                             params=params, headers=_headers(), timeout=30)
             r.raise_for_status()
-            body = r.json()
+            rows = r.json().get("results") or []
         except Exception as e:
             print(f"   Homedata listings failed for {area}: {e}")
             continue
-        rows = body.get("listings") or body.get("data") or body.get("results") or []
+        print(f"   {area}: {len(rows)} listing(s)")
         out.extend(rows)
         time.sleep(0.4)
     return out
 
 
+def _eff_to_band(eff):
+    if not eff:
+        return ""
+    return ("A" if eff >= 92 else "B" if eff >= 81 else "C" if eff >= 69 else
+            "D" if eff >= 55 else "E" if eff >= 39 else "F" if eff >= 21 else "G")
+
+
 def enrich_property(uprn):
-    """Return {epc, comps} for a UPRN (real or mock)."""
-    if not uprn:
+    if not uprn or not ENRICH:
         return {}
     if USE_MOCK or not HOMEDATA_API_KEY:
         return {"epc": _MOCK_EPC.get(str(uprn), {}), "comps": _MOCK_COMPS.get(str(uprn), [])}
     import requests
     out = {}
     try:
-        r = requests.get(f"{HOMEDATA_BASE}/properties/{uprn}", headers=_headers(), timeout=20)
+        r = requests.get(f"{HOMEDATA_BASE}/epc-checker/{uprn}/", headers=_headers(), timeout=20)
         r.raise_for_status()
         rec = r.json()
-        fa = rec.get("epc_floor_area") or rec.get("internal_area_sqm")
+        fa = rec.get("epc_floor_area")
         out["epc"] = {"floor_area_m2": int(fa) if fa else None,
-                      "rating": (rec.get("current_energy_rating") or "").upper(),
+                      "rating": _eff_to_band(rec.get("current_energy_efficiency")),
                       "age_band": rec.get("construction_age_band") or ""}
     except Exception as e:
-        print(f"   Homedata property {uprn} failed: {e}")
-    time.sleep(0.3)
+        print(f"      epc {uprn} failed: {e}")
+    time.sleep(0.2)
     try:
-        rc = requests.get(f"{HOMEDATA_LEGACY}/comparables/{uprn}/",
-                          params={"count": 20}, headers=_headers(), timeout=20)
+        rc = requests.get(f"{HOMEDATA_BASE}/comparables/{uprn}/", headers=_headers(), timeout=20)
         rc.raise_for_status()
-        rows = rc.json().get("comparables") or rc.json().get("data") or []
-        out["comps"] = [{"price": int(c.get("sold_let_price") or c.get("price") or 0),
-                         "date": c.get("sold_date") or c.get("date") or "",
-                         "m2": c.get("epc_floor_area") or c.get("floor_area"),
-                         "renovated": c.get("renovated"),
+        rows = rc.json().get("comparables") or []
+        out["comps"] = [{"price": int(c.get("sold_let_price") or 0),
+                         "date": c.get("sold_let_date") or "",
+                         "m2": c.get("epc_floor_area"),
+                         "renovated": None,
                          "distance_mi": round(c["distance_meters"] / 1609, 1)
                                         if c.get("distance_meters") else None}
-                        for c in rows if c]
+                        for c in rows if c.get("sold_let_price")]
     except Exception as e:
-        print(f"   Homedata comparables {uprn} failed: {e}")
+        print(f"      comparables {uprn} failed: {e}")
     return out
 
 
 def listing_to_property(row):
-    """Map a Homedata listing row to a canonical property dict."""
-    price = int(row.get("price") or 0)
+    price = int(row.get("latest_price") or row.get("price") or 0)
     if not price:
         return None
-    addr = row.get("address") or ""
-    postcode = row.get("postcode") or ""
-    pid = hashlib.sha1(re.sub(r"[^a-z0-9]", "", (addr + postcode).lower()).encode()).hexdigest()[:8]
-    sub = (row.get("property_type") or "").lower()
-    ptype = "bungalow" if "bungalow" in sub else "detached" if "detached" in sub else (sub or "house")
+    addr = row.get("display_address") or row.get("address") or ""
+    uprn = str(row.get("property_uprn") or row.get("uprn") or "")
+    pid = uprn or hashlib.sha1(addr.lower().encode()).hexdigest()[:8]
+    sub = (row.get("listing_property_type") or row.get("loki_property_type")
+           or row.get("property_type") or "").lower()
+    ptype = ("bungalow" if "bungalow" in sub else "detached" if "detached" in sub
+             else "semi" if "semi" in sub else (sub or "house"))
+    geo = row.get("geopoint") or {}
+    dom = row.get("days_on_market")
+    if dom is None and row.get("added_date"):
+        try:
+            dom = (date.today() - date.fromisoformat(str(row["added_date"])[:10])).days
+        except Exception:
+            dom = None
+    reductions = row.get("times_reduced")
+    if reductions is None:
+        reductions = 1 if row.get("reduced_date") else 0
     return {
-        "id": pid, "address": addr, "postcode": postcode,
-        "lat": row.get("lat"), "lng": row.get("lng"),
+        "id": pid, "address": addr, "postcode": row.get("postcode") or "",
+        "lat": geo.get("lat"), "lng": geo.get("lon") or geo.get("lng"),
         "property_type": ptype, "beds": int(row.get("bedrooms") or 0), "price": price,
         "status": "live", "relisted_count": 0,
-        "source": {"portal": "homedata", "listing_id": str(row.get("listing_id") or ""),
-                   "url": row.get("url") or "", "agent": row.get("agent") or "",
-                   "uprn": str(row.get("uprn") or "")},
-        "media": {"photo_count": 0, "has_floorplan": False, "thumb_url": ""},
+        "source": {"portal": "homedata", "listing_id": str(row.get("id") or ""),
+                   "url": "", "agent": row.get("agent_name") or "", "uprn": uprn},
+        "media": {"photo_count": len(row.get("images") or []), "has_floorplan": False, "thumb_url": ""},
         "description_raw": row.get("description") or "",
-        "enrichment": {"market": {"original_price": row.get("original_price"),
-                                  "reductions": row.get("reductions"),
-                                  "status": row.get("status"), "dom": row.get("dom"),
-                                  "construction_age": row.get("construction_age")}},
+        "enrichment": {"market": {"reductions": reductions,
+                                  "status": row.get("latest_status"), "dom": dom}},
         "comps": [],
     }
 
@@ -162,8 +184,8 @@ def _has(text, terms):
 
 def _reno_rate(p):
     r = ((p["enrichment"].get("epc") or {}).get("rating") or "").upper()
-    return RENO_RATE_PER_M2["poor"] if r in ("F", "G") else \
-           RENO_RATE_PER_M2["dated"] if r in ("E", "D") else RENO_RATE_PER_M2["fair"]
+    return (RENO_RATE_PER_M2["poor"] if r in ("F", "G") else
+            RENO_RATE_PER_M2["dated"] if r in ("E", "D") else RENO_RATE_PER_M2["fair"])
 
 
 def _renovated_comp(p):
@@ -183,7 +205,6 @@ def score_property(p):
     plot = p["enrichment"].get("plot") or {}
     market = p["enrichment"].get("market") or {}
 
-    # equity
     cap = WEIGHTS["equity_residual"]; comp = _renovated_comp(p); fa = epc.get("floor_area_m2")
     if comp and fa:
         reno = int(fa * _reno_rate(p))
@@ -197,18 +218,16 @@ def score_property(p):
         pts, note = 0, "Insufficient comp / floor-area data."
     sig["equity_residual"] = {"score": pts, "max": cap, "note": note}; total += pts
 
-    # plot
     cap = WEIGHTS["plot_size"]; acres = plot.get("area_acres")
     if acres is None:
         pts, note = round(cap * 0.4), "Plot size unknown — manual check."
     else:
-        pts = cap if acres >= 1 else round(cap*0.87) if acres >= 0.5 else round(cap*0.8) \
-              if acres >= 0.4 else round(cap*0.67) if acres >= 0.25 else round(cap*0.47) \
-              if acres >= 0.15 else round(cap*0.3)
+        pts = (cap if acres >= 1 else round(cap*0.87) if acres >= 0.5 else round(cap*0.8)
+               if acres >= 0.4 else round(cap*0.67) if acres >= 0.25 else round(cap*0.47)
+               if acres >= 0.15 else round(cap*0.3))
         note = f"Est. {acres:.2f} acre ({plot.get('source','est')})."
     sig["plot_size"] = {"score": pts, "max": cap, "note": note}; total += pts
 
-    # structural
     cap = WEIGHTS["structural"]; hits = _has(p["description_raw"], STRUCTURAL_TERMS)
     pts = round(cap * 0.45)
     if p["property_type"] == "bungalow":
@@ -220,7 +239,6 @@ def score_property(p):
                                  + (f"Signals: {', '.join(hits)}." if hits else "No text signals.")}
     total += pts
 
-    # motivation (structured market signals preferred)
     cap = WEIGHTS["motivation"]; hits = _has(p["description_raw"], MOTIVATION_TERMS)
     reductions = market.get("reductions")
     if reductions is None:
@@ -240,7 +258,6 @@ def score_property(p):
     sig["motivation"] = {"score": pts, "max": cap, "note": "; ".join(bits) or "No motivated-seller signals."}
     total += pts
 
-    # competition (inverse)
     cap = WEIGHTS["competition"]; media = p["media"]; pts = 0
     if (media.get("photo_count") or 0) < 6: pts += 3
     if not media.get("has_floorplan"): pts += 2
@@ -250,7 +267,6 @@ def score_property(p):
     sig["competition"] = {"score": pts, "max": cap, "note": "Low listing engagement / thin channel."}
     total += pts
 
-    # location
     cap = WEIGHTS["location"]; schools = p["enrichment"].get("schools") or []
     station = p["enrichment"].get("station_distance_mi"); pts = 0
     outstanding = [s for s in schools if (s.get("rating") or "").lower() == "outstanding"]
@@ -289,7 +305,7 @@ def detect_flags(p):
 
 
 # ===========================================================================
-# STORAGE  (sqlite — price history + days-on-market accrue across runs)
+# STORAGE
 # ===========================================================================
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS properties (id TEXT PRIMARY KEY, first_seen TEXT,
@@ -344,7 +360,6 @@ def main():
         if not p:
             continue
         prev, prev_price = existing(conn, p["id"])
-        # Only spend API credits enriching new / price-changed listings.
         if prev and prev_price == p["price"] and prev.get("enrichment", {}).get("epc"):
             p["enrichment"].update({k: v for k, v in prev["enrichment"].items() if k != "market"})
             p["comps"] = prev.get("comps", [])
@@ -352,7 +367,7 @@ def main():
             extra = enrich_property(p["source"].get("uprn"))
             p["comps"] = extra.pop("comps", []) or p["comps"]
             p["enrichment"].update(extra)
-            p["enrichment"].update(_plot_for(p))     # plot from Land Registry (free)
+            p["enrichment"].update(_plot_for(p))
         score_property(p)
         p["flags"] = detect_flags(p)
         upsert(conn, p)
@@ -369,26 +384,28 @@ def main():
     conn.close()
 
 
-# --- plot size (Homedata has none; this is the free Land Registry slot) -----
 def _plot_for(p):
-    # MOCK plot data keyed by postcode. Replace with live INSPIRE/Land Registry
-    # lookup when you wire it; Homedata does not provide plot size.
+    # Homedata has no plot-size field; this is the free Land-Registry slot.
+    # Mock plot keyed by postcode; live listings have no postcode so this is
+    # empty until you wire the INSPIRE/title-boundary lookup (next step).
     return {"plot": _MOCK_PLOT.get(p["postcode"], {})}
 
 
 # ===========================================================================
-# MOCK DATA  (so a first run proves the whole pipeline before going live)
+# MOCK DATA  (live-listings shape, so a mock run proves the pipeline)
 # ===========================================================================
 def _mock_listings():
     return [
-        {"listing_id": "hd_0001", "address": "Beech Hill Road, Rowledge", "postcode": "GU10 4AH",
-         "uprn": "100061234567", "price": 649000, "original_price": 675000, "bedrooms": 3,
-         "property_type": "Detached Bungalow", "status": "reduced", "dom": 61, "reductions": 2,
-         "agent": "Smiths Estates", "lat": 51.196, "lng": -0.847, "construction_age": "1950-1966"},
-        {"listing_id": "hd_0002", "address": "School Lane, Headley", "postcode": "GU35 8PN",
-         "uprn": "100061234890", "price": 795000, "original_price": 850000, "bedrooms": 3,
-         "property_type": "Detached", "status": "reduced", "dom": 104, "reductions": 3,
-         "agent": "Rural Property Co", "lat": 51.118, "lng": -0.835, "construction_age": "before 1900"},
+        {"id": "hd_0001", "display_address": "Beech Hill Road, Rowledge", "postcode": "GU10 4AH",
+         "property_uprn": "100061234567", "latest_price": 649000, "bedrooms": 3,
+         "listing_property_type": "Detached Bungalow", "latest_status": "Reduced",
+         "days_on_market": 61, "times_reduced": 2, "agent_name": "Smiths Estates",
+         "geopoint": {"lat": 51.196, "lon": -0.847}, "description": ""},
+        {"id": "hd_0002", "display_address": "School Lane, Headley", "postcode": "GU35 8PN",
+         "property_uprn": "100061234890", "latest_price": 795000, "bedrooms": 3,
+         "listing_property_type": "Detached", "latest_status": "Reduced",
+         "days_on_market": 104, "times_reduced": 3, "agent_name": "Rural Property Co",
+         "geopoint": {"lat": 51.118, "lon": -0.835}, "description": ""},
     ]
 
 
@@ -406,7 +423,6 @@ _MOCK_PLOT = {
     "GU10 4AH": {"area_acres": 0.45, "source": "inspire"},
     "GU35 8PN": {"area_acres": 1.2, "source": "inspire"},
 }
-
 
 if __name__ == "__main__":
     main()
