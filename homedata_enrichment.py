@@ -22,7 +22,7 @@ import requests
 from pipeline.models import Property
 from adapters.base import EnrichmentAdapter
 
-USE_MOCK = True   # flip to False alongside the source adapter
+USE_MOCK = False   # flip to False alongside the source adapter
 
 API_KEY = os.environ.get("HOMEDATA_API_KEY", "")
 BASE = os.environ.get("HOMEDATA_BASE", "https://homedata.co.uk/api/v1")
