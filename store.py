@@ -93,7 +93,18 @@ def all_live(conn: sqlite3.Connection) -> list[dict]:
         d = dict(r)
         for k in ("enrichment_json", "comps_json", "signals_json", "flags_json"):
             d[k.replace("_json", "")] = json.loads(d.pop(k) or "null")
-        d["has_floorplan"] = bool(d["has_floorplan"])
+        # Reconstruct the nested source / media objects the frontend expects.
+        d["source"] = {
+            "portal": d.pop("source_portal"),
+            "listing_id": d.pop("source_listing_id"),
+            "url": d.pop("source_url"),
+            "agent": d.pop("source_agent"),
+        }
+        d["media"] = {
+            "photo_count": d.pop("photo_count"),
+            "has_floorplan": bool(d.pop("has_floorplan")),
+            "thumb_url": d.pop("thumb_url"),
+        }
         d["low_comp"] = bool(d["low_comp"])
         ph = conn.execute(
             "SELECT date, price FROM price_history WHERE id=? ORDER BY date", (r["id"],)
