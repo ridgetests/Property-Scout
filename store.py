@@ -83,6 +83,18 @@ def upsert(conn: sqlite3.Connection, prop: Property) -> None:
     conn.commit()
 
 
+def get(conn: sqlite3.Connection, prop_id: str) -> dict | None:
+    """Return an existing stored property (parsed) or None — used to skip
+    re-enriching unchanged listings and save paid API credits."""
+    r = conn.execute("SELECT * FROM properties WHERE id=?", (prop_id,)).fetchone()
+    if not r:
+        return None
+    d = dict(r)
+    for k in ("enrichment_json", "comps_json", "signals_json", "flags_json"):
+        d[k.replace("_json", "")] = json.loads(d.pop(k) or "null")
+    return d
+
+
 def all_live(conn: sqlite3.Connection) -> list[dict]:
     """Return every live property as a publish-ready dict."""
     rows = conn.execute(

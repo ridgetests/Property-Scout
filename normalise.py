@@ -22,6 +22,7 @@ def normalise(raw: RawListing) -> Property:
             "listing_id": raw.source_listing_id,
             "url": raw.source_url,
             "agent": raw.source_agent,
+            "uprn": raw.uprn,
         },
         media={
             "photo_count": raw.photo_count,
@@ -29,4 +30,5 @@ def normalise(raw: RawListing) -> Property:
             "thumb_url": raw.thumb_url,
         },
         description_raw=raw.description_raw,
+        enrichment={"market": raw.market} if raw.market else {},
     )

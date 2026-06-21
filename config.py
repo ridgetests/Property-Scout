@@ -57,21 +57,23 @@ EXTENSION_ALLOWANCE = 40_000   # added when structural signals suggest extending
 ADAPTERS = {
     "sources": [
         # (module path, class name, enabled)
-        ("adapters.sources.rightmove", "RightmoveAdapter", True),
-        # ("adapters.sources.zoopla",   "ZooplaAdapter",    False),
-        # ("adapters.sources.eig",      "EIGAuctionAdapter", False),  # paid
-        # ("adapters.sources.propertydata", "PropertyDataAdapter", False),  # paid
+        ("adapters.sources.homedata",  "HomedataSourceAdapter", True),   # paid API, no blocking
+        ("adapters.sources.rightmove", "RightmoveAdapter",      False),  # free scraper (fallback)
+        # ("adapters.sources.eig",     "EIGAuctionAdapter",     False),  # paid, auctions
     ],
     "enrichment": [
-        ("adapters.enrichment.epc",          "EPCAdapter",          True),
+        ("adapters.enrichment.homedata",     "HomedataEnrichmentAdapter", True),
+        # Land Registry stays ON even on the paid route: Homedata gives floor
+        # area + comps + EPC, but NOT plot/land size — your #1 signal. INSPIRE
+        # polygons (free) provide it.
         ("adapters.enrichment.landregistry", "LandRegistryAdapter", True),
-        # ("adapters.enrichment.ofsted",     "OfstedAdapter",       False),
-        # ("adapters.enrichment.inspire",    "InspirePlotAdapter",  False),
+        ("adapters.enrichment.epc",          "EPCAdapter",          False),  # Homedata covers EPC
     ],
 }
 
 # Secrets are read from environment variables (set as GitHub Action secrets).
 # Never commit keys to the repo.
 import os
+HOMEDATA_API_KEY = os.environ.get("HOMEDATA_API_KEY", "")
 EPC_API_KEY = os.environ.get("EPC_API_KEY", "")
 EPC_API_EMAIL = os.environ.get("EPC_API_EMAIL", "")

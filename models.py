@@ -38,6 +38,8 @@ class RawListing:
     description_raw: str = ""
     lat: Optional[float] = None
     lng: Optional[float] = None
+    uprn: str = ""               # OS AddressBase id; used to chain enrichment
+    market: dict = field(default_factory=dict)   # source-specific market extras
 
     @property
     def id(self) -> str:

@@ -26,13 +26,22 @@ def main() -> None:
         for raw in source.fetch(SEARCH):
             prop = normalise.normalise(raw)
 
-            for enricher in enrichers:
-                try:
-                    prop.enrichment.update(enricher.enrich(prop))
-                    if "comps" in prop.enrichment:
-                        prop.comps = prop.enrichment.pop("comps")
-                except Exception as e:
-                    print(f"    ! {enricher.name} failed for {prop.id}: {e}")
+            # Credit-saving guard: if we already have this listing at the same
+            # price, reuse its stored enrichment instead of paying for it again.
+            existing = store.get(conn, prop.id)
+            if existing and existing.get("price") == prop.price and existing.get("enrichment"):
+                prop.enrichment.update(existing["enrichment"])
+                prop.comps = existing.get("comps") or []
+            else:
+                for enricher in enrichers:
+                    try:
+                        result = enricher.enrich(prop)
+                        comps = result.pop("comps", None)
+                        if comps and not prop.comps:   # keep the first source's comps
+                            prop.comps = comps
+                        prop.enrichment.update(result)
+                    except Exception as e:
+                        print(f"    ! {enricher.name} failed for {prop.id}: {e}")
 
             # price_history is needed by the motivation signal; pull what we have
             prop.price_history = store.connect().execute(

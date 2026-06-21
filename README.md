@@ -42,15 +42,32 @@ real `properties.json` from sample data immediately. The frontend reads it.
 
 ## Going live
 
-Each adapter has a `USE_MOCK = True` flag and a `_fetch_live` method with the
-real flow sketched in. Finish them one at a time and flip the flag:
+The repo now ships configured for the **Homedata route** (a licensed API — no
+scraping, no IP blocking, runs fine from GitHub Actions):
 
-1. `adapters/sources/rightmove.py` — finish the selectors, set `USE_MOCK=False`.
-   Read the politeness note at the top first.
-2. `adapters/enrichment/epc.py` — register for a free EPC API key, set
-   `EPC_API_KEY` / `EPC_API_EMAIL` as environment variables, finish `_fetch_live`.
-3. `adapters/enrichment/landregistry.py` — download Price Paid Data (CSV) and
-   INSPIRE polygons (GeoJSON) once, wire the local queries.
+- **Listings + market signals + EPC + comps:** Homedata. Set `HOMEDATA_API_KEY`,
+  confirm the listings path in their playground, flip `USE_MOCK = False` in both
+  `adapters/sources/homedata.py` and `adapters/enrichment/homedata.py`.
+- **Plot / land size:** still the free Land Registry / INSPIRE lookup — Homedata
+  does **not** provide plot size, and it's your top signal, so this stays on.
+
+Two coverage boundaries worth knowing:
+1. Homedata returns no free-text description, so probate/executor *keyword*
+   detection won't fire from it. Motivation is instead driven by its structured
+   reduction count, days-on-market and status chain — which is more reliable.
+2. Area-wide listing search is a paid-plan feature; the free tier (100 calls/mo)
+   is for testing + per-property enrichment. Budget the entry paid tier (~£49/mo)
+   to actually populate the map daily. The runner only enriches new or
+   price-changed listings, so credit use stays low.
+
+### Free scraper route (alternative)
+
+If you'd rather stay fully free, flip the adapters: enable `RightmoveAdapter`
+plus the `EPCAdapter` and re-enable Land Registry, and disable the Homedata
+pair. See each adapter's header for what to finish. Note the scraper runs from a
+cloud IP and may be blocked by Rightmove without proxies.
+
+## Going live (old notes)
 
 ---
 

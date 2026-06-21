@@ -112,17 +112,31 @@ def score_structural(prop):
 
 def score_motivation(prop):
     cap = WEIGHTS["motivation"]
+    market = prop.enrichment.get("market") or {}
     hits = _has(prop.description_raw, MOTIVATION_TERMS)
-    pts = min(round(cap * 0.6), len(hits) * 5)
-    reductions = max(0, len(prop.price_history) - 1) if hasattr(prop, "price_history") else 0
-    pts += min(round(cap * 0.2), reductions * 4)
-    if prop.days_on_market > 90:
-        pts += round(cap * 0.2)
+
+    # Reductions and days-on-market: prefer the source's structured fields
+    # (Homedata supplies these directly); fall back to accrued price history.
+    reductions = market.get("reductions")
+    if reductions is None:
+        reductions = max(0, len(getattr(prop, "price_history", [])) - 1)
+    dom = market.get("dom") or prop.days_on_market
+    status = (market.get("status") or "").lower()
+
+    pts = 0
+    pts += min(round(cap * 0.4), len(hits) * 5)        # description keywords (scraper route)
+    pts += min(round(cap * 0.5), int(reductions) * 5)  # price reductions
+    if dom and dom > 90:   pts += round(cap * 0.25)
+    elif dom and dom > 60: pts += round(cap * 0.15)
+    if status in ("reduced", "withdrawn", "re-listed", "relisted"):
+        pts += round(cap * 0.1)
     pts = max(0, min(cap, pts))
+
     bits = []
     if hits: bits.append("'" + "', '".join(hits) + "'")
     if reductions: bits.append(f"{reductions} reduction(s)")
-    if prop.days_on_market > 90: bits.append(f"{prop.days_on_market} days on market")
+    if dom: bits.append(f"{dom} days on market")
+    if status: bits.append(status)
     return pts, "; ".join(bits) if bits else "No motivated-seller signals."
 
 
