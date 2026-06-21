@@ -121,16 +121,19 @@ def geocode(postcodes):
     out, uniq = {}, sorted({pc for pc in postcodes if pc})
     for i in range(0, len(uniq), 100):
         chunk = uniq[i:i + 100]
-        try:
-            r = requests.post("https://api.postcodes.io/postcodes",
-                              json={"postcodes": chunk}, timeout=30)
-            r.raise_for_status()
-            for item in r.json().get("result", []):
-                res = item.get("result")
-                if res and res.get("latitude"):
-                    out[item["query"]] = (res["latitude"], res["longitude"])
-        except Exception as e:
-            print(f"   geocode chunk failed: {e}")
+        for attempt in range(3):
+            try:
+                r = requests.post("https://api.postcodes.io/postcodes",
+                                  json={"postcodes": chunk}, timeout=30)
+                r.raise_for_status()
+                for item in r.json().get("result", []):
+                    res = item.get("result")
+                    if res and res.get("latitude"):
+                        out[item["query"]] = (res["latitude"], res["longitude"])
+                break
+            except Exception as e:
+                print(f"   geocode chunk attempt {attempt+1} failed: {e}")
+                time.sleep(1.5 * (attempt + 1))
         time.sleep(0.3)
     print(f"   geocoded {len(out)}/{len(uniq)} postcodes")
     return out
@@ -416,6 +419,7 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS properties (id TEXT PRIMARY KEY, first_seen TEXT,
   last_seen TEXT, price INTEGER, payload TEXT);
 CREATE TABLE IF NOT EXISTS price_history (id TEXT, date TEXT, price INTEGER);
+CREATE TABLE IF NOT EXISTS geocache (postcode TEXT PRIMARY KEY, lat REAL, lng REAL);
 """
 
 
@@ -423,6 +427,52 @@ def db_connect():
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH); conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA); return conn
+
+
+def load_geocache(conn):
+    return {r["postcode"]: (r["lat"], r["lng"])
+            for r in conn.execute("SELECT postcode, lat, lng FROM geocache")}
+
+
+def seed_geocache_from_properties(conn):
+    """Recover coords saved in past runs so a geocode outage can't blank us."""
+    n = 0
+    for r in conn.execute("SELECT payload FROM properties"):
+        try:
+            p = json.loads(r["payload"])
+            pc, lat, lng = p.get("postcode"), p.get("lat"), p.get("lng")
+            if pc and lat is not None and lng is not None:
+                conn.execute("INSERT OR IGNORE INTO geocache VALUES (?,?,?)", (pc, lat, lng))
+                n += 1
+        except Exception:
+            pass
+    conn.commit(); return n
+
+
+def save_geocache(conn, coords):
+    for pc, (lat, lng) in coords.items():
+        conn.execute("INSERT OR REPLACE INTO geocache VALUES (?,?,?)", (pc, lat, lng))
+    conn.commit()
+
+
+def recover_from_db(conn):
+    """Last-known in-area properties, for when fresh data can't be fetched."""
+    seen = {}
+    for r in conn.execute("SELECT payload FROM properties"):
+        try:
+            p = json.loads(r["payload"])
+            if p.get("lat") is not None and _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
+                seen[p["id"]] = p
+        except Exception:
+            pass
+    return sorted(seen.values(), key=lambda x: -x.get("score", 0))
+
+
+def _publish(props):
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUT_PATH.write_text(json.dumps(
+        {"generated_at": datetime.now(timezone.utc).isoformat(),
+         "count": len(props), "properties": props}, indent=2))
 
 
 def upsert(conn, p):
@@ -458,6 +508,15 @@ def main():
     conn = db_connect()
     rows = fetch_listings()
     print(f"- {len(rows)} listing(s) fetched")
+    if not rows:
+        print("  !! 0 listings - likely Homedata monthly quota exhausted or API error.")
+        saved = recover_from_db(conn)
+        if saved:
+            _publish(saved)
+            print(f"  !! Republished {len(saved)} cached properties from last good run.")
+        else:
+            print("  !! No cached data to fall back to; leaving existing file untouched.")
+        conn.close(); return
 
     props = []
     for row in rows:
@@ -467,11 +526,18 @@ def main():
     print(f"- {len(props)} match target types (detached/bungalow/plot, no new-builds)")
 
     # map pins from postcodes (free)
-    geo = geocode([p["postcode"] for p in props])
+    seed_geocache_from_properties(conn)
+    cache = load_geocache(conn)
+    need = sorted({p["postcode"] for p in props if p["postcode"] and p["postcode"] not in cache})
+    fresh = geocode(need) if need else {}
+    save_geocache(conn, fresh)
+    coords = {**cache, **fresh}
     for p in props:
-        ll = geo.get(p["postcode"]) or _MOCK_COORDS.get(p["postcode"])
+        ll = coords.get(p["postcode"]) or _MOCK_COORDS.get(p["postcode"])
         if ll:
             p["lat"], p["lng"] = ll
+    have = sum(1 for p in props if p["lat"] is not None)
+    print(f"- coords {have}/{len(props)} (cached {len(cache)}, fresh {len(fresh)})")
 
     # keep only what falls inside the hand-drawn target patch
     inside = []
@@ -516,10 +582,15 @@ def main():
         tag = f"{m.get('reductions',0)}red {m.get('dom',0)}d"
         print(f"   {p['score']:>3}  GBP{p['price']:>7,}  {p['address'][:34]:34}  {p['property_type'][:9]:9} {tag}")
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUT_PATH.write_text(json.dumps(
-        {"generated_at": datetime.now(timezone.utc).isoformat(),
-         "count": len(props), "properties": props}, indent=2))
+    if not props:
+        saved = recover_from_db(conn)
+        if saved:
+            _publish(saved)
+            print(f"  !! 0 fresh after filtering - republished {len(saved)} cached instead.")
+        else:
+            print("  !! 0 properties and no cache - leaving existing file untouched.")
+        conn.close(); return
+    _publish(props)
     print(f"- published {len(props)} properties -> {OUT_PATH}")
     conn.close()
 
