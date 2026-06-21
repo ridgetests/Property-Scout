@@ -21,7 +21,7 @@ from pathlib import Path
 # ===========================================================================
 # CONFIG  — set this to False for real Homedata data once a mock run works
 # ===========================================================================
-USE_MOCK = True
+USE_MOCK = False
 
 SEARCH = {
     "max_price": 800_000,
