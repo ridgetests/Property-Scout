@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+<title>PropertyScout</title>
+<link rel="manifest" href="manifest.json"/>
+<meta name="theme-color" content="#1c1c1a"/>
+<link rel="apple-touch-icon" href="icon-180.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="apple-mobile-web-app-title" content="Scout"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<style>
+  :root{
+    --bg:#FAFAFA; --surface:#fff; --line:#e7e5e0; --line2:#d6d3cc;
+    --ink:#1c1c1a; --muted:#6b6a66; --hint:#9a988f;
+    --g:#16a34a; --a:#d97706; --gr:#94a3b8;
+    --flag-bg:#FAEEDA; --flag-ink:#854F0B;
+    --eq-bg:#EAF3DE; --eq-ink:#3B6D11; --eq-num:#27500A;
+    --src-bg:#EEEDFE; --src-ink:#534AB7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;background:var(--bg);color:var(--ink);overscroll-behavior:none}
+  header{background:var(--surface);border-bottom:.5px solid var(--line);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
+  header h1{font-size:15px;font-weight:600;letter-spacing:-.01em}
+  header .gen{font-size:11px;color:var(--hint)}
+  .star-btn{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);position:relative;padding:4px}
+  .star-btn .ct{position:absolute;top:-2px;right:-4px;background:var(--g);color:#fff;font-size:10px;font-weight:600;min-width:15px;height:15px;border-radius:8px;display:none;align-items:center;justify-content:center;padding:0 3px}
+  .filters{background:var(--surface);border-bottom:.5px solid var(--line);padding:10px 16px;display:flex;align-items:center;gap:10px}
+  .filters label{font-size:12px;color:var(--muted);white-space:nowrap}
+  .filters input[type=range]{flex:1;accent-color:var(--ink)}
+  .fv{font-size:12px;font-weight:600;min-width:22px}
+  .pill{font-size:11px;padding:5px 11px;border-radius:20px;border:.5px solid var(--line2);background:none;cursor:pointer;color:var(--muted)}
+  .pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  #map{height:34vh;width:100%;background:#e8ede8;isolation:isolate;position:relative;z-index:0}
+  .list{padding:10px 12px 90px;display:flex;flex-direction:column;gap:8px}
+  .card{background:var(--surface);border:.5px solid var(--line);border-radius:12px;padding:12px;display:flex;gap:10px;cursor:pointer}
+  .card.sel{border-color:var(--ink)}
+  .ph{width:64px;height:82px;border-radius:8px;flex-shrink:0;position:relative;overflow:hidden;background:#e6e2d8;display:flex;align-items:center;justify-content:center}
+  .ph img{width:100%;height:100%;object-fit:cover}
+  .ph .src{position:absolute;top:3px;left:3px;background:var(--src-ink);color:#fff;font-size:8px;font-weight:600;padding:2px 4px;border-radius:4px;letter-spacing:.03em}
+  .body{flex:1;min-width:0}
+  .ctop{display:flex;justify-content:space-between;gap:6px;align-items:flex-start}
+  .addr{font-size:13px;font-weight:600;line-height:1.3}
+  .addr small{display:block;color:var(--muted);font-weight:400;font-size:12px}
+  .sc{font-size:17px;font-weight:600;flex-shrink:0}
+  .sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .eq{font-size:12px;font-weight:600;color:var(--g);margin-top:4px}
+  .tags{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
+  .tag{font-size:11px;padding:3px 8px;border-radius:20px;background:#f1efe8;color:var(--muted);white-space:nowrap}
+  .tag.fl{background:var(--flag-bg);color:var(--flag-ink)}
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:1000;opacity:0;pointer-events:none;transition:opacity .2s}
+  .overlay.open{opacity:1;pointer-events:all}
+  .drawer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-radius:16px 16px 0 0;z-index:1001;transform:translateY(100%);transition:transform .26s ease;max-height:90vh;overflow-y:auto;padding:0 16px 28px;z-index:1001}
+  .drawer.open{transform:translateY(0)}
+  .handle{width:36px;height:4px;border-radius:2px;background:var(--line2);margin:10px auto 4px}
+  .dh{padding:12px 0 10px;border-bottom:.5px solid var(--line)}
+  .dh h2{font-size:16px;font-weight:600}
+  .dh .m{font-size:13px;color:var(--muted);margin-top:3px}
+  .dh .s{font-size:11px;color:var(--hint);margin-top:2px}
+  .eqbox{background:var(--eq-bg);border-radius:10px;padding:12px;margin-top:14px}
+  .eqbox .l{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--eq-ink);font-weight:600}
+  .eqbox .n{font-size:24px;font-weight:600;color:var(--eq-num);margin-top:2px}
+  .eqbox .b{font-size:11px;color:var(--eq-ink);margin-top:6px;line-height:1.5}
+  .sl{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--hint);font-weight:600;margin:16px 0 8px}
+  .row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+  .rn{font-size:12px;color:var(--muted);width:124px;flex-shrink:0}
+  .bw{flex:1;height:6px;background:#f1efe8;border-radius:3px;overflow:hidden}
+  .bf{height:100%;border-radius:3px}
+  .rnum{font-size:12px;font-weight:600;min-width:34px;text-align:right}
+  .note{font-size:11px;color:var(--hint);margin:0 0 10px 132px}
+  .fstrip{display:flex;flex-wrap:wrap;gap:6px}
+  .comps{display:flex;gap:8px}
+  .comp{flex:1;background:#f1efe8;border-radius:8px;padding:8px;font-size:11px}
+  .comp b{font-size:13px;display:block;margin-bottom:2px}
+  .comp span{color:var(--muted)}
+  .acts{display:flex;gap:8px;margin-top:18px}
+  .acts button{flex:1;padding:11px;border:.5px solid var(--line2);border-radius:8px;background:none;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;color:var(--ink);font-weight:500}
+  .acts button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .panel{position:fixed;inset:0;background:var(--bg);z-index:1002;transform:translateX(100%);transition:transform .26s ease;overflow-y:auto}
+  .panel.open{transform:translateX(0)}
+  .ph-head{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:.5px solid var(--line);background:var(--surface)}
+  .ph-head button{background:none;border:none;font-size:20px;cursor:pointer}
+  .ph-head h2{font-size:15px;font-weight:600}
+  .sl-item{padding:12px 16px;border-bottom:.5px solid var(--line)}
+  .sl-item textarea{width:100%;margin-top:6px;font-size:12px;padding:6px 8px;border:.5px solid var(--line2);border-radius:6px;background:var(--surface);font-family:inherit;resize:none}
+  .empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;line-height:1.6}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:12px;padding:9px 16px;border-radius:20px;z-index:1003;opacity:0;transition:opacity .2s;pointer-events:none}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>PropertyScout</h1><div class="gen" id="gen"></div></div>
+  <button class="star-btn" onclick="openPanel()" aria-label="Shortlist">★<span class="ct" id="ct"></span></button>
+</header>
+
+<div class="filters">
+  <label>Min score</label>
+  <input type="range" id="ms" min="0" max="100" value="50" oninput="render()"/>
+  <span class="fv" id="mv">50</span>
+  <button class="pill on" id="p-all" onclick="setFilter('all')">All</button>
+  <button class="pill" id="p-low" onclick="setFilter('low')">Low comp</button>
+</div>
+
+<div id="map"></div>
+<div class="list" id="list"></div>
+
+<div class="overlay" id="ov" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer"><div class="handle"></div><div id="dc"></div></div>
+
+<div class="panel" id="panel">
+  <div class="ph-head"><button onclick="closePanel()">←</button><h2>Shortlist</h2></div>
+  <div id="sl-body"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const FLAG_LABELS = {
+  few_photos:"Few photos", no_floorplan:"No floor plan", plot_not_tagged:"Plot not tagged",
+  priced_just_above:"Priced just above threshold", cash_buyers_only:"Cash buyers only",
+  sold_as_seen:"Sold as seen", possible_extra_bed:"Possible extra bed"
+};
+const SIGNAL_LABELS = {
+  equity_residual:"Equity / residual", plot_size:"Plot size", structural:"Structural potential",
+  motivation:"Probate / seller", competition:"Low competition", location:"Location / schools"
+};
+const SRC_LABEL = {auction:"AUCTION","off-market":"OFF-MKT"};
+
+let DATA=[], filter='all', selected=null, map, markers=[];
+let shortlist = JSON.parse(localStorage.getItem('ps_shortlist')||'[]');
+
+const sc = s => s>=75?'var(--g)':s>=55?'var(--a)':'var(--gr)';
+const k = n => '£'+Math.round(n/1000)+'k';
+
+async function load(){
+  try{
+    const r = await fetch('https://ridgetests.github.io/Property-Scout/properties.json?t='+Date.now(),{cache:'no-store'});
+    const j = await r.json();
+    DATA = j.properties||[];
+    document.getElementById('gen').textContent =
+      'Updated '+new Date(j.generated_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+  }catch(e){ DATA=[]; }
+  initMap(); render(); updateCount();
+}
+
+function initMap(){
+  map = L.map('map',{zoomControl:false,attributionControl:false}).setView([51.21,-0.80],11);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:18}).addTo(map);
+}
+
+function visible(){
+  const min = +document.getElementById('ms').value;
+  return DATA.filter(p => p.score>=min && (filter!=='low'||p.low_comp))
+             .sort((a,b)=>b.score-a.score);
+}
+
+function render(){
+  document.getElementById('mv').textContent = document.getElementById('ms').value;
+  const v = visible(), L_ = document.getElementById('list');
+  markers.forEach(m=>map.removeLayer(m)); markers=[];
+  v.forEach(p=>{
+    if(p.lat&&p.lng){
+      const col = p.score>=75?'#16a34a':p.score>=55?'#d97706':'#94a3b8';
+      const ic = L.divIcon({className:'',html:`<div style="background:${col};color:#fff;font-size:11px;font-weight:600;padding:3px 7px;border-radius:12px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25)">${p.score}</div>`,iconSize:[34,22],iconAnchor:[17,22]});
+      const m = L.marker([p.lat,p.lng],{icon:ic}).addTo(map).on('click',()=>openDrawer(p.id));
+      markers.push(m);
+    }
+  });
+  if(!v.length){ L_.innerHTML='<div class="empty">No properties match this filter.<br>Lower the minimum score.</div>'; return; }
+  L_.innerHTML = v.map(card).join('');
+}
+
+function card(p){
+  const eq = (p.enrichment&&p.enrichment.equity)||{};
+  const src = p.source&&p.source.portal;
+  const badge = SRC_LABEL[src] ? `<div class="src">${SRC_LABEL[src]}</div>` : '';
+  const thumb = (p.media&&p.media.thumb_url) ? `<img src="${p.media.thumb_url}" alt=""/>` : '🏠';
+  const tags = (p.flags||[]).slice(0,1).map(f=>`<span class="tag fl">${FLAG_LABELS[f]||f}</span>`).join('');
+  const days = p.days_on_market>0 ? p.days_on_market+' days' : 'pre-market';
+  return `<div class="card ${selected===p.id?'sel':''}" onclick="openDrawer('${p.id}')">
+    <div class="ph">${badge}${thumb}</div>
+    <div class="body">
+      <div class="ctop"><div class="addr">${p.beds} bed ${p.property_type.replace('_',' ')}<small>${p.address}</small></div>
+        <div class="sc" style="color:${sc(p.score)}">${p.score}</div></div>
+      <div class="sub">${k(p.price)} · ${days} · ${src}</div>
+      ${eq.equity_gain!=null?`<div class="eq">▲ ~${k(eq.equity_gain)} est. equity gain</div>`:''}
+      <div class="tags">${tags}</div>
+    </div></div>`;
+}
+
+function openDrawer(id){
+  const p = DATA.find(x=>x.id==id); if(!p) return;
+  selected = id; render();
+  const eq=(p.enrichment&&p.enrichment.equity)||{}, saved=shortlist.find(s=>s.id==id);
+  const sigs = Object.entries(p.signals||{}).map(([key,s])=>{
+    const pc = Math.round(s.score/s.max*100);
+    return `<div class="row"><span class="rn">${SIGNAL_LABELS[key]||key}</span>
+      <div class="bw"><div class="bf" style="width:${pc}%;background:${sc(pc)}"></div></div>
+      <span class="rnum">${s.score}/${s.max}</span></div>
+      <p class="note">${s.note||''}</p>`;
+  }).join('');
+  const comps = (p.comps||[]).slice(0,3).map(c=>`<div class="comp"><b>${k(c.price)}</b><span>${c.renovated?'renovated · ':''}${c.m2}m²</span></div>`).join('');
+  const flags = (p.flags||[]).map(f=>`<span class="tag fl">${FLAG_LABELS[f]||f}</span>`).join('')
+              + (p.low_comp?'<span class="tag" style="background:var(--eq-bg);color:var(--eq-ink)">Low competition</span>':'');
+  document.getElementById('dc').innerHTML = `
+    <div class="dh"><h2>${p.address}</h2>
+      <div class="m">${'£'+p.price.toLocaleString()} · ${p.beds} bed ${p.property_type.replace('_',' ')} · ${p.days_on_market>0?p.days_on_market+' days on market':'not yet listed'}</div>
+      <div class="s">${(p.source&&p.source.portal)||''} · ${p.postcode||''}</div></div>
+    ${eq.equity_gain!=null?`<div class="eqbox"><div class="l">Est. equity gain after works</div>
+      <div class="n">~£${eq.equity_gain.toLocaleString()}</div>
+      <div class="b">Renovated comp ~£${(eq.renovated_comp||0).toLocaleString()} − asking £${p.price.toLocaleString()} − works ~£${(eq.reno_cost_est||0).toLocaleString()}</div></div>`:''}
+    <div class="sl">Score breakdown · ${p.score}/100</div>${sigs}
+    ${flags?`<div class="sl">Search-invisibility flags</div><div class="fstrip">${flags}</div>`:''}
+    ${comps?`<div class="sl">Nearby comparables</div><div class="comps">${comps}</div>`:''}
+    <div class="acts">
+      <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">★ ${saved?'Saved':'Save'}</button>
+      <button onclick="share('${id}')">⌯ Share</button>
+      <button onclick="openLink('${(p.source&&p.source.url)||'#'}')">↗ View</button>
+    </div>`;
+  document.getElementById('ov').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+}
+function closeDrawer(){selected=null;render();document.getElementById('ov').classList.remove('open');document.getElementById('drawer').classList.remove('open');}
+function openLink(u){ if(u&&u!=='#') window.open(u,'_blank'); }
+
+function toggleSave(id){
+  const i = shortlist.findIndex(s=>s.id==id);
+  if(i>-1){ shortlist.splice(i,1); toast('Removed'); }
+  else { shortlist.push({id,note:''}); toast('Added to shortlist ★'); }
+  localStorage.setItem('ps_shortlist',JSON.stringify(shortlist));
+  updateCount(); openDrawer(id);
+}
+function updateCount(){ const c=document.getElementById('ct'); c.textContent=shortlist.length; c.style.display=shortlist.length?'flex':'none'; }
+
+function share(id){
+  const p = DATA.find(x=>x.id==id), eq=(p.enrichment&&p.enrichment.equity)||{};
+  const txt = `🏠 ${p.address} · £${p.price.toLocaleString()}\n`
+    + `Score ${p.score}/100${eq.equity_gain!=null?' · ~'+k(eq.equity_gain)+' equity gain':''}\n`
+    + `${p.beds} bed ${p.property_type.replace('_',' ')} · ${p.days_on_market} days\n`
+    + ((p.source&&p.source.url)?p.source.url+'\n':'') + '\nVia PropertyScout';
+  const wa = 'https://wa.me/?text='+encodeURIComponent(txt);
+  window.open(wa,'_blank'); toast('Opening WhatsApp…');
+}
+
+function setFilter(f){ filter=f; document.getElementById('p-all').classList.toggle('on',f==='all'); document.getElementById('p-low').classList.toggle('on',f==='low'); render(); }
+function openPanel(){ renderPanel(); document.getElementById('panel').classList.add('open'); }
+function closePanel(){ document.getElementById('panel').classList.remove('open'); }
+function renderPanel(){
+  const b=document.getElementById('sl-body');
+  if(!shortlist.length){ b.innerHTML='<div class="empty">Nothing saved yet.<br>Tap ★ on any property to shortlist it.</div>'; return; }
+  b.innerHTML = shortlist.map(s=>{
+    const p=DATA.find(x=>x.id==s.id); if(!p) return '';
+    const eq=(p.enrichment&&p.enrichment.equity)||{};
+    return `<div class="sl-item"><div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div><div style="font-size:13px;font-weight:600">${p.address}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:2px">£${p.price.toLocaleString()}${eq.equity_gain!=null?' · ~'+k(eq.equity_gain)+' gain':''} · Score ${p.score}</div></div>
+      <div class="sc" style="color:${sc(p.score)}">${p.score}</div></div>
+      <textarea rows="2" placeholder="Add a note…" onchange="saveNote('${s.id}',this.value)">${s.note||''}</textarea></div>`;
+  }).join('');
+}
+function saveNote(id,v){ const s=shortlist.find(x=>x.id==id); if(s){s.note=v;localStorage.setItem('ps_shortlist',JSON.stringify(shortlist));} }
+
+function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000); }
+
+load();
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(()=>{});
+}
+</script>
+</body>
+</html>
