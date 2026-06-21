@@ -1,5 +1,1227 @@
 {
-  "generated_at": "2026-06-21T23:05:51.197530+00:00",
-  "count": 0,
-  "properties": []
+  "generated_at": "2026-06-21T23:14:09.213960+00:00",
+  "count": 17,
+  "properties": [
+    {
+      "id": "bbd7f9b1",
+      "address": "Beech Hill Road, Rowledge",
+      "postcode": "GU10 4AH",
+      "lat": 51.196,
+      "lng": -0.847,
+      "property_type": "bungalow",
+      "beds": 3,
+      "price": 649000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "hd_0001",
+        "url": "",
+        "agent": "Smiths Estates",
+        "uprn": "100061234567"
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "original_price": 675000,
+          "reductions": 2,
+          "status": "reduced",
+          "dom": 61,
+          "construction_age": "1950-1966"
+        },
+        "epc": {
+          "floor_area_m2": 110,
+          "rating": "E",
+          "age_band": "1950-1966"
+        },
+        "plot": {
+          "area_acres": 0.45,
+          "source": "inspire"
+        },
+        "equity": {
+          "renovated_comp": 835000,
+          "reno_cost_est": 139000,
+          "equity_gain": 47000
+        }
+      },
+      "comps": [
+        {
+          "price": 790000,
+          "date": "2025-11",
+          "m2": 118,
+          "renovated": true,
+          "distance_mi": 0.3
+        },
+        {
+          "price": 835000,
+          "date": "2025-09",
+          "m2": 132,
+          "renovated": true,
+          "distance_mi": 0.6
+        }
+      ],
+      "signals": {
+        "equity_residual": {
+          "score": 6,
+          "max": 20,
+          "note": "Renovated comp ~\u00a3835,000. After ~\u00a3139,000 works, est. \u00a347,000 gain."
+        },
+        "plot_size": {
+          "score": 24,
+          "max": 30,
+          "note": "Est. 0.45 acre (inspire)."
+        },
+        "structural": {
+          "score": 16,
+          "max": 25,
+          "note": "Bungalow \u2014 extend-up case. No text signals."
+        },
+        "motivation": {
+          "score": 15,
+          "max": 20,
+          "note": "2 reduction(s); 61 days on market; reduced"
+        },
+        "competition": {
+          "score": 5,
+          "max": 10,
+          "note": "Low listing engagement / thin channel."
+        },
+        "location": {
+          "score": 0,
+          "max": 15,
+          "note": "Limited location data"
+        }
+      },
+      "score": 55,
+      "low_comp": false,
+      "scored_at": "2026-06-21T18:03:52.007105+00:00",
+      "flags": [
+        "few_photos",
+        "no_floorplan",
+        "plot_not_tagged"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "days_on_market": 0,
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 649000
+        }
+      ]
+    },
+    {
+      "id": "605f2f82-3133-4572-bd99-c67d089a8d50",
+      "address": "Lynton Close, GU9 8US",
+      "postcode": "GU9 8US",
+      "lat": 51.201369,
+      "lng": -0.811565,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 700000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "605f2f82-3133-4572-bd99-c67d089a8d50",
+        "url": "",
+        "agent": "Harding Green",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65240"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 1,
+          "is_reduced": true,
+          "status": "For sale",
+          "dom": 34,
+          "added_date": "2026-05-18"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 0.9,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 5,
+          "max": 20,
+          "note": "1 reduction(s); 34 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 33,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490519+00:00",
+      "flags": [
+        "price_reduced"
+      ],
+      "reasons": [
+        "Recently reduced"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 700000
+        }
+      ]
+    },
+    {
+      "id": "edad471a-5364-4afb-b5e9-2fa02b14b475",
+      "address": "Back Lane, GU10 4LW",
+      "postcode": "GU10 4LW",
+      "lat": 51.170563,
+      "lng": -0.848703,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 800000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "edad471a-5364-4afb-b5e9-2fa02b14b475",
+        "url": "",
+        "agent": "Yopa",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43781/65226"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 1,
+          "is_reduced": true,
+          "status": "For sale",
+          "dom": 35,
+          "added_date": "2026-05-17"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.0,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 5,
+          "max": 20,
+          "note": "1 reduction(s); 35 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 33,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490593+00:00",
+      "flags": [
+        "price_reduced"
+      ],
+      "reasons": [
+        "Recently reduced"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 800000
+        }
+      ]
+    },
+    {
+      "id": "690eebe7-b888-475e-8c37-52965ceed7dd",
+      "address": "Black Pond Lane, GU10 3NW",
+      "postcode": "GU10 3NW",
+      "lat": 51.196977,
+      "lng": -0.794546,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 675000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "690eebe7-b888-475e-8c37-52965ceed7dd",
+        "url": "",
+        "agent": "Trueman & Grundy Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65246"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 3,
+          "added_date": "2026-06-18"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.6,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "3 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490376+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 675000
+        }
+      ]
+    },
+    {
+      "id": "bbeedb4a-3643-47b1-9d14-0830795a9257",
+      "address": "Lynton Close, GU9 8US",
+      "postcode": "GU9 8US",
+      "lat": 51.201369,
+      "lng": -0.811565,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 590000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "bbeedb4a-3643-47b1-9d14-0830795a9257",
+        "url": "",
+        "agent": "Keats Fearn",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65240"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 3,
+          "added_date": "2026-06-18"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 0.9,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "3 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490411+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 590000
+        }
+      ]
+    },
+    {
+      "id": "dccdc493-399c-4414-9dd1-5f8253a7ddf1",
+      "address": "Tilford Road, GU9 8DL",
+      "postcode": "GU9 8DL",
+      "lat": 51.210114,
+      "lng": -0.79008,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 700000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "dccdc493-399c-4414-9dd1-5f8253a7ddf1",
+        "url": "",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43758/65248"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 10,
+          "added_date": "2026-06-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.0,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "10 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490428+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 700000
+        }
+      ]
+    },
+    {
+      "id": "ea039d1f-6c9c-4041-9116-92a7a33f1d3b",
+      "address": "Burnt Hill Road, GU10 4RU",
+      "postcode": "GU10 4RU",
+      "lat": 51.195632,
+      "lng": -0.807175,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 750000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "ea039d1f-6c9c-4041-9116-92a7a33f1d3b",
+        "url": "",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65242"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 10,
+          "added_date": "2026-06-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.1,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "10 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490441+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 750000
+        }
+      ]
+    },
+    {
+      "id": "4c08f812-659f-4548-a168-e80e832b30a7",
+      "address": "Little Green Lane, GU9 8TB",
+      "postcode": "GU9 8TB",
+      "lat": 51.198331,
+      "lng": -0.811714,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 695000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "4c08f812-659f-4548-a168-e80e832b30a7",
+        "url": "",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65240"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 10,
+          "added_date": "2026-06-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 0.9,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "10 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490453+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 695000
+        }
+      ]
+    },
+    {
+      "id": "40a2842b-e6bb-41f9-9801-976aabb37492",
+      "address": "Aveley Close, GU9 8PP",
+      "postcode": "GU9 8PP",
+      "lat": 51.199608,
+      "lng": -0.796753,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 700000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "40a2842b-e6bb-41f9-9801-976aabb37492",
+        "url": "",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65245"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 10,
+          "added_date": "2026-06-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.5,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "10 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490464+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 700000
+        }
+      ]
+    },
+    {
+      "id": "6d10f7e2-283f-458b-b244-128cbaa68589",
+      "address": "Copse Way, GU10 4QL",
+      "postcode": "GU10 4QL",
+      "lat": 51.195434,
+      "lng": -0.818687,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 800000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "6d10f7e2-283f-458b-b244-128cbaa68589",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65237"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 18,
+          "added_date": "2026-06-03"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 0.6,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "18 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490476+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 800000
+        }
+      ]
+    },
+    {
+      "id": "453ec212-d8d0-4419-98ad-7dd1355408b7",
+      "address": "Jubilee Lane, GU10 4SZ",
+      "postcode": "GU10 4SZ",
+      "lat": 51.190356,
+      "lng": -0.8092,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 725000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "453ec212-d8d0-4419-98ad-7dd1355408b7",
+        "url": "",
+        "agent": "Trueman & Grundy Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43769/65241"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 26,
+          "added_date": "2026-05-26"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.1,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "26 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490487+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 725000
+        }
+      ]
+    },
+    {
+      "id": "90d423af-b88d-4906-8678-95c4ae1f1bd4",
+      "address": "Mayfield, GU10 4DZ",
+      "postcode": "GU10 4DZ",
+      "lat": 51.18384,
+      "lng": -0.817567,
+      "property_type": "detached",
+      "beds": 2,
+      "price": 650000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "90d423af-b88d-4906-8678-95c4ae1f1bd4",
+        "url": "",
+        "agent": "Trueman & Grundy Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65238"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 27,
+          "added_date": "2026-05-25"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.2,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "27 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490497+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 650000
+        }
+      ]
+    },
+    {
+      "id": "0e7347a7-99f5-4b00-ab2f-97b052546a57",
+      "address": "Weydon Hill Road, GU9 8NX",
+      "postcode": "GU9 8NX",
+      "lat": 51.20641,
+      "lng": -0.799754,
+      "property_type": "detached",
+      "beds": 2,
+      "price": 450000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "0e7347a7-99f5-4b00-ab2f-97b052546a57",
+        "url": "",
+        "agent": "Warren Powell-Richards",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65244"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 32,
+          "added_date": "2026-05-20"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.5,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "32 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490507+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 450000
+        }
+      ]
+    },
+    {
+      "id": "70ad0520-5f31-4000-be66-1c2b10852714",
+      "address": "Back Lane, GU10 4LW",
+      "postcode": "GU10 4LW",
+      "lat": 51.170563,
+      "lng": -0.848703,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 625000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "70ad0520-5f31-4000-be66-1c2b10852714",
+        "url": "",
+        "agent": "Keats Fearn",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43781/65226"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 1,
+          "added_date": "2026-06-20"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.0,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "1 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490530+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 625000
+        }
+      ]
+    },
+    {
+      "id": "0eddfc98-1fd8-41d1-9122-21804ae7f224",
+      "address": "Back Lane, GU10 4LW",
+      "postcode": "GU10 4LW",
+      "lat": 51.170563,
+      "lng": -0.848703,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 735000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "0eddfc98-1fd8-41d1-9122-21804ae7f224",
+        "url": "",
+        "agent": "Winkworth",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43781/65226"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Under offer",
+          "dom": 18,
+          "added_date": "2026-06-03"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.0,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "18 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490541+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 735000
+        }
+      ]
+    },
+    {
+      "id": "366efd4e-6bb8-46a5-a584-e7f08a84adf5",
+      "address": "Beech Hill Road, GU35 8DN",
+      "postcode": "GU35 8DN",
+      "lat": 51.121935,
+      "lng": -0.814946,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 645000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "366efd4e-6bb8-46a5-a584-e7f08a84adf5",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65239"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 24,
+          "added_date": "2026-05-28"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 5.3,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "24 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490551+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 645000
+        }
+      ]
+    },
+    {
+      "id": "2177ed1b-e707-40d3-9ca9-2dc4aa3a18c6",
+      "address": "Osborne Manor, GU35 0QP",
+      "postcode": "GU35 0QP",
+      "lat": 51.143779,
+      "lng": -0.85017,
+      "property_type": "detached",
+      "beds": 5,
+      "price": 500000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "2177ed1b-e707-40d3-9ca9-2dc4aa3a18c6",
+        "url": "",
+        "agent": "",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43796/65226"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 25,
+          "added_date": "2026-05-27"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.8,
+      "signals": {
+        "structural": {
+          "score": 10,
+          "max": 25,
+          "note": "Detached. Type-based potential."
+        },
+        "motivation": {
+          "score": 0,
+          "max": 20,
+          "note": "25 days listed"
+        },
+        "competition": {
+          "score": 3,
+          "max": 10,
+          "note": "Lower competition the longer it sits."
+        }
+      },
+      "score": 24,
+      "low_comp": false,
+      "scored_at": "2026-06-21T22:46:22.490579+00:00",
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 500000
+        }
+      ]
+    }
+  ]
 }
