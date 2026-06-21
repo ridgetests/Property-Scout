@@ -181,7 +181,8 @@ function card(p){
   const badge = SRC_LABEL[src] ? `<div class="src">${SRC_LABEL[src]}</div>` : '';
   const thumb = (p.media&&p.media.thumb_url) ? `<img src="${p.media.thumb_url}" alt=""/>` : '🏠';
   const tags = (p.flags||[]).slice(0,1).map(f=>`<span class="tag fl">${FLAG_LABELS[f]||f}</span>`).join('');
-  const days = p.days_on_market>0 ? p.days_on_market+' days' : 'pre-market';
+  const dom = (p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0;
+  const days = dom>0 ? dom+' days listed' : 'just listed';
   return `<div class="card ${selected===p.id?'sel':''}" onclick="openDrawer('${p.id}')">
     <div class="ph">${badge}${thumb}</div>
     <div class="body">
@@ -209,7 +210,7 @@ function openDrawer(id){
               + (p.low_comp?'<span class="tag" style="background:var(--eq-bg);color:var(--eq-ink)">Low competition</span>':'');
   document.getElementById('dc').innerHTML = `
     <div class="dh"><h2>${p.address}</h2>
-      <div class="m">${'£'+p.price.toLocaleString()} · ${p.beds} bed ${p.property_type.replace('_',' ')} · ${p.days_on_market>0?p.days_on_market+' days on market':'not yet listed'}</div>
+      <div class="m">${'£'+p.price.toLocaleString()} · ${p.beds} bed ${p.property_type.replace('_',' ')} · ${((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0)>0?((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market)+' days on market':'just listed'}</div>
       <div class="s">${(p.source&&p.source.portal)||''} · ${p.postcode||''}</div></div>
     ${eq.equity_gain!=null?`<div class="eqbox"><div class="l">Est. equity gain after works</div>
       <div class="n">~£${eq.equity_gain.toLocaleString()}</div>
@@ -220,13 +221,19 @@ function openDrawer(id){
     <div class="acts">
       <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">★ ${saved?'Saved':'Save'}</button>
       <button onclick="share('${id}')">⌯ Share</button>
-      <button onclick="openLink('${(p.source&&p.source.url)||'#'}')">↗ View</button>
+      <button onclick="viewListing('${id}')">↗ Find listing</button>
     </div>`;
   document.getElementById('ov').classList.add('open');
   document.getElementById('drawer').classList.add('open');
 }
 function closeDrawer(){selected=null;render();document.getElementById('ov').classList.remove('open');document.getElementById('drawer').classList.remove('open');}
-function openLink(u){ if(u&&u!=='#') window.open(u,'_blank'); }
+function viewListing(id){
+  const p = DATA.find(x=>x.id==id); if(!p) return;
+  const u = p.source&&p.source.url;
+  if(u && u!=='' && u!=='#'){ window.open(u,'_blank'); return; }
+  const q = encodeURIComponent((p.address||'')+' for sale');
+  window.open('https://www.google.com/search?q='+q,'_blank');
+}
 
 function toggleSave(id){
   const i = shortlist.findIndex(s=>s.id==id);
