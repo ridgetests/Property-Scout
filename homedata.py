@@ -27,7 +27,7 @@ import requests
 from pipeline.models import RawListing
 from adapters.base import SourceAdapter
 
-USE_MOCK = True   # flip to False once you have a key and confirmed the path
+USE_MOCK = False   # flip to False once you have a key and confirmed the path
 
 API_KEY = os.environ.get("HOMEDATA_API_KEY", "")
 BASE = os.environ.get("HOMEDATA_BASE", "https://homedata.co.uk/api/v1")
