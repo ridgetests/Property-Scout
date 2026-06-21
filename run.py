@@ -14,7 +14,7 @@ days-on-market), but NO uprn, NO coordinates, NO description. So:
   - scoring normalises against whatever data is present
 """
 from __future__ import annotations
-import os, re, json, sqlite3, hashlib, time
+import os, re, json, sqlite3, hashlib, time, math
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -33,6 +33,16 @@ SEARCH = {
 # flats/new-builds are filtered out as off-thesis.
 TARGET_TYPES = ("detached", "bungalow", "cottage", "farm",
                 "smallholding", "land", "plot", "equestrian")
+
+# Home anchor (Wrecclesham) and the hand-drawn target patch: the rural bowl
+# south of Farnham. Properties outside this polygon are dropped. Vertices are
+# (lat, lng), tracing south-of-Farnham -> Tilford -> Churt -> Rowledge.
+HOME = (51.198, -0.832)
+AREA_POLYGON = [
+    (51.216, -0.895), (51.211, -0.858), (51.208, -0.815), (51.214, -0.778),
+    (51.224, -0.756), (51.180, -0.742), (51.150, -0.748), (51.122, -0.770),
+    (51.120, -0.820), (51.128, -0.855), (51.165, -0.878), (51.198, -0.888),
+]
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
            "motivation": 20, "competition": 10, "location": 15}
@@ -201,6 +211,37 @@ def listing_to_property(row):
     }
 
 
+def _haversine_mi(a, b):
+    R = 3958.8
+    (la1, lo1), (la2, lo2) = a, b
+    p1, p2 = math.radians(la1), math.radians(la2)
+    dp, dl = math.radians(la2 - la1), math.radians(lo2 - lo1)
+    h = math.sin(dp/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dl/2)**2
+    return 2 * R * math.asin(math.sqrt(h))
+
+
+def _aerial_thumb(lat, lng, z=17):
+    # keyless satellite tile centred near the property — shows the plot from above
+    n = 2 ** z
+    x = int((lng + 180.0) / 360.0 * n)
+    yr = math.radians(lat)
+    y = int((1.0 - math.asinh(math.tan(yr)) / math.pi) / 2.0 * n)
+    return ("https://server.arcgisonline.com/ArcGIS/rest/services/"
+            f"World_Imagery/MapServer/tile/{z}/{y}/{x}")
+
+
+def _in_polygon(lat, lng, poly):
+    x, y, inside, n = lng, lat, False, len(poly)
+    j = n - 1
+    for i in range(n):
+        xi, yi = poly[i][1], poly[i][0]
+        xj, yj = poly[j][1], poly[j][0]
+        if ((yi > y) != (yj > y)) and (x < (xj - xi) * (y - yi) / (yj - yi) + xi):
+            inside = not inside
+        j = i
+    return inside
+
+
 # ===========================================================================
 # SCORING  (dynamic denominator - only counts signals that have data)
 # ===========================================================================
@@ -312,6 +353,49 @@ def score_property(p):
     return p
 
 
+def build_reasons(p):
+    """Two or three plain-language reasons this surfaced - the card headline."""
+    m = p["enrichment"].get("market") or {}
+    plot = p["enrichment"].get("plot") or {}
+    eq = p["enrichment"].get("equity") or {}
+    flags = p.get("flags") or []
+    t = p["property_type"]; dom = m.get("dom") or 0; red = m.get("reductions") or 0
+    out = []
+    acres = plot.get("area_acres")
+    if acres is not None:
+        out.append(f"{acres:.2f}-acre plot")
+    if eq.get("equity_gain") not in (None, 0) and eq.get("equity_gain", 0) > 0:
+        out.append(f"~£{eq['equity_gain']:,} potential equity")
+    if t in ("land", "plot"):
+        out.append("Plot / land — build potential")
+    elif t in ("farm", "smallholding", "equestrian"):
+        out.append(f"{t.title()} — space & potential")
+    elif t == "bungalow":
+        out.append("Bungalow — extend / remodel")
+    elif t == "cottage":
+        out.append("Period cottage — doer-upper")
+    if "sold_as_seen" in flags:
+        out.append("Sold as seen — renovation")
+    if "cash_buyers_only" in flags:
+        out.append("Cash buyers only — value play")
+    if red >= 2:
+        out.append(f"Cut {red}× — motivated seller")
+    elif "price_reduced" in flags:
+        out.append("Recently reduced")
+    if dom > 120:
+        out.append(f"{dom} days unsold")
+    if "priced_just_above" in flags:
+        out.append("Priced just above a round number")
+    if p.get("low_comp"):
+        out.append("Low competition")
+    seen, uniq = set(), []
+    for r in out:
+        if r not in seen:
+            seen.add(r); uniq.append(r)
+    p["reasons"] = uniq[:3] or ["In your target area"]
+    return p
+
+
 def detect_flags(p):
     flags = []; desc = (p["description_raw"] or "").lower()
     market = p["enrichment"].get("market") or {}
@@ -385,9 +469,19 @@ def main():
     # map pins from postcodes (free)
     geo = geocode([p["postcode"] for p in props])
     for p in props:
-        ll = geo.get(p["postcode"])
+        ll = geo.get(p["postcode"]) or _MOCK_COORDS.get(p["postcode"])
         if ll:
             p["lat"], p["lng"] = ll
+
+    # keep only what falls inside the hand-drawn target patch
+    inside = []
+    for p in props:
+        if p["lat"] is not None and _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
+            p["dist_mi"] = round(_haversine_mi(HOME, (p["lat"], p["lng"])), 1)
+            p["media"]["thumb_url"] = _aerial_thumb(p["lat"], p["lng"])
+            inside.append(p)
+    props = inside
+    print(f"- {len(props)} inside target area")
 
     # score everything cheaply
     for p in props:
@@ -413,6 +507,7 @@ def main():
     props.sort(key=lambda x: -x["score"])
     for p in props:
         p["flags"] = detect_flags(p)
+        build_reasons(p)
         upsert(conn, p)
 
     print("- top results:")
@@ -466,6 +561,7 @@ _MOCK_COMPS = {
     "100061234890": [{"price": 1050000, "date": "2025-08", "m2": 160, "renovated": True},
                      {"price": 980000, "date": "2025-10", "m2": 145, "renovated": True}],
 }
+_MOCK_COORDS = {"GU10 4AH": (51.196, -0.847), "GU35 8PN": (51.115, -0.830)}
 _MOCK_PLOT = {
     "GU10 4AH": {"area_acres": 0.45, "source": "inspire"},
     "GU35 8PN": {"area_acres": 1.2, "source": "inspire"},
