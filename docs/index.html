@@ -89,6 +89,11 @@
   .empty{padding:48px 24px;text-align:center;color:var(--muted);font-size:14px;line-height:1.6}
   .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:12px;padding:9px 16px;border-radius:20px;z-index:1003;opacity:0;transition:opacity .2s;pointer-events:none}
   .toast.show{opacity:1}
+  .why{font-size:11.5px;color:var(--a);margin-top:3px;font-weight:500;line-height:1.3}
+.why{font-size:12.5px;color:var(--ink);font-weight:600;margin-top:4px;line-height:1.35}
+  .sortsel{margin-left:auto;font-size:12px;padding:5px 8px;border:.5px solid var(--line2);border-radius:8px;background:var(--bg,#fff);color:var(--ink)}
+  .hid{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px}
+  .dismisslink{width:100%;margin-top:8px;padding:9px;border:none;background:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -99,10 +104,17 @@
 
 <div class="filters">
   <label>Min score</label>
-  <input type="range" id="ms" min="0" max="100" value="50" oninput="render()"/>
+  <input type="range" id="ms" min="0" max="100" value="30" oninput="render()"/>
   <span class="fv" id="mv">50</span>
   <button class="pill on" id="p-all" onclick="setFilter('all')">All</button>
   <button class="pill" id="p-low" onclick="setFilter('low')">Low comp</button>
+  <select id="sort" class="sortsel" onchange="render()">
+    <option value="score">Top score</option>
+    <option value="dist">Nearest</option>
+    <option value="price">Cheapest</option>
+    <option value="days">Longest listed</option>
+  </select>
+  <button id="hid" class="hid" onclick="resetHidden()" style="display:none"></button>
 </div>
 
 <div id="map"></div>
@@ -133,8 +145,9 @@ const SRC_LABEL = {auction:"AUCTION","off-market":"OFF-MKT"};
 
 let DATA=[], filter='all', selected=null, map, markers=[];
 let shortlist = JSON.parse(localStorage.getItem('ps_shortlist')||'[]');
+let dismissed = new Set(JSON.parse(localStorage.getItem('ps_dismissed')||'[]'));
 
-const sc = s => s>=75?'var(--g)':s>=55?'var(--a)':'var(--gr)';
+const sc = s => s>=50?'var(--g)':s>=35?'var(--a)':'var(--gr)';
 const k = n => '£'+Math.round(n/1000)+'k';
 
 async function load(){
@@ -153,19 +166,29 @@ function initMap(){
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:18}).addTo(map);
 }
 
+function dom_(p){ return (p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||0; }
 function visible(){
   const min = +document.getElementById('ms').value;
-  return DATA.filter(p => p.score>=min && (filter!=='low'||p.low_comp))
-             .sort((a,b)=>b.score-a.score);
+  const so = (document.getElementById('sort')||{}).value || 'score';
+  const arr = DATA.filter(p => !dismissed.has(p.id) && p.score>=min && (filter!=='low'||p.low_comp));
+  const cmp = {
+    score:(a,b)=>b.score-a.score,
+    dist:(a,b)=>(a.dist_mi==null?99:a.dist_mi)-(b.dist_mi==null?99:b.dist_mi),
+    price:(a,b)=>a.price-b.price,
+    days:(a,b)=>dom_(b)-dom_(a)
+  }[so] || ((a,b)=>b.score-a.score);
+  return arr.sort(cmp);
 }
 
 function render(){
   document.getElementById('mv').textContent = document.getElementById('ms').value;
+  const hb=document.getElementById('hid');
+  if(hb){ if(dismissed.size){hb.style.display='inline-block'; hb.textContent='↺ hidden '+dismissed.size;} else {hb.style.display='none';} }
   const v = visible(), L_ = document.getElementById('list');
   markers.forEach(m=>map.removeLayer(m)); markers=[];
   v.forEach(p=>{
     if(p.lat&&p.lng){
-      const col = p.score>=75?'#16a34a':p.score>=55?'#d97706':'#94a3b8';
+      const col = p.score>=50?'#16a34a':p.score>=35?'#d97706':'#94a3b8';
       const ic = L.divIcon({className:'',html:`<div style="background:${col};color:#fff;font-size:11px;font-weight:600;padding:3px 7px;border-radius:12px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25)">${p.score}</div>`,iconSize:[34,22],iconAnchor:[17,22]});
       const m = L.marker([p.lat,p.lng],{icon:ic}).addTo(map).on('click',()=>openDrawer(p.id));
       markers.push(m);
@@ -175,6 +198,12 @@ function render(){
   L_.innerHTML = v.map(card).join('');
 }
 
+function topReason(p){
+  const sigs=p.signals||{}; let best=null,bestR=-1;
+  for(const kk in sigs){const sg=sigs[kk]; if(!sg||!sg.note) continue;
+    const r=sg.max?sg.score/sg.max:0; if(r>bestR){bestR=r;best=sg;}}
+  return best?best.note:'';
+}
 function card(p){
   const eq = (p.enrichment&&p.enrichment.equity)||{};
   const src = p.source&&p.source.portal;
@@ -188,7 +217,8 @@ function card(p){
     <div class="body">
       <div class="ctop"><div class="addr">${p.beds} bed ${p.property_type.replace('_',' ')}<small>${p.address}</small></div>
         <div class="sc" style="color:${sc(p.score)}">${p.score}</div></div>
-      <div class="sub">${k(p.price)} · ${days} · ${src}</div>
+      <div class="sub">${k(p.price)} · ${days}${p.dist_mi!=null?' · '+p.dist_mi+' mi':''}</div>
+      ${(p.reasons&&p.reasons.length)?`<div class="why">${p.reasons.join(' · ')}</div>`:''}
       ${eq.equity_gain!=null?`<div class="eq">▲ ~${k(eq.equity_gain)} est. equity gain</div>`:''}
       <div class="tags">${tags}</div>
     </div></div>`;
@@ -222,7 +252,8 @@ function openDrawer(id){
       <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">★ ${saved?'Saved':'Save'}</button>
       <button onclick="share('${id}')">⌯ Share</button>
       <button onclick="viewListing('${id}')">↗ Find listing</button>
-    </div>`;
+    </div>
+    <button class="dismisslink" onclick="dismiss('${id}')">Not for me — hide this</button>`;
   document.getElementById('ov').classList.add('open');
   document.getElementById('drawer').classList.add('open');
 }
@@ -273,6 +304,8 @@ function renderPanel(){
 function saveNote(id,v){ const s=shortlist.find(x=>x.id==id); if(s){s.note=v;localStorage.setItem('ps_shortlist',JSON.stringify(shortlist));} }
 
 function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000); }
+function dismiss(id){ dismissed.add(id); localStorage.setItem('ps_dismissed',JSON.stringify([...dismissed])); closeDrawer(); render(); toast('Hidden'); }
+function resetHidden(){ dismissed.clear(); localStorage.removeItem('ps_dismissed'); render(); toast('Hidden cleared'); }
 
 load();
 
