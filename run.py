@@ -53,6 +53,11 @@ PROBATE_ENABLED = True
 PROBATE_LOCATION = "Farnham"   # Gazette accepts a town or full postcode
 PROBATE_RADIUS_MI = 8          # probate is about your actual patch - keep it tight
 PROBATE_LOOKBACK_DAYS = 120    # estates can take months to reach the market
+# --- only surface probate leads that fit your buying criteria ---
+PROBATE_MAX_PRICE = 800_000              # skip estimates above this
+PROBATE_MIN_PRICE = 350_000              # skip cheap flats / small terraces
+PROBATE_TYPES = ("detached", "semi", "terraced")   # houses only (excludes "flat"); widen/narrow freely
+PROBATE_KEEP_UNKNOWN = True              # keep long-held homes Land Registry can't price (often the best)
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
@@ -815,6 +820,113 @@ def _probate_name(title, content):
     return name or "Deceased estate"
 
 
+_PTYPE = {"detached": "detached", "semi-detached": "semi", "terraced": "terraced",
+          "flat-maisonette": "flat", "other": "other"}
+
+
+def _lrval(x):
+    """Pull a scalar from HM Land Registry linked-data JSON (handles nesting)."""
+    if x is None or isinstance(x, (str, int, float)):
+        return x
+    if isinstance(x, list):
+        return _lrval(x[0]) if x else None
+    if isinstance(x, dict):
+        for k in ("_value", "prefLabel", "label", "_label", "@id"):
+            if k in x:
+                v = _lrval(x[k])
+                if k == "@id" and isinstance(v, str):
+                    return v.rstrip("/").rsplit("/", 1)[-1]
+                return v
+    return None
+
+
+def _pp_parse(data):
+    items = (data.get("result") or {}).get("items")
+    if items is None:
+        items = data.get("items") or []
+    sales = []
+    for it in items:
+        price = _lrval(it.get("pricePaid"))
+        if not price:
+            continue
+        ptype = _lrval(it.get("propertyType"))
+        t = None
+        if ptype:
+            t = _PTYPE.get(str(ptype).lower().rsplit("/", 1)[-1], str(ptype).lower())
+        addr = it.get("propertyAddress") or {}
+        if isinstance(addr, list):
+            addr = addr[0] if addr else {}
+        paon = _lrval(addr.get("paon")) if isinstance(addr, dict) else None
+        sales.append({"price": int(price), "date": str(_lrval(it.get("transactionDate")) or "")[:10],
+                      "type": t, "paon": str(paon or "").upper()})
+    return sales
+
+
+def _pp_get(params):
+    """One HM Land Registry Price Paid query (free, keyless), newest first."""
+    import requests
+    url = "https://landregistry.data.gov.uk/data/ppi/transaction-record.json"
+    try:
+        r = requests.get(url, params={**params, "_pageSize": 150, "_sort": "-transactionDate"},
+                         headers={"User-Agent": _UA, "Accept": "application/json"}, timeout=30)
+        r.raise_for_status()
+        return _pp_parse(r.json())
+    except Exception as e:
+        print(f"   price-paid fetch failed ({params}): {e}")
+        return []
+
+
+def fetch_price_paid(postcode):
+    """Sales in an exact postcode (micro-local, reliable)."""
+    return _pp_get({"propertyAddress.postcode": postcode})
+
+
+def fetch_price_paid_town(town):
+    """Town-wide sales - coarse fallback when a postcode has no LR history."""
+    return _pp_get({"propertyAddress.town": town.upper()})
+
+
+def price_context(sales, paon_hint):
+    """Subject house type + comparable value range from a postcode's sales."""
+    if not sales:
+        return {}
+    ctx = {}
+    ph = (paon_hint or "").strip().upper()
+    subj = None
+    if ph:
+        for s in sales:
+            if s["paon"] and (s["paon"] == ph or s["paon"].split(",")[0].strip() == ph):
+                if subj is None or s["date"] > subj["date"]:
+                    subj = s
+    if subj:
+        ctx["subject_type"] = subj["type"]
+        ctx["last_price"] = subj["price"]
+        ctx["last_year"] = subj["date"][:4]
+    yr_cut = datetime.now(timezone.utc).year - 7
+    recent = [s for s in sales if s["date"][:4].isdigit() and int(s["date"][:4]) >= yr_cut]
+    if subj and subj["type"]:
+        same = [s for s in recent if s["type"] == subj["type"]]
+        if len(same) >= 3:
+            recent = same
+    prices = sorted(s["price"] for s in recent)
+    if not prices:
+        prices = sorted(s["price"] for s in sales)[-8:]
+    if prices:
+        n = len(prices)
+        ctx.update({"est_low": prices[max(0, n // 4 - 1)],
+                    "est_high": prices[min(n - 1, (3 * n) // 4)],
+                    "est_mid": prices[n // 2], "n_comps": n})
+        if not ctx.get("subject_type"):
+            types = [s["type"] for s in recent if s["type"]]
+            if types:
+                ctx["subject_type"] = max(set(types), key=types.count)
+    return ctx
+
+
+def _streetview_url(lat, lng):
+    return f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={lat},{lng}"
+
+
 def fetch_probate_leads(conn):
     """Deceased Estates notices from The Gazette near home - the legal way to
     see an estate (often an empty house) before it reaches the market.
@@ -850,9 +962,13 @@ def fetch_probate_leads(conn):
         pid = (e.get("id") or "").rsplit("/", 1)[-1]
         dod = re.search(r"(?:who )?died on\s+(?:the\s+)?"
                         r"(\d{1,2}(?:st|nd|rd|th)?\s+\w+\s+\d{4})", content, re.I)
+        addr_m = re.search(r"(?:late of|residing at|formerly of|of)\s+(.+?),?\s*"
+                           r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}", content)
+        paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_m.group(1).strip(" ,") if addr_m else "")
         raw.append({"id": f"gz_{pid}",
                     "name": _probate_name(e.get("title"), content),
                     "postcode": pc.group(1).upper(),
+                    "paon": paon_m.group(1) if paon_m else "",
                     "dod": dod.group(1) if dod else "",
                     "pub": (e.get("published") or "")[:10],
                     "url": f"https://www.thegazette.co.uk/notice/{pid}"})
@@ -865,6 +981,8 @@ def fetch_probate_leads(conn):
     save_geocache(conn, fresh)
     coords = {**cache, **fresh}
 
+    pp_cache = {}
+    town_cache = {}
     today = datetime.now(timezone.utc).date().isoformat()
     out = []
     for x in raw:
@@ -872,17 +990,50 @@ def fetch_probate_leads(conn):
         if not ll:
             continue
         lat, lng = ll
-        reasons = ["Probate \u2014 possible estate sale"]
-        if x["dod"]:
+        if x["postcode"] not in pp_cache:
+            pp_cache[x["postcode"]] = fetch_price_paid(x["postcode"])
+        ctx = price_context(pp_cache[x["postcode"]], x.get("paon"))
+        basis = "postcode"
+        # fallback: postcode has no Land Registry history -> coarse town-wide estimate
+        if not ctx.get("est_mid"):
+            if PROBATE_LOCATION not in town_cache:
+                town_cache[PROBATE_LOCATION] = fetch_price_paid_town(PROBATE_LOCATION)
+            tctx = price_context(town_cache[PROBATE_LOCATION], None)
+            if tctx.get("est_mid"):
+                ctx["est_low"], ctx["est_high"] = tctx["est_low"], tctx["est_high"]
+                ctx["est_mid"], ctx["n_comps"] = tctx["est_mid"], tctx["n_comps"]
+                basis = "town"
+        typ = ctx.get("subject_type")
+        est = ctx.get("est_mid")
+        # interest filter - only trust micro-local (postcode/house) data to EXCLUDE;
+        # a town-wide median is too coarse to reject a specific house on.
+        reliable = (basis == "postcode")
+        if reliable and typ and PROBATE_TYPES and typ not in PROBATE_TYPES:
+            continue
+        if reliable and est is not None and (est > PROBATE_MAX_PRICE or est < PROBATE_MIN_PRICE):
+            continue
+        if est is None and not PROBATE_KEEP_UNKNOWN:
+            continue
+        reasons = []
+        if ctx.get("est_mid"):
+            lbl = "area est" if basis == "postcode" else f"{PROBATE_LOCATION}-area est"
+            reasons.append(f"~\u00a3{ctx['est_low']//1000}k\u2013\u00a3{ctx['est_high']//1000}k "
+                           f"{lbl} ({ctx['n_comps']})")
+        else:
+            reasons.append("Long-held \u2014 not sold since 1995")
+        reasons.append("Probate \u2014 estate sale")
+        if ctx.get("last_price"):
+            reasons.append(f"Last sold \u00a3{ctx['last_price']:,} ({ctx['last_year']})")
+        elif x["dod"]:
             reasons.append(f"Died {x['dod']}")
-        reasons.append(f"Gazette notice {x['pub']}")
         out.append({
             "id": x["id"], "address": f"Estate: {x['name']} \u2014 {x['postcode']}",
-            "postcode": x["postcode"], "price": 0, "beds": 0,
-            "property_type": "probate", "lat": lat, "lng": lng,
+            "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
+            "property_type": ctx.get("subject_type") or "estate", "lat": lat, "lng": lng,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
             "score": 68, "reasons": reasons[:3], "flags": ["probate"],
             "is_probate": True, "low_comp": False, "comps": [],
+            "streetview_url": _streetview_url(lat, lng),
             "source": {"name": "The Gazette", "url": x["url"], "uprn": ""},
             "source_label": "PROBATE",
             "enrichment": {"market": {}, "plot": {}, "equity": {}},
