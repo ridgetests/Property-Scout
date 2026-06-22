@@ -461,6 +461,8 @@ def recover_from_db(conn):
     for r in conn.execute("SELECT payload FROM properties"):
         try:
             p = json.loads(r["payload"])
+            if str(p.get("id","")).startswith("hd_"):
+                continue
             if p.get("lat") is not None and _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
                 seen[p["id"]] = p
         except Exception:
@@ -506,6 +508,14 @@ def existing(conn, pid):
 def main():
     print("PropertyScout run starting" + ("  [MOCK]" if USE_MOCK else "  [LIVE]"))
     conn = db_connect()
+    # purge any sample/mock records that leaked in before the API key was set
+    purged = conn.total_changes
+    conn.execute("DELETE FROM properties WHERE id LIKE 'hd\\_%' ESCAPE '\\'")
+    conn.execute("DELETE FROM price_history WHERE id LIKE 'hd\\_%' ESCAPE '\\'")
+    conn.execute("DELETE FROM geocache WHERE postcode IN ('GU10 4AH','GU35 8PN')")
+    conn.commit()
+    if conn.total_changes - purged:
+        print(f"- purged {conn.total_changes - purged} stale sample record(s)")
     rows = fetch_listings()
     print(f"- {len(rows)} listing(s) fetched")
     if not rows:
