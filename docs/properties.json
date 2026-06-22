@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-22T23:09:54.135091+00:00",
-  "count": 99,
+  "generated_at": "2026-06-22T23:40:29.310247+00:00",
+  "count": 65,
   "properties": [
     {
       "id": "ce_266_28",
@@ -43,60 +43,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5156304",
-      "address": "Estate: Ethel Kercher \u2014 GU10 1BQ",
-      "postcode": "GU10 1BQ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.236696,
-      "lng": -0.72985,
-      "dist_mi": 5.2,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-16"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5156304",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5152464",
       "address": "Estate: Evelyn Vass \u2014 GU51 3AW",
       "postcode": "GU51 3AW",
-      "price": 0,
+      "price": 650000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.285685,
       "lng": -0.834285,
       "dist_mi": 6.1,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-15"
+        "~\u00a3473k\u2013\u00a3845k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -104,6 +63,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285685,-0.834285",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5152464",
@@ -128,16 +88,16 @@
       "id": "gz_5145468",
       "address": "Estate: Derek Willett \u2014 GU26 6QS",
       "postcode": "GU26 6QS",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.123814,
       "lng": -0.757739,
       "dist_mi": 6.1,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-11"
+        "~\u00a3169k\u2013\u00a3655k area est (6)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -145,6 +105,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.123814,-0.757739",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145468",
@@ -166,60 +127,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5145340",
-      "address": "Estate: Nicholas Regan \u2014 GU9 8LJ",
-      "postcode": "GU9 8LJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.206492,
-      "lng": -0.797218,
-      "dist_mi": 1.6,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-11"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5145340",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5150245",
       "address": "Estate: Arthur Cousins \u2014 GU11 3DG",
       "postcode": "GU11 3DG",
-      "price": 0,
+      "price": 630000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.242005,
       "lng": -0.768012,
       "dist_mi": 4.1,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-10"
+        "~\u00a3530k\u2013\u00a32100k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -227,6 +147,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242005,-0.768012",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5150245",
@@ -251,16 +172,16 @@
       "id": "gz_5148761",
       "address": "Estate: Thelma Huse \u2014 GU16 6DH",
       "postcode": "GU16 6DH",
-      "price": 0,
+      "price": 675000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.288873,
       "lng": -0.727594,
       "dist_mi": 7.7,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-10"
+        "~\u00a3575k\u2013\u00a3731k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -268,6 +189,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5148761",
@@ -289,60 +211,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5148460",
-      "address": "Estate: Stephen Purchase \u2014 GU14 6JW",
-      "postcode": "GU14 6JW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.277114,
-      "lng": -0.742872,
-      "dist_mi": 6.7,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-10"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5148460",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43719/65265"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5146432",
       "address": "Estate: Patricia Powell \u2014 GU16 9NP",
       "postcode": "GU16 9NP",
-      "price": 0,
+      "price": 475000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.30768,
       "lng": -0.720561,
       "dist_mi": 9.0,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-10"
+        "~\u00a3240k\u2013\u00a3805k area est (3)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -350,6 +231,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146432",
@@ -371,60 +253,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5149973",
-      "address": "Estate: Peter Bommer \u2014 GU9 8LJ",
-      "postcode": "GU9 8LJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.206492,
-      "lng": -0.797218,
-      "dist_mi": 1.6,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-09"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5149973",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5146913",
       "address": "Estate: Beverley Whitty \u2014 GU16 9NP",
       "postcode": "GU16 9NP",
-      "price": 0,
+      "price": 475000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.30768,
       "lng": -0.720561,
       "dist_mi": 9.0,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-05"
+        "~\u00a3240k\u2013\u00a3805k area est (3)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -432,6 +273,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146913",
@@ -456,16 +298,16 @@
       "id": "gz_5145764",
       "address": "Estate: John Billings \u2014 GU14 8RJ",
       "postcode": "GU14 8RJ",
-      "price": 0,
+      "price": 430000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.299233,
       "lng": -0.773954,
       "dist_mi": 7.4,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-04"
+        "~\u00a3350k\u2013\u00a3490k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -473,6 +315,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.299233,-0.773954",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145764",
@@ -497,16 +340,16 @@
       "id": "gz_5145201",
       "address": "Estate: Hazel Wilde \u2014 GU7 1BX",
       "postcode": "GU7 1BX",
-      "price": 0,
+      "price": 424000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.185207,
       "lng": -0.612201,
       "dist_mi": 9.6,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-03"
+        "~\u00a3305k\u2013\u00a3482k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -514,6 +357,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.185207,-0.612201",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145201",
@@ -535,60 +379,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5144054",
-      "address": "Estate: BARBARA ALLUM \u2014 GU14 9AE",
-      "postcode": "GU14 9AE",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.310655,
-      "lng": -0.773248,
-      "dist_mi": 8.2,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-03"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5144054",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43699/65254"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5142482",
       "address": "Estate: Tony Mist \u2014 GU16 6DH",
       "postcode": "GU16 6DH",
-      "price": 0,
+      "price": 675000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.288873,
       "lng": -0.727594,
       "dist_mi": 7.7,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-06-03"
+        "~\u00a3575k\u2013\u00a3731k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -596,6 +399,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142482",
@@ -620,16 +424,16 @@
       "id": "gz_5144259",
       "address": "Estate: William Bittles \u2014 GU51 4LE",
       "postcode": "GU51 4LE",
-      "price": 0,
+      "price": 750000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.285242,
       "lng": -0.847632,
       "dist_mi": 6.1,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-29"
+        "~\u00a3617k\u2013\u00a3840k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -637,6 +441,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285242,-0.847632",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5144259",
@@ -658,60 +463,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5140515",
-      "address": "Estate: Dorothy Finlow \u2014 GU10 4AF",
-      "postcode": "GU10 4AF",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.182014,
-      "lng": -0.822907,
-      "dist_mi": 1.2,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-28"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5140515",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43774/65236"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5142545",
       "address": "Estate: John Holland \u2014 GU51 4HD",
       "postcode": "GU51 4HD",
-      "price": 0,
+      "price": 540000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.280633,
       "lng": -0.859074,
       "dist_mi": 5.8,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-27"
+        "~\u00a3415k\u2013\u00a3625k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -719,6 +483,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.280633,-0.859074",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142545",
@@ -743,16 +508,16 @@
       "id": "gz_5140167",
       "address": "Estate: Norma Inglis \u2014 GU52 8LL",
       "postcode": "GU52 8LL",
-      "price": 0,
+      "price": 605000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.258534,
       "lng": -0.835744,
       "dist_mi": 4.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-22"
+        "~\u00a3543k\u2013\u00a3622k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -760,6 +525,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.258534,-0.835744",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5140167",
@@ -784,16 +550,16 @@
       "id": "gz_5138889",
       "address": "Estate: Ronald Barfield \u2014 GU11 3SW",
       "postcode": "GU11 3SW",
-      "price": 0,
+      "price": 2000000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.234834,
       "lng": -0.748967,
       "dist_mi": 4.4,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-21"
+        "~\u00a31800k\u2013\u00a32650k Farnham-area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -801,6 +567,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234834,-0.748967",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138889",
@@ -825,16 +592,16 @@
       "id": "gz_5138517",
       "address": "Estate: Margaret Wyatt \u2014 GU52 0AE",
       "postcode": "GU52 0AE",
-      "price": 0,
+      "price": 375000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.253498,
       "lng": -0.845716,
       "dist_mi": 3.9,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-20"
+        "~\u00a3372k\u2013\u00a3390k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -842,6 +609,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.253498,-0.845716",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138517",
@@ -863,60 +631,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5137991",
-      "address": "Estate: David Seal \u2014 GU10 4RP",
-      "postcode": "GU10 4RP",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.192623,
-      "lng": -0.804019,
-      "dist_mi": 1.3,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-19"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5137991",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5131726",
       "address": "Estate: Valerie Laycock \u2014 GU12 6NP",
       "postcode": "GU12 6NP",
-      "price": 0,
+      "price": 390000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.242687,
       "lng": -0.726719,
       "dist_mi": 5.5,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-18"
+        "~\u00a3355k\u2013\u00a3422k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -924,6 +651,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242687,-0.726719",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131726",
@@ -948,16 +676,16 @@
       "id": "gz_5133964",
       "address": "Estate: Angela Fox \u2014 GU16 9YG",
       "postcode": "GU16 9YG",
-      "price": 0,
+      "price": 550500,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.311068,
       "lng": -0.725316,
       "dist_mi": 9.1,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-14"
+        "~\u00a3387k\u2013\u00a3612k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -965,6 +693,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.311068,-0.725316",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133964",
@@ -989,16 +718,16 @@
       "id": "gz_5134007",
       "address": "Estate: Robin Tinsley \u2014 GU52 6HQ",
       "postcode": "GU52 6HQ",
-      "price": 0,
+      "price": 491000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.26558,
       "lng": -0.838978,
       "dist_mi": 4.7,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-14"
+        "~\u00a3420k\u2013\u00a3590k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1006,6 +735,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.26558,-0.838978",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5134007",
@@ -1030,16 +760,16 @@
       "id": "gz_5129387",
       "address": "Estate: Linda Cake \u2014 GU9 0NT",
       "postcode": "GU9 0NT",
-      "price": 0,
+      "price": 505000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.231424,
       "lng": -0.788147,
       "dist_mi": 3.0,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-14"
+        "~\u00a3475k\u2013\u00a3565k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1047,6 +777,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.231424,-0.788147",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5129387",
@@ -1071,16 +802,16 @@
       "id": "gz_5133482",
       "address": "Estate: Moira Sharman \u2014 RG29 1BH",
       "postcode": "RG29 1BH",
-      "price": 0,
+      "price": 460000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.256074,
       "lng": -0.954176,
       "dist_mi": 6.6,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-13"
+        "~\u00a3445k\u2013\u00a3470k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1088,6 +819,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133482",
@@ -1112,16 +844,16 @@
       "id": "gz_5133456",
       "address": "Estate: Moira Sharman \u2014 RG29 1BH",
       "postcode": "RG29 1BH",
-      "price": 0,
+      "price": 460000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.256074,
       "lng": -0.954176,
       "dist_mi": 6.6,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-13"
+        "~\u00a3445k\u2013\u00a3470k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1129,6 +861,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133456",
@@ -1150,142 +883,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5128036",
-      "address": "Estate: PHYLLIS SHIRLAW \u2014 GU12 5SW",
-      "postcode": "GU12 5SW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.270882,
-      "lng": -0.727847,
-      "dist_mi": 6.8,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-13"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5128036",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43722/65270"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5128002",
-      "address": "Estate: Elizabeth Briggs \u2014 GU51 4NB",
-      "postcode": "GU51 4NB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.283605,
-      "lng": -0.842124,
-      "dist_mi": 5.9,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-13"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5128002",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43715/65229"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5125461",
-      "address": "Estate: RICHARD BRIGGS \u2014 GU51 4NB",
-      "postcode": "GU51 4NB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.283605,
-      "lng": -0.842124,
-      "dist_mi": 5.9,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-13"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5125461",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43715/65229"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5131333",
       "address": "Estate: Henry McWhinnie \u2014 GU11 3JJ",
       "postcode": "GU11 3JJ",
-      "price": 0,
+      "price": 410000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.244906,
       "lng": -0.772003,
       "dist_mi": 4.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-12"
+        "~\u00a3305k\u2013\u00a3485k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1293,6 +903,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.244906,-0.772003",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131333",
@@ -1314,101 +925,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5130567",
-      "address": "Estate: Lucia Bardoul \u2014 GU9 8NY",
-      "postcode": "GU9 8NY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.204574,
-      "lng": -0.798771,
-      "dist_mi": 1.5,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-11"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5130567",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65245"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5123805",
-      "address": "Estate: Clive Davis \u2014 GU9 7RQ",
-      "postcode": "GU9 7RQ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.212675,
-      "lng": -0.795139,
-      "dist_mi": 1.9,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-05-07"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5123805",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65246"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5115992",
       "address": "Estate: James Lindsay \u2014 GU9 8PG",
       "postcode": "GU9 8PG",
-      "price": 0,
+      "price": 360000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.207346,
       "lng": -0.797239,
       "dist_mi": 1.6,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-30"
+        "~\u00a3330k\u2013\u00a3368k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1416,6 +945,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.207346,-0.797239",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5115992",
@@ -1440,16 +970,16 @@
       "id": "gz_5123832",
       "address": "Estate: GRACE FERRIS \u2014 GU12 4DY",
       "postcode": "GU12 4DY",
-      "price": 0,
+      "price": 430000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.239484,
       "lng": -0.744886,
       "dist_mi": 4.7,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-29"
+        "~\u00a3239k\u2013\u00a3430k area est (2)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1457,6 +987,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.239484,-0.744886",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5123832",
@@ -1478,101 +1009,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5119329",
-      "address": "Estate: Keith Old \u2014 RG27 8FD",
-      "postcode": "RG27 8FD",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.301555,
-      "lng": -0.89433,
-      "dist_mi": 7.6,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-29"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5119329",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43704/65210"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5118078",
-      "address": "Estate: Philip Burt \u2014 GU26 6LY",
-      "postcode": "GU26 6LY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.111681,
-      "lng": -0.753321,
-      "dist_mi": 6.9,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-23"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5118078",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43815/65261"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5114805",
       "address": "Estate: Graeme Keel \u2014 GU10 5LR",
       "postcode": "GU10 5LR",
-      "price": 0,
+      "price": 635000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.189803,
       "lng": -0.880722,
       "dist_mi": 2.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-23"
+        "~\u00a3492k\u2013\u00a3695k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1580,6 +1029,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.189803,-0.880722",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114805",
@@ -1601,60 +1051,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5116901",
-      "address": "Estate: John Jeffrey \u2014 GU9 7DX",
-      "postcode": "GU9 7DX",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.21266,
-      "lng": -0.80592,
-      "dist_mi": 1.5,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-21"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5116901",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65242"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5116187",
       "address": "Estate: Gillian Reach \u2014 GU7 3TF",
       "postcode": "GU7 3TF",
-      "price": 0,
+      "price": 385000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.205441,
       "lng": -0.60843,
       "dist_mi": 9.7,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-21"
+        "~\u00a3360k\u2013\u00a3460k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1662,6 +1071,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116187",
@@ -1686,16 +1096,16 @@
       "id": "gz_5116186",
       "address": "Estate: Stuart Reach \u2014 GU7 3TF",
       "postcode": "GU7 3TF",
-      "price": 0,
+      "price": 385000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.205441,
       "lng": -0.60843,
       "dist_mi": 9.7,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-21"
+        "~\u00a3360k\u2013\u00a3460k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1703,6 +1113,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116186",
@@ -1727,16 +1138,16 @@
       "id": "gz_5114624",
       "address": "Estate: Sheila Brooks \u2014 GU9 9HA",
       "postcode": "GU9 9HA",
-      "price": 0,
+      "price": 457000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.238578,
       "lng": -0.773103,
       "dist_mi": 3.8,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-17"
+        "~\u00a3135k\u2013\u00a3580k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1744,6 +1155,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.238578,-0.773103",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114624",
@@ -1765,101 +1177,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5105496",
-      "address": "Estate: Paul Kirton \u2014 GU26 6TJ",
-      "postcode": "GU26 6TJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.112014,
-      "lng": -0.737383,
-      "dist_mi": 7.2,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-16"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5105496",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43815/65267"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5113293",
-      "address": "Estate: Ivy Sharpe \u2014 GU12 4RP",
-      "postcode": "GU12 4RP",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.247638,
-      "lng": -0.748934,
-      "dist_mi": 5.0,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-15"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5113293",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43736/65263"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5111180",
       "address": "Estate: Gwendoline Sear \u2014 GU11 3AP",
       "postcode": "GU11 3AP",
-      "price": 0,
+      "price": 685000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.242918,
       "lng": -0.783059,
       "dist_mi": 3.8,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-13"
+        "~\u00a3575k\u2013\u00a3820k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1867,6 +1197,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242918,-0.783059",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111180",
@@ -1891,16 +1222,16 @@
       "id": "gz_5111171",
       "address": "Estate: Jack Spencer \u2014 RH12 1UX",
       "postcode": "RH12 1UX",
-      "price": 0,
+      "price": 365000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.06033,
       "lng": -0.350789,
       "dist_mi": 22.9,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-13"
+        "~\u00a3350k\u2013\u00a3366k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1908,6 +1239,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.06033,-0.350789",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111171",
@@ -1932,16 +1264,16 @@
       "id": "gz_5110024",
       "address": "Estate: Geoffrey Goddard \u2014 GU16 6JJ",
       "postcode": "GU16 6JJ",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.293636,
       "lng": -0.728926,
       "dist_mi": 8.0,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-13"
+        "~\u00a3245k\u2013\u00a3500k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -1949,6 +1281,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.293636,-0.728926",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5110024",
@@ -1970,60 +1303,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5108478",
-      "address": "Estate: Sheila Tomlinson \u2014 GU3 1DR",
-      "postcode": "GU3 1DR",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.211605,
-      "lng": -0.646356,
-      "dist_mi": 8.1,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-10"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5108478",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65300"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5108616",
       "address": "Estate: James Grant \u2014 GU10 4QT",
       "postcode": "GU10 4QT",
-      "price": 0,
+      "price": 415000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.198496,
       "lng": -0.820899,
       "dist_mi": 0.5,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-09"
+        "~\u00a3373k\u2013\u00a3461k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2031,6 +1323,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198496,-0.820899",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5108616",
@@ -2052,101 +1345,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5105106",
-      "address": "Estate: Carl Fraser \u2014 GU26 6LY",
-      "postcode": "GU26 6LY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.111681,
-      "lng": -0.753321,
-      "dist_mi": 6.9,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-08"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5105106",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43815/65261"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5102871",
-      "address": "Estate: Kim Blake \u2014 GU12 4LW",
-      "postcode": "GU12 4LW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.245739,
-      "lng": -0.756364,
-      "dist_mi": 4.6,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-08"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5102871",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65260"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5103829",
       "address": "Estate: John Farrer \u2014 GU52 6HU",
       "postcode": "GU52 6HU",
-      "price": 0,
+      "price": 396000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.264157,
       "lng": -0.836964,
       "dist_mi": 4.6,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-07"
+        "~\u00a3360k\u2013\u00a3505k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2154,6 +1365,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.264157,-0.836964",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103829",
@@ -2178,16 +1390,16 @@
       "id": "gz_5103656",
       "address": "Estate: Edward Gosling \u2014 GU52 6AR",
       "postcode": "GU52 6AR",
-      "price": 0,
+      "price": 575000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.268421,
       "lng": -0.828944,
       "dist_mi": 4.9,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-07"
+        "~\u00a3486k\u2013\u00a3638k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2195,6 +1407,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103656",
@@ -2219,16 +1432,16 @@
       "id": "gz_5103646",
       "address": "Estate: Shirley Gosling \u2014 GU52 6AR",
       "postcode": "GU52 6AR",
-      "price": 0,
+      "price": 575000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.268421,
       "lng": -0.828944,
       "dist_mi": 4.9,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-07"
+        "~\u00a3486k\u2013\u00a3638k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2236,6 +1449,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103646",
@@ -2260,16 +1474,16 @@
       "id": "gz_5093957",
       "address": "Estate: Anne Broughton \u2014 GU9 7QR",
       "postcode": "GU9 7QR",
-      "price": 0,
+      "price": 540000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.211735,
       "lng": -0.797239,
       "dist_mi": 1.8,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-02"
+        "~\u00a3400k\u2013\u00a3931k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2277,6 +1491,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.211735,-0.797239",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093957",
@@ -2298,142 +1513,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5091497",
-      "address": "Estate: Eileen Knight \u2014 GU10 5DB",
-      "postcode": "GU10 5DB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.237349,
-      "lng": -0.826883,
-      "dist_mi": 2.7,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-04-02"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5091497",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5099409",
-      "address": "Estate: Marie Norton \u2014 GU14 8QA",
-      "postcode": "GU14 8QA",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.300042,
-      "lng": -0.769658,
-      "dist_mi": 7.5,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-31"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5099409",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43705/65255"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5095567",
-      "address": "Estate: Therese Fry \u2014 GU9 8SW",
-      "postcode": "GU9 8SW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.19872,
-      "lng": -0.804004,
-      "dist_mi": 1.2,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-30"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5095567",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65243"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5094029",
       "address": "Estate: Anthony Booker \u2014 GU10 4PH",
       "postcode": "GU10 4PH",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.200301,
       "lng": -0.819822,
       "dist_mi": 0.6,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-27"
+        "~\u00a3430k\u2013\u00a3530k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2441,6 +1533,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200301,-0.819822",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5094029",
@@ -2465,16 +1558,16 @@
       "id": "gz_5093995",
       "address": "Estate: Thomas Heneghan \u2014 GU9 7AP",
       "postcode": "GU9 7AP",
-      "price": 0,
+      "price": 595000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.208469,
       "lng": -0.813873,
       "dist_mi": 1.1,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-27"
+        "~\u00a3435k\u2013\u00a3860k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2482,6 +1575,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.208469,-0.813873",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093995",
@@ -2506,16 +1600,16 @@
       "id": "gz_5091412",
       "address": "Estate: Julia Wiltshire \u2014 GU9 9BA",
       "postcode": "GU9 9BA",
-      "price": 0,
+      "price": 373500,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.237718,
       "lng": -0.78546,
       "dist_mi": 3.4,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-26"
+        "~\u00a3340k\u2013\u00a3390k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2523,6 +1617,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237718,-0.78546",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5091412",
@@ -2544,60 +1639,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5088435",
-      "address": "Estate: Margaret Bannister \u2014 GU7 2QA",
-      "postcode": "GU7 2QA",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.185208,
-      "lng": -0.641334,
-      "dist_mi": 8.3,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-24"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5088435",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65302"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5083204",
       "address": "Estate: Patricia Taylor \u2014 GU12 6HP",
       "postcode": "GU12 6HP",
-      "price": 0,
+      "price": 600000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.237984,
       "lng": -0.703814,
       "dist_mi": 6.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-18"
+        "~\u00a3499k\u2013\u00a3865k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2605,6 +1659,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237984,-0.703814",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5083204",
@@ -2626,224 +1681,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5081876",
-      "address": "Estate: Audrey Hawkins \u2014 GU10 5DB",
-      "postcode": "GU10 5DB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.237349,
-      "lng": -0.826883,
-      "dist_mi": 2.7,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-17"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5081876",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5077241",
-      "address": "Estate: Peter Hardman \u2014 GU10 2DG",
-      "postcode": "GU10 2DG",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.165544,
-      "lng": -0.753844,
-      "dist_mi": 4.1,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-12"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5077241",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43784/65261"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5072892",
-      "address": "Estate: George Barnett \u2014 GU26 6PT",
-      "postcode": "GU26 6PT",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.12231,
-      "lng": -0.748191,
-      "dist_mi": 6.4,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-12"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5072892",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65263"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5077115",
-      "address": "Estate: John Vilton \u2014 GU35 8ST",
-      "postcode": "GU35 8ST",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.135756,
-      "lng": -0.809518,
-      "dist_mi": 4.4,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-11"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5077115",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43801/65241"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5071016",
-      "address": "Estate: Ada Bartlett \u2014 GU10 4PY",
-      "postcode": "GU10 4PY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.198017,
-      "lng": -0.818965,
-      "dist_mi": 0.6,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-11"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5071016",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65237"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5075989",
       "address": "Estate: Anstice Batten \u2014 GU14 6QN",
       "postcode": "GU14 6QN",
-      "price": 0,
+      "price": 635000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.286132,
       "lng": -0.744347,
       "dist_mi": 7.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-10"
+        "~\u00a3580k\u2013\u00a3770k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2851,6 +1701,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.286132,-0.744347",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075989",
@@ -2875,16 +1726,16 @@
       "id": "gz_5075898",
       "address": "Estate: Susan Parratt \u2014 BH4 8HU",
       "postcode": "BH4 8HU",
-      "price": 0,
+      "price": 500000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 50.712163,
       "lng": -1.902014,
       "dist_mi": 57.4,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-10"
+        "~\u00a3248k\u2013\u00a3620k area est (7)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -2892,6 +1743,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=50.712163,-1.902014",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075898",
@@ -2913,101 +1765,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5074933",
-      "address": "Estate: CAROL PAGE \u2014 GU9 8LJ",
-      "postcode": "GU9 8LJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.206492,
-      "lng": -0.797218,
-      "dist_mi": 1.6,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-10"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5074933",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5074207",
-      "address": "Estate: Daniel Cottrell \u2014 GU8 6AY",
-      "postcode": "GU8 6AY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.195177,
-      "lng": -0.656555,
-      "dist_mi": 7.6,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-09"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5074207",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65296"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5072908",
       "address": "Estate: Patricia Watkinson \u2014 GU11 1TW",
       "postcode": "GU11 1TW",
-      "price": 0,
+      "price": 2000000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.248863,
       "lng": -0.755033,
       "dist_mi": 4.8,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-06"
+        "~\u00a31800k\u2013\u00a32650k Farnham-area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -3015,6 +1785,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.248863,-0.755033",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5072908",
@@ -3039,16 +1810,16 @@
       "id": "gz_5071406",
       "address": "Estate: Malcolm Morse \u2014 GU10 1AU",
       "postcode": "GU10 1AU",
-      "price": 0,
+      "price": 434000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.241155,
       "lng": -0.733022,
       "dist_mi": 5.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-05"
+        "~\u00a3355k\u2013\u00a3450k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -3056,6 +1827,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.241155,-0.733022",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5071406",
@@ -3077,60 +1849,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5071400",
-      "address": "Estate: Karen Lowther \u2014 GU12 5PS",
-      "postcode": "GU12 5PS",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.279867,
-      "lng": -0.72552,
-      "dist_mi": 7.3,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-03-05"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5071400",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43717/65271"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5065499",
       "address": "Estate: Richard Herridge \u2014 GU9 0HX",
       "postcode": "GU9 0HX",
-      "price": 0,
+      "price": 559000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.233313,
       "lng": -0.803896,
       "dist_mi": 2.7,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-02-26"
+        "~\u00a3450k\u2013\u00a3650k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -3138,6 +1869,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.233313,-0.803896",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5065499",
@@ -3159,60 +1891,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5065491",
-      "address": "Estate: Anthony Harrison \u2014 GU9 8BH",
-      "postcode": "GU9 8BH",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.211508,
-      "lng": -0.784031,
-      "dist_mi": 2.3,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-02-26"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5065491",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65250"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5062539",
       "address": "Estate: Robert Blackman \u2014 GU10 4AH",
       "postcode": "GU10 4AH",
-      "price": 0,
+      "price": 800000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.18129,
       "lng": -0.824156,
       "dist_mi": 1.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-02-26"
+        "~\u00a3665k\u2013\u00a3887k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -3220,6 +1911,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.18129,-0.824156",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5062539",
@@ -3244,16 +1936,16 @@
       "id": "gz_5058316",
       "address": "Estate: Malcolm Manners \u2014 GU14 7AT",
       "postcode": "GU14 7AT",
-      "price": 0,
+      "price": 640000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.290079,
       "lng": -0.749373,
       "dist_mi": 7.3,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-02-25"
+        "~\u00a3515k\u2013\u00a3696k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -3261,6 +1953,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.290079,-0.749373",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5058316",
@@ -3282,60 +1975,19 @@
       "days_on_market": 0
     },
     {
-      "id": "gz_5062476",
-      "address": "Estate: Brian Norton \u2014 GU14 8QA",
-      "postcode": "GU14 8QA",
-      "price": 0,
-      "beds": 0,
-      "property_type": "probate",
-      "lat": 51.300042,
-      "lng": -0.769658,
-      "dist_mi": 7.5,
-      "score": 68,
-      "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-02-23"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5062476",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43705/65255"
-      },
-      "first_seen": "2026-06-22",
-      "last_seen": "2026-06-22",
-      "days_on_market": 0
-    },
-    {
       "id": "gz_5062391",
       "address": "Estate: Richard Aston \u2014 GU10 4DZ",
       "postcode": "GU10 4DZ",
-      "price": 0,
+      "price": 740000,
       "beds": 0,
-      "property_type": "probate",
+      "property_type": "estate",
       "lat": 51.18384,
       "lng": -0.817567,
       "dist_mi": 1.2,
       "score": 68,
       "reasons": [
-        "Probate \u2014 possible estate sale",
-        "Gazette notice 2026-02-23"
+        "~\u00a3685k\u2013\u00a3799k area est (8)",
+        "Probate \u2014 estate sale"
       ],
       "flags": [
         "probate"
@@ -3343,6 +1995,7 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.18384,-0.817567",
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5062391",
