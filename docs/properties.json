@@ -1,7 +1,47 @@
 {
-  "generated_at": "2026-06-22T18:59:01.343350+00:00",
-  "count": 17,
+  "generated_at": "2026-06-22T19:17:05.346062+00:00",
+  "count": 18,
   "properties": [
+    {
+      "id": "ce_266_28",
+      "address": "Lot 28: FREEHOLD LAND COMPRISING VERGES, ROADS AND PATHWAYS Reading - Berkshire",
+      "postcode": "",
+      "price": 200,
+      "beds": 0,
+      "property_type": "land",
+      "lat": 51.4268,
+      "lng": -0.9388,
+      "dist_mi": 16.5,
+      "score": 68,
+      "reasons": [
+        "Auction \u2014 guide \u00a3200"
+      ],
+      "flags": [
+        "auction"
+      ],
+      "is_auction": true,
+      "low_comp": false,
+      "comps": [],
+      "source": {
+        "name": "Clive Emson",
+        "url": "https://www.cliveemson.co.uk/properties/266/28/",
+        "uprn": ""
+      },
+      "source_label": "AUCTION",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43631/65194"
+      },
+      "first_seen": "2026-06-22",
+      "last_seen": "2026-06-22",
+      "days_on_market": 0
+    },
     {
       "id": "bbd7f9b1",
       "address": "Beech Hill Road, Rowledge",
