@@ -15,7 +15,7 @@ days-on-market), but NO uprn, NO coordinates, NO description. So:
 """
 from __future__ import annotations
 import os, re, json, sqlite3, hashlib, time, math
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 
 # ===========================================================================
@@ -49,6 +49,10 @@ CLIVE_EMSON_URL = "https://www.cliveemson.co.uk/properties/"
 AUCTION_HOUSE_URL = "https://www.auctionhouse.co.uk/sussexandhampshire/auction/search-results"
 AUCTION_SKIP_TYPES = ("apartment", "flat", "maisonette", "garage", "commercial")
 AUCTION_RADIUS_MI = 20  # auction stock is rarer, so cast a wider net than the polygon
+PROBATE_ENABLED = True
+PROBATE_LOCATION = "Farnham"   # Gazette accepts a town or full postcode
+PROBATE_RADIUS_MI = 8          # probate is about your actual patch - keep it tight
+PROBATE_LOOKBACK_DAYS = 120    # estates can take months to reach the market
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
@@ -803,6 +807,92 @@ def fetch_auctionhouse_lots(conn):
     return out
 
 
+def _probate_name(title, content):
+    name = (title or "").strip()
+    if not name:
+        name = content[:60].strip()
+    name = re.sub(r"\s*\(?deceased\)?\.?\s*$", "", name, flags=re.I).strip(" .,")
+    return name or "Deceased estate"
+
+
+def fetch_probate_leads(conn):
+    """Deceased Estates notices from The Gazette near home - the legal way to
+    see an estate (often an empty house) before it reaches the market.
+    One location-filtered query; free, no key, Open Government Licence."""
+    if not PROBATE_ENABLED:
+        return []
+    import requests
+    since = (datetime.now(timezone.utc).date()
+             - timedelta(days=PROBATE_LOOKBACK_DAYS)).isoformat()
+    params = {"location-postcode-1": PROBATE_LOCATION,
+              "location-distance-1": PROBATE_RADIUS_MI,
+              "start-publish-date": since,
+              "results-page-size": 100, "sort-by": "latest-date"}
+    url = "https://www.thegazette.co.uk/wills-and-probate/notice/data.json"
+    try:
+        r = requests.get(url, params=params, headers={"User-Agent": _UA}, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+    except Exception as e:
+        print(f"   probate fetch failed: {e}")
+        return []
+
+    entries = data.get("entry") or []
+    if isinstance(entries, dict):
+        entries = [entries]
+
+    raw = []
+    for e in entries:
+        content = _strip_tags(e.get("content") or "")
+        pc = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", content)
+        if not pc:
+            continue
+        pid = (e.get("id") or "").rsplit("/", 1)[-1]
+        dod = re.search(r"(?:who )?died on\s+(?:the\s+)?"
+                        r"(\d{1,2}(?:st|nd|rd|th)?\s+\w+\s+\d{4})", content, re.I)
+        raw.append({"id": f"gz_{pid}",
+                    "name": _probate_name(e.get("title"), content),
+                    "postcode": pc.group(1).upper(),
+                    "dod": dod.group(1) if dod else "",
+                    "pub": (e.get("published") or "")[:10],
+                    "url": f"https://www.thegazette.co.uk/notice/{pid}"})
+    if not raw:
+        return []
+
+    cache = load_geocache(conn)
+    need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
+    fresh = geocode(need) if need else {}
+    save_geocache(conn, fresh)
+    coords = {**cache, **fresh}
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    out = []
+    for x in raw:
+        ll = coords.get(x["postcode"])
+        if not ll:
+            continue
+        lat, lng = ll
+        reasons = ["Probate \u2014 possible estate sale"]
+        if x["dod"]:
+            reasons.append(f"Died {x['dod']}")
+        reasons.append(f"Gazette notice {x['pub']}")
+        out.append({
+            "id": x["id"], "address": f"Estate: {x['name']} \u2014 {x['postcode']}",
+            "postcode": x["postcode"], "price": 0, "beds": 0,
+            "property_type": "probate", "lat": lat, "lng": lng,
+            "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
+            "score": 68, "reasons": reasons[:3], "flags": ["probate"],
+            "is_probate": True, "low_comp": False, "comps": [],
+            "source": {"name": "The Gazette", "url": x["url"], "uprn": ""},
+            "source_label": "PROBATE",
+            "enrichment": {"market": {}, "plot": {}, "equity": {}},
+            "media": {"photo_count": 0, "has_floorplan": False,
+                      "thumb_url": _aerial_thumb(lat, lng)},
+            "first_seen": today, "last_seen": today, "days_on_market": 0,
+        })
+    return out
+
+
 def _combine(*lists):
     seen = {}
     for lst in lists:
@@ -826,12 +916,15 @@ def main():
     auctions = fetch_auction_lots(conn)
     print(f"- {len(auctions)} auction lot(s) within {AUCTION_RADIUS_MI} mi of home")
 
+    probate = fetch_probate_leads(conn)
+    print(f"- {len(probate)} probate lead(s) within {PROBATE_RADIUS_MI} mi of {PROBATE_LOCATION}")
+
     rows = fetch_listings()
     print(f"- {len(rows)} listing(s) fetched")
     if not rows:
         print("  !! 0 listings - likely Homedata monthly quota exhausted or API error.")
         saved = recover_from_db(conn)
-        combined = _combine(saved, auctions)
+        combined = _combine(saved, auctions, probate)
         if combined:
             _publish(combined)
             print(f"  !! Republished {len(saved)} cached + {len(auctions)} auction lot(s).")
@@ -905,16 +998,16 @@ def main():
 
     if not props:
         saved = recover_from_db(conn)
-        combined = _combine(saved, auctions)
+        combined = _combine(saved, auctions, probate)
         if combined:
             _publish(combined)
             print(f"  !! 0 fresh after filtering - republished {len(saved)} cached + {len(auctions)} auction.")
         else:
             print("  !! 0 properties and no cache - leaving existing file untouched.")
         conn.close(); return
-    final = _combine(props, auctions)
+    final = _combine(props, auctions, probate)
     _publish(final)
-    print(f"- published {len(props)} listings + {len(auctions)} auction = {len(final)} total")
+    print(f"- published {len(props)} listings + {len(auctions)} auction + {len(probate)} probate = {len(final)} total")
     conn.close()
 
 
