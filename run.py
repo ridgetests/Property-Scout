@@ -44,6 +44,13 @@ AREA_POLYGON = [
     (51.120, -0.820), (51.128, -0.855), (51.165, -0.878), (51.198, -0.888),
 ]
 
+AUCTION_ENABLED = True
+CLIVE_EMSON_URL = "https://www.cliveemson.co.uk/properties/"
+AUCTION_HOUSE_URL = "https://www.auctionhouse.co.uk/sussexandhampshire/auction/search-results"
+AUCTION_SKIP_TYPES = ("apartment", "flat", "maisonette", "garage", "commercial")
+AUCTION_RADIUS_MI = 20  # auction stock is rarer, so cast a wider net than the polygon
+_UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
+
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
            "motivation": 20, "competition": 10, "location": 15}
 RENO_RATE_PER_M2 = {"poor": 1200, "dated": 900, "fair": 600}
@@ -505,6 +512,305 @@ def existing(conn, pid):
 # ===========================================================================
 # MAIN
 # ===========================================================================
+_WORD_NUM = {"ONE": 1, "TWO": 2, "THREE": 3, "FOUR": 4, "FIVE": 5,
+             "SIX": 6, "SEVEN": 7, "EIGHT": 8}
+
+
+def _strip_tags(t):
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", t)).strip()
+
+
+def _first_price(t):
+    m = re.search(r"\u00a3\s*([\d,]+)", t)
+    return int(m.group(1).replace(",", "")) if m else None
+
+
+def _infer_type_beds(t):
+    u = t.upper()
+    beds = 0
+    m = re.search(r"\b(ONE|TWO|THREE|FOUR|FIVE|SIX|SEVEN|EIGHT)[- ]BEDROOM", u)
+    if m:
+        beds = _WORD_NUM[m.group(1)]
+    dm = re.search(r"\b([1-9])\s*BED\b", u)
+    if dm:
+        beds = int(dm.group(1))
+    for kw, typ in [("BUNGALOW", "bungalow"), ("COTTAGE", "cottage"),
+                    ("SMALLHOLDING", "smallholding"), ("STABLES", "equestrian"),
+                    ("FARM", "farm"), ("WOODLAND", "land"), ("LAND", "land"),
+                    ("PLOT", "plot"), ("BARN", "barn"), ("DETACHED", "detached")]:
+        if kw in u:
+            return typ, beds
+    if "HOUSE" in u:
+        return "house", beds
+    if "FLAT" in u or "MAISONETTE" in u or "APARTMENT" in u:
+        return "flat", beds
+    return "auction lot", beds
+
+
+def _clean_title(t, lot):
+    t = re.sub(r"^\s*LOT\s+\d+\s*", "", t, flags=re.I).strip()
+    t = re.split(r"\s+(?:AVAILABLE AT|SOLD|POSTPONED|WITHDRAWN)", t, flags=re.I)[0].strip()
+    return f"Lot {lot}: {t[:80]}"
+
+
+def _auction_score(t):
+    u = t.upper()
+    s = 50
+    if any(k in u for k in ("LAND", "PLOT", "PLANNING", "ACRE", "WOODLAND", "BARN")):
+        s += 18
+    if any(k in u for k in ("IMPROVEMENT", "REFURBISH", "UPDATING", "REPAIR",
+                            "RENOVAT", "COMPLETION", "POTENTIAL", "MODERNIS")):
+        s += 14
+    if any(k in u for k in ("BUNGALOW", "COTTAGE", "DETACHED")):
+        s += 6
+    return min(s, 92)
+
+
+def _auction_reasons(t, price):
+    u = t.upper()
+    r = [f"Auction \u2014 guide \u00a3{price:,}" if price else "Auction lot"]
+    if "ACRE" in u or "WOODLAND" in u:
+        r.append("Land / acreage")
+    if "PLANNING" in u:
+        r.append("Planning angle")
+    if any(k in u for k in ("IMPROVEMENT", "REFURBISH", "UPDATING", "REPAIR",
+                            "RENOVAT", "COMPLETION", "MODERNIS")):
+        r.append("Needs work \u2014 value play")
+    return r[:3]
+
+
+def fetch_clive_emson():
+    """Clive Emson current auction: available lots within range of home.
+    Independent of Homedata - works even when that quota is spent."""
+    if not AUCTION_ENABLED:
+        return []
+    import requests
+    headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
+               "Accept-Language": "en-GB,en;q=0.9"}
+    try:
+        r = requests.get(CLIVE_EMSON_URL, headers=headers, timeout=30)
+        r.raise_for_status()
+        html = r.text
+    except Exception as e:
+        print(f"   auction fetch failed: {e}")
+        return []
+
+    coords = [(m.start(), float(m.group(1)), float(m.group(2)))
+              for m in re.finditer(r"maps\?q=(-?\d+\.\d+),\s*(-?\.?\d+\.?\d*)", html)]
+
+    lots = {}
+    for m in re.finditer(r"/properties/(\d+)/(\d+)/['\"][^>]*>(.*?)</a>", html, re.S):
+        auc, lot, inner = m.group(1), m.group(2), m.group(3)
+        if lot in lots:
+            continue
+        text = _strip_tags(inner)
+        if not text.upper().startswith("LOT"):
+            continue
+        prev = [c for c in coords if c[0] < m.start()]
+        latlng = (prev[-1][1], prev[-1][2]) if prev else None
+        lots[lot] = (auc, text, latlng)
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    out = []
+    for lot, (auc, text, latlng) in lots.items():
+        if latlng is None or "AVAILABLE" not in text.upper():
+            continue
+        lat, lng = latlng
+        if not (49.8 < lat < 53.0 and -6.5 < lng < 2.0):
+            continue
+        dist = _haversine_mi(HOME, (lat, lng))
+        if dist > AUCTION_RADIUS_MI:
+            continue
+        price = _first_price(text)
+        ptype, beds = _infer_type_beds(text)
+        out.append({
+            "id": f"ce_{auc}_{lot}", "address": _clean_title(text, lot),
+            "postcode": "", "price": price or 0, "beds": beds,
+            "property_type": ptype, "lat": lat, "lng": lng,
+            "dist_mi": round(dist, 1), "score": _auction_score(text),
+            "reasons": _auction_reasons(text, price), "flags": ["auction"],
+            "is_auction": True, "low_comp": False, "comps": [],
+            "source": {"name": "Clive Emson", "url":
+                       f"https://www.cliveemson.co.uk/properties/{auc}/{lot}/", "uprn": ""},
+            "source_label": "AUCTION",
+            "enrichment": {"market": {}, "plot": {}, "equity": {}},
+            "media": {"photo_count": 0, "has_floorplan": False,
+                      "thumb_url": _aerial_thumb(lat, lng)},
+            "first_seen": today, "last_seen": today, "days_on_market": 0,
+        })
+    out.sort(key=lambda x: -x["score"])
+    return out
+
+
+def fetch_auction_house(conn):
+    """Auction House Sussex & Hampshire: available house/land/bungalow lots,
+    geocoded by postcode (cached). Screens out flats/garages/commercial."""
+    if not AUCTION_ENABLED:
+        return []
+    import requests
+    headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
+               "Accept-Language": "en-GB,en;q=0.9"}
+    try:
+        r = requests.get(AUCTION_HOUSE_URL, headers=headers, timeout=30)
+        r.raise_for_status()
+        html = r.text
+    except Exception as e:
+        print(f"   auction-house fetch failed: {e}")
+        return []
+
+    pc_re = re.compile(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b")
+    raw = []
+    for m in re.finditer(r"href=\"(https://[^\"]*?(?:auction/lot/\d+|lot/redirect/\d+))\"[^>]*>(.*?)</a>",
+                         html, re.S):
+        url, inner = m.group(1), _strip_tags(m.group(2))
+        if "SOLD" in inner.upper():            # only currently available
+            continue
+        u = inner.upper()
+        if any(t.upper() in u for t in AUCTION_SKIP_TYPES):  # screen out flats etc
+            continue
+        pm = pc_re.search(inner)
+        if not pm:
+            continue
+        lid_m = re.search(r"(?:auction/lot/|lot/redirect/)(\d+)", url)
+        lid = lid_m.group(1) if lid_m else pm.group(1).replace(" ", "")
+        raw.append({"url": url, "text": inner, "postcode": pm.group(1).upper().strip(), "lid": lid})
+
+    if not raw:
+        return []
+
+    cache = load_geocache(conn)
+    need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
+    fresh = geocode(need) if need else {}
+    save_geocache(conn, fresh)
+    coords = {**cache, **fresh}
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    out, seen = [], set()
+    for x in raw:
+        if x["lid"] in seen:
+            continue
+        ll = coords.get(x["postcode"])
+        if not ll:
+            continue
+        lat, lng = ll
+        dist = _haversine_mi(HOME, (lat, lng))
+        if dist > AUCTION_RADIUS_MI:
+            continue
+        seen.add(x["lid"])
+        price = _first_price(x["text"])
+        ptype, beds = _infer_type_beds(x["text"])
+        addr = re.split(r"\(plus fees\)", x["text"])[-1].strip(" -")
+        addr = re.sub(r"^Lot\s*-?\s*", "", addr).strip()
+        out.append({
+            "id": f"ah_{x['lid']}", "address": addr or f"Auction lot {x['lid']}",
+            "postcode": x["postcode"], "price": price or 0, "beds": beds,
+            "property_type": ptype, "lat": lat, "lng": lng,
+            "dist_mi": round(dist, 1), "score": _auction_score(x["text"]),
+            "reasons": _auction_reasons(x["text"], price), "flags": ["auction"],
+            "is_auction": True, "low_comp": False, "comps": [],
+            "source": {"name": "Auction House", "url": x["url"], "uprn": ""},
+            "source_label": "AUCTION",
+            "enrichment": {"market": {}, "plot": {}, "equity": {}},
+            "media": {"photo_count": 0, "has_floorplan": False,
+                      "thumb_url": _aerial_thumb(lat, lng)},
+            "first_seen": today, "last_seen": today, "days_on_market": 0,
+        })
+    return out
+
+
+def fetch_auction_lots(conn):
+    """All auction sources, combined."""
+    lots = []
+    ce = fetch_clive_emson()
+    print(f"   Clive Emson: {len(ce)} lot(s) in range")
+    lots += ce
+    ah = fetch_auction_house(conn)
+    print(f"   Auction House: {len(ah)} lot(s) in range")
+    lots += ah
+    return lots
+
+
+def fetch_auctionhouse_lots(conn):
+    """Auction House (Sussex & Hampshire): available lots, postcode-geocoded.
+    Templated network site, so this parser extends to their other regions."""
+    if not AUCTION_ENABLED:
+        return []
+    import requests
+    headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
+               "Accept-Language": "en-GB,en;q=0.9"}
+    try:
+        r = requests.get(AUCTIONHOUSE_URL, headers=headers, timeout=30)
+        r.raise_for_status()
+        html = r.text
+    except Exception as e:
+        print(f"   auctionhouse fetch failed: {e}")
+        return []
+
+    raw = []
+    for m in re.finditer(r'<a[^>]+href="([^"]*/lot/(?:redirect/)?\d+)"[^>]*>(.*?)</a>',
+                         html, re.S):
+        url_l, inner = m.group(1), _strip_tags(m.group(2))
+        u = inner.upper()
+        if "PROPERTY FOR AUCTION" not in u or "GUIDE" not in u:
+            continue  # "GUIDE" marks an available lot; sold/withdrawn lack it
+        pc = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", inner)
+        if not pc:
+            continue
+        addr_m = re.search(r"-\s*(.+?)\s+Lot\b", inner)
+        bed_m = re.search(r"(\d+)\s*Bed", inner)
+        lot_m = re.search(r"(\d+)$", url_l)
+        raw.append({"url": url_l, "text": inner,
+                    "postcode": pc.group(1).upper().replace("  ", " "),
+                    "price": _first_price(inner) or 0,
+                    "beds": int(bed_m.group(1)) if bed_m else 0,
+                    "addr": addr_m.group(1).strip() if addr_m else pc.group(1),
+                    "lotid": lot_m.group(1) if lot_m else pc.group(1)})
+    if not raw:
+        return []
+
+    cache = load_geocache(conn)
+    need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
+    fresh = geocode(need) if need else {}
+    save_geocache(conn, fresh)
+    coords = {**cache, **fresh}
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    out = []
+    for x in raw:
+        ll = coords.get(x["postcode"])
+        if not ll:
+            continue
+        lat, lng = ll
+        dist = _haversine_mi(HOME, (lat, lng))
+        if dist > AUCTION_RADIUS_MI:
+            continue
+        ptype, _ = _infer_type_beds(x["text"])
+        out.append({
+            "id": f"ah_{x['lotid']}", "address": f"{x['addr']} (auction)",
+            "postcode": x["postcode"], "price": x["price"], "beds": x["beds"],
+            "property_type": ptype, "lat": lat, "lng": lng,
+            "dist_mi": round(dist, 1), "score": _auction_score(x["text"]),
+            "reasons": _auction_reasons(x["text"], x["price"]), "flags": ["auction"],
+            "is_auction": True, "low_comp": False, "comps": [],
+            "source": {"name": "Auction House", "url": x["url"], "uprn": ""},
+            "source_label": "AUCTION",
+            "enrichment": {"market": {}, "plot": {}, "equity": {}},
+            "media": {"photo_count": 0, "has_floorplan": False,
+                      "thumb_url": _aerial_thumb(lat, lng)},
+            "first_seen": today, "last_seen": today, "days_on_market": 0,
+        })
+    out.sort(key=lambda x: -x["score"])
+    return out
+
+
+def _combine(*lists):
+    seen = {}
+    for lst in lists:
+        for p in (lst or []):
+            seen[p["id"]] = p
+    return sorted(seen.values(), key=lambda x: -x.get("score", 0))
+
+
 def main():
     print("PropertyScout run starting" + ("  [MOCK]" if USE_MOCK else "  [LIVE]"))
     conn = db_connect()
@@ -516,14 +822,19 @@ def main():
     conn.commit()
     if conn.total_changes - purged:
         print(f"- purged {conn.total_changes - purged} stale sample record(s)")
+
+    auctions = fetch_auction_lots(conn)
+    print(f"- {len(auctions)} auction lot(s) within {AUCTION_RADIUS_MI} mi of home")
+
     rows = fetch_listings()
     print(f"- {len(rows)} listing(s) fetched")
     if not rows:
         print("  !! 0 listings - likely Homedata monthly quota exhausted or API error.")
         saved = recover_from_db(conn)
-        if saved:
-            _publish(saved)
-            print(f"  !! Republished {len(saved)} cached properties from last good run.")
+        combined = _combine(saved, auctions)
+        if combined:
+            _publish(combined)
+            print(f"  !! Republished {len(saved)} cached + {len(auctions)} auction lot(s).")
         else:
             print("  !! No cached data to fall back to; leaving existing file untouched.")
         conn.close(); return
@@ -594,14 +905,16 @@ def main():
 
     if not props:
         saved = recover_from_db(conn)
-        if saved:
-            _publish(saved)
-            print(f"  !! 0 fresh after filtering - republished {len(saved)} cached instead.")
+        combined = _combine(saved, auctions)
+        if combined:
+            _publish(combined)
+            print(f"  !! 0 fresh after filtering - republished {len(saved)} cached + {len(auctions)} auction.")
         else:
             print("  !! 0 properties and no cache - leaving existing file untouched.")
         conn.close(); return
-    _publish(props)
-    print(f"- published {len(props)} properties -> {OUT_PATH}")
+    final = _combine(props, auctions)
+    _publish(final)
+    print(f"- published {len(props)} listings + {len(auctions)} auction = {len(final)} total")
     conn.close()
 
 
