@@ -252,6 +252,7 @@ function openDrawer(id){
       <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">★ ${saved?'Saved':'Save'}</button>
       <button onclick="share('${id}')">⌯ Share</button>
       <button onclick="viewListing('${id}')">↗ Find listing</button>
+      ${p.streetview_url?`<button onclick="window.open('${p.streetview_url}','_blank')">⌖ Street View</button>`:''}
     </div>
     <button class="dismisslink" onclick="dismiss('${id}')">Not for me — hide this</button>`;
   document.getElementById('ov').classList.add('open');
