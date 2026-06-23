@@ -1029,7 +1029,7 @@ def fetch_probate_leads(conn):
         out.append({
             "id": x["id"], "address": f"Estate: {x['name']} \u2014 {x['postcode']}",
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
-            "property_type": ctx.get("subject_type") or "estate", "lat": lat, "lng": lng,
+            "property_type": ctx.get("subject_type") or "property", "lat": lat, "lng": lng,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
             "score": 68, "reasons": reasons[:3], "flags": ["probate"],
             "is_probate": True, "low_comp": False, "comps": [],
