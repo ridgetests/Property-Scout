@@ -148,6 +148,7 @@ let shortlist = JSON.parse(localStorage.getItem('ps_shortlist')||'[]');
 let dismissed = new Set(JSON.parse(localStorage.getItem('ps_dismissed')||'[]'));
 
 const sc = s => s>=50?'var(--g)':s>=35?'var(--a)':'var(--gr)';
+function hd(p){const t=(p.property_type||'property').replace(/_/g,' ');return p.beds?`${p.beds} bed ${t}`:(t.charAt(0).toUpperCase()+t.slice(1));}
 const k = n => '£'+Math.round(n/1000)+'k';
 
 async function load(){
@@ -215,7 +216,7 @@ function card(p){
   return `<div class="card ${selected===p.id?'sel':''}" onclick="openDrawer('${p.id}')">
     <div class="ph">${badge}${thumb}</div>
     <div class="body">
-      <div class="ctop"><div class="addr">${p.beds} bed ${p.property_type.replace('_',' ')}<small>${p.address}</small></div>
+      <div class="ctop"><div class="addr">${hd(p)}<small>${p.address}</small></div>
         <div class="sc" style="color:${sc(p.score)}">${p.score}</div></div>
       <div class="sub">${k(p.price)} · ${days}${p.dist_mi!=null?' · '+p.dist_mi+' mi':''}</div>
       ${(p.reasons&&p.reasons.length)?`<div class="why">${p.reasons.join(' · ')}</div>`:''}
@@ -240,7 +241,7 @@ function openDrawer(id){
               + (p.low_comp?'<span class="tag" style="background:var(--eq-bg);color:var(--eq-ink)">Low competition</span>':'');
   document.getElementById('dc').innerHTML = `
     <div class="dh"><h2>${p.address}</h2>
-      <div class="m">${'£'+p.price.toLocaleString()} · ${p.beds} bed ${p.property_type.replace('_',' ')} · ${((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0)>0?((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market)+' days on market':'just listed'}</div>
+      <div class="m">${'£'+p.price.toLocaleString()} · ${hd(p)} · ${((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0)>0?((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market)+' days on market':'just listed'}</div>
       <div class="s">${(p.source&&p.source.portal)||''} · ${p.postcode||''}</div></div>
     ${eq.equity_gain!=null?`<div class="eqbox"><div class="l">Est. equity gain after works</div>
       <div class="n">~£${eq.equity_gain.toLocaleString()}</div>
@@ -280,7 +281,7 @@ function share(id){
   const p = DATA.find(x=>x.id==id), eq=(p.enrichment&&p.enrichment.equity)||{};
   const txt = `🏠 ${p.address} · £${p.price.toLocaleString()}\n`
     + `Score ${p.score}/100${eq.equity_gain!=null?' · ~'+k(eq.equity_gain)+' equity gain':''}\n`
-    + `${p.beds} bed ${p.property_type.replace('_',' ')} · ${p.days_on_market} days\n`
+    + `${hd(p)} · ${p.days_on_market} days\n`
     + ((p.source&&p.source.url)?p.source.url+'\n':'') + '\nVia PropertyScout';
   const wa = 'https://wa.me/?text='+encodeURIComponent(txt);
   window.open(wa,'_blank'); toast('Opening WhatsApp…');
