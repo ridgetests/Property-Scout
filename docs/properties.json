@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T13:39:42.764164+00:00",
+  "generated_at": "2026-06-26T13:35:24.585831+00:00",
   "count": 65,
   "properties": [
     {
@@ -38,8 +38,50 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43631/65194"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
+      "days_on_market": 0
+    },
+    {
+      "id": "gz_5163010",
+      "address": "Estate: Maurice Sturt \u2014 GU26 6DZ",
+      "postcode": "GU26 6DZ",
+      "price": 735000,
+      "beds": 0,
+      "property_type": "property",
+      "lat": 51.112951,
+      "lng": -0.770445,
+      "dist_mi": 6.5,
+      "score": 68,
+      "reasons": [
+        "~\u00a3420k\u2013\u00a3840k area est (8)",
+        "Probate \u2014 estate sale"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.112951,-0.770445",
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5163010",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43814/65255"
+      },
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -80,8 +122,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -122,8 +164,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43714/65232"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -164,8 +206,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -206,8 +248,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65256"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -248,8 +290,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43712/65271"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -290,8 +332,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43701/65273"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -332,8 +374,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43701/65273"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -374,8 +416,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43706/65254"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -416,8 +458,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -458,8 +500,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43712/65271"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -500,8 +542,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43714/65227"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -542,8 +584,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43717/65223"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -584,8 +626,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43729/65231"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -600,7 +642,7 @@
       "dist_mi": 4.4,
       "score": 68,
       "reasons": [
-        "~\u00a31800k\u2013\u00a32650k Farnham-area est (8)",
+        "~\u00a31650k\u2013\u00a32650k Farnham-area est (8)",
         "Probate \u2014 estate sale"
       ],
       "flags": [
@@ -626,8 +668,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43743/65263"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -642,7 +684,7 @@
       "dist_mi": 3.9,
       "score": 68,
       "reasons": [
-        "~\u00a3372k\u2013\u00a3390k area est (8)",
+        "~\u00a3375k\u2013\u00a3390k area est (8)",
         "Probate \u2014 estate sale"
       ],
       "flags": [
@@ -668,8 +710,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43732/65228"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -710,8 +752,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65271"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -752,8 +794,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43699/65271"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -794,8 +836,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43725/65230"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -836,8 +878,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65249"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -878,8 +920,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43731/65188"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -920,8 +962,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43731/65188"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -962,8 +1004,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65254"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1004,8 +1046,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43759/65245"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1046,8 +1088,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65264"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1088,8 +1130,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43769/65215"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1130,8 +1172,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65314"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1172,8 +1214,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65314"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1214,8 +1256,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1256,8 +1298,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65250"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1298,8 +1340,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43845/65408"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1340,8 +1382,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43709/65270"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1382,8 +1424,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1424,8 +1466,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43726/65231"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1466,8 +1508,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43724/65234"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1508,8 +1550,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43724/65234"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1550,8 +1592,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65245"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1592,8 +1634,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65237"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1634,8 +1676,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43759/65239"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1676,8 +1718,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65250"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1718,8 +1760,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65279"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1760,8 +1802,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43713/65264"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1802,8 +1844,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/44045/64843"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1818,7 +1860,7 @@
       "dist_mi": 4.8,
       "score": 68,
       "reasons": [
-        "~\u00a31800k\u2013\u00a32650k Farnham-area est (8)",
+        "~\u00a31650k\u2013\u00a32650k Farnham-area est (8)",
         "Probate \u2014 estate sale"
       ],
       "flags": [
@@ -1844,8 +1886,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43735/65261"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1886,8 +1928,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43740/65269"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1928,8 +1970,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65243"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
@@ -1970,50 +2012,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43774/65235"
       },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5058316",
-      "address": "Estate: Malcolm Manners \u2014 GU14 7AT",
-      "postcode": "GU14 7AT",
-      "price": 640000,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.290079,
-      "lng": -0.749373,
-      "dist_mi": 7.3,
-      "score": 68,
-      "reasons": [
-        "~\u00a3515k\u2013\u00a3696k area est (8)",
-        "Probate \u2014 estate sale"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.290079,-0.749373",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5058316",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43711/65263"
-      },
-      "first_seen": "2026-06-25",
-      "last_seen": "2026-06-25",
+      "first_seen": "2026-06-26",
+      "last_seen": "2026-06-26",
       "days_on_market": 0
     },
     {
