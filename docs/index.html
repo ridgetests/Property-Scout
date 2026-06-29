@@ -55,7 +55,11 @@
   .overlay.open{opacity:1;pointer-events:all}
   .drawer{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-radius:16px 16px 0 0;z-index:1001;transform:translateY(100%);transition:transform .26s ease;max-height:90vh;overflow-y:auto;padding:0 16px 28px;z-index:1001}
   .drawer.open{transform:translateY(0)}
-  .handle{width:36px;height:4px;border-radius:2px;background:var(--line2);margin:10px auto 4px}
+  .handle{width:44px;height:5px;border-radius:3px;background:var(--line2);margin:0 auto;cursor:pointer}
+  .dhandle{position:sticky;top:0;z-index:5;background:var(--surface);padding:10px 0 6px;margin:0 -16px;display:flex;justify-content:center;cursor:pointer}
+  .dclose{position:absolute;top:4px;right:8px;width:32px;height:32px;border-radius:50%;border:none;background:rgba(130,130,138,.16);color:var(--muted);font-size:15px;line-height:32px;text-align:center;cursor:pointer;z-index:6;padding:0}
+  .aerpin{position:absolute;top:50%;left:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 2px #fff,0 0 0 5px rgba(255,59,48,.4);pointer-events:none;z-index:4}
+  .aerpin::after{content:'This property';position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10px;font-weight:600;color:#fff;background:rgba(0,0,0,.6);padding:2px 6px;border-radius:5px}
   .dh{padding:12px 0 10px;border-bottom:.5px solid var(--line)}
   .dh h2{font-size:16px;font-weight:600}
   .dh .m{font-size:13px;color:var(--muted);margin-top:3px}
@@ -136,7 +140,7 @@
 <div class="list" id="list"></div>
 
 <div class="overlay" id="ov" onclick="closeDrawer()"></div>
-<div class="drawer" id="drawer"><div class="handle"></div><div id="dc"></div></div>
+<div class="drawer" id="drawer"><div class="dhandle" onclick="closeDrawer()"><div class="handle"></div><button class="dclose" onclick="event.stopPropagation();closeDrawer()" aria-label="Back to list">✕</button></div><div id="dc"></div></div>
 
 <div class="panel" id="panel">
   <div class="ph-head"><button onclick="closePanel()">←</button><h2>Shortlist</h2></div>
@@ -255,6 +259,7 @@ function keyFacts(p){
     interior=`${p.floor_area_m2} m² (~${Math.round(p.floor_area_m2*10.76)} sq ft)${cmp}`;
   }
   rows.push(`<div class="kfrow"><span>Interior</span><b>${interior}</b></div>`);
+  if(p.owner_note) rows.push(`<div class="kfrow"><span>Status</span><b>${p.owner_note}</b></div>`);
   rows.push(`<div class="kfrow"><span>Exterior / plot</span><b>See aerial above${p.streetview_url?' · Street View':''}<span class="cmp">Pull LR title (£3) to confirm plot</span></b></div>`);
   return `<div class="kf">${rows.join('')}</div>`;
 }
@@ -270,7 +275,7 @@ function setupOverlay(p){
     if(HOME_PLOT) poly.setAttribute('points',HOME_PLOT.map(c=>`${(GW/2+c[0]).toFixed(2)},${(GW/2+c[1]).toFixed(2)}`).join(' '));
     apply();}
   function apply(){g.setAttribute('transform',`translate(${tx} ${ty}) rotate(${rdeg} ${GW/2} ${GW/2})`);}
-  img.onerror=()=>{img.onerror=null;GW=tileGW(p.lat,17);img.src=tileURL(p.lat,p.lng,17);applyView();};
+  img.onerror=()=>{img.onerror=null;GW=tileGW(p.lat,17);img.src=tileURL(p.lat,p.lng,17);const pin=document.getElementById('aerpin');if(pin)pin.style.display='none';applyView();};
   img.src=aerialExportURL(p.lat,p.lng,120); applyView();
   const btn=document.getElementById('ovbtn'),ctl=document.getElementById('aerctl'),rot=document.getElementById('aovrot');
   if(!btn||!HOME_PLOT) return;
@@ -307,6 +312,7 @@ function openDrawer(id){
     <div class="aerialbox" id="abox">
       <img class="aerial" id="aimg" alt="aerial view">
       <svg class="aov" id="aov" preserveAspectRatio="xMidYMid meet" style="display:none"><g id="aovg"><polygon id="aovp"/></g></svg>
+      <div class="aerpin" id="aerpin"></div>
     </div>
     ${HOME_PLOT?`<button class="ovbtn" id="ovbtn">⊕ Overlay my plot to scale</button>
     <div class="aerctl" id="aerctl" style="display:none"><input type="range" min="0" max="359" value="0" id="aovrot"><span class="aerhint">Your plot (~${HOME_PLOT_M2} m²) · drag &amp; rotate</span></div>`:''}
