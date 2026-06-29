@@ -57,9 +57,7 @@
   .drawer.open{transform:translateY(0)}
   .handle{width:44px;height:5px;border-radius:3px;background:var(--line2);margin:0 auto;cursor:pointer}
   .dhandle{position:sticky;top:0;z-index:5;background:var(--surface);padding:10px 0 6px;margin:0 -16px;display:flex;justify-content:center;cursor:pointer}
-  .dclose{position:absolute;top:4px;right:8px;width:32px;height:32px;border-radius:50%;border:none;background:rgba(130,130,138,.16);color:var(--muted);font-size:15px;line-height:32px;text-align:center;cursor:pointer;z-index:6;padding:0}
-  .aerpin{position:absolute;top:50%;left:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 2px #fff,0 0 0 5px rgba(255,59,48,.4);pointer-events:none;z-index:4}
-  .aerpin::after{content:'This property';position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10px;font-weight:600;color:#fff;background:rgba(0,0,0,.6);padding:2px 6px;border-radius:5px}
+  .dback{position:absolute;left:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#0a84ff;font-size:14px;font-weight:600;cursor:pointer;z-index:6;padding:4px 6px}
   .dh{padding:12px 0 10px;border-bottom:.5px solid var(--line)}
   .dh h2{font-size:16px;font-weight:600}
   .dh .m{font-size:13px;color:var(--muted);margin-top:3px}
@@ -106,6 +104,7 @@
   .kfrow b .cmp{display:block;font-weight:500;font-size:11px;color:var(--muted);margin-top:1px}
   .aerial{width:100%;height:150px;object-fit:cover;border-radius:12px;margin:4px 0 2px}
   .aerialbox{position:relative;width:100%;margin:4px 0 2px;line-height:0}
+  .aersvg{display:block;width:100%;aspect-ratio:1;border-radius:12px;background:#e3e3e3}
   .aerialbox .aerial{height:auto;object-fit:unset;margin:0;display:block}
   .aov{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
   .aov polygon{fill:rgba(255,205,0,.30);stroke:#ffcd00;stroke-width:2;vector-effect:non-scaling-stroke}
@@ -125,6 +124,9 @@
   <label>Min score</label>
   <input type="range" id="ms" min="0" max="100" value="30" oninput="render()"/>
   <span class="fv" id="mv">50</span>
+  <label>Within</label>
+  <input type="range" id="md" min="1" max="25" value="25" oninput="render()"/>
+  <span class="fv" id="dv">Any</span>
   <button class="pill on" id="p-all" onclick="setFilter('all')">All</button>
   <button class="pill" id="p-low" onclick="setFilter('low')">Low comp</button>
   <select id="sort" class="sortsel" onchange="render()">
@@ -140,7 +142,7 @@
 <div class="list" id="list"></div>
 
 <div class="overlay" id="ov" onclick="closeDrawer()"></div>
-<div class="drawer" id="drawer"><div class="dhandle" onclick="closeDrawer()"><div class="handle"></div><button class="dclose" onclick="event.stopPropagation();closeDrawer()" aria-label="Back to list">✕</button></div><div id="dc"></div></div>
+<div class="drawer" id="drawer"><div class="dhandle" onclick="closeDrawer()"><div class="handle"></div><button class="dback" onclick="event.stopPropagation();closeDrawer()">‹ Back to list</button></div><div id="dc"></div></div>
 
 <div class="panel" id="panel">
   <div class="ph-head"><button onclick="closePanel()">←</button><h2>Shortlist</h2></div>
@@ -189,8 +191,9 @@ function initMap(){
 function dom_(p){ return (p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||0; }
 function visible(){
   const min = +document.getElementById('ms').value;
+  const maxd = +(document.getElementById('md')||{}).value || 25;
   const so = (document.getElementById('sort')||{}).value || 'score';
-  const arr = DATA.filter(p => !dismissed.has(p.id) && p.score>=min && (filter!=='low'||p.low_comp));
+  const arr = DATA.filter(p => !dismissed.has(p.id) && p.score>=min && (filter!=='low'||p.low_comp) && (maxd>=25 || (p.dist_mi!=null && p.dist_mi<=maxd)));
   const cmp = {
     score:(a,b)=>b.score-a.score,
     dist:(a,b)=>(a.dist_mi==null?99:a.dist_mi)-(b.dist_mi==null?99:b.dist_mi),
@@ -202,6 +205,7 @@ function visible(){
 
 function render(){
   document.getElementById('mv').textContent = document.getElementById('ms').value;
+  {const mdv=+(document.getElementById('md')||{}).value||25; const de=document.getElementById('dv'); if(de) de.textContent = mdv>=25?'Any':mdv+' mi';}
   const hb=document.getElementById('hid');
   if(hb){ if(dismissed.size){hb.style.display='inline-block'; hb.textContent='↺ hidden '+dismissed.size;} else {hb.style.display='none';} }
   const v = visible(), L_ = document.getElementById('list');
@@ -263,30 +267,35 @@ function keyFacts(p){
   rows.push(`<div class="kfrow"><span>Exterior / plot</span><b>See aerial above${p.streetview_url?' · Street View':''}<span class="cmp">Pull LR title (£3) to confirm plot</span></b></div>`);
   return `<div class="kf">${rows.join('')}</div>`;
 }
-function webMerc(lat,lng){const x=lng*20037508.34/180;const y=Math.log(Math.tan((90+lat)*Math.PI/360))/(Math.PI/180)*20037508.34/180;return [x,y];}
-function aerialExportURL(lat,lng,gw){const m=webMerc(lat,lng),h=gw/2;return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${m[0]-h},${m[1]-h},${m[0]+h},${m[1]+h}&bboxSR=3857&imageSR=3857&size=600,600&format=png&f=image`;}
-function tileURL(lat,lng,z){const n=2**z,xt=Math.floor((lng+180)/360*n),yr=lat*Math.PI/180,yt=Math.floor((1-Math.asinh(Math.tan(yr))/Math.PI)/2*n);return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${yt}/${xt}`;}
+function tileXY(lat,lng,z){const n=2**z,xf=(lng+180)/360*n,yr=lat*Math.PI/180,yf=(1-Math.asinh(Math.tan(yr))/Math.PI)/2*n;return {x:Math.floor(xf),y:Math.floor(yf),fx:xf-Math.floor(xf),fy:yf-Math.floor(yf)};}
+function tileImg(z,x,y){return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`;}
 function tileGW(lat,z){return 256*156543.03392*Math.cos(lat*Math.PI/180)/(2**z);}
 function setupOverlay(p){
-  const img=document.getElementById('aimg'); if(!img||p.lat==null) return;
-  const svg=document.getElementById('aov'),g=document.getElementById('aovg'),poly=document.getElementById('aovp');
-  let GW=120,tx=0,ty=0,rdeg=0;
-  function applyView(){svg.setAttribute('viewBox',`0 0 ${GW} ${GW}`);
-    if(HOME_PLOT) poly.setAttribute('points',HOME_PLOT.map(c=>`${(GW/2+c[0]).toFixed(2)},${(GW/2+c[1]).toFixed(2)}`).join(' '));
-    apply();}
-  function apply(){g.setAttribute('transform',`translate(${tx} ${ty}) rotate(${rdeg} ${GW/2} ${GW/2})`);}
-  img.onerror=()=>{img.onerror=null;GW=tileGW(p.lat,17);img.src=tileURL(p.lat,p.lng,17);const pin=document.getElementById('aerpin');if(pin)pin.style.display='none';applyView();};
-  img.src=aerialExportURL(p.lat,p.lng,120); applyView();
-  const btn=document.getElementById('ovbtn'),ctl=document.getElementById('aerctl'),rot=document.getElementById('aovrot');
+  const svg=document.getElementById('aov'); if(!svg||p.lat==null) return;
+  const z=18, GW=tileGW(p.lat,z), t=tileXY(p.lat,p.lng,z);
+  svg.setAttribute('viewBox',`0 0 ${GW} ${GW}`);
+  let parts='';
+  for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+    const sx=(GW/2 - t.fx*GW)+dx*GW, sy=(GW/2 - t.fy*GW)+dy*GW, u=tileImg(z,t.x+dx,t.y+dy);
+    parts+=`<image href="${u}" xlink:href="${u}" x="${sx}" y="${sy}" width="${GW}" height="${GW}" />`;
+  }
+  const ppts = HOME_PLOT?HOME_PLOT.map(c=>`${(GW/2+c[0]).toFixed(2)},${(GW/2+c[1]).toFixed(2)}`).join(' '):'';
+  parts+=`<g id="aovg" style="display:none"><polygon id="aovp" points="${ppts}" fill="rgba(255,205,0,.30)" stroke="#ffcd00" stroke-width="2" vector-effect="non-scaling-stroke"/></g>`;
+  parts+=`<text x="${GW/2}" y="${(GW/2-GW*0.05).toFixed(2)}" text-anchor="middle" font-size="${(GW*0.035).toFixed(2)}" fill="#fff" stroke="#000" stroke-width="${(GW*0.006).toFixed(2)}" paint-order="stroke" font-weight="700">This property</text>`;
+  parts+=`<circle cx="${GW/2}" cy="${GW/2}" r="${(GW*0.013).toFixed(2)}" fill="#ff3b30" stroke="#fff" stroke-width="${(GW*0.006).toFixed(2)}"/>`;
+  svg.innerHTML = parts;
+  const g=document.getElementById('aovg'),btn=document.getElementById('ovbtn'),ctl=document.getElementById('aerctl'),rot=document.getElementById('aovrot');
   if(!btn||!HOME_PLOT) return;
-  let on=false; tx=0;ty=0;rdeg=0; if(rot)rot.value=0;
-  btn.onclick=()=>{on=!on;svg.style.display=on?'block':'none';ctl.style.display=on?'flex':'none';btn.textContent=on?'⊖ Hide my plot':'⊕ Overlay my plot to scale';};
+  let on=false,tx=0,ty=0,rdeg=0; if(rot)rot.value=0;
+  const apply=()=>g.setAttribute('transform',`translate(${tx} ${ty}) rotate(${rdeg} ${GW/2} ${GW/2})`);
+  btn.onclick=()=>{on=!on;g.style.display=on?'block':'none';ctl.style.display=on?'flex':'none';svg.style.touchAction=on?'none':'';btn.textContent=on?'⊖ Hide my plot':'⊕ Overlay my plot to scale';};
   if(rot) rot.oninput=()=>{rdeg=+rot.value;apply();};
   let drag=false,sx,sy;
   const toU=d=>{const r=svg.getBoundingClientRect();return d*(GW/r.width);};
-  svg.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;sy=e.clientY;try{svg.setPointerCapture(e.pointerId);}catch(_){}});
+  svg.addEventListener('pointerdown',e=>{if(!on)return;drag=true;sx=e.clientX;sy=e.clientY;try{svg.setPointerCapture(e.pointerId);}catch(_){}});
   svg.addEventListener('pointermove',e=>{if(!drag)return;tx+=toU(e.clientX-sx);ty+=toU(e.clientY-sy);sx=e.clientX;sy=e.clientY;apply();});
   svg.addEventListener('pointerup',()=>{drag=false;});
+  apply();
 }
 function openDrawer(id){
   const p = DATA.find(x=>x.id==id); if(!p) return;
@@ -310,9 +319,7 @@ function openDrawer(id){
       <div class="n">~£${eq.equity_gain.toLocaleString()}</div>
       <div class="b">Renovated comp ~£${(eq.renovated_comp||0).toLocaleString()} − asking £${p.price.toLocaleString()} − works ~£${(eq.reno_cost_est||0).toLocaleString()}</div></div>`:''}
     <div class="aerialbox" id="abox">
-      <img class="aerial" id="aimg" alt="aerial view">
-      <svg class="aov" id="aov" preserveAspectRatio="xMidYMid meet" style="display:none"><g id="aovg"><polygon id="aovp"/></g></svg>
-      <div class="aerpin" id="aerpin"></div>
+      <svg class="aersvg" id="aov" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"></svg>
     </div>
     ${HOME_PLOT?`<button class="ovbtn" id="ovbtn">⊕ Overlay my plot to scale</button>
     <div class="aerctl" id="aerctl" style="display:none"><input type="range" min="0" max="359" value="0" id="aovrot"><span class="aerhint">Your plot (~${HOME_PLOT_M2} m²) · drag &amp; rotate</span></div>`:''}
