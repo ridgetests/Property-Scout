@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-28T12:00:53.330751+00:00",
+  "generated_at": "2026-06-29T16:27:52.221377+00:00",
   "count": 63,
   "properties": [
     {
@@ -38,8 +38,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43631/65194"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -54,8 +54,8 @@
       "dist_mi": 6.5,
       "score": 68,
       "reasons": [
-        "~\u00a3420k\u2013\u00a3840k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3420k\u2013\u00a3840k area est"
       ],
       "flags": [
         "probate"
@@ -64,6 +64,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.112951,-0.770445",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5163010",
@@ -80,8 +81,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43814/65255"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -96,8 +97,8 @@
       "dist_mi": 9.5,
       "score": 68,
       "reasons": [
-        "~\u00a3475k\u2013\u00a3630k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3475k\u2013\u00a3630k area est"
       ],
       "flags": [
         "probate"
@@ -106,6 +107,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200964,-0.612343",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5161424",
@@ -122,8 +124,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -138,8 +140,8 @@
       "dist_mi": 6.1,
       "score": 68,
       "reasons": [
-        "~\u00a3473k\u2013\u00a3845k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3473k\u2013\u00a3845k area est"
       ],
       "flags": [
         "probate"
@@ -148,6 +150,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285685,-0.834285",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5152464",
@@ -164,8 +167,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43714/65232"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -180,8 +183,8 @@
       "dist_mi": 6.1,
       "score": 68,
       "reasons": [
-        "~\u00a3169k\u2013\u00a3655k area est (6)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3169k\u2013\u00a3655k area est"
       ],
       "flags": [
         "probate"
@@ -190,6 +193,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.123814,-0.757739",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145468",
@@ -206,8 +210,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -222,8 +226,8 @@
       "dist_mi": 4.1,
       "score": 68,
       "reasons": [
-        "~\u00a3530k\u2013\u00a32100k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3530k\u2013\u00a32100k area est"
       ],
       "flags": [
         "probate"
@@ -232,6 +236,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242005,-0.768012",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5150245",
@@ -248,8 +253,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65256"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -264,8 +269,8 @@
       "dist_mi": 7.7,
       "score": 68,
       "reasons": [
-        "~\u00a3575k\u2013\u00a3731k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3575k\u2013\u00a3731k area est"
       ],
       "flags": [
         "probate"
@@ -274,6 +279,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5148761",
@@ -290,8 +296,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43712/65271"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -306,8 +312,8 @@
       "dist_mi": 9.0,
       "score": 68,
       "reasons": [
-        "~\u00a3240k\u2013\u00a3805k area est (3)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3240k\u2013\u00a3805k area est"
       ],
       "flags": [
         "probate"
@@ -316,6 +322,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146432",
@@ -332,8 +339,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43701/65273"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -348,8 +355,8 @@
       "dist_mi": 9.0,
       "score": 68,
       "reasons": [
-        "~\u00a3240k\u2013\u00a3805k area est (3)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3240k\u2013\u00a3805k area est"
       ],
       "flags": [
         "probate"
@@ -358,6 +365,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146913",
@@ -374,8 +382,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43701/65273"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -390,8 +398,8 @@
       "dist_mi": 7.4,
       "score": 68,
       "reasons": [
-        "~\u00a3350k\u2013\u00a3490k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3350k\u2013\u00a3490k area est"
       ],
       "flags": [
         "probate"
@@ -400,6 +408,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.299233,-0.773954",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145764",
@@ -416,8 +425,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43706/65254"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -432,8 +441,8 @@
       "dist_mi": 9.6,
       "score": 68,
       "reasons": [
-        "~\u00a3305k\u2013\u00a3482k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3305k\u2013\u00a3482k area est"
       ],
       "flags": [
         "probate"
@@ -442,6 +451,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.185207,-0.612201",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145201",
@@ -458,8 +468,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -474,8 +484,8 @@
       "dist_mi": 7.7,
       "score": 68,
       "reasons": [
-        "~\u00a3575k\u2013\u00a3731k area est (8)",
-        "Probate \u2014 estate sale"
+        "Est. on market Jul 2026\u2013Dec 2026",
+        "~\u00a3575k\u2013\u00a3731k area est"
       ],
       "flags": [
         "probate"
@@ -484,6 +494,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142482",
@@ -500,8 +511,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43712/65271"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -516,8 +527,8 @@
       "dist_mi": 6.1,
       "score": 68,
       "reasons": [
-        "~\u00a3617k\u2013\u00a3840k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3617k\u2013\u00a3840k area est"
       ],
       "flags": [
         "probate"
@@ -526,6 +537,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285242,-0.847632",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5144259",
@@ -542,8 +554,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43714/65227"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -558,8 +570,8 @@
       "dist_mi": 5.8,
       "score": 68,
       "reasons": [
-        "~\u00a3415k\u2013\u00a3625k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3415k\u2013\u00a3625k area est"
       ],
       "flags": [
         "probate"
@@ -568,6 +580,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.280633,-0.859074",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142545",
@@ -584,8 +597,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43717/65223"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -600,8 +613,8 @@
       "dist_mi": 4.2,
       "score": 68,
       "reasons": [
-        "~\u00a3543k\u2013\u00a3622k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3543k\u2013\u00a3622k area est"
       ],
       "flags": [
         "probate"
@@ -610,6 +623,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.258534,-0.835744",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5140167",
@@ -626,8 +640,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43729/65231"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -642,8 +656,8 @@
       "dist_mi": 4.4,
       "score": 68,
       "reasons": [
-        "~\u00a31650k\u2013\u00a32650k Farnham-area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a31650k\u2013\u00a32650k Farnham-area est"
       ],
       "flags": [
         "probate"
@@ -652,6 +666,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234834,-0.748967",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138889",
@@ -668,8 +683,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43743/65263"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -684,8 +699,8 @@
       "dist_mi": 3.9,
       "score": 68,
       "reasons": [
-        "~\u00a3375k\u2013\u00a3390k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3375k\u2013\u00a3390k area est"
       ],
       "flags": [
         "probate"
@@ -694,6 +709,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.253498,-0.845716",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138517",
@@ -710,8 +726,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43732/65228"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -726,8 +742,8 @@
       "dist_mi": 5.5,
       "score": 68,
       "reasons": [
-        "~\u00a3355k\u2013\u00a3422k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3355k\u2013\u00a3422k area est"
       ],
       "flags": [
         "probate"
@@ -736,6 +752,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242687,-0.726719",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131726",
@@ -752,8 +769,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65271"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -768,8 +785,8 @@
       "dist_mi": 9.1,
       "score": 68,
       "reasons": [
-        "~\u00a3387k\u2013\u00a3612k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3387k\u2013\u00a3612k area est"
       ],
       "flags": [
         "probate"
@@ -778,6 +795,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.311068,-0.725316",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133964",
@@ -794,8 +812,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43699/65271"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -810,8 +828,8 @@
       "dist_mi": 4.7,
       "score": 68,
       "reasons": [
-        "~\u00a3420k\u2013\u00a3590k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3420k\u2013\u00a3590k area est"
       ],
       "flags": [
         "probate"
@@ -820,6 +838,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.26558,-0.838978",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5134007",
@@ -836,8 +855,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43725/65230"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -852,8 +871,8 @@
       "dist_mi": 3.0,
       "score": 68,
       "reasons": [
-        "~\u00a3475k\u2013\u00a3565k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3475k\u2013\u00a3565k area est"
       ],
       "flags": [
         "probate"
@@ -862,6 +881,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.231424,-0.788147",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5129387",
@@ -878,8 +898,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65249"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -894,8 +914,8 @@
       "dist_mi": 6.6,
       "score": 68,
       "reasons": [
-        "~\u00a3445k\u2013\u00a3470k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3445k\u2013\u00a3470k area est"
       ],
       "flags": [
         "probate"
@@ -904,6 +924,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133482",
@@ -920,8 +941,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43731/65188"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -936,8 +957,8 @@
       "dist_mi": 6.6,
       "score": 68,
       "reasons": [
-        "~\u00a3445k\u2013\u00a3470k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3445k\u2013\u00a3470k area est"
       ],
       "flags": [
         "probate"
@@ -946,6 +967,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133456",
@@ -962,8 +984,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43731/65188"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -978,8 +1000,8 @@
       "dist_mi": 4.2,
       "score": 68,
       "reasons": [
-        "~\u00a3305k\u2013\u00a3485k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Nov 2026)",
+        "~\u00a3305k\u2013\u00a3485k area est"
       ],
       "flags": [
         "probate"
@@ -988,6 +1010,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.244906,-0.772003",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131333",
@@ -1004,8 +1027,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65254"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1020,8 +1043,8 @@
       "dist_mi": 1.6,
       "score": 68,
       "reasons": [
-        "~\u00a3330k\u2013\u00a3368k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3330k\u2013\u00a3368k area est"
       ],
       "flags": [
         "probate"
@@ -1030,6 +1053,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.207346,-0.797239",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5115992",
@@ -1046,8 +1070,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43759/65245"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1062,8 +1086,8 @@
       "dist_mi": 4.7,
       "score": 68,
       "reasons": [
-        "~\u00a3239k\u2013\u00a3430k area est (2)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3239k\u2013\u00a3430k area est"
       ],
       "flags": [
         "probate"
@@ -1072,6 +1096,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.239484,-0.744886",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5123832",
@@ -1088,8 +1113,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65264"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1104,8 +1129,8 @@
       "dist_mi": 2.2,
       "score": 68,
       "reasons": [
-        "~\u00a3492k\u2013\u00a3695k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3492k\u2013\u00a3695k area est"
       ],
       "flags": [
         "probate"
@@ -1114,6 +1139,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.189803,-0.880722",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114805",
@@ -1130,8 +1156,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43769/65215"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1146,8 +1172,8 @@
       "dist_mi": 9.7,
       "score": 68,
       "reasons": [
-        "~\u00a3360k\u2013\u00a3460k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3360k\u2013\u00a3460k area est"
       ],
       "flags": [
         "probate"
@@ -1156,6 +1182,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116187",
@@ -1172,8 +1199,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65314"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1188,8 +1215,8 @@
       "dist_mi": 9.7,
       "score": 68,
       "reasons": [
-        "~\u00a3360k\u2013\u00a3460k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3360k\u2013\u00a3460k area est"
       ],
       "flags": [
         "probate"
@@ -1198,6 +1225,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116186",
@@ -1214,8 +1242,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65314"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1230,8 +1258,8 @@
       "dist_mi": 3.8,
       "score": 68,
       "reasons": [
-        "~\u00a3135k\u2013\u00a3580k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3135k\u2013\u00a3580k area est"
       ],
       "flags": [
         "probate"
@@ -1240,6 +1268,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.238578,-0.773103",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114624",
@@ -1256,8 +1285,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1272,8 +1301,8 @@
       "dist_mi": 3.8,
       "score": 68,
       "reasons": [
-        "~\u00a3575k\u2013\u00a3820k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3575k\u2013\u00a3820k area est"
       ],
       "flags": [
         "probate"
@@ -1282,6 +1311,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242918,-0.783059",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111180",
@@ -1298,8 +1328,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65250"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1314,8 +1344,8 @@
       "dist_mi": 22.9,
       "score": 68,
       "reasons": [
-        "~\u00a3350k\u2013\u00a3366k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3350k\u2013\u00a3366k area est"
       ],
       "flags": [
         "probate"
@@ -1324,6 +1354,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.06033,-0.350789",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111171",
@@ -1340,8 +1371,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43845/65408"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1356,8 +1387,8 @@
       "dist_mi": 8.0,
       "score": 68,
       "reasons": [
-        "~\u00a3245k\u2013\u00a3500k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3245k\u2013\u00a3500k area est"
       ],
       "flags": [
         "probate"
@@ -1366,6 +1397,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.293636,-0.728926",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5110024",
@@ -1382,8 +1414,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43709/65270"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1398,8 +1430,8 @@
       "dist_mi": 0.5,
       "score": 68,
       "reasons": [
-        "~\u00a3373k\u2013\u00a3461k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3373k\u2013\u00a3461k area est"
       ],
       "flags": [
         "probate"
@@ -1408,6 +1440,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198496,-0.820899",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5108616",
@@ -1424,8 +1457,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1440,8 +1473,8 @@
       "dist_mi": 4.6,
       "score": 68,
       "reasons": [
-        "~\u00a3360k\u2013\u00a3505k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3360k\u2013\u00a3505k area est"
       ],
       "flags": [
         "probate"
@@ -1450,6 +1483,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.264157,-0.836964",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103829",
@@ -1466,8 +1500,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43726/65231"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1482,8 +1516,8 @@
       "dist_mi": 4.9,
       "score": 68,
       "reasons": [
-        "~\u00a3486k\u2013\u00a3638k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3486k\u2013\u00a3638k area est"
       ],
       "flags": [
         "probate"
@@ -1492,6 +1526,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103656",
@@ -1508,8 +1543,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43724/65234"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1524,8 +1559,8 @@
       "dist_mi": 4.9,
       "score": 68,
       "reasons": [
-        "~\u00a3486k\u2013\u00a3638k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3486k\u2013\u00a3638k area est"
       ],
       "flags": [
         "probate"
@@ -1534,6 +1569,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103646",
@@ -1550,8 +1586,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43724/65234"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1566,8 +1602,8 @@
       "dist_mi": 1.8,
       "score": 68,
       "reasons": [
-        "~\u00a3400k\u2013\u00a3931k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Oct 2026)",
+        "~\u00a3400k\u2013\u00a3931k area est"
       ],
       "flags": [
         "probate"
@@ -1576,6 +1612,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.211735,-0.797239",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093957",
@@ -1592,8 +1629,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65245"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1608,8 +1645,8 @@
       "dist_mi": 0.6,
       "score": 68,
       "reasons": [
-        "~\u00a3430k\u2013\u00a3530k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a3430k\u2013\u00a3530k area est"
       ],
       "flags": [
         "probate"
@@ -1618,6 +1655,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200301,-0.819822",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5094029",
@@ -1634,8 +1672,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65237"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1650,8 +1688,8 @@
       "dist_mi": 1.1,
       "score": 68,
       "reasons": [
-        "~\u00a3435k\u2013\u00a3860k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a3435k\u2013\u00a3860k area est"
       ],
       "flags": [
         "probate"
@@ -1660,6 +1698,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.208469,-0.813873",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093995",
@@ -1676,8 +1715,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43759/65239"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1692,8 +1731,8 @@
       "dist_mi": 3.4,
       "score": 68,
       "reasons": [
-        "~\u00a3340k\u2013\u00a3390k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a3340k\u2013\u00a3390k area est"
       ],
       "flags": [
         "probate"
@@ -1702,6 +1741,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237718,-0.78546",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5091412",
@@ -1718,8 +1758,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65250"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1734,8 +1774,8 @@
       "dist_mi": 6.2,
       "score": 68,
       "reasons": [
-        "~\u00a3499k\u2013\u00a3865k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a3499k\u2013\u00a3865k area est"
       ],
       "flags": [
         "probate"
@@ -1744,6 +1784,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237984,-0.703814",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5083204",
@@ -1760,8 +1801,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65279"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1776,8 +1817,8 @@
       "dist_mi": 7.2,
       "score": 68,
       "reasons": [
-        "~\u00a3580k\u2013\u00a3770k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a3580k\u2013\u00a3770k area est"
       ],
       "flags": [
         "probate"
@@ -1786,6 +1827,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.286132,-0.744347",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075989",
@@ -1802,8 +1844,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43713/65264"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1818,8 +1860,8 @@
       "dist_mi": 57.4,
       "score": 68,
       "reasons": [
-        "~\u00a3248k\u2013\u00a3620k area est (7)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a3248k\u2013\u00a3620k area est"
       ],
       "flags": [
         "probate"
@@ -1828,6 +1870,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=50.712163,-1.902014",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075898",
@@ -1844,8 +1887,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/44045/64843"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1860,8 +1903,8 @@
       "dist_mi": 4.8,
       "score": 68,
       "reasons": [
-        "~\u00a31650k\u2013\u00a32650k Farnham-area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a31650k\u2013\u00a32650k Farnham-area est"
       ],
       "flags": [
         "probate"
@@ -1870,6 +1913,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.248863,-0.755033",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5072908",
@@ -1886,8 +1930,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43735/65261"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
@@ -1902,8 +1946,8 @@
       "dist_mi": 5.2,
       "score": 68,
       "reasons": [
-        "~\u00a3355k\u2013\u00a3450k area est (8)",
-        "Probate \u2014 estate sale"
+        "Likely to market soon (by ~Sep 2026)",
+        "~\u00a3355k\u2013\u00a3450k area est"
       ],
       "flags": [
         "probate"
@@ -1912,6 +1956,7 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.241155,-0.733022",
+      "floor_area_m2": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5071406",
@@ -1928,8 +1973,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43740/65269"
       },
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-06-28",
+      "first_seen": "2026-06-29",
+      "last_seen": "2026-06-29",
       "days_on_market": 0
     },
     {
