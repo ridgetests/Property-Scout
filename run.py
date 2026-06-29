@@ -436,6 +436,7 @@ CREATE TABLE IF NOT EXISTS properties (id TEXT PRIMARY KEY, first_seen TEXT,
   last_seen TEXT, price INTEGER, payload TEXT);
 CREATE TABLE IF NOT EXISTS price_history (id TEXT, date TEXT, price INTEGER);
 CREATE TABLE IF NOT EXISTS geocache (postcode TEXT PRIMARY KEY, lat REAL, lng REAL);
+CREATE TABLE IF NOT EXISTS epccache (k TEXT PRIMARY KEY, data TEXT);
 """
 
 
@@ -927,6 +928,100 @@ def _streetview_url(lat, lng):
     return f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={lat},{lng}"
 
 
+def homedata_epc(conn, postcode, paon):
+    """Floor area (m2) for a property via Homedata: postcode -> UPRN -> EPC.
+    Reuses your existing key; cached so each property is fetched at most once."""
+    if not HOMEDATA_API_KEY or USE_MOCK:
+        return {}
+    key = f"{postcode}|{paon}".upper()
+    row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
+    if row:
+        try:
+            return json.loads(row["data"])
+        except Exception:
+            return {}
+    import requests
+    uprn = None
+    try:
+        r = requests.get(f"{HOMEDATA_BASE}/address/postcode/{postcode.replace(' ', '%20')}/",
+                         headers=_headers(), timeout=20)
+        r.raise_for_status()
+        js = r.json()
+        addrs = (js.get("addresses") or js.get("results")
+                 or (js if isinstance(js, list) else []))
+        ph = (paon or "").strip().upper()
+        for a in addrs:
+            u = a.get("uprn") or a.get("property_uprn")
+            if not u:
+                continue
+            astr = " ".join(str(a.get(k, "")) for k in
+                            ("address", "display_address", "line_1", "single_line_address",
+                             "paon", "building_number", "building_name")).upper().strip()
+            if ph and re.match(rf"{re.escape(ph)}\b", astr):
+                uprn = str(u)
+                break
+        if not uprn and len(addrs) == 1:           # sparse postcode -> unambiguous
+            u0 = addrs[0].get("uprn") or addrs[0].get("property_uprn")
+            uprn = str(u0) if u0 else None
+    except Exception as e:
+        print(f"      epc address lookup failed ({postcode}): {e}")
+    result = {}
+    if uprn:
+        epc = (enrich_property(uprn) or {}).get("epc") or {}
+        if epc.get("floor_area_m2"):
+            result = {"floor_area_m2": epc["floor_area_m2"], "age_band": epc.get("age_band"),
+                      "rating": epc.get("rating"), "uprn": uprn}
+    if result.get("floor_area_m2"):
+        conn.execute("INSERT OR REPLACE INTO epccache VALUES (?,?)", (key, json.dumps(result)))
+        conn.commit()
+    return result
+
+
+_MONTHS = {m: i for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july", "august",
+     "september", "october", "november", "december"], 1)}
+
+
+def _parse_dmy(s):
+    """'14 March 2026' / '3rd February 2026' -> date."""
+    m = re.match(r"(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)\s+(\d{4})", (s or "").strip())
+    if not m:
+        return None
+    mon = _MONTHS.get(m.group(2).lower())
+    if not mon:
+        return None
+    try:
+        return date(int(m.group(3)), mon, int(m.group(1)))
+    except ValueError:
+        return None
+
+
+def _add_months(d0, n):
+    t = d0.month - 1 + n
+    return date(d0.year + t // 12, t % 12 + 1, 1)
+
+
+def market_window(dod, notice_iso, today):
+    """Estimated time-to-market from probate averages (death->market ~6-12 months;
+    Gazette notice is post-grant, so notice->market ~1-6 months). Returns a phrase."""
+    lo = hi = None
+    if dod:
+        lo, hi = _add_months(dod, 6), _add_months(dod, 12)
+    elif notice_iso:
+        try:
+            nd = date.fromisoformat(notice_iso[:10])
+            lo, hi = _add_months(nd, 1), _add_months(nd, 6)
+        except Exception:
+            pass
+    if not lo:
+        return None
+    if today < lo:
+        return f"Est. on market {lo:%b %Y}\u2013{hi:%b %Y}"
+    if today <= hi:
+        return f"Likely to market soon (by ~{hi:%b %Y})"
+    return "May be on market now \u2014 check"
+
+
 def fetch_probate_leads(conn):
     """Deceased Estates notices from The Gazette near home - the legal way to
     see an estate (often an empty house) before it reaches the market.
@@ -1014,18 +1109,20 @@ def fetch_probate_leads(conn):
             continue
         if est is None and not PROBATE_KEEP_UNKNOWN:
             continue
+        epc = homedata_epc(conn, x["postcode"], x.get("paon"))
+        fa = epc.get("floor_area_m2")
         reasons = []
+        win = market_window(_parse_dmy(x["dod"]), x["pub"], date.today())
+        if win:
+            reasons.append(win)
+        if fa:
+            reasons.append(f"{(typ or 'home').title()} \u00b7 {fa} m\u00b2")
         if ctx.get("est_mid"):
             lbl = "area est" if basis == "postcode" else f"{PROBATE_LOCATION}-area est"
-            reasons.append(f"~\u00a3{ctx['est_low']//1000}k\u2013\u00a3{ctx['est_high']//1000}k "
-                           f"{lbl} ({ctx['n_comps']})")
-        else:
+            reasons.append(f"~\u00a3{ctx['est_low']//1000}k\u2013\u00a3{ctx['est_high']//1000}k {lbl}")
+        elif not fa:
             reasons.append("Long-held \u2014 not sold since 1995")
-        reasons.append("Probate \u2014 estate sale")
-        if ctx.get("last_price"):
-            reasons.append(f"Last sold \u00a3{ctx['last_price']:,} ({ctx['last_year']})")
-        elif x["dod"]:
-            reasons.append(f"Died {x['dod']}")
+        reasons = reasons[:3]
         out.append({
             "id": x["id"], "address": f"Estate: {x['name']} \u2014 {x['postcode']}",
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
@@ -1033,7 +1130,7 @@ def fetch_probate_leads(conn):
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
             "score": 68, "reasons": reasons[:3], "flags": ["probate"],
             "is_probate": True, "low_comp": False, "comps": [],
-            "streetview_url": _streetview_url(lat, lng),
+            "streetview_url": _streetview_url(lat, lng), "floor_area_m2": fa,
             "source": {"name": "The Gazette", "url": x["url"], "uprn": ""},
             "source_label": "PROBATE",
             "enrichment": {"market": {}, "plot": {}, "equity": {}},
