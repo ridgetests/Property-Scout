@@ -58,6 +58,9 @@ PROBATE_MAX_PRICE = 800_000              # skip estimates above this
 PROBATE_MIN_PRICE = 350_000              # skip cheap flats / small terraces
 PROBATE_TYPES = ("detached", "semi", "terraced")   # houses only (excludes "flat"); widen/narrow freely
 PROBATE_KEEP_UNKNOWN = True              # keep long-held homes Land Registry can't price (often the best)
+HOME_FLOOR_AREA_M2 = 144                 # 3 Boundstone Close internal floor area (m2), from floor plan
+HOME_PLOT_M2 = 380                       # measured plot area (m2) from title plan SY519861
+HOME_PLOT_OUTLINE = [[-5.27, -19.32], [4.58, -19.32], [6.07, 19.32], [-5.38, 19.32]]  # plot shape, centred metres
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
@@ -491,7 +494,9 @@ def _publish(props):
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(
         {"generated_at": datetime.now(timezone.utc).isoformat(),
-         "count": len(props), "properties": props}, indent=2))
+         "count": len(props), "home_floor_m2": HOME_FLOOR_AREA_M2,
+         "home_plot_m2": HOME_PLOT_M2, "home_plot_outline": HOME_PLOT_OUTLINE,
+         "properties": props}, indent=2))
 
 
 def upsert(conn, p):
@@ -1131,6 +1136,7 @@ def fetch_probate_leads(conn):
             "score": 68, "reasons": reasons[:3], "flags": ["probate"],
             "is_probate": True, "low_comp": False, "comps": [],
             "streetview_url": _streetview_url(lat, lng), "floor_area_m2": fa,
+            "market_window": win, "est_low": ctx.get("est_low"), "est_high": ctx.get("est_high"),
             "source": {"name": "The Gazette", "url": x["url"], "uprn": ""},
             "source_label": "PROBATE",
             "enrichment": {"market": {}, "plot": {}, "equity": {}},
