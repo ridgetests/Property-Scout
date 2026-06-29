@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-06-29T17:14:54.646018+00:00",
+  "generated_at": "2026-06-29T17:49:58.598990+00:00",
   "count": 63,
+  "home_floor_m2": 144,
+  "home_plot_m2": 380,
+  "home_plot_outline": [
+    [
+      -5.27,
+      -19.32
+    ],
+    [
+      4.58,
+      -19.32
+    ],
+    [
+      6.07,
+      19.32
+    ],
+    [
+      -5.38,
+      19.32
+    ]
+  ],
   "properties": [
     {
       "id": "ce_266_28",
@@ -65,6 +85,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.112951,-0.770445",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 420000,
+      "est_high": 840000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5163010",
@@ -108,6 +131,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200964,-0.612343",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 475000,
+      "est_high": 630000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5161424",
@@ -151,6 +177,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285685,-0.834285",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 473000,
+      "est_high": 845000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5152464",
@@ -194,6 +223,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.123814,-0.757739",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 169000,
+      "est_high": 655000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145468",
@@ -237,6 +269,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242005,-0.768012",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 530000,
+      "est_high": 2100000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5150245",
@@ -280,6 +315,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 575000,
+      "est_high": 731000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5148761",
@@ -323,6 +361,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 240000,
+      "est_high": 805000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146432",
@@ -366,6 +407,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 240000,
+      "est_high": 805000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146913",
@@ -409,6 +453,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.299233,-0.773954",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 350000,
+      "est_high": 490000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145764",
@@ -452,6 +499,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.185207,-0.612201",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 305000,
+      "est_high": 482000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145201",
@@ -495,6 +545,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "floor_area_m2": null,
+      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
+      "est_low": 575000,
+      "est_high": 731000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142482",
@@ -538,6 +591,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285242,-0.847632",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 617500,
+      "est_high": 840000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5144259",
@@ -581,6 +637,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.280633,-0.859074",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 415000,
+      "est_high": 625000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142545",
@@ -624,6 +683,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.258534,-0.835744",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 543000,
+      "est_high": 622000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5140167",
@@ -667,6 +729,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234834,-0.748967",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 1650000,
+      "est_high": 2650000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138889",
@@ -710,6 +775,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.253498,-0.845716",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 375000,
+      "est_high": 390000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138517",
@@ -753,6 +821,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242687,-0.726719",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 355000,
+      "est_high": 422500,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131726",
@@ -796,6 +867,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.311068,-0.725316",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 387000,
+      "est_high": 612000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133964",
@@ -839,6 +913,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.26558,-0.838978",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 420000,
+      "est_high": 590000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5134007",
@@ -882,6 +959,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.231424,-0.788147",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 475000,
+      "est_high": 565000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5129387",
@@ -925,6 +1005,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 445000,
+      "est_high": 470000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133482",
@@ -968,6 +1051,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 445000,
+      "est_high": 470000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133456",
@@ -1011,6 +1097,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.244906,-0.772003",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": 305000,
+      "est_high": 485000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131333",
@@ -1054,6 +1143,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.207346,-0.797239",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 330000,
+      "est_high": 368000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5115992",
@@ -1097,6 +1189,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.239484,-0.744886",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 239000,
+      "est_high": 430000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5123832",
@@ -1140,6 +1235,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.189803,-0.880722",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 492985,
+      "est_high": 695000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114805",
@@ -1183,6 +1281,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 360000,
+      "est_high": 460000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116187",
@@ -1226,6 +1327,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 360000,
+      "est_high": 460000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116186",
@@ -1269,6 +1373,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.238578,-0.773103",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 135000,
+      "est_high": 580000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114624",
@@ -1312,6 +1419,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242918,-0.783059",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 575000,
+      "est_high": 820000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111180",
@@ -1355,6 +1465,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.06033,-0.350789",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 350500,
+      "est_high": 366000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111171",
@@ -1398,6 +1511,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.293636,-0.728926",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 245000,
+      "est_high": 500000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5110024",
@@ -1441,6 +1557,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198496,-0.820899",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 373000,
+      "est_high": 461470,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5108616",
@@ -1484,6 +1603,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.264157,-0.836964",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 360000,
+      "est_high": 505000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103829",
@@ -1527,6 +1649,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 486000,
+      "est_high": 638000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103656",
@@ -1570,6 +1695,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 486000,
+      "est_high": 638000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103646",
@@ -1613,6 +1741,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.211735,-0.797239",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Oct 2026)",
+      "est_low": 400000,
+      "est_high": 931663,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093957",
@@ -1656,6 +1787,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200301,-0.819822",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 430000,
+      "est_high": 530000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5094029",
@@ -1699,6 +1833,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.208469,-0.813873",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 435000,
+      "est_high": 860000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093995",
@@ -1742,6 +1879,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237718,-0.78546",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 340000,
+      "est_high": 390000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5091412",
@@ -1785,6 +1925,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237984,-0.703814",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 499950,
+      "est_high": 865000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5083204",
@@ -1828,6 +1971,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.286132,-0.744347",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 580000,
+      "est_high": 770000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075989",
@@ -1871,6 +2017,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=50.712163,-1.902014",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 248505,
+      "est_high": 620000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075898",
@@ -1914,6 +2063,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.248863,-0.755033",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 1650000,
+      "est_high": 2650000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5072908",
@@ -1957,6 +2109,9 @@
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.241155,-0.733022",
       "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": 355000,
+      "est_high": 450000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5071406",
