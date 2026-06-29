@@ -1064,11 +1064,13 @@ def fetch_probate_leads(conn):
                         r"(\d{1,2}(?:st|nd|rd|th)?\s+\w+\s+\d{4})", content, re.I)
         addr_m = re.search(r"(?:late of|residing at|formerly of|of)\s+(.+?),?\s*"
                            r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}", content)
-        paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_m.group(1).strip(" ,") if addr_m else "")
+        addr_line = (addr_m.group(1).strip(" ,") if addr_m else "")
+        paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_line)
         raw.append({"id": f"gz_{pid}",
                     "name": _probate_name(e.get("title"), content),
                     "postcode": pc.group(1).upper(),
                     "paon": paon_m.group(1) if paon_m else "",
+                    "addr_line": addr_line,
                     "dod": dod.group(1) if dod else "",
                     "pub": (e.get("published") or "")[:10],
                     "url": f"https://www.thegazette.co.uk/notice/{pid}"})
@@ -1129,7 +1131,10 @@ def fetch_probate_leads(conn):
             reasons.append("Long-held \u2014 not sold since 1995")
         reasons = reasons[:3]
         out.append({
-            "id": x["id"], "address": f"Estate: {x['name']} \u2014 {x['postcode']}",
+            "id": x["id"],
+            "address": (f"{x['addr_line']} \u2014 {x['postcode']}" if x.get("addr_line")
+                        else f"Estate of {x['name']} \u2014 {x['postcode']}"),
+            "owner_note": f"Probate \u2014 estate of {x['name']}",
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
             "property_type": ctx.get("subject_type") or "property", "lat": lat, "lng": lng,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
