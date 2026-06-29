@@ -94,6 +94,21 @@
   .sortsel{margin-left:auto;font-size:12px;padding:5px 8px;border:.5px solid var(--line2);border-radius:8px;background:var(--bg,#fff);color:var(--ink)}
   .hid{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px}
   .dismisslink{width:100%;margin-top:8px;padding:9px;border:none;background:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline}
+.kf{margin:6px 0 12px;border:.5px solid var(--line2);border-radius:12px;overflow:hidden}
+  .kfrow{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;font-size:13px;border-bottom:.5px solid var(--line2)}
+  .kfrow:last-child{border-bottom:none}
+  .kfrow span{color:var(--muted)}
+  .kfrow b{text-align:right;color:var(--ink);font-weight:600}
+  .kfrow b .cmp{display:block;font-weight:500;font-size:11px;color:var(--muted);margin-top:1px}
+  .aerial{width:100%;height:150px;object-fit:cover;border-radius:12px;margin:4px 0 2px}
+  .aerialbox{position:relative;width:100%;margin:4px 0 2px;line-height:0}
+  .aerialbox .aerial{height:auto;object-fit:unset;margin:0;display:block}
+  .aov{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+  .aov polygon{fill:rgba(255,205,0,.30);stroke:#ffcd00;stroke-width:2;vector-effect:non-scaling-stroke}
+  .aerctl{display:flex;align-items:center;gap:10px;margin:8px 0 2px}
+  .aerctl input[type=range]{flex:1}
+  .aerhint{font-size:11px;color:var(--muted);white-space:nowrap}
+  .ovbtn{width:100%;margin:8px 0 2px;padding:10px;border:.5px solid var(--line2);background:none;border-radius:10px;font-size:13px;color:var(--ink);cursor:pointer}
 </style>
 </head>
 <body>
@@ -143,7 +158,7 @@ const SIGNAL_LABELS = {
 };
 const SRC_LABEL = {auction:"AUCTION","off-market":"OFF-MKT"};
 
-let DATA=[], filter='all', selected=null, map, markers=[];
+let DATA=[], filter='all', selected=null, map, markers=[], HOME_FLOOR=null, HOME_PLOT=null, HOME_PLOT_M2=null;
 let shortlist = JSON.parse(localStorage.getItem('ps_shortlist')||'[]');
 let dismissed = new Set(JSON.parse(localStorage.getItem('ps_dismissed')||'[]'));
 
@@ -155,7 +170,7 @@ async function load(){
   try{
     const r = await fetch('https://ridgetests.github.io/Property-Scout/properties.json?t='+Date.now(),{cache:'no-store'});
     const j = await r.json();
-    DATA = j.properties||[];
+    DATA = j.properties||[]; HOME_FLOOR = j.home_floor_m2||null; HOME_PLOT = j.home_plot_outline||null; HOME_PLOT_M2 = j.home_plot_m2||null;
     document.getElementById('gen').textContent =
       'Updated '+new Date(j.generated_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
   }catch(e){ DATA=[]; }
@@ -225,6 +240,49 @@ function card(p){
     </div></div>`;
 }
 
+function keyFacts(p){
+  const rows=[];
+  rows.push(`<div class="kfrow"><span>Location</span><b>${p.postcode||'—'}${p.dist_mi!=null?` · ${p.dist_mi} mi from home`:''}</b></div>`);
+  if(p.market_window) rows.push(`<div class="kfrow"><span>Likely on market</span><b>${p.market_window}</b></div>`);
+  let val='';
+  if(p.est_low&&p.est_high) val=`£${Math.round(p.est_low/1000)}k–£${Math.round(p.est_high/1000)}k`;
+  else if(p.price) val=`£${p.price.toLocaleString()}`;
+  if(val) rows.push(`<div class="kfrow"><span>Est. value</span><b>${val}</b></div>`);
+  let interior='Awaiting EPC';
+  if(p.floor_area_m2){
+    let cmp='';
+    if(HOME_FLOOR){const d=Math.round((p.floor_area_m2/HOME_FLOOR-1)*100); cmp=`<span class="cmp">${d>=0?'+':''}${d}% vs your home (${HOME_FLOOR} m²)</span>`;}
+    interior=`${p.floor_area_m2} m² (~${Math.round(p.floor_area_m2*10.76)} sq ft)${cmp}`;
+  }
+  rows.push(`<div class="kfrow"><span>Interior</span><b>${interior}</b></div>`);
+  rows.push(`<div class="kfrow"><span>Exterior / plot</span><b>See aerial above${p.streetview_url?' · Street View':''}<span class="cmp">Pull LR title (£3) to confirm plot</span></b></div>`);
+  return `<div class="kf">${rows.join('')}</div>`;
+}
+function webMerc(lat,lng){const x=lng*20037508.34/180;const y=Math.log(Math.tan((90+lat)*Math.PI/360))/(Math.PI/180)*20037508.34/180;return [x,y];}
+function aerialExportURL(lat,lng,gw){const m=webMerc(lat,lng),h=gw/2;return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${m[0]-h},${m[1]-h},${m[0]+h},${m[1]+h}&bboxSR=3857&imageSR=3857&size=600,600&format=png&f=image`;}
+function tileURL(lat,lng,z){const n=2**z,xt=Math.floor((lng+180)/360*n),yr=lat*Math.PI/180,yt=Math.floor((1-Math.asinh(Math.tan(yr))/Math.PI)/2*n);return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${yt}/${xt}`;}
+function tileGW(lat,z){return 256*156543.03392*Math.cos(lat*Math.PI/180)/(2**z);}
+function setupOverlay(p){
+  const img=document.getElementById('aimg'); if(!img||p.lat==null) return;
+  const svg=document.getElementById('aov'),g=document.getElementById('aovg'),poly=document.getElementById('aovp');
+  let GW=120,tx=0,ty=0,rdeg=0;
+  function applyView(){svg.setAttribute('viewBox',`0 0 ${GW} ${GW}`);
+    if(HOME_PLOT) poly.setAttribute('points',HOME_PLOT.map(c=>`${(GW/2+c[0]).toFixed(2)},${(GW/2+c[1]).toFixed(2)}`).join(' '));
+    apply();}
+  function apply(){g.setAttribute('transform',`translate(${tx} ${ty}) rotate(${rdeg} ${GW/2} ${GW/2})`);}
+  img.onerror=()=>{img.onerror=null;GW=tileGW(p.lat,17);img.src=tileURL(p.lat,p.lng,17);applyView();};
+  img.src=aerialExportURL(p.lat,p.lng,120); applyView();
+  const btn=document.getElementById('ovbtn'),ctl=document.getElementById('aerctl'),rot=document.getElementById('aovrot');
+  if(!btn||!HOME_PLOT) return;
+  let on=false; tx=0;ty=0;rdeg=0; if(rot)rot.value=0;
+  btn.onclick=()=>{on=!on;svg.style.display=on?'block':'none';ctl.style.display=on?'flex':'none';btn.textContent=on?'⊖ Hide my plot':'⊕ Overlay my plot to scale';};
+  if(rot) rot.oninput=()=>{rdeg=+rot.value;apply();};
+  let drag=false,sx,sy;
+  const toU=d=>{const r=svg.getBoundingClientRect();return d*(GW/r.width);};
+  svg.addEventListener('pointerdown',e=>{drag=true;sx=e.clientX;sy=e.clientY;try{svg.setPointerCapture(e.pointerId);}catch(_){}});
+  svg.addEventListener('pointermove',e=>{if(!drag)return;tx+=toU(e.clientX-sx);ty+=toU(e.clientY-sy);sx=e.clientX;sy=e.clientY;apply();});
+  svg.addEventListener('pointerup',()=>{drag=false;});
+}
 function openDrawer(id){
   const p = DATA.find(x=>x.id==id); if(!p) return;
   selected = id; render();
@@ -246,6 +304,13 @@ function openDrawer(id){
     ${eq.equity_gain!=null?`<div class="eqbox"><div class="l">Est. equity gain after works</div>
       <div class="n">~£${eq.equity_gain.toLocaleString()}</div>
       <div class="b">Renovated comp ~£${(eq.renovated_comp||0).toLocaleString()} − asking £${p.price.toLocaleString()} − works ~£${(eq.reno_cost_est||0).toLocaleString()}</div></div>`:''}
+    <div class="aerialbox" id="abox">
+      <img class="aerial" id="aimg" alt="aerial view">
+      <svg class="aov" id="aov" preserveAspectRatio="xMidYMid meet" style="display:none"><g id="aovg"><polygon id="aovp"/></g></svg>
+    </div>
+    ${HOME_PLOT?`<button class="ovbtn" id="ovbtn">⊕ Overlay my plot to scale</button>
+    <div class="aerctl" id="aerctl" style="display:none"><input type="range" min="0" max="359" value="0" id="aovrot"><span class="aerhint">Your plot (~${HOME_PLOT_M2} m²) · drag &amp; rotate</span></div>`:''}
+    ${keyFacts(p)}
     <div class="sl">Score breakdown · ${p.score}/100</div>${sigs}
     ${flags?`<div class="sl">Search-invisibility flags</div><div class="fstrip">${flags}</div>`:''}
     ${comps?`<div class="sl">Nearby comparables</div><div class="comps">${comps}</div>`:''}
@@ -258,6 +323,7 @@ function openDrawer(id){
     <button class="dismisslink" onclick="dismiss('${id}')">Not for me — hide this</button>`;
   document.getElementById('ov').classList.add('open');
   document.getElementById('drawer').classList.add('open');
+  setupOverlay(p);
 }
 function closeDrawer(){selected=null;render();document.getElementById('ov').classList.remove('open');document.getElementById('drawer').classList.remove('open');}
 function viewListing(id){
