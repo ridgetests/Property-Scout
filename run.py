@@ -973,6 +973,44 @@ def _probate_name(title, content):
     return name or "Deceased estate"
 
 
+def _probate_contact(content, deceased_pc):
+    """Best-effort extraction of the estate's claims contact (solicitor or executor)
+    from a Gazette notice. Returns name/firm, address, reference and which kind."""
+    # recipient block: between the 'send ... to' trigger and the claims deadline
+    block = ""
+    m = re.search(r"(?:send|give|deliver)\b[^.]*?\bto\b\s+(.{8,220}?)"
+                  r"(?:\s+(?:on or before|before the|not later than|after which|by the))",
+                  content, re.I)
+    if m:
+        block = m.group(1)
+    else:
+        m2 = re.search(r"undersigned[,:]?\s+(.{8,200})", content, re.I)
+        block = m2.group(1) if m2 else ""
+    block = re.sub(r"^(?:the\s+)?undersigned[,\s]*", "", block.strip(), flags=re.I)
+    block = re.sub(r"^(?:Messrs\.?\s+)", "", block, flags=re.I)
+    block = re.sub(r"\s+", " ", block).strip(" ,.;:")
+    # reference
+    ref = ""
+    rm = re.search(r"\bRef(?:erence)?\b[:.\s]*([A-Za-z0-9][A-Za-z0-9./\- ]{1,18})", content, re.I)
+    if rm:
+        ref = rm.group(1).strip(" .)")
+    # contact postcode = last postcode in notice if different from the deceased's
+    pcs = re.findall(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", content)
+    contact_pc = ""
+    if pcs and pcs[-1].upper() != (deceased_pc or "").upper():
+        contact_pc = pcs[-1].upper()
+    # firm vs private executor
+    firm = re.search(r"([A-Z][A-Za-z0-9'&.\- ]{2,40}?"
+                     r"(?:Solicitors|LLP|& Co\.?|Law|Legal|Limited|Ltd|Partners|Co\.?))",
+                     block)
+    kind = "solicitor" if firm else "executor"
+    name = (firm.group(1).strip() if firm else block.split(",")[0].strip())[:60]
+    if not name:
+        return {}
+    return {"name": name, "block": block[:160], "ref": ref,
+            "postcode": contact_pc, "kind": kind}
+
+
 _PTYPE = {"detached": "detached", "semi-detached": "semi", "terraced": "terraced",
           "flat-maisonette": "flat", "other": "other"}
 
@@ -1222,6 +1260,7 @@ def fetch_probate_leads(conn):
                     "postcode": pc.group(1).upper(),
                     "paon": paon_m.group(1) if paon_m else "",
                     "addr_line": addr_line,
+                    "contact": _probate_contact(content, pc.group(1).upper()),
                     "dod": dod.group(1) if dod else "",
                     "pub": (e.get("published") or "")[:10],
                     "url": f"https://www.thegazette.co.uk/notice/{pid}"})
@@ -1286,6 +1325,7 @@ def fetch_probate_leads(conn):
             "address": (f"{x['addr_line']} \u2014 {x['postcode']}" if x.get("addr_line")
                         else f"Estate of {x['name']} \u2014 {x['postcode']}"),
             "owner_note": f"Probate \u2014 estate of {x['name']}",
+            "estate_contact": x.get("contact") or {},
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
             "property_type": ctx.get("subject_type") or "property", "lat": lat, "lng": lng,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
