@@ -43,6 +43,11 @@
   .ph .src{position:absolute;top:3px;left:3px;background:var(--src-ink);color:#fff;font-size:8px;font-weight:600;padding:2px 4px;border-radius:4px;letter-spacing:.03em}
   .body{flex:1;min-width:0}
   .ctop{display:flex;justify-content:space-between;gap:6px;align-items:flex-start}
+  .scol{display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+  .typ{font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;white-space:nowrap;background:var(--line2);color:var(--ink)}
+  .typ.tier-high{background:#16a34a;color:#fff}
+  .typ.tier-medium{background:#d97706;color:#fff}
+  .typ.tier-low{background:var(--line2);color:var(--muted)}
   .addr{font-size:13px;font-weight:600;line-height:1.3}
   .addr small{display:block;color:var(--muted);font-weight:400;font-size:12px}
   .sc{font-size:17px;font-weight:600;flex-shrink:0}
@@ -168,7 +173,7 @@ let DATA=[], filter='all', selected=null, map, markers=[], HOME_FLOOR=null, HOME
 let shortlist = JSON.parse(localStorage.getItem('ps_shortlist')||'[]');
 let dismissed = new Set(JSON.parse(localStorage.getItem('ps_dismissed')||'[]'));
 
-const sc = s => s>=50?'var(--g)':s>=35?'var(--a)':'var(--gr)';
+const sc = s => s>=62?'var(--g)':s>=48?'var(--a)':'var(--gr)';
 function hd(p){const t=(p.property_type||'property').replace(/_/g,' ');return p.beds?`${p.beds} bed ${t}`:(t.charAt(0).toUpperCase()+t.slice(1));}
 const k = n => '£'+Math.round(n/1000)+'k';
 
@@ -212,7 +217,7 @@ function render(){
   markers.forEach(m=>map.removeLayer(m)); markers=[];
   v.forEach(p=>{
     if(p.lat&&p.lng){
-      const col = p.score>=50?'#16a34a':p.score>=35?'#d97706':'#94a3b8';
+      const col = p.score>=62?'#16a34a':p.score>=48?'#d97706':'#94a3b8';
       const ic = L.divIcon({className:'',html:`<div style="background:${col};color:#fff;font-size:11px;font-weight:600;padding:3px 7px;border-radius:12px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25)">${p.score}</div>`,iconSize:[34,22],iconAnchor:[17,22]});
       const m = L.marker([p.lat,p.lng],{icon:ic}).addTo(map).on('click',()=>openDrawer(p.id));
       markers.push(m);
@@ -240,7 +245,7 @@ function card(p){
     <div class="ph">${badge}${thumb}</div>
     <div class="body">
       <div class="ctop"><div class="addr">${hd(p)}<small>${p.address}</small></div>
-        <div class="sc" style="color:${sc(p.score)}">${p.score}</div></div>
+        <div class="scol">${p.typology?`<div class="typ tier-${(p.tier||'').toLowerCase()}">${p.typology}</div>`:''}<div class="sc" style="color:${sc(p.score)}">${p.score}</div></div></div>
       <div class="sub">${k(p.price)} · ${days}${p.dist_mi!=null?' · '+p.dist_mi+' mi':''}</div>
       ${(p.reasons&&p.reasons.length)?`<div class="why">${p.reasons.join(' · ')}</div>`:''}
       ${eq.equity_gain!=null?`<div class="eq">▲ ~${k(eq.equity_gain)} est. equity gain</div>`:''}
@@ -329,7 +334,7 @@ function openDrawer(id){
     ${HOME_PLOT?`<button class="ovbtn" id="ovbtn">⊕ Overlay my plot to scale</button>
     <div class="aerctl" id="aerctl" style="display:none"><input type="range" min="0" max="359" value="0" id="aovrot"><span class="aerhint">Your plot (~${HOME_PLOT_M2} m²) · drag &amp; rotate</span></div>`:''}
     ${keyFacts(p)}
-    <div class="sl">Score breakdown · ${p.score}/100</div>${sigs}
+    <div class="sl">${p.typology?p.typology+' · '+(p.tier||'')+' · ':'Score '}${p.score}/100</div>${sigs}
     ${flags?`<div class="sl">Search-invisibility flags</div><div class="fstrip">${flags}</div>`:''}
     ${comps?`<div class="sl">Nearby comparables</div><div class="comps">${comps}</div>`:''}
     <div class="acts">
