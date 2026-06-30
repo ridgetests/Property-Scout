@@ -23,6 +23,13 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;background:var(--bg);color:var(--ink);overscroll-behavior:none}
+  .lock{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px}
+  .lockbox{width:100%;max-width:300px;text-align:center}
+  .lockbox h2{margin:0 0 4px;font-size:22px}
+  .lockbox p{color:var(--muted);margin:0 0 16px;font-size:14px}
+  .lockbox input{width:100%;padding:13px;border:1px solid var(--line2);border-radius:10px;font-size:16px;margin-bottom:10px;box-sizing:border-box;background:var(--surface);color:var(--ink)}
+  .lockbox button{width:100%;padding:13px;border:none;border-radius:10px;background:#0a84ff;color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+  .lockerr{color:#ff3b30;font-size:13px;margin-top:10px}
   header{background:var(--surface);border-bottom:.5px solid var(--line);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
   header h1{font-size:15px;font-weight:600;letter-spacing:-.01em}
   header .gen{font-size:11px;color:var(--hint)}
@@ -120,6 +127,16 @@
 </style>
 </head>
 <body>
+<div id="lock" class="lock" style="display:none">
+  <div class="lockbox">
+    <h2>PropertyScout</h2>
+    <p>Enter passcode</p>
+    <input id="pc" type="password" inputmode="text" autocomplete="off" autocapitalize="none"
+           onkeydown="if(event.key==='Enter')unlock()" placeholder="Passcode">
+    <button onclick="unlock()">Unlock</button>
+    <div id="lockerr" class="lockerr" style="display:none">Incorrect passcode</div>
+  </div>
+</div>
 <header>
   <div><h1>PropertyScout</h1><div class="gen" id="gen"></div></div>
   <button class="star-btn" onclick="openPanel()" aria-label="Shortlist">★<span class="ct" id="ct"></span></button>
@@ -269,6 +286,10 @@ function keyFacts(p){
   }
   rows.push(`<div class="kfrow"><span>Interior</span><b>${interior}</b></div>`);
   if(p.owner_note) rows.push(`<div class="kfrow"><span>Status</span><b>${p.owner_note}</b></div>`);
+  if(p.estate_contact && p.estate_contact.name){
+    const c=p.estate_contact, lbl=c.kind==='solicitor'?'Solicitor':'Executor';
+    rows.push(`<div class="kfrow"><span>Estate contact</span><b>${c.name}${c.postcode?' · '+c.postcode:''}<span class="cmp">${lbl}${c.ref?' · Ref '+c.ref:''} · for a tactful pre-market enquiry</span></b></div>`);
+  }
   let ext='See aerial above', extcmp='Pull LR title (£3) to confirm plot';
   if(p.plot_m2){
     let pc=''; if(HOME_PLOT_M2){const d=Math.round((p.plot_m2/HOME_PLOT_M2-1)*100); pc=` · ${d>=0?'+':''}${d}% vs your plot`;}
@@ -398,7 +419,24 @@ function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.
 function dismiss(id){ dismissed.add(id); localStorage.setItem('ps_dismissed',JSON.stringify([...dismissed])); closeDrawer(); render(); toast('Hidden'); }
 function resetHidden(){ dismissed.clear(); localStorage.removeItem('ps_dismissed'); render(); toast('Hidden cleared'); }
 
-load();
+function _h(s){let h=5381;for(let i=0;i<s.length;i++)h=((h*33)^s.charCodeAt(i))>>>0;return h;}
+const PASS_H=4157867882;
+function unlock(){
+  const v=document.getElementById('pc').value;
+  if(_h(v)===PASS_H){ localStorage.setItem('ps_auth', String(PASS_H));
+    document.getElementById('lock').style.display='none';
+    if(!window._booted){window._booted=true; load();} }
+  else { document.getElementById('lockerr').style.display='block'; }
+}
+function _gate(){
+  if(localStorage.getItem('ps_auth')===String(PASS_H)){
+    document.getElementById('lock').style.display='none'; window._booted=true; load();
+  } else {
+    document.getElementById('lock').style.display='flex';
+    setTimeout(()=>{const e=document.getElementById('pc'); if(e) e.focus();},100);
+  }
+}
+_gate();
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./sw.js").catch(()=>{});
