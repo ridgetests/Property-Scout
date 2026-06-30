@@ -14,7 +14,7 @@ days-on-market), but NO uprn, NO coordinates, NO description. So:
   - scoring normalises against whatever data is present
 """
 from __future__ import annotations
-import os, re, json, sqlite3, hashlib, time, math
+import os, re, json, gzip, sqlite3, hashlib, time, math
 from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 
@@ -61,6 +61,9 @@ PROBATE_KEEP_UNKNOWN = True              # keep long-held homes Land Registry ca
 HOME_FLOOR_AREA_M2 = 144                 # 3 Boundstone Close internal floor area (m2), from floor plan
 HOME_PLOT_M2 = 380                       # measured plot area (m2) from title plan SY519861
 HOME_PLOT_OUTLINE = [[-5.27, -19.32], [4.58, -19.32], [6.07, 19.32], [-5.38, 19.32]]  # plot shape, centred metres
+PLOTS_FILE = Path(__file__).resolve().parent / "plots_waverley.json.gz"  # HMLR INSPIRE parcels
+MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
+DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
@@ -490,12 +493,85 @@ def recover_from_db(conn):
     return sorted(seen.values(), key=lambda x: -x.get("score", 0))
 
 
+_PARCELS = None
+
+
+def _load_parcels():
+    global _PARCELS
+    if _PARCELS is not None:
+        return _PARCELS
+    try:
+        with gzip.open(PLOTS_FILE, "rt") as f:
+            _PARCELS = json.load(f).get("parcels", [])
+        print(f"- loaded {len(_PARCELS)} INSPIRE parcels for plot sizing")
+    except Exception as e:
+        print(f"- plot data unavailable ({e}); plot gate disabled")
+        _PARCELS = []
+    return _PARCELS
+
+
+def _pip(lat, lng, ring):
+    inside = False
+    n = len(ring)
+    j = n - 1
+    for i in range(n):
+        yi, xi = ring[i]
+        yj, xj = ring[j]
+        if ((xi > lng) != (xj > lng)) and (lat < (yj - yi) * (lng - xi) / (xj - xi) + yi):
+            inside = not inside
+        j = i
+    return inside
+
+
+def plot_for(lat, lng):
+    """Plot area (m2) of the parcel containing this point - smallest containing parcel."""
+    if lat is None or lng is None:
+        return None
+    best = None
+    for p in _load_parcels():
+        b = p["b"]
+        if b[0] <= lat <= b[1] and b[2] <= lng <= b[3] and _pip(lat, lng, p["r"]):
+            if best is None or p["a"] < best:
+                best = p["a"]
+    return best
+
+
+def _excluded_type(typ):
+    t = (typ or "").lower()
+    return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment"))
+
+
+def apply_gates(props):
+    """Stamp plot size; apply detached + plot-size hard gates (keep unverified plots)."""
+    out = []
+    dropped_type = dropped_plot = 0
+    for p in props:
+        if DETACHED_ONLY and _excluded_type(p.get("property_type")):
+            dropped_type += 1
+            continue
+        area = plot_for(p.get("lat"), p.get("lng"))
+        p["plot_m2"] = area
+        if area is not None and area < MIN_PLOT_M2:
+            dropped_plot += 1
+            continue
+        if area is None:
+            fl = p.setdefault("flags", [])
+            if "plot-unverified" not in fl:
+                fl.append("plot-unverified")
+        out.append(p)
+    if dropped_type or dropped_plot:
+        print(f"- gates: dropped {dropped_type} non-detached, {dropped_plot} under {MIN_PLOT_M2} m2 plot")
+    return out
+
+
 def _publish(props):
+    props = apply_gates(props)
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(
         {"generated_at": datetime.now(timezone.utc).isoformat(),
          "count": len(props), "home_floor_m2": HOME_FLOOR_AREA_M2,
-         "home_plot_m2": HOME_PLOT_M2, "home_plot_outline": HOME_PLOT_OUTLINE,
+         "home_plot_m2": HOME_PLOT_M2, "min_plot_m2": MIN_PLOT_M2,
+         "home_plot_outline": HOME_PLOT_OUTLINE,
          "properties": props}, indent=2))
 
 
