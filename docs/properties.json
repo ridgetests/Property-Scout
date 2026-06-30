@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-29T22:37:22.790783+00:00",
-  "count": 96,
+  "generated_at": "2026-06-30T08:42:53.232966+00:00",
+  "count": 63,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
   "home_plot_outline": [
@@ -58,8 +58,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43631/65194"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -67,7 +67,7 @@
       "address": "Deceased Vine House, Hindhead \u2014 GU26 6DZ",
       "owner_note": "Probate \u2014 estate of Maurice Sturt",
       "postcode": "GU26 6DZ",
-      "price": 0,
+      "price": 735000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.112951,
@@ -76,7 +76,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3420k\u2013\u00a3840k area est"
       ],
       "flags": [
         "probate"
@@ -87,8 +87,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.112951,-0.770445",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 420000,
+      "est_high": 840000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5163010",
@@ -105,8 +105,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43814/65255"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -114,7 +114,7 @@
       "address": "Deceased 4 Clover Lea, Binscombe Lane, Godalming, Surrey \u2014 GU7 3QQ",
       "owner_note": "Probate \u2014 estate of Jennifer Capon",
       "postcode": "GU7 3QQ",
-      "price": 0,
+      "price": 540000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.200964,
@@ -123,7 +123,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3475k\u2013\u00a3630k area est"
       ],
       "flags": [
         "probate"
@@ -134,8 +134,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200964,-0.612343",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 475000,
+      "est_high": 630000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5161424",
@@ -152,102 +152,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5157080",
-      "address": "Deceased 29 Legge Crescent, Aldershot \u2014 GU11 3NT",
-      "owner_note": "Probate \u2014 estate of Peter Scott",
-      "postcode": "GU11 3NT",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.244914,
-      "lng": -0.781373,
-      "dist_mi": 3.9,
-      "score": 68,
-      "reasons": [
-        "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.244914,-0.781373",
-      "floor_area_m2": null,
-      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5157080",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65251"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5156304",
-      "address": "Deceased 12 Field Way, Tongham, Farnham \u2014 GU10 1BQ",
-      "owner_note": "Probate \u2014 estate of Ethel Kercher",
-      "postcode": "GU10 1BQ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.236696,
-      "lng": -0.72985,
-      "dist_mi": 5.2,
-      "score": 68,
-      "reasons": [
-        "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.236696,-0.72985",
-      "floor_area_m2": null,
-      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5156304",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -255,7 +161,7 @@
       "address": "Deceased Derriford House, FLEET \u2014 GU51 3AW",
       "owner_note": "Probate \u2014 estate of Evelyn Vass",
       "postcode": "GU51 3AW",
-      "price": 0,
+      "price": 650000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.285685,
@@ -264,7 +170,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3473k\u2013\u00a3845k area est"
       ],
       "flags": [
         "probate"
@@ -275,8 +181,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285685,-0.834285",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 473000,
+      "est_high": 845000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5152464",
@@ -293,8 +199,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43714/65232"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -302,7 +208,7 @@
       "address": "Deceased High View, Grove Road, Hindhead, Surrey \u2014 GU26 6QS",
       "owner_note": "Probate \u2014 estate of Derek Willett",
       "postcode": "GU26 6QS",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.123814,
@@ -311,7 +217,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3169k\u2013\u00a3655k area est"
       ],
       "flags": [
         "probate"
@@ -322,8 +228,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.123814,-0.757739",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 169000,
+      "est_high": 655000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145468",
@@ -340,55 +246,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5145340",
-      "address": "Deceased Anchorstone Nursing Home, 8 Searle Road, Farnham \u2014 GU9 8LJ",
-      "owner_note": "Probate \u2014 estate of Nicholas Regan",
-      "postcode": "GU9 8LJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.206492,
-      "lng": -0.797218,
-      "dist_mi": 1.6,
-      "score": 68,
-      "reasons": [
-        "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.206492,-0.797218",
-      "floor_area_m2": null,
-      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5145340",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -396,7 +255,7 @@
       "address": "Deceased Maple House Nursing Home, Aldershot \u2014 GU11 3DG",
       "owner_note": "Probate \u2014 estate of Arthur Cousins",
       "postcode": "GU11 3DG",
-      "price": 0,
+      "price": 630000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.242005,
@@ -405,7 +264,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3530k\u2013\u00a32100k area est"
       ],
       "flags": [
         "probate"
@@ -416,8 +275,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242005,-0.768012",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 530000,
+      "est_high": 2100000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5150245",
@@ -434,8 +293,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65256"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -443,7 +302,7 @@
       "address": "Deceased 25 Coleford Bridge Road, Mytchett, Camberley \u2014 GU16 6DH",
       "owner_note": "Probate \u2014 estate of Thelma Huse",
       "postcode": "GU16 6DH",
-      "price": 0,
+      "price": 675000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.288873,
@@ -452,7 +311,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3575k\u2013\u00a3731k area est"
       ],
       "flags": [
         "probate"
@@ -463,8 +322,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 575000,
+      "est_high": 731000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5148761",
@@ -481,55 +340,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43712/65271"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5148460",
-      "address": "Deceased 77 Queens Road/nNorth Camp/nFarnborough/nHampshire \u2014 GU14 6JW",
-      "owner_note": "Probate \u2014 estate of Stephen Purchase",
-      "postcode": "GU14 6JW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.277114,
-      "lng": -0.742872,
-      "dist_mi": 6.7,
-      "score": 68,
-      "reasons": [
-        "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.277114,-0.742872",
-      "floor_area_m2": null,
-      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5148460",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43719/65265"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -537,7 +349,7 @@
       "address": "Deceased Holly Lodge Nursing Home, St Catherines Road, Frimley, Camberley \u2014 GU16 9NP",
       "owner_note": "Probate \u2014 estate of Patricia Powell",
       "postcode": "GU16 9NP",
-      "price": 0,
+      "price": 475000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.30768,
@@ -546,7 +358,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3240k\u2013\u00a3805k area est"
       ],
       "flags": [
         "probate"
@@ -557,8 +369,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 240000,
+      "est_high": 805000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146432",
@@ -575,55 +387,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43701/65273"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5149973",
-      "address": "Deceased Anchorstone Rest Home, FARNHAM \u2014 GU9 8LJ",
-      "owner_note": "Probate \u2014 estate of Peter Bommer",
-      "postcode": "GU9 8LJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.206492,
-      "lng": -0.797218,
-      "dist_mi": 1.6,
-      "score": 68,
-      "reasons": [
-        "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.206492,-0.797218",
-      "floor_area_m2": null,
-      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5149973",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -631,7 +396,7 @@
       "address": "Deceased Holly Lodge Nursing Home, St Catherine\u2019s Road, Frimley, Surrey \u2014 GU16 9NP",
       "owner_note": "Probate \u2014 estate of Beverley Whitty",
       "postcode": "GU16 9NP",
-      "price": 0,
+      "price": 475000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.30768,
@@ -640,7 +405,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3240k\u2013\u00a3805k area est"
       ],
       "flags": [
         "probate"
@@ -651,8 +416,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.30768,-0.720561",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 240000,
+      "est_high": 805000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5146913",
@@ -669,8 +434,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43701/65273"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -678,7 +443,7 @@
       "address": "Deceased 36 Stubbs Moor Road, FARNBOROUGH \u2014 GU14 8RJ",
       "owner_note": "Probate \u2014 estate of John Billings",
       "postcode": "GU14 8RJ",
-      "price": 0,
+      "price": 430000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.299233,
@@ -687,7 +452,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3350k\u2013\u00a3490k area est"
       ],
       "flags": [
         "probate"
@@ -698,8 +463,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.299233,-0.773954",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 350000,
+      "est_high": 490000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145764",
@@ -716,8 +481,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43706/65254"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -725,7 +490,7 @@
       "address": "Deceased Jubilee House Care Home, Pound Lane, Godalming, Surrey \u2014 GU7 1BX",
       "owner_note": "Probate \u2014 estate of Hazel Wilde",
       "postcode": "GU7 1BX",
-      "price": 0,
+      "price": 424000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.185207,
@@ -734,7 +499,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3305k\u2013\u00a3482k area est"
       ],
       "flags": [
         "probate"
@@ -745,8 +510,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.185207,-0.612201",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 305000,
+      "est_high": 482000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145201",
@@ -763,55 +528,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5144054",
-      "address": "Deceased 7 Blackthorn Crescent Farnborough Hampshire \u2014 GU14 9AE",
-      "owner_note": "Probate \u2014 estate of BARBARA ALLUM",
-      "postcode": "GU14 9AE",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.310655,
-      "lng": -0.773248,
-      "dist_mi": 8.2,
-      "score": 68,
-      "reasons": [
-        "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.310655,-0.773248",
-      "floor_area_m2": null,
-      "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5144054",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43699/65254"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -819,7 +537,7 @@
       "address": "Deceased 25 Coleford Bridge Road Mychett Camberley Surrey \u2014 GU16 6DH",
       "owner_note": "Probate \u2014 estate of Tony Mist",
       "postcode": "GU16 6DH",
-      "price": 0,
+      "price": 675000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.288873,
@@ -828,7 +546,7 @@
       "score": 68,
       "reasons": [
         "Est. on market Jul 2026\u2013Dec 2026",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3575k\u2013\u00a3731k area est"
       ],
       "flags": [
         "probate"
@@ -839,8 +557,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "floor_area_m2": null,
       "market_window": "Est. on market Jul 2026\u2013Dec 2026",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 575000,
+      "est_high": 731000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142482",
@@ -857,8 +575,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43712/65271"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -866,7 +584,7 @@
       "address": "Deceased 7 Peatmoor Close, Fleet \u2014 GU51 4LE",
       "owner_note": "Probate \u2014 estate of William Bittles",
       "postcode": "GU51 4LE",
-      "price": 0,
+      "price": 750000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.285242,
@@ -875,7 +593,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3617k\u2013\u00a3840k area est"
       ],
       "flags": [
         "probate"
@@ -886,8 +604,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285242,-0.847632",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 617500,
+      "est_high": 840000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5144259",
@@ -904,55 +622,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43714/65227"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5140515",
-      "address": "Deceased Field End, Rowledge, Farnham \u2014 GU10 4AF",
-      "owner_note": "Probate \u2014 estate of Dorothy Finlow",
-      "postcode": "GU10 4AF",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.182014,
-      "lng": -0.822907,
-      "dist_mi": 1.2,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.182014,-0.822907",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5140515",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43774/65236"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -960,7 +631,7 @@
       "address": "Deceased 73 Dukes Mead, Fleet \u2014 GU51 4HD",
       "owner_note": "Probate \u2014 estate of John Holland",
       "postcode": "GU51 4HD",
-      "price": 0,
+      "price": 540000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.280633,
@@ -969,7 +640,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3415k\u2013\u00a3625k area est"
       ],
       "flags": [
         "probate"
@@ -980,8 +651,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.280633,-0.859074",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 415000,
+      "est_high": 625000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142545",
@@ -998,8 +669,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43717/65223"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1007,7 +678,7 @@
       "address": "Deceased 2 Nepal Gardens, Church Crookham, Fleet \u2014 GU52 8LL",
       "owner_note": "Probate \u2014 estate of Norma Inglis",
       "postcode": "GU52 8LL",
-      "price": 0,
+      "price": 605000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.258534,
@@ -1016,7 +687,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3543k\u2013\u00a3622k area est"
       ],
       "flags": [
         "probate"
@@ -1027,8 +698,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.258534,-0.835744",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 543000,
+      "est_high": 622000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5140167",
@@ -1045,8 +716,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43729/65231"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1054,7 +725,7 @@
       "address": "Deceased 35 Place Court, Pool Road, Aldershot, Hampshire \u2014 GU11 3SW",
       "owner_note": "Probate \u2014 estate of Ronald Barfield",
       "postcode": "GU11 3SW",
-      "price": 0,
+      "price": 2000000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.234834,
@@ -1063,7 +734,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a31650k\u2013\u00a32650k Farnham-area est"
       ],
       "flags": [
         "probate"
@@ -1074,8 +745,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234834,-0.748967",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 1650000,
+      "est_high": 2650000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138889",
@@ -1092,8 +763,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43743/65263"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1101,7 +772,7 @@
       "address": "Deceased 12 Keble Court, Redfields Lane, Church Crookham, Fleet \u2014 GU52 0AE",
       "owner_note": "Probate \u2014 estate of Margaret Wyatt",
       "postcode": "GU52 0AE",
-      "price": 0,
+      "price": 375000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.253498,
@@ -1110,7 +781,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3375k\u2013\u00a3390k area est"
       ],
       "flags": [
         "probate"
@@ -1121,8 +792,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.253498,-0.845716",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 375000,
+      "est_high": 390000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138517",
@@ -1139,55 +810,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43732/65228"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5137991",
-      "address": "Deceased 37 Burnt Hill Way, Wrecclesham, Farnham \u2014 GU10 4RP",
-      "owner_note": "Probate \u2014 estate of David Seal",
-      "postcode": "GU10 4RP",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.192623,
-      "lng": -0.804019,
-      "dist_mi": 1.3,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.192623,-0.804019",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5137991",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1195,7 +819,7 @@
       "address": "Deceased 10 Beverley Close, Aldershot \u2014 GU12 6NP",
       "owner_note": "Probate \u2014 estate of Valerie Laycock",
       "postcode": "GU12 6NP",
-      "price": 0,
+      "price": 390000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.242687,
@@ -1204,7 +828,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3355k\u2013\u00a3422k area est"
       ],
       "flags": [
         "probate"
@@ -1215,8 +839,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242687,-0.726719",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 355000,
+      "est_high": 422500,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131726",
@@ -1233,8 +857,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65271"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1242,7 +866,7 @@
       "address": "Deceased 77 Sandringham Way, Camberley \u2014 GU16 9YG",
       "owner_note": "Probate \u2014 estate of Angela Fox",
       "postcode": "GU16 9YG",
-      "price": 0,
+      "price": 550500,
       "beds": 0,
       "property_type": "property",
       "lat": 51.311068,
@@ -1251,7 +875,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3387k\u2013\u00a3612k area est"
       ],
       "flags": [
         "probate"
@@ -1262,8 +886,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.311068,-0.725316",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 387000,
+      "est_high": 612000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133964",
@@ -1280,8 +904,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43699/65271"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1289,7 +913,7 @@
       "address": "Deceased 45 Award Road, Church Crookham, Fleet \u2014 GU52 6HQ",
       "owner_note": "Probate \u2014 estate of Robin Tinsley",
       "postcode": "GU52 6HQ",
-      "price": 0,
+      "price": 491000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.26558,
@@ -1298,7 +922,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3420k\u2013\u00a3590k area est"
       ],
       "flags": [
         "probate"
@@ -1309,8 +933,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.26558,-0.838978",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 420000,
+      "est_high": 590000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5134007",
@@ -1327,8 +951,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43725/65230"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1336,7 +960,7 @@
       "address": "Deceased 81 Willow Way, Farnham \u2014 GU9 0NT",
       "owner_note": "Probate \u2014 estate of Linda Cake",
       "postcode": "GU9 0NT",
-      "price": 0,
+      "price": 505000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.231424,
@@ -1345,7 +969,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3475k\u2013\u00a3565k area est"
       ],
       "flags": [
         "probate"
@@ -1356,8 +980,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.231424,-0.788147",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 475000,
+      "est_high": 565000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5129387",
@@ -1374,8 +998,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65249"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1383,7 +1007,7 @@
       "address": "Deceased 38 Laurel Close, HOOK \u2014 RG29 1BH",
       "owner_note": "Probate \u2014 estate of Moira Sharman",
       "postcode": "RG29 1BH",
-      "price": 0,
+      "price": 460000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.256074,
@@ -1392,7 +1016,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3445k\u2013\u00a3470k area est"
       ],
       "flags": [
         "probate"
@@ -1403,8 +1027,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 445000,
+      "est_high": 470000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133482",
@@ -1421,8 +1045,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43731/65188"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1430,7 +1054,7 @@
       "address": "Deceased 38 Laurel Close, North Warnborough, Hook \u2014 RG29 1BH",
       "owner_note": "Probate \u2014 estate of Moira Sharman",
       "postcode": "RG29 1BH",
-      "price": 0,
+      "price": 460000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.256074,
@@ -1439,7 +1063,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3445k\u2013\u00a3470k area est"
       ],
       "flags": [
         "probate"
@@ -1450,8 +1074,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 445000,
+      "est_high": 470000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133456",
@@ -1468,149 +1092,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43731/65188"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5128036",
-      "address": "Deceased 13 Wellesley Close, Ash Vale, Aldershot, Hampshire \u2014 GU12 5SW",
-      "owner_note": "Probate \u2014 estate of PHYLLIS SHIRLAW",
-      "postcode": "GU12 5SW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.270882,
-      "lng": -0.727847,
-      "dist_mi": 6.8,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.270882,-0.727847",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5128036",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43722/65270"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5128002",
-      "address": "Deceased Fleet Hall Care Home, 22-26 Church Road, Fleet \u2014 GU51 4NB",
-      "owner_note": "Probate \u2014 estate of Elizabeth Briggs",
-      "postcode": "GU51 4NB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.283605,
-      "lng": -0.842124,
-      "dist_mi": 5.9,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.283605,-0.842124",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5128002",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43715/65229"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5125461",
-      "address": "Deceased Fleet Hall Care Home, 22-26 Church Road, Fleet \u2014 GU51 4NB",
-      "owner_note": "Probate \u2014 estate of RICHARD BRIGGS",
-      "postcode": "GU51 4NB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.283605,
-      "lng": -0.842124,
-      "dist_mi": 5.9,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.283605,-0.842124",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5125461",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43715/65229"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1618,7 +1101,7 @@
       "address": "Deceased 16 York Crescent, ALDERSHOT \u2014 GU11 3JJ",
       "owner_note": "Probate \u2014 estate of Henry McWhinnie",
       "postcode": "GU11 3JJ",
-      "price": 0,
+      "price": 410000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.244906,
@@ -1627,7 +1110,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3305k\u2013\u00a3485k area est"
       ],
       "flags": [
         "probate"
@@ -1638,8 +1121,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.244906,-0.772003",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 305000,
+      "est_high": 485000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131333",
@@ -1656,102 +1139,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65254"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5130567",
-      "address": "Deceased 74 Weydon Hill Road, Farnham \u2014 GU9 8NY",
-      "owner_note": "Probate \u2014 estate of Lucia Bardoul",
-      "postcode": "GU9 8NY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.204574,
-      "lng": -0.798771,
-      "dist_mi": 1.5,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.204574,-0.798771",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5130567",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65245"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5123805",
-      "address": "Deceased Flat 14 Providence Place, Abbey Street, Farnham, Surrey \u2014 GU9 7RQ",
-      "owner_note": "Probate \u2014 estate of Clive Davis",
-      "postcode": "GU9 7RQ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.212675,
-      "lng": -0.795139,
-      "dist_mi": 1.9,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.212675,-0.795139",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5123805",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65246"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1759,7 +1148,7 @@
       "address": "Deceased 14 Stratford Court, Avon Road, Farnham \u2014 GU9 8PG",
       "owner_note": "Probate \u2014 estate of James Lindsay",
       "postcode": "GU9 8PG",
-      "price": 0,
+      "price": 360000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.207346,
@@ -1768,7 +1157,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3330k\u2013\u00a3368k area est"
       ],
       "flags": [
         "probate"
@@ -1779,8 +1168,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.207346,-0.797239",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 330000,
+      "est_high": 368000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5115992",
@@ -1797,8 +1186,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43759/65245"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1806,7 +1195,7 @@
       "address": "Deceased 35 Lower Farnham Road, Aldershot \u2014 GU12 4DY",
       "owner_note": "Probate \u2014 estate of GRACE FERRIS",
       "postcode": "GU12 4DY",
-      "price": 0,
+      "price": 430000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.239484,
@@ -1815,7 +1204,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3239k\u2013\u00a3430k area est"
       ],
       "flags": [
         "probate"
@@ -1826,8 +1215,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.239484,-0.744886",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 239000,
+      "est_high": 430000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5123832",
@@ -1844,102 +1233,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65264"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5119329",
-      "address": "Deceased 21 Neville Close, Hartley Wintney, Hook, Hampshire \u2014 RG27 8FD",
-      "owner_note": "Probate \u2014 estate of Keith Old",
-      "postcode": "RG27 8FD",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.301555,
-      "lng": -0.89433,
-      "dist_mi": 7.6,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.301555,-0.89433",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5119329",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43704/65210"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5118078",
-      "address": "Deceased Green Gables Nursing Home, Church Ln, Grayshott, Hindhead \u2014 GU26 6LY",
-      "owner_note": "Probate \u2014 estate of Philip Burt",
-      "postcode": "GU26 6LY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.111681,
-      "lng": -0.753321,
-      "dist_mi": 6.9,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.111681,-0.753321",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5118078",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43815/65261"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -1947,7 +1242,7 @@
       "address": "Deceased Little Henley, 2 The Oakway, Bentley, Hampshire \u2014 GU10 5LR",
       "owner_note": "Probate \u2014 estate of Graeme Keel",
       "postcode": "GU10 5LR",
-      "price": 0,
+      "price": 635000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.189803,
@@ -1956,7 +1251,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3492k\u2013\u00a3695k area est"
       ],
       "flags": [
         "probate"
@@ -1967,8 +1262,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.189803,-0.880722",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 492985,
+      "est_high": 695000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114805",
@@ -1985,55 +1280,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43769/65215"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5116901",
-      "address": "Deceased 45A West Street, Farnham \u2014 GU9 7DX",
-      "owner_note": "Probate \u2014 estate of John Jeffrey",
-      "postcode": "GU9 7DX",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.21266,
-      "lng": -0.80592,
-      "dist_mi": 1.5,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.21266,-0.80592",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5116901",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65242"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2041,7 +1289,7 @@
       "address": "Deceased 36 Long Gore, Godalming, Surrey \u2014 GU7 3TF",
       "owner_note": "Probate \u2014 estate of Gillian Reach",
       "postcode": "GU7 3TF",
-      "price": 0,
+      "price": 385000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.205441,
@@ -2050,7 +1298,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3360k\u2013\u00a3460k area est"
       ],
       "flags": [
         "probate"
@@ -2061,8 +1309,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 360000,
+      "est_high": 460000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116187",
@@ -2079,8 +1327,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65314"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2088,7 +1336,7 @@
       "address": "Deceased 36 Long Gore, Godalming, Surrey \u2014 GU7 3TF",
       "owner_note": "Probate \u2014 estate of Stuart Reach",
       "postcode": "GU7 3TF",
-      "price": 0,
+      "price": 385000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.205441,
@@ -2097,7 +1345,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3360k\u2013\u00a3460k area est"
       ],
       "flags": [
         "probate"
@@ -2108,8 +1356,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 360000,
+      "est_high": 460000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116186",
@@ -2126,8 +1374,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65314"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2135,7 +1383,7 @@
       "address": "Deceased 10 Parkland Grove, FARNHAM \u2014 GU9 9HA",
       "owner_note": "Probate \u2014 estate of Sheila Brooks",
       "postcode": "GU9 9HA",
-      "price": 0,
+      "price": 457000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.238578,
@@ -2144,7 +1392,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3135k\u2013\u00a3580k area est"
       ],
       "flags": [
         "probate"
@@ -2155,8 +1403,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.238578,-0.773103",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 135000,
+      "est_high": 580000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114624",
@@ -2173,102 +1421,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5105496",
-      "address": "Deceased Moorlands Lodge, Portsmouth Road, Hindhead \u2014 GU26 6TJ",
-      "owner_note": "Probate \u2014 estate of Paul Kirton",
-      "postcode": "GU26 6TJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.112014,
-      "lng": -0.737383,
-      "dist_mi": 7.2,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.112014,-0.737383",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5105496",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43815/65267"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5113293",
-      "address": "Deceased 4 Holly Close, ALDERSHOT \u2014 GU12 4RP",
-      "owner_note": "Probate \u2014 estate of Ivy Sharpe",
-      "postcode": "GU12 4RP",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.247638,
-      "lng": -0.748934,
-      "dist_mi": 5.0,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.247638,-0.748934",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5113293",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43736/65263"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2276,7 +1430,7 @@
       "address": "Deceased 87 Cranmore Lane, Aldershot \u2014 GU11 3AP",
       "owner_note": "Probate \u2014 estate of Gwendoline Sear",
       "postcode": "GU11 3AP",
-      "price": 0,
+      "price": 685000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.242918,
@@ -2285,7 +1439,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3575k\u2013\u00a3820k area est"
       ],
       "flags": [
         "probate"
@@ -2296,8 +1450,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242918,-0.783059",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 575000,
+      "est_high": 820000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111180",
@@ -2314,8 +1468,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65250"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2323,7 +1477,7 @@
       "address": "Deceased 4 Fenhurst Close, Horsham \u2014 RH12 1UX",
       "owner_note": "Probate \u2014 estate of Jack Spencer",
       "postcode": "RH12 1UX",
-      "price": 0,
+      "price": 365000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.06033,
@@ -2332,7 +1486,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3350k\u2013\u00a3366k area est"
       ],
       "flags": [
         "probate"
@@ -2343,8 +1497,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.06033,-0.350789",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 350500,
+      "est_high": 366000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111171",
@@ -2361,8 +1515,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43845/65408"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2370,7 +1524,7 @@
       "address": "Deceased 27 White Acres Road, CAMBERLEY \u2014 GU16 6JJ",
       "owner_note": "Probate \u2014 estate of Geoffrey Goddard",
       "postcode": "GU16 6JJ",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.293636,
@@ -2379,7 +1533,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3245k\u2013\u00a3500k area est"
       ],
       "flags": [
         "probate"
@@ -2390,8 +1544,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.293636,-0.728926",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 245000,
+      "est_high": 500000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5110024",
@@ -2408,55 +1562,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43709/65270"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5108478",
-      "address": "Deceased Silvertrees, Priorswood, Compton, Guildford, Surrey \u2014 GU3 1DR",
-      "owner_note": "Probate \u2014 estate of Sheila Tomlinson",
-      "postcode": "GU3 1DR",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.211605,
-      "lng": -0.646356,
-      "dist_mi": 8.1,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.211605,-0.646356",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5108478",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65300"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2464,7 +1571,7 @@
       "address": "Deceased 79 Riverdale, FARNHAM \u2014 GU10 4QT",
       "owner_note": "Probate \u2014 estate of James Grant",
       "postcode": "GU10 4QT",
-      "price": 0,
+      "price": 415000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.198496,
@@ -2473,7 +1580,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3373k\u2013\u00a3461k area est"
       ],
       "flags": [
         "probate"
@@ -2484,8 +1591,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198496,-0.820899",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 373000,
+      "est_high": 461470,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5108616",
@@ -2502,102 +1609,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5105106",
-      "address": "Deceased Green Gables Nursing Home, Church Lane, Hindhead \u2014 GU26 6LY",
-      "owner_note": "Probate \u2014 estate of Carl Fraser",
-      "postcode": "GU26 6LY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.111681,
-      "lng": -0.753321,
-      "dist_mi": 6.9,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.111681,-0.753321",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5105106",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43815/65261"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5102871",
-      "address": "Deceased 3 Cherry Lodge/nSt Georges Road East/nAldershot \u2014 GU12 4LW",
-      "owner_note": "Probate \u2014 estate of Kim Blake",
-      "postcode": "GU12 4LW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.245739,
-      "lng": -0.756364,
-      "dist_mi": 4.6,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.245739,-0.756364",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5102871",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65260"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2605,7 +1618,7 @@
       "address": "Deceased 20 Champion Way, FLEET \u2014 GU52 6HU",
       "owner_note": "Probate \u2014 estate of John Farrer",
       "postcode": "GU52 6HU",
-      "price": 0,
+      "price": 396000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.264157,
@@ -2614,7 +1627,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3360k\u2013\u00a3505k area est"
       ],
       "flags": [
         "probate"
@@ -2625,8 +1638,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.264157,-0.836964",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 360000,
+      "est_high": 505000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103829",
@@ -2643,8 +1656,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43726/65231"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2652,7 +1665,7 @@
       "address": "Deceased 9 Madeley Road, Church Crookham, Fleet \u2014 GU52 6AR",
       "owner_note": "Probate \u2014 estate of Edward Gosling",
       "postcode": "GU52 6AR",
-      "price": 0,
+      "price": 575000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.268421,
@@ -2661,7 +1674,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3486k\u2013\u00a3638k area est"
       ],
       "flags": [
         "probate"
@@ -2672,8 +1685,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 486000,
+      "est_high": 638000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103656",
@@ -2690,8 +1703,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43724/65234"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2699,7 +1712,7 @@
       "address": "Deceased 9 Madeley Road, Church Crookham, Fleet \u2014 GU52 6AR",
       "owner_note": "Probate \u2014 estate of Shirley Gosling",
       "postcode": "GU52 6AR",
-      "price": 0,
+      "price": 575000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.268421,
@@ -2708,7 +1721,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3486k\u2013\u00a3638k area est"
       ],
       "flags": [
         "probate"
@@ -2719,8 +1732,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 486000,
+      "est_high": 638000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103646",
@@ -2737,8 +1750,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43724/65234"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2746,7 +1759,7 @@
       "address": "Deceased 7 Bridge Square, Farnham, Surrey \u2014 GU9 7QR",
       "owner_note": "Probate \u2014 estate of Anne Broughton",
       "postcode": "GU9 7QR",
-      "price": 0,
+      "price": 540000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.211735,
@@ -2755,7 +1768,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3400k\u2013\u00a3931k area est"
       ],
       "flags": [
         "probate"
@@ -2766,8 +1779,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.211735,-0.797239",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 400000,
+      "est_high": 931663,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093957",
@@ -2784,149 +1797,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65245"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5091497",
-      "address": "Deceased Hill Brow Beacon Hill Ewshott Hampshire \u2014 GU10 5DB",
-      "owner_note": "Probate \u2014 estate of Eileen Knight",
-      "postcode": "GU10 5DB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.237349,
-      "lng": -0.826883,
-      "dist_mi": 2.7,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237349,-0.826883",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5091497",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5099409",
-      "address": "Deceased 4 Brabon Road, Farnborough \u2014 GU14 8QA",
-      "owner_note": "Probate \u2014 estate of Marie Norton",
-      "postcode": "GU14 8QA",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.300042,
-      "lng": -0.769658,
-      "dist_mi": 7.5,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.300042,-0.769658",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5099409",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43705/65255"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5095567",
-      "address": "Deceased Chompers, 4 Cedarways, Farnham \u2014 GU9 8SW",
-      "owner_note": "Probate \u2014 estate of Therese Fry",
-      "postcode": "GU9 8SW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.19872,
-      "lng": -0.804004,
-      "dist_mi": 1.2,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.19872,-0.804004",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5095567",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65243"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2934,7 +1806,7 @@
       "address": "Deceased 8 Riverdale, Wrecclesham, Farnham \u2014 GU10 4PH",
       "owner_note": "Probate \u2014 estate of Anthony Booker",
       "postcode": "GU10 4PH",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.200301,
@@ -2943,7 +1815,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3430k\u2013\u00a3530k area est"
       ],
       "flags": [
         "probate"
@@ -2954,8 +1826,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200301,-0.819822",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 430000,
+      "est_high": 530000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5094029",
@@ -2972,8 +1844,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65237"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -2981,7 +1853,7 @@
       "address": "Deceased Bourne Wood, Manor Care Home, Farnham \u2014 GU9 7AP",
       "owner_note": "Probate \u2014 estate of Thomas Heneghan",
       "postcode": "GU9 7AP",
-      "price": 0,
+      "price": 595000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.208469,
@@ -2990,7 +1862,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3435k\u2013\u00a3860k area est"
       ],
       "flags": [
         "probate"
@@ -3001,8 +1873,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.208469,-0.813873",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 435000,
+      "est_high": 860000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5093995",
@@ -3019,8 +1891,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43759/65239"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -3028,7 +1900,7 @@
       "address": "Deceased Rojula, Wellington Lane, Farnham \u2014 GU9 9BA",
       "owner_note": "Probate \u2014 estate of Julia Wiltshire",
       "postcode": "GU9 9BA",
-      "price": 0,
+      "price": 373500,
       "beds": 0,
       "property_type": "property",
       "lat": 51.237718,
@@ -3037,7 +1909,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3340k\u2013\u00a3390k area est"
       ],
       "flags": [
         "probate"
@@ -3048,8 +1920,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237718,-0.78546",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 340000,
+      "est_high": 390000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5091412",
@@ -3066,55 +1938,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65250"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5088435",
-      "address": "Deceased Owl Cottage, Eashing Lane, Godalming \u2014 GU7 2QA",
-      "owner_note": "Probate \u2014 estate of Margaret Bannister",
-      "postcode": "GU7 2QA",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.185208,
-      "lng": -0.641334,
-      "dist_mi": 8.3,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.185208,-0.641334",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5088435",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65302"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -3122,7 +1947,7 @@
       "address": "Deceased Senglea, Hazel Road, Ash Green, Aldershot \u2014 GU12 6HP",
       "owner_note": "Probate \u2014 estate of Patricia Taylor",
       "postcode": "GU12 6HP",
-      "price": 0,
+      "price": 600000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.237984,
@@ -3131,7 +1956,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3499k\u2013\u00a3865k area est"
       ],
       "flags": [
         "probate"
@@ -3142,8 +1967,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237984,-0.703814",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 499950,
+      "est_high": 865000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5083204",
@@ -3160,243 +1985,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65279"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5081876",
-      "address": "Deceased Beacon Hill Road, Ewshot, Farnham \u2014 GU10 5DB",
-      "owner_note": "Probate \u2014 estate of Audrey Hawkins",
-      "postcode": "GU10 5DB",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.237349,
-      "lng": -0.826883,
-      "dist_mi": 2.7,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237349,-0.826883",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5081876",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5077241",
-      "address": "Deceased Tilford Care and Nursing Home, Farnham \u2014 GU10 2DG",
-      "owner_note": "Probate \u2014 estate of Peter Hardman",
-      "postcode": "GU10 2DG",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.165544,
-      "lng": -0.753844,
-      "dist_mi": 4.1,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.165544,-0.753844",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5077241",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43784/65261"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5072892",
-      "address": "Deceased Springkell House Care Home, Wood Road, Hindhead \u2014 GU26 6PT",
-      "owner_note": "Probate \u2014 estate of George Barnett",
-      "postcode": "GU26 6PT",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.12231,
-      "lng": -0.748191,
-      "dist_mi": 6.4,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.12231,-0.748191",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5072892",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65263"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5077115",
-      "address": "Deceased Oaklands Farm, Smithfield Lane, Headley Down, Bordon \u2014 GU35 8ST",
-      "owner_note": "Probate \u2014 estate of John Vilton",
-      "postcode": "GU35 8ST",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.135756,
-      "lng": -0.809518,
-      "dist_mi": 4.4,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.135756,-0.809518",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5077115",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43801/65241"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5071016",
-      "address": "Deceased Ashton Manor Nursing Home, Beales Lane, Wrecclesham, Surrey \u2014 GU10 4PY",
-      "owner_note": "Probate \u2014 estate of Ada Bartlett",
-      "postcode": "GU10 4PY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.198017,
-      "lng": -0.818965,
-      "dist_mi": 0.6,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198017,-0.818965",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5071016",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65237"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -3404,7 +1994,7 @@
       "address": "Deceased 83 Canterbury Road, Farnborough \u2014 GU14 6QN",
       "owner_note": "Probate \u2014 estate of Anstice Batten",
       "postcode": "GU14 6QN",
-      "price": 0,
+      "price": 635000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.286132,
@@ -3413,7 +2003,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3580k\u2013\u00a3770k area est"
       ],
       "flags": [
         "probate"
@@ -3424,8 +2014,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.286132,-0.744347",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 580000,
+      "est_high": 770000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075989",
@@ -3442,8 +2032,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43713/65264"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -3451,7 +2041,7 @@
       "address": "Deceased 106-128 Alumhurst Road, Bournemouth \u2014 BH4 8HU",
       "owner_note": "Probate \u2014 estate of Susan Parratt",
       "postcode": "BH4 8HU",
-      "price": 0,
+      "price": 500000,
       "beds": 0,
       "property_type": "property",
       "lat": 50.712163,
@@ -3460,7 +2050,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3248k\u2013\u00a3620k area est"
       ],
       "flags": [
         "probate"
@@ -3471,8 +2061,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=50.712163,-1.902014",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 248505,
+      "est_high": 620000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075898",
@@ -3489,102 +2079,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/44045/64843"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5074933",
-      "address": "Deceased 8 Searle Road, FARNHAM \u2014 GU9 8LJ",
-      "owner_note": "Probate \u2014 estate of CAROL PAGE",
-      "postcode": "GU9 8LJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.206492,
-      "lng": -0.797218,
-      "dist_mi": 1.6,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.206492,-0.797218",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5074933",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5074207",
-      "address": "Deceased Southborough Lodge Farm, Elstead Road, Shackleford, Godalming \u2014 GU8 6AY",
-      "owner_note": "Probate \u2014 estate of Daniel Cottrell",
-      "postcode": "GU8 6AY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.195177,
-      "lng": -0.656555,
-      "dist_mi": 7.6,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.195177,-0.656555",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5074207",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65296"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -3592,7 +2088,7 @@
       "address": "Deceased Harlow Hall, Aldershot \u2014 GU11 1TW",
       "owner_note": "Probate \u2014 estate of Patricia Watkinson",
       "postcode": "GU11 1TW",
-      "price": 0,
+      "price": 2000000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.248863,
@@ -3601,7 +2097,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a31650k\u2013\u00a32650k Farnham-area est"
       ],
       "flags": [
         "probate"
@@ -3612,8 +2108,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.248863,-0.755033",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 1650000,
+      "est_high": 2650000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5072908",
@@ -3630,8 +2126,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43735/65261"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
@@ -3639,7 +2135,7 @@
       "address": "Deceased 19 Kings Avenue, Tongham, Farnham, Surrey \u2014 GU10 1AU",
       "owner_note": "Probate \u2014 estate of Malcolm Morse",
       "postcode": "GU10 1AU",
-      "price": 0,
+      "price": 434000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.241155,
@@ -3648,7 +2144,7 @@
       "score": 68,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3355k\u2013\u00a3450k area est"
       ],
       "flags": [
         "probate"
@@ -3659,8 +2155,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.241155,-0.733022",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 355000,
+      "est_high": 450000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5071406",
@@ -3677,55 +2173,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43740/65269"
       },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
-      "days_on_market": 0
-    },
-    {
-      "id": "gz_5071400",
-      "address": "Deceased Barbin, Frimley Road, Ash Vale, Aldershot, Hampshire \u2014 GU12 5PS",
-      "owner_note": "Probate \u2014 estate of Karen Lowther",
-      "postcode": "GU12 5PS",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.279867,
-      "lng": -0.72552,
-      "dist_mi": 7.3,
-      "score": 68,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.279867,-0.72552",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5071400",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43717/65271"
-      },
-      "first_seen": "2026-06-29",
-      "last_seen": "2026-06-29",
+      "first_seen": "2026-06-30",
+      "last_seen": "2026-06-30",
       "days_on_market": 0
     },
     {
