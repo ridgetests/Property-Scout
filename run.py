@@ -54,8 +54,8 @@ PROBATE_LOCATION = "Farnham"   # Gazette accepts a town or full postcode
 PROBATE_RADIUS_MI = 8          # probate is about your actual patch - keep it tight
 PROBATE_LOOKBACK_DAYS = 120    # estates can take months to reach the market
 # --- only surface probate leads that fit your buying criteria ---
-PROBATE_MAX_PRICE = 800_000              # skip estimates above this
-PROBATE_MIN_PRICE = 350_000              # skip cheap flats / small terraces
+PROBATE_MAX_PRICE = 900_000              # skip estimates above this
+PROBATE_MIN_PRICE = 300_000              # skip cheap flats / small terraces
 PROBATE_TYPES = ("detached", "semi", "terraced")   # houses only (excludes "flat"); widen/narrow freely
 PROBATE_KEEP_UNKNOWN = True              # keep long-held homes Land Registry can't price (often the best)
 HOME_FLOOR_AREA_M2 = 144                 # 3 Boundstone Close internal floor area (m2), from floor plan
@@ -541,6 +541,76 @@ def _excluded_type(typ):
     return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment"))
 
 
+def _band01(x, lo, hi):
+    if x is None or hi == lo:
+        return 0.5
+    return max(0.0, min(1.0, (x - lo) / (hi - lo)))
+
+
+def score_property(p):
+    """Differentiated composite score across five axes. Feasibility is a
+    placeholder (1.0) until the constraint layer (Green Belt / AONB) is added."""
+    home = HOME_PLOT_M2 or 380
+    plot = p.get("plot_m2")
+    if plot:
+        ratio = plot / home
+        potential = min(1.0, 0.25 + 0.22 * ratio)
+        pot_note = f"{plot:,} m\u00b2 plot ({ratio:.1f}\u00d7 your home)"
+    else:
+        ratio, potential, pot_note = 0, 0.35, "plot unverified"
+    price = p.get("price") or p.get("est_mid")
+    if price:
+        value = 1.0 - _band01(price, PROBATE_MIN_PRICE, PROBATE_MAX_PRICE)
+        lo, hi = p.get("est_low"), p.get("est_high")
+        if lo and hi:
+            value = min(1.0, value + 0.15 * _band01((hi - lo) / price, 0, 0.5))
+        val_note = f"~\u00a3{round(price/1000)}k"
+    else:
+        value, val_note = 0.4, "price unknown"
+    d = p.get("dist_mi")
+    fit = max(0.0, 1.0 - (d if d is not None else 6) / 12.0)
+    fit_note = f"{d} mi from home" if d is not None else "distance n/a"
+    edge, ebits = 0.0, []
+    fl = p.get("flags") or []
+    if "probate" in fl:
+        edge += 0.10; ebits.append("probate")
+    if "auction" in fl:
+        edge += 0.08; ebits.append("auction")
+    dom = ((p.get("enrichment", {}).get("market", {}) or {}).get("dom")
+           or p.get("days_on_market") or 0)
+    if dom and dom >= 120:
+        edge += 0.06; ebits.append(f"{dom}d on market")
+    txt = (p.get("address", "") + " " + " ".join(p.get("reasons", []))).lower()
+    if "reduc" in txt:
+        edge += 0.06; ebits.append("reduced")
+    if any(k in txt for k in ("cash only", "cash buyers", "unmortgageable")):
+        edge += 0.05; ebits.append("cash-only")
+    edge = min(0.20, edge)
+    edge_note = ", ".join(ebits) if ebits else "open market"
+    feas = 1.0  # placeholder until constraint layer
+    core = 0.45 * potential + 0.30 * value + 0.25 * fit
+    p["score"] = int(round(min(100, (core * 85 + edge * 100) * feas)))
+    if ratio >= 2.0:
+        typ = "Plot play"
+    elif price and value >= 0.7:
+        typ = "Anomaly"
+    elif edge >= 0.10:
+        typ = "Motivated seller"
+    elif fit >= 0.7 and ratio >= 1.0:
+        typ = "Forever-fit"
+    else:
+        typ = "Candidate"
+    p["typology"] = typ
+    p["tier"] = "High" if p["score"] >= 62 else ("Medium" if p["score"] >= 48 else "Low")
+    p["signals"] = {
+        "Potential": {"score": round(potential * 45), "max": 45, "note": pot_note},
+        "Value": {"score": round(value * 30), "max": 30, "note": val_note},
+        "Fit": {"score": round(fit * 25), "max": 25, "note": fit_note},
+        "Edge": {"score": round(edge * 100), "max": 20, "note": edge_note},
+    }
+    return p
+
+
 def apply_gates(props):
     """Stamp plot size; apply detached + plot-size hard gates (keep unverified plots)."""
     out = []
@@ -558,6 +628,7 @@ def apply_gates(props):
             fl = p.setdefault("flags", [])
             if "plot-unverified" not in fl:
                 fl.append("plot-unverified")
+        score_property(p)
         out.append(p)
     if dropped_type or dropped_plot:
         print(f"- gates: dropped {dropped_type} non-detached, {dropped_plot} under {MIN_PLOT_M2} m2 plot")
@@ -1141,6 +1212,10 @@ def fetch_probate_leads(conn):
         addr_m = re.search(r"(?:late of|residing at|formerly of|of)\s+(.+?),?\s*"
                            r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}", content)
         addr_line = (addr_m.group(1).strip(" ,") if addr_m else "")
+        if re.search(r"(nursing home|care home|rest home|residential home|"
+                     r"retirement home|convalescent|care centre|nursing centre|"
+                     r"hospital|hospice)", addr_line or content, re.I):
+            continue
         paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_line)
         raw.append({"id": f"gz_{pid}",
                     "name": _probate_name(e.get("title"), content),
@@ -1188,7 +1263,7 @@ def fetch_probate_leads(conn):
         reliable = (basis == "postcode")
         if reliable and typ and PROBATE_TYPES and typ not in PROBATE_TYPES:
             continue
-        if reliable and est is not None and (est > PROBATE_MAX_PRICE or est < PROBATE_MIN_PRICE):
+        if est is not None and (est > PROBATE_MAX_PRICE or est < PROBATE_MIN_PRICE):
             continue
         if est is None and not PROBATE_KEEP_UNKNOWN:
             continue
