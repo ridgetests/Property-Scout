@@ -63,6 +63,7 @@ HOME_FLOOR_AREA_M2 = 144                 # 3 Boundstone Close internal floor are
 HOME_PLOT_M2 = 380                       # measured plot area (m2) from title plan SY519861
 HOME_PLOT_OUTLINE = [[-5.27, -19.32], [4.58, -19.32], [6.07, 19.32], [-5.38, 19.32]]  # plot shape, centred metres
 PLOTS_FILE = Path(__file__).resolve().parent / "plots_waverley.json.gz"  # HMLR INSPIRE parcels
+FOOTPRINTS_FILE = Path(__file__).resolve().parent / "footprints_bowl.json.gz"  # OS OpenMap Local buildings
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
@@ -551,6 +552,64 @@ def plot_for(lat, lng):
     return best
 
 
+_FOOTPRINTS = None
+
+
+def _load_footprints():
+    global _FOOTPRINTS
+    if _FOOTPRINTS is not None:
+        return _FOOTPRINTS
+    try:
+        with gzip.open(FOOTPRINTS_FILE, "rt") as f:
+            _FOOTPRINTS = json.load(f).get("buildings", [])
+        print(f"- loaded {len(_FOOTPRINTS)} building footprints")
+    except Exception as e:
+        print(f"- footprint data unavailable ({e})")
+        _FOOTPRINTS = []
+    return _FOOTPRINTS
+
+
+def parcel_for(lat, lng):
+    """Smallest parcel whose boundary contains the point (the property's own plot)."""
+    if lat is None or lng is None:
+        return None
+    best = None
+    for p in _load_parcels():
+        b = p["b"]
+        if b[0] <= lat <= b[1] and b[2] <= lng <= b[3] and _pip(lat, lng, p["r"]):
+            if best is None or p["a"] < best["a"]:
+                best = p
+    return best
+
+
+def analyze_buildings(parcel):
+    """Footprints inside a parcel -> main house, outbuildings, plot coverage.
+    Powers outbuilding/conversion detection and a floor-area fallback."""
+    if not parcel:
+        return {}
+    b, ring = parcel["b"], parcel["r"]
+    inside = []
+    for f in _load_footprints():
+        la, lo = f["c"]
+        if b[0] <= la <= b[1] and b[2] <= lo <= b[3] and 0 < f["a"] < 50000 and _pip(la, lo, ring):
+            inside.append(f["a"])
+    if not inside:
+        return {}
+    inside.sort(reverse=True)
+    main = inside[0]
+    secondary = [a for a in inside[1:] if a >= 25]
+    largest_sec = secondary[0] if secondary else 0
+    cov = round(100 * sum(inside) / parcel["a"]) if parcel.get("a") else None
+    out = {"main_m2": main, "buildings": len(inside),
+           "largest_secondary_m2": largest_sec, "coverage_pct": cov}
+    if largest_sec >= 100:
+        out["outbuilding"] = "large"
+    elif largest_sec >= 60:
+        out["outbuilding"] = "medium"
+    return out
+
+
+
 def _excluded_type(typ):
     t = (typ or "").lower()
     return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment"))
@@ -667,6 +726,11 @@ def score_property(p):
         pot_note = f"{plot:,} m\u00b2 plot ({ratio:.1f}\u00d7 your home)"
     else:
         ratio, potential, pot_note = 0, 0.35, "plot unverified"
+    fb = p.get("footprints") or {}
+    cov = fb.get("coverage_pct")
+    if plot and cov is not None and cov <= 12:
+        potential = min(1.0, potential + 0.08)
+        pot_note += f" · {cov}% built (room to develop)"
     price = p.get("price") or p.get("est_mid")
     if price:
         value = 1.0 - _band01(price, PROBATE_MIN_PRICE, PROBATE_MAX_PRICE)
@@ -695,6 +759,9 @@ def score_property(p):
     if any(k in txt for k in ("cash only", "cash buyers", "unmortgageable")):
         edge += 0.05; ebits.append("cash-only")
     edge = min(0.20, edge)
+    lsec = fb.get("largest_secondary_m2") or 0
+    if lsec >= 60:
+        ebits.append(f"outbuilding ~{lsec} m\u00b2")
     edge_note = ", ".join(ebits) if ebits else "open market"
     feas = p.get("feasibility", 1.0)
     core = 0.45 * potential + 0.30 * value + 0.25 * fit
@@ -712,8 +779,11 @@ def score_property(p):
     perm = p.get("permission")
     setting = p.get("setting")
     rural = setting is not None and setting <= 12
-    # typology: development/setting plays lead when the permission + setting support it
-    if ratio >= 2.0 and perm is not None and perm >= 0.70:
+    outb = (p.get("footprints") or {}).get("outbuilding")
+    # typology: development/setting/conversion plays lead when they stack up
+    if outb == "large" and ratio >= 1.5 and (perm is None or perm >= 0.55):
+        typ = "Conversion play"
+    elif ratio >= 2.0 and perm is not None and perm >= 0.70:
         typ = "Development play"
     elif ratio >= 1.6 and rural and (perm is None or perm >= 0.55):
         typ = "Setting play"
@@ -748,12 +818,17 @@ def score_property(p):
 def apply_gates(props):
     """Stamp plot size; apply detached + plot-size hard gates (keep unverified plots)."""
     out = []
-    dropped_type = dropped_plot = 0
+    dropped_type = dropped_plot = dropped_area = 0
     for p in props:
+        if p.get("lat") is not None and not _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
+            dropped_area += 1
+            continue
         if DETACHED_ONLY and _excluded_type(p.get("property_type")):
             dropped_type += 1
             continue
-        area = plot_for(p.get("lat"), p.get("lng"))
+        lat, lng = p.get("lat"), p.get("lng")
+        parcel = parcel_for(lat, lng)
+        area = parcel["a"] if parcel else None
         p["plot_m2"] = area
         if area is not None and area < MIN_PLOT_M2:
             dropped_plot += 1
@@ -762,7 +837,11 @@ def apply_gates(props):
             fl = p.setdefault("flags", [])
             if "plot-unverified" not in fl:
                 fl.append("plot-unverified")
-        lat, lng = p.get("lat"), p.get("lng")
+        fb = analyze_buildings(parcel)
+        if fb:
+            p["footprints"] = fb
+            if fb.get("main_m2") and not p.get("floor_area_m2"):
+                p["floor_area_est_m2"] = round(fb["main_m2"] * 2 * 0.9)
         con = fetch_constraints(lat, lng)
         if con:
             p["constraints"] = con["list"]
@@ -778,8 +857,8 @@ def apply_gates(props):
         p["setting"] = _local_density(lat, lng)
         score_property(p)
         out.append(p)
-    if dropped_type or dropped_plot:
-        print(f"- gates: dropped {dropped_type} non-detached, {dropped_plot} under {MIN_PLOT_M2} m2 plot")
+    if dropped_type or dropped_plot or dropped_area:
+        print(f"- gates: dropped {dropped_area} out-of-area, {dropped_type} non-detached, {dropped_plot} under {MIN_PLOT_M2} m2 plot")
     return out
 
 
@@ -1122,53 +1201,48 @@ def _probate_name(title, content):
 
 
 def _probate_contact(content, deceased_pc):
-    """Extract the estate's claims contact (solicitor or executor) from a Gazette
-    notice. Permissive: searches the whole notice for a legal-suffix firm name, a
-    recipient block, then a last-postcode address block as fallbacks."""
+    """Parse the estate's claims contact from a Gazette deceased-estates notice.
+    These notices are STRUCTURED (labelled fields), so read the labels first;
+    fall back to prose firm-name detection if the labels aren't present."""
     content = re.sub(r"\s+", " ", content or "").strip()
     if not content:
         return {}
-    # reference
+    STOP = r"(?=\s*(?:Address|Town|County|Postcode|Legal|Notice|Reference|Executor|Administrator|Deceased|Date|Claims|Previous|$))"
     ref = ""
-    rm = re.search(r"\bRef(?:erence)?\b[:.\s]*([A-Za-z0-9][A-Za-z0-9./\- ]{1,18})", content, re.I)
+    rm = re.search(r"Reference Number:\s*([A-Za-z0-9/.\-]+)", content, re.I)
     if rm:
-        ref = rm.group(1).strip(" .)")
-    # contact postcode = last postcode in notice that isn't the deceased's
+        ref = rm.group(1).strip(" .")
+    # structured: company executor/administrator
+    name = ""
+    cm = re.search(r"Executor/Administrator Company Name:\s*(.+?)" + STOP, content, re.I)
+    if cm and cm.group(1).strip(" -\u2013,"):
+        name = cm.group(1).strip(" -\u2013,")
+    if not name:  # structured: person executor (title/first/surname labels)
+        parts = []
+        for lbl in [r"Executor/Administrator Title", r"Executor/Administrator First name",
+                    r"Executor/Administrator Surname"]:
+            m = re.search(lbl + r":\s*(.+?)" + STOP, content, re.I)
+            if m and m.group(1).strip():
+                parts.append(m.group(1).strip())
+        name = " ".join(parts).strip()
+    if not name:  # prose fallback: legal-suffix firm anywhere
+        _SUF = (r"(?:Solicitors|Solicitor|LLP|& Co\.?|& Partners|Law Firm|Legal|"
+                r"Trust Corporation|Limited|Ltd|Partners)")
+        fm = re.search(r"((?:[A-Z][\w'.]*\s+(?:&\s+)?){1,4}" + _SUF + r")\b", content)
+        if fm:
+            name = fm.group(1).strip()
+    if not name:
+        return {}
+    # executor postcode = last postcode in notice (deceased's is the first)
     pcs = re.findall(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", content)
     contact_pc = ""
     for pc in reversed(pcs):
         if pc.upper() != (deceased_pc or "").upper():
             contact_pc = pc.upper()
             break
-    # firm name: consecutive capitalised words ending in a legal suffix (no sentence-crossing)
-    _SUF = (r"(?:Solicitors|Solicitor|LLP|& Co\.?|& Partners|Law Firm|Legal|"
-            r"Trust Corporation|Limited|Ltd|Partners)")
-    firm = re.search(r"((?:[A-Z][\w'.]*\s+(?:&\s+)?){1,4}" + _SUF + r")\b", content)
-    # recipient block: after a claims trigger, up to the deadline or sentence end
-    block = ""
-    m = re.search(r"(?:particulars[^.]*?\bto\b|send[^.]*?\bto\b|claims?\s+to\b|"
-                  r"interest\s+to\b|to\s+the\s+undersigned[,:]?)\s+(.{6,220}?)"
-                  r"(?:\s+(?:on\s+or\s+before|before\s+the|not\s+later|after\s+which|by\s+the)|\.)",
-                  content, re.I)
-    if m:
-        block = m.group(1)
-    block = re.sub(r"^(?:the\s+undersigned[,\s]*|Solicitors?[,\s]*|Messrs\.?\s+)+", "",
-                   block.strip(), flags=re.I).strip(" ,.;:")
-    # decide name + kind
-    name, kind = "", "executor"
-    if firm:
-        name, kind = firm.group(1).strip(), "solicitor"
-    elif block:
-        name = block.split(",")[0].strip()
-    elif contact_pc:
-        am = re.search(r"([A-Z][^.]{5,90}?" + re.escape(contact_pc.replace(" ", r"\s*")) + r")", content)
-        if am:
-            block = am.group(1).strip()
-            name = block.split(",")[0].strip()
-    if not name:
-        return {}
-    return {"name": name[:60], "block": (block or name)[:160], "ref": ref,
-            "postcode": contact_pc, "kind": kind}
+    kind = "solicitor" if re.search(r"\b(Solicitors?|LLP|& Co|Legal|Law|Trust Corporation)\b",
+                                    name, re.I) else "executor"
+    return {"name": name[:60], "ref": ref, "postcode": contact_pc, "kind": kind}
 
 
 _PTYPE = {"detached": "detached", "semi-detached": "semi", "terraced": "terraced",
@@ -1421,6 +1495,7 @@ def fetch_probate_leads(conn):
                     "paon": paon_m.group(1) if paon_m else "",
                     "addr_line": addr_line,
                     "contact": _probate_contact(content, pc.group(1).upper()),
+                    "notice_sample": content[:300],
                     "dod": dod.group(1) if dod else "",
                     "pub": (e.get("published") or "")[:10],
                     "url": f"https://www.thegazette.co.uk/notice/{pid}"})
@@ -1486,6 +1561,7 @@ def fetch_probate_leads(conn):
                         else f"Estate of {x['name']} \u2014 {x['postcode']}"),
             "owner_note": f"Probate \u2014 estate of {x['name']}",
             "estate_contact": x.get("contact") or {},
+            "notice_sample": ("" if (x.get("contact") or {}).get("name") else x.get("notice_sample","")),
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
             "property_type": ctx.get("subject_type") or "property", "lat": lat, "lng": lng,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
