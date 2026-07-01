@@ -35,7 +35,13 @@
   header .gen{font-size:11px;color:var(--hint)}
   .star-btn{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);position:relative;padding:4px}
   .star-btn .ct{position:absolute;top:-2px;right:-4px;background:var(--g);color:#fff;font-size:10px;font-weight:600;min-width:15px;height:15px;border-radius:8px;display:none;align-items:center;justify-content:center;padding:0 3px}
-  .filters{background:var(--surface);border-bottom:.5px solid var(--line);padding:10px 16px;display:flex;align-items:center;gap:10px}
+  .filters{background:var(--surface);border-bottom:.5px solid var(--line);padding:10px 16px;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  .frow{display:flex;align-items:center;gap:10px}
+  .frow label{flex:0 0 auto;width:66px;font-size:12px;color:var(--muted)}
+  .frow input[type=range]{flex:1;min-width:0;accent-color:var(--ink)}
+  .frow .fv{flex:0 0 auto;width:38px;text-align:right;font-size:12px}
+  .frow.chips{gap:8px;flex-wrap:wrap}
+  .frow.chips .sortsel{margin-left:auto}
   .filters label{font-size:12px;color:var(--muted);white-space:nowrap}
   .filters input[type=range]{flex:1;accent-color:var(--ink)}
   .fv{font-size:12px;font-weight:600;min-width:22px}
@@ -143,12 +149,13 @@
 </header>
 
 <div class="filters">
-  <label>Min score</label>
-  <input type="range" id="ms" min="0" max="100" value="30" oninput="render()"/>
-  <span class="fv" id="mv">50</span>
-  <label>Within</label>
-  <input type="range" id="md" min="1" max="25" value="25" oninput="render()"/>
-  <span class="fv" id="dv">Any</span>
+  <div class="frow"><label>Min score</label>
+    <input type="range" id="ms" min="0" max="100" value="30" oninput="render()"/>
+    <span class="fv" id="mv">50</span></div>
+  <div class="frow"><label>Within</label>
+    <input type="range" id="md" min="1" max="25" value="25" oninput="render()"/>
+    <span class="fv" id="dv">Any</span></div>
+  <div class="frow chips">
   <button class="pill on" id="p-all" onclick="setFilter('all')">All</button>
   <button class="pill" id="p-low" onclick="setFilter('low')">Low comp</button>
   <select id="sort" class="sortsel" onchange="render()">
@@ -158,6 +165,7 @@
     <option value="days">Longest listed</option>
   </select>
   <button id="hid" class="hid" onclick="resetHidden()" style="display:none"></button>
+  </div>
 </div>
 
 <div id="map"></div>
@@ -296,6 +304,18 @@ function keyFacts(p){
     ext=`${p.plot_m2.toLocaleString()} m² plot${pc}`; extcmp=`~${Math.round(p.plot_m2*10.764).toLocaleString()} sq ft · HMLR indicative`;
   } else if(p.flags && p.flags.indexOf('plot-unverified')>=0){ ext='Plot not in INSPIRE — check overlay'; }
   rows.push(`<div class="kfrow"><span>Exterior / plot</span><b>${ext}<span class="cmp">${extcmp}</span></b></div>`);
+  if(p.constraints){
+    let cl = p.constraints.length ? p.constraints.join(' · ') : 'No major constraints found';
+    if(p.listed_grade) cl += ` (Grade ${p.listed_grade})`;
+    rows.push(`<div class="kfrow"><span>Planning</span><b>${cl}<span class="cmp">coverage varies — verify</span></b></div>`);
+  }
+  if(p.permission!=null){
+    const pct = Math.round(p.permission*100);
+    const ph = p.planning||{};
+    const ev = ph.decided ? `${ph.approved} approved / ${ph.refused} refused within 500m` : 'limited local record';
+    const lbl = p.permission_label||'';
+    rows.push(`<div class="kfrow"><span>Permission</span><b>~${pct}% ${lbl}<span class="cmp">${ev}</span></b></div>`);
+  }
   return `<div class="kf">${rows.join('')}</div>`;
 }
 function tileXY(lat,lng,z){const n=2**z,xf=(lng+180)/360*n,yr=lat*Math.PI/180,yf=(1-Math.asinh(Math.tan(yr))/Math.PI)/2*n;return {x:Math.floor(xf),y:Math.floor(yf),fx:xf-Math.floor(xf),fy:yf-Math.floor(yf)};}
