@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-01T09:52:53.750892+00:00",
-  "count": 79,
+  "generated_at": "2026-07-01T12:04:00.579939+00:00",
+  "count": 62,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
   "min_plot_m2": 380,
@@ -33,7 +33,7 @@
       "lat": 51.4268,
       "lng": -0.9388,
       "dist_mi": 16.5,
-      "score": 47,
+      "score": 43,
       "reasons": [
         "Auction \u2014 guide \u00a3200"
       ],
@@ -64,6 +64,18 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 7,
+        "decided": 92,
+        "rate": 0.9239130434782609
+      },
+      "permission": 0.92,
+      "permission_label": "development-friendly",
+      "feasibility": 0.92,
+      "setting": 0,
       "typology": "Anomaly",
       "tier": "Low",
       "signals": {
@@ -86,6 +98,11 @@
           "score": 8,
           "max": 20,
           "note": "auction"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 85 approved / 7 refused nearby"
         }
       }
     },
@@ -95,16 +112,16 @@
       "owner_note": "Probate \u2014 estate of Christine Piper",
       "estate_contact": {},
       "postcode": "GU10 1DZ",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.235486,
       "lng": -0.730241,
       "dist_mi": 5.1,
-      "score": 46,
+      "score": 50,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3425k\u2013\u00a3570k area est"
       ],
       "flags": [
         "probate",
@@ -116,8 +133,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.235486,-0.730241",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 425000,
+      "est_high": 570500,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5165369",
@@ -138,8 +155,20 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 75,
+        "refused": 11,
+        "decided": 86,
+        "rate": 0.872093023255814
+      },
+      "permission": 0.87,
+      "permission_label": "development-friendly",
+      "feasibility": 0.87,
+      "setting": 250,
+      "typology": "Anomaly",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 16,
@@ -147,9 +176,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 25,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3450k"
         },
         "Fit": {
           "score": 14,
@@ -160,6 +189,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 17,
+          "max": 20,
+          "note": "development-friendly \u00b7 75 approved / 11 refused nearby"
         }
       }
     },
@@ -169,16 +203,16 @@
       "owner_note": "Probate \u2014 estate of Anthony Duncan",
       "estate_contact": {},
       "postcode": "GU11 3DG",
-      "price": 0,
+      "price": 630000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.242005,
       "lng": -0.768012,
       "dist_mi": 4.1,
-      "score": 48,
+      "score": 52,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3530k\u2013\u00a32100k area est"
       ],
       "flags": [
         "probate",
@@ -190,8 +224,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242005,-0.768012",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 530000,
+      "est_high": 2100000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5165086",
@@ -212,6 +246,18 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 92,
+        "refused": 1,
+        "decided": 93,
+        "rate": 0.989247311827957
+      },
+      "permission": 0.99,
+      "permission_label": "development-friendly",
+      "feasibility": 0.99,
+      "setting": 2,
       "typology": "Motivated seller",
       "tier": "Medium",
       "signals": {
@@ -221,9 +267,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 18,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3630k"
         },
         "Fit": {
           "score": 16,
@@ -234,6 +280,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 20,
+          "max": 20,
+          "note": "development-friendly \u00b7 92 approved / 1 refused nearby"
         }
       }
     },
@@ -243,16 +294,16 @@
       "owner_note": "Probate \u2014 estate of Maurice Sturt",
       "estate_contact": {},
       "postcode": "GU26 6DZ",
-      "price": 0,
+      "price": 735000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.112951,
       "lng": -0.770445,
       "dist_mi": 6.5,
-      "score": 43,
+      "score": 40,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3420k\u2013\u00a3840k area est"
       ],
       "flags": [
         "probate",
@@ -264,8 +315,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.112951,-0.770445",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 420000,
+      "est_high": 840000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5163010",
@@ -286,6 +337,18 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 89,
+        "approved": 67,
+        "refused": 6,
+        "decided": 73,
+        "rate": 0.9178082191780822
+      },
+      "permission": 0.92,
+      "permission_label": "development-friendly",
+      "feasibility": 0.92,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -295,9 +358,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 13,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3735k"
         },
         "Fit": {
           "score": 11,
@@ -308,6 +371,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 67 approved / 6 refused nearby"
         }
       }
     },
@@ -317,16 +385,16 @@
       "owner_note": "Probate \u2014 estate of Jennifer Capon",
       "estate_contact": {},
       "postcode": "GU7 3QQ",
-      "price": 0,
+      "price": 540000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.200964,
       "lng": -0.612343,
       "dist_mi": 9.5,
-      "score": 38,
+      "score": 43,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3475k\u2013\u00a3630k area est"
       ],
       "flags": [
         "probate",
@@ -338,8 +406,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200964,-0.612343",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 475000,
+      "est_high": 630000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5161424",
@@ -360,6 +428,18 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 89,
+        "refused": 5,
+        "decided": 94,
+        "rate": 0.9468085106382979
+      },
+      "permission": 0.95,
+      "permission_label": "development-friendly",
+      "feasibility": 0.95,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -369,9 +449,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 21,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3540k"
         },
         "Fit": {
           "score": 5,
@@ -382,80 +462,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5157080",
-      "address": "Deceased 29 Legge Crescent, Aldershot \u2014 GU11 3NT",
-      "owner_note": "Probate \u2014 estate of Peter Scott",
-      "estate_contact": {},
-      "postcode": "GU11 3NT",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.244914,
-      "lng": -0.781373,
-      "dist_mi": 3.9,
-      "score": 48,
-      "reasons": [
-        "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.244914,-0.781373",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5157080",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65251"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 17,
-          "max": 25,
-          "note": "3.9 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 19,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly \u00b7 89 approved / 5 refused nearby"
         }
       }
     },
@@ -465,16 +476,16 @@
       "owner_note": "Probate \u2014 estate of Ethel Kercher",
       "estate_contact": {},
       "postcode": "GU10 1BQ",
-      "price": 0,
+      "price": 317000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.236696,
       "lng": -0.72985,
       "dist_mi": 5.2,
-      "score": 46,
+      "score": 51,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3265k\u2013\u00a3400k area est"
       ],
       "flags": [
         "probate",
@@ -486,8 +497,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.236696,-0.72985",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 265000,
+      "est_high": 400000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5156304",
@@ -508,8 +519,20 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 75,
+        "refused": 14,
+        "decided": 89,
+        "rate": 0.8426966292134831
+      },
+      "permission": 0.84,
+      "permission_label": "development-friendly",
+      "feasibility": 0.84,
+      "setting": 153,
+      "typology": "Anomaly",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 16,
@@ -517,9 +540,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 30,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3317k"
         },
         "Fit": {
           "score": 14,
@@ -530,6 +553,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 17,
+          "max": 20,
+          "note": "development-friendly \u00b7 75 approved / 14 refused nearby"
         }
       }
     },
@@ -539,7 +567,7 @@
       "owner_note": "Probate \u2014 estate of Evelyn Vass",
       "estate_contact": {},
       "postcode": "GU51 3AW",
-      "price": 0,
+      "price": 650000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.285685,
@@ -548,7 +576,7 @@
       "score": 44,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3473k\u2013\u00a3845k area est"
       ],
       "flags": [
         "probate",
@@ -560,8 +588,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285685,-0.834285",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 473000,
+      "est_high": 845000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5152464",
@@ -582,6 +610,18 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 8,
+        "decided": 86,
+        "rate": 0.9069767441860465
+      },
+      "permission": 0.91,
+      "permission_label": "development-friendly",
+      "feasibility": 0.91,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -591,9 +631,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 17,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3650k"
         },
         "Fit": {
           "score": 12,
@@ -604,6 +644,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 78 approved / 8 refused nearby"
         }
       }
     },
@@ -613,16 +658,16 @@
       "owner_note": "Probate \u2014 estate of Derek Willett",
       "estate_contact": {},
       "postcode": "GU26 6QS",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.123814,
       "lng": -0.757739,
       "dist_mi": 6.1,
-      "score": 44,
+      "score": 51,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3169k\u2013\u00a3655k area est"
       ],
       "flags": [
         "probate",
@@ -634,8 +679,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.123814,-0.757739",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 169000,
+      "est_high": 655000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145468",
@@ -656,8 +701,20 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 77,
+        "refused": 10,
+        "decided": 87,
+        "rate": 0.8850574712643678
+      },
+      "permission": 0.89,
+      "permission_label": "development-friendly",
+      "feasibility": 0.89,
+      "setting": 0,
+      "typology": "Anomaly",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 16,
@@ -665,9 +722,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 27,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3450k"
         },
         "Fit": {
           "score": 12,
@@ -678,6 +735,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 77 approved / 10 refused nearby"
         }
       }
     },
@@ -687,16 +749,16 @@
       "owner_note": "Probate \u2014 estate of Thelma Huse",
       "estate_contact": {},
       "postcode": "GU16 6DH",
-      "price": 0,
+      "price": 675000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.288873,
       "lng": -0.727594,
       "dist_mi": 7.7,
-      "score": 41,
+      "score": 37,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3575k\u2013\u00a3731k area est"
       ],
       "flags": [
         "probate",
@@ -708,8 +770,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 575000,
+      "est_high": 731000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5148761",
@@ -730,6 +792,18 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 80,
+        "refused": 11,
+        "decided": 91,
+        "rate": 0.8791208791208791
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -739,9 +813,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 13,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3675k"
         },
         "Fit": {
           "score": 9,
@@ -752,6 +826,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 80 approved / 11 refused nearby"
         }
       }
     },
@@ -761,16 +840,16 @@
       "owner_note": "Probate \u2014 estate of Stephen Purchase",
       "estate_contact": {},
       "postcode": "GU14 6JW",
-      "price": 0,
+      "price": 330000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.277114,
       "lng": -0.742872,
       "dist_mi": 6.7,
-      "score": 43,
+      "score": 57,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3300k\u2013\u00a3350k area est"
       ],
       "flags": [
         "probate",
@@ -782,8 +861,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.277114,-0.742872",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 300000,
+      "est_high": 350000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5148460",
@@ -804,8 +883,20 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 90,
+        "refused": 2,
+        "decided": 92,
+        "rate": 0.9782608695652174
+      },
+      "permission": 0.98,
+      "permission_label": "development-friendly",
+      "feasibility": 0.98,
+      "setting": 0,
+      "typology": "Anomaly",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 16,
@@ -813,9 +904,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 30,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3330k"
         },
         "Fit": {
           "score": 11,
@@ -826,6 +917,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 20,
+          "max": 20,
+          "note": "development-friendly \u00b7 90 approved / 2 refused nearby"
         }
       }
     },
@@ -835,16 +931,16 @@
       "owner_note": "Probate \u2014 estate of John Billings",
       "estate_contact": {},
       "postcode": "GU14 8RJ",
-      "price": 0,
+      "price": 430000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.299233,
       "lng": -0.773954,
       "dist_mi": 7.4,
-      "score": 42,
+      "score": 54,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3350k\u2013\u00a3490k area est"
       ],
       "flags": [
         "probate",
@@ -856,8 +952,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.299233,-0.773954",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 350000,
+      "est_high": 490000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5145764",
@@ -878,8 +974,20 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 93,
+        "refused": 0,
+        "decided": 93,
+        "rate": 1.0
+      },
+      "permission": 1.0,
+      "permission_label": "development-friendly",
+      "feasibility": 1.0,
+      "setting": 0,
+      "typology": "Anomaly",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 16,
@@ -887,9 +995,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 26,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3430k"
         },
         "Fit": {
           "score": 10,
@@ -900,80 +1008,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5144054",
-      "address": "Deceased 7 Blackthorn Crescent Farnborough Hampshire \u2014 GU14 9AE",
-      "owner_note": "Probate \u2014 estate of BARBARA ALLUM",
-      "estate_contact": {},
-      "postcode": "GU14 9AE",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.310655,
-      "lng": -0.773248,
-      "dist_mi": 8.2,
-      "score": 40,
-      "reasons": [
-        "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.310655,-0.773248",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5144054",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43699/65254"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 8,
-          "max": 25,
-          "note": "8.2 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 20,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly \u00b7 93 approved / 0 refused nearby"
         }
       }
     },
@@ -983,16 +1022,16 @@
       "owner_note": "Probate \u2014 estate of Tony Mist",
       "estate_contact": {},
       "postcode": "GU16 6DH",
-      "price": 0,
+      "price": 675000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.288873,
       "lng": -0.727594,
       "dist_mi": 7.7,
-      "score": 41,
+      "score": 37,
       "reasons": [
         "Likely to market soon (by ~Dec 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3575k\u2013\u00a3731k area est"
       ],
       "flags": [
         "probate",
@@ -1004,8 +1043,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.288873,-0.727594",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 575000,
+      "est_high": 731000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142482",
@@ -1026,6 +1065,18 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 80,
+        "refused": 11,
+        "decided": 91,
+        "rate": 0.8791208791208791
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -1035,9 +1086,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 13,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3675k"
         },
         "Fit": {
           "score": 9,
@@ -1048,6 +1099,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 80 approved / 11 refused nearby"
         }
       }
     },
@@ -1057,16 +1113,16 @@
       "owner_note": "Probate \u2014 estate of William Bittles",
       "estate_contact": {},
       "postcode": "GU51 4LE",
-      "price": 0,
+      "price": 750000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.285242,
       "lng": -0.847632,
       "dist_mi": 6.1,
-      "score": 44,
+      "score": 32,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3617k\u2013\u00a3840k area est"
       ],
       "flags": [
         "probate",
@@ -1078,8 +1134,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.285242,-0.847632",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 617500,
+      "est_high": 840000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5144259",
@@ -1100,6 +1156,21 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [
+        "Article 4",
+        "Conservation Area"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 5,
+        "decided": 88,
+        "rate": 0.9431818181818182
+      },
+      "permission": 0.76,
+      "permission_label": "development-friendly",
+      "feasibility": 0.76,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -1109,9 +1180,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 10,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3750k"
         },
         "Fit": {
           "score": 12,
@@ -1122,79 +1193,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5140515",
-      "address": "Deceased Field End, Rowledge, Farnham \u2014 GU10 4AF",
-      "owner_note": "Probate \u2014 estate of Dorothy Finlow",
-      "estate_contact": {},
-      "postcode": "GU10 4AF",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.182014,
-      "lng": -0.822907,
-      "dist_mi": 1.2,
-      "score": 66,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.182014,-0.822907",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5140515",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43774/65236"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": 766,
-      "typology": "Plot play",
-      "tier": "High",
-      "signals": {
-        "Potential": {
-          "score": 31,
-          "max": 45,
-          "note": "766 m\u00b2 plot (2.0\u00d7 your home)"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 22,
-          "max": 25,
-          "note": "1.2 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly \u00b7 83 approved / 5 refused nearby"
         }
       }
     },
@@ -1204,16 +1207,16 @@
       "owner_note": "Probate \u2014 estate of John Holland",
       "estate_contact": {},
       "postcode": "GU51 4HD",
-      "price": 0,
+      "price": 540000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.280633,
       "lng": -0.859074,
       "dist_mi": 5.8,
-      "score": 45,
+      "score": 39,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3415k\u2013\u00a3625k area est"
       ],
       "flags": [
         "probate",
@@ -1225,8 +1228,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.280633,-0.859074",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 415000,
+      "est_high": 625000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5142545",
@@ -1247,7 +1250,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -1256,9 +1264,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 22,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3540k"
         },
         "Fit": {
           "score": 13,
@@ -1269,154 +1277,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5140167",
-      "address": "Deceased 2 Nepal Gardens, Church Crookham, Fleet \u2014 GU52 8LL",
-      "owner_note": "Probate \u2014 estate of Norma Inglis",
-      "estate_contact": {},
-      "postcode": "GU52 8LL",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.258534,
-      "lng": -0.835744,
-      "dist_mi": 4.2,
-      "score": 47,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.258534,-0.835744",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5140167",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43729/65231"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 16,
-          "max": 25,
-          "note": "4.2 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5138889",
-      "address": "Deceased 35 Place Court, Pool Road, Aldershot, Hampshire \u2014 GU11 3SW",
-      "owner_note": "Probate \u2014 estate of Ronald Barfield",
-      "estate_contact": {},
-      "postcode": "GU11 3SW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.234834,
-      "lng": -0.748967,
-      "dist_mi": 4.4,
-      "score": 47,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234834,-0.748967",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5138889",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43743/65263"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 16,
-          "max": 25,
-          "note": "4.4 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -1426,20 +1291,19 @@
       "owner_note": "Probate \u2014 estate of Margaret Wyatt",
       "estate_contact": {},
       "postcode": "GU52 0AE",
-      "price": 0,
+      "price": 375000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.253498,
       "lng": -0.845716,
       "dist_mi": 3.9,
-      "score": 48,
+      "score": 64,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3375k\u2013\u00a3390k area est"
       ],
       "flags": [
-        "probate",
-        "plot-unverified"
+        "probate"
       ],
       "is_probate": true,
       "low_comp": false,
@@ -1447,8 +1311,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.253498,-0.845716",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 375000,
+      "est_high": 390000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5138517",
@@ -1468,19 +1332,24 @@
       "first_seen": "2026-07-01",
       "last_seen": "2026-07-01",
       "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Medium",
+      "plot_m2": 7816,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 364,
+      "typology": "Development play",
+      "tier": "High",
       "signals": {
         "Potential": {
-          "score": 16,
+          "score": 45,
           "max": 45,
-          "note": "plot unverified"
+          "note": "7,816 m\u00b2 plot (20.6\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 27,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3375k"
         },
         "Fit": {
           "score": 17,
@@ -1491,6 +1360,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -1500,16 +1374,16 @@
       "owner_note": "Probate \u2014 estate of David Seal",
       "estate_contact": {},
       "postcode": "GU10 4RP",
-      "price": 0,
+      "price": 860000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.192623,
       "lng": -0.804019,
       "dist_mi": 1.3,
-      "score": 74,
+      "score": 52,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3615k\u2013\u00a31015k area est"
       ],
       "flags": [
         "probate"
@@ -1520,8 +1394,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.192623,-0.804019",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 615000,
+      "est_high": 1015000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5137991",
@@ -1542,8 +1416,13 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": 1148,
-      "typology": "Plot play",
-      "tier": "High",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 301,
+      "typology": "Development play",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 41,
@@ -1551,9 +1430,9 @@
           "note": "1,148 m\u00b2 plot (3.0\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 6,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3860k"
         },
         "Fit": {
           "score": 22,
@@ -1564,6 +1443,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -1573,16 +1457,16 @@
       "owner_note": "Probate \u2014 estate of Valerie Laycock",
       "estate_contact": {},
       "postcode": "GU12 6NP",
-      "price": 0,
+      "price": 390000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.242687,
       "lng": -0.726719,
       "dist_mi": 5.5,
-      "score": 45,
+      "score": 43,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3355k\u2013\u00a3422k area est"
       ],
       "flags": [
         "probate",
@@ -1594,8 +1478,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242687,-0.726719",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 355000,
+      "est_high": 422500,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131726",
@@ -1616,7 +1500,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -1625,9 +1514,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 27,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3390k"
         },
         "Fit": {
           "score": 14,
@@ -1638,6 +1527,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -1647,16 +1541,16 @@
       "owner_note": "Probate \u2014 estate of Angela Fox",
       "estate_contact": {},
       "postcode": "GU16 9YG",
-      "price": 0,
+      "price": 550500,
       "beds": 0,
       "property_type": "property",
       "lat": 51.311068,
       "lng": -0.725316,
       "dist_mi": 9.1,
-      "score": 39,
+      "score": 35,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3387k\u2013\u00a3612k area est"
       ],
       "flags": [
         "probate",
@@ -1668,8 +1562,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.311068,-0.725316",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 387000,
+      "est_high": 612000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133964",
@@ -1690,7 +1584,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -1699,9 +1598,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 21,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3550k"
         },
         "Fit": {
           "score": 6,
@@ -1712,6 +1611,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -1721,16 +1625,16 @@
       "owner_note": "Probate \u2014 estate of Robin Tinsley",
       "estate_contact": {},
       "postcode": "GU52 6HQ",
-      "price": 0,
+      "price": 491000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.26558,
       "lng": -0.838978,
       "dist_mi": 4.7,
-      "score": 47,
+      "score": 39,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3420k\u2013\u00a3590k area est"
       ],
       "flags": [
         "probate",
@@ -1742,8 +1646,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.26558,-0.838978",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 420000,
+      "est_high": 590000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5134007",
@@ -1764,7 +1668,14 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [
+        "Flood zone"
+      ],
+      "permission": 0.7,
+      "permission_label": "development-friendly",
+      "feasibility": 0.7,
+      "setting": 277,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -1773,9 +1684,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 24,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3491k"
         },
         "Fit": {
           "score": 15,
@@ -1786,80 +1697,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5129387",
-      "address": "Deceased 81 Willow Way, Farnham \u2014 GU9 0NT",
-      "owner_note": "Probate \u2014 estate of Linda Cake",
-      "estate_contact": {},
-      "postcode": "GU9 0NT",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.231424,
-      "lng": -0.788147,
-      "dist_mi": 3.0,
-      "score": 50,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.231424,-0.788147",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5129387",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65249"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 19,
-          "max": 25,
-          "note": "3.0 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 14,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -1869,16 +1711,16 @@
       "owner_note": "Probate \u2014 estate of Moira Sharman",
       "estate_contact": {},
       "postcode": "RG29 1BH",
-      "price": 0,
+      "price": 460000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.256074,
       "lng": -0.954176,
       "dist_mi": 6.6,
-      "score": 43,
+      "score": 39,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3445k\u2013\u00a3470k area est"
       ],
       "flags": [
         "probate",
@@ -1890,8 +1732,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 445000,
+      "est_high": 470000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133482",
@@ -1912,7 +1754,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -1921,9 +1768,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 22,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3460k"
         },
         "Fit": {
           "score": 11,
@@ -1934,6 +1781,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -1943,16 +1795,16 @@
       "owner_note": "Probate \u2014 estate of Moira Sharman",
       "estate_contact": {},
       "postcode": "RG29 1BH",
-      "price": 0,
+      "price": 460000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.256074,
       "lng": -0.954176,
       "dist_mi": 6.6,
-      "score": 43,
+      "score": 39,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3445k\u2013\u00a3470k area est"
       ],
       "flags": [
         "probate",
@@ -1964,8 +1816,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.256074,-0.954176",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 445000,
+      "est_high": 470000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5133456",
@@ -1986,7 +1838,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -1995,9 +1852,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 22,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3460k"
         },
         "Fit": {
           "score": 11,
@@ -2008,80 +1865,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5128036",
-      "address": "Deceased 13 Wellesley Close, Ash Vale, Aldershot, Hampshire \u2014 GU12 5SW",
-      "owner_note": "Probate \u2014 estate of PHYLLIS SHIRLAW",
-      "estate_contact": {},
-      "postcode": "GU12 5SW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.270882,
-      "lng": -0.727847,
-      "dist_mi": 6.8,
-      "score": 43,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.270882,-0.727847",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5128036",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43722/65270"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 11,
-          "max": 25,
-          "note": "6.8 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -2091,16 +1879,16 @@
       "owner_note": "Probate \u2014 estate of Henry McWhinnie",
       "estate_contact": {},
       "postcode": "GU11 3JJ",
-      "price": 0,
+      "price": 410000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.244906,
       "lng": -0.772003,
       "dist_mi": 4.2,
-      "score": 47,
+      "score": 46,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3305k\u2013\u00a3485k area est"
       ],
       "flags": [
         "probate",
@@ -2112,8 +1900,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.244906,-0.772003",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 305000,
+      "est_high": 485000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5131333",
@@ -2134,7 +1922,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 1,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -2143,9 +1936,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 28,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3410k"
         },
         "Fit": {
           "score": 16,
@@ -2156,6 +1949,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -2165,16 +1963,16 @@
       "owner_note": "Probate \u2014 estate of Lucia Bardoul",
       "estate_contact": {},
       "postcode": "GU9 8NY",
-      "price": 0,
+      "price": 825000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.204574,
       "lng": -0.798771,
       "dist_mi": 1.5,
-      "score": 63,
+      "score": 44,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3680k\u2013\u00a3945k area est"
       ],
       "flags": [
         "probate"
@@ -2185,8 +1983,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.204574,-0.798771",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 680000,
+      "est_high": 945000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5130567",
@@ -2207,8 +2005,13 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": 664,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 631,
       "typology": "Motivated seller",
-      "tier": "High",
+      "tier": "Low",
       "signals": {
         "Potential": {
           "score": 29,
@@ -2216,9 +2019,9 @@
           "note": "664 m\u00b2 plot (1.7\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 7,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3825k"
         },
         "Fit": {
           "score": 22,
@@ -2229,80 +2032,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5123805",
-      "address": "Deceased Flat 14 Providence Place, Abbey Street, Farnham, Surrey \u2014 GU9 7RQ",
-      "owner_note": "Probate \u2014 estate of Clive Davis",
-      "estate_contact": {},
-      "postcode": "GU9 7RQ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.212675,
-      "lng": -0.795139,
-      "dist_mi": 1.9,
-      "score": 51,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.212675,-0.795139",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5123805",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65246"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 21,
-          "max": 25,
-          "note": "1.9 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -2312,16 +2046,16 @@
       "owner_note": "Probate \u2014 estate of GRACE FERRIS",
       "estate_contact": {},
       "postcode": "GU12 4DY",
-      "price": 0,
+      "price": 430000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.239484,
       "lng": -0.744886,
       "dist_mi": 4.7,
-      "score": 47,
+      "score": 45,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3239k\u2013\u00a3430k area est"
       ],
       "flags": [
         "probate",
@@ -2333,8 +2067,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.239484,-0.744886",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 239000,
+      "est_high": 430000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5123832",
@@ -2355,7 +2089,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -2364,9 +2103,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 27,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3430k"
         },
         "Fit": {
           "score": 15,
@@ -2377,6 +2116,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -2386,16 +2130,16 @@
       "owner_note": "Probate \u2014 estate of Keith Old",
       "estate_contact": {},
       "postcode": "RG27 8FD",
-      "price": 0,
+      "price": 875000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.301555,
       "lng": -0.89433,
       "dist_mi": 7.6,
-      "score": 41,
+      "score": 25,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3795k\u2013\u00a3975k area est"
       ],
       "flags": [
         "probate",
@@ -2407,8 +2151,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.301555,-0.89433",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 795000,
+      "est_high": 975000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5119329",
@@ -2429,6 +2173,11 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -2438,9 +2187,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 3,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3875k"
         },
         "Fit": {
           "score": 9,
@@ -2451,6 +2200,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -2460,7 +2214,7 @@
       "owner_note": "Probate \u2014 estate of Graeme Keel",
       "estate_contact": {},
       "postcode": "GU10 5LR",
-      "price": 0,
+      "price": 635000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.189803,
@@ -2469,11 +2223,10 @@
       "score": 51,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3492k\u2013\u00a3695k area est"
       ],
       "flags": [
-        "probate",
-        "plot-unverified"
+        "probate"
       ],
       "is_probate": true,
       "low_comp": false,
@@ -2481,8 +2234,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.189803,-0.880722",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 492985,
+      "est_high": 695000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114805",
@@ -2502,19 +2255,24 @@
       "first_seen": "2026-07-01",
       "last_seen": "2026-07-01",
       "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
+      "plot_m2": 795,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 272,
+      "typology": "Development play",
       "tier": "Medium",
       "signals": {
         "Potential": {
-          "score": 16,
+          "score": 32,
           "max": 45,
-          "note": "plot unverified"
+          "note": "795 m\u00b2 plot (2.1\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 16,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3635k"
         },
         "Fit": {
           "score": 20,
@@ -2525,80 +2283,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5116901",
-      "address": "Deceased 45A West Street, Farnham \u2014 GU9 7DX",
-      "owner_note": "Probate \u2014 estate of John Jeffrey",
-      "estate_contact": {},
-      "postcode": "GU9 7DX",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.21266,
-      "lng": -0.80592,
-      "dist_mi": 1.5,
-      "score": 52,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.21266,-0.80592",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5116901",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65242"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 22,
-          "max": 25,
-          "note": "1.5 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -2608,16 +2297,16 @@
       "owner_note": "Probate \u2014 estate of Gillian Reach",
       "estate_contact": {},
       "postcode": "GU7 3TF",
-      "price": 0,
+      "price": 385000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.205441,
       "lng": -0.60843,
       "dist_mi": 9.7,
-      "score": 38,
+      "score": 39,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3360k\u2013\u00a3460k area est"
       ],
       "flags": [
         "probate",
@@ -2629,8 +2318,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 360000,
+      "est_high": 460000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5116187",
@@ -2651,7 +2340,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -2660,9 +2354,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 28,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3385k"
         },
         "Fit": {
           "score": 5,
@@ -2673,80 +2367,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5116186",
-      "address": "Deceased 36 Long Gore, Godalming, Surrey \u2014 GU7 3TF",
-      "owner_note": "Probate \u2014 estate of Stuart Reach",
-      "estate_contact": {},
-      "postcode": "GU7 3TF",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.205441,
-      "lng": -0.60843,
-      "dist_mi": 9.7,
-      "score": 38,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.205441,-0.60843",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5116186",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65314"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 5,
-          "max": 25,
-          "note": "9.7 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -2756,20 +2381,19 @@
       "owner_note": "Probate \u2014 estate of Sheila Brooks",
       "estate_contact": {},
       "postcode": "GU9 9HA",
-      "price": 0,
+      "price": 457000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.238578,
       "lng": -0.773103,
       "dist_mi": 3.8,
-      "score": 48,
+      "score": 50,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3135k\u2013\u00a3580k area est"
       ],
       "flags": [
-        "probate",
-        "plot-unverified"
+        "probate"
       ],
       "is_probate": true,
       "low_comp": false,
@@ -2777,8 +2401,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.238578,-0.773103",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 135000,
+      "est_high": 580000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114624",
@@ -2798,19 +2422,24 @@
       "first_seen": "2026-07-01",
       "last_seen": "2026-07-01",
       "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
+      "plot_m2": 444,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 330,
+      "typology": "Anomaly",
       "tier": "Medium",
       "signals": {
         "Potential": {
-          "score": 16,
+          "score": 23,
           "max": 45,
-          "note": "plot unverified"
+          "note": "444 m\u00b2 plot (1.2\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 27,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3457k"
         },
         "Fit": {
           "score": 17,
@@ -2821,154 +2450,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5105496",
-      "address": "Deceased Moorlands Lodge, Portsmouth Road, Hindhead \u2014 GU26 6TJ",
-      "owner_note": "Probate \u2014 estate of Paul Kirton",
-      "estate_contact": {},
-      "postcode": "GU26 6TJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.112014,
-      "lng": -0.737383,
-      "dist_mi": 7.2,
-      "score": 42,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.112014,-0.737383",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5105496",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43815/65267"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 10,
-          "max": 25,
-          "note": "7.2 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5113293",
-      "address": "Deceased 4 Holly Close, ALDERSHOT \u2014 GU12 4RP",
-      "owner_note": "Probate \u2014 estate of Ivy Sharpe",
-      "estate_contact": {},
-      "postcode": "GU12 4RP",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.247638,
-      "lng": -0.748934,
-      "dist_mi": 5.0,
-      "score": 46,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.247638,-0.748934",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5113293",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43736/65263"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
+        "Permission": {
           "score": 15,
-          "max": 25,
-          "note": "5.0 mi from home"
-        },
-        "Edge": {
-          "score": 10,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -2978,16 +2464,16 @@
       "owner_note": "Probate \u2014 estate of Gwendoline Sear",
       "estate_contact": {},
       "postcode": "GU11 3AP",
-      "price": 0,
+      "price": 685000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.242918,
       "lng": -0.783059,
       "dist_mi": 3.8,
-      "score": 48,
+      "score": 37,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3575k\u2013\u00a3820k area est"
       ],
       "flags": [
         "probate",
@@ -2999,8 +2485,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242918,-0.783059",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 575000,
+      "est_high": 820000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111180",
@@ -3021,8 +2507,13 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 65,
       "typology": "Motivated seller",
-      "tier": "Medium",
+      "tier": "Low",
       "signals": {
         "Potential": {
           "score": 16,
@@ -3030,9 +2521,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 14,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3685k"
         },
         "Fit": {
           "score": 17,
@@ -3043,6 +2534,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -3052,16 +2548,16 @@
       "owner_note": "Probate \u2014 estate of Jack Spencer",
       "estate_contact": {},
       "postcode": "RH12 1UX",
-      "price": 0,
+      "price": 365000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.06033,
       "lng": -0.350789,
       "dist_mi": 22.9,
-      "score": 34,
+      "score": 35,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3350k\u2013\u00a3366k area est"
       ],
       "flags": [
         "probate",
@@ -3073,8 +2569,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.06033,-0.350789",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 350500,
+      "est_high": 366000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5111171",
@@ -3095,7 +2591,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -3104,9 +2605,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 27,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3365k"
         },
         "Fit": {
           "score": 0,
@@ -3117,6 +2618,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -3126,16 +2632,16 @@
       "owner_note": "Probate \u2014 estate of Geoffrey Goddard",
       "estate_contact": {},
       "postcode": "GU16 6JJ",
-      "price": 0,
+      "price": 450000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.293636,
       "lng": -0.728926,
       "dist_mi": 8.0,
-      "score": 41,
+      "score": 40,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3245k\u2013\u00a3500k area est"
       ],
       "flags": [
         "probate",
@@ -3147,8 +2653,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.293636,-0.728926",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 245000,
+      "est_high": 500000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5110024",
@@ -3169,7 +2675,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -3178,9 +2689,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 27,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3450k"
         },
         "Fit": {
           "score": 8,
@@ -3191,80 +2702,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5108478",
-      "address": "Deceased Silvertrees, Priorswood, Compton, Guildford, Surrey \u2014 GU3 1DR",
-      "owner_note": "Probate \u2014 estate of Sheila Tomlinson",
-      "estate_contact": {},
-      "postcode": "GU3 1DR",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.211605,
-      "lng": -0.646356,
-      "dist_mi": 8.1,
-      "score": 40,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.211605,-0.646356",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5108478",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65300"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 8,
-          "max": 25,
-          "note": "8.1 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -3274,16 +2716,16 @@
       "owner_note": "Probate \u2014 estate of James Grant",
       "estate_contact": {},
       "postcode": "GU10 4QT",
-      "price": 0,
+      "price": 415000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.198496,
       "lng": -0.820899,
       "dist_mi": 0.5,
-      "score": 59,
+      "score": 54,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3373k\u2013\u00a3461k area est"
       ],
       "flags": [
         "probate"
@@ -3294,8 +2736,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198496,-0.820899",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 373000,
+      "est_high": 461470,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5108616",
@@ -3316,7 +2758,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": 423,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 739,
+      "typology": "Anomaly",
       "tier": "Medium",
       "signals": {
         "Potential": {
@@ -3325,9 +2772,9 @@
           "note": "423 m\u00b2 plot (1.1\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 26,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3415k"
         },
         "Fit": {
           "score": 24,
@@ -3338,154 +2785,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5102871",
-      "address": "Deceased 3 Cherry Lodge/nSt Georges Road East/nAldershot \u2014 GU12 4LW",
-      "owner_note": "Probate \u2014 estate of Kim Blake",
-      "estate_contact": {},
-      "postcode": "GU12 4LW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.245739,
-      "lng": -0.756364,
-      "dist_mi": 4.6,
-      "score": 47,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.245739,-0.756364",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5102871",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43737/65260"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
+        "Permission": {
           "score": 15,
-          "max": 25,
-          "note": "4.6 mi from home"
-        },
-        "Edge": {
-          "score": 10,
           "max": 20,
-          "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5103829",
-      "address": "Deceased 20 Champion Way, FLEET \u2014 GU52 6HU",
-      "owner_note": "Probate \u2014 estate of John Farrer",
-      "estate_contact": {},
-      "postcode": "GU52 6HU",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.264157,
-      "lng": -0.836964,
-      "dist_mi": 4.6,
-      "score": 47,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.264157,-0.836964",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5103829",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43726/65231"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 15,
-          "max": 25,
-          "note": "4.6 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -3495,16 +2799,16 @@
       "owner_note": "Probate \u2014 estate of Edward Gosling",
       "estate_contact": {},
       "postcode": "GU52 6AR",
-      "price": 0,
+      "price": 575000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.268421,
       "lng": -0.828944,
       "dist_mi": 4.9,
-      "score": 46,
+      "score": 39,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3486k\u2013\u00a3638k area est"
       ],
       "flags": [
         "probate",
@@ -3516,8 +2820,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 486000,
+      "est_high": 638000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5103656",
@@ -3538,6 +2842,11 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 304,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -3547,9 +2856,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 19,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3575k"
         },
         "Fit": {
           "score": 15,
@@ -3560,154 +2869,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5103646",
-      "address": "Deceased 9 Madeley Road, Church Crookham, Fleet \u2014 GU52 6AR",
-      "owner_note": "Probate \u2014 estate of Shirley Gosling",
-      "estate_contact": {},
-      "postcode": "GU52 6AR",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.268421,
-      "lng": -0.828944,
-      "dist_mi": 4.9,
-      "score": 46,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.268421,-0.828944",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5103646",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43724/65234"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
+        "Permission": {
           "score": 15,
-          "max": 25,
-          "note": "4.9 mi from home"
-        },
-        "Edge": {
-          "score": 10,
           "max": 20,
-          "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5093957",
-      "address": "Deceased 7 Bridge Square, Farnham, Surrey \u2014 GU9 7QR",
-      "owner_note": "Probate \u2014 estate of Anne Broughton",
-      "estate_contact": {},
-      "postcode": "GU9 7QR",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.211735,
-      "lng": -0.797239,
-      "dist_mi": 1.8,
-      "score": 52,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.211735,-0.797239",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5093957",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65245"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 21,
-          "max": 25,
-          "note": "1.8 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -3717,7 +2883,7 @@
       "owner_note": "Probate \u2014 estate of Eileen Knight",
       "estate_contact": {},
       "postcode": "GU10 5DB",
-      "price": 0,
+      "price": 855000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.237349,
@@ -3726,11 +2892,10 @@
       "score": 50,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3855k\u2013\u00a3855k area est"
       ],
       "flags": [
-        "probate",
-        "plot-unverified"
+        "probate"
       ],
       "is_probate": true,
       "low_comp": false,
@@ -3738,8 +2903,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237349,-0.826883",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 855000,
+      "est_high": 855000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5091497",
@@ -3759,19 +2924,24 @@
       "first_seen": "2026-07-01",
       "last_seen": "2026-07-01",
       "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
+      "plot_m2": 3596,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 85,
+      "typology": "Development play",
       "tier": "Medium",
       "signals": {
         "Potential": {
-          "score": 16,
+          "score": 45,
           "max": 45,
-          "note": "plot unverified"
+          "note": "3,596 m\u00b2 plot (9.5\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 2,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3855k"
         },
         "Fit": {
           "score": 19,
@@ -3782,6 +2952,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -3791,16 +2966,16 @@
       "owner_note": "Probate \u2014 estate of Marie Norton",
       "estate_contact": {},
       "postcode": "GU14 8QA",
-      "price": 0,
+      "price": 300000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.300042,
       "lng": -0.769658,
       "dist_mi": 7.5,
-      "score": 42,
+      "score": 43,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3230k\u2013\u00a3352k area est"
       ],
       "flags": [
         "probate",
@@ -3812,8 +2987,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.300042,-0.769658",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 230000,
+      "est_high": 352500,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5099409",
@@ -3834,7 +3009,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -3843,9 +3023,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 30,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3300k"
         },
         "Fit": {
           "score": 9,
@@ -3856,6 +3036,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -3865,16 +3050,16 @@
       "owner_note": "Probate \u2014 estate of Therese Fry",
       "estate_contact": {},
       "postcode": "GU9 8SW",
-      "price": 0,
+      "price": 850000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.19872,
       "lng": -0.804004,
       "dist_mi": 1.2,
-      "score": 78,
+      "score": 55,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3560k\u2013\u00a31010k area est"
       ],
       "flags": [
         "probate"
@@ -3885,8 +3070,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.19872,-0.804004",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 560000,
+      "est_high": 1010000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5095567",
@@ -3907,8 +3092,13 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": 1351,
-      "typology": "Plot play",
-      "tier": "High",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 430,
+      "typology": "Development play",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 45,
@@ -3916,9 +3106,9 @@
           "note": "1,351 m\u00b2 plot (3.6\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 7,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3850k"
         },
         "Fit": {
           "score": 22,
@@ -3929,154 +3119,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5091412",
-      "address": "Deceased Rojula, Wellington Lane, Farnham \u2014 GU9 9BA",
-      "owner_note": "Probate \u2014 estate of Julia Wiltshire",
-      "estate_contact": {},
-      "postcode": "GU9 9BA",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.237718,
-      "lng": -0.78546,
-      "dist_mi": 3.4,
-      "score": 49,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237718,-0.78546",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5091412",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65250"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 18,
-          "max": 25,
-          "note": "3.4 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5088435",
-      "address": "Deceased Owl Cottage, Eashing Lane, Godalming \u2014 GU7 2QA",
-      "owner_note": "Probate \u2014 estate of Margaret Bannister",
-      "estate_contact": {},
-      "postcode": "GU7 2QA",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.185208,
-      "lng": -0.641334,
-      "dist_mi": 8.3,
-      "score": 40,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.185208,-0.641334",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5088435",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65302"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 8,
-          "max": 25,
-          "note": "8.3 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -4086,16 +3133,16 @@
       "owner_note": "Probate \u2014 estate of Patricia Taylor",
       "estate_contact": {},
       "postcode": "GU12 6HP",
-      "price": 0,
+      "price": 600000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.237984,
       "lng": -0.703814,
       "dist_mi": 6.2,
-      "score": 44,
+      "score": 38,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3499k\u2013\u00a3865k area est"
       ],
       "flags": [
         "probate",
@@ -4107,8 +3154,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237984,-0.703814",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 499950,
+      "est_high": 865000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5083204",
@@ -4129,6 +3176,11 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -4138,9 +3190,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 20,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3600k"
         },
         "Fit": {
           "score": 12,
@@ -4151,6 +3203,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -4160,7 +3217,7 @@
       "owner_note": "Probate \u2014 estate of Audrey Hawkins",
       "estate_contact": {},
       "postcode": "GU10 5DB",
-      "price": 0,
+      "price": 855000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.237349,
@@ -4169,11 +3226,10 @@
       "score": 50,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3855k\u2013\u00a3855k area est"
       ],
       "flags": [
-        "probate",
-        "plot-unverified"
+        "probate"
       ],
       "is_probate": true,
       "low_comp": false,
@@ -4181,8 +3237,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237349,-0.826883",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 855000,
+      "est_high": 855000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5081876",
@@ -4202,19 +3258,24 @@
       "first_seen": "2026-07-01",
       "last_seen": "2026-07-01",
       "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
+      "plot_m2": 3596,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 85,
+      "typology": "Development play",
       "tier": "Medium",
       "signals": {
         "Potential": {
-          "score": 16,
+          "score": 45,
           "max": 45,
-          "note": "plot unverified"
+          "note": "3,596 m\u00b2 plot (9.5\u00d7 your home)"
         },
         "Value": {
-          "score": 12,
+          "score": 2,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3855k"
         },
         "Fit": {
           "score": 19,
@@ -4225,80 +3286,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5077115",
-      "address": "Deceased Oaklands Farm, Smithfield Lane, Headley Down, Bordon \u2014 GU35 8ST",
-      "owner_note": "Probate \u2014 estate of John Vilton",
-      "estate_contact": {},
-      "postcode": "GU35 8ST",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.135756,
-      "lng": -0.809518,
-      "dist_mi": 4.4,
-      "score": 47,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.135756,-0.809518",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5077115",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43801/65241"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 16,
-          "max": 25,
-          "note": "4.4 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -4308,16 +3300,16 @@
       "owner_note": "Probate \u2014 estate of Anstice Batten",
       "estate_contact": {},
       "postcode": "GU14 6QN",
-      "price": 0,
+      "price": 635000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.286132,
       "lng": -0.744347,
       "dist_mi": 7.2,
-      "score": 42,
+      "score": 34,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3580k\u2013\u00a3770k area est"
       ],
       "flags": [
         "probate",
@@ -4329,8 +3321,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.286132,-0.744347",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 580000,
+      "est_high": 770000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075989",
@@ -4351,6 +3343,11 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
       "typology": "Motivated seller",
       "tier": "Low",
       "signals": {
@@ -4360,9 +3357,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 16,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3635k"
         },
         "Fit": {
           "score": 10,
@@ -4373,6 +3370,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       }
     },
@@ -4382,16 +3384,16 @@
       "owner_note": "Probate \u2014 estate of Susan Parratt",
       "estate_contact": {},
       "postcode": "BH4 8HU",
-      "price": 0,
+      "price": 500000,
       "beds": 0,
       "property_type": "property",
       "lat": 50.712163,
       "lng": -1.902014,
       "dist_mi": 57.4,
-      "score": 34,
+      "score": 33,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3248k\u2013\u00a3620k area est"
       ],
       "flags": [
         "probate",
@@ -4403,8 +3405,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=50.712163,-1.902014",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 248505,
+      "est_high": 620000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5075898",
@@ -4425,7 +3427,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -4434,9 +3441,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 25,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3500k"
         },
         "Fit": {
           "score": 0,
@@ -4447,227 +3454,11 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5074933",
-      "address": "Deceased 8 Searle Road, FARNHAM \u2014 GU9 8LJ",
-      "owner_note": "Probate \u2014 estate of CAROL PAGE",
-      "estate_contact": {},
-      "postcode": "GU9 8LJ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.206492,
-      "lng": -0.797218,
-      "dist_mi": 1.6,
-      "score": 77,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.206492,-0.797218",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5074933",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": 1473,
-      "typology": "Plot play",
-      "tier": "High",
-      "signals": {
-        "Potential": {
-          "score": 45,
-          "max": 45,
-          "note": "1,473 m\u00b2 plot (3.9\u00d7 your home)"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 22,
-          "max": 25,
-          "note": "1.6 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5074207",
-      "address": "Deceased Southborough Lodge Farm, Elstead Road, Shackleford, Godalming \u2014 GU8 6AY",
-      "owner_note": "Probate \u2014 estate of Daniel Cottrell",
-      "estate_contact": {},
-      "postcode": "GU8 6AY",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.195177,
-      "lng": -0.656555,
-      "dist_mi": 7.6,
-      "score": 41,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.195177,-0.656555",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5074207",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65296"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 9,
-          "max": 25,
-          "note": "7.6 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5072908",
-      "address": "Deceased Harlow Hall, Aldershot \u2014 GU11 1TW",
-      "owner_note": "Probate \u2014 estate of Patricia Watkinson",
-      "estate_contact": {},
-      "postcode": "GU11 1TW",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.248863,
-      "lng": -0.755033,
-      "dist_mi": 4.8,
-      "score": 46,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.248863,-0.755033",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5072908",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43735/65261"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
+        "Permission": {
           "score": 15,
-          "max": 25,
-          "note": "4.8 mi from home"
-        },
-        "Edge": {
-          "score": 10,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
@@ -4677,16 +3468,16 @@
       "owner_note": "Probate \u2014 estate of Malcolm Morse",
       "estate_contact": {},
       "postcode": "GU10 1AU",
-      "price": 0,
+      "price": 434000,
       "beds": 0,
       "property_type": "property",
       "lat": 51.241155,
       "lng": -0.733022,
       "dist_mi": 5.2,
-      "score": 46,
+      "score": 43,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
+        "~\u00a3355k\u2013\u00a3450k area est"
       ],
       "flags": [
         "probate",
@@ -4698,8 +3489,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.241155,-0.733022",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
+      "est_low": 355000,
+      "est_high": 450000,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5071406",
@@ -4720,7 +3511,12 @@
       "last_seen": "2026-07-01",
       "days_on_market": 0,
       "plot_m2": null,
-      "typology": "Motivated seller",
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0,
+      "typology": "Anomaly",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -4729,9 +3525,9 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 12,
+          "score": 25,
           "max": 30,
-          "note": "price unknown"
+          "note": "~\u00a3434k"
         },
         "Fit": {
           "score": 14,
@@ -4742,100 +3538,31 @@
           "score": 10,
           "max": 20,
           "note": "probate"
-        }
-      }
-    },
-    {
-      "id": "gz_5071400",
-      "address": "Deceased Barbin, Frimley Road, Ash Vale, Aldershot, Hampshire \u2014 GU12 5PS",
-      "owner_note": "Probate \u2014 estate of Karen Lowther",
-      "estate_contact": {},
-      "postcode": "GU12 5PS",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.279867,
-      "lng": -0.72552,
-      "dist_mi": 7.3,
-      "score": 42,
-      "reasons": [
-        "Likely to market soon (by ~Sep 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.279867,-0.72552",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5071400",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43717/65271"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
         },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 10,
-          "max": 25,
-          "note": "7.3 mi from home"
-        },
-        "Edge": {
-          "score": 10,
+        "Permission": {
+          "score": 15,
           "max": 20,
-          "note": "probate"
+          "note": "development-friendly"
         }
       }
     },
     {
-      "id": "bbd7f9b1",
-      "address": "Beech Hill Road, Rowledge",
-      "postcode": "GU10 4AH",
-      "lat": 51.196,
-      "lng": -0.847,
+      "id": "fae42ca1-b818-4df8-9343-0d4be95fe240",
+      "address": "Guildford Road, GU10 1NX",
+      "postcode": "GU10 1NX",
+      "lat": 51.220825,
+      "lng": -0.765227,
       "property_type": "bungalow",
-      "beds": 3,
-      "price": 649000,
+      "beds": 2,
+      "price": 475000,
       "status": "live",
       "relisted_count": 0,
       "source": {
         "portal": "homedata",
-        "listing_id": "hd_0001",
+        "listing_id": "fae42ca1-b818-4df8-9343-0d4be95fe240",
         "url": "",
-        "agent": "Smiths Estates",
-        "uprn": "100061234567"
+        "agent": "Curchods Inc. Burns & Webber",
+        "uprn": ""
       },
       "media": {
         "photo_count": 0,
@@ -4845,53 +3572,25 @@
       "description_raw": "",
       "enrichment": {
         "market": {
-          "original_price": 675000,
-          "reductions": 2,
-          "status": "reduced",
-          "dom": 61,
-          "construction_age": "1950-1966"
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 20,
+          "added_date": "2026-06-01"
         },
-        "epc": {
-          "floor_area_m2": 110,
-          "rating": "E",
-          "age_band": "1950-1966"
-        },
-        "plot": {
-          "area_acres": 0.45,
-          "source": "inspire"
-        },
-        "equity": {
-          "renovated_comp": 835000,
-          "reno_cost_est": 139000,
-          "equity_gain": 47000
-        }
+        "plot": {}
       },
-      "comps": [
-        {
-          "price": 790000,
-          "date": "2025-11",
-          "m2": 118,
-          "renovated": true,
-          "distance_mi": 0.3
-        },
-        {
-          "price": 835000,
-          "date": "2025-09",
-          "m2": 132,
-          "renovated": true,
-          "distance_mi": 0.6
-        }
-      ],
+      "comps": [],
       "signals": {
         "Potential": {
           "score": 45,
           "max": 45,
-          "note": "177,456 m\u00b2 plot (467.0\u00d7 your home)"
+          "note": "5,477 m\u00b2 plot (14.4\u00d7 your home)"
         },
         "Value": {
-          "score": 13,
+          "score": 21,
           "max": 30,
-          "note": "~\u00a3649k"
+          "note": "~\u00a3475k"
         },
         "Fit": {
           "score": 12,
@@ -4902,27 +3601,32 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 60,
+      "score": 50,
       "low_comp": false,
-      "scored_at": "2026-06-21T18:03:52.007105+00:00",
-      "flags": [
-        "few_photos",
-        "no_floorplan",
-        "plot_not_tagged"
-      ],
+      "scored_at": "2026-06-21T20:27:00.517890+00:00",
+      "flags": [],
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-21",
-      "days_on_market": 0,
       "price_history": [
         {
           "date": "2026-06-21",
-          "price": 649000
+          "price": 475000
         }
       ],
-      "plot_m2": 177456,
-      "typology": "Plot play",
+      "plot_m2": 5477,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 36,
+      "typology": "Development play",
       "tier": "Medium"
     },
     {
@@ -4963,9 +3667,9 @@
       "dist_mi": 2.0,
       "signals": {
         "Potential": {
-          "score": 16,
+          "score": 23,
           "max": 45,
-          "note": "plot unverified"
+          "note": "463 m\u00b2 plot (1.2\u00d7 your home)"
         },
         "Value": {
           "score": 5,
@@ -4981,14 +3685,18 @@
           "score": 6,
           "max": 20,
           "note": "reduced"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 41,
+      "score": 36,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490593+00:00",
       "flags": [
-        "price_reduced",
-        "plot-unverified"
+        "price_reduced"
       ],
       "reasons": [
         "Recently reduced"
@@ -5001,7 +3709,95 @@
           "price": 800000
         }
       ],
-      "plot_m2": null,
+      "plot_m2": 463,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 121,
+      "typology": "Forever-fit",
+      "tier": "Low"
+    },
+    {
+      "id": "9bec6e57-1267-42da-aa17-138431439880",
+      "address": "Badshot Park, GU9 9NF",
+      "postcode": "GU9 9NF",
+      "lat": 51.231088,
+      "lng": -0.765411,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 575000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "9bec6e57-1267-42da-aa17-138431439880",
+        "url": "",
+        "agent": "Bridges Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 2,
+          "added_date": "2026-06-19"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 25,
+          "max": 45,
+          "note": "539 m\u00b2 plot (1.4\u00d7 your home)"
+        },
+        "Value": {
+          "score": 16,
+          "max": 30,
+          "note": "~\u00a3575k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 34,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517448+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 575000
+        }
+      ],
+      "plot_m2": 539,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 515,
       "typology": "Candidate",
       "tier": "Low"
     },
@@ -5061,9 +3857,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 49,
+      "score": 37,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490376+00:00",
       "flags": [],
@@ -5079,8 +3880,179 @@
         }
       ],
       "plot_m2": 514,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 464,
       "typology": "Forever-fit",
-      "tier": "Medium"
+      "tier": "Low"
+    },
+    {
+      "id": "9680b05d-6775-4e59-a0b7-0f2fe359704f",
+      "address": "Upper Hale Road, GU9 0NN",
+      "postcode": "GU9 0NN",
+      "lat": 51.229261,
+      "lng": -0.786786,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 550000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "9680b05d-6775-4e59-a0b7-0f2fe359704f",
+        "url": "",
+        "agent": "Hamptons",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 9,
+          "added_date": "2026-06-12"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 26,
+          "max": 45,
+          "note": "547 m\u00b2 plot (1.4\u00d7 your home)"
+        },
+        "Value": {
+          "score": 17,
+          "max": 30,
+          "note": "~\u00a3550k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 35,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517527+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 550000
+        }
+      ],
+      "plot_m2": 547,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 543,
+      "typology": "Candidate",
+      "tier": "Low"
+    },
+    {
+      "id": "64730ccd-e65d-449f-8b8f-8beaf52fd88c",
+      "address": "Shady Nook, GU9 0DT",
+      "postcode": "GU9 0DT",
+      "lat": 51.231132,
+      "lng": -0.802592,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 600000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "64730ccd-e65d-449f-8b8f-8beaf52fd88c",
+        "url": "",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 10,
+          "added_date": "2026-06-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 26,
+          "max": 45,
+          "note": "557 m\u00b2 plot (1.5\u00d7 your home)"
+        },
+        "Value": {
+          "score": 15,
+          "max": 30,
+          "note": "~\u00a3600k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 34,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517559+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 600000
+        }
+      ],
+      "plot_m2": 557,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 531,
+      "typology": "Candidate",
+      "tier": "Low"
     },
     {
       "id": "ea039d1f-6c9c-4041-9116-92a7a33f1d3b",
@@ -5138,9 +4110,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 48,
+      "score": 36,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490441+00:00",
       "flags": [],
@@ -5156,8 +4133,13 @@
         }
       ],
       "plot_m2": 558,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 467,
       "typology": "Forever-fit",
-      "tier": "Medium"
+      "tier": "Low"
     },
     {
       "id": "4c08f812-659f-4548-a168-e80e832b30a7",
@@ -5215,9 +4197,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 48,
+      "score": 36,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490453+00:00",
       "flags": [],
@@ -5233,8 +4220,96 @@
         }
       ],
       "plot_m2": 461,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 533,
       "typology": "Forever-fit",
-      "tier": "Medium"
+      "tier": "Low"
+    },
+    {
+      "id": "4443841a-0946-4621-a710-ace2636a73a0",
+      "address": "Three Stiles Road, GU9 7DE",
+      "postcode": "GU9 7DE",
+      "lat": 51.216257,
+      "lng": -0.816594,
+      "property_type": "detached",
+      "beds": 2,
+      "price": 615000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "4443841a-0946-4621-a710-ace2636a73a0",
+        "url": "",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 10,
+          "added_date": "2026-06-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 38,
+          "max": 45,
+          "note": "1,008 m\u00b2 plot (2.7\u00d7 your home)"
+        },
+        "Value": {
+          "score": 14,
+          "max": 30,
+          "note": "~\u00a3615k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 41,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517611+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 615000
+        }
+      ],
+      "plot_m2": 1008,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 226,
+      "typology": "Development play",
+      "tier": "Low"
     },
     {
       "id": "40a2842b-e6bb-41f9-9801-976aabb37492",
@@ -5292,9 +4367,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 65,
+      "score": 49,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490464+00:00",
       "flags": [],
@@ -5310,8 +4390,179 @@
         }
       ],
       "plot_m2": 1829,
-      "typology": "Plot play",
-      "tier": "High"
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 536,
+      "typology": "Development play",
+      "tier": "Medium"
+    },
+    {
+      "id": "4441b550-6564-45c3-b2c8-e945d9bd06f1",
+      "address": "Copse Avenue, GU9 9EA",
+      "postcode": "GU9 9EA",
+      "lat": 51.238428,
+      "lng": -0.781043,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 650000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "4441b550-6564-45c3-b2c8-e945d9bd06f1",
+        "url": "",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 10,
+          "added_date": "2026-06-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 27,
+          "max": 45,
+          "note": "609 m\u00b2 plot (1.6\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "~\u00a3650k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 33,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517642+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 650000
+        }
+      ],
+      "plot_m2": 609,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 430,
+      "typology": "Candidate",
+      "tier": "Low"
+    },
+    {
+      "id": "bbcbdfac-b5a2-4dcb-9bf1-bd6137389d3e",
+      "address": "The Manor, GU8 5JL",
+      "postcode": "GU8 5JL",
+      "lat": 51.170896,
+      "lng": -0.648692,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 700000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "bbcbdfac-b5a2-4dcb-9bf1-bd6137389d3e",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 17,
+          "added_date": "2026-06-04"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 21,
+          "max": 45,
+          "note": "380 m\u00b2 plot (1.0\u00d7 your home)"
+        },
+        "Value": {
+          "score": 10,
+          "max": 30,
+          "note": "~\u00a3700k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 28,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517723+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 700000
+        }
+      ],
+      "plot_m2": 380,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 372,
+      "typology": "Candidate",
+      "tier": "Low"
     },
     {
       "id": "6d10f7e2-283f-458b-b244-128cbaa68589",
@@ -5369,9 +4620,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 43,
+      "score": 32,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490476+00:00",
       "flags": [],
@@ -5387,7 +4643,261 @@
         }
       ],
       "plot_m2": 385,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 790,
       "typology": "Forever-fit",
+      "tier": "Low"
+    },
+    {
+      "id": "bbadc756-b252-44f2-8be0-1ad09d6aac5d",
+      "address": "Tor Road, GU9 7BY",
+      "postcode": "GU9 7BY",
+      "lat": 51.213851,
+      "lng": -0.815167,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 650000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "bbadc756-b252-44f2-8be0-1ad09d6aac5d",
+        "url": "",
+        "agent": "Winkworth",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 19,
+          "added_date": "2026-06-02"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 22,
+          "max": 45,
+          "note": "414 m\u00b2 plot (1.1\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "~\u00a3650k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 30,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517817+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 650000
+        }
+      ],
+      "plot_m2": 414,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 370,
+      "typology": "Candidate",
+      "tier": "Low"
+    },
+    {
+      "id": "89f5224a-6c4c-45db-96c0-d2913697b168",
+      "address": "Farnham Park Close, GU9 0HT",
+      "postcode": "GU9 0HT",
+      "lat": 51.231735,
+      "lng": -0.801774,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 485000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "89f5224a-6c4c-45db-96c0-d2913697b168",
+        "url": "",
+        "agent": "Warren Powell-Richards",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 19,
+          "added_date": "2026-06-02"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 24,
+          "max": 45,
+          "note": "503 m\u00b2 plot (1.3\u00d7 your home)"
+        },
+        "Value": {
+          "score": 21,
+          "max": 30,
+          "note": "~\u00a3485k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 37,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517839+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 485000
+        }
+      ],
+      "plot_m2": 503,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 543,
+      "typology": "Candidate",
+      "tier": "Low"
+    },
+    {
+      "id": "57227494-8679-4638-8c80-e237dfbb717d",
+      "address": "Upper Manor Road, GU8 5JW",
+      "postcode": "GU8 5JW",
+      "lat": 51.171827,
+      "lng": -0.649123,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 675000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "57227494-8679-4638-8c80-e237dfbb717d",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 24,
+          "added_date": "2026-05-28"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 31,
+          "max": 45,
+          "note": "757 m\u00b2 plot (2.0\u00d7 your home)"
+        },
+        "Value": {
+          "score": 11,
+          "max": 30,
+          "note": "~\u00a3675k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
+        }
+      },
+      "score": 35,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.517953+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 675000
+        }
+      ],
+      "plot_m2": 757,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 457,
+      "typology": "Candidate",
       "tier": "Low"
     },
     {
@@ -5446,9 +4956,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 64,
+      "score": 48,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490487+00:00",
       "flags": [],
@@ -5464,8 +4979,13 @@
         }
       ],
       "plot_m2": 1237,
-      "typology": "Plot play",
-      "tier": "High"
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 514,
+      "typology": "Development play",
+      "tier": "Medium"
     },
     {
       "id": "90d423af-b88d-4906-8678-95c4ae1f1bd4",
@@ -5523,9 +5043,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly"
         }
       },
-      "score": 50,
+      "score": 37,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490497+00:00",
       "flags": [],
@@ -5541,8 +5066,103 @@
         }
       ],
       "plot_m2": 469,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 323,
       "typology": "Forever-fit",
-      "tier": "Medium"
+      "tier": "Low"
+    },
+    {
+      "id": "7f904d4f-23c6-4514-bafb-e693e69c241d",
+      "address": "Hill Road, GU9 0QJ",
+      "postcode": "GU9 0QJ",
+      "lat": 51.236027,
+      "lng": -0.790575,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 525000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "7f904d4f-23c6-4514-bafb-e693e69c241d",
+        "url": "",
+        "agent": "Jigsaw Estates",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": ""
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 32,
+          "added_date": "2026-05-20"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "signals": {
+        "Potential": {
+          "score": 26,
+          "max": 45,
+          "note": "562 m\u00b2 plot (1.5\u00d7 your home)"
+        },
+        "Value": {
+          "score": 19,
+          "max": 30,
+          "note": "~\u00a3525k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 25,
+          "note": "distance n/a"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Permission": {
+          "score": 19,
+          "max": 20,
+          "note": "development-friendly \u00b7 87 approved / 6 refused nearby"
+        }
+      },
+      "score": 46,
+      "low_comp": false,
+      "scored_at": "2026-06-21T20:27:00.518078+00:00",
+      "flags": [],
+      "first_seen": "2026-06-21",
+      "last_seen": "2026-06-21",
+      "price_history": [
+        {
+          "date": "2026-06-21",
+          "price": 525000
+        }
+      ],
+      "plot_m2": 562,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 6,
+        "decided": 93,
+        "rate": 0.9354838709677419
+      },
+      "permission": 0.94,
+      "permission_label": "development-friendly",
+      "feasibility": 0.94,
+      "setting": 731,
+      "typology": "Candidate",
+      "tier": "Low"
     },
     {
       "id": "0e7347a7-99f5-4b00-ab2f-97b052546a57",
@@ -5600,9 +5220,14 @@
           "score": 0,
           "max": 20,
           "note": "open market"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 83 approved / 8 refused nearby"
         }
       },
-      "score": 56,
+      "score": 51,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490507+00:00",
       "flags": [],
@@ -5618,181 +5243,35 @@
         }
       ],
       "plot_m2": 414,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 8,
+        "decided": 91,
+        "rate": 0.9120879120879121
+      },
+      "permission": 0.91,
+      "permission_label": "development-friendly",
+      "feasibility": 0.91,
+      "setting": 598,
       "typology": "Anomaly",
       "tier": "Medium"
     },
     {
-      "id": "70ad0520-5f31-4000-be66-1c2b10852714",
-      "address": "Back Lane, GU10 4LW",
-      "postcode": "GU10 4LW",
-      "lat": 51.170563,
-      "lng": -0.848703,
+      "id": "e6c7ed33-ea89-4844-8aa4-aecb51160f5f",
+      "address": "Woodbourne, GU9 9EE",
+      "postcode": "GU9 9EE",
+      "lat": 51.237002,
+      "lng": -0.778846,
       "property_type": "detached",
-      "beds": 3,
-      "price": 625000,
+      "beds": 4,
+      "price": 700000,
       "status": "live",
       "relisted_count": 0,
       "source": {
         "portal": "homedata",
-        "listing_id": "70ad0520-5f31-4000-be66-1c2b10852714",
-        "url": "",
-        "agent": "Keats Fearn",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43781/65226"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 1,
-          "added_date": "2026-06-20"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 2.0,
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 14,
-          "max": 30,
-          "note": "~\u00a3625k"
-        },
-        "Fit": {
-          "score": 21,
-          "max": 25,
-          "note": "2.0 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        }
-      },
-      "score": 43,
-      "low_comp": false,
-      "scored_at": "2026-06-21T22:46:22.490530+00:00",
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-06-21",
-      "last_seen": "2026-06-21",
-      "price_history": [
-        {
-          "date": "2026-06-21",
-          "price": 625000
-        }
-      ],
-      "plot_m2": null,
-      "typology": "Candidate",
-      "tier": "Low"
-    },
-    {
-      "id": "0eddfc98-1fd8-41d1-9122-21804ae7f224",
-      "address": "Back Lane, GU10 4LW",
-      "postcode": "GU10 4LW",
-      "lat": 51.170563,
-      "lng": -0.848703,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 735000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "0eddfc98-1fd8-41d1-9122-21804ae7f224",
-        "url": "",
-        "agent": "Winkworth",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43781/65226"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Under offer",
-          "dom": 18,
-          "added_date": "2026-06-03"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 2.0,
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 8,
-          "max": 30,
-          "note": "~\u00a3735k"
-        },
-        "Fit": {
-          "score": 21,
-          "max": 25,
-          "note": "2.0 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        }
-      },
-      "score": 38,
-      "low_comp": false,
-      "scored_at": "2026-06-21T22:46:22.490541+00:00",
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-06-21",
-      "last_seen": "2026-06-21",
-      "price_history": [
-        {
-          "date": "2026-06-21",
-          "price": 735000
-        }
-      ],
-      "plot_m2": null,
-      "typology": "Candidate",
-      "tier": "Low"
-    },
-    {
-      "id": "366efd4e-6bb8-46a5-a584-e7f08a84adf5",
-      "address": "Beech Hill Road, GU35 8DN",
-      "postcode": "GU35 8DN",
-      "lat": 51.121935,
-      "lng": -0.814946,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 645000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "366efd4e-6bb8-46a5-a584-e7f08a84adf5",
+        "listing_id": "e6c7ed33-ea89-4844-8aa4-aecb51160f5f",
         "url": "",
         "agent": "Bourne Estate Agents",
         "uprn": ""
@@ -5800,140 +5279,72 @@
       "media": {
         "photo_count": 0,
         "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65239"
+        "thumb_url": ""
       },
       "description_raw": "",
       "enrichment": {
         "market": {
           "reductions": 0,
           "is_reduced": false,
-          "status": "For sale",
-          "dom": 24,
-          "added_date": "2026-05-28"
+          "status": "Sold STC",
+          "dom": 38,
+          "added_date": "2026-05-14"
         },
         "plot": {}
       },
       "comps": [],
-      "dist_mi": 5.3,
       "signals": {
         "Potential": {
-          "score": 16,
+          "score": 26,
           "max": 45,
-          "note": "plot unverified"
+          "note": "556 m\u00b2 plot (1.5\u00d7 your home)"
         },
         "Value": {
-          "score": 13,
+          "score": 10,
           "max": 30,
-          "note": "~\u00a3645k"
+          "note": "~\u00a3700k"
         },
         "Fit": {
-          "score": 14,
+          "score": 12,
           "max": 25,
-          "note": "5.3 mi from home"
+          "note": "distance n/a"
         },
         "Edge": {
           "score": 0,
           "max": 20,
           "note": "open market"
-        }
-      },
-      "score": 36,
-      "low_comp": false,
-      "scored_at": "2026-06-21T22:46:22.490551+00:00",
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-06-21",
-      "last_seen": "2026-06-21",
-      "price_history": [
-        {
-          "date": "2026-06-21",
-          "price": 645000
-        }
-      ],
-      "plot_m2": null,
-      "typology": "Candidate",
-      "tier": "Low"
-    },
-    {
-      "id": "2177ed1b-e707-40d3-9ca9-2dc4aa3a18c6",
-      "address": "Osborne Manor, GU35 0QP",
-      "postcode": "GU35 0QP",
-      "lat": 51.143779,
-      "lng": -0.85017,
-      "property_type": "detached",
-      "beds": 5,
-      "price": 500000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "2177ed1b-e707-40d3-9ca9-2dc4aa3a18c6",
-        "url": "",
-        "agent": "",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43796/65226"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 25,
-          "added_date": "2026-05-27"
         },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 3.8,
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 20,
-          "max": 30,
-          "note": "~\u00a3500k"
-        },
-        "Fit": {
-          "score": 17,
-          "max": 25,
-          "note": "3.8 mi from home"
-        },
-        "Edge": {
-          "score": 0,
+        "Permission": {
+          "score": 19,
           "max": 20,
-          "note": "open market"
+          "note": "development-friendly \u00b7 92 approved / 5 refused nearby"
         }
       },
-      "score": 45,
+      "score": 39,
       "low_comp": false,
-      "scored_at": "2026-06-21T22:46:22.490579+00:00",
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
+      "scored_at": "2026-06-21T20:27:00.518210+00:00",
+      "flags": [],
       "first_seen": "2026-06-21",
       "last_seen": "2026-06-21",
       "price_history": [
         {
           "date": "2026-06-21",
-          "price": 500000
+          "price": 700000
         }
       ],
-      "plot_m2": null,
+      "plot_m2": 556,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 92,
+        "refused": 5,
+        "decided": 97,
+        "rate": 0.9484536082474226
+      },
+      "permission": 0.95,
+      "permission_label": "development-friendly",
+      "feasibility": 0.95,
+      "setting": 543,
       "typology": "Candidate",
       "tier": "Low"
     }
