@@ -66,6 +66,8 @@ PLOTS_FILE = Path(__file__).resolve().parent / "plots_waverley.json.gz"  # HMLR 
 FOOTPRINTS_FILE = Path(__file__).resolve().parent / "footprints_bowl.json.gz"  # OS OpenMap Local buildings
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
+EXCLUDE_DISTRICTS = {"GU11", "GU12", "GU14", "GU51", "GU52"}  # Aldershot/Farnborough/Fleet - out of area
+NOTICE_DETAIL_CAP = 40                   # max per-notice page fetches per run (rate-limit guard)
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
@@ -823,6 +825,10 @@ def apply_gates(props):
         if p.get("lat") is not None and not _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
             dropped_area += 1
             continue
+        _pcd = (p.get("postcode") or "").split()[0].upper()
+        if _pcd in EXCLUDE_DISTRICTS:
+            dropped_area += 1
+            continue
         if DETACHED_ONLY and _excluded_type(p.get("property_type")):
             dropped_type += 1
             continue
@@ -1202,26 +1208,33 @@ def _probate_name(title, content):
 
 def _probate_contact(content, deceased_pc):
     """Parse the estate's claims contact from a Gazette deceased-estates notice.
-    These notices are STRUCTURED (labelled fields), so read the labels first;
-    fall back to prose firm-name detection if the labels aren't present."""
+    Colon-tolerant (the search feed and the notice page label fields differently);
+    falls back to prose firm-name detection."""
     content = re.sub(r"\s+", " ", content or "").strip()
     if not content:
         return {}
-    STOP = r"(?=\s*(?:Address|Town|County|Postcode|Legal|Notice|Reference|Executor|Administrator|Deceased|Date|Claims|Previous|$))"
+    STOP = (r"(?=\s*(?:Address|Town|County|Postcode|Legal|Notice|Reference|Executor|"
+            r"Administrator|Personal Representative|Deceased|Date of|Claims|Previous|$))")
     ref = ""
-    rm = re.search(r"Reference Number:\s*([A-Za-z0-9/.\-]+)", content, re.I)
+    rm = re.search(r"Reference(?:\s+Number)?:?\s+([A-Za-z0-9/.\-]+)", content, re.I)
     if rm:
         ref = rm.group(1).strip(" .")
-    # structured: company executor/administrator
     name = ""
-    cm = re.search(r"Executor/Administrator Company Name:\s*(.+?)" + STOP, content, re.I)
-    if cm and cm.group(1).strip(" -\u2013,"):
-        name = cm.group(1).strip(" -\u2013,")
-    if not name:  # structured: person executor (title/first/surname labels)
+    # structured company executor/administrator (colon optional; several label forms)
+    for lbl in (r"Executor/Administrator Company Name",
+                r"Personal Representative Company Name",
+                r"Name of Personal Representative",
+                r"Company Name"):
+        cm = re.search(lbl + r":?\s+(.+?)" + STOP, content, re.I)
+        if cm and cm.group(1).strip(" -\u2013,"):
+            name = cm.group(1).strip(" -\u2013,")
+            break
+    if not name:  # structured person executor (title/first/surname labels)
         parts = []
-        for lbl in [r"Executor/Administrator Title", r"Executor/Administrator First name",
-                    r"Executor/Administrator Surname"]:
-            m = re.search(lbl + r":\s*(.+?)" + STOP, content, re.I)
+        for lbl in (r"Executor/Administrator Title", r"Executor/Administrator First name",
+                    r"Executor/Administrator Surname", r"Personal Representative Title",
+                    r"Personal Representative First name", r"Personal Representative Surname"):
+            m = re.search(lbl + r":?\s+(.+?)" + STOP, content, re.I)
             if m and m.group(1).strip():
                 parts.append(m.group(1).strip())
         name = " ".join(parts).strip()
@@ -1233,16 +1246,50 @@ def _probate_contact(content, deceased_pc):
             name = fm.group(1).strip()
     if not name:
         return {}
-    # executor postcode = last postcode in notice (deceased's is the first)
-    pcs = re.findall(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", content)
+    # executor postcode: first postcode appearing AFTER the firm/executor name
     contact_pc = ""
-    for pc in reversed(pcs):
-        if pc.upper() != (deceased_pc or "").upper():
-            contact_pc = pc.upper()
-            break
+    pos = content.find(name)
+    tail = content[pos + len(name):] if pos >= 0 else content
+    pcm = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", tail)
+    if pcm and pcm.group(1).upper() != (deceased_pc or "").upper():
+        contact_pc = pcm.group(1).upper()
+    if not contact_pc:  # else last postcode that isn't the deceased's
+        for pc in reversed(re.findall(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", content)):
+            if pc.upper() != (deceased_pc or "").upper():
+                contact_pc = pc.upper()
+                break
     kind = "solicitor" if re.search(r"\b(Solicitors?|LLP|& Co|Legal|Law|Trust Corporation)\b",
                                     name, re.I) else "executor"
     return {"name": name[:60], "ref": ref, "postcode": contact_pc, "kind": kind}
+
+
+_NOTICE_CACHE = {}
+
+
+def _fetch_notice_text(pid):
+    """The search feed omits the executor block; the notice's own page carries it.
+    Fetch and flatten to text for parsing. Cached; fails soft."""
+    if not pid:
+        return ""
+    if pid in _NOTICE_CACHE:
+        return _NOTICE_CACHE[pid]
+    txt = ""
+    try:
+        r = requests.get(f"https://www.thegazette.co.uk/notice/{pid}/data.json",
+                         headers={"User-Agent": _UA}, timeout=20)
+        if r.ok:
+            j = r.json()
+            blob = " ".join(str(v) for v in j.values() if isinstance(v, (str, int, float)))
+            txt = _strip_tags(blob)
+        if not txt or "Executor" not in txt and "Representative" not in txt:
+            r2 = requests.get(f"https://www.thegazette.co.uk/notice/{pid}",
+                              headers={"User-Agent": _UA}, timeout=20)
+            if r2.ok:
+                txt = _strip_tags(r2.text)
+    except Exception as e:
+        print(f"   notice-detail fetch failed for {pid}: {e}")
+    _NOTICE_CACHE[pid] = txt
+    return txt
 
 
 _PTYPE = {"detached": "detached", "semi-detached": "semi", "terraced": "terraced",
@@ -1469,6 +1516,7 @@ def fetch_probate_leads(conn):
         return []
 
     entries = data.get("entry") or []
+    _notice_fetches = [0]
     if isinstance(entries, dict):
         entries = [entries]
 
@@ -1486,16 +1534,29 @@ def fetch_probate_leads(conn):
         addr_line = (addr_m.group(1).strip(" ,") if addr_m else "")
         if re.search(r"(nursing home|care home|rest home|residential home|"
                      r"retirement home|convalescent|care centre|nursing centre|"
-                     r"hospital|hospice)", addr_line or content, re.I):
+                     r"nursing|care of|c/o|hospital|hospice|almshouse|"
+                     r"sheltered|extra care|assisted living)",
+                     (addr_line + " " + content), re.I):
             continue
         paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_line)
+        pc_up = pc.group(1).upper()
+        contact = _probate_contact(content, pc_up)
+        sample = content[:900]
+        if not contact.get("name") and _notice_fetches[0] < NOTICE_DETAIL_CAP:
+            _notice_fetches[0] += 1
+            detail = _fetch_notice_text(pid)
+            if detail:
+                c2 = _probate_contact(detail, pc_up)
+                if c2.get("name"):
+                    contact = c2
+                sample = detail[:900]
         raw.append({"id": f"gz_{pid}",
                     "name": _probate_name(e.get("title"), content),
-                    "postcode": pc.group(1).upper(),
+                    "postcode": pc_up,
                     "paon": paon_m.group(1) if paon_m else "",
                     "addr_line": addr_line,
-                    "contact": _probate_contact(content, pc.group(1).upper()),
-                    "notice_sample": content[:300],
+                    "contact": contact,
+                    "notice_sample": sample,
                     "dod": dod.group(1) if dod else "",
                     "pub": (e.get("published") or "")[:10],
                     "url": f"https://www.thegazette.co.uk/notice/{pid}"})
