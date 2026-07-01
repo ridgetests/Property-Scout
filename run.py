@@ -39,9 +39,10 @@ TARGET_TYPES = ("detached", "bungalow", "cottage", "farm",
 # (lat, lng), tracing south-of-Farnham -> Tilford -> Churt -> Rowledge.
 HOME = (51.198, -0.832)
 AREA_POLYGON = [
-    (51.216, -0.895), (51.211, -0.858), (51.208, -0.815), (51.214, -0.778),
-    (51.224, -0.756), (51.180, -0.742), (51.150, -0.748), (51.122, -0.770),
-    (51.120, -0.820), (51.128, -0.855), (51.165, -0.878), (51.198, -0.888),
+    (51.268, -0.826), (51.248, -0.792), (51.236, -0.752), (51.232, -0.700), (51.222, -0.664),
+    (51.196, -0.646), (51.186, -0.632), (51.160, -0.660), (51.143, -0.716), (51.148, -0.760),
+    (51.138, -0.802), (51.132, -0.812), (51.160, -0.858), (51.192, -0.845), (51.212, -0.836),
+    (51.224, -0.816), (51.240, -0.875), (51.255, -0.884),
 ]
 
 AUCTION_ENABLED = True
@@ -287,6 +288,20 @@ def _renovated_comp(p):
     if fa and ppm2:
         return int(ppm2[len(ppm2) // 2] * fa * 1.15)
     return None
+
+
+def _local_density(lat, lng, rad=0.0035):
+    """Count parcels whose centre lies within ~380m; low = rural/open setting."""
+    if lat is None or lng is None:
+        return None
+    n = 0
+    for p in _load_parcels():
+        b = p["b"]
+        cy = (b[0] + b[1]) / 2
+        cx = (b[2] + b[3]) / 2
+        if abs(cy - lat) < rad and abs(cx - lng) < rad:
+            n += 1
+    return n
 
 
 def score_property(p):
@@ -541,6 +556,100 @@ def _excluded_type(typ):
     return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment"))
 
 
+_CONSTRAINT_CACHE = {}
+_PLANIT_CACHE = {}
+_CONSTRAINT_PENALTY = {"green-belt": 0.25, "area-of-outstanding-natural-beauty": 0.12,
+                       "conservation-area": 0.10, "article-4-direction-area": 0.08,
+                       "listed-building": 0.30, "flood-risk-zone": 0.10}
+_CONSTRAINT_LABEL = {"green-belt": "Green Belt", "area-of-outstanding-natural-beauty": "AONB",
+                     "conservation-area": "Conservation Area", "article-4-direction-area": "Article 4",
+                     "listed-building": "Listed", "flood-risk-zone": "Flood zone"}
+
+
+def fetch_constraints(lat, lng):
+    """Planning constraints at a point via planning.data.gov.uk (free, keyless).
+    Returns {list, feasibility}. Feasibility is a 0.5-1.0 multiplier on the score."""
+    if lat is None or lng is None:
+        return {}
+    key = (round(lat, 5), round(lng, 5))
+    if key in _CONSTRAINT_CACHE:
+        return _CONSTRAINT_CACHE[key]
+    import requests
+    params = [("latitude", lat), ("longitude", lng), ("limit", 100)]
+    for d in _CONSTRAINT_PENALTY:
+        params.append(("dataset", d))
+    try:
+        r = requests.get("https://www.planning.data.gov.uk/entity.json", params=params,
+                         headers={"User-Agent": _UA, "Accept": "application/json"}, timeout=25)
+        r.raise_for_status()
+        data = r.json()
+        ents = data.get("entities") or data.get("results") or []
+        found = sorted({e.get("dataset") for e in ents if e.get("dataset") in _CONSTRAINT_PENALTY})
+        grade = ""
+        for e in ents:
+            if e.get("dataset") == "listed-building":
+                grade = e.get("listed_building_grade") or e.get("listed-building-grade") or ""
+                break
+    except Exception as ex:
+        print(f"   constraints fetch failed ({lat},{lng}): {ex}")
+        return {}
+    res = {"list": [_CONSTRAINT_LABEL[d] for d in found], "datasets": found, "grade": grade}
+    _CONSTRAINT_CACHE[key] = res
+    return res
+
+
+def fetch_planning_history(lat, lng, krad=0.5):
+    """Local planning approval rate via PlanIt (free, keyless). Returns approvals vs
+    refusals within krad km, last ~12 years - real precedent for 'will they permit'."""
+    if lat is None or lng is None:
+        return {}
+    key = (round(lat, 4), round(lng, 4))
+    if key in _PLANIT_CACHE:
+        return _PLANIT_CACHE[key]
+    import requests
+    from datetime import date
+    start = f"{date.today().year - 12}-01-01"
+    params = {"lat": lat, "lng": lng, "krad": krad, "pg_sz": 100,
+              "start_date": start, "end_date": str(date.today())}
+    try:
+        r = requests.get("https://www.planit.org.uk/api/applics/json", params=params,
+                         headers={"User-Agent": _UA, "Accept": "application/json"}, timeout=25)
+        r.raise_for_status()
+        recs = r.json().get("records", [])
+    except Exception as ex:
+        print(f"   planning history fetch failed ({lat},{lng}): {ex}")
+        return {}
+    approved = refused = 0
+    for a in recs:
+        st = (a.get("app_state") or "").lower()
+        if st in ("permitted", "conditions"):
+            approved += 1
+        elif st in ("rejected", "refused"):
+            refused += 1
+    decided = approved + refused
+    rate = (approved / decided) if decided else None
+    res = {"n": len(recs), "approved": approved, "refused": refused,
+           "decided": decided, "rate": rate}
+    _PLANIT_CACHE[key] = res
+    return res
+
+
+def permission_estimate(datasets, planning):
+    """Combine local approval rate with the constraint stack into a 0-1 development-
+    permission likelihood. Heuristic, not a guarantee - precedent + rules."""
+    rate = (planning or {}).get("rate")
+    decided = (planning or {}).get("decided", 0)
+    base = rate if (rate is not None and decided >= 5) else 0.75
+    drag = 0.0
+    for d in (datasets or []):
+        drag += {"green-belt": 0.30, "area-of-outstanding-natural-beauty": 0.15,
+                 "listed-building": 0.25, "article-4-direction-area": 0.10,
+                 "conservation-area": 0.08, "flood-risk-zone": 0.05}.get(d, 0)
+    est = max(0.05, min(1.0, base - drag))
+    label = "development-friendly" if est >= 0.70 else ("mixed" if est >= 0.50 else "restricted")
+    return {"estimate": round(est, 2), "label": label}
+
+
 def _band01(x, lo, hi):
     if x is None or hi == lo:
         return 0.5
@@ -587,7 +696,7 @@ def score_property(p):
         edge += 0.05; ebits.append("cash-only")
     edge = min(0.20, edge)
     edge_note = ", ".join(ebits) if ebits else "open market"
-    feas = 1.0  # placeholder until constraint layer
+    feas = p.get("feasibility", 1.0)
     core = 0.45 * potential + 0.30 * value + 0.25 * fit
     p["score"] = int(round(min(100, (core * 85 + edge * 100) * feas)))
     if ratio >= 2.0:
@@ -600,14 +709,39 @@ def score_property(p):
         typ = "Forever-fit"
     else:
         typ = "Candidate"
+    perm = p.get("permission")
+    setting = p.get("setting")
+    rural = setting is not None and setting <= 12
+    # typology: development/setting plays lead when the permission + setting support it
+    if ratio >= 2.0 and perm is not None and perm >= 0.70:
+        typ = "Development play"
+    elif ratio >= 1.6 and rural and (perm is None or perm >= 0.55):
+        typ = "Setting play"
+    elif ratio >= 2.0:
+        typ = "Plot play"
+    elif price and value >= 0.7:
+        typ = "Anomaly"
+    elif edge >= 0.10:
+        typ = "Motivated seller"
+    elif fit >= 0.7 and ratio >= 1.0:
+        typ = "Forever-fit"
+    else:
+        typ = "Candidate"
     p["typology"] = typ
     p["tier"] = "High" if p["score"] >= 62 else ("Medium" if p["score"] >= 48 else "Low")
-    p["signals"] = {
+    sig = {
         "Potential": {"score": round(potential * 45), "max": 45, "note": pot_note},
         "Value": {"score": round(value * 30), "max": 30, "note": val_note},
         "Fit": {"score": round(fit * 25), "max": 25, "note": fit_note},
         "Edge": {"score": round(edge * 100), "max": 20, "note": edge_note},
     }
+    if perm is not None:
+        ph = p.get("planning") or {}
+        note = f"{p.get('permission_label','')}"
+        if ph.get("decided"):
+            note += f" · {ph['approved']} approved / {ph['refused']} refused nearby"
+        sig["Permission"] = {"score": round(perm * 20), "max": 20, "note": note.strip(" ·")}
+    p["signals"] = sig
     return p
 
 
@@ -628,6 +762,20 @@ def apply_gates(props):
             fl = p.setdefault("flags", [])
             if "plot-unverified" not in fl:
                 fl.append("plot-unverified")
+        lat, lng = p.get("lat"), p.get("lng")
+        con = fetch_constraints(lat, lng)
+        if con:
+            p["constraints"] = con["list"]
+            if con.get("grade"):
+                p["listed_grade"] = con["grade"]
+            ph = fetch_planning_history(lat, lng)
+            if ph:
+                p["planning"] = ph
+            perm = permission_estimate(con.get("datasets"), ph)
+            p["permission"] = perm["estimate"]
+            p["permission_label"] = perm["label"]
+            p["feasibility"] = max(0.4, perm["estimate"])
+        p["setting"] = _local_density(lat, lng)
         score_property(p)
         out.append(p)
     if dropped_type or dropped_plot:
@@ -974,40 +1122,52 @@ def _probate_name(title, content):
 
 
 def _probate_contact(content, deceased_pc):
-    """Best-effort extraction of the estate's claims contact (solicitor or executor)
-    from a Gazette notice. Returns name/firm, address, reference and which kind."""
-    # recipient block: between the 'send ... to' trigger and the claims deadline
-    block = ""
-    m = re.search(r"(?:send|give|deliver)\b[^.]*?\bto\b\s+(.{8,220}?)"
-                  r"(?:\s+(?:on or before|before the|not later than|after which|by the))",
-                  content, re.I)
-    if m:
-        block = m.group(1)
-    else:
-        m2 = re.search(r"undersigned[,:]?\s+(.{8,200})", content, re.I)
-        block = m2.group(1) if m2 else ""
-    block = re.sub(r"^(?:the\s+)?undersigned[,\s]*", "", block.strip(), flags=re.I)
-    block = re.sub(r"^(?:Messrs\.?\s+)", "", block, flags=re.I)
-    block = re.sub(r"\s+", " ", block).strip(" ,.;:")
+    """Extract the estate's claims contact (solicitor or executor) from a Gazette
+    notice. Permissive: searches the whole notice for a legal-suffix firm name, a
+    recipient block, then a last-postcode address block as fallbacks."""
+    content = re.sub(r"\s+", " ", content or "").strip()
+    if not content:
+        return {}
     # reference
     ref = ""
     rm = re.search(r"\bRef(?:erence)?\b[:.\s]*([A-Za-z0-9][A-Za-z0-9./\- ]{1,18})", content, re.I)
     if rm:
         ref = rm.group(1).strip(" .)")
-    # contact postcode = last postcode in notice if different from the deceased's
+    # contact postcode = last postcode in notice that isn't the deceased's
     pcs = re.findall(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", content)
     contact_pc = ""
-    if pcs and pcs[-1].upper() != (deceased_pc or "").upper():
-        contact_pc = pcs[-1].upper()
-    # firm vs private executor
-    firm = re.search(r"([A-Z][A-Za-z0-9'&.\- ]{2,40}?"
-                     r"(?:Solicitors|LLP|& Co\.?|Law|Legal|Limited|Ltd|Partners|Co\.?))",
-                     block)
-    kind = "solicitor" if firm else "executor"
-    name = (firm.group(1).strip() if firm else block.split(",")[0].strip())[:60]
+    for pc in reversed(pcs):
+        if pc.upper() != (deceased_pc or "").upper():
+            contact_pc = pc.upper()
+            break
+    # firm name: consecutive capitalised words ending in a legal suffix (no sentence-crossing)
+    _SUF = (r"(?:Solicitors|Solicitor|LLP|& Co\.?|& Partners|Law Firm|Legal|"
+            r"Trust Corporation|Limited|Ltd|Partners)")
+    firm = re.search(r"((?:[A-Z][\w'.]*\s+(?:&\s+)?){1,4}" + _SUF + r")\b", content)
+    # recipient block: after a claims trigger, up to the deadline or sentence end
+    block = ""
+    m = re.search(r"(?:particulars[^.]*?\bto\b|send[^.]*?\bto\b|claims?\s+to\b|"
+                  r"interest\s+to\b|to\s+the\s+undersigned[,:]?)\s+(.{6,220}?)"
+                  r"(?:\s+(?:on\s+or\s+before|before\s+the|not\s+later|after\s+which|by\s+the)|\.)",
+                  content, re.I)
+    if m:
+        block = m.group(1)
+    block = re.sub(r"^(?:the\s+undersigned[,\s]*|Solicitors?[,\s]*|Messrs\.?\s+)+", "",
+                   block.strip(), flags=re.I).strip(" ,.;:")
+    # decide name + kind
+    name, kind = "", "executor"
+    if firm:
+        name, kind = firm.group(1).strip(), "solicitor"
+    elif block:
+        name = block.split(",")[0].strip()
+    elif contact_pc:
+        am = re.search(r"([A-Z][^.]{5,90}?" + re.escape(contact_pc.replace(" ", r"\s*")) + r")", content)
+        if am:
+            block = am.group(1).strip()
+            name = block.split(",")[0].strip()
     if not name:
         return {}
-    return {"name": name, "block": block[:160], "ref": ref,
+    return {"name": name[:60], "block": (block or name)[:160], "ref": ref,
             "postcode": contact_pc, "kind": kind}
 
 
@@ -1348,7 +1508,16 @@ def _combine(*lists):
     for lst in lists:
         for p in (lst or []):
             seen[p["id"]] = p
-    return sorted(seen.values(), key=lambda x: -x.get("score", 0))
+    # collapse the same physical property (same address + postcode) to its best-scored entry
+    out = {}
+    for p in seen.values():
+        key = re.sub(r"[^a-z0-9]", "", (p.get("address", "") + "|" + p.get("postcode", "")).lower())
+        if not key or key == "|":
+            key = "id:" + p["id"]
+        cur = out.get(key)
+        if cur is None or p.get("score", 0) > cur.get("score", 0):
+            out[key] = p
+    return sorted(out.values(), key=lambda x: -x.get("score", 0))
 
 
 def main():
