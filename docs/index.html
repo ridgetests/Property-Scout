@@ -287,6 +287,9 @@ function keyFacts(p){
   else if(p.price) val=`£${p.price.toLocaleString()}`;
   if(val) rows.push(`<div class="kfrow"><span>Est. value</span><b>${val}</b></div>`);
   let interior='Awaiting EPC';
+  if(!p.floor_area_m2 && p.floor_area_est_m2){
+    interior=`~${p.floor_area_est_m2} m² (est. from footprint)`;
+  }
   if(p.floor_area_m2){
     let cmp='';
     if(HOME_FLOOR){const d=Math.round((p.floor_area_m2/HOME_FLOOR-1)*100); cmp=`<span class="cmp">${d>=0?'+':''}${d}% vs your home (${HOME_FLOOR} m²)</span>`;}
@@ -298,12 +301,23 @@ function keyFacts(p){
     const c=p.estate_contact, lbl=c.kind==='solicitor'?'Solicitor':'Executor';
     rows.push(`<div class="kfrow"><span>Estate contact</span><b>${c.name}${c.postcode?' · '+c.postcode:''}<span class="cmp">${lbl}${c.ref?' · Ref '+c.ref:''} · for a tactful pre-market enquiry</span></b></div>`);
   }
+  else if(p.notice_sample){
+    rows.push(`<div class="kfrow"><span>Notice (debug)</span><b style="font-weight:400;font-size:12px">${p.notice_sample}</b></div>`);
+  }
   let ext='See aerial above', extcmp='Pull LR title (£3) to confirm plot';
   if(p.plot_m2){
     let pc=''; if(HOME_PLOT_M2){const d=Math.round((p.plot_m2/HOME_PLOT_M2-1)*100); pc=` · ${d>=0?'+':''}${d}% vs your plot`;}
     ext=`${p.plot_m2.toLocaleString()} m² plot${pc}`; extcmp=`~${Math.round(p.plot_m2*10.764).toLocaleString()} sq ft · HMLR indicative`;
   } else if(p.flags && p.flags.indexOf('plot-unverified')>=0){ ext='Plot not in INSPIRE — check overlay'; }
   rows.push(`<div class="kfrow"><span>Exterior / plot</span><b>${ext}<span class="cmp">${extcmp}</span></b></div>`);
+  if(p.footprints){
+    const f=p.footprints, extra=f.buildings-1;
+    let bl=`Main ~${f.main_m2} m²`;
+    if(extra>0) bl+=` + ${extra} outbuilding${extra>1?'s':''} (largest ~${f.largest_secondary_m2} m²)`;
+    const cov=f.coverage_pct!=null?`${f.coverage_pct}% plot coverage`:'';
+    const conv=f.outbuilding==='large'?' · possible conversion candidate':'';
+    rows.push(`<div class="kfrow"><span>Buildings</span><b>${bl}<span class="cmp">${cov}${conv}</span></b></div>`);
+  }
   if(p.constraints){
     let cl = p.constraints.length ? p.constraints.join(' · ') : 'No major constraints found';
     if(p.listed_grade) cl += ` (Grade ${p.listed_grade})`;
