@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-01T13:37:16.608527+00:00",
-  "count": 30,
+  "generated_at": "2026-07-01T14:33:28.678752+00:00",
+  "count": 34,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
   "min_plot_m2": 380,
@@ -24,22 +24,22 @@
   ],
   "properties": [
     {
-      "id": "gz_5138517",
-      "address": "Deceased 12 Keble Court, Redfields Lane, Church Crookham, Fleet \u2014 GU52 0AE",
-      "owner_note": "Probate \u2014 estate of Margaret Wyatt",
+      "id": "gz_5140515",
+      "address": "Deceased Field End, Rowledge, Farnham \u2014 GU10 4AF",
+      "owner_note": "Probate \u2014 estate of Dorothy Finlow",
       "estate_contact": {},
-      "notice_sample": "Address of Deceased 12 Keble Court, Redfields Lane, Church Crookham, Fleet, GU52 0AE Date of Claim Deadline",
-      "postcode": "GU52 0AE",
-      "price": 375000,
+      "notice_sample": "Address of Deceased Field End, Rowledge, Farnham, GU10 4AF Date of Claim Deadline",
+      "postcode": "GU10 4AF",
+      "price": 0,
       "beds": 0,
       "property_type": "property",
-      "lat": 51.253498,
-      "lng": -0.845716,
-      "dist_mi": 3.9,
-      "score": 77,
+      "lat": 51.182014,
+      "lng": -0.822907,
+      "dist_mi": 1.2,
+      "score": 61,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "~\u00a3375k\u2013\u00a3390k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -47,14 +47,14 @@
       "is_probate": true,
       "low_comp": false,
       "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.253498,-0.845716",
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.182014,-0.822907",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": 375000,
-      "est_high": 390000,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5138517",
+        "url": "https://www.thegazette.co.uk/notice/5140515",
         "uprn": ""
       },
       "source_label": "PROBATE",
@@ -66,48 +66,48 @@
       "media": {
         "photo_count": 0,
         "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43732/65228"
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43774/65236"
       },
       "first_seen": "2026-07-01",
       "last_seen": "2026-07-01",
       "days_on_market": 0,
-      "plot_m2": 7816,
+      "plot_m2": 766,
       "footprints": {
-        "main_m2": 2948,
+        "main_m2": 146,
         "buildings": 1,
         "largest_secondary_m2": 0,
-        "coverage_pct": 38
+        "coverage_pct": 19
       },
-      "floor_area_est_m2": 5306,
+      "floor_area_est_m2": 263,
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 82,
-        "refused": 9,
-        "decided": 91,
-        "rate": 0.9010989010989011
+        "approved": 91,
+        "refused": 7,
+        "decided": 98,
+        "rate": 0.9285714285714286
       },
-      "permission": 0.9,
+      "permission": 0.93,
       "permission_label": "development-friendly",
-      "feasibility": 0.9,
-      "setting": 364,
+      "feasibility": 0.93,
+      "setting": 401,
       "typology": "Development play",
-      "tier": "High",
+      "tier": "Medium",
       "signals": {
         "Potential": {
-          "score": 45,
+          "score": 31,
           "max": 45,
-          "note": "7,816 m\u00b2 plot (20.6\u00d7 your home)"
+          "note": "766 m\u00b2 plot (2.0\u00d7 your home)"
         },
         "Value": {
-          "score": 27,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3375k"
+          "note": "price unknown"
         },
         "Fit": {
-          "score": 17,
+          "score": 22,
           "max": 25,
-          "note": "3.9 mi from home"
+          "note": "1.2 mi from home"
         },
         "Edge": {
           "score": 10,
@@ -115,9 +115,9 @@
           "note": "probate"
         },
         "Permission": {
-          "score": 18,
+          "score": 19,
           "max": 20,
-          "note": "development-friendly \u00b7 82 approved / 9 refused nearby"
+          "note": "development-friendly \u00b7 91 approved / 7 refused nearby"
         }
       }
     },
@@ -128,16 +128,16 @@
       "estate_contact": {},
       "notice_sample": "Address of Deceased 37 Burnt Hill Way, Wrecclesham, Farnham, GU10 4RP Date of Claim Deadline",
       "postcode": "GU10 4RP",
-      "price": 860000,
+      "price": 0,
       "beds": 0,
       "property_type": "property",
       "lat": 51.192623,
       "lng": -0.804019,
       "dist_mi": 1.3,
-      "score": 64,
+      "score": 69,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "~\u00a3615k\u2013\u00a31015k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -148,8 +148,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.192623,-0.804019",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": 615000,
-      "est_high": 1015000,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5137991",
@@ -198,9 +198,9 @@
           "note": "1,148 m\u00b2 plot (3.0\u00d7 your home) \u00b7 12% built (room to develop)"
         },
         "Value": {
-          "score": 6,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3860k"
+          "note": "price unknown"
         },
         "Fit": {
           "score": 22,
@@ -226,16 +226,16 @@
       "estate_contact": {},
       "notice_sample": "Address of Deceased 74 Weydon Hill Road, Farnham, GU9 8NY Date of Claim Deadline",
       "postcode": "GU9 8NY",
-      "price": 825000,
+      "price": 0,
       "beds": 0,
       "property_type": "property",
       "lat": 51.204574,
       "lng": -0.798771,
       "dist_mi": 1.5,
-      "score": 56,
+      "score": 60,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
-        "~\u00a3680k\u2013\u00a3945k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -246,8 +246,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.204574,-0.798771",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": 680000,
-      "est_high": 945000,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5130567",
@@ -296,9 +296,9 @@
           "note": "664 m\u00b2 plot (1.7\u00d7 your home) \u00b7 5% built (room to develop)"
         },
         "Value": {
-          "score": 7,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3825k"
+          "note": "price unknown"
         },
         "Fit": {
           "score": 22,
@@ -318,22 +318,122 @@
       }
     },
     {
+      "id": "gz_5123805",
+      "address": "Deceased Flat 14 Providence Place, Abbey Street, Farnham, Surrey \u2014 GU9 7RQ",
+      "owner_note": "Probate \u2014 estate of Clive Davis",
+      "estate_contact": {},
+      "notice_sample": "Address of Deceased Flat 14 Providence Place, Abbey Street, Farnham, Surrey, GU9 7RQ Date of Claim Deadline",
+      "postcode": "GU9 7RQ",
+      "price": 0,
+      "beds": 0,
+      "property_type": "property",
+      "lat": 51.212675,
+      "lng": -0.795139,
+      "dist_mi": 1.9,
+      "score": 65,
+      "reasons": [
+        "Likely to market soon (by ~Nov 2026)",
+        "Long-held \u2014 not sold since 1995"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.212675,-0.795139",
+      "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Nov 2026)",
+      "est_low": null,
+      "est_high": null,
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5123805",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65246"
+      },
+      "first_seen": "2026-07-01",
+      "last_seen": "2026-07-01",
+      "days_on_market": 0,
+      "plot_m2": 1519,
+      "footprints": {
+        "main_m2": 820,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 54
+      },
+      "floor_area_est_m2": 1476,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 81,
+        "refused": 9,
+        "decided": 90,
+        "rate": 0.9
+      },
+      "permission": 0.85,
+      "permission_label": "development-friendly",
+      "feasibility": 0.85,
+      "setting": 513,
+      "typology": "Development play",
+      "tier": "High",
+      "signals": {
+        "Potential": {
+          "score": 45,
+          "max": 45,
+          "note": "1,519 m\u00b2 plot (4.0\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "price unknown"
+        },
+        "Fit": {
+          "score": 21,
+          "max": 25,
+          "note": "1.9 mi from home"
+        },
+        "Edge": {
+          "score": 10,
+          "max": 20,
+          "note": "probate"
+        },
+        "Permission": {
+          "score": 17,
+          "max": 20,
+          "note": "development-friendly \u00b7 81 approved / 9 refused nearby"
+        }
+      }
+    },
+    {
       "id": "gz_5114624",
       "address": "Deceased 10 Parkland Grove, FARNHAM \u2014 GU9 9HA",
       "owner_note": "Probate \u2014 estate of Sheila Brooks",
       "estate_contact": {},
       "notice_sample": "Address of Deceased 10 Parkland Grove, FARNHAM, GU9 9HA Date of Claim Deadline",
       "postcode": "GU9 9HA",
-      "price": 457000,
+      "price": 0,
       "beds": 0,
       "property_type": "property",
       "lat": 51.238578,
       "lng": -0.773103,
       "dist_mi": 3.8,
-      "score": 65,
+      "score": 52,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "~\u00a3135k\u2013\u00a3580k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -344,8 +444,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.238578,-0.773103",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": 135000,
-      "est_high": 580000,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5114624",
@@ -378,8 +478,8 @@
       "permission_label": "development-friendly",
       "feasibility": 0.97,
       "setting": 330,
-      "typology": "Anomaly",
-      "tier": "High",
+      "typology": "Motivated seller",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 23,
@@ -387,9 +487,9 @@
           "note": "444 m\u00b2 plot (1.2\u00d7 your home)"
         },
         "Value": {
-          "score": 27,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3457k"
+          "note": "price unknown"
         },
         "Fit": {
           "score": 17,
@@ -409,114 +509,22 @@
       }
     },
     {
-      "id": "gz_5111180",
-      "address": "Deceased 87 Cranmore Lane, Aldershot \u2014 GU11 3AP",
-      "owner_note": "Probate \u2014 estate of Gwendoline Sear",
-      "estate_contact": {},
-      "notice_sample": "Address of Deceased 87 Cranmore Lane, Aldershot, GU11 3AP Date of Claim Deadline",
-      "postcode": "GU11 3AP",
-      "price": 685000,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.242918,
-      "lng": -0.783059,
-      "dist_mi": 3.8,
-      "score": 48,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "~\u00a3575k\u2013\u00a3820k area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.242918,-0.783059",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": 575000,
-      "est_high": 820000,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5111180",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43739/65250"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 91,
-        "refused": 3,
-        "decided": 94,
-        "rate": 0.9680851063829787
-      },
-      "permission": 0.97,
-      "permission_label": "development-friendly",
-      "feasibility": 0.97,
-      "setting": 65,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 16,
-          "max": 45,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 14,
-          "max": 30,
-          "note": "~\u00a3685k"
-        },
-        "Fit": {
-          "score": 17,
-          "max": 25,
-          "note": "3.8 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Permission": {
-          "score": 19,
-          "max": 20,
-          "note": "development-friendly \u00b7 91 approved / 3 refused nearby"
-        }
-      }
-    },
-    {
       "id": "gz_5108616",
       "address": "Deceased 79 Riverdale, FARNHAM \u2014 GU10 4QT",
       "owner_note": "Probate \u2014 estate of James Grant",
       "estate_contact": {},
       "notice_sample": "Address of Deceased 79 Riverdale, FARNHAM, GU10 4QT Date of Claim Deadline",
       "postcode": "GU10 4QT",
-      "price": 415000,
+      "price": 0,
       "beds": 0,
       "property_type": "property",
       "lat": 51.198496,
       "lng": -0.820899,
       "dist_mi": 0.5,
-      "score": 64,
+      "score": 53,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "~\u00a3373k\u2013\u00a3461k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -527,8 +535,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198496,-0.820899",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": 373000,
-      "est_high": 461470,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5108616",
@@ -568,8 +576,8 @@
       "permission_label": "development-friendly",
       "feasibility": 0.89,
       "setting": 739,
-      "typology": "Anomaly",
-      "tier": "High",
+      "typology": "Motivated seller",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 22,
@@ -577,9 +585,9 @@
           "note": "423 m\u00b2 plot (1.1\u00d7 your home)"
         },
         "Value": {
-          "score": 26,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3415k"
+          "note": "price unknown"
         },
         "Fit": {
           "score": 24,
@@ -605,16 +613,16 @@
       "estate_contact": {},
       "notice_sample": "Address of Deceased Hill Brow Beacon Hill Ewshott Hampshire, GU10 5DB Date of Claim Deadline",
       "postcode": "GU10 5DB",
-      "price": 855000,
+      "price": 0,
       "beds": 0,
       "property_type": "property",
       "lat": 51.237349,
       "lng": -0.826883,
       "dist_mi": 2.7,
-      "score": 63,
+      "score": 70,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
-        "~\u00a3855k\u2013\u00a3855k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -625,8 +633,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237349,-0.826883",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": 855000,
-      "est_high": 855000,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5091497",
@@ -676,9 +684,9 @@
           "note": "3,596 m\u00b2 plot (9.5\u00d7 your home)"
         },
         "Value": {
-          "score": 2,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3855k"
+          "note": "price unknown"
         },
         "Fit": {
           "score": 19,
@@ -704,16 +712,16 @@
       "estate_contact": {},
       "notice_sample": "Address of Deceased Chompers, 4 Cedarways, Farnham, GU9 8SW Date of Claim Deadline",
       "postcode": "GU9 8SW",
-      "price": 850000,
+      "price": 0,
       "beds": 0,
       "property_type": "property",
       "lat": 51.19872,
       "lng": -0.804004,
       "dist_mi": 1.2,
-      "score": 67,
+      "score": 71,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "~\u00a3560k\u2013\u00a31010k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -724,8 +732,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.19872,-0.804004",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": 560000,
-      "est_high": 1010000,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5095567",
@@ -774,9 +782,9 @@
           "note": "1,351 m\u00b2 plot (3.6\u00d7 your home)"
         },
         "Value": {
-          "score": 7,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3850k"
+          "note": "price unknown"
         },
         "Fit": {
           "score": 22,
@@ -796,22 +804,123 @@
       }
     },
     {
+      "id": "gz_5088435",
+      "address": "Deceased Owl Cottage, Eashing Lane, Godalming \u2014 GU7 2QA",
+      "owner_note": "Probate \u2014 estate of Margaret Bannister",
+      "estate_contact": {},
+      "notice_sample": "Address of Deceased Owl Cottage, Eashing Lane, Godalming GU7 2QA Date of Claim Deadline",
+      "postcode": "GU7 2QA",
+      "price": 0,
+      "beds": 0,
+      "property_type": "property",
+      "lat": 51.185208,
+      "lng": -0.641334,
+      "dist_mi": 8.3,
+      "score": 33,
+      "reasons": [
+        "Likely to market soon (by ~Sep 2026)",
+        "Long-held \u2014 not sold since 1995"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.185208,-0.641334",
+      "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": null,
+      "est_high": null,
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5088435",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65302"
+      },
+      "first_seen": "2026-07-01",
+      "last_seen": "2026-07-01",
+      "days_on_market": 0,
+      "plot_m2": 10006,
+      "footprints": {
+        "main_m2": 456,
+        "buildings": 5,
+        "largest_secondary_m2": 158,
+        "coverage_pct": 7,
+        "outbuilding": "large"
+      },
+      "floor_area_est_m2": 821,
+      "constraints": [
+        "Green Belt"
+      ],
+      "planning": {
+        "n": 69,
+        "approved": 45,
+        "refused": 11,
+        "decided": 56,
+        "rate": 0.8035714285714286
+      },
+      "permission": 0.5,
+      "permission_label": "mixed",
+      "feasibility": 0.5,
+      "setting": 28,
+      "typology": "Plot play",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 45,
+          "max": 45,
+          "note": "10,006 m\u00b2 plot (26.3\u00d7 your home) \u00b7 7% built (room to develop)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "price unknown"
+        },
+        "Fit": {
+          "score": 8,
+          "max": 25,
+          "note": "8.3 mi from home"
+        },
+        "Edge": {
+          "score": 10,
+          "max": 20,
+          "note": "probate, outbuilding ~158 m\u00b2"
+        },
+        "Permission": {
+          "score": 10,
+          "max": 20,
+          "note": "mixed \u00b7 45 approved / 11 refused nearby"
+        }
+      }
+    },
+    {
       "id": "gz_5081876",
       "address": "Deceased Beacon Hill Road, Ewshot, Farnham \u2014 GU10 5DB",
       "owner_note": "Probate \u2014 estate of Audrey Hawkins",
       "estate_contact": {},
       "notice_sample": "Address of Deceased Beacon Hill Road, Ewshot, Farnham, GU10 5DB Date of Claim Deadline",
       "postcode": "GU10 5DB",
-      "price": 855000,
+      "price": 0,
       "beds": 0,
       "property_type": "property",
       "lat": 51.237349,
       "lng": -0.826883,
       "dist_mi": 2.7,
-      "score": 63,
+      "score": 70,
       "reasons": [
         "Likely to market soon (by ~Sep 2026)",
-        "~\u00a3855k\u2013\u00a3855k area est"
+        "Long-held \u2014 not sold since 1995"
       ],
       "flags": [
         "probate"
@@ -822,8 +931,8 @@
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237349,-0.826883",
       "floor_area_m2": null,
       "market_window": "Likely to market soon (by ~Sep 2026)",
-      "est_low": 855000,
-      "est_high": 855000,
+      "est_low": null,
+      "est_high": null,
       "source": {
         "name": "The Gazette",
         "url": "https://www.thegazette.co.uk/notice/5081876",
@@ -873,9 +982,9 @@
           "note": "3,596 m\u00b2 plot (9.5\u00d7 your home)"
         },
         "Value": {
-          "score": 2,
+          "score": 12,
           "max": 30,
-          "note": "~\u00a3855k"
+          "note": "price unknown"
         },
         "Fit": {
           "score": 19,
@@ -891,6 +1000,305 @@
           "score": 19,
           "max": 20,
           "note": "development-friendly \u00b7 79 approved / 5 refused nearby"
+        }
+      }
+    },
+    {
+      "id": "gz_5077115",
+      "address": "Deceased Oaklands Farm, Smithfield Lane, Headley Down, Bordon \u2014 GU35 8ST",
+      "owner_note": "Probate \u2014 estate of John Vilton",
+      "estate_contact": {},
+      "notice_sample": "Address of Deceased Oaklands Farm, Smithfield Lane, Headley Down, Bordon, GU35 8ST Date of Claim Deadline",
+      "postcode": "GU35 8ST",
+      "price": 0,
+      "beds": 0,
+      "property_type": "property",
+      "lat": 51.135756,
+      "lng": -0.809518,
+      "dist_mi": 4.4,
+      "score": 54,
+      "reasons": [
+        "Likely to market soon (by ~Sep 2026)",
+        "Long-held \u2014 not sold since 1995"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.135756,-0.809518",
+      "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": null,
+      "est_high": null,
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5077115",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43801/65241"
+      },
+      "first_seen": "2026-07-01",
+      "last_seen": "2026-07-01",
+      "days_on_market": 0,
+      "plot_m2": 20546,
+      "footprints": {
+        "main_m2": 162,
+        "buildings": 3,
+        "largest_secondary_m2": 90,
+        "coverage_pct": 1,
+        "outbuilding": "medium"
+      },
+      "floor_area_est_m2": 292,
+      "constraints": [],
+      "planning": {
+        "n": 2,
+        "approved": 2,
+        "refused": 0,
+        "decided": 2,
+        "rate": 1.0
+      },
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 11,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 45,
+          "max": 45,
+          "note": "20,546 m\u00b2 plot (54.1\u00d7 your home) \u00b7 1% built (room to develop)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "price unknown"
+        },
+        "Fit": {
+          "score": 16,
+          "max": 25,
+          "note": "4.4 mi from home"
+        },
+        "Edge": {
+          "score": 10,
+          "max": 20,
+          "note": "probate, outbuilding ~90 m\u00b2"
+        },
+        "Permission": {
+          "score": 15,
+          "max": 20,
+          "note": "development-friendly \u00b7 2 approved / 0 refused nearby"
+        }
+      }
+    },
+    {
+      "id": "gz_5074933",
+      "address": "Deceased 8 Searle Road, FARNHAM \u2014 GU9 8LJ",
+      "owner_note": "Probate \u2014 estate of CAROL PAGE",
+      "estate_contact": {},
+      "notice_sample": "Address of Deceased 8 Searle Road, FARNHAM, GU9 8LJ Date of Claim Deadline",
+      "postcode": "GU9 8LJ",
+      "price": 0,
+      "beds": 0,
+      "property_type": "property",
+      "lat": 51.206492,
+      "lng": -0.797218,
+      "dist_mi": 1.6,
+      "score": 65,
+      "reasons": [
+        "Likely to market soon (by ~Sep 2026)",
+        "Long-held \u2014 not sold since 1995"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.206492,-0.797218",
+      "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": null,
+      "est_high": null,
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5074933",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
+      },
+      "first_seen": "2026-07-01",
+      "last_seen": "2026-07-01",
+      "days_on_market": 0,
+      "plot_m2": 1473,
+      "footprints": {
+        "main_m2": 122,
+        "buildings": 2,
+        "largest_secondary_m2": 28,
+        "coverage_pct": 10
+      },
+      "floor_area_est_m2": 220,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 15,
+        "decided": 93,
+        "rate": 0.8387096774193549
+      },
+      "permission": 0.84,
+      "permission_label": "development-friendly",
+      "feasibility": 0.84,
+      "setting": 676,
+      "typology": "Development play",
+      "tier": "High",
+      "signals": {
+        "Potential": {
+          "score": 45,
+          "max": 45,
+          "note": "1,473 m\u00b2 plot (3.9\u00d7 your home) \u00b7 10% built (room to develop)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "price unknown"
+        },
+        "Fit": {
+          "score": 22,
+          "max": 25,
+          "note": "1.6 mi from home"
+        },
+        "Edge": {
+          "score": 10,
+          "max": 20,
+          "note": "probate"
+        },
+        "Permission": {
+          "score": 17,
+          "max": 20,
+          "note": "development-friendly \u00b7 78 approved / 15 refused nearby"
+        }
+      }
+    },
+    {
+      "id": "gz_5074207",
+      "address": "Deceased Southborough Lodge Farm, Elstead Road, Shackleford, Godalming \u2014 GU8 6AY",
+      "owner_note": "Probate \u2014 estate of Daniel Cottrell",
+      "estate_contact": {},
+      "notice_sample": "Address of Deceased Southborough Lodge Farm, Elstead Road, Shackleford, Godalming, GU8 6AY Date of Claim Deadline",
+      "postcode": "GU8 6AY",
+      "price": 0,
+      "beds": 0,
+      "property_type": "property",
+      "lat": 51.195177,
+      "lng": -0.656555,
+      "dist_mi": 7.6,
+      "score": 26,
+      "reasons": [
+        "Likely to market soon (by ~Sep 2026)",
+        "Long-held \u2014 not sold since 1995"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.195177,-0.656555",
+      "floor_area_m2": null,
+      "market_window": "Likely to market soon (by ~Sep 2026)",
+      "est_low": null,
+      "est_high": null,
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5074207",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65296"
+      },
+      "first_seen": "2026-07-01",
+      "last_seen": "2026-07-01",
+      "days_on_market": 0,
+      "plot_m2": 85577,
+      "footprints": {
+        "main_m2": 6285,
+        "buildings": 11,
+        "largest_secondary_m2": 5429,
+        "coverage_pct": 19,
+        "outbuilding": "large"
+      },
+      "floor_area_est_m2": 11313,
+      "constraints": [
+        "AONB",
+        "Green Belt"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 70,
+        "refused": 23,
+        "decided": 93,
+        "rate": 0.7526881720430108
+      },
+      "permission": 0.3,
+      "permission_label": "restricted",
+      "feasibility": 0.4,
+      "setting": 39,
+      "typology": "Plot play",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 45,
+          "max": 45,
+          "note": "85,577 m\u00b2 plot (225.2\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "price unknown"
+        },
+        "Fit": {
+          "score": 9,
+          "max": 25,
+          "note": "7.6 mi from home"
+        },
+        "Edge": {
+          "score": 10,
+          "max": 20,
+          "note": "probate, outbuilding ~5429 m\u00b2"
+        },
+        "Permission": {
+          "score": 6,
+          "max": 20,
+          "note": "restricted \u00b7 70 approved / 23 refused nearby"
         }
       }
     },
@@ -951,12 +1359,12 @@
           "note": "outbuilding ~468 m\u00b2"
         },
         "Permission": {
-          "score": 17,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 40 approved / 8 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 56,
+      "score": 50,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517890+00:00",
       "flags": [],
@@ -978,16 +1386,9 @@
       },
       "floor_area_est_m2": 860,
       "constraints": [],
-      "planning": {
-        "n": 54,
-        "approved": 40,
-        "refused": 8,
-        "decided": 48,
-        "rate": 0.8333333333333334
-      },
-      "permission": 0.83,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.83,
+      "feasibility": 0.75,
       "setting": 36,
       "typology": "Conversion play",
       "tier": "Medium"
@@ -1050,12 +1451,12 @@
           "note": "reduced"
         },
         "Permission": {
-          "score": 18,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 74 approved / 8 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 43,
+      "score": 36,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490593+00:00",
       "flags": [
@@ -1081,16 +1482,9 @@
       },
       "floor_area_est_m2": 943,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 74,
-        "refused": 8,
-        "decided": 82,
-        "rate": 0.9024390243902439
-      },
-      "permission": 0.9,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.9,
+      "feasibility": 0.75,
       "setting": 121,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1152,12 +1546,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 18,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 84 approved / 8 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 42,
+      "score": 34,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517448+00:00",
       "flags": [],
@@ -1178,16 +1572,9 @@
       },
       "floor_area_est_m2": 434,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 84,
-        "refused": 8,
-        "decided": 92,
-        "rate": 0.9130434782608695
-      },
-      "permission": 0.91,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.91,
+      "feasibility": 0.75,
       "setting": 515,
       "typology": "Candidate",
       "tier": "Low"
@@ -1250,12 +1637,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 19,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 88 approved / 3 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 47,
+      "score": 37,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490376+00:00",
       "flags": [],
@@ -1279,16 +1666,9 @@
       },
       "floor_area_est_m2": 254,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 88,
-        "refused": 3,
-        "decided": 91,
-        "rate": 0.967032967032967
-      },
-      "permission": 0.97,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.97,
+      "feasibility": 0.75,
       "setting": 464,
       "typology": "Forever-fit",
       "tier": "Low"
