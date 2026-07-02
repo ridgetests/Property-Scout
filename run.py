@@ -67,7 +67,8 @@ FOOTPRINTS_FILE = Path(__file__).resolve().parent / "footprints_bowl.json.gz"  #
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 EXCLUDE_DISTRICTS = {"GU11", "GU12", "GU14", "GU51", "GU52"}  # Aldershot/Farnborough/Fleet - out of area
-NOTICE_DETAIL_CAP = 40                   # max per-notice page fetches per run (rate-limit guard)
+NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (politeness cap)
+GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
@@ -1078,9 +1079,6 @@ def fetch_auction_house(conn):
 
     if not raw:
         return []
-    _res = sum(1 for x in raw if (x.get("contact") or {}).get("name"))
-    print(f"- probate: {len(raw)} notices, {_res} estate contacts resolved, "
-          f"{_notice_fetches[0]} notice-page lookups")
 
     cache = load_geocache(conn)
     need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
@@ -1171,9 +1169,6 @@ def fetch_auctionhouse_lots(conn):
                     "lotid": lot_m.group(1) if lot_m else pc.group(1)})
     if not raw:
         return []
-    _res = sum(1 for x in raw if (x.get("contact") or {}).get("name"))
-    print(f"- probate: {len(raw)} notices, {_res} estate contacts resolved, "
-          f"{_notice_fetches[0]} notice-page lookups")
 
     cache = load_geocache(conn)
     need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
@@ -1270,9 +1265,18 @@ def _probate_contact(content, deceased_pc):
             if pc.upper() != (deceased_pc or "").upper():
                 contact_pc = pc.upper()
                 break
+    phone = ""
+    pm2 = re.search(r"Telephone:?\s+([0-9][0-9\s()+]{6,})", content)
+    if pm2:
+        phone = re.sub(r"\s{2,}", " ", pm2.group(1)).strip(" .,")
+    email = ""
+    em = re.search(r"Email(?:\s+address)?:?\s+([^\s]+@[^\s]+)", content, re.I)
+    if em:
+        email = em.group(1).strip(" .,")
     kind = "solicitor" if re.search(r"\b(Solicitors?|LLP|& Co|Legal|Law|Trust Corporation)\b",
                                     name, re.I) else "executor"
-    return {"name": name[:60], "ref": ref, "postcode": contact_pc, "kind": kind}
+    return {"name": name[:60], "ref": ref, "postcode": contact_pc,
+            "phone": phone, "email": email, "kind": kind}
 
 
 _NOTICE_CACHE = {}
@@ -1287,14 +1291,17 @@ def _fetch_notice_text(url):
     if url in _NOTICE_CACHE:
         return _NOTICE_CACHE[url]
     txt = ""
+    hdrs = {"User-Agent": _UA,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
     try:
-        r = requests.get(url, headers={"User-Agent": _UA}, timeout=20)
+        r = requests.get(url, headers=hdrs, timeout=20)
         if r.status_code != 200:
             print(f"   notice page HTTP {r.status_code}: {url}")
         if r.ok:
             txt = _strip_tags(r.text)
     except Exception as e:
         print(f"   notice fetch failed {url}: {e}")
+    time.sleep(GAZETTE_CRAWL_DELAY)  # respect The Gazette's 1-request/10s crawl-delay
     _NOTICE_CACHE[url] = txt
     return txt
 
