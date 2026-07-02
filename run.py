@@ -617,6 +617,12 @@ def _excluded_type(typ):
     return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment"))
 
 
+def _addr_is_flat(addr):
+    """Flat/apartment given away by the address itself (e.g. 'Flat 2, ...')."""
+    return bool(re.search(r"\b(flat|apartment|apt|maisonette|penthouse|bedsit|"
+                          r"studio flat)\b", addr or "", re.I))
+
+
 _CONSTRAINT_CACHE = {}
 _PLANIT_CACHE = {}
 _CONSTRAINT_PENALTY = {"green-belt": 0.25, "area-of-outstanding-natural-beauty": 0.12,
@@ -829,7 +835,7 @@ def apply_gates(props):
         if _pcd in EXCLUDE_DISTRICTS:
             dropped_area += 1
             continue
-        if DETACHED_ONLY and _excluded_type(p.get("property_type")):
+        if DETACHED_ONLY and (_excluded_type(p.get("property_type")) or _addr_is_flat(p.get("address"))):
             dropped_type += 1
             continue
         lat, lng = p.get("lat"), p.get("lng")
@@ -1072,6 +1078,9 @@ def fetch_auction_house(conn):
 
     if not raw:
         return []
+    _res = sum(1 for x in raw if (x.get("contact") or {}).get("name"))
+    print(f"- probate: {len(raw)} notices, {_res} estate contacts resolved, "
+          f"{_notice_fetches[0]} notice-page lookups")
 
     cache = load_geocache(conn)
     need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
@@ -1162,6 +1171,9 @@ def fetch_auctionhouse_lots(conn):
                     "lotid": lot_m.group(1) if lot_m else pc.group(1)})
     if not raw:
         return []
+    _res = sum(1 for x in raw if (x.get("contact") or {}).get("name"))
+    print(f"- probate: {len(raw)} notices, {_res} estate contacts resolved, "
+          f"{_notice_fetches[0]} notice-page lookups")
 
     cache = load_geocache(conn)
     need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
@@ -1266,29 +1278,24 @@ def _probate_contact(content, deceased_pc):
 _NOTICE_CACHE = {}
 
 
-def _fetch_notice_text(pid):
-    """The search feed omits the executor block; the notice's own page carries it.
-    Fetch and flatten to text for parsing. Cached; fails soft."""
-    if not pid:
+def _fetch_notice_text(url):
+    """The search feed omits the executor block; the notice's own page carries it
+    in labelled fields (Executor/Administrator Company Name, Postcode, Reference).
+    Fetch that page and flatten to text. Cached; fails soft; logs HTTP status."""
+    if not url:
         return ""
-    if pid in _NOTICE_CACHE:
-        return _NOTICE_CACHE[pid]
+    if url in _NOTICE_CACHE:
+        return _NOTICE_CACHE[url]
     txt = ""
     try:
-        r = requests.get(f"https://www.thegazette.co.uk/notice/{pid}/data.json",
-                         headers={"User-Agent": _UA}, timeout=20)
+        r = requests.get(url, headers={"User-Agent": _UA}, timeout=20)
+        if r.status_code != 200:
+            print(f"   notice page HTTP {r.status_code}: {url}")
         if r.ok:
-            j = r.json()
-            blob = " ".join(str(v) for v in j.values() if isinstance(v, (str, int, float)))
-            txt = _strip_tags(blob)
-        if not txt or "Executor" not in txt and "Representative" not in txt:
-            r2 = requests.get(f"https://www.thegazette.co.uk/notice/{pid}",
-                              headers={"User-Agent": _UA}, timeout=20)
-            if r2.ok:
-                txt = _strip_tags(r2.text)
+            txt = _strip_tags(r.text)
     except Exception as e:
-        print(f"   notice-detail fetch failed for {pid}: {e}")
-    _NOTICE_CACHE[pid] = txt
+        print(f"   notice fetch failed {url}: {e}")
+    _NOTICE_CACHE[url] = txt
     return txt
 
 
@@ -1526,7 +1533,24 @@ def fetch_probate_leads(conn):
         pc = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", content)
         if not pc:
             continue
+        pc_up = pc.group(1).upper()
+        if pc_up.split()[0] in EXCLUDE_DISTRICTS:      # drop Aldershot/Fleet before any fetch
+            continue
         pid = (e.get("id") or "").rsplit("/", 1)[-1]
+        _lnk = e.get("link")
+        notice_url = ""
+        if isinstance(_lnk, dict):
+            notice_url = _lnk.get("@href") or _lnk.get("href") or ""
+        elif isinstance(_lnk, list):
+            for _L in _lnk:
+                if isinstance(_L, dict) and _L.get("@rel", "alternate") == "alternate":
+                    notice_url = _L.get("@href") or _L.get("href") or ""
+                    if notice_url:
+                        break
+        elif isinstance(_lnk, str):
+            notice_url = _lnk
+        if not notice_url:
+            notice_url = f"https://www.thegazette.co.uk/notice/{pid}"
         dod = re.search(r"(?:who )?died on\s+(?:the\s+)?"
                         r"(\d{1,2}(?:st|nd|rd|th)?\s+\w+\s+\d{4})", content, re.I)
         addr_m = re.search(r"(?:late of|residing at|formerly of|of)\s+(.+?),?\s*"
@@ -1538,13 +1562,14 @@ def fetch_probate_leads(conn):
                      r"sheltered|extra care|assisted living)",
                      (addr_line + " " + content), re.I):
             continue
+        if _addr_is_flat(addr_line):
+            continue
         paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_line)
-        pc_up = pc.group(1).upper()
         contact = _probate_contact(content, pc_up)
         sample = content[:900]
         if not contact.get("name") and _notice_fetches[0] < NOTICE_DETAIL_CAP:
             _notice_fetches[0] += 1
-            detail = _fetch_notice_text(pid)
+            detail = _fetch_notice_text(notice_url)
             if detail:
                 c2 = _probate_contact(detail, pc_up)
                 if c2.get("name"):
@@ -1559,9 +1584,12 @@ def fetch_probate_leads(conn):
                     "notice_sample": sample,
                     "dod": dod.group(1) if dod else "",
                     "pub": (e.get("published") or "")[:10],
-                    "url": f"https://www.thegazette.co.uk/notice/{pid}"})
+                    "url": notice_url})
     if not raw:
         return []
+    _res = sum(1 for x in raw if (x.get("contact") or {}).get("name"))
+    print(f"- probate: {len(raw)} notices, {_res} estate contacts resolved, "
+          f"{_notice_fetches[0]} notice-page lookups")
 
     cache = load_geocache(conn)
     need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
