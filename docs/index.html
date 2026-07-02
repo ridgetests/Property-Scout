@@ -299,7 +299,10 @@ function keyFacts(p){
   if(p.owner_note) rows.push(`<div class="kfrow"><span>Status</span><b>${p.owner_note}</b></div>`);
   if(p.estate_contact && p.estate_contact.name){
     const c=p.estate_contact, lbl=c.kind==='solicitor'?'Solicitor':'Executor';
-    rows.push(`<div class="kfrow"><span>Estate contact</span><b>${c.name}${c.postcode?' · '+c.postcode:''}<span class="cmp">${lbl}${c.ref?' · Ref '+c.ref:''} · for a tactful pre-market enquiry</span></b></div>`);
+    const line=[c.postcode,
+                c.phone?`<a href="tel:${c.phone.replace(/\s/g,'')}">${c.phone}</a>`:'',
+                c.email?`<a href="mailto:${c.email}">${c.email}</a>`:''].filter(Boolean).join(' · ');
+    rows.push(`<div class="kfrow"><span>Estate contact</span><b>${c.name}${line?' · '+line:''}<span class="cmp">${lbl}${c.ref?' · Ref '+c.ref:''} · for a tactful pre-market enquiry</span></b></div>`);
   }
   else if(p.notice_sample){
     rows.push(`<div class="kfrow"><span>Notice (debug)</span><b style="font-weight:400;font-size:12px">${p.notice_sample}</b></div>`);
