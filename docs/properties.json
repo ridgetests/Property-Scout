@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T14:33:28.678752+00:00",
+  "generated_at": "2026-07-02T06:31:56.353192+00:00",
   "count": 34,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
@@ -23,6 +23,104 @@
     ]
   ],
   "properties": [
+    {
+      "id": "gz_5159166",
+      "address": "Deceased 13 Burnt Hill Road, Wrecclesham, Farnham, Surrey \u2014 GU10 4RU",
+      "owner_note": "Probate \u2014 estate of John Binfield",
+      "estate_contact": {},
+      "notice_sample": "Address of Deceased 13 Burnt Hill Road, Wrecclesham, Farnham, Surrey GU10 4RU Date of Claim Deadline",
+      "postcode": "GU10 4RU",
+      "price": 0,
+      "beds": 0,
+      "property_type": "property",
+      "lat": 51.195632,
+      "lng": -0.807175,
+      "dist_mi": 1.1,
+      "score": 56,
+      "reasons": [
+        "Est. on market Aug 2026\u2013Jan 2027",
+        "Long-held \u2014 not sold since 1995"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.195632,-0.807175",
+      "floor_area_m2": null,
+      "market_window": "Est. on market Aug 2026\u2013Jan 2027",
+      "est_low": null,
+      "est_high": null,
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5159166",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65242"
+      },
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
+      "days_on_market": 0,
+      "plot_m2": 558,
+      "footprints": {
+        "main_m2": 121,
+        "buildings": 2,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 26
+      },
+      "floor_area_est_m2": 218,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 9,
+        "decided": 96,
+        "rate": 0.90625
+      },
+      "permission": 0.91,
+      "permission_label": "development-friendly",
+      "feasibility": 0.91,
+      "setting": 467,
+      "typology": "Motivated seller",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 26,
+          "max": 45,
+          "note": "558 m\u00b2 plot (1.5\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 30,
+          "note": "price unknown"
+        },
+        "Fit": {
+          "score": 23,
+          "max": 25,
+          "note": "1.1 mi from home"
+        },
+        "Edge": {
+          "score": 10,
+          "max": 20,
+          "note": "probate"
+        },
+        "Permission": {
+          "score": 18,
+          "max": 20,
+          "note": "development-friendly \u00b7 87 approved / 9 refused nearby"
+        }
+      }
+    },
     {
       "id": "gz_5140515",
       "address": "Deceased Field End, Rowledge, Farnham \u2014 GU10 4AF",
@@ -68,8 +166,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43774/65236"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 766,
       "footprints": {
@@ -166,8 +264,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -264,8 +362,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65245"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 664,
       "footprints": {
@@ -318,106 +416,6 @@
       }
     },
     {
-      "id": "gz_5123805",
-      "address": "Deceased Flat 14 Providence Place, Abbey Street, Farnham, Surrey \u2014 GU9 7RQ",
-      "owner_note": "Probate \u2014 estate of Clive Davis",
-      "estate_contact": {},
-      "notice_sample": "Address of Deceased Flat 14 Providence Place, Abbey Street, Farnham, Surrey, GU9 7RQ Date of Claim Deadline",
-      "postcode": "GU9 7RQ",
-      "price": 0,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.212675,
-      "lng": -0.795139,
-      "dist_mi": 1.9,
-      "score": 65,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "Long-held \u2014 not sold since 1995"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.212675,-0.795139",
-      "floor_area_m2": null,
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": null,
-      "est_high": null,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5123805",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65246"
-      },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
-      "days_on_market": 0,
-      "plot_m2": 1519,
-      "footprints": {
-        "main_m2": 820,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 54
-      },
-      "floor_area_est_m2": 1476,
-      "constraints": [
-        "Flood zone"
-      ],
-      "planning": {
-        "n": 100,
-        "approved": 81,
-        "refused": 9,
-        "decided": 90,
-        "rate": 0.9
-      },
-      "permission": 0.85,
-      "permission_label": "development-friendly",
-      "feasibility": 0.85,
-      "setting": 513,
-      "typology": "Development play",
-      "tier": "High",
-      "signals": {
-        "Potential": {
-          "score": 45,
-          "max": 45,
-          "note": "1,519 m\u00b2 plot (4.0\u00d7 your home)"
-        },
-        "Value": {
-          "score": 12,
-          "max": 30,
-          "note": "price unknown"
-        },
-        "Fit": {
-          "score": 21,
-          "max": 25,
-          "note": "1.9 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Permission": {
-          "score": 17,
-          "max": 20,
-          "note": "development-friendly \u00b7 81 approved / 9 refused nearby"
-        }
-      }
-    },
-    {
       "id": "gz_5114624",
       "address": "Deceased 10 Parkland Grove, FARNHAM \u2014 GU9 9HA",
       "owner_note": "Probate \u2014 estate of Sheila Brooks",
@@ -462,8 +460,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
@@ -553,8 +551,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 423,
       "footprints": {
@@ -651,8 +649,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 3596,
       "footprints": {
@@ -750,8 +748,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65243"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 1351,
       "footprints": {
@@ -848,8 +846,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65302"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 10006,
       "footprints": {
@@ -949,8 +947,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 3596,
       "footprints": {
@@ -1048,8 +1046,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43801/65241"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 20546,
       "footprints": {
@@ -1147,8 +1145,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43760/65245"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 1473,
       "footprints": {
@@ -1245,8 +1243,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65296"
       },
-      "first_seen": "2026-07-01",
-      "last_seen": "2026-07-01",
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-02",
       "days_on_market": 0,
       "plot_m2": 85577,
       "footprints": {
@@ -1911,12 +1909,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 15,
+          "score": 18,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 87 approved / 9 refused nearby"
         }
       },
-      "score": 36,
+      "score": 43,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490441+00:00",
       "flags": [],
@@ -1940,9 +1938,16 @@
       },
       "floor_area_est_m2": 218,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 9,
+        "decided": 96,
+        "rate": 0.90625
+      },
+      "permission": 0.91,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.91,
       "setting": 467,
       "typology": "Forever-fit",
       "tier": "Low"
