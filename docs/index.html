@@ -130,6 +130,16 @@
   .aerctl input[type=range]{flex:1}
   .aerhint{font-size:11px;color:var(--muted);white-space:nowrap}
   .ovbtn{width:100%;margin:8px 0 2px;padding:10px;border:.5px solid var(--line2);background:none;border-radius:10px;font-size:13px;color:var(--ink);cursor:pointer}
+
+  .notes-ta{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:9px;font:inherit;font-size:13px;resize:vertical;background:#fffdf7;margin-top:2px}
+  .addsheet{position:fixed;left:50%;bottom:0;transform:translateX(-50%) translateY(100%);width:100%;max-width:520px;background:#fff;border-radius:16px 16px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom));box-shadow:0 -6px 30px rgba(0,0,0,.2);z-index:60;transition:transform .25s ease}
+  .addsheet.open{transform:translateX(-50%) translateY(0)}
+  .addsheet h3{margin:0 0 12px;font-size:16px}
+  .addsheet input,.addsheet textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit;font-size:14px;margin-bottom:9px;background:#fff}
+  .addsheet .acts{display:flex;gap:8px;margin-top:4px}
+  .addsheet .acts button{flex:1;padding:12px;border-radius:10px;border:1px solid var(--line);background:#fff;font:inherit;font-weight:600;font-size:14px}
+  .addsheet .acts button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .addbtn{background:none;border:none;font-size:24px;line-height:1;cursor:pointer;color:var(--ink);padding:4px 6px;font-weight:400}
 </style>
 </head>
 <body>
@@ -145,7 +155,7 @@
 </div>
 <header>
   <div><h1>PropertyScout</h1><div class="gen" id="gen"></div></div>
-  <button class="star-btn" onclick="openPanel()" aria-label="Shortlist">★<span class="ct" id="ct"></span></button>
+  <button class="addbtn" onclick="openAdd()" aria-label="Add a place">＋</button><button class="star-btn" onclick="openPanel()" aria-label="Shortlist">★<span class="ct" id="ct"></span></button>
 </header>
 
 <div class="filters">
@@ -182,6 +192,16 @@
 <div class="toast" id="toast"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<div class="ov" id="addov" onclick="closeAdd()"></div>
+<div class="addsheet" id="addsheet">
+  <h3>Add a place</h3>
+  <input id="a-url" type="url" placeholder="Paste listing URL (required)" inputmode="url">
+  <input id="a-addr" type="text" placeholder="Label / address (optional)">
+  <input id="a-price" type="number" placeholder="Guide price £ (optional)" inputmode="numeric">
+  <input id="a-plot" type="number" placeholder="Plot size m² (optional)" inputmode="numeric">
+  <textarea id="a-note" rows="2" placeholder="Note (optional)"></textarea>
+  <div class="acts"><button class="primary" onclick="addPlace()">Add place</button><button onclick="closeAdd()">Cancel</button></div>
+</div>
 <script>
 const FLAG_LABELS = {
   few_photos:"Few photos", no_floorplan:"No floor plan", plot_not_tagged:"Plot not tagged",
@@ -197,6 +217,15 @@ const SRC_LABEL = {auction:"AUCTION","off-market":"OFF-MKT"};
 let DATA=[], filter='all', selected=null, map, markers=[], HOME_FLOOR=null, HOME_PLOT=null, HOME_PLOT_M2=null;
 let shortlist = JSON.parse(localStorage.getItem('ps_shortlist')||'[]');
 let dismissed = new Set(JSON.parse(localStorage.getItem('ps_dismissed')||'[]'));
+let notes = JSON.parse(localStorage.getItem('ps_notes')||'{}');
+let manual = JSON.parse(localStorage.getItem('ps_manual')||'[]');
+shortlist.forEach(x=>{ if(x&&x.note&&!notes[x.id]) notes[x.id]=x.note; });  // migrate old inline notes
+function saveNotes(){ localStorage.setItem('ps_notes',JSON.stringify(notes)); }
+function saveManual(){ localStorage.setItem('ps_manual',JSON.stringify(manual)); }
+function saveShort(){ localStorage.setItem('ps_shortlist',JSON.stringify(shortlist)); }
+function setNote(id,v){ v=(v||'').trim(); if(v) notes[id]=v; else delete notes[id]; saveNotes(); render&&render(); }
+function allById(id){ return DATA.find(x=>x.id==id) || manual.find(x=>x.id==id) || null; }
+function openById(id){ if(String(id).indexOf('man_')===0) openManual(id); else openDrawer(id); }
 
 const sc = s => s>=62?'var(--g)':s>=48?'var(--a)':'var(--gr)';
 function hd(p){const t=(p.property_type||'property').replace(/_/g,' ');return p.beds?`${p.beds} bed ${t}`:(t.charAt(0).toUpperCase()+t.slice(1));}
@@ -248,8 +277,9 @@ function render(){
       markers.push(m);
     }
   });
-  if(!v.length){ L_.innerHTML='<div class="empty">No properties match this filter.<br>Lower the minimum score.</div>'; return; }
-  L_.innerHTML = v.map(card).join('');
+  // (manual + empty-feed handled below)
+  const manHtml = manual.length ? '<div class="sl" style="margin:2px 0 6px">➕ Your added places</div>'+manual.map(manCard).join('') : '';
+  L_.innerHTML = manHtml + (v.length?v.map(card).join(''):'<div class="empty" style="margin-top:10px">No feed properties match this filter.</div>');
 }
 
 function topReason(p){
@@ -263,7 +293,9 @@ function card(p){
   const src = p.source&&p.source.portal;
   const badge = SRC_LABEL[src] ? `<div class="src">${SRC_LABEL[src]}</div>` : '';
   const thumb = (p.media&&p.media.thumb_url) ? `<img src="${p.media.thumb_url}" alt=""/>` : '🏠';
-  const tags = (p.flags||[]).slice(0,1).map(f=>`<span class="tag fl">${FLAG_LABELS[f]||f}</span>`).join('');
+  const tags = (p.flags||[]).slice(0,1).map(f=>`<span class="tag fl">${FLAG_LABELS[f]||f}</span>`).join('')
+    + (notes[p.id]?'<span class="tag" style="background:#fef3c7;color:#92400e">✎ note</span>':'')
+    + (shortlist.find(s=>s.id==p.id)?'<span class="tag" style="background:#fef9c3;color:#854d0e">★</span>':'');
   const dom = (p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0;
   const days = dom>0 ? dom+' days listed' : 'just listed';
   return `<div class="card ${selected===p.id?'sel':''}" onclick="openDrawer('${p.id}')">
@@ -395,6 +427,8 @@ function openDrawer(id){
     <div class="sl">${p.typology?p.typology+' · '+(p.tier||'')+' · ':'Score '}${p.score}/100</div>${sigs}
     ${flags?`<div class="sl">Search-invisibility flags</div><div class="fstrip">${flags}</div>`:''}
     ${comps?`<div class="sl">Nearby comparables</div><div class="comps">${comps}</div>`:''}
+    <div class="sl">Your notes</div>
+    <textarea class="notes-ta" rows="3" placeholder="Record what you learn — access, listing status, agent chat, gut feel…" onchange="setNote('${id}',this.value)">${(notes[id]||'').replace(/</g,'&lt;')}</textarea>
     <div class="acts">
       <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">★ ${saved?'Saved':'Save'}</button>
       <button onclick="share('${id}')">⌯ Share</button>
@@ -418,9 +452,14 @@ function viewListing(id){
 function toggleSave(id){
   const i = shortlist.findIndex(s=>s.id==id);
   if(i>-1){ shortlist.splice(i,1); toast('Removed'); }
-  else { shortlist.push({id,note:''}); toast('Added to shortlist ★'); }
-  localStorage.setItem('ps_shortlist',JSON.stringify(shortlist));
-  updateCount(); openDrawer(id);
+  else {
+    const p = allById(id);
+    shortlist.push({id, addr:(p&&(p.address||p.url))||id,
+                    price:(p&&p.price!=null)?p.price:null,
+                    score:(p&&p.score!=null)?p.score:null, ts:Date.now()});
+    toast('Added to shortlist ★');
+  }
+  saveShort(); updateCount(); openById(id);
 }
 function updateCount(){ const c=document.getElementById('ct'); c.textContent=shortlist.length; c.style.display=shortlist.length?'flex':'none'; }
 
@@ -441,21 +480,86 @@ function renderPanel(){
   const b=document.getElementById('sl-body');
   if(!shortlist.length){ b.innerHTML='<div class="empty">Nothing saved yet.<br>Tap ★ on any property to shortlist it.</div>'; return; }
   b.innerHTML = shortlist.map(s=>{
-    const p=DATA.find(x=>x.id==s.id); if(!p) return '';
-    const eq=(p.enrichment&&p.enrichment.equity)||{};
+    const p = allById(s.id);
+    const isMan = String(s.id).indexOf('man_')===0;
+    const addr = p ? (p.address||p.url||s.id) : (s.addr||s.id);
+    const price = (p&&p.price!=null) ? p.price : (s.price!=null?s.price:null);
+    const score = (p&&p.score!=null) ? p.score : (s.score!=null?s.score:null);
+    const gone = p ? '' : ' <span style="color:var(--muted);font-size:11px">(not in current feed)</span>';
+    const scHtml = score!=null ? `<div class="sc" style="color:${sc(score)}">${score}</div>` : '<div class="sc" style="color:var(--muted)">—</div>';
     return `<div class="sl-item"><div style="display:flex;justify-content:space-between;align-items:flex-start">
-      <div><div style="font-size:13px;font-weight:600">${p.address}</div>
-      <div style="font-size:12px;color:var(--muted);margin-top:2px">£${p.price.toLocaleString()}${eq.equity_gain!=null?' · ~'+k(eq.equity_gain)+' gain':''} · Score ${p.score}</div></div>
-      <div class="sc" style="color:${sc(p.score)}">${p.score}</div></div>
-      <textarea rows="2" placeholder="Add a note…" onchange="saveNote('${s.id}',this.value)">${s.note||''}</textarea></div>`;
+      <div style="flex:1;cursor:pointer" onclick="closePanel();${isMan?`openManual('${s.id}')`:`openDrawer('${s.id}')`}">
+        <div style="font-size:13px;font-weight:600">${addr}${gone}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">${price!=null?'£'+price.toLocaleString():'—'}${score!=null?' · Score '+score:(isMan?' · Manual':'')}</div></div>
+      ${scHtml}</div>
+      <textarea rows="2" placeholder="Add a note…" onchange="setNote('${s.id}',this.value)">${notes[s.id]||''}</textarea></div>`;
   }).join('');
 }
-function saveNote(id,v){ const s=shortlist.find(x=>x.id==id); if(s){s.note=v;localStorage.setItem('ps_shortlist',JSON.stringify(shortlist));} }
+function saveNote(id,v){ setNote(id,v); }
 
 function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000); }
 function dismiss(id){ dismissed.add(id); localStorage.setItem('ps_dismissed',JSON.stringify([...dismissed])); closeDrawer(); render(); toast('Hidden'); }
 function resetHidden(){ dismissed.clear(); localStorage.removeItem('ps_dismissed'); render(); toast('Hidden cleared'); }
 
+function manCard(m){
+  const note=notes[m.id], saved=shortlist.find(s=>s.id==m.id);
+  const ratio=(m.plot_m2&&HOME_PLOT_M2)?` · plot ${(m.plot_m2/HOME_PLOT_M2).toFixed(1)}× yours`:(m.plot_m2?` · ${m.plot_m2} m²`:'');
+  const host=(m.url||'').replace(/^https?:\/\//,'').replace(/^www\./,'').slice(0,38);
+  return `<div class="card" onclick="openManual('${m.id}')">
+    <div class="ph">\uD83D\uDD17</div>
+    <div class="body">
+      <div class="ctop"><div class="addr">${m.address||'Added place'}<small>${host}…</small></div>
+        <div class="scol"><div class="typ" style="background:#e0e7ff;color:#3730a3">Manual</div><div class="sc" style="color:var(--muted)">—</div></div></div>
+      <div class="sub">${m.price?k(m.price):'price —'}${ratio}</div>
+      <div class="why">Awaiting full scoring (next update)</div>
+      <div class="tags">${saved?'<span class="tag" style="background:#fef9c3;color:#854d0e">\u2605 saved</span>':''}${note?'<span class="tag" style="background:#fef3c7;color:#92400e">\u270e note</span>':''}</div>
+    </div></div>`;
+}
+function openManual(id){
+  const m=manual.find(x=>x.id==id); if(!m) return;
+  selected=id;
+  const saved=shortlist.find(s=>s.id==id);
+  const ratio=(m.plot_m2&&HOME_PLOT_M2)?`${(m.plot_m2/HOME_PLOT_M2).toFixed(1)}× your plot`:'';
+  document.getElementById('dc').innerHTML=`
+    <div class="dh"><h2>${m.address||'Added place'}</h2>
+      <div class="m">${m.price?'£'+m.price.toLocaleString():'price not set'}${m.plot_m2?' · '+m.plot_m2+' m²':''}</div>
+      <div class="s">Manually added · ${new Date(m.ts).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</div></div>
+    <div class="kfbox">
+      ${m.plot_m2?`<div class="kfrow"><span>Plot</span><b>${m.plot_m2} m²${ratio?'<span class="cmp">'+ratio+'</span>':''}</b></div>`:''}
+      ${m.price?`<div class="kfrow"><span>Guide price</span><b>£${m.price.toLocaleString()}</b></div>`:''}
+      <div class="kfrow"><span>Status</span><b>Awaiting full scoring<span class="cmp">the engine will rate this in a later update</span></b></div>
+    </div>
+    <div class="sl">Your notes</div>
+    <textarea class="notes-ta" rows="4" placeholder="Record what you learn — access, listing status, agent chat, gut feel…" onchange="setNote('${id}',this.value)">${(notes[id]||'').replace(/</g,'&lt;')}</textarea>
+    <div class="acts">
+      <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">\u2605 ${saved?'Saved':'Save'}</button>
+      <button onclick="window.open('${m.url}','_blank')">\u2197 Open listing</button>
+      <button onclick="delManual('${id}')">\uD83D\uDDD1 Remove</button>
+    </div>`;
+  document.getElementById('ov').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+}
+function delManual(id){
+  manual=manual.filter(x=>x.id!=id); saveManual();
+  const i=shortlist.findIndex(s=>s.id==id); if(i>-1){shortlist.splice(i,1);saveShort();}
+  delete notes[id]; saveNotes();
+  closeDrawer(); render(); updateCount(); toast('Removed');
+}
+function openAdd(){ document.getElementById('addov').classList.add('open'); document.getElementById('addsheet').classList.add('open'); }
+function closeAdd(){ document.getElementById('addov').classList.remove('open'); document.getElementById('addsheet').classList.remove('open'); }
+function addPlace(){
+  const url=(document.getElementById('a-url').value||'').trim();
+  if(!url){ toast('A URL is needed'); return; }
+  const id='man_'+Date.now();
+  manual.unshift({id, url,
+    address:(document.getElementById('a-addr').value||'').trim(),
+    price:+document.getElementById('a-price').value||null,
+    plot_m2:+document.getElementById('a-plot').value||null, ts:Date.now()});
+  const n=(document.getElementById('a-note').value||'').trim(); if(n){ notes[id]=n; saveNotes(); }
+  saveManual();
+  ['a-url','a-addr','a-price','a-plot','a-note'].forEach(x=>document.getElementById(x).value='');
+  closeAdd(); render(); toast('Added ★ full scoring comes in a later update');
+}
 function _h(s){let h=5381;for(let i=0;i<s.length;i++)h=((h*33)^s.charCodeAt(i))>>>0;return h;}
 const PASS_H=4157867882;
 function unlock(){
