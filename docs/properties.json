@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-03T05:28:23.133916+00:00",
-  "count": 29,
+  "generated_at": "2026-07-03T07:34:05.933796+00:00",
+  "count": 28,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
   "min_plot_m2": 380,
@@ -1202,103 +1202,6 @@
       "tier": "Low"
     },
     {
-      "id": "9680b05d-6775-4e59-a0b7-0f2fe359704f",
-      "address": "Upper Hale Road, GU9 0NN",
-      "postcode": "GU9 0NN",
-      "lat": 51.229261,
-      "lng": -0.786786,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 550000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "9680b05d-6775-4e59-a0b7-0f2fe359704f",
-        "url": "",
-        "agent": "Hamptons",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": ""
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 9,
-          "added_date": "2026-06-12"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "signals": {
-        "Potential": {
-          "score": 26,
-          "max": 45,
-          "note": "547 m\u00b2 plot (1.4\u00d7 your home)"
-        },
-        "Value": {
-          "score": 17,
-          "max": 30,
-          "note": "~\u00a3550k"
-        },
-        "Fit": {
-          "score": 12,
-          "max": 25,
-          "note": "distance n/a"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Permission": {
-          "score": 19,
-          "max": 20,
-          "note": "development-friendly \u00b7 89 approved / 6 refused nearby"
-        }
-      },
-      "score": 44,
-      "low_comp": false,
-      "scored_at": "2026-06-21T20:27:00.517527+00:00",
-      "flags": [],
-      "first_seen": "2026-06-21",
-      "last_seen": "2026-06-21",
-      "price_history": [
-        {
-          "date": "2026-06-21",
-          "price": 550000
-        }
-      ],
-      "plot_m2": 547,
-      "footprints": {
-        "main_m2": 130,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 24
-      },
-      "floor_area_est_m2": 234,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 89,
-        "refused": 6,
-        "decided": 95,
-        "rate": 0.9368421052631579
-      },
-      "permission": 0.94,
-      "permission_label": "development-friendly",
-      "feasibility": 0.94,
-      "setting": 543,
-      "typology": "Candidate",
-      "tier": "Low"
-    },
-    {
       "id": "64730ccd-e65d-449f-8b8f-8beaf52fd88c",
       "address": "Shady Nook, GU9 0DT",
       "postcode": "GU9 0DT",
@@ -1355,12 +1258,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 15,
+          "score": 17,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 83 approved / 12 refused nearby"
         }
       },
-      "score": 34,
+      "score": 39,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517559+00:00",
       "flags": [],
@@ -1381,9 +1284,16 @@
       },
       "floor_area_est_m2": 216,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 12,
+        "decided": 95,
+        "rate": 0.8736842105263158
+      },
+      "permission": 0.87,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.87,
       "setting": 531,
       "typology": "Candidate",
       "tier": "Low"
