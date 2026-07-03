@@ -67,6 +67,23 @@ FOOTPRINTS_FILE = Path(__file__).resolve().parent / "footprints_bowl.json.gz"  #
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 EXCLUDE_DISTRICTS = {"GU11", "GU12", "GU14", "GU51", "GU52"}  # Aldershot/Farnborough/Fleet - out of area
+EXCLUDE_LOCALITIES = {"Hale", "Badshot Lea", "Heath End", "Weybourne"}  # out-of-area GU9/GU10 sprawl
+
+_CAREHOME_RE = re.compile(
+    r"(nursing home|care home|rest home|residential home|retirement home|"
+    r"residential care|convalescent|care centre|nursing centre|nursing home|"
+    r"\bnursing\b|\bcare of\b|\bc/o\b|hospice|almshouse|"
+    r"sheltered housing|extra care|assisted living)", re.I)
+_LOCALITY_RE = re.compile(
+    r"\b(" + "|".join(re.escape(x) for x in EXCLUDE_LOCALITIES) + r")\b", re.I)
+
+
+def _is_carehome(text):
+    return bool(_CAREHOME_RE.search(text or ""))
+
+
+def _is_excluded_locality(text):
+    return bool(_LOCALITY_RE.search(text or ""))
 NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (politeness cap)
 GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
@@ -836,6 +853,11 @@ def apply_gates(props):
         if _pcd in EXCLUDE_DISTRICTS:
             dropped_area += 1
             continue
+        _txt = " ".join(str(p.get(k) or "") for k in ("address", "owner_note", "notice_sample")) \
+            + " " + str((p.get("estate_contact") or {}).get("name") or "")
+        if _is_carehome(_txt) or _is_excluded_locality(_txt):
+            dropped_area += 1
+            continue
         if DETACHED_ONLY and (_excluded_type(p.get("property_type")) or _addr_is_flat(p.get("address"))):
             dropped_type += 1
             continue
@@ -1563,11 +1585,9 @@ def fetch_probate_leads(conn):
         addr_m = re.search(r"(?:late of|residing at|formerly of|of)\s+(.+?),?\s*"
                            r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}", content)
         addr_line = (addr_m.group(1).strip(" ,") if addr_m else "")
-        if re.search(r"(nursing home|care home|rest home|residential home|"
-                     r"retirement home|convalescent|care centre|nursing centre|"
-                     r"nursing|care of|c/o|hospital|hospice|almshouse|"
-                     r"sheltered|extra care|assisted living)",
-                     (addr_line + " " + content), re.I):
+        if _is_carehome(addr_line + " " + content):
+            continue
+        if _is_excluded_locality(addr_line + " " + content):   # Hale/Badshot Lea/etc - drop pre-fetch
             continue
         if _addr_is_flat(addr_line):
             continue
@@ -1578,6 +1598,8 @@ def fetch_probate_leads(conn):
             _notice_fetches[0] += 1
             detail = _fetch_notice_text(notice_url)
             if detail:
+                if _is_carehome(detail):        # named as a care home only on the notice page
+                    continue
                 c2 = _probate_contact(detail, pc_up)
                 if c2.get("name"):
                     contact = c2
