@@ -354,95 +354,6 @@ def _local_density(lat, lng, rad=0.0035):
     return n
 
 
-def score_property(p):
-    sig, parts = {}, []
-    epc = p["enrichment"].get("epc") or {}
-    plot = p["enrichment"].get("plot") or {}
-    market = p["enrichment"].get("market") or {}
-
-    # equity - only if we have a comp + floor area (paid reveal)
-    cap = WEIGHTS["equity_residual"]; comp = _renovated_comp(p); fa = epc.get("floor_area_m2")
-    if comp and fa:
-        reno = int(fa * _reno_rate(p))
-        if p["property_type"] == "bungalow":
-            reno += EXTENSION_ALLOWANCE
-        gain = comp - p["price"] - reno
-        p["enrichment"]["equity"] = {"renovated_comp": comp, "reno_cost_est": reno, "equity_gain": gain}
-        pts = max(0, min(cap, round((gain / p["price"]) / 0.25 * cap)))
-        sig["equity_residual"] = {"score": pts, "max": cap,
-                                  "note": f"Renovated comp ~£{comp:,}; ~£{gain:,} gain after ~£{reno:,} works."}
-        parts.append((pts, cap))
-
-    # plot - only if known (paid reveal)
-    cap = WEIGHTS["plot_size"]; acres = plot.get("area_acres")
-    if acres is not None:
-        pts = (cap if acres >= 1 else round(cap*0.87) if acres >= 0.5 else round(cap*0.8)
-               if acres >= 0.4 else round(cap*0.67) if acres >= 0.25 else round(cap*0.47)
-               if acres >= 0.15 else round(cap*0.3))
-        sig["plot_size"] = {"score": pts, "max": cap, "note": f"Est. {acres:.2f} acre ({plot.get('source','est')})."}
-        parts.append((pts, cap))
-
-    # structural - always (type + any text signals)
-    cap = WEIGHTS["structural"]; hits = _has(p["description_raw"], STRUCTURAL_TERMS)
-    pts = round(cap * 0.4)
-    if p["property_type"] in ("bungalow", "cottage"):
-        pts += round(cap * 0.3)
-    if p["property_type"] in ("farm", "land", "plot", "smallholding"):
-        pts += round(cap * 0.4)
-    pts += min(round(cap * 0.3), len(hits) * 5)
-    pts = max(0, min(cap, pts))
-    sig["structural"] = {"score": pts, "max": cap,
-                         "note": (f"{p['property_type'].title()}. " +
-                                  (f"Signals: {', '.join(hits)}." if hits else "Type-based potential."))}
-    parts.append((pts, cap))
-
-    # motivation - always (reductions / days-on-market / status)
-    cap = WEIGHTS["motivation"]
-    reductions = market.get("reductions") or 0
-    dom = market.get("dom") or 0
-    status = (market.get("status") or "").lower()
-    hits = _has(p["description_raw"], MOTIVATION_TERMS)
-    pts = min(round(cap*0.4), len(hits)*5) + min(round(cap*0.5), int(reductions)*5)
-    if dom > 180:  pts += round(cap*0.4)
-    elif dom > 90: pts += round(cap*0.25)
-    elif dom > 60: pts += round(cap*0.15)
-    pts = max(0, min(cap, pts))
-    bits = []
-    if reductions: bits.append(f"{reductions} reduction(s)")
-    if dom: bits.append(f"{dom} days listed")
-    if hits: bits.append("'" + "', '".join(hits) + "'")
-    sig["motivation"] = {"score": pts, "max": cap, "note": "; ".join(bits) or "Fresh to market, no signals yet."}
-    parts.append((pts, cap))
-
-    # competition - always (stale stock = less competition)
-    cap = WEIGHTS["competition"]; pts = 3
-    if dom > 120: pts += 5
-    elif dom > 75: pts += 3
-    pts = max(0, min(cap, pts))
-    sig["competition"] = {"score": pts, "max": cap, "note": "Lower competition the longer it sits."}
-    parts.append((pts, cap))
-
-    # location - only if we fetched school/station data (not on free tier yet)
-    schools = p["enrichment"].get("schools") or []
-    station = p["enrichment"].get("station_distance_mi")
-    if schools or station is not None:
-        cap = WEIGHTS["location"]; pts = 0
-        outstanding = [s for s in schools if (s.get("rating") or "").lower() == "outstanding"]
-        if outstanding: pts += round(cap*0.5)
-        if station is not None: pts += round(cap * (0.5 if station <= 4 else 0.3))
-        pts = max(0, min(cap, pts))
-        sig["location"] = {"score": pts, "max": cap, "note": "School / station proximity."}
-        parts.append((pts, cap))
-
-    achieved = sum(pt for pt, _ in parts)
-    possible = sum(c for _, c in parts) or 1
-    p["signals"] = sig
-    p["score"] = round(achieved / possible * 100)
-    p["low_comp"] = sig.get("competition", {}).get("score", 0) >= LOW_COMP_THRESHOLD
-    p["scored_at"] = datetime.now(timezone.utc).isoformat()
-    return p
-
-
 def build_reasons(p):
     """Two or three plain-language reasons this surfaced - the card headline."""
     m = p["enrichment"].get("market") or {}
@@ -1191,79 +1102,6 @@ def fetch_auction_lots(conn):
     return lots
 
 
-def fetch_auctionhouse_lots(conn):
-    """Auction House (Sussex & Hampshire): available lots, postcode-geocoded.
-    Templated network site, so this parser extends to their other regions."""
-    if not AUCTION_ENABLED:
-        return []
-    import requests
-    headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
-               "Accept-Language": "en-GB,en;q=0.9"}
-    try:
-        r = requests.get(AUCTIONHOUSE_URL, headers=headers, timeout=30)
-        r.raise_for_status()
-        html = r.text
-    except Exception as e:
-        print(f"   auctionhouse fetch failed: {e}")
-        return []
-
-    raw = []
-    for m in re.finditer(r'<a[^>]+href="([^"]*/lot/(?:redirect/)?\d+)"[^>]*>(.*?)</a>',
-                         html, re.S):
-        url_l, inner = m.group(1), _strip_tags(m.group(2))
-        u = inner.upper()
-        if "PROPERTY FOR AUCTION" not in u or "GUIDE" not in u:
-            continue  # "GUIDE" marks an available lot; sold/withdrawn lack it
-        pc = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b", inner)
-        if not pc:
-            continue
-        addr_m = re.search(r"-\s*(.+?)\s+Lot\b", inner)
-        bed_m = re.search(r"(\d+)\s*Bed", inner)
-        lot_m = re.search(r"(\d+)$", url_l)
-        raw.append({"url": url_l, "text": inner,
-                    "postcode": pc.group(1).upper().replace("  ", " "),
-                    "price": _first_price(inner) or 0,
-                    "beds": int(bed_m.group(1)) if bed_m else 0,
-                    "addr": addr_m.group(1).strip() if addr_m else pc.group(1),
-                    "lotid": lot_m.group(1) if lot_m else pc.group(1)})
-    if not raw:
-        return []
-
-    cache = load_geocache(conn)
-    need = sorted({x["postcode"] for x in raw if x["postcode"] not in cache})
-    fresh = geocode(need) if need else {}
-    save_geocache(conn, fresh)
-    coords = {**cache, **fresh}
-
-    today = datetime.now(timezone.utc).date().isoformat()
-    out = []
-    for x in raw:
-        ll = coords.get(x["postcode"])
-        if not ll:
-            continue
-        lat, lng = ll
-        dist = _haversine_mi(HOME, (lat, lng))
-        if dist > AUCTION_RADIUS_MI:
-            continue
-        ptype, _ = _infer_type_beds(x["text"])
-        out.append({
-            "id": f"ah_{x['lotid']}", "address": f"{x['addr']} (auction)",
-            "postcode": x["postcode"], "price": x["price"], "beds": x["beds"],
-            "property_type": ptype, "lat": lat, "lng": lng,
-            "dist_mi": round(dist, 1), "score": _auction_score(x["text"]),
-            "reasons": _auction_reasons(x["text"], x["price"]), "flags": ["auction"],
-            "is_auction": True, "low_comp": False, "comps": [],
-            "source": {"name": "Auction House", "url": x["url"], "uprn": ""},
-            "source_label": "AUCTION",
-            "enrichment": {"market": {}, "plot": {}, "equity": {}},
-            "media": {"photo_count": 0, "has_floorplan": False,
-                      "thumb_url": _aerial_thumb(lat, lng)},
-            "first_seen": today, "last_seen": today, "days_on_market": 0,
-        })
-    out.sort(key=lambda x: -x["score"])
-    return out
-
-
 def _probate_name(title, content):
     name = (title or "").strip()
     if not name:
@@ -1900,11 +1738,6 @@ def _mock_listings():
          "days_on_market": 104, "times_reduced": 3, "is_reduced": True,
          "agent_name": "Rural Property Co", "added_date": "2026-03-08"},
     ]
-
-
-# mock enrichment keyed by the mock uprn (only used in USE_MOCK)
-def _mock_listings_uprn_patch():
-    pass
 
 
 _MOCK_EPC = {
