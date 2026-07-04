@@ -88,6 +88,24 @@ NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (
 GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
 
+# --- throttle circuit-breaker: first 429 from a source parks it for the rest of
+# the run, so one rate-limit never snowballs into hundreds of hammering retries. ---
+_DEAD = set()
+
+
+def _dead(api):
+    return api in _DEAD
+
+
+def _kill(api, why=""):
+    if api not in _DEAD:
+        _DEAD.add(api)
+        print(f"   \u26a0 backing off {api} for the rest of this run ({why}) - protects the quota")
+
+
+def _throttled(e):
+    return "429" in str(e) or "Too Many Requests" in str(e)
+
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
            "motivation": 20, "competition": 10, "location": 15}
 RENO_RATE_PER_M2 = {"poor": 1200, "dated": 900, "fair": 600}
@@ -119,6 +137,8 @@ def _headers():
 # ===========================================================================
 def resolve_boundary(name):
     import requests
+    if _dead("homedata"):
+        return None
     try:
         r = requests.get(f"{HOMEDATA_BASE}/boundaries/autocomplete/",
                          params={"q": name}, headers=_headers(), timeout=20)
@@ -130,6 +150,8 @@ def resolve_boundary(name):
         print(f"   no boundary found for '{name}'")
     except Exception as e:
         print(f"   boundary lookup failed for '{name}': {e}")
+        if _throttled(e):
+            _kill("homedata", "429")
     return None
 
 
@@ -139,6 +161,8 @@ def fetch_listings():
     import requests
     out = []
     for area in SEARCH["areas"]:
+        if _dead("homedata"):
+            break
         bid = resolve_boundary(area)
         if not bid:
             continue
@@ -152,6 +176,9 @@ def fetch_listings():
             rows = r.json().get("results") or []
         except Exception as e:
             print(f"   Homedata listings failed for {area}: {e}")
+            if _throttled(e):
+                _kill("homedata", "429")
+                break
             continue
         print(f"   {area}: {len(rows)} listing(s)")
         out.extend(rows)
@@ -195,6 +222,8 @@ def enrich_property(uprn):
         return {}
     if USE_MOCK or not HOMEDATA_API_KEY:
         return {"epc": _MOCK_EPC.get(str(uprn), {}), "comps": _MOCK_COMPS.get(str(uprn), [])}
+    if _dead("homedata"):
+        return {}
     import requests
     out = {}
     try:
@@ -659,6 +688,8 @@ def fetch_constraints(lat, lng):
     key = (round(lat, 5), round(lng, 5))
     if key in _CONSTRAINT_CACHE:
         return _CONSTRAINT_CACHE[key]
+    if _dead("planning_data"):
+        return {}
     import requests
     params = [("latitude", lat), ("longitude", lng), ("limit", 100)]
     for d in _CONSTRAINT_PENALTY:
@@ -677,6 +708,8 @@ def fetch_constraints(lat, lng):
                 break
     except Exception as ex:
         print(f"   constraints fetch failed ({lat},{lng}): {ex}")
+        if _throttled(ex):
+            _kill("planning_data", "429")
         return {}
     res = {"list": [_CONSTRAINT_LABEL[d] for d in found], "datasets": found, "grade": grade}
     _CONSTRAINT_CACHE[key] = res
@@ -691,6 +724,8 @@ def fetch_planning_history(lat, lng, krad=0.5):
     key = (round(lat, 4), round(lng, 4))
     if key in _PLANIT_CACHE:
         return _PLANIT_CACHE[key]
+    if _dead("planit"):
+        return {}
     import requests
     from datetime import date
     start = f"{date.today().year - 12}-01-01"
@@ -703,6 +738,8 @@ def fetch_planning_history(lat, lng, krad=0.5):
         recs = r.json().get("records", [])
     except Exception as ex:
         print(f"   planning history fetch failed ({lat},{lng}): {ex}")
+        if _throttled(ex):
+            _kill("planit", "429")
         return {}
     approved = refused = 0
     for a in recs:
@@ -1308,22 +1345,33 @@ def _fetch_notice_text(url):
     """The search feed omits the executor block; the notice's own page carries it
     in labelled fields (Executor/Administrator Company Name, Postcode, Reference).
     Fetch that page and flatten to text. Cached; fails soft; logs HTTP status."""
+    import requests
     if not url:
         return ""
     if url in _NOTICE_CACHE:
         return _NOTICE_CACHE[url]
-    txt = ""
+    if _dead("gazette"):
+        return ""
+    txt, made_request = "", False
     hdrs = {"User-Agent": _UA,
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
     try:
         r = requests.get(url, headers=hdrs, timeout=20)
+        made_request = True
+        if r.status_code == 429:
+            _kill("gazette", "429")
+            _NOTICE_CACHE[url] = ""
+            return ""
         if r.status_code != 200:
             print(f"   notice page HTTP {r.status_code}: {url}")
         if r.ok:
             txt = _strip_tags(r.text)
     except Exception as e:
         print(f"   notice fetch failed {url}: {e}")
-    time.sleep(GAZETTE_CRAWL_DELAY)  # respect The Gazette's 1-request/10s crawl-delay
+        if _throttled(e):
+            _kill("gazette", "429")
+    if made_request:
+        time.sleep(GAZETTE_CRAWL_DELAY)  # respect The Gazette's 1-request/10s crawl-delay
     _NOTICE_CACHE[url] = txt
     return txt
 
@@ -1374,6 +1422,8 @@ def _pp_get(params):
     """One HM Land Registry Price Paid query (free, keyless), newest first."""
     import requests
     url = "https://landregistry.data.gov.uk/data/ppi/transaction-record.json"
+    if _dead("landregistry"):
+        return []
     try:
         r = requests.get(url, params={**params, "_pageSize": 150, "_sort": "-transactionDate"},
                          headers={"User-Agent": _UA, "Accept": "application/json"}, timeout=30)
@@ -1381,6 +1431,8 @@ def _pp_get(params):
         return _pp_parse(r.json())
     except Exception as e:
         print(f"   price-paid fetch failed ({params}): {e}")
+        if _throttled(e):
+            _kill("landregistry", "429")
         return []
 
 
@@ -1440,6 +1492,8 @@ def homedata_epc(conn, postcode, paon):
     Reuses your existing key; cached so each property is fetched at most once."""
     if not HOMEDATA_API_KEY or USE_MOCK:
         return {}
+    if _dead("homedata"):
+        return {}
     key = f"{postcode}|{paon}".upper()
     row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
     if row:
@@ -1472,6 +1526,8 @@ def homedata_epc(conn, postcode, paon):
             uprn = str(u0) if u0 else None
     except Exception as e:
         print(f"      epc address lookup failed ({postcode}): {e}")
+        if _throttled(e):
+            _kill("homedata", "429")
     result = {}
     if uprn:
         epc = (enrich_property(uprn) or {}).get("epc") or {}
