@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T07:39:04.981907+00:00",
+  "generated_at": "2026-07-06T08:41:49.738622+00:00",
   "count": 28,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
@@ -75,8 +75,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65242"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 558,
       "footprints": {
@@ -89,14 +89,14 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 87,
-        "refused": 9,
+        "approved": 88,
+        "refused": 8,
         "decided": 96,
-        "rate": 0.90625
+        "rate": 0.9166666666666666
       },
-      "permission": 0.91,
+      "permission": 0.92,
       "permission_label": "development-friendly",
-      "feasibility": 0.91,
+      "feasibility": 0.92,
       "setting": 467,
       "typology": "Motivated seller",
       "tier": "Medium",
@@ -124,7 +124,7 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 9 refused nearby"
+          "note": "development-friendly \u00b7 88 approved / 8 refused nearby"
         }
       }
     },
@@ -148,7 +148,7 @@
       "lat": 51.192623,
       "lng": -0.804019,
       "dist_mi": 1.3,
-      "score": 54,
+      "score": 64,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
         "~\u00a3615k\u2013\u00a31015k area est"
@@ -180,8 +180,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -192,12 +192,19 @@
       },
       "floor_area_est_m2": 243,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 86,
+        "refused": 11,
+        "decided": 97,
+        "rate": 0.8865979381443299
+      },
+      "permission": 0.89,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.89,
       "setting": 301,
       "typology": "Development play",
-      "tier": "Medium",
+      "tier": "High",
       "signals": {
         "Potential": {
           "score": 45,
@@ -220,9 +227,9 @@
           "note": "probate"
         },
         "Permission": {
-          "score": 15,
+          "score": 18,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 86 approved / 11 refused nearby"
         }
       }
     },
@@ -271,8 +278,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65245"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 664,
       "footprints": {
@@ -369,8 +376,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
@@ -460,8 +467,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 423,
       "footprints": {
@@ -558,8 +565,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 3596,
       "footprints": {
@@ -657,8 +664,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65243"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 1351,
       "footprints": {
@@ -755,8 +762,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-05",
+      "first_seen": "2026-07-06",
+      "last_seen": "2026-07-06",
       "days_on_market": 0,
       "plot_m2": 3596,
       "footprints": {
@@ -1069,7 +1076,7 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 84 approved / 7 refused nearby"
+          "note": "development-friendly \u00b7 84 approved / 8 refused nearby"
         }
       },
       "score": 42,
@@ -1096,13 +1103,13 @@
       "planning": {
         "n": 100,
         "approved": 84,
-        "refused": 7,
-        "decided": 91,
-        "rate": 0.9230769230769231
+        "refused": 8,
+        "decided": 92,
+        "rate": 0.9130434782608695
       },
-      "permission": 0.92,
+      "permission": 0.91,
       "permission_label": "development-friendly",
-      "feasibility": 0.92,
+      "feasibility": 0.91,
       "setting": 515,
       "typology": "Candidate",
       "tier": "Low"
@@ -1167,7 +1174,7 @@
         "Permission": {
           "score": 19,
           "max": 20,
-          "note": "development-friendly \u00b7 88 approved / 3 refused nearby"
+          "note": "development-friendly \u00b7 87 approved / 3 refused nearby"
         }
       },
       "score": 47,
@@ -1196,10 +1203,10 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 88,
+        "approved": 87,
         "refused": 3,
-        "decided": 91,
-        "rate": 0.967032967032967
+        "decided": 90,
+        "rate": 0.9666666666666667
       },
       "permission": 0.97,
       "permission_label": "development-friendly",
@@ -1365,10 +1372,10 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 9 refused nearby"
+          "note": "development-friendly \u00b7 88 approved / 8 refused nearby"
         }
       },
-      "score": 43,
+      "score": 44,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490441+00:00",
       "flags": [],
@@ -1394,14 +1401,14 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 87,
-        "refused": 9,
+        "approved": 88,
+        "refused": 8,
         "decided": 96,
-        "rate": 0.90625
+        "rate": 0.9166666666666666
       },
-      "permission": 0.91,
+      "permission": 0.92,
       "permission_label": "development-friendly",
-      "feasibility": 0.91,
+      "feasibility": 0.92,
       "setting": 467,
       "typology": "Forever-fit",
       "tier": "Low"
