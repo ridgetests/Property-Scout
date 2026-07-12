@@ -113,6 +113,15 @@ EXTENSION_ALLOWANCE = 40_000
 LOW_COMP_THRESHOLD = 7
 
 HOMEDATA_API_KEY = os.environ.get("HOMEDATA_API_KEY", "")
+EPC_API_KEY = os.environ.get("EPC_API_KEY", "")          # free govt EPC register (GitHub secret)
+EPC_BASE = "https://api.get-energy-performance-data.communities.gov.uk"
+EPC_ENABLED = True
+# Plot-sanity: a residential plot bigger than this is almost certainly a mis-matched
+# enclosing parcel (estate/field), not the property's own plot. Reject rather than
+# publish garbage (this is what produced a "4,323 m2 plot / 3,479 m2 house" on a semi).
+MAX_PLAUSIBLE_PLOT_M2 = 4000   # ~1 acre; bigger = almost certainly a mis-matched estate/field parcel
+MAX_PLAUSIBLE_MAIN_M2 = 600     # a single dwelling footprint above this = merged/estate polygon
+MAX_PLAUSIBLE_COVERAGE = 60     # % of plot built on; above this the parcel match is suspect
 HOMEDATA_BASE = os.environ.get("HOMEDATA_BASE", "https://api.homedata.co.uk")
 ENRICH = True       # floor area / EPC / comps - only fires when a uprn exists
 ENRICH_TOP_N = 25
@@ -812,6 +821,15 @@ def apply_gates(props):
         lat, lng = p.get("lat"), p.get("lng")
         parcel = parcel_for(lat, lng)
         area = parcel["a"] if parcel else None
+        # Sanity: a postcode-centroid coordinate often lands inside a big ENCLOSING parcel
+        # (a whole estate/field) rather than the property's own plot. Publishing that as
+        # "the plot" produced nonsense like a 4,323 m2 plot with a 3,479 m2 house on a semi.
+        # Reject implausible matches outright rather than surface bad data.
+        if area is not None and area > MAX_PLAUSIBLE_PLOT_M2:
+            parcel, area = None, None
+            fl = p.setdefault("flags", [])
+            if "plot-unverified" not in fl:
+                fl.append("plot-unverified")
         p["plot_m2"] = area
         if area is not None and area < MIN_PLOT_M2:
             dropped_plot += 1
@@ -821,6 +839,11 @@ def apply_gates(props):
             if "plot-unverified" not in fl:
                 fl.append("plot-unverified")
         fb = analyze_buildings(parcel)
+        # A "main building" bigger than a large house, or near-total plot coverage, means the
+        # footprint polygon is a merged terrace/estate block - not this dwelling. Discard.
+        if fb and (fb.get("main_m2", 0) > MAX_PLAUSIBLE_MAIN_M2
+                   or (fb.get("coverage_pct") or 0) > MAX_PLAUSIBLE_COVERAGE):
+            fb = {}
         if fb:
             p["footprints"] = fb
             if fb.get("main_m2") and not p.get("floor_area_m2"):
@@ -837,6 +860,10 @@ def apply_gates(props):
             p["permission"] = perm["estimate"]
             p["permission_label"] = perm["label"]
             p["feasibility"] = max(0.4, perm["estimate"])
+        if p.get("is_probate") and (p.get("plot_m2") or p.get("footprints")):
+            fl = p.setdefault("flags", [])
+            if "approx-location" not in fl:
+                fl.append("approx-location")   # postcode centroid - plot/footprint indicative
         p["setting"] = _local_density(lat, lng)
         score_property(p)
         out.append(p)
@@ -1378,6 +1405,122 @@ def homedata_epc(conn, postcode, paon):
     return result
 
 
+
+# ===========================================================================
+# EPC REGISTER (free, official) - floor area, property type, BUILT FORM.
+# Replaces the paid Homedata enrichment. Two calls: search -> certificate.
+# ===========================================================================
+_EPC_FLOOR_KEYS = ("total_floor_area", "total-floor-area", "totalFloorArea",
+                   "floor_area", "habitable_floor_area", "total_floor_area_m2")
+_EPC_FORM_KEYS = ("built_form", "built-form", "builtForm")
+_EPC_TYPE_KEYS = ("property_type", "property-type", "propertyType", "dwelling_type")
+_EPC_AGE_KEYS = ("construction_age_band", "construction-age-band", "constructionAgeBand")
+_EPC_BAND_KEYS = ("current_energy_efficiency_band", "current-energy-rating",
+                  "currentEnergyEfficiencyBand", "energy_rating")
+
+
+def _dig(obj, keys):
+    """Find the first matching key anywhere in a nested dict (schemas vary by version)."""
+    if isinstance(obj, dict):
+        for k in keys:
+            if k in obj and obj[k] not in (None, ""):
+                return obj[k]
+        for v in obj.values():
+            r = _dig(v, keys)
+            if r is not None:
+                return r
+    elif isinstance(obj, list):
+        for v in obj:
+            r = _dig(v, keys)
+            if r is not None:
+                return r
+    return None
+
+
+def _epc_get(path, params):
+    import requests
+    if not EPC_API_KEY or _dead("epc"):
+        return None
+    try:
+        r = requests.get(EPC_BASE + path, params=params, timeout=25,
+                         headers={"Authorization": f"Bearer {EPC_API_KEY}",
+                                  "Accept": "application/json", "User-Agent": _UA})
+        if r.status_code == 429:
+            _kill("epc", "429")
+            return None
+        if r.status_code == 404:
+            return None
+        r.raise_for_status()
+        return r.json()
+    except Exception as e:
+        print(f"      epc {path} failed: {e}")
+        if _throttled(e):
+            _kill("epc", "429")
+        return None
+
+
+def epc_lookup(conn, postcode, paon):
+    """Postcode + house number -> the property's EPC record (free, official register).
+    Gives floor area, property type and BUILT FORM (detached/semi/terrace) - the last
+    of which is what lets us drop semis reliably instead of guessing from the address."""
+    if not EPC_ENABLED or not postcode:
+        return {}
+    key = f"EPC|{postcode}|{paon}".upper()
+    row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
+    if row:
+        try:
+            return json.loads(row["data"])
+        except Exception:
+            return {}
+    data = _epc_get("/api/domestic/search", {"postcode": postcode})
+    certs = (data or {}).get("data") or []
+    if isinstance(certs, dict):
+        certs = [certs]
+    if not certs:
+        return {}
+    ph = (paon or "").strip().upper()
+    pick = None
+    if ph:
+        for c in certs:
+            a1 = str(c.get("addressLine1") or c.get("address_line_1") or "").upper().strip()
+            if a1 == ph or re.match(rf"{re.escape(ph)}\b", a1):
+                if pick is None or str(c.get("registrationDate", "")) > str(pick.get("registrationDate", "")):
+                    pick = c            # newest certificate for this address
+    if pick is None and len(certs) == 1:
+        pick = certs[0]                 # unambiguous single-property postcode
+    if pick is None:
+        return {}                       # never attach the wrong certificate
+    num = pick.get("certificateNumber") or pick.get("certificate_number")
+    full = _epc_get("/api/certificate", {"certificate_number": num}) if num else None
+    body = (full or {}).get("data") or {}
+    fa = _dig(body, _EPC_FLOOR_KEYS)
+    try:
+        fa = int(round(float(fa))) if fa is not None else None
+    except Exception:
+        fa = None
+    out = {"floor_area_m2": fa,
+           "built_form": _dig(body, _EPC_FORM_KEYS) or "",
+           "property_type": _dig(body, _EPC_TYPE_KEYS) or "",
+           "age_band": _dig(body, _EPC_AGE_KEYS) or "",
+           "rating": (pick.get("currentEnergyEfficiencyBand")
+                      or _dig(body, _EPC_BAND_KEYS) or ""),
+           "uprn": pick.get("uprn") or _dig(body, ("uprn",)) or "",
+           "certificate": num or ""}
+    if out["floor_area_m2"] or out["built_form"]:
+        conn.execute("INSERT OR REPLACE INTO epccache VALUES (?,?)", (key, json.dumps(out)))
+        conn.commit()
+    return out
+
+
+def _form_is_excluded(built_form, prop_type):
+    """EPC built_form is the reliable way to drop semis/terraces (no more guessing)."""
+    f = (built_form or "").lower()
+    t = (prop_type or "").lower()
+    if any(k in t for k in ("flat", "maisonette", "park home")):
+        return True
+    return any(k in f for k in ("semi-detached", "semi detached", "mid-terrace",
+                                "mid terrace", "end-terrace", "end terrace", "enclosed"))
+
 _MONTHS = {m: i for i, m in enumerate(
     ["january", "february", "march", "april", "may", "june", "july", "august",
      "september", "october", "november", "december"], 1)}
@@ -1553,8 +1696,12 @@ def fetch_probate_leads(conn):
             continue
         if est is None and not PROBATE_KEEP_UNKNOWN:
             continue
-        epc = homedata_epc(conn, x["postcode"], x.get("paon"))
+        epc = epc_lookup(conn, x["postcode"], x.get("paon"))
+        if not epc:                                    # fall back to Homedata only if EPC misses
+            epc = homedata_epc(conn, x["postcode"], x.get("paon"))
         fa = epc.get("floor_area_m2")
+        if _form_is_excluded(epc.get("built_form"), epc.get("property_type")):
+            continue                                   # real semi/terrace/flat - drop it
         reasons = []
         win = market_window(_parse_dmy(x["dod"]), x["pub"], date.today())
         if win:
@@ -1575,11 +1722,14 @@ def fetch_probate_leads(conn):
             "estate_contact": x.get("contact") or {},
             "notice_sample": ("" if (x.get("contact") or {}).get("name") else x.get("notice_sample","")),
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
-            "property_type": ctx.get("subject_type") or "property", "lat": lat, "lng": lng,
+            "property_type": (epc.get("built_form") or epc.get("property_type")
+                              or ctx.get("subject_type") or "property"), "lat": lat, "lng": lng,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
             "score": 68, "reasons": reasons[:3], "flags": ["probate"],
             "is_probate": True, "low_comp": False, "comps": [],
             "streetview_url": _streetview_url(lat, lng), "floor_area_m2": fa,
+            "built_form": epc.get("built_form", ""), "epc_rating": epc.get("rating", ""),
+            "uprn": epc.get("uprn", ""),
             "market_window": win, "est_low": ctx.get("est_low"), "est_high": ctx.get("est_high"),
             "source": {"name": "The Gazette", "url": x["url"], "uprn": ""},
             "source_label": "PROBATE",
