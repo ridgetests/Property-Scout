@@ -27,9 +27,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run pipeline
+     - name: Run pipeline
         env:
           HOMEDATA_API_KEY: ${{ secrets.HOMEDATA_API_KEY }}
+          EPC_API_KEY: ${{ secrets.EPC_API_KEY }}
         run: python run.py
 
       - name: Commit results (keeps the price-history database)
