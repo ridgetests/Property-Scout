@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T06:16:09.150234+00:00",
+  "generated_at": "2026-07-15T06:19:38.735792+00:00",
   "count": 29,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
@@ -79,8 +79,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -181,8 +181,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65242"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 558,
       "footprints": {
@@ -283,8 +283,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -297,10 +297,10 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 86,
+        "approved": 85,
         "refused": 11,
-        "decided": 97,
-        "rate": 0.8865979381443299
+        "decided": 96,
+        "rate": 0.8854166666666666
       },
       "permission": 0.89,
       "permission_label": "development-friendly",
@@ -332,7 +332,7 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 86 approved / 11 refused nearby"
+          "note": "development-friendly \u00b7 85 approved / 11 refused nearby"
         }
       }
     },
@@ -385,8 +385,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65245"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 664,
       "footprints": {
@@ -487,8 +487,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
@@ -582,8 +582,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 423,
       "footprints": {
@@ -684,8 +684,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 3596,
       "constraints": [],
@@ -779,8 +779,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65243"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 1351,
       "footprints": {
@@ -881,8 +881,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
       "days_on_market": 0,
       "plot_m2": 3596,
       "constraints": [],
