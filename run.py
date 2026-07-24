@@ -1478,13 +1478,49 @@ def _epc_get(path, params):
         return None
 
 
-def epc_lookup(conn, postcode, paon):
+
+def _norm_addr(t):
+    """Uppercase, strip punctuation, collapse spaces - for address comparison."""
+    t = re.sub(r"[^A-Z0-9 ]", " ", (t or "").upper())
+    return re.sub(r"\s+", " ", t).strip()
+
+
+_ADDR_STOP = {"THE", "OF", "AND", "ROAD", "RD", "LANE", "LN", "CLOSE", "DRIVE",
+              "AVENUE", "AVE", "STREET", "ST", "WAY", "COURT", "HOUSE", "COTTAGE",
+              "FARNHAM", "SURREY", "HAMPSHIRE", "DECEASED", "LATE"}
+
+
+def _addr_match_score(epc_line, lead_addr):
+    """0-1 similarity between an EPC address line and a probate/listing address.
+    House numbers must agree when both sides have one; otherwise token overlap."""
+    a = set(_norm_addr(epc_line).split())
+    b = set(_norm_addr(lead_addr).split())
+    if not a or not b:
+        return 0.0
+    na = {t for t in a if t.isdigit()}
+    nb = {t for t in b if t.isdigit()}
+    if na and nb and not (na & nb):
+        return 0.0                      # different house numbers - definitely not it
+    # Score on NAME tokens only - a shared house number must never carry a match on
+    # its own, or "4 Brock Close" would match "4 Cedarways".
+    aw = (a - _ADDR_STOP) - na
+    bw = (b - _ADDR_STOP) - nb
+    if not aw or not bw:
+        aw, bw = a - na, b - nb
+    if not aw or not bw:
+        return 1.0 if (na and nb and (na & nb)) else 0.0
+    overlap = len(aw & bw) / min(len(aw), len(bw))
+    if na and nb and (na & nb):
+        overlap = min(1.0, overlap + 0.35)   # matching house number corroborates
+    return overlap
+
+def epc_lookup(conn, postcode, paon, addr_hint=""):
     """Postcode + house number -> the property's EPC record (free, official register).
     Gives floor area, property type and BUILT FORM (detached/semi/terrace) - the last
     of which is what lets us drop semis reliably instead of guessing from the address."""
     if not EPC_ENABLED or not postcode:
         return {}
-    key = f"EPC|{postcode}|{paon}".upper()
+    key = f"EPC|{postcode}|{paon}|{(addr_hint or '')[:40]}".upper()
     row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
     if row:
         try:
@@ -1497,18 +1533,24 @@ def epc_lookup(conn, postcode, paon):
         certs = [certs]
     if not certs:
         return {}
-    ph = (paon or "").strip().upper()
-    pick = None
-    if ph:
-        for c in certs:
-            a1 = str(c.get("addressLine1") or c.get("address_line_1") or "").upper().strip()
-            if a1 == ph or re.match(rf"{re.escape(ph)}\b", a1):
-                if pick is None or str(c.get("registrationDate", "")) > str(pick.get("registrationDate", "")):
-                    pick = c            # newest certificate for this address
+    target = (addr_hint or paon or "").strip()
+    best, best_score = None, 0.0
+    for c in certs:
+        line = " ".join(str(c.get(k) or "") for k in
+                        ("addressLine1", "addressLine2", "addressLine3", "addressLine4"))
+        sc = _addr_match_score(line, target)
+        if sc > best_score or (sc == best_score and best is not None
+                               and str(c.get("registrationDate", "")) > str(best.get("registrationDate", ""))):
+            best, best_score = c, sc
+    pick = best if best_score >= 0.45 else None
     if pick is None and len(certs) == 1:
         pick = certs[0]                 # unambiguous single-property postcode
     if pick is None:
-        return {}                       # never attach the wrong certificate
+        if _EPC_LOGGED[0] <= 3:
+            sample = [str(c.get("addressLine1") or "") for c in certs[:4]]
+            print(f"      epc no address match for {target!r} in {postcode} "
+                  f"(best {best_score:.2f}); certs: {sample}")
+        return {}
     num = pick.get("certificateNumber") or pick.get("certificate_number")
     full = _epc_get("/api/certificate", {"certificate_number": num}) if num else None
     body = (full or {}).get("data") or {}
@@ -1525,6 +1567,12 @@ def epc_lookup(conn, postcode, paon):
                       or _dig(body, _EPC_BAND_KEYS) or ""),
            "uprn": pick.get("uprn") or _dig(body, ("uprn",)) or "",
            "certificate": num or ""}
+    if _EPC_LOGGED[0] <= 3:
+        print(f"      epc matched {postcode} -> floor={out['floor_area_m2']} "
+              f"form={out['built_form']!r} type={out['property_type']!r} "
+              f"(cert {num})")
+        if not out["floor_area_m2"] and body:
+            print(f"      epc certificate keys seen: {list(body)[:25]}")
     if out["floor_area_m2"] or out["built_form"]:
         conn.execute("INSERT OR REPLACE INTO epccache VALUES (?,?)", (key, json.dumps(out)))
         conn.commit()
@@ -1715,7 +1763,7 @@ def fetch_probate_leads(conn):
             continue
         if est is None and not PROBATE_KEEP_UNKNOWN:
             continue
-        epc = epc_lookup(conn, x["postcode"], x.get("paon"))
+        epc = epc_lookup(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
         if not epc:                                    # fall back to Homedata only if EPC misses
             epc = homedata_epc(conn, x["postcode"], x.get("paon"))
         fa = epc.get("floor_area_m2")
