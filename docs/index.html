@@ -92,7 +92,7 @@
   .rnum{font-size:12px;font-weight:600;min-width:34px;text-align:right}
   .note{font-size:11px;color:var(--hint);margin:0 0 10px 132px}
   .fstrip{display:flex;flex-wrap:wrap;gap:6px}
-  .comps{display:flex;gap:8px}
+  .comps{display:flex;gap:8px;flex-wrap:wrap}
   .comp{flex:1;background:#f1efe8;border-radius:8px;padding:8px;font-size:11px}
   .comp b{font-size:13px;display:block;margin-bottom:2px}
   .comp span{color:var(--muted)}
@@ -140,6 +140,12 @@
   .addsheet .acts button{flex:1;padding:12px;border-radius:10px;border:1px solid var(--line);background:#fff;font:inherit;font-weight:600;font-size:14px}
   .addsheet .acts button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
   .addbtn{background:none;border:none;font-size:24px;line-height:1;cursor:pointer;color:var(--ink);padding:4px 6px;font-weight:400}
+  .tabs{display:flex;border-bottom:1px solid var(--line);margin:16px -16px 2px;padding:0 8px}
+  .tab{flex:1;padding:11px 2px;font-size:11.5px;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;text-align:center;line-height:1.25;cursor:pointer}
+  .tab.active{color:var(--ink);border-bottom-color:var(--ink)}
+  .tabpanel{display:none;padding-top:4px}
+  .tabpanel.active{display:block}
+  .tabthin{color:var(--muted);font-size:13px;padding:18px 4px;text-align:center;line-height:1.5}
 </style>
 </head>
 <body>
@@ -224,6 +230,12 @@ function saveNotes(){ localStorage.setItem('ps_notes',JSON.stringify(notes)); }
 function saveManual(){ localStorage.setItem('ps_manual',JSON.stringify(manual)); }
 function saveShort(){ localStorage.setItem('ps_shortlist',JSON.stringify(shortlist)); }
 function setNote(id,v){ v=(v||'').trim(); if(v) notes[id]=v; else delete notes[id]; saveNotes(); render&&render(); }
+function switchTab(el,n){
+  const dc=document.getElementById('dc'); if(!dc) return;
+  dc.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));
+  dc.querySelectorAll('.tabpanel').forEach((t,i)=>t.classList.toggle('active',i===n));
+  const dr=document.getElementById('drawer'); if(dr) dr.scrollTop=0;
+}
 function allById(id){ return DATA.find(x=>x.id==id) || manual.find(x=>x.id==id) || null; }
 function openById(id){ if(String(id).indexOf('man_')===0) openManual(id); else openDrawer(id); }
 
@@ -311,61 +323,73 @@ function card(p){
 }
 
 function keyFacts(p){
-  const rows=[];
-  rows.push(`<div class="kfrow"><span>Location</span><b>${p.postcode||'—'}${p.dist_mi!=null?` · ${p.dist_mi} mi from home`:''}</b></div>`);
-  if(p.market_window) rows.push(`<div class="kfrow"><span>Likely on market</span><b>${p.market_window}</b></div>`);
+  const ov=[], land=[], pv=[], con=[];
+  // --- Overview: location, timing, status ---
+  ov.push(`<div class="kfrow"><span>Location</span><b>${p.postcode||'\u2014'}${p.dist_mi!=null?` \u00b7 ${p.dist_mi} mi from home`:''}</b></div>`);
+  if(p.market_window) ov.push(`<div class="kfrow"><span>Likely on market</span><b>${p.market_window}</b></div>`);
+  if(p.owner_note) ov.push(`<div class="kfrow"><span>Status</span><b>${p.owner_note}</b></div>`);
+  // --- Planning & Value: estimated value ---
   let val='';
-  if(p.est_low&&p.est_high) val=`£${Math.round(p.est_low/1000)}k–£${Math.round(p.est_high/1000)}k`;
-  else if(p.price) val=`£${p.price.toLocaleString()}`;
-  if(val) rows.push(`<div class="kfrow"><span>Est. value</span><b>${val}</b></div>`);
-  let interior='Awaiting EPC';
-  if(!p.floor_area_m2 && p.floor_area_est_m2){
-    interior=`~${p.floor_area_est_m2} m² (est. from footprint)`;
+  if(p.est_low&&p.est_high){
+    const mid=p.est_mid||Math.round((p.est_low+p.est_high)/2);
+    val=`~\u00a3${Math.round(mid/1000)}k <span class="cmp" style="display:inline">(\u00a3${Math.round(p.est_low/1000)}k\u2013\u00a3${Math.round(p.est_high/1000)}k)</span>`;
+    let basis='';
+    if(p.est_basis&&p.est_basis.indexOf('own')===0) basis=`${p.est_basis}`;
+    else if(p.est_n) basis=`${p.est_n} ${p.est_basis_type||''} sales \u00b7 ${p.est_basis||'area'}`;
+    if(basis) val+=`<span class="cmp">${basis}</span>`;
   }
+  else if(p.price) val=`\u00a3${p.price.toLocaleString()}`;
+  if(val) pv.push(`<div class="kfrow"><span>Est. value</span><b>${val}</b></div>`);
+  // --- Land & Buildings: interior ---
+  let interior='Awaiting EPC';
+  if(!p.floor_area_m2 && p.floor_area_est_m2){ interior=`~${p.floor_area_est_m2} m\u00b2 (est. from footprint)`; }
   if(p.floor_area_m2){
     let cmp='';
-    if(HOME_FLOOR){const d=Math.round((p.floor_area_m2/HOME_FLOOR-1)*100); cmp=`<span class="cmp">${d>=0?'+':''}${d}% vs your home (${HOME_FLOOR} m²)</span>`;}
-    interior=`${p.floor_area_m2} m² (~${Math.round(p.floor_area_m2*10.76)} sq ft)${cmp}`;
+    if(HOME_FLOOR){const d=Math.round((p.floor_area_m2/HOME_FLOOR-1)*100); cmp=`<span class="cmp">${d>=0?'+':''}${d}% vs your home (${HOME_FLOOR} m\u00b2)</span>`;}
+    interior=`${p.floor_area_m2} m\u00b2 (~${Math.round(p.floor_area_m2*10.76)} sq ft)${cmp}`;
   }
-  rows.push(`<div class="kfrow"><span>Interior</span><b>${interior}</b></div>`);
-  if(p.owner_note) rows.push(`<div class="kfrow"><span>Status</span><b>${p.owner_note}</b></div>`);
+  land.push(`<div class="kfrow"><span>Interior</span><b>${interior}</b></div>`);
+  // --- Contact: estate contact / notice ---
   if(p.estate_contact && p.estate_contact.name){
     const c=p.estate_contact, lbl=c.kind==='solicitor'?'Solicitor':'Executor';
     const line=[c.postcode,
                 c.phone?`<a href="tel:${c.phone.replace(/\s/g,'')}">${c.phone}</a>`:'',
-                c.email?`<a href="mailto:${c.email}">${c.email}</a>`:''].filter(Boolean).join(' · ');
-    rows.push(`<div class="kfrow"><span>Estate contact</span><b>${c.name}${line?' · '+line:''}<span class="cmp">${lbl}${c.ref?' · Ref '+c.ref:''} · for a tactful pre-market enquiry</span></b></div>`);
+                c.email?`<a href="mailto:${c.email}">${c.email}</a>`:''].filter(Boolean).join(' \u00b7 ');
+    con.push(`<div class="kfrow"><span>Estate contact</span><b>${c.name}${line?' \u00b7 '+line:''}<span class="cmp">${lbl}${c.ref?' \u00b7 Ref '+c.ref:''} \u00b7 for a tactful pre-market enquiry</span></b></div>`);
   }
   else if(p.notice_sample){
-    rows.push(`<div class="kfrow"><span>Notice (debug)</span><b style="font-weight:400;font-size:12px">${p.notice_sample}</b></div>`);
+    con.push(`<div class="kfrow"><span>Notice (debug)</span><b style="font-weight:400;font-size:12px">${p.notice_sample}</b></div>`);
   }
-  let ext='See aerial above', extcmp='Pull LR title (£3) to confirm plot';
+  // --- Land & Buildings: plot + buildings ---
+  let ext='See aerial above', extcmp='Pull LR title (\u00a33) to confirm plot';
   if(p.plot_m2){
-    let pc=''; if(HOME_PLOT_M2){const d=Math.round((p.plot_m2/HOME_PLOT_M2-1)*100); pc=` · ${d>=0?'+':''}${d}% vs your plot`;}
-    ext=`${p.plot_m2.toLocaleString()} m² plot${pc}`; extcmp=`~${Math.round(p.plot_m2*10.764).toLocaleString()} sq ft · HMLR indicative`;
-  } else if(p.flags && p.flags.indexOf('plot-unverified')>=0){ ext='Plot not in INSPIRE — check overlay'; }
-  rows.push(`<div class="kfrow"><span>Exterior / plot</span><b>${ext}<span class="cmp">${extcmp}</span></b></div>`);
+    let pc=''; if(HOME_PLOT_M2){const d=Math.round((p.plot_m2/HOME_PLOT_M2-1)*100); pc=` \u00b7 ${d>=0?'+':''}${d}% vs your plot`;}
+    ext=`${p.plot_m2.toLocaleString()} m\u00b2 plot${pc}`; extcmp=`~${Math.round(p.plot_m2*10.764).toLocaleString()} sq ft \u00b7 HMLR indicative`;
+  } else if(p.flags && p.flags.indexOf('plot-unverified')>=0){ ext='Plot not in INSPIRE \u2014 check overlay'; }
+  land.push(`<div class="kfrow"><span>Exterior / plot</span><b>${ext}<span class="cmp">${extcmp}</span></b></div>`);
   if(p.footprints){
     const f=p.footprints, extra=f.buildings-1;
-    let bl=`Main ~${f.main_m2} m²`;
-    if(extra>0) bl+=` + ${extra} outbuilding${extra>1?'s':''} (largest ~${f.largest_secondary_m2} m²)`;
+    let bl=`Main ~${f.main_m2} m\u00b2`;
+    if(extra>0) bl+=` + ${extra} outbuilding${extra>1?'s':''} (largest ~${f.largest_secondary_m2} m\u00b2)`;
     const cov=f.coverage_pct!=null?`${f.coverage_pct}% plot coverage`:'';
-    const conv=f.outbuilding==='large'?' · possible conversion candidate':'';
-    rows.push(`<div class="kfrow"><span>Buildings</span><b>${bl}<span class="cmp">${cov}${conv}</span></b></div>`);
+    const conv=f.outbuilding==='large'?' \u00b7 possible conversion candidate':'';
+    land.push(`<div class="kfrow"><span>Buildings</span><b>${bl}<span class="cmp">${cov}${conv}</span></b></div>`);
   }
+  // --- Planning & Value: constraints + permission ---
   if(p.constraints){
-    let cl = p.constraints.length ? p.constraints.join(' · ') : 'No major constraints found';
+    let cl = p.constraints.length ? p.constraints.join(' \u00b7 ') : 'No major constraints found';
     if(p.listed_grade) cl += ` (Grade ${p.listed_grade})`;
-    rows.push(`<div class="kfrow"><span>Planning</span><b>${cl}<span class="cmp">coverage varies — verify</span></b></div>`);
+    pv.push(`<div class="kfrow"><span>Planning</span><b>${cl}<span class="cmp">coverage varies \u2014 verify</span></b></div>`);
   }
   if(p.permission!=null){
     const pct = Math.round(p.permission*100);
     const ph = p.planning||{};
     const ev = ph.decided ? `${ph.approved} approved / ${ph.refused} refused within 500m` : 'limited local record';
     const lbl = p.permission_label||'';
-    rows.push(`<div class="kfrow"><span>Permission</span><b>~${pct}% ${lbl}<span class="cmp">${ev}</span></b></div>`);
+    pv.push(`<div class="kfrow"><span>Permission</span><b>~${pct}% ${lbl}<span class="cmp">${ev}</span></b></div>`);
   }
-  return `<div class="kf">${rows.join('')}</div>`;
+  const wrap=a=>a.length?`<div class="kf">${a.join('')}</div>`:'';
+  return {overview:wrap(ov), land:wrap(land), planval:wrap(pv), contact:wrap(con)};
 }
 function tileXY(lat,lng,z){const n=2**z,xf=(lng+180)/360*n,yr=lat*Math.PI/180,yf=(1-Math.asinh(Math.tan(yr))/Math.PI)/2*n;return {x:Math.floor(xf),y:Math.floor(yf),fx:xf-Math.floor(xf),fy:yf-Math.floor(yf)};}
 function tileImg(z,x,y){return `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`;}
@@ -408,34 +432,64 @@ function openDrawer(id){
       <span class="rnum">${s.score}/${s.max}</span></div>
       <p class="note">${s.note||''}</p>`;
   }).join('');
-  const comps = (p.comps||[]).slice(0,3).map(c=>`<div class="comp"><b>${k(c.price)}</b><span>${c.renovated?'renovated · ':''}${c.m2}m²</span></div>`).join('');
+  let comps = '';
+  if(p.local_comps&&p.local_comps.length){
+    comps = p.local_comps.map(c=>`<div class="comp"><b>${k(c.adj||c.price)}</b><span>${c.addr}</span><span>sold ${k(c.price)} in ${c.year}</span></div>`).join('');
+  } else {
+    comps = (p.comps||[]).slice(0,3).map(c=>`<div class="comp"><b>${k(c.price)}</b><span>${c.renovated?'renovated · ':''}${c.m2}m²</span></div>`).join('');
+  }
   const flags = (p.flags||[]).map(f=>`<span class="tag fl">${FLAG_LABELS[f]||f}</span>`).join('')
               + (p.low_comp?'<span class="tag" style="background:var(--eq-bg);color:var(--eq-ink)">Low competition</span>':'');
+  const kf = keyFacts(p);
+  const thin = 'More detail arrives with the next engine update.';
   document.getElementById('dc').innerHTML = `
     <div class="dh"><h2>${p.address}</h2>
-      <div class="m">${'£'+p.price.toLocaleString()} · ${hd(p)} · ${((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0)>0?((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market)+' days on market':'just listed'}</div>
-      <div class="s">${(p.source&&p.source.portal)||''} · ${p.postcode||''}</div></div>
-    ${eq.equity_gain!=null?`<div class="eqbox"><div class="l">Est. equity gain after works</div>
-      <div class="n">~£${eq.equity_gain.toLocaleString()}</div>
-      <div class="b">Renovated comp ~£${(eq.renovated_comp||0).toLocaleString()} − asking £${p.price.toLocaleString()} − works ~£${(eq.reno_cost_est||0).toLocaleString()}</div></div>`:''}
-    <div class="aerialbox" id="abox">
-      <svg class="aersvg" id="aov" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="m">${'\u00a3'+p.price.toLocaleString()} \u00b7 ${hd(p)} \u00b7 ${((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0)>0?((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market)+' days on market':'just listed'}</div>
+      <div class="s">${(p.source&&p.source.portal)||''} \u00b7 ${p.postcode||''}</div></div>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab(this,0)">Overview</button>
+      <button class="tab" onclick="switchTab(this,1)">Land &amp; Buildings</button>
+      <button class="tab" onclick="switchTab(this,2)">Planning &amp; Value</button>
+      <button class="tab" onclick="switchTab(this,3)">Contact</button>
     </div>
-    ${HOME_PLOT?`<button class="ovbtn" id="ovbtn">⊕ Overlay my plot to scale</button>
-    <div class="aerctl" id="aerctl" style="display:none"><input type="range" min="0" max="359" value="0" id="aovrot"><span class="aerhint">Your plot (~${HOME_PLOT_M2} m²) · drag &amp; rotate</span></div>`:''}
-    ${keyFacts(p)}
-    <div class="sl">${p.typology?p.typology+' · '+(p.tier||'')+' · ':'Score '}${p.score}/100</div>${sigs}
-    ${flags?`<div class="sl">Search-invisibility flags</div><div class="fstrip">${flags}</div>`:''}
-    ${comps?`<div class="sl">Nearby comparables</div><div class="comps">${comps}</div>`:''}
-    <div class="sl">Your notes</div>
-    <textarea class="notes-ta" rows="3" placeholder="Record what you learn — access, listing status, agent chat, gut feel…" onchange="setNote('${id}',this.value)">${(notes[id]||'').replace(/</g,'&lt;')}</textarea>
+
+    <div class="tabpanel active">
+      <div class="sl">${p.typology?p.typology+' \u00b7 '+(p.tier||'')+' \u00b7 ':'Score '}${p.score}/100</div>${sigs}
+      ${flags?`<div class="sl">Search-invisibility flags</div><div class="fstrip">${flags}</div>`:''}
+      ${kf.overview}
+      <div class="sl">Your notes</div>
+      <textarea class="notes-ta" rows="3" placeholder="Record what you learn \u2014 access, listing status, agent chat, gut feel\u2026" onchange="setNote('${id}',this.value)">${(notes[id]||'').replace(/</g,'&lt;')}</textarea>
+    </div>
+
+    <div class="tabpanel">
+      <div class="aerialbox" id="abox">
+        <svg class="aersvg" id="aov" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      ${HOME_PLOT?`<button class="ovbtn" id="ovbtn">\u2295 Overlay my plot to scale</button>
+      <div class="aerctl" id="aerctl" style="display:none"><input type="range" min="0" max="359" value="0" id="aovrot"><span class="aerhint">Your plot (~${HOME_PLOT_M2} m\u00b2) \u00b7 drag &amp; rotate</span></div>`:''}
+      ${kf.land || `<p class="tabthin">${thin}</p>`}
+    </div>
+
+    <div class="tabpanel">
+      ${eq.equity_gain!=null?`<div class="eqbox"><div class="l">Est. equity gain after works</div>
+        <div class="n">~\u00a3${eq.equity_gain.toLocaleString()}</div>
+        <div class="b">Renovated comp ~\u00a3${(eq.renovated_comp||0).toLocaleString()} \u2212 asking \u00a3${p.price.toLocaleString()} \u2212 works ~\u00a3${(eq.reno_cost_est||0).toLocaleString()}</div></div>`:''}
+      ${kf.planval || `<p class="tabthin">${thin}</p>`}
+      ${comps?`<div class="sl">Nearby comparables</div><div class="comps">${comps}</div>`:''}
+    </div>
+
+    <div class="tabpanel">
+      ${kf.contact || `<p class="tabthin">No contact details on file for this lead yet.</p>`}
+      <div class="kf"><div class="kfrow"><span>Source</span><b>${(p.source&&(p.source.name||p.source.portal))||'\u2014'}${p.source_label?' \u00b7 '+p.source_label:''}</b></div></div>
+    </div>
+
     <div class="acts">
-      <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">★ ${saved?'Saved':'Save'}</button>
-      <button onclick="share('${id}')">⌯ Share</button>
-      <button onclick="viewListing('${id}')">↗ Find listing</button>
-      ${p.streetview_url?`<button onclick="window.open('${p.streetview_url}','_blank')">⌖ Street View</button>`:''}
+      <button class="${saved?'primary':''}" onclick="toggleSave('${id}')">\u2605 ${saved?'Saved':'Save'}</button>
+      <button onclick="share('${id}')">\u2337 Share</button>
+      <button onclick="viewListing('${id}')">\u2197 Find listing</button>
+      ${p.streetview_url?`<button onclick="window.open('${p.streetview_url}','_blank')">\u2316 Street View</button>`:''}
     </div>
-    <button class="dismisslink" onclick="dismiss('${id}')">Not for me — hide this</button>`;
+    <button class="dismisslink" onclick="dismiss('${id}')">Not for me \u2014 hide this</button>`;
   document.getElementById('ov').classList.add('open');
   document.getElementById('drawer').classList.add('open');
   setupOverlay(p);
