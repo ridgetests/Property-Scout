@@ -104,7 +104,11 @@ def _kill(api, why=""):
 
 
 def _throttled(e):
-    return "429" in str(e) or "Too Many Requests" in str(e)
+    """429 = rate-limited, 403 = blocked outright (e.g. cloud IPs refused).
+    Either way: stop calling that source for the rest of this run."""
+    t = str(e)
+    return ("429" in t or "Too Many Requests" in t
+            or "403" in t or "Forbidden" in t)
 
 WEIGHTS = {"equity_residual": 20, "plot_size": 30, "structural": 25,
            "motivation": 20, "competition": 10, "location": 15}
@@ -1760,6 +1764,9 @@ def _combine(*lists):
 
 def main():
     print("PropertyScout run starting" + ("  [MOCK]" if USE_MOCK else "  [LIVE]"))
+    print(f"- keys visible to this run: HOMEDATA={'yes' if HOMEDATA_API_KEY else 'MISSING'}"
+          f" | EPC={'yes' if EPC_API_KEY else 'MISSING'}"
+          + (f" (len {len(EPC_API_KEY)})" if EPC_API_KEY else ""))
     conn = db_connect()
     # purge any sample/mock records that leaked in before the API key was set
     purged = conn.total_changes
