@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-24T09:12:53.542138+00:00",
-  "count": 29,
+  "generated_at": "2026-07-24T09:51:24.730279+00:00",
+  "count": 27,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
   "min_plot_m2": 380,
@@ -24,115 +24,6 @@
   ],
   "properties": [
     {
-      "id": "gz_5179126",
-      "address": "Deceased 108A Weydon Hill Road, Farnham \u2014 GU9 8NZ",
-      "owner_note": "Probate \u2014 estate of Martin Smith",
-      "estate_contact": {
-        "name": "A A Holmes Limited",
-        "ref": "FAULKNER/8335",
-        "postcode": "WR12 7HB",
-        "phone": "",
-        "email": "",
-        "kind": "executor"
-      },
-      "notice_sample": "",
-      "postcode": "GU9 8NZ",
-      "price": 900000,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.203436,
-      "lng": -0.797412,
-      "dist_mi": 1.5,
-      "score": 52,
-      "reasons": [
-        "Est. on market Aug 2026\u2013Jan 2027",
-        "~\u00a3785k\u2013\u00a31000k area est"
-      ],
-      "flags": [
-        "probate",
-        "approx-location"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.203436,-0.797412",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
-      "market_window": "Est. on market Aug 2026\u2013Jan 2027",
-      "est_low": 785000,
-      "est_high": 1000000,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5179126",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
-      },
-      "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
-      "days_on_market": 0,
-      "plot_m2": 741,
-      "footprints": {
-        "main_m2": 117,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 16
-      },
-      "floor_area_est_m2": 211,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 92,
-        "refused": 8,
-        "decided": 100,
-        "rate": 0.92
-      },
-      "permission": 0.92,
-      "permission_label": "development-friendly",
-      "feasibility": 0.92,
-      "setting": 569,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 31,
-          "max": 45,
-          "note": "741 m\u00b2 plot (1.9\u00d7 your home)"
-        },
-        "Value": {
-          "score": 2,
-          "max": 30,
-          "note": "~\u00a3900k"
-        },
-        "Fit": {
-          "score": 22,
-          "max": 25,
-          "note": "1.5 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Permission": {
-          "score": 18,
-          "max": 20,
-          "note": "development-friendly \u00b7 92 approved / 8 refused nearby"
-        }
-      }
-    },
-    {
       "id": "gz_5166190",
       "address": "Deceased 23 Knights Road, Farnham, Surrey \u2014 GU9 9BX",
       "owner_note": "Probate \u2014 estate of Deborah Earley",
@@ -148,13 +39,14 @@
       "postcode": "GU9 9BX",
       "price": 385000,
       "beds": 0,
-      "property_type": "property",
+      "property_type": "Detached",
       "lat": 51.234243,
       "lng": -0.783317,
       "dist_mi": 3.3,
       "score": 55,
       "reasons": [
         "Est. on market Aug 2026\u2013Jan 2027",
+        "Home \u00b7 68 m\u00b2",
         "~\u00a3332k\u2013\u00a3493k area est"
       ],
       "flags": [
@@ -165,10 +57,10 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234243,-0.783317",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
+      "floor_area_m2": 68,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "uprn": 100061604562,
       "market_window": "Est. on market Aug 2026\u2013Jan 2027",
       "est_low": 332500,
       "est_high": 493000,
@@ -250,13 +142,14 @@
       "postcode": "GU10 4RU",
       "price": 805000,
       "beds": 0,
-      "property_type": "property",
+      "property_type": "Detached",
       "lat": 51.195632,
       "lng": -0.807175,
       "dist_mi": 1.1,
       "score": 53,
       "reasons": [
         "Est. on market Aug 2026\u2013Jan 2027",
+        "Home \u00b7 139 m\u00b2",
         "~\u00a3650k\u2013\u00a3925k area est"
       ],
       "flags": [
@@ -267,10 +160,10 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.195632,-0.807175",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
+      "floor_area_m2": 139,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "uprn": 100061600581,
       "market_window": "Est. on market Aug 2026\u2013Jan 2027",
       "est_low": 650000,
       "est_high": 925000,
@@ -300,7 +193,6 @@
         "largest_secondary_m2": 0,
         "coverage_pct": 26
       },
-      "floor_area_est_m2": 218,
       "constraints": [],
       "planning": {
         "n": 100,
@@ -446,108 +338,6 @@
       }
     },
     {
-      "id": "gz_5130567",
-      "address": "Deceased 74 Weydon Hill Road, Farnham \u2014 GU9 8NY",
-      "owner_note": "Probate \u2014 estate of Lucia Bardoul",
-      "estate_contact": {},
-      "notice_sample": "Address of Deceased 74 Weydon Hill Road, Farnham, GU9 8NY Date of Claim Deadline",
-      "postcode": "GU9 8NY",
-      "price": 825000,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.204574,
-      "lng": -0.798771,
-      "dist_mi": 1.5,
-      "score": 55,
-      "reasons": [
-        "Likely to market soon (by ~Nov 2026)",
-        "~\u00a3680k\u2013\u00a3945k area est"
-      ],
-      "flags": [
-        "probate",
-        "approx-location"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.204574,-0.798771",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
-      "market_window": "Likely to market soon (by ~Nov 2026)",
-      "est_low": 680000,
-      "est_high": 945000,
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5130567",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65245"
-      },
-      "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
-      "days_on_market": 0,
-      "plot_m2": 664,
-      "footprints": {
-        "main_m2": 30,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 5
-      },
-      "floor_area_est_m2": 54,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 87,
-        "refused": 10,
-        "decided": 97,
-        "rate": 0.8969072164948454
-      },
-      "permission": 0.9,
-      "permission_label": "development-friendly",
-      "feasibility": 0.9,
-      "setting": 631,
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 32,
-          "max": 45,
-          "note": "664 m\u00b2 plot (1.7\u00d7 your home) \u00b7 5% built (room to develop)"
-        },
-        "Value": {
-          "score": 7,
-          "max": 30,
-          "note": "~\u00a3825k"
-        },
-        "Fit": {
-          "score": 22,
-          "max": 25,
-          "note": "1.5 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Permission": {
-          "score": 18,
-          "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 10 refused nearby"
-        }
-      }
-    },
-    {
       "id": "gz_5114624",
       "address": "Deceased 10 Parkland Grove, FARNHAM \u2014 GU9 9HA",
       "owner_note": "Probate \u2014 estate of Sheila Brooks",
@@ -556,13 +346,14 @@
       "postcode": "GU9 9HA",
       "price": 457000,
       "beds": 0,
-      "property_type": "property",
+      "property_type": "Detached",
       "lat": 51.238578,
       "lng": -0.773103,
       "dist_mi": 3.8,
       "score": 65,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
+        "Home \u00b7 86 m\u00b2",
         "~\u00a3135k\u2013\u00a3580k area est"
       ],
       "flags": [
@@ -573,10 +364,10 @@
       "low_comp": false,
       "comps": [],
       "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.238578,-0.773103",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
+      "floor_area_m2": 86,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "uprn": 100061606890,
       "market_window": "Likely to market soon (by ~Oct 2026)",
       "est_low": 135000,
       "est_high": 580000,
@@ -1284,12 +1075,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 15,
+          "score": 19,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 87 approved / 4 refused nearby"
         }
       },
-      "score": 37,
+      "score": 47,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490376+00:00",
       "flags": [],
@@ -1313,9 +1104,16 @@
       },
       "floor_area_est_m2": 254,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 4,
+        "decided": 91,
+        "rate": 0.9560439560439561
+      },
+      "permission": 0.96,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.96,
       "setting": 464,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1377,12 +1175,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 15,
+          "score": 17,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 83 approved / 12 refused nearby"
         }
       },
-      "score": 34,
+      "score": 39,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517559+00:00",
       "flags": [],
@@ -1403,9 +1201,16 @@
       },
       "floor_area_est_m2": 216,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 12,
+        "decided": 95,
+        "rate": 0.8736842105263158
+      },
+      "permission": 0.87,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.87,
       "setting": 531,
       "typology": "Candidate",
       "tier": "Low"
