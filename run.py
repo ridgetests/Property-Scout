@@ -1441,19 +1441,34 @@ def _dig(obj, keys):
     return None
 
 
+_EPC_LOGGED = [0]
+
+
 def _epc_get(path, params):
     import requests
-    if not EPC_API_KEY or _dead("epc"):
+    if not EPC_API_KEY:
+        print("      epc: no EPC_API_KEY visible - skipping")
         return None
+    if _dead("epc"):
+        return None
+    url = EPC_BASE + path
     try:
-        r = requests.get(EPC_BASE + path, params=params, timeout=25,
+        r = requests.get(url, params=params, timeout=25,
                          headers={"Authorization": f"Bearer {EPC_API_KEY}",
                                   "Accept": "application/json", "User-Agent": _UA})
+        if _EPC_LOGGED[0] < 3:          # verbose for the first few, then quiet
+            _EPC_LOGGED[0] += 1
+            print(f"      epc {path} {params} -> HTTP {r.status_code}; "
+                  f"body starts: {r.text[:200]!r}")
         if r.status_code == 429:
             _kill("epc", "429")
             return None
-        if r.status_code == 404:
+        if r.status_code in (401, 403):
+            print(f"      epc AUTH problem HTTP {r.status_code} - check the token value")
+            _kill("epc", str(r.status_code))
             return None
+        if r.status_code == 404:
+            return None                  # genuinely no certificate for this query
         r.raise_for_status()
         return r.json()
     except Exception as e:
