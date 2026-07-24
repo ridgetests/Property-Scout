@@ -64,6 +64,8 @@ HOME_PLOT_M2 = 380                       # measured plot area (m2) from title pl
 HOME_PLOT_OUTLINE = [[-5.27, -19.32], [4.58, -19.32], [6.07, 19.32], [-5.38, 19.32]]  # plot shape, centred metres
 PLOTS_FILE = Path(__file__).resolve().parent / "plots_waverley.json.gz"  # HMLR INSPIRE parcels
 FOOTPRINTS_FILE = Path(__file__).resolve().parent / "footprints_bowl.json.gz"  # OS OpenMap Local buildings
+PPD_FILE = Path(__file__).resolve().parent / "price_paid_region.json.gz"  # HM Land Registry Price Paid (local)
+EPC_LOCAL_FILE = Path(__file__).resolve().parent / "epc_region.json.gz"  # bulk EPC certs for comps (optional)
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 EXCLUDE_DISTRICTS = {"GU11", "GU12", "GU14", "GU51", "GU52"}  # Aldershot/Farnborough/Fleet - out of area
@@ -84,6 +86,7 @@ def _is_carehome(text):
 
 def _is_excluded_locality(text):
     return bool(_LOCALITY_RE.search(text or ""))
+COMP_EPC_CAP = 40                        # max comparable-property EPC lookups per run (cached forever)
 NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (politeness cap)
 GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
@@ -1352,6 +1355,274 @@ def price_context(sales, paon_hint):
     return ctx
 
 
+
+# ===========================================================================
+# LOCAL PRICE PAID VALUATION
+# Land Registry blocks live API calls from cloud IPs (403), so sold prices come
+# from a local file built once from their free bulk download - same pattern as
+# the INSPIRE parcels and OS footprints, which have never failed.
+# ===========================================================================
+_PPD = None
+_PPD_INDEX = None
+
+
+def _load_ppd():
+    global _PPD
+    if _PPD is not None:
+        return _PPD
+    try:
+        with gzip.open(PPD_FILE, "rt") as f:
+            _PPD = json.load(f).get("sales", [])
+        print(f"- loaded {len(_PPD):,} local Price Paid sales")
+    except Exception as e:
+        print(f"- local price-paid data unavailable ({e}); falling back to API")
+        _PPD = []
+    return _PPD
+
+
+def _ppd_year_index():
+    """Build a local price index from the data itself: median sale price per year.
+    Lets us restate an old sale in today's money without any external HPI feed."""
+    global _PPD_INDEX
+    if _PPD_INDEX is not None:
+        return _PPD_INDEX
+    by_year = {}
+    for r in _load_ppd():
+        y = r["d"][:4]
+        if y.isdigit():
+            by_year.setdefault(int(y), []).append(r["p"])
+    idx = {}
+    for y, prices in by_year.items():
+        if len(prices) >= 8:
+            prices.sort()
+            idx[y] = prices[len(prices) // 2]
+    _PPD_INDEX = idx
+    return idx
+
+
+def _adjust_to_today(price, year):
+    """Restate an old sale price in today's money using the local index."""
+    idx = _ppd_year_index()
+    if not idx or year not in idx:
+        return price
+    latest = max(idx)
+    if idx[year] <= 0:
+        return price
+    return int(price * (idx[latest] / idx[year]))
+
+
+def _sector(pc):
+    pc = (pc or "").upper().strip()
+    return pc.split(" ")[0] + " " + pc.split(" ")[1][:1] if " " in pc else pc
+
+
+
+
+_EPC_LOCAL = None
+
+
+def _load_epc_local():
+    """Optional bulk EPC file keyed 'POSTCODE|PAON' -> {fa, form, rooms}.
+    When present, comps become size-and-form matched (the surveyor method);
+    when absent, everything degrades gracefully to the current behaviour."""
+    global _EPC_LOCAL
+    if _EPC_LOCAL is not None:
+        return _EPC_LOCAL
+    try:
+        with gzip.open(EPC_LOCAL_FILE, "rt") as f:
+            _EPC_LOCAL = json.load(f).get("certs", {})
+        print(f"- loaded {len(_EPC_LOCAL):,} local EPC certificates for comps")
+    except Exception:
+        _EPC_LOCAL = {}
+    return _EPC_LOCAL
+
+
+_COMP_EPC_FETCHES = [0]
+
+
+def _comp_floor_area(r, conn=None):
+    """Floor area for a comparable sale. Order: bulk file (if present) ->
+    SQLite cache -> live register (hard-capped). Cached permanently, so the
+    cost decays to zero after the first few runs."""
+    e = _load_epc_local().get((r["pc"] + "|" + r["n"]).upper())
+    if e:
+        return e.get("fa")
+    if conn is None:
+        return None
+    key = f"EPC|{r['pc']}|{r['n']}|".upper()
+    row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
+    if row:
+        try:
+            return (json.loads(row["data"]) or {}).get("floor_area_m2")
+        except Exception:
+            return None
+    if _COMP_EPC_FETCHES[0] >= COMP_EPC_CAP or _dead("epc"):
+        return None
+    _COMP_EPC_FETCHES[0] += 1
+    got = epc_lookup(conn, r["pc"], r["n"], r["n"] + " " + (r.get("s") or ""))
+    return (got or {}).get("floor_area_m2")
+
+def find_comps(postcode, paon, want_type=None, addr_line="", k=6, years=12,
+               subject_fa=None, conn=None):
+    """Replicate the human comparables process (the Zoopla routine):
+    1. same STREET, same type, recent          - the comps a person trusts most
+    2. widen to postcode, then sector, if thin
+    3. restate each sale in today's money
+    4. estimate = median of the chosen comps; band = their actual spread
+    Returns (ctx, comp_list) - the named comps go to the app so you can judge
+    them yourself, exactly as you would on a sold-prices page."""
+    sales = _load_ppd()
+    if not sales or not postcode:
+        return {}, []
+    pc = (postcode or "").upper().strip()
+    sec = _sector(pc)
+    cutoff = str(datetime.now(timezone.utc).year - years)
+    lead_norm = _norm_addr(addr_line)
+    ph = (paon or "").strip().upper()
+
+    def street_of(r):
+        return (r.get("s") or "").strip().upper()
+
+    # which street is the subject on? longest PPD street name found in its address
+    subj_street = ""
+    if lead_norm:
+        cands = {street_of(r) for r in sales if r["pc"] == pc and street_of(r)}
+        for st in sorted(cands, key=len, reverse=True):
+            if st and st in lead_norm:
+                subj_street = st
+                break
+
+    pool = []
+    for r in sales:
+        if r["d"][:4] < cutoff:
+            continue
+        if want_type and r["t"] != want_type:
+            continue
+        if subject_fa:
+            cfa = _comp_floor_area(r, conn)
+            if cfa and not (0.75 * subject_fa <= cfa <= 1.30 * subject_fa):
+                continue                    # a real comp is a SIMILAR-SIZED house
+        if ph and r["pc"] == pc and r["n"] == ph:
+            continue                                  # the subject itself isn't a comp
+        if subj_street and street_of(r) == subj_street and r["pc"].split(" ")[0] == pc.split(" ")[0]:
+            scope = 3                                  # same street - what a human trusts
+        elif r["pc"] == pc:
+            scope = 2
+        elif _sector(r["pc"]) == sec:
+            scope = 1
+        else:
+            continue
+        pool.append((scope, r))
+    if not pool:
+        return {}, []
+
+    best_scope = max(p[0] for p in pool)
+    # prefer the tightest scope that still gives a usable handful, like a person would
+    for scope_min in (3, 2, 1):
+        chosen = [r for sc, r in pool if sc >= scope_min]
+        if len(chosen) >= 3 or scope_min == 1:
+            break
+    chosen.sort(key=lambda r: r["d"], reverse=True)
+    chosen = chosen[:max(k, 3)]
+
+    adj = sorted(_adjust_to_today(r["p"], int(r["d"][:4])) for r in chosen)
+    n = len(adj)
+    if n < 3:
+        return {}, []
+    # surveyor method: when the comps have known floor areas, price per m2
+    if subject_fa:
+        rates = []
+        for r in chosen:
+            cfa = _comp_floor_area(r, conn)
+            if cfa:
+                rates.append(_adjust_to_today(r["p"], int(r["d"][:4])) / cfa)
+        if len(rates) >= 3:
+            rates.sort()
+            m = len(rates)
+            return ({"est_mid": int(rates[m // 2] * subject_fa),
+                     "est_low": int(rates[max(0, m // 4)] * subject_fa),
+                     "est_high": int(rates[min(m - 1, (3 * m) // 4)] * subject_fa),
+                     "n_comps": m, "basis": "\u00a3/m\u00b2, size-matched",
+                     "basis_type": want_type or "mixed"},
+                    [{"addr": (r["n"] + " " + (r.get("s") or "").title()).strip(),
+                      "price": r["p"], "year": r["d"][:4],
+                      "adj": _adjust_to_today(r["p"], int(r["d"][:4])),
+                      "pc": r["pc"]} for r in chosen])
+    scope_label = {3: "same street", 2: "this postcode", 1: "nearby (" + sec + ")"}[
+        3 if (subj_street and any(street_of(r) == subj_street for r in chosen)) else
+        (2 if all(r["pc"] == pc for r in chosen) else 1)]
+    ctx = {"est_mid": adj[n // 2],
+           "est_low": adj[max(0, n // 4)],
+           "est_high": adj[min(n - 1, (3 * n) // 4)],
+           "n_comps": n,
+           "basis": scope_label,
+           "basis_type": want_type or "mixed"}
+    comp_list = [{"addr": (r["n"] + " " + street_of(r).title()).strip(),
+                  "price": r["p"], "year": r["d"][:4],
+                  "adj": _adjust_to_today(r["p"], int(r["d"][:4])),
+                  "pc": r["pc"]} for r in chosen]
+    return ctx, comp_list
+
+def price_context_local(postcode, paon, want_type=None, years=10):
+    """Estimate value from local sold prices: same property type, closest
+    geography, recent, restated in today's money. Returns the same shape as the
+    old API-based price_context so the rest of the pipeline is unchanged."""
+    sales = _load_ppd()
+    if not sales:
+        return {}
+    pc = (postcode or "").upper().strip()
+    if not pc:
+        return {}
+    cutoff = str(datetime.now(timezone.utc).year - years)
+    sec, dist = _sector(pc), pc.split(" ")[0]
+
+    ctx = {}
+    # the subject property's own last sale - the strongest evidence there is.
+    # Restated to today's money it gives a PROPERTY-SPECIFIC estimate, far
+    # tighter than any area band (area bands are wide because detached stock
+    # genuinely varies from cottages to manors - that is variety, not error).
+    ph = (paon or "").strip().upper()
+    if ph:
+        own = [r for r in sales if r["pc"] == pc and r["n"] == ph]
+        if own:
+            last = max(own, key=lambda r: r["d"])
+            ctx["subject_type"] = last["t"]
+            ctx["last_price"] = last["p"]
+            ctx["last_year"] = last["d"][:4]
+            want_type = want_type or last["t"]
+            est = _adjust_to_today(last["p"], int(last["d"][:4]))
+            age = datetime.now(timezone.utc).year - int(last["d"][:4])
+            band = min(0.18, 0.08 + 0.004 * age)   # index handles the market; this is condition/extension risk
+            ctx.update({"est_mid": est,
+                        "est_low": int(est * (1 - band)),
+                        "est_high": int(est * (1 + band)),
+                        "n_comps": len(own),
+                        "basis": "own " + last["d"][:4] + " sale restated",
+                        "basis_type": last["t"]})
+            return ctx
+
+    # widen the net only as far as needed to get a usable sample
+    for scope, pred in (("postcode", lambda r: r["pc"] == pc),
+                        ("sector", lambda r: _sector(r["pc"]) == sec),
+                        ("district", lambda r: r["pc"].split(" ")[0] == dist)):
+        pool = [r for r in sales if pred(r) and r["d"][:4] >= cutoff]
+        if want_type:
+            typed = [r for r in pool if r["t"] == want_type]
+            if len(typed) >= 5:
+                pool = typed
+        if len(pool) >= 5:
+            adj = sorted(_adjust_to_today(r["p"], int(r["d"][:4])) for r in pool)
+            n = len(adj)
+            ctx.update({"est_low": adj[max(0, n // 4 - 1)],
+                        "est_high": adj[min(n - 1, (3 * n) // 4)],
+                        "est_mid": adj[n // 2],
+                        "n_comps": n, "basis": scope,
+                        "basis_type": want_type or "all types"})
+            if not ctx.get("subject_type") and want_type:
+                ctx["subject_type"] = want_type
+            return ctx
+    return ctx
+
 def _streetview_url(lat, lng):
     return f"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={lat},{lng}"
 
@@ -1501,6 +1772,10 @@ def _addr_match_score(epc_line, lead_addr):
     nb = {t for t in b if t.isdigit()}
     if na and nb and not (na & nb):
         return 0.0                      # different house numbers - definitely not it
+    if bool(na) != bool(nb):
+        # One side is numbered, the other isn't: we cannot prove it's the same house,
+        # and matching on street name alone would attach a NEIGHBOUR's certificate.
+        return 0.30                     # deliberately below the 0.45 match threshold
     # Score on NAME tokens only - a shared house number must never carry a match on
     # its own, or "4 Brock Close" would match "4 Cedarways".
     aw = (a - _ADDR_STOP) - na
@@ -1544,7 +1819,14 @@ def epc_lookup(conn, postcode, paon, addr_hint=""):
             best, best_score = c, sc
     pick = best if best_score >= 0.45 else None
     if pick is None and len(certs) == 1:
-        pick = certs[0]                 # unambiguous single-property postcode
+        # Single-certificate postcode: only safe if the house numbering is consistent.
+        # If the certificate is numbered but our lead isn't (or vice versa) we cannot
+        # prove it's the same dwelling - don't guess.
+        one = certs[0]
+        cert_num = bool(re.search(r"\d", str(one.get("addressLine1") or "")))
+        lead_num = bool(re.search(r"\d", _norm_addr(target)))
+        if cert_num == lead_num:
+            pick = one
     if pick is None:
         if _EPC_LOGGED[0] <= 3:
             sample = [str(c.get("addressLine1") or "") for c in certs[:4]]
@@ -1568,7 +1850,8 @@ def epc_lookup(conn, postcode, paon, addr_hint=""):
            "uprn": pick.get("uprn") or _dig(body, ("uprn",)) or "",
            "certificate": num or ""}
     if _EPC_LOGGED[0] <= 3:
-        print(f"      epc matched {postcode} -> floor={out['floor_area_m2']} "
+        print(f"      epc matched {target!r} -> cert {pick.get('addressLine1')!r} | "
+              f"floor={out['floor_area_m2']} "
               f"form={out['built_form']!r} type={out['property_type']!r} "
               f"(raw form={_dig(body, _EPC_FORM_KEYS)!r} "
               f"raw type={_dig(body, _EPC_TYPE_KEYS)!r}) (cert {num})")
@@ -1762,10 +2045,32 @@ def fetch_probate_leads(conn):
         if not ll:
             continue
         lat, lng = ll
-        if x["postcode"] not in pp_cache:
-            pp_cache[x["postcode"]] = fetch_price_paid(x["postcode"])
-        ctx = price_context(pp_cache[x["postcode"]], x.get("paon"))
-        basis = "postcode"
+        epc = epc_lookup(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
+        if not epc:                                    # fall back to Homedata only if EPC misses
+            epc = homedata_epc(conn, x["postcode"], x.get("paon"))
+        fa = epc.get("floor_area_m2")
+        if _form_is_excluded(epc.get("built_form"), epc.get("property_type")):
+            print(f"   dropped {x.get('addr_line') or x['postcode']} "
+                  f"- EPC says {epc.get('built_form') or epc.get('property_type')}")
+            continue                                   # real semi/terrace/flat - drop it
+        _bf = str(epc.get("built_form") or "").lower()
+        epc_type = ("detached" if ("detached" in _bf and "semi" not in _bf) else
+                    "semi" if "semi" in _bf else
+                    "terraced" if "terrace" in _bf else None)
+        # THE HUMAN PROCESS: named comparable sales first (same street where
+        # possible), own-sale anchor / area band as fallback. Local file - never blocked.
+        ctx, local_comps = find_comps(x["postcode"], x.get("paon"), epc_type,
+                                      x.get("addr_line", ""),
+                                      subject_fa=epc.get("floor_area_m2"), conn=conn)
+        if not ctx.get("est_mid"):
+            ctx = price_context_local(x["postcode"], x.get("paon"), epc_type)
+            local_comps = []
+        basis = ctx.get("basis", "postcode")
+        if not ctx.get("est_mid"):
+            if x["postcode"] not in pp_cache:
+                pp_cache[x["postcode"]] = fetch_price_paid(x["postcode"])
+            ctx = price_context(pp_cache[x["postcode"]], x.get("paon"))
+            basis = "postcode"
         # fallback: postcode has no Land Registry history -> coarse town-wide estimate
         if not ctx.get("est_mid"):
             if PROBATE_LOCATION not in town_cache:
@@ -1786,14 +2091,6 @@ def fetch_probate_leads(conn):
             continue
         if est is None and not PROBATE_KEEP_UNKNOWN:
             continue
-        epc = epc_lookup(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
-        if not epc:                                    # fall back to Homedata only if EPC misses
-            epc = homedata_epc(conn, x["postcode"], x.get("paon"))
-        fa = epc.get("floor_area_m2")
-        if _form_is_excluded(epc.get("built_form"), epc.get("property_type")):
-            print(f"   dropped {x.get('addr_line') or x['postcode']} "
-                  f"- EPC says {epc.get('built_form') or epc.get('property_type')}")
-            continue                                   # real semi/terrace/flat - drop it
         reasons = []
         win = market_window(_parse_dmy(x["dod"]), x["pub"], date.today())
         if win:
@@ -1823,6 +2120,10 @@ def fetch_probate_leads(conn):
             "built_form": epc.get("built_form", ""), "epc_rating": epc.get("rating", ""),
             "uprn": epc.get("uprn", ""),
             "market_window": win, "est_low": ctx.get("est_low"), "est_high": ctx.get("est_high"),
+            "est_mid": ctx.get("est_mid"),
+            "local_comps": local_comps[:6],
+            "est_basis": ctx.get("basis", ""), "est_n": ctx.get("n_comps"),
+            "est_basis_type": ctx.get("basis_type", ""),
             "source": {"name": "The Gazette", "url": x["url"], "uprn": ""},
             "source_label": "PROBATE",
             "enrichment": {"market": {}, "plot": {}, "equity": {}},
