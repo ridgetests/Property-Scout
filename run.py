@@ -1301,7 +1301,7 @@ def _pp_get(params):
     except Exception as e:
         print(f"   price-paid fetch failed ({params}): {e}")
         if _throttled(e):
-            _kill("landregistry", "429")
+            _kill("landregistry", "403 blocked" if "403" in str(e) else "429")
         return []
 
 
@@ -1560,8 +1560,8 @@ def epc_lookup(conn, postcode, paon, addr_hint=""):
     except Exception:
         fa = None
     out = {"floor_area_m2": fa,
-           "built_form": _dig(body, _EPC_FORM_KEYS) or "",
-           "property_type": _dig(body, _EPC_TYPE_KEYS) or "",
+           "built_form": _as_text(_dig(body, _EPC_FORM_KEYS), _BUILT_FORM_CODES),
+           "property_type": _as_text(_dig(body, _EPC_TYPE_KEYS), _PROP_TYPE_CODES),
            "age_band": _dig(body, _EPC_AGE_KEYS) or "",
            "rating": (pick.get("currentEnergyEfficiencyBand")
                       or _dig(body, _EPC_BAND_KEYS) or ""),
@@ -1570,19 +1570,42 @@ def epc_lookup(conn, postcode, paon, addr_hint=""):
     if _EPC_LOGGED[0] <= 3:
         print(f"      epc matched {postcode} -> floor={out['floor_area_m2']} "
               f"form={out['built_form']!r} type={out['property_type']!r} "
-              f"(cert {num})")
-        if not out["floor_area_m2"] and body:
-            print(f"      epc certificate keys seen: {list(body)[:25]}")
+              f"(raw form={_dig(body, _EPC_FORM_KEYS)!r} "
+              f"raw type={_dig(body, _EPC_TYPE_KEYS)!r}) (cert {num})")
+        if body:
+            print(f"      epc certificate keys: {sorted(body)[:40]}")
     if out["floor_area_m2"] or out["built_form"]:
         conn.execute("INSERT OR REPLACE INTO epccache VALUES (?,?)", (key, json.dumps(out)))
         conn.commit()
     return out
 
 
+# RdSAP stores built form / property type as numeric codes in the raw certificate.
+# Standard SAP enumeration - used for LABELLING and (where confident) exclusion.
+_BUILT_FORM_CODES = {1: "Detached", 2: "Semi-Detached", 3: "End-Terrace",
+                     4: "Mid-Terrace", 5: "Enclosed End-Terrace",
+                     6: "Enclosed Mid-Terrace"}
+_PROP_TYPE_CODES = {0: "House", 1: "Bungalow", 2: "Flat", 3: "Maisonette",
+                    4: "Park home"}
+
+
+def _as_text(v, codes):
+    """Certificates return either text or an RdSAP numeric code - normalise to text."""
+    if v is None or v == "":
+        return ""
+    if isinstance(v, str) and not v.strip().isdigit():
+        return v.strip()
+    try:
+        return codes.get(int(float(v)), "")
+    except (TypeError, ValueError):
+        return str(v)
+
+
 def _form_is_excluded(built_form, prop_type):
-    """EPC built_form is the reliable way to drop semis/terraces (no more guessing)."""
-    f = (built_form or "").lower()
-    t = (prop_type or "").lower()
+    """EPC built form is the reliable way to drop semis/terraces. Type-safe:
+    the raw certificate may hand us an int, a numeric string, or plain text."""
+    f = str(built_form or "").lower()
+    t = str(prop_type or "").lower()
     if any(k in t for k in ("flat", "maisonette", "park home")):
         return True
     return any(k in f for k in ("semi-detached", "semi detached", "mid-terrace",
@@ -1768,6 +1791,8 @@ def fetch_probate_leads(conn):
             epc = homedata_epc(conn, x["postcode"], x.get("paon"))
         fa = epc.get("floor_area_m2")
         if _form_is_excluded(epc.get("built_form"), epc.get("property_type")):
+            print(f"   dropped {x.get('addr_line') or x['postcode']} "
+                  f"- EPC says {epc.get('built_form') or epc.get('property_type')}")
             continue                                   # real semi/terrace/flat - drop it
         reasons = []
         win = market_window(_parse_dmy(x["dod"]), x["pub"], date.today())
