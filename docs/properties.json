@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T07:37:03.673613+00:00",
+  "generated_at": "2026-07-28T06:31:30.162984+00:00",
   "count": 26,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
@@ -127,8 +127,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65250"
       },
-      "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-28",
       "days_on_market": 0,
       "plot_m2": 1007,
       "footprints": {
@@ -285,8 +285,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-28",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -428,8 +428,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-28",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -579,8 +579,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-28",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
@@ -722,8 +722,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
       },
-      "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-28",
       "days_on_market": 0,
       "plot_m2": 423,
       "footprints": {
@@ -872,17 +872,17 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
+      "first_seen": "2026-07-28",
+      "last_seen": "2026-07-28",
       "days_on_market": 0,
       "plot_m2": 3596,
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 82,
+        "approved": 83,
         "refused": 5,
-        "decided": 87,
-        "rate": 0.9425287356321839
+        "decided": 88,
+        "rate": 0.9431818181818182
       },
       "permission": 0.94,
       "permission_label": "development-friendly",
@@ -914,7 +914,7 @@
         "Permission": {
           "score": 19,
           "max": 20,
-          "note": "development-friendly \u00b7 82 approved / 5 refused nearby"
+          "note": "development-friendly \u00b7 83 approved / 5 refused nearby"
         }
       }
     },
@@ -1165,7 +1165,7 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 83 approved / 7 refused nearby"
+          "note": "development-friendly \u00b7 84 approved / 7 refused nearby"
         }
       },
       "score": 42,
@@ -1191,10 +1191,10 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 83,
+        "approved": 84,
         "refused": 7,
-        "decided": 90,
-        "rate": 0.9222222222222223
+        "decided": 91,
+        "rate": 0.9230769230769231
       },
       "permission": 0.92,
       "permission_label": "development-friendly",
@@ -1263,7 +1263,7 @@
         "Permission": {
           "score": 19,
           "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 4 refused nearby"
+          "note": "development-friendly \u00b7 87 approved / 3 refused nearby"
         }
       },
       "score": 47,
@@ -1293,13 +1293,13 @@
       "planning": {
         "n": 100,
         "approved": 87,
-        "refused": 4,
-        "decided": 91,
-        "rate": 0.9560439560439561
+        "refused": 3,
+        "decided": 90,
+        "rate": 0.9666666666666667
       },
-      "permission": 0.96,
+      "permission": 0.97,
       "permission_label": "development-friendly",
-      "feasibility": 0.96,
+      "feasibility": 0.97,
       "setting": 464,
       "typology": "Forever-fit",
       "tier": "Low"
