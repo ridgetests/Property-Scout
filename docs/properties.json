@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-28T06:31:30.162984+00:00",
-  "count": 26,
+  "generated_at": "2026-07-29T06:36:07.951005+00:00",
+  "count": 25,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
   "min_plot_m2": 380,
@@ -127,8 +127,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65250"
       },
-      "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "first_seen": "2026-07-29",
+      "last_seen": "2026-07-29",
       "days_on_market": 0,
       "plot_m2": 1007,
       "footprints": {
@@ -285,8 +285,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "first_seen": "2026-07-29",
+      "last_seen": "2026-07-29",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -428,8 +428,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "first_seen": "2026-07-29",
+      "last_seen": "2026-07-29",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -442,10 +442,10 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 84,
+        "approved": 85,
         "refused": 10,
-        "decided": 94,
-        "rate": 0.8936170212765957
+        "decided": 95,
+        "rate": 0.8947368421052632
       },
       "permission": 0.89,
       "permission_label": "development-friendly",
@@ -477,7 +477,7 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 84 approved / 10 refused nearby"
+          "note": "development-friendly \u00b7 85 approved / 10 refused nearby"
         }
       }
     },
@@ -579,8 +579,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "first_seen": "2026-07-29",
+      "last_seen": "2026-07-29",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
@@ -622,156 +622,6 @@
           "score": 19,
           "max": 20,
           "note": "development-friendly \u00b7 90 approved / 3 refused nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5108616",
-      "address": "Deceased 79 Riverdale, FARNHAM \u2014 GU10 4QT",
-      "owner_note": "Probate \u2014 estate of James Grant",
-      "estate_contact": {},
-      "notice_sample": "Address of Deceased 79 Riverdale, FARNHAM, GU10 4QT Date of Claim Deadline",
-      "postcode": "GU10 4QT",
-      "price": 401919,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.198496,
-      "lng": -0.820899,
-      "dist_mi": 0.5,
-      "score": 64,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "~\u00a3350k\u2013\u00a3450k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "approx-location"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.198496,-0.820899",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": 350000,
-      "est_high": 450707,
-      "est_mid": 401919,
-      "local_comps": [
-        {
-          "addr": "29 Riverdale",
-          "price": 350000,
-          "year": "2026",
-          "adj": 350000,
-          "pc": "GU10 4PH"
-        },
-        {
-          "addr": "7 Riverdale",
-          "price": 530000,
-          "year": "2026",
-          "adj": 530000,
-          "pc": "GU10 4PH"
-        },
-        {
-          "addr": "91 Riverdale",
-          "price": 373000,
-          "year": "2025",
-          "adj": 346626,
-          "pc": "GU10 4QT"
-        },
-        {
-          "addr": "20 Riverdale",
-          "price": 432500,
-          "year": "2025",
-          "adj": 401919,
-          "pc": "GU10 4PH"
-        },
-        {
-          "addr": "81 Riverdale",
-          "price": 485000,
-          "year": "2025",
-          "adj": 450707,
-          "pc": "GU10 4QT"
-        },
-        {
-          "addr": "36 Riverdale",
-          "price": 428250,
-          "year": "2024",
-          "adj": 397969,
-          "pc": "GU10 4PH"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5108616",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65237"
-      },
-      "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
-      "days_on_market": 0,
-      "plot_m2": 423,
-      "footprints": {
-        "main_m2": 116,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 27
-      },
-      "floor_area_est_m2": 209,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 79,
-        "refused": 10,
-        "decided": 89,
-        "rate": 0.8876404494382022
-      },
-      "permission": 0.89,
-      "permission_label": "development-friendly",
-      "feasibility": 0.89,
-      "setting": 739,
-      "typology": "Anomaly",
-      "tier": "High",
-      "signals": {
-        "Potential": {
-          "score": 22,
-          "max": 45,
-          "note": "423 m\u00b2 plot (1.1\u00d7 your home)"
-        },
-        "Value": {
-          "score": 27,
-          "max": 30,
-          "note": "~\u00a3402k"
-        },
-        "Fit": {
-          "score": 24,
-          "max": 25,
-          "note": "0.5 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Permission": {
-          "score": 18,
-          "max": 20,
-          "note": "development-friendly \u00b7 79 approved / 10 refused nearby"
         }
       }
     },
@@ -872,8 +722,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
       },
-      "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "first_seen": "2026-07-29",
+      "last_seen": "2026-07-29",
       "days_on_market": 0,
       "plot_m2": 3596,
       "constraints": [],
@@ -1263,7 +1113,7 @@
         "Permission": {
           "score": 19,
           "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 3 refused nearby"
+          "note": "development-friendly \u00b7 87 approved / 4 refused nearby"
         }
       },
       "score": 47,
@@ -1293,13 +1143,13 @@
       "planning": {
         "n": 100,
         "approved": 87,
-        "refused": 3,
-        "decided": 90,
-        "rate": 0.9666666666666667
+        "refused": 4,
+        "decided": 91,
+        "rate": 0.9560439560439561
       },
-      "permission": 0.97,
+      "permission": 0.96,
       "permission_label": "development-friendly",
-      "feasibility": 0.97,
+      "feasibility": 0.96,
       "setting": 464,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1560,12 +1410,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 15,
+          "score": 17,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 82 approved / 16 refused nearby"
         }
       },
-      "score": 36,
+      "score": 40,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490453+00:00",
       "flags": [],
@@ -1582,9 +1432,16 @@
       ],
       "plot_m2": 461,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 82,
+        "refused": 16,
+        "decided": 98,
+        "rate": 0.8367346938775511
+      },
+      "permission": 0.84,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.84,
       "setting": 533,
       "typology": "Forever-fit",
       "tier": "Low"
