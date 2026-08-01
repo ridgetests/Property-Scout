@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-31T06:48:44.222983+00:00",
-  "count": 26,
+  "generated_at": "2026-08-01T06:34:14.937512+00:00",
+  "count": 24,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
   "min_plot_m2": 380,
@@ -24,156 +24,6 @@
   ],
   "properties": [
     {
-      "id": "gz_5178810",
-      "address": "Deceased 12 Beacon Close, Wrecclesham, Farnham \u2014 GU10 4PA",
-      "owner_note": "Probate \u2014 estate of Catherine Scovell",
-      "estate_contact": {
-        "name": "Personal Legal",
-        "ref": "",
-        "postcode": "GU9 7TH",
-        "phone": "",
-        "email": "",
-        "kind": "solicitor"
-      },
-      "notice_sample": "",
-      "postcode": "GU10 4PA",
-      "price": 510995,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.191145,
-      "lng": -0.812514,
-      "dist_mi": 1.0,
-      "score": 64,
-      "reasons": [
-        "Est. on market Aug 2026\u2013Jan 2027",
-        "~\u00a3460k\u2013\u00a3610k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "approx-location"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.191145,-0.812514",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
-      "market_window": "Est. on market Aug 2026\u2013Jan 2027",
-      "est_low": 460000,
-      "est_high": 610000,
-      "est_mid": 510995,
-      "local_comps": [
-        {
-          "addr": "40 Beacon Close",
-          "price": 610000,
-          "year": "2026",
-          "adj": 610000,
-          "pc": "GU10 4PA"
-        },
-        {
-          "addr": "18 Beacon Close",
-          "price": 495000,
-          "year": "2025",
-          "adj": 460000,
-          "pc": "GU10 4PA"
-        },
-        {
-          "addr": "42 Beacon Close",
-          "price": 830000,
-          "year": "2025",
-          "adj": 771313,
-          "pc": "GU10 4PA"
-        },
-        {
-          "addr": "36 Beacon Close",
-          "price": 460000,
-          "year": "2024",
-          "adj": 427474,
-          "pc": "GU10 4PA"
-        },
-        {
-          "addr": "2 Beacon Close",
-          "price": 555000,
-          "year": "2023",
-          "adj": 510995,
-          "pc": "GU10 4PA"
-        },
-        {
-          "addr": "34 Beacon Close",
-          "price": 550000,
-          "year": "2023",
-          "adj": 506391,
-          "pc": "GU10 4PA"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5178810",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43769/65240"
-      },
-      "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
-      "days_on_market": 0,
-      "plot_m2": 430,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 87,
-        "refused": 5,
-        "decided": 92,
-        "rate": 0.9456521739130435
-      },
-      "permission": 0.95,
-      "permission_label": "development-friendly",
-      "feasibility": 0.95,
-      "setting": 473,
-      "typology": "Anomaly",
-      "tier": "High",
-      "signals": {
-        "Potential": {
-          "score": 22,
-          "max": 45,
-          "note": "430 m\u00b2 plot (1.1\u00d7 your home)"
-        },
-        "Value": {
-          "score": 22,
-          "max": 30,
-          "note": "~\u00a3511k"
-        },
-        "Fit": {
-          "score": 23,
-          "max": 25,
-          "note": "1.0 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Permission": {
-          "score": 19,
-          "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 5 refused nearby"
-        }
-      }
-    },
-    {
       "id": "gz_5178550",
       "address": "Deceased 43 Waverley Lane, Farnham \u2014 GU9 8BH",
       "owner_note": "Probate \u2014 estate of Anthony Burns",
@@ -195,7 +45,7 @@
       "dist_mi": 2.3,
       "score": 74,
       "reasons": [
-        "Est. on market Aug 2026\u2013Jan 2027",
+        "Likely to market soon (by ~Jan 2027)",
         "~\u00a3410k\u2013\u00a3998k Farnham-area est"
       ],
       "flags": [
@@ -210,7 +60,7 @@
       "built_form": "",
       "epc_rating": "",
       "uprn": "",
-      "market_window": "Est. on market Aug 2026\u2013Jan 2027",
+      "market_window": "Likely to market soon (by ~Jan 2027)",
       "est_low": 410000,
       "est_high": 998989,
       "est_mid": 464600,
@@ -277,8 +127,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65250"
       },
-      "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-08-01",
       "days_on_market": 0,
       "plot_m2": 1007,
       "footprints": {
@@ -352,7 +202,7 @@
       "dist_mi": 3.3,
       "score": 43,
       "reasons": [
-        "Est. on market Aug 2026\u2013Jan 2027",
+        "Likely to market soon (by ~Jan 2027)",
         "Home \u00b7 68 m\u00b2",
         "~\u00a3575k\u2013\u00a3675k Farnham-area est"
       ],
@@ -368,7 +218,7 @@
       "built_form": "Detached",
       "epc_rating": "D",
       "uprn": 100061604562,
-      "market_window": "Est. on market Aug 2026\u2013Jan 2027",
+      "market_window": "Likely to market soon (by ~Jan 2027)",
       "est_low": 575000,
       "est_high": 675000,
       "est_mid": 660000,
@@ -435,8 +285,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-08-01",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -494,7 +344,7 @@
       "lat": 51.192623,
       "lng": -0.804019,
       "dist_mi": 1.3,
-      "score": 68,
+      "score": 67,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
         "~\u00a3571k\u2013\u00a3720k Farnham-area est"
@@ -578,8 +428,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-08-01",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -592,14 +442,14 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 85,
-        "refused": 10,
-        "decided": 95,
-        "rate": 0.8947368421052632
+        "approved": 82,
+        "refused": 11,
+        "decided": 93,
+        "rate": 0.8817204301075269
       },
-      "permission": 0.89,
+      "permission": 0.88,
       "permission_label": "development-friendly",
-      "feasibility": 0.89,
+      "feasibility": 0.88,
       "setting": 301,
       "typology": "Development play",
       "tier": "High",
@@ -627,7 +477,7 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 85 approved / 10 refused nearby"
+          "note": "development-friendly \u00b7 82 approved / 11 refused nearby"
         }
       }
     },
@@ -729,8 +579,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-08-01",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
@@ -772,149 +622,6 @@
           "score": 19,
           "max": 20,
           "note": "development-friendly \u00b7 90 approved / 3 refused nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5091497",
-      "address": "Deceased Hill Brow Beacon Hill Ewshott Hampshire \u2014 GU10 5DB",
-      "owner_note": "Probate \u2014 estate of Eileen Knight",
-      "estate_contact": {},
-      "notice_sample": "Address of Deceased Hill Brow Beacon Hill Ewshott Hampshire, GU10 5DB Date of Claim Deadline",
-      "postcode": "GU10 5DB",
-      "price": 695000,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.237349,
-      "lng": -0.826883,
-      "dist_mi": 2.7,
-      "score": 72,
-      "reasons": [
-        "Likely to market soon (by ~Oct 2026)",
-        "~\u00a3478k\u2013\u00a3730k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "approx-location"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.237349,-0.826883",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "uprn": "",
-      "market_window": "Likely to market soon (by ~Oct 2026)",
-      "est_low": 478585,
-      "est_high": 730000,
-      "est_mid": 695000,
-      "local_comps": [
-        {
-          "addr": "7 Somerset Fields",
-          "price": 595000,
-          "year": "2026",
-          "adj": 595000,
-          "pc": "GU10 5BF"
-        },
-        {
-          "addr": "3 Broadlands Close",
-          "price": 220178,
-          "year": "2026",
-          "adj": 220178,
-          "pc": "GU10 5LE"
-        },
-        {
-          "addr": "8 Eggars Field",
-          "price": 787500,
-          "year": "2026",
-          "adj": 787500,
-          "pc": "GU10 5LD"
-        },
-        {
-          "addr": "2 Hole Lane",
-          "price": 730000,
-          "year": "2026",
-          "adj": 730000,
-          "pc": "GU10 5LP"
-        },
-        {
-          "addr": "4A Oakway",
-          "price": 695000,
-          "year": "2026",
-          "adj": 695000,
-          "pc": "GU10 5LR"
-        },
-        {
-          "addr": "27 Babs Field",
-          "price": 515000,
-          "year": "2025",
-          "adj": 478585,
-          "pc": "GU10 5LS"
-        }
-      ],
-      "est_basis": "nearby (GU10 5)",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5091497",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65234"
-      },
-      "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
-      "days_on_market": 0,
-      "plot_m2": 3596,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 83,
-        "refused": 5,
-        "decided": 88,
-        "rate": 0.9431818181818182
-      },
-      "permission": 0.94,
-      "permission_label": "development-friendly",
-      "feasibility": 0.94,
-      "setting": 85,
-      "typology": "Development play",
-      "tier": "High",
-      "signals": {
-        "Potential": {
-          "score": 45,
-          "max": 45,
-          "note": "3,596 m\u00b2 plot (9.5\u00d7 your home)"
-        },
-        "Value": {
-          "score": 14,
-          "max": 30,
-          "note": "~\u00a3695k"
-        },
-        "Fit": {
-          "score": 19,
-          "max": 25,
-          "note": "2.7 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Permission": {
-          "score": 19,
-          "max": 20,
-          "note": "development-friendly \u00b7 83 approved / 5 refused nearby"
         }
       }
     },
@@ -1263,7 +970,7 @@
         "Permission": {
           "score": 19,
           "max": 20,
-          "note": "development-friendly \u00b7 88 approved / 3 refused nearby"
+          "note": "development-friendly \u00b7 87 approved / 4 refused nearby"
         }
       },
       "score": 47,
@@ -1292,14 +999,14 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 88,
-        "refused": 3,
+        "approved": 87,
+        "refused": 4,
         "decided": 91,
-        "rate": 0.967032967032967
+        "rate": 0.9560439560439561
       },
-      "permission": 0.97,
+      "permission": 0.96,
       "permission_label": "development-friendly",
-      "feasibility": 0.97,
+      "feasibility": 0.96,
       "setting": 464,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1459,12 +1166,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 19,
+          "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 7 refused nearby"
+          "note": "development-friendly \u00b7 86 approved / 8 refused nearby"
         }
       },
-      "score": 44,
+      "score": 43,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490441+00:00",
       "flags": [],
@@ -1490,14 +1197,14 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 87,
-        "refused": 7,
+        "approved": 86,
+        "refused": 8,
         "decided": 94,
-        "rate": 0.925531914893617
+        "rate": 0.9148936170212766
       },
-      "permission": 0.93,
+      "permission": 0.91,
       "permission_label": "development-friendly",
-      "feasibility": 0.93,
+      "feasibility": 0.91,
       "setting": 467,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1560,12 +1267,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 15,
+          "score": 17,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 82 approved / 16 refused nearby"
         }
       },
-      "score": 36,
+      "score": 40,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490453+00:00",
       "flags": [],
@@ -1582,9 +1289,16 @@
       ],
       "plot_m2": 461,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 82,
+        "refused": 16,
+        "decided": 98,
+        "rate": 0.8367346938775511
+      },
+      "permission": 0.84,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.84,
       "setting": 533,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1646,12 +1360,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 15,
+          "score": 18,
           "max": 20,
-          "note": "development-friendly"
+          "note": "development-friendly \u00b7 83 approved / 10 refused nearby"
         }
       },
-      "score": 41,
+      "score": 49,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517611+00:00",
       "flags": [],
@@ -1665,12 +1379,19 @@
       ],
       "plot_m2": 1008,
       "constraints": [],
-      "permission": 0.75,
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 10,
+        "decided": 93,
+        "rate": 0.8924731182795699
+      },
+      "permission": 0.89,
       "permission_label": "development-friendly",
-      "feasibility": 0.75,
+      "feasibility": 0.89,
       "setting": 226,
       "typology": "Development play",
-      "tier": "Low"
+      "tier": "Medium"
     },
     {
       "id": "40a2842b-e6bb-41f9-9801-976aabb37492",
