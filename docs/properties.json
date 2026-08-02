@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T06:34:14.937512+00:00",
+  "generated_at": "2026-08-02T06:38:25.033246+00:00",
   "count": 24,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
@@ -43,7 +43,7 @@
       "lat": 51.211508,
       "lng": -0.784031,
       "dist_mi": 2.3,
-      "score": 74,
+      "score": 75,
       "reasons": [
         "Likely to market soon (by ~Jan 2027)",
         "~\u00a3410k\u2013\u00a3998k Farnham-area est"
@@ -127,8 +127,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65250"
       },
-      "first_seen": "2026-08-01",
-      "last_seen": "2026-08-01",
+      "first_seen": "2026-08-02",
+      "last_seen": "2026-08-02",
       "days_on_market": 0,
       "plot_m2": 1007,
       "footprints": {
@@ -141,14 +141,14 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 86,
-        "refused": 9,
+        "approved": 87,
+        "refused": 8,
         "decided": 95,
-        "rate": 0.9052631578947369
+        "rate": 0.9157894736842105
       },
-      "permission": 0.91,
+      "permission": 0.92,
       "permission_label": "development-friendly",
-      "feasibility": 0.91,
+      "feasibility": 0.92,
       "setting": 254,
       "typology": "Development play",
       "tier": "High",
@@ -176,7 +176,7 @@
         "Permission": {
           "score": 18,
           "max": 20,
-          "note": "development-friendly \u00b7 86 approved / 9 refused nearby"
+          "note": "development-friendly \u00b7 87 approved / 8 refused nearby"
         }
       }
     },
@@ -285,8 +285,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-08-01",
-      "last_seen": "2026-08-01",
+      "first_seen": "2026-08-02",
+      "last_seen": "2026-08-02",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -428,8 +428,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-08-01",
-      "last_seen": "2026-08-01",
+      "first_seen": "2026-08-02",
+      "last_seen": "2026-08-02",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -579,8 +579,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-08-01",
-      "last_seen": "2026-08-01",
+      "first_seen": "2026-08-02",
+      "last_seen": "2026-08-02",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
@@ -1166,12 +1166,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 18,
+          "score": 19,
           "max": 20,
-          "note": "development-friendly \u00b7 86 approved / 8 refused nearby"
+          "note": "development-friendly \u00b7 87 approved / 7 refused nearby"
         }
       },
-      "score": 43,
+      "score": 44,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490441+00:00",
       "flags": [],
@@ -1197,14 +1197,14 @@
       "constraints": [],
       "planning": {
         "n": 100,
-        "approved": 86,
-        "refused": 8,
+        "approved": 87,
+        "refused": 7,
         "decided": 94,
-        "rate": 0.9148936170212766
+        "rate": 0.925531914893617
       },
-      "permission": 0.91,
+      "permission": 0.93,
       "permission_label": "development-friendly",
-      "feasibility": 0.91,
+      "feasibility": 0.93,
       "setting": 467,
       "typology": "Forever-fit",
       "tier": "Low"
