@@ -935,6 +935,35 @@ def apply_gates(props, conn=None):
     return out
 
 
+# --- Personal data must not reach a committed artifact. The site runs on free
+# GitHub Pages, so BOTH docs/properties.json (served publicly) and the
+# workflow-committed data/scout.db live in a public repo. The Gazette deceased-
+# estates notices are public statutory records, but aggregating names + executor
+# contacts + notice text into a crawlable file is a standing re-publication we
+# don't want. So strip person-level data at every serialization boundary and keep
+# only the notice URL - the user opens the (already-public) notice on demand. ---
+_PII_KEYS = ("estate_contact", "notice_sample", "uprn")
+
+
+def _public_safe(p):
+    """Return a copy of a property with personal data removed, for anything that
+    gets committed (public Pages JSON + the repo's scout.db). Runtime gates that
+    read owner_note / estate_contact still see the full in-memory dict; only the
+    serialized copy is sanitised."""
+    q = dict(p)
+    for k in _PII_KEYS:
+        q.pop(k, None)
+    if q.get("owner_note"):
+        q["owner_note"] = "Probate lead — see notice"   # drop the deceased's name
+    addr = q.get("address") or ""
+    if addr.startswith("Estate of "):                        # name-only address fallback
+        q["address"] = (f"Probate lead — {q.get('postcode', '')}").strip(" —")
+    src = q.get("source")
+    if isinstance(src, dict) and src.get("uprn"):
+        src = dict(src); src["uprn"] = ""; q["source"] = src
+    return q
+
+
 def _publish(props, conn=None):
     props = apply_gates(props, conn)
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -943,7 +972,7 @@ def _publish(props, conn=None):
          "count": len(props), "home_floor_m2": HOME_FLOOR_AREA_M2,
          "home_plot_m2": HOME_PLOT_M2, "min_plot_m2": MIN_PLOT_M2,
          "home_plot_outline": HOME_PLOT_OUTLINE,
-         "properties": props}, indent=2))
+         "properties": [_public_safe(p) for p in props]}, indent=2))
 
 
 def upsert(conn, p):
@@ -962,7 +991,8 @@ def upsert(conn, p):
     conn.execute("INSERT INTO properties VALUES (?,?,?,?,?) "
                  "ON CONFLICT(id) DO UPDATE SET last_seen=excluded.last_seen, "
                  "price=excluded.price, payload=excluded.payload",
-                 (p["id"], p["first_seen"], p["last_seen"], p["price"], json.dumps(p)))
+                 (p["id"], p["first_seen"], p["last_seen"], p["price"],
+                  json.dumps(_public_safe(p))))
     conn.commit()
 
 

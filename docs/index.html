@@ -479,7 +479,9 @@ function openDrawer(id){
     </div>
 
     <div class="tabpanel">
-      ${kf.contact || `<p class="tabthin">No contact details on file for this lead yet.</p>`}
+      ${kf.contact || ((p.source_label==='PROBATE'||(p.source&&p.source.name==='The Gazette'))&&p.source&&p.source.url
+        ? `<div class="kf"><div class="kfrow"><span>Executor / solicitor</span><b><a href="${p.source.url}" target="_blank" rel="noopener">Open the probate notice \u2197</a><span class="cmp">Contacts live in the public Gazette notice \u2014 opened on demand, not stored on this page</span></b></div></div>`
+        : `<p class="tabthin">No contact details on file for this lead yet.</p>`)}
       <div class="kf"><div class="kfrow"><span>Source</span><b>${(p.source&&(p.source.name||p.source.portal))||'\u2014'}${p.source_label?' \u00b7 '+p.source_label:''}</b></div></div>
     </div>
 
