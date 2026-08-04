@@ -207,7 +207,11 @@ def geocode(postcodes):
     """Postcode -> (lat, lng) via postcodes.io bulk (free, no key)."""
     import requests
     out, uniq = {}, sorted({pc for pc in postcodes if pc})
+    if _dead("postcodes"):
+        return out
     for i in range(0, len(uniq), 100):
+        if _dead("postcodes"):
+            break
         chunk = uniq[i:i + 100]
         for attempt in range(3):
             try:
@@ -221,6 +225,9 @@ def geocode(postcodes):
                 break
             except Exception as e:
                 print(f"   geocode chunk attempt {attempt+1} failed: {e}")
+                if _throttled(e):
+                    _kill("postcodes", "429/403")
+                    break                       # stop retrying/hammering this run
                 time.sleep(1.5 * (attempt + 1))
         time.sleep(0.3)
     print(f"   geocoded {len(out)}/{len(uniq)} postcodes")
@@ -809,18 +816,16 @@ def score_property(p):
         ebits.append(f"outbuilding ~{lsec} m\u00b2")
     edge_note = ", ".join(ebits) if ebits else "open market"
     feas = p.get("feasibility", 1.0)
-    core = 0.45 * potential + 0.30 * value + 0.25 * fit
-    p["score"] = int(round(min(100, (core * 85 + edge * 100) * feas)))
-    if ratio >= 2.0:
-        typ = "Plot play"
-    elif price and value >= 0.7:
-        typ = "Anomaly"
-    elif edge >= 0.10:
-        typ = "Motivated seller"
-    elif fit >= 0.7 and ratio >= 1.0:
-        typ = "Forever-fit"
-    else:
-        typ = "Candidate"
+    # Each axis's DISPLAYED contribution equals its ACTUAL contribution to the score,
+    # so the breakdown reconciles with the headline (the old bars summed to 140 and
+    # never matched). The composite is numerically unchanged - only reporting is honest:
+    # 0.45*85*pot + 0.30*85*val + 0.25*85*fit == old core*85.
+    pot_pts = 0.45 * 85 * potential   # up to ~38
+    val_pts = 0.30 * 85 * value       # up to ~26
+    fit_pts = 0.25 * 85 * fit         # up to ~21
+    edge_pts = edge * 100             # up to 20 (edge already capped at 0.20)
+    raw = pot_pts + val_pts + fit_pts + edge_pts
+    p["score"] = int(round(min(100, raw * feas)))
     perm = p.get("permission")
     setting = p.get("setting")
     rural = setting is not None and setting <= 12
@@ -845,17 +850,19 @@ def score_property(p):
     p["typology"] = typ
     p["tier"] = "High" if p["score"] >= 62 else ("Medium" if p["score"] >= 48 else "Low")
     sig = {
-        "Potential": {"score": round(potential * 45), "max": 45, "note": pot_note},
-        "Value": {"score": round(value * 30), "max": 30, "note": val_note},
-        "Fit": {"score": round(fit * 25), "max": 25, "note": fit_note},
-        "Edge": {"score": round(edge * 100), "max": 20, "note": edge_note},
+        "Potential": {"score": round(pot_pts), "max": 38, "note": pot_note},
+        "Value": {"score": round(val_pts), "max": 26, "note": val_note},
+        "Fit": {"score": round(fit_pts), "max": 21, "note": fit_note},
+        "Edge": {"score": round(edge_pts), "max": 20, "note": edge_note},
     }
     if perm is not None:
+        # feasibility is a MULTIPLIER on the whole score, not an additive axis - show it
+        # as such (a restricted site scales the total down, it does not add points).
         ph = p.get("planning") or {}
-        note = f"{p.get('permission_label','')}"
+        note = f"×{feas:.2f} · {p.get('permission_label','')}".strip(" ·")
         if ph.get("decided"):
             note += f" · {ph['approved']} approved / {ph['refused']} refused nearby"
-        sig["Permission"] = {"score": round(perm * 20), "max": 20, "note": note.strip(" ·")}
+        sig["Feasibility"] = {"score": round(feas * 100), "max": 100, "note": note}
     p["signals"] = sig
     return p
 
@@ -923,7 +930,11 @@ def apply_gates(props, conn=None):
             p["permission"] = perm["estimate"]
             p["permission_label"] = perm["label"]
             p["feasibility"] = max(0.4, perm["estimate"])
-        if p.get("is_probate") and (p.get("plot_m2") or p.get("footprints")):
+        # Plot/footprint are matched from a POSTCODE-CENTROID coordinate - no source is
+        # parcel-precise yet - so the figure is indicative for EVERY stock, not just
+        # probate (listings were previously unflagged). Flag it wherever we surface one
+        # so the number is never read as this dwelling's confirmed plot.
+        if p.get("plot_m2") or p.get("footprints"):
             fl = p.setdefault("flags", [])
             if "approx-location" not in fl:
                 fl.append("approx-location")   # postcode centroid - plot/footprint indicative
@@ -1074,7 +1085,7 @@ def _auction_reasons(t, price):
 def fetch_clive_emson():
     """Clive Emson current auction: available lots within range of home.
     Independent of Homedata - works even when that quota is spent."""
-    if not AUCTION_ENABLED:
+    if not AUCTION_ENABLED or _dead("clive_emson"):
         return []
     import requests
     headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
@@ -1085,6 +1096,8 @@ def fetch_clive_emson():
         html = r.text
     except Exception as e:
         print(f"   auction fetch failed: {e}")
+        if _throttled(e):
+            _kill("clive_emson", "429/403")
         return []
 
     coords = [(m.start(), float(m.group(1)), float(m.group(2)))
@@ -1137,7 +1150,7 @@ def fetch_clive_emson():
 def fetch_auction_house(conn):
     """Auction House Sussex & Hampshire: available house/land/bungalow lots,
     geocoded by postcode (cached). Screens out flats/garages/commercial."""
-    if not AUCTION_ENABLED:
+    if not AUCTION_ENABLED or _dead("auction_house"):
         return []
     import requests
     headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
@@ -1148,6 +1161,8 @@ def fetch_auction_house(conn):
         html = r.text
     except Exception as e:
         print(f"   auction-house fetch failed: {e}")
+        if _throttled(e):
+            _kill("auction_house", "429/403")
         return []
 
     pc_re = re.compile(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b")
@@ -2049,12 +2064,16 @@ def fetch_probate_leads(conn):
               "start-publish-date": since,
               "results-page-size": 100, "sort-by": "latest-date"}
     url = "https://www.thegazette.co.uk/wills-and-probate/notice/data.json"
+    if _dead("gazette"):
+        return []
     try:
         r = requests.get(url, params=params, headers={"User-Agent": _UA}, timeout=30)
         r.raise_for_status()
         data = r.json()
     except Exception as e:
         print(f"   probate fetch failed: {e}")
+        if _throttled(e):
+            _kill("gazette", "429/403")   # parks the notice-page fetches too (same host)
         return []
 
     entries = data.get("entry") or []
@@ -2088,16 +2107,26 @@ def fetch_probate_leads(conn):
             notice_url = f"https://www.thegazette.co.uk/notice/{pid}"
         dod = re.search(r"(?:who )?died on\s+(?:the\s+)?"
                         r"(\d{1,2}(?:st|nd|rd|th)?\s+\w+\s+\d{4})", content, re.I)
-        addr_m = re.search(r"(?:late of|residing at|formerly of|of)\s+(.+?),?\s*"
-                           r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}", content)
-        addr_line = (addr_m.group(1).strip(" ,") if addr_m else "")
+        # Prefer address-specific anchors; only fall back to a bare "of", which can match
+        # too early (e.g. "estate of NAME deceased ... of 43 ...") and swallow the name.
+        # Then strip leading noise so the HOUSE NUMBER, not "Deceased", anchors the line.
+        addr_line = ""
+        _PC = r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}"
+        for _pat in (r"(?:lately residing at|residing at|late of|formerly of)\s+(.+?),?\s*" + _PC,
+                     r"\bof\s+(.+?),?\s*" + _PC):
+            _m = re.search(_pat, content, re.I)
+            if _m:
+                addr_line = _m.group(1).strip(" ,")
+                break
+        addr_line = re.sub(r"^(?:the\s+)?(?:late|deceased|of|and)\b[\s,]*", "",
+                           addr_line, flags=re.I).strip(" ,")
         if _is_carehome(addr_line + " " + content):
             continue
         if _is_excluded_locality(addr_line + " " + content):   # Hale/Badshot Lea/etc - drop pre-fetch
             continue
         if _addr_is_flat(addr_line):
             continue
-        paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_line)
+        paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)   # first house number anywhere, not only leading
         contact = _probate_contact(content, pc_up)
         sample = content[:900]
         if not contact.get("name") and _notice_fetches[0] < NOTICE_DETAIL_CAP:
@@ -2167,6 +2196,8 @@ def fetch_probate_leads(conn):
                 pp_cache[x["postcode"]] = fetch_price_paid(x["postcode"])
             ctx = price_context(pp_cache[x["postcode"]], x.get("paon"))
             basis = "postcode"
+            if ctx.get("est_mid"):
+                ctx["basis"] = "postcode"     # price_context has no basis key of its own
         # fallback: postcode has no Land Registry history -> coarse town-wide estimate
         if not ctx.get("est_mid"):
             if PROBATE_LOCATION not in town_cache:
@@ -2175,6 +2206,8 @@ def fetch_probate_leads(conn):
             if tctx.get("est_mid"):
                 ctx["est_low"], ctx["est_high"] = tctx["est_low"], tctx["est_high"]
                 ctx["est_mid"], ctx["n_comps"] = tctx["est_mid"], tctx["n_comps"]
+                ctx["basis"] = "town"          # truthful: a town-wide median, not this postcode
+                ctx["basis_type"] = tctx.get("basis_type", "")
                 basis = "town"
         typ = ctx.get("subject_type")
         est = ctx.get("est_mid")
