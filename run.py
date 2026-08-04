@@ -435,7 +435,32 @@ CREATE TABLE IF NOT EXISTS properties (id TEXT PRIMARY KEY, first_seen TEXT,
 CREATE TABLE IF NOT EXISTS price_history (id TEXT, date TEXT, price INTEGER);
 CREATE TABLE IF NOT EXISTS geocache (postcode TEXT PRIMARY KEY, lat REAL, lng REAL);
 CREATE TABLE IF NOT EXISTS epccache (k TEXT PRIMARY KEY, data TEXT);
+CREATE TABLE IF NOT EXISTS apicache (k TEXT PRIMARY KEY, data TEXT);
 """
+
+
+def _cache_get(conn, k):
+    """Read a persisted API result (constraints/planning) from SQLite. None = miss."""
+    if conn is None:
+        return None
+    row = conn.execute("SELECT data FROM apicache WHERE k=?", (k,)).fetchone()
+    if row:
+        try:
+            return json.loads(row["data"])
+        except Exception:
+            return None
+    return None
+
+
+def _cache_put(conn, k, val):
+    """Persist an API result so we never re-hit a rate-limited source for the same point."""
+    if conn is None:
+        return
+    try:
+        conn.execute("INSERT OR REPLACE INTO apicache VALUES (?,?)", (k, json.dumps(val)))
+        conn.commit()
+    except Exception:
+        pass
 
 
 def db_connect():
@@ -607,14 +632,21 @@ _CONSTRAINT_LABEL = {"green-belt": "Green Belt", "area-of-outstanding-natural-be
                      "listed-building": "Listed", "flood-risk-zone": "Flood zone"}
 
 
-def fetch_constraints(lat, lng):
+def fetch_constraints(lat, lng, conn=None):
     """Planning constraints at a point via planning.data.gov.uk (free, keyless).
-    Returns {list, feasibility}. Feasibility is a 0.5-1.0 multiplier on the score."""
+    Returns {list, feasibility}. Feasibility is a 0.5-1.0 multiplier on the score.
+    Results persist in SQLite (constraints are stable), so we hit the live source
+    at most once per point ever - protecting access and keeping scores consistent."""
     if lat is None or lng is None:
         return {}
     key = (round(lat, 5), round(lng, 5))
     if key in _CONSTRAINT_CACHE:
         return _CONSTRAINT_CACHE[key]
+    ck = f"CON|{key[0]}|{key[1]}"
+    cached = _cache_get(conn, ck)
+    if cached is not None:
+        _CONSTRAINT_CACHE[key] = cached
+        return cached
     if _dead("planning_data"):
         return {}
     import requests
@@ -640,17 +672,25 @@ def fetch_constraints(lat, lng):
         return {}
     res = {"list": [_CONSTRAINT_LABEL[d] for d in found], "datasets": found, "grade": grade}
     _CONSTRAINT_CACHE[key] = res
+    _cache_put(conn, ck, res)
     return res
 
 
-def fetch_planning_history(lat, lng, krad=0.5):
+def fetch_planning_history(lat, lng, krad=0.5, conn=None):
     """Local planning approval rate via PlanIt (free, keyless). Returns approvals vs
-    refusals within krad km, last ~12 years - real precedent for 'will they permit'."""
+    refusals within krad km, last ~12 years - real precedent for 'will they permit'.
+    Persisted in SQLite: PlanIt rate-limits (429), so re-querying the same point every
+    nightly run is exactly what gets us throttled. Cache once, reuse thereafter."""
     if lat is None or lng is None:
         return {}
     key = (round(lat, 4), round(lng, 4))
     if key in _PLANIT_CACHE:
         return _PLANIT_CACHE[key]
+    ck = f"PLANIT|{key[0]}|{key[1]}|{krad}"
+    cached = _cache_get(conn, ck)
+    if cached is not None:
+        _PLANIT_CACHE[key] = cached
+        return cached
     if _dead("planit"):
         return {}
     import requests
@@ -680,6 +720,7 @@ def fetch_planning_history(lat, lng, krad=0.5):
     res = {"n": len(recs), "approved": approved, "refused": refused,
            "decided": decided, "rate": rate}
     _PLANIT_CACHE[key] = res
+    _cache_put(conn, ck, res)
     return res
 
 
@@ -722,12 +763,25 @@ def score_property(p):
         potential = min(1.0, potential + 0.08)
         pot_note += f" · {cov}% built (room to develop)"
     price = p.get("price") or p.get("est_mid")
+    est_mid = p.get("est_mid")
     if price:
-        value = 1.0 - _band01(price, PROBATE_MIN_PRICE, PROBATE_MAX_PRICE)
-        lo, hi = p.get("est_low"), p.get("est_high")
-        if lo and hi:
-            value = min(1.0, value + 0.15 * _band01((hi - lo) / price, 0, 0.5))
-        val_note = f"~\u00a3{round(price/1000)}k"
+        # TRUE value = how far the asking price sits BELOW comparable sold evidence.
+        # Only meaningful when we hold an independent asking price AND a comp-based
+        # estimate that differ (probate leads price==est_mid, so they fall through to
+        # the affordability prior). Trust scales with the number of comps. A wider
+        # comp band means MORE uncertainty, so - unlike before - it never lifts value.
+        if est_mid and est_mid > 0 and abs(est_mid - price) > max(1, 0.005 * est_mid):
+            discount = max(-0.5, min(0.5, (est_mid - price) / est_mid))  # +ve = under comps
+            reliable = _band01(p.get("est_n") or 0, 3, 12)               # 3 comps->0, 12+->1
+            value = min(1.0, max(0.0, 0.5 + discount * (0.6 + 0.4 * reliable)))
+            _sign = "+" if discount >= 0 else ""
+            val_note = (f"\u00a3{round(price/1000)}k vs \u00a3{round(est_mid/1000)}k comps "
+                        f"({_sign}{round(discount*100)}%)")
+        else:
+            # Fallback prior: no comp evidence yet (e.g. public listings) - reward
+            # absolute affordability within the target range. Weaker than a real discount.
+            value = 1.0 - _band01(price, PROBATE_MIN_PRICE, PROBATE_MAX_PRICE)
+            val_note = f"~\u00a3{round(price/1000)}k"
     else:
         value, val_note = 0.4, "price unknown"
     d = p.get("dist_mi")
@@ -805,7 +859,7 @@ def score_property(p):
     return p
 
 
-def apply_gates(props):
+def apply_gates(props, conn=None):
     """Stamp plot size; apply detached + plot-size hard gates (keep unverified plots)."""
     out = []
     dropped_type = dropped_plot = dropped_area = 0
@@ -813,7 +867,8 @@ def apply_gates(props):
         if p.get("lat") is not None and not _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
             dropped_area += 1
             continue
-        _pcd = (p.get("postcode") or "").split()[0].upper()
+        _pcd_parts = (p.get("postcode") or "").split()
+        _pcd = _pcd_parts[0].upper() if _pcd_parts else ""
         if _pcd in EXCLUDE_DISTRICTS:
             dropped_area += 1
             continue
@@ -855,12 +910,12 @@ def apply_gates(props):
             p["footprints"] = fb
             if fb.get("main_m2") and not p.get("floor_area_m2"):
                 p["floor_area_est_m2"] = round(fb["main_m2"] * 2 * 0.9)
-        con = fetch_constraints(lat, lng)
+        con = fetch_constraints(lat, lng, conn)
         if con:
             p["constraints"] = con["list"]
             if con.get("grade"):
                 p["listed_grade"] = con["grade"]
-            ph = fetch_planning_history(lat, lng)
+            ph = fetch_planning_history(lat, lng, conn)
             if ph:
                 p["planning"] = ph
             perm = permission_estimate(con.get("datasets"), ph)
@@ -879,8 +934,8 @@ def apply_gates(props):
     return out
 
 
-def _publish(props):
-    props = apply_gates(props)
+def _publish(props, conn=None):
+    props = apply_gates(props, conn)
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(
         {"generated_at": datetime.now(timezone.utc).isoformat(),
@@ -1819,13 +1874,15 @@ def epc_lookup(conn, postcode, paon, addr_hint=""):
             best, best_score = c, sc
     pick = best if best_score >= 0.45 else None
     if pick is None and len(certs) == 1:
-        # Single-certificate postcode: only safe if the house numbering is consistent.
-        # If the certificate is numbered but our lead isn't (or vice versa) we cannot
-        # prove it's the same dwelling - don't guess.
+        # Single-certificate postcode: only accept when we can PROVE it's the same
+        # dwelling. Safe cases: neither side carries a house number (nothing can
+        # contradict), OR both carry a number AND those numbers actually match.
+        # Never accept when both are numbered but the numbers DIFFER - that would
+        # attach a neighbour's certificate (wrong floor area / built form / value).
         one = certs[0]
-        cert_num = bool(re.search(r"\d", str(one.get("addressLine1") or "")))
-        lead_num = bool(re.search(r"\d", _norm_addr(target)))
-        if cert_num == lead_num:
+        cert_nums = set(re.findall(r"\d+", str(one.get("addressLine1") or "")))
+        lead_nums = set(re.findall(r"\d+", _norm_addr(target)))
+        if (not cert_nums and not lead_nums) or (cert_nums and lead_nums and (cert_nums & lead_nums)):
             pick = one
     if pick is None:
         if _EPC_LOGGED[0] <= 3:
@@ -2179,7 +2236,7 @@ def main():
         saved = recover_from_db(conn)
         combined = _combine(saved, auctions, probate)
         if combined:
-            _publish(combined)
+            _publish(combined, conn)
             print(f"  !! Republished {len(saved)} cached + {len(auctions)} auction lot(s).")
         else:
             print("  !! No cached data to fall back to; leaving existing file untouched.")
@@ -2253,13 +2310,13 @@ def main():
         saved = recover_from_db(conn)
         combined = _combine(saved, auctions, probate)
         if combined:
-            _publish(combined)
+            _publish(combined, conn)
             print(f"  !! 0 fresh after filtering - republished {len(saved)} cached + {len(auctions)} auction.")
         else:
             print("  !! 0 properties and no cache - leaving existing file untouched.")
         conn.close(); return
     final = _combine(props, auctions, probate)
-    _publish(final)
+    _publish(final, conn)
     print(f"- published {len(props)} listings + {len(auctions)} auction + {len(probate)} probate = {len(final)} total")
     conn.close()
 
