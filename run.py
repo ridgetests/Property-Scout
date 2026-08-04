@@ -87,6 +87,7 @@ def _is_carehome(text):
 def _is_excluded_locality(text):
     return bool(_LOCALITY_RE.search(text or ""))
 COMP_EPC_CAP = 40                        # max comparable-property EPC lookups per run (cached forever)
+LISTING_EPC_CAP = 30                     # max subject EPC lookups for public listings per run (cached forever)
 NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (politeness cap)
 GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
 _UA = "Mozilla/5.0 (compatible; PropertyScout/1.0)"
@@ -288,7 +289,7 @@ def listing_to_property(row):
     if reductions is None:
         reductions = 1 if row.get("is_reduced") or row.get("reduced_date") else 0
     return {
-        "id": pid, "address": addr, "postcode": postcode,
+        "id": pid, "address": addr, "postcode": postcode, "street": street,
         "lat": None, "lng": None,
         "property_type": ptype, "beds": int(row.get("bedrooms") or 0), "price": price,
         "status": "live", "relisted_count": 0,
@@ -1844,10 +1845,12 @@ def _addr_match_score(epc_line, lead_addr):
         overlap = min(1.0, overlap + 0.35)   # matching house number corroborates
     return overlap
 
-def epc_lookup(conn, postcode, paon, addr_hint=""):
+def epc_lookup(conn, postcode, paon, addr_hint="", budget=None):
     """Postcode + house number -> the property's EPC record (free, official register).
     Gives floor area, property type and BUILT FORM (detached/semi/terrace) - the last
-    of which is what lets us drop semis reliably instead of guessing from the address."""
+    of which is what lets us drop semis reliably instead of guessing from the address.
+    `budget` (a mutable [int], optional) caps live search calls per run: cache hits are
+    always free; a live lookup is only made while budget remains, then it's decremented."""
     if not EPC_ENABLED or not postcode:
         return {}
     key = f"EPC|{postcode}|{paon}|{(addr_hint or '')[:40]}".upper()
@@ -1857,6 +1860,12 @@ def epc_lookup(conn, postcode, paon, addr_hint=""):
             return json.loads(row["data"])
         except Exception:
             return {}
+    if _dead("epc"):
+        return {}
+    if budget is not None:
+        if budget[0] <= 0:
+            return {}
+        budget[0] -= 1
     data = _epc_get("/api/domestic/search", {"postcode": postcode})
     certs = (data or {}).get("data") or []
     if isinstance(certs, dict):
@@ -2208,6 +2217,74 @@ def _combine(*lists):
     return sorted(out.values(), key=lambda x: -x.get("score", 0))
 
 
+def _listing_want_type(portal_type, epc_built_form):
+    """Comparable property type for the local Price Paid file. EPC built form is
+    authoritative and wins when present; otherwise fall back to the portal label.
+    Bungalow / cottage / land stay UNCONSTRAINED (None) - Price Paid has no bungalow
+    class, so forcing a type there would wrongly starve the comp pool."""
+    bf = str(epc_built_form or "").lower()
+    if bf:
+        if "detached" in bf and "semi" not in bf:
+            return "detached"
+        if "semi" in bf:
+            return "semi"
+        if "terrace" in bf:
+            return "terraced"
+    t = (portal_type or "").lower()
+    if "detached" in t:
+        return "detached"
+    return None
+
+
+def enrich_listings(conn, props, budget):
+    """Give public for-sale listings the SAME comps + EPC evidence probate leads get,
+    so both stocks compete under one scoring lens (compare-to-home floor area, and
+    value-vs-comparables rather than raw cheapness). Comps come from the local Price
+    Paid file (free, never blocked); the subject EPC is a live call, budget-capped and
+    circuit-broken. Best-effort and safe: a numberless listing that can't be matched to
+    a certificate simply gets comps without a floor area - never a neighbour's cert.
+    Writes the same keys the frontend already renders for probate leads."""
+    enriched = valued = 0
+    for p in props:
+        pc = (p.get("postcode") or "").strip()
+        if not pc:
+            continue
+        addr_line = (p.get("street") or (p.get("address") or "").split(",")[0]).strip()
+        paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)
+        paon = paon_m.group(1) if paon_m else ""
+        epc = epc_lookup(conn, pc, paon, addr_line, budget=budget) or {}
+        want_type = _listing_want_type(p.get("property_type"), epc.get("built_form"))
+        fa = epc.get("floor_area_m2")
+        # local, free comps (same routine as probate); size-matched only if a subject
+        # floor area is known and comp EPCs are available (bounded by COMP_EPC_CAP).
+        ctx, comps = find_comps(pc, paon, want_type, addr_line, subject_fa=fa, conn=conn)
+        if not ctx.get("est_mid"):
+            ctx = price_context_local(pc, paon, want_type)
+            comps = []
+        if fa:
+            p["floor_area_m2"] = fa
+        if epc.get("built_form"):
+            p["built_form"] = epc["built_form"]
+        if epc.get("rating"):
+            p["epc_rating"] = epc["rating"]
+        if epc.get("uprn"):
+            p["uprn"] = epc["uprn"]
+        if fa or epc.get("built_form"):
+            enriched += 1
+        if ctx.get("est_mid"):
+            p["est_low"] = ctx.get("est_low")
+            p["est_mid"] = ctx.get("est_mid")
+            p["est_high"] = ctx.get("est_high")
+            p["est_basis"] = ctx.get("basis", "")
+            p["est_n"] = ctx.get("n_comps")
+            p["est_basis_type"] = ctx.get("basis_type", "")
+            p["local_comps"] = (comps or [])[:6]
+            valued += 1
+    print(f"- listings enriched: {valued} with a comp estimate, {enriched} with EPC "
+          f"(EPC budget left {budget[0]}/{LISTING_EPC_CAP})")
+    return props
+
+
 def main():
     print("PropertyScout run starting" + ("  [MOCK]" if USE_MOCK else "  [LIVE]"))
     print(f"- keys visible to this run: HOMEDATA={'yes' if HOMEDATA_API_KEY else 'MISSING'}"
@@ -2272,6 +2349,10 @@ def main():
             inside.append(p)
     props = inside
     print(f"- {len(props)} inside target area")
+
+    # same lens as probate: comps + subject EPC over the public listings, so both
+    # stocks are scored on the same evidence (compare-to-home, value-vs-comparables)
+    enrich_listings(conn, props, [LISTING_EPC_CAP])
 
     # score everything cheaply
     for p in props:
