@@ -207,7 +207,9 @@ AGENTS = [
     {
         "key": "warren_powell_richards",
         "name": "Warren Powell Richards",
-        "discover": True,
+        "home": "https://www.wpr.co.uk",
+        "sitemaps": ["https://www.wpr.co.uk/sitemap_index.xml"],
+        "discover": True,  # robots.txt is the authoritative sitemap source; guess is a fallback
         "detail_patterns": [r"/properties/sale/"],
         "enabled": True,
     },
@@ -222,6 +224,8 @@ AGENTS = [
     {
         "key": "charters",
         "name": "Charters",
+        "home": "https://www.chartersestateagents.co.uk",
+        "sitemaps": ["https://www.chartersestateagents.co.uk/sitemap_index.xml"],
         "discover": True,
         "detail_patterns": [r"/property-for-sale/"],
         "enabled": True,
@@ -230,6 +234,8 @@ AGENTS = [
     {
         "key": "mackenzie_smith",
         "name": "Mackenzie Smith",
+        "home": "https://www.mackenziesmith.co.uk",
+        "sitemaps": ["https://www.mackenziesmith.co.uk/sitemap_index.xml"],
         "discover": True,
         "detail_patterns": [r"/property/"],
         "enabled": True,
@@ -237,9 +243,16 @@ AGENTS = [
     {
         "key": "seymours_godalming",
         "name": "Seymours (Godalming)",
+        "home": "https://www.seymours-estates.co.uk",
+        # Split site: WordPress marketing pages vs a /branches/.../sales/ property
+        # feed. The WP sitemap may not carry detail pages, so also crawl the branch
+        # listing pages directly. Detail-URL shape is unconfirmed -- verify from a run.
+        "listing_pages": ["https://www.seymours-estates.co.uk/branches/godalming-sales/sales"],
         "discover": True,
-        "detail_patterns": [r"/property/"],
+        "detail_patterns": [r"/property/", r"/branches/[^/]+/sales/[^/]", r"/offices/[^/]+/sales/[^/]"],
         "enabled": True,
+        "notes": "LOW confidence: property subsystem separate from the WP site; may need "
+                 "detail-pattern tuning after the first run's log is seen.",
     },
     {
         "key": "clarke_gammon",
@@ -253,23 +266,28 @@ AGENTS = [
     {
         "key": "homes_ea",
         "name": "Homes Estate Agents",
+        "home": "https://homesea.co.uk",
+        "sitemaps": ["https://homesea.co.uk/sitemap_index.xml"],
         "discover": True,
-        "detail_patterns": [r"/property", r"/for-sale/"],
+        "detail_patterns": [r"/property-for-sale/"],
         "enabled": True,
         "notes": "Covers the GU35 Hampshire side (Bordon/Whitehill/Liphook).",
     },
     {
         "key": "winkworth_farnham",
         "name": "Winkworth (Farnham)",
+        "home": "https://www.winkworth.co.uk",
         # Global Winkworth sitemap is national/huge, so crawl the branch listing
-        # pages instead and pull detail links from them.
+        # pages instead and pull detail links from them. (Branch path is /branches/;
+        # the old /estate-agents/ path returned nothing -- that was the mute cause.)
         "listing_pages": [
-            "https://www.winkworth.co.uk/estate-agents/farnham/properties-for-sale",
+            "https://www.winkworth.co.uk/branches/farnham/properties-for-sale",
         ],
         "detail_patterns": [r"/properties/sales?/"],
         "enabled": True,
         "notes": "Branch listing-page mode; pagination is automatic (follows next-page link, "
-                 "falls back to ?page=N). Confirm the start URL loads on first run.",
+                 "falls back to ?page=N). Large national site -- listing pages may be "
+                 "JS-rendered; if so, an XML property sitemap is the fallback to add.",
     },
     {
         "key": "henry_adams",
