@@ -226,5 +226,7 @@ accounts** — mostly data already in the repo.
 |---|---|
 | Aug 2026 | Brief written. Reframe + fact-check + plan agreed. On-market "planning moat" (listings side) already shipped separately. |
 | Aug 2026 | TASK A: source resolved to **OSM/Geofabrik** (use-tags bonus). `make_footprints.py` + **Build barn footprints** workflow written; writes `building_polygons.json.gz` (separate from the OS footprints). Awaiting first workflow run to verify Geofabrik download from Actions + real building count. |
+| Aug 2026 | TASK A **DONE**: first run built `building_polygons.json.gz` — **53,580 buildings**, 2.9 MB, **0 zero-area / 0 giants** (old file had 9.3% / 707), Geofabrik download worked from Actions. |
+| Aug 2026 | TASK C+D: `make_barn_candidates.py` + **Build barn candidates** workflow. Geometry funnel (offline, real data): 53,580 → 8,065 size-band → 1,175 on-field/agri-tagged → **59 at score ≥0.7, 28 ≥0.8**. Designation HARD-GATE wired via `run.fetch_constraints` (extended with National Park + SSSI), Green Belt correctly kept eligible. Writes `barn_candidates.json` (ranked, gated). Awaiting first designation run. |
 
 *Append a row whenever a task lands or a fact changes.*
