@@ -14,7 +14,7 @@ days-on-market), but NO uprn, NO coordinates, NO description. So:
   - scoring normalises against whatever data is present
 """
 from __future__ import annotations
-import os, re, json, gzip, sqlite3, hashlib, time, math
+import os, re, json, gzip, sqlite3, hashlib, time, math, html
 from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 
@@ -161,7 +161,14 @@ def _headers():
 # ===========================================================================
 # HOMEDATA  (boundary -> live listings -> optional enrichment)
 # ===========================================================================
-def resolve_boundary(name):
+def resolve_boundary(name, conn=None):
+    # A boundary name ("Waverley") maps to an ID that never changes, so cache it
+    # permanently: this saves one Homedata call per area, every run. At 2 areas
+    # that halves the daily Homedata usage (~120 -> ~60 calls/month).
+    ck = f"homedata_boundary::{name}"
+    cached = _cache_get(conn, ck)
+    if cached and cached.get("id"):
+        return cached["id"]
     import requests
     if _dead("homedata"):
         return None
@@ -171,8 +178,10 @@ def resolve_boundary(name):
         r.raise_for_status()
         results = r.json().get("results", [])
         if results:
-            print(f"   boundary '{name}' -> id {results[0]['id']} ({results[0].get('name')})")
-            return results[0]["id"]
+            bid = results[0]["id"]
+            print(f"   boundary '{name}' -> id {bid} ({results[0].get('name')})")
+            _cache_put(conn, ck, {"id": bid, "name": results[0].get("name")})
+            return bid
         print(f"   no boundary found for '{name}'")
     except Exception as e:
         print(f"   boundary lookup failed for '{name}': {e}")
@@ -181,7 +190,7 @@ def resolve_boundary(name):
     return None
 
 
-def fetch_listings():
+def fetch_listings(conn=None):
     if USE_MOCK or not HOMEDATA_API_KEY:
         return _mock_listings()
     import requests
@@ -189,7 +198,7 @@ def fetch_listings():
     for area in SEARCH["areas"]:
         if _dead("homedata"):
             break
-        bid = resolve_boundary(area)
+        bid = resolve_boundary(area, conn)
         if not bid:
             continue
         params = {"boundary_id": bid, "transaction_type": "Sale",
@@ -950,7 +959,7 @@ def apply_gates(props, conn=None):
             p["constraints"] = con["list"]
             if con.get("grade"):
                 p["listed_grade"] = con["grade"]
-            ph = fetch_planning_history(lat, lng, conn)
+            ph = fetch_planning_history(lat, lng, conn=conn)   # keyword: conn is NOT krad
             if ph:
                 p["planning"] = ph
             perm = permission_estimate(con.get("datasets"), ph)
@@ -2449,27 +2458,42 @@ def agent_to_property(rec):
     property shape the engine scores, so agent-website listings run through the SAME
     geocode -> gate -> enrich -> score pipeline as everything else (one lens).
     Returns None if there's nothing usable."""
-    addr = (rec.get("address") or "").strip()
+    # decode HTML entities the scrapers leave behind ("St John&#39;s", "Oak &amp; Elm")
+    addr = html.unescape((rec.get("address") or "").strip())
     postcode = (rec.get("postcode") or "").strip().upper()
     if not addr and not postcode:
         return None
+    # drop non-property pages the crawler sometimes grabs (listing indexes, archives,
+    # search-result shells) - these have a title but describe no actual home
+    _al = addr.lower()
+    if (_al in ("property", "properties", "for sale", "search results")
+            or "archive" in _al or "search result" in _al or "page not found" in _al):
+        return None
     link = rec.get("link") or ""
     price = int(rec.get("price") or 0)
-    t = (rec.get("type") or "").lower()
+    t = html.unescape((rec.get("type") or "")).lower()
     ptype = ("land" if ("land" in t or "plot" in t) else
              "barn" if "barn" in t else
              "bungalow" if "bungalow" in t else
              "cottage" if "cottage" in t else
              "farm" if "farm" in t else
              "detached" if ("detached" in t and "semi" not in t) else
-             (t.split("/")[0].strip() or "house"))
+             "flat" if ("flat" in t or "apartment" in t or "maisonette" in t) else
+             "semi" if "semi" in t else
+             "terrace" if "terrac" in t else
+             "house" if ("house" in t or "home" in t or "residence" in t or "property" in t) else
+             (t.split("/")[0].strip() if t and t.split("/")[0].strip().isalpha() else "house"))
     pid = "ag_" + hashlib.sha1((link or (addr + postcode)).lower().encode()).hexdigest()[:10]
     reductions = 1 if rec.get("price_reduced") else 0
+    # Distinguish a deliberately-unpriced listing (price on application) from a real
+    # figure. Without this a POA listing shows as "£0" and reads as broken.
+    price_poa = (not price) and (str(rec.get("price_qualifier") or "").upper() == "POA")
     return {
         "id": pid, "address": addr or postcode, "postcode": postcode,
         "street": addr.split(",")[0].strip() if addr else "",
         "lat": None, "lng": None,
         "property_type": ptype, "beds": int(rec.get("beds") or 0), "price": price,
+        "price_poa": price_poa,
         "status": "live", "streetview_url": "",
         "source": {"portal": "agent", "name": rec.get("source") or "Local agent",
                    "url": link, "agent": rec.get("source") or "", "uprn": ""},
@@ -2525,7 +2549,7 @@ def main():
 
     agent_leads = fetch_agent_leads()
 
-    rows = fetch_listings()
+    rows = fetch_listings(conn)
     print(f"- {len(rows)} Homedata listing(s) fetched")
 
     props = []

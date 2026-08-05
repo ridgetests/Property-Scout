@@ -69,6 +69,7 @@ from __future__ import annotations
 
 import argparse
 import gzip
+import html
 import io
 import json
 import os
@@ -207,7 +208,9 @@ AGENTS = [
     {
         "key": "warren_powell_richards",
         "name": "Warren Powell Richards",
-        "discover": True,
+        "home": "https://www.wpr.co.uk",
+        "sitemaps": ["https://www.wpr.co.uk/sitemap_index.xml"],
+        "discover": True,  # robots.txt is the authoritative sitemap source; guess is a fallback
         "detail_patterns": [r"/properties/sale/"],
         "enabled": True,
     },
@@ -222,6 +225,8 @@ AGENTS = [
     {
         "key": "charters",
         "name": "Charters",
+        "home": "https://www.chartersestateagents.co.uk",
+        "sitemaps": ["https://www.chartersestateagents.co.uk/sitemap_index.xml"],
         "discover": True,
         "detail_patterns": [r"/property-for-sale/"],
         "enabled": True,
@@ -230,6 +235,8 @@ AGENTS = [
     {
         "key": "mackenzie_smith",
         "name": "Mackenzie Smith",
+        "home": "https://www.mackenziesmith.co.uk",
+        "sitemaps": ["https://www.mackenziesmith.co.uk/sitemap_index.xml"],
         "discover": True,
         "detail_patterns": [r"/property/"],
         "enabled": True,
@@ -237,9 +244,16 @@ AGENTS = [
     {
         "key": "seymours_godalming",
         "name": "Seymours (Godalming)",
+        "home": "https://www.seymours-estates.co.uk",
+        # Split site: WordPress marketing pages vs a /branches/.../sales/ property
+        # feed. The WP sitemap may not carry detail pages, so also crawl the branch
+        # listing pages directly. Detail-URL shape is unconfirmed -- verify from a run.
+        "listing_pages": ["https://www.seymours-estates.co.uk/branches/godalming-sales/sales"],
         "discover": True,
-        "detail_patterns": [r"/property/"],
+        "detail_patterns": [r"/property/", r"/branches/[^/]+/sales/[^/]", r"/offices/[^/]+/sales/[^/]"],
         "enabled": True,
+        "notes": "LOW confidence: property subsystem separate from the WP site; may need "
+                 "detail-pattern tuning after the first run's log is seen.",
     },
     {
         "key": "clarke_gammon",
@@ -253,23 +267,28 @@ AGENTS = [
     {
         "key": "homes_ea",
         "name": "Homes Estate Agents",
+        "home": "https://homesea.co.uk",
+        "sitemaps": ["https://homesea.co.uk/sitemap_index.xml"],
         "discover": True,
-        "detail_patterns": [r"/property", r"/for-sale/"],
+        "detail_patterns": [r"/property-for-sale/"],
         "enabled": True,
         "notes": "Covers the GU35 Hampshire side (Bordon/Whitehill/Liphook).",
     },
     {
         "key": "winkworth_farnham",
         "name": "Winkworth (Farnham)",
+        "home": "https://www.winkworth.co.uk",
         # Global Winkworth sitemap is national/huge, so crawl the branch listing
-        # pages instead and pull detail links from them.
+        # pages instead and pull detail links from them. (Branch path is /branches/;
+        # the old /estate-agents/ path returned nothing -- that was the mute cause.)
         "listing_pages": [
-            "https://www.winkworth.co.uk/estate-agents/farnham/properties-for-sale",
+            "https://www.winkworth.co.uk/branches/farnham/properties-for-sale",
         ],
         "detail_patterns": [r"/properties/sales?/"],
         "enabled": True,
         "notes": "Branch listing-page mode; pagination is automatic (follows next-page link, "
-                 "falls back to ?page=N). Confirm the start URL loads on first run.",
+                 "falls back to ?page=N). Large national site -- listing pages may be "
+                 "JS-rendered; if so, an XML property sitemap is the fallback to add.",
     },
     {
         "key": "henry_adams",
@@ -664,18 +683,21 @@ def extract_meta(html: str) -> dict:
     return out
 
 
-def _visible_text(html: str) -> str:
+def _visible_text(page_html: str) -> str:
     if _HAVE_BS4:
         try:
-            soup = BeautifulSoup(html, "html.parser")
+            soup = BeautifulSoup(page_html, "html.parser")
             for s in soup(["script", "style", "noscript"]):
                 s.extract()
             return re.sub(r"\s+", " ", soup.get_text(" "))
         except Exception:
             pass
-    # stdlib fallback
-    txt = re.sub(r"(?is)<(script|style|noscript).*?</\1>", " ", html)
+    # stdlib fallback. Crucially, DECODE HTML entities -- otherwise a price
+    # written as "&pound;850,000" or "&#163;850,000" keeps its literal entity
+    # and the "£" price regex never matches, silently producing a £0 listing.
+    txt = re.sub(r"(?is)<(script|style|noscript).*?</\1>", " ", page_html)
     txt = re.sub(r"(?s)<[^>]+>", " ", txt)
+    txt = html.unescape(txt)
     return re.sub(r"\s+", " ", txt)
 
 
@@ -731,6 +753,19 @@ def parse_status(text: str) -> str | None:
     return None
 
 
+_POA_RE = re.compile(
+    r"price\s+on\s+application|price\s+on\s+request|poa\b|guide\s+price\s+t\.?b\.?c|"
+    r"price\s+guide\s+t\.?b\.?c|offers\s+invited",
+    re.IGNORECASE,
+)
+
+
+def looks_poa(text: str) -> bool:
+    """True when the page says the price is on application / not published, so a
+    missing price is intentional (POA), not a failed extraction."""
+    return bool(_POA_RE.search(text or ""))
+
+
 def parse_beds(text: str) -> int | None:
     m = re.search(r"(\d{1,2})\s*(?:bed(?:room)?s?)\b", text, re.IGNORECASE)
     if m:
@@ -784,6 +819,9 @@ def extract_listing(html: str, url: str) -> dict:
     status = parse_status(blob)
     if status:
         rec["status"] = status
+    # Mark deliberately-unpriced listings so downstream shows "POA" instead of £0.
+    if not rec.get("price") and looks_poa(blob):
+        rec["price_qualifier"] = "POA"
     return rec
 
 
@@ -836,15 +874,21 @@ def gather_candidate_urls(fetcher: Fetcher, agent: dict) -> list[dict]:
 
     # 2) discovery via robots.txt (only if asked, or nothing found yet)
     if agent.get("discover") or (not candidates and not agent.get("listing_pages")):
-        anchor = (agent.get("sitemaps") or agent.get("listing_pages")
-                  or [f"https://{agent.get('key','')}"])
-        # Derive a homepage to read robots from
-        home = None
-        for u in (agent.get("sitemaps") or []) + (agent.get("listing_pages") or []):
-            home = u
-            break
-        if home:
-            for sm in fetcher.sitemaps_from_robots(home):
+        # Derive a homepage to read robots.txt from. An explicit "home" is used
+        # first -- this is the ONLY anchor a discover-only agent has (no sitemap,
+        # no listing page), so without it discovery silently does nothing.
+        home = (agent.get("home")
+                or next(iter((agent.get("sitemaps") or [])
+                             + (agent.get("listing_pages") or [])), None))
+        if not home:
+            fetcher.log(f"{agent.get('name','?')}: discover set but no home/sitemap/"
+                        f"listing_pages anchor -- cannot find robots.txt, skipping")
+        else:
+            sms = fetcher.sitemaps_from_robots(home)
+            if not sms:
+                fetcher.log(f"{agent.get('name','?')}: robots.txt lists no sitemap at "
+                            f"{urlparse(home).netloc}")
+            for sm in sms:
                 for e in parse_sitemap(fetcher, sm):
                     add(e)
 
@@ -945,6 +989,7 @@ def _to_output(rec: dict) -> dict:
         "address": rec.get("address"),
         "postcode": rec.get("postcode"),
         "price": rec.get("price"),
+        "price_qualifier": rec.get("price_qualifier"),  # "POA" when deliberately unpriced
         "type": rec.get("type"),
         "link": rec.get("link"),
         # extras (safe to ignore downstream)
