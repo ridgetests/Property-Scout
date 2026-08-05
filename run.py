@@ -14,7 +14,7 @@ days-on-market), but NO uprn, NO coordinates, NO description. So:
   - scoring normalises against whatever data is present
 """
 from __future__ import annotations
-import os, re, json, gzip, sqlite3, hashlib, time, math
+import os, re, json, gzip, sqlite3, hashlib, time, math, html
 from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 
@@ -950,7 +950,7 @@ def apply_gates(props, conn=None):
             p["constraints"] = con["list"]
             if con.get("grade"):
                 p["listed_grade"] = con["grade"]
-            ph = fetch_planning_history(lat, lng, conn)
+            ph = fetch_planning_history(lat, lng, conn=conn)   # keyword: conn is NOT krad
             if ph:
                 p["planning"] = ph
             perm = permission_estimate(con.get("datasets"), ph)
@@ -2449,20 +2449,31 @@ def agent_to_property(rec):
     property shape the engine scores, so agent-website listings run through the SAME
     geocode -> gate -> enrich -> score pipeline as everything else (one lens).
     Returns None if there's nothing usable."""
-    addr = (rec.get("address") or "").strip()
+    # decode HTML entities the scrapers leave behind ("St John&#39;s", "Oak &amp; Elm")
+    addr = html.unescape((rec.get("address") or "").strip())
     postcode = (rec.get("postcode") or "").strip().upper()
     if not addr and not postcode:
         return None
+    # drop non-property pages the crawler sometimes grabs (listing indexes, archives,
+    # search-result shells) - these have a title but describe no actual home
+    _al = addr.lower()
+    if (_al in ("property", "properties", "for sale", "search results")
+            or "archive" in _al or "search result" in _al or "page not found" in _al):
+        return None
     link = rec.get("link") or ""
     price = int(rec.get("price") or 0)
-    t = (rec.get("type") or "").lower()
+    t = html.unescape((rec.get("type") or "")).lower()
     ptype = ("land" if ("land" in t or "plot" in t) else
              "barn" if "barn" in t else
              "bungalow" if "bungalow" in t else
              "cottage" if "cottage" in t else
              "farm" if "farm" in t else
              "detached" if ("detached" in t and "semi" not in t) else
-             (t.split("/")[0].strip() or "house"))
+             "flat" if ("flat" in t or "apartment" in t or "maisonette" in t) else
+             "semi" if "semi" in t else
+             "terrace" if "terrac" in t else
+             "house" if ("house" in t or "home" in t or "residence" in t or "property" in t) else
+             (t.split("/")[0].strip() if t and t.split("/")[0].strip().isalpha() else "house"))
     pid = "ag_" + hashlib.sha1((link or (addr + postcode)).lower().encode()).hexdigest()[:10]
     reductions = 1 if rec.get("price_reduced") else 0
     return {
