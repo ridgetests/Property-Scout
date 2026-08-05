@@ -2507,6 +2507,19 @@ def _listing_want_type(portal_type, epc_built_form):
     return None
 
 
+def _epc_lookup_tier(p):
+    """How likely a live EPC lookup is to land the RIGHT certificate, so the limited
+    live-EPC budget is spent best-first:
+      0 = has a house number  -> exact postcode+number match possible (best)
+      1 = has a name/street    -> may match by name
+      2 = nothing usable       -> a bare/empty address; a live call can't identify the
+                                  dwelling, so we skip it (comps still run without EPC)."""
+    addr_line = (p.get("street") or (p.get("address") or "").split(",")[0]).strip()
+    if re.search(r"\b\d+[A-Za-z]?\b", addr_line):
+        return 0
+    return 1 if re.search(r"[A-Za-z]{3,}", addr_line) else 2
+
+
 def enrich_listings(conn, props, budget):
     """Give public for-sale listings the SAME comps + EPC evidence probate leads get,
     so both stocks compete under one scoring lens (compare-to-home floor area, and
@@ -2514,16 +2527,25 @@ def enrich_listings(conn, props, budget):
     Paid file (free, never blocked); the subject EPC is a live call, budget-capped and
     circuit-broken. Best-effort and safe: a numberless listing that can't be matched to
     a certificate simply gets comps without a floor area - never a neighbour's cert.
-    Writes the same keys the frontend already renders for probate leads."""
-    enriched = valued = 0
-    for p in props:
+    Writes the same keys the frontend already renders for probate leads.
+
+    Budget discipline: NUMBERED listings are served first (they can make an exact
+    match), and a listing with nothing to match on skips the live call entirely - so
+    the limited EPC budget is never burned on lookups that can't land."""
+    enriched = valued = skipped = 0
+    for p in sorted(props, key=_epc_lookup_tier):   # numbered first, nameless last
         pc = (p.get("postcode") or "").strip()
         if not pc:
             continue
         addr_line = (p.get("street") or (p.get("address") or "").split(",")[0]).strip()
         paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)
         paon = paon_m.group(1) if paon_m else ""
-        epc = subject_epc(conn, pc, paon, addr_line, budget=budget) or {}
+        if _epc_lookup_tier(p) == 2:
+            # no house number and no name to match on - a live EPC search can't identify
+            # this dwelling, so don't spend a budget slot on it. Comps still run below.
+            epc, skipped = {}, skipped + 1
+        else:
+            epc = subject_epc(conn, pc, paon, addr_line, budget=budget) or {}
         # snap onto the precise UPRN coordinate if we have one (EPC cert or portal feed),
         # so the plot/footprint match is this dwelling's own, not the enclosing parcel
         _apply_precise_location(p, epc.get("uprn") or (p.get("source") or {}).get("uprn"))
@@ -2555,7 +2577,8 @@ def enrich_listings(conn, props, budget):
             p["local_comps"] = (comps or [])[:6]
             valued += 1
     print(f"- listings enriched: {valued} with a comp estimate, {enriched} with EPC "
-          f"(EPC budget left {budget[0]}/{LISTING_EPC_CAP})")
+          f"(EPC budget left {budget[0]}/{LISTING_EPC_CAP}; "
+          f"{skipped} numberless skipped to save the budget)")
     return props
 
 
