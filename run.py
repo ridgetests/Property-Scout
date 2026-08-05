@@ -66,6 +66,7 @@ PLOTS_FILE = Path(__file__).resolve().parent / "plots_waverley.json.gz"  # HMLR 
 FOOTPRINTS_FILE = Path(__file__).resolve().parent / "footprints_bowl.json.gz"  # OS OpenMap Local buildings
 PPD_FILE = Path(__file__).resolve().parent / "price_paid_region.json.gz"  # HM Land Registry Price Paid (local)
 EPC_LOCAL_FILE = Path(__file__).resolve().parent / "epc_region.json.gz"  # bulk EPC certs for comps (optional)
+UPRN_FILE = Path(__file__).resolve().parent / "uprn_coords.json.gz"  # OS Open UPRN -> precise coords (optional; built by make_uprn.py)
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 EXCLUDE_DISTRICTS = {"GU11", "GU12", "GU14", "GU51", "GU52"}  # Aldershot/Farnborough/Fleet - out of area
@@ -930,11 +931,10 @@ def apply_gates(props, conn=None):
             p["permission"] = perm["estimate"]
             p["permission_label"] = perm["label"]
             p["feasibility"] = max(0.4, perm["estimate"])
-        # Plot/footprint are matched from a POSTCODE-CENTROID coordinate - no source is
-        # parcel-precise yet - so the figure is indicative for EVERY stock, not just
-        # probate (listings were previously unflagged). Flag it wherever we surface one
-        # so the number is never read as this dwelling's confirmed plot.
-        if p.get("plot_m2") or p.get("footprints"):
+        # A plot/footprint matched from a POSTCODE-CENTROID coordinate is only indicative
+        # (it can be the enclosing parcel). Flag it - UNLESS we snapped the property onto
+        # its precise UPRN coordinate, in which case the match is this dwelling's own.
+        if (p.get("plot_m2") or p.get("footprints")) and not p.get("precise_location"):
             fl = p.setdefault("flags", [])
             if "approx-location" not in fl:
                 fl.append("approx-location")   # postcode centroid - plot/footprint indicative
@@ -2173,6 +2173,12 @@ def fetch_probate_leads(conn):
         epc = epc_lookup(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
         if not epc:                                    # fall back to Homedata only if EPC misses
             epc = homedata_epc(conn, x["postcode"], x.get("paon"))
+        # precise UPRN coordinate (from the EPC certificate) beats the postcode centroid,
+        # so the plot/footprint match below is this dwelling's own parcel, not the estate's
+        _pll = uprn_coord(epc.get("uprn"))
+        precise = bool(_pll)
+        if _pll:
+            lat, lng = _pll
         fa = epc.get("floor_area_m2")
         if _form_is_excluded(epc.get("built_form"), epc.get("property_type")):
             print(f"   dropped {x.get('addr_line') or x['postcode']} "
@@ -2242,6 +2248,7 @@ def fetch_probate_leads(conn):
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
             "property_type": (epc.get("built_form") or epc.get("property_type")
                               or ctx.get("subject_type") or "property"), "lat": lat, "lng": lng,
+            "precise_location": precise,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
             "score": 68, "reasons": reasons[:3], "flags": ["probate"],
             "is_probate": True, "low_comp": False, "comps": [],
@@ -2280,6 +2287,61 @@ def _combine(*lists):
     return sorted(out.values(), key=lambda x: -x.get("score", 0))
 
 
+# ===========================================================================
+# PRECISE LOCATION (OS Open UPRN, optional local file)
+# Postcode-centroid geocoding often lands in the wrong ENCLOSING parcel, which is
+# the single biggest plot/footprint accuracy bug. When we can resolve a property's
+# UPRN (from its EPC certificate or a portal feed) to a precise coordinate, we snap
+# the property onto it so parcel_for matches its OWN plot. Absent file -> no-op:
+# everything falls back to centroid geocoding exactly as before.
+# ===========================================================================
+_UPRN = None
+
+
+def _load_uprn():
+    """Optional OS Open UPRN file: {uprn: [lat, lng]} (built by make_uprn.py, uploaded
+    like the other local bulk files). Absent -> {} and the tool degrades gracefully."""
+    global _UPRN
+    if _UPRN is not None:
+        return _UPRN
+    try:
+        with gzip.open(UPRN_FILE, "rt") as f:
+            _UPRN = json.load(f).get("uprns", {})
+        print(f"- loaded {len(_UPRN):,} UPRN coordinates for precise location")
+    except Exception:
+        _UPRN = {}
+    return _UPRN
+
+
+def uprn_coord(uprn):
+    """Precise (lat, lng) for a UPRN, or None if unknown / no local file."""
+    if not uprn:
+        return None
+    v = _load_uprn().get(str(uprn))
+    if isinstance(v, (list, tuple)) and len(v) == 2:
+        return (v[0], v[1])
+    return None
+
+
+def _apply_precise_location(p, uprn):
+    """Snap a property onto its precise UPRN coordinate and mark it precise, so the
+    plot/footprint match is trusted rather than flagged approximate. Re-centres the
+    distance-from-home, aerial thumb and Street View link. Returns True if it snapped."""
+    ll = uprn_coord(uprn)
+    if not ll:
+        return False
+    lat, lng = ll
+    p["lat"], p["lng"] = lat, lng
+    p["precise_location"] = True
+    p["dist_mi"] = round(_haversine_mi(HOME, (lat, lng)), 1)
+    media = p.get("media")
+    if isinstance(media, dict):
+        media["thumb_url"] = _aerial_thumb(lat, lng)
+    if p.get("streetview_url"):
+        p["streetview_url"] = _streetview_url(lat, lng)
+    return True
+
+
 def _listing_want_type(portal_type, epc_built_form):
     """Comparable property type for the local Price Paid file. EPC built form is
     authoritative and wins when present; otherwise fall back to the portal label.
@@ -2316,6 +2378,9 @@ def enrich_listings(conn, props, budget):
         paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)
         paon = paon_m.group(1) if paon_m else ""
         epc = epc_lookup(conn, pc, paon, addr_line, budget=budget) or {}
+        # snap onto the precise UPRN coordinate if we have one (EPC cert or portal feed),
+        # so the plot/footprint match is this dwelling's own, not the enclosing parcel
+        _apply_precise_location(p, epc.get("uprn") or (p.get("source") or {}).get("uprn"))
         want_type = _listing_want_type(p.get("property_type"), epc.get("built_form"))
         fa = epc.get("floor_area_m2")
         # local, free comps (same routine as probate); size-matched only if a subject

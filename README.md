@@ -95,6 +95,28 @@ over time. Log why you pass on a property and feed that back into the weights.
 
 ---
 
+## Precise geocoding (optional — fixes the plot-mismatch bug)
+
+`run.py` locates properties by **postcode centroid**, which often lands in the
+wrong (enclosing) INSPIRE parcel and reports a whole estate/field as the plot.
+When it can resolve a property's **UPRN** (from its EPC certificate or a portal
+feed) it snaps the property onto the exact coordinate, so the plot/footprint
+match is the dwelling's own and the `approx-location` flag is dropped.
+
+This needs a one-off local data file, built the same way as the other bulk files:
+
+1. Download **OS Open UPRN** (CSV) — free, Open Government Licence:
+   <https://osdatahub.os.uk/downloads/open/OpenUPRN>
+2. Locally: `python make_uprn.py osopenuprn_<date>.csv` → `uprn_coords.json.gz`
+   (only the search-area bounding box is kept, so it stays a few MB).
+3. Upload `uprn_coords.json.gz` to the repo root via the GitHub web UI.
+
+It's **optional**: with the file absent, geocoding falls back to centroids exactly
+as before (plots flagged `approx-location`). The file is regional and licence-clean
+(coordinates only), so it's fine to commit.
+
+---
+
 ## Deploy
 
 1. Push to a GitHub repo.
