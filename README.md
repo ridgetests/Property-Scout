@@ -1,29 +1,90 @@
 # PropertyScout
 
-A personal property anomaly detector. It aggregates listings, scores them
-against a composite signal model, computes the equity gain after renovation,
-and surfaces the well-located doer-uppers and large plots that are off the
-radar to most buyers.
+A personal property-hunting radar for one user. It scans the public for-sale
+market **and** an off-market/pre-market edge (probate estates, auctions), scores
+everything through one lens, compares each property to my own home's size and
+plot, and surfaces the well-located doer-uppers and large plots with development
+upside before the crowd sees them.
 
-Runs at £0 on free tiers. Architected so paid data sources plug in later as
-drop-in adapters with no downstream changes.
+It runs itself for free on GitHub Actions (nightly) and publishes a passcode-gated
+web page I open on my phone. Not a product — a single-purpose tool for my own hunt.
 
 ---
 
-## How it works
+## Architecture
+
+Two files do the work, by design (fewer moving parts, nothing that can be
+"turned off"):
+
+- **`run.py`** — the whole engine. One file, standard library + `requests`.
+  Runs the nightly pipeline end to end.
+- **`docs/index.html`** — the single-file phone web app (map + list + four-tab
+  detail drawer + shortlist + notes + manual-add + plot-overlay). Reads
+  `docs/properties.json`. Passcode-gated.
+- **`.github/workflows/scout.yml`** — nightly cron (04:00) + manual dispatch.
+  Runs `run.py`, commits `data/scout.db` + `docs/properties.json`, deploys `docs/`
+  to GitHub Pages.
+
+### The pipeline
 
 ```
-fetch (sources) → normalise → enrich → score → flag → store → publish
+gather → geocode → gate → measure → score → publish
 ```
 
-- Source adapters return listings in one common shape (scraper or paid API — same interface).
-- Enrichment adapters attach EPC floor area, plot size, comps, schools, planning, constraints.
-- The scorer runs six signals and a residual-value (equity) calc.
-- Flags mark the search-invisibility reasons a property is hiding from the crowd.
-- Results are stored in SQLite (committed to the repo, so price history and
-  days-on-market accrue for free) and published to `docs/properties.json`.
-- `docs/index.html` is the mobile-first frontend (map + list + shortlist),
-  served by GitHub Pages.
+- **Gather** — probate/deceased-estate notices (The Gazette), auction lots
+  (Clive Emson, Auction House), and live for-sale listings (Homedata).
+- **Geocode** — postcode → coordinate (postcodes.io). Optionally snapped to the
+  precise **UPRN** coordinate when available (see below), which fixes the
+  wrong-parcel plot problem.
+- **Gate** — inside the hand-drawn target polygon, detached-only, plot ≥ home plot,
+  care-home / out-of-area exclusions.
+- **Measure** — plot size (HM Land Registry INSPIRE parcels), building footprints
+  (OS OpenMap Local), floor area + built form + energy rating (free EPC register),
+  comparable sold prices (HM Land Registry Price Paid).
+- **Score** — a /100 composite across **Potential, Value, Fit, Edge** and a
+  **Feasibility** multiplier (planning constraints + local approval precedent),
+  plus a typology ("Development play", "Conversion play", "Setting play"…) and a
+  High/Med/Low tier. The displayed breakdown reconciles with the headline score.
+- **Publish** — `docs/properties.json` (personal data stripped, see Privacy).
+
+---
+
+## Local bulk data files ("download once, query locally")
+
+Live API calls from cloud IPs get rate-limited, IP-blocked and quota-capped. The
+sources that have never failed are the ones downloaded once and stored as local
+files, queried offline. `run.py` reads these from the repo root:
+
+| File | Contains | Source (all free) | Required? |
+|---|---|---|---|
+| `plots_waverley.json.gz` | INSPIRE parcel boundaries (plot sizes) | HM Land Registry INSPIRE | yes |
+| `footprints_bowl.json.gz` | building footprints | OS OpenMap Local | yes |
+| `price_paid_region.json.gz` | sold prices (~95k sales) | HM Land Registry Price Paid | yes |
+| `epc_region.json.gz` | bulk EPC certs for size-matched comps | EPC register | optional |
+| `uprn_coords.json.gz` | UPRN → precise coordinate | OS Open UPRN | optional |
+
+The optional files activate features when present and are a clean no-op when
+absent (comps fall back to area bands; geocoding falls back to postcode centroids).
+
+### Converters (run locally, not on Actions)
+
+`make_uprn.py` builds `uprn_coords.json.gz` from the free OS Open UPRN CSV — see
+its header for usage, and "Precise geocoding" below. The Price Paid and bulk-EPC
+files are built by equivalent local converters (`make_ppd.py` / `make_epc.py`)
+kept outside the deploy path; only their outputs are committed.
+
+### Precise geocoding (optional — fixes the plot-mismatch bug)
+
+Postcode-centroid geocoding often lands in the wrong (enclosing) parcel and
+reports a whole estate/field as the plot. When `run.py` resolves a property's
+UPRN (from its EPC certificate or a portal feed) it snaps the property onto the
+exact coordinate, so the plot/footprint match is the dwelling's own and the
+`approx-location` flag is dropped. To enable:
+
+1. Download **OS Open UPRN** (CSV), free under the Open Government Licence:
+   <https://osdatahub.os.uk/downloads/open/OpenUPRN>
+2. Locally: `python make_uprn.py osopenuprn_<date>.csv` → `uprn_coords.json.gz`
+3. Upload `uprn_coords.json.gz` to the repo root via the GitHub web UI.
 
 ---
 
@@ -31,106 +92,57 @@ fetch (sources) → normalise → enrich → score → flag → store → publis
 
 ```bash
 pip install -r requirements.txt
-python run.py
-open docs/index.html          # or serve docs/ on any static server
+python run.py                    # writes docs/properties.json
+open docs/index.html             # or serve docs/ on any static server
 ```
 
-Out of the box every adapter runs in mock mode, so the pipeline produces a
-real `properties.json` from sample data immediately. The frontend reads it.
+Set `USE_MOCK = True` in `run.py` to run without API keys against sample data.
 
 ---
 
-## Going live
+## Secrets (GitHub → Settings → Secrets)
 
-The repo now ships configured for the **Homedata route** (a licensed API — no
-scraping, no IP blocking, runs fine from GitHub Actions):
+- `HOMEDATA_API_KEY` — live for-sale listings (licensed API; no scraping).
+- `EPC_API_KEY` — free government EPC register (floor area, built form, rating).
 
-- **Listings + market signals + EPC + comps:** Homedata. Set `HOMEDATA_API_KEY`,
-  confirm the listings path in their playground, flip `USE_MOCK = False` in both
-  `adapters/sources/homedata.py` and `adapters/enrichment/homedata.py`.
-- **Plot / land size:** still the free Land Registry / INSPIRE lookup — Homedata
-  does **not** provide plot size, and it's your top signal, so this stays on.
-
-Two coverage boundaries worth knowing:
-1. Homedata returns no free-text description, so probate/executor *keyword*
-   detection won't fire from it. Motivation is instead driven by its structured
-   reduction count, days-on-market and status chain — which is more reliable.
-2. Area-wide listing search is a paid-plan feature; the free tier (100 calls/mo)
-   is for testing + per-property enrichment. Budget the entry paid tier (~£49/mo)
-   to actually populate the map daily. The runner only enriches new or
-   price-changed listings, so credit use stays low.
-
-### Free scraper route (alternative)
-
-If you'd rather stay fully free, flip the adapters: enable `RightmoveAdapter`
-plus the `EPCAdapter` and re-enable Land Registry, and disable the Homedata
-pair. See each adapter's header for what to finish. Note the scraper runs from a
-cloud IP and may be blocked by Rightmove without proxies.
-
-## Going live (old notes)
+Both are passed to the run by `scout.yml`. The tool works without them (auctions +
+probate + local files still run), just with thinner public-listing coverage.
 
 ---
 
-## Adding a paid source later
+## Deploy (phone-friendly)
 
-The whole point of the adapter pattern. To add, say, an auction or
-PropertyData feed:
-
-1. Create `adapters/sources/yourfeed.py` with a class implementing
-   `SourceAdapter.fetch() -> list[RawListing]`.
-2. Add one line to `ADAPTERS["sources"]` in `config.py` with `enabled=True`.
-
-Nothing else changes. Same for enrichment via `EnrichmentAdapter`.
+Changes are deployed by uploading files via the GitHub web UI. The Action runs
+nightly and on manual dispatch (Actions tab), commits the refreshed
+`data/scout.db` (so price history and days-on-market accrue) and
+`docs/properties.json`, and deploys `docs/` to Pages.
 
 ---
 
-## Tuning the model
+## Design constraints (load-bearing — read before changing)
 
-`config.py` holds the search criteria, the scoring `WEIGHTS`, and the
-renovation cost rates. The signal logic lives in `pipeline/score.py`.
-
-The supplied heuristics are deliberately conservative — a starting point.
-The real edge is calibrating them against your own accept/reject decisions
-over time. Log why you pass on a property and feed that back into the weights.
-
----
-
-## Precise geocoding (optional — fixes the plot-mismatch bug)
-
-`run.py` locates properties by **postcode centroid**, which often lands in the
-wrong (enclosing) INSPIRE parcel and reports a whole estate/field as the plot.
-When it can resolve a property's **UPRN** (from its EPC certificate or a portal
-feed) it snaps the property onto the exact coordinate, so the plot/footprint
-match is the dwelling's own and the `approx-location` flag is dropped.
-
-This needs a one-off local data file, built the same way as the other bulk files:
-
-1. Download **OS Open UPRN** (CSV) — free, Open Government Licence:
-   <https://osdatahub.os.uk/downloads/open/OpenUPRN>
-2. Locally: `python make_uprn.py osopenuprn_<date>.csv` → `uprn_coords.json.gz`
-   (only the search-area bounding box is kept, so it stays a few MB).
-3. Upload `uprn_coords.json.gz` to the repo root via the GitHub web UI.
-
-It's **optional**: with the file absent, geocoding falls back to centroids exactly
-as before (plots flagged `approx-location`). The file is regional and licence-clean
-(coordinates only), so it's fine to commit.
+- **Protect API access above all.** A throttle heals; a ban is fatal. A
+  circuit-breaker (`_DEAD` / `_kill`) parks any source on its first 429/403 for the
+  rest of the run; the Gazette crawl delay (1 req / 10s) is obeyed; live results
+  are cached in SQLite so a source is hit at most once per point. Prefer local bulk
+  data over live calls.
+- **No data beats bad data.** The tool drops or flags rather than show wrong
+  numbers (implausible plots rejected, EPC never matched to a neighbour, unverified
+  plots flagged `approx-location`).
+- **Privacy.** The site runs on free GitHub Pages, so the repo — and therefore both
+  `docs/properties.json` and the committed `data/scout.db` — is public. Person-level
+  data (deceased names, executor/solicitor contacts, notice text, precise
+  identifiers) is stripped from everything committed; the Gazette notice link is
+  kept so contacts are reached on demand from the already-public statutory notice.
+  The passcode gate is client-side only — treat it as cosmetic, not access control.
+  A private-hosting move is the real fix.
 
 ---
 
-## Deploy
+## Tuning
 
-1. Push to a GitHub repo.
-2. Settings → Pages → serve from `/docs`.
-3. Settings → Secrets → add `EPC_API_KEY`, `EPC_API_EMAIL`.
-4. The Action in `.github/workflows/scout.yml` runs daily and commits the
-   refreshed data. Trigger it manually from the Actions tab the first time.
-
----
-
-## A note on scraping
-
-Rightmove and Zoopla terms prohibit scraping. This project is for personal,
-low-volume use. Scrape politely — slow rate, caching, off-peak — both to stay
-within reasonable bounds and to avoid the blocks that would otherwise push you
-toward paid proxies. The source adapters are the fragile layer by design: when
-one breaks, swap in a paid listing API as a replacement adapter.
+Everything tunable lives at the top of `run.py`: the search box (`SEARCH`,
+`AREA_POLYGON`), your home anchor (`HOME`, `HOME_FLOOR_AREA_M2`, `HOME_PLOT_M2`),
+the score composition (`score_property`), and the plot-sanity thresholds
+(`MAX_PLAUSIBLE_*`). The real edge is calibrating these against your own
+accept/reject decisions over time.
