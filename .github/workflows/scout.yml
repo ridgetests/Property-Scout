@@ -30,6 +30,7 @@ jobs:
           git config user.name "scout-bot"
           git config user.email "scout-bot@users.noreply.github.com"
           git add data/scout.db docs/properties.json
+          git add agents_state.json agent_listings.json 2>/dev/null || true  # agent-fetcher memory (diffing/history)
           git commit -m "scout update" || echo "no changes"
           git push || echo "push skipped"
       - name: Upload site

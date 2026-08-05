@@ -45,6 +45,9 @@ AREA_POLYGON = [
     (51.224, -0.816), (51.240, -0.875), (51.255, -0.884),
 ]
 
+AGENTS_ENABLED = True   # local estate-agent website listings (fetch_agents.py) - the
+                        # portal-free "Rightmove replacement". Fully guarded: any failure
+                        # or an unreachable site can never break the nightly run.
 AUCTION_ENABLED = True
 CLIVE_EMSON_URL = "https://www.cliveemson.co.uk/properties/"
 AUCTION_HOUSE_URL = "https://www.auctionhouse.co.uk/sussexandhampshire/auction/search-results"
@@ -2441,6 +2444,64 @@ def enrich_listings(conn, props, budget):
     return props
 
 
+def agent_to_property(rec):
+    """Map a fetch_agents.py record ({address,postcode,price,type,link,...}) into the
+    property shape the engine scores, so agent-website listings run through the SAME
+    geocode -> gate -> enrich -> score pipeline as everything else (one lens).
+    Returns None if there's nothing usable."""
+    addr = (rec.get("address") or "").strip()
+    postcode = (rec.get("postcode") or "").strip().upper()
+    if not addr and not postcode:
+        return None
+    link = rec.get("link") or ""
+    price = int(rec.get("price") or 0)
+    t = (rec.get("type") or "").lower()
+    ptype = ("land" if ("land" in t or "plot" in t) else
+             "barn" if "barn" in t else
+             "bungalow" if "bungalow" in t else
+             "cottage" if "cottage" in t else
+             "farm" if "farm" in t else
+             "detached" if ("detached" in t and "semi" not in t) else
+             (t.split("/")[0].strip() or "house"))
+    pid = "ag_" + hashlib.sha1((link or (addr + postcode)).lower().encode()).hexdigest()[:10]
+    reductions = 1 if rec.get("price_reduced") else 0
+    return {
+        "id": pid, "address": addr or postcode, "postcode": postcode,
+        "street": addr.split(",")[0].strip() if addr else "",
+        "lat": None, "lng": None,
+        "property_type": ptype, "beds": int(rec.get("beds") or 0), "price": price,
+        "status": "live", "streetview_url": "",
+        "source": {"portal": "agent", "name": rec.get("source") or "Local agent",
+                   "url": link, "agent": rec.get("source") or "", "uprn": ""},
+        "source_label": "AGENT",
+        "media": {"photo_count": 0, "has_floorplan": False, "thumb_url": ""},
+        "description_raw": "",
+        "enrichment": {"market": {"reductions": reductions,
+                                  "is_reduced": bool(rec.get("price_reduced")),
+                                  "status": rec.get("status"), "dom": None,
+                                  "added_date": rec.get("first_seen")}},
+        "comps": [],
+    }
+
+
+def fetch_agent_leads():
+    """Local estate-agent website listings via fetch_agents.py, converted to the
+    engine's property shape. Fully guarded: any import/fetch failure returns [] so an
+    agent site can never break the nightly run (fetch_agents has its own robots +
+    crawl-delay + per-domain circuit-breaker)."""
+    if not AGENTS_ENABLED or USE_MOCK:
+        return []
+    try:
+        from fetch_agents import fetch_agent_listings
+        raw = fetch_agent_listings() or []
+    except Exception as e:
+        print(f"- agent fetcher unavailable/failed: {e}")
+        return []
+    out = [p for p in (agent_to_property(r) for r in raw) if p]
+    print(f"- {len(out)} agent-website listing(s) from {len({p['source'].get('name') for p in out})} agent(s)")
+    return out
+
+
 def main():
     print("PropertyScout run starting" + ("  [MOCK]" if USE_MOCK else "  [LIVE]"))
     print(f"- keys visible to this run: HOMEDATA={'yes' if HOMEDATA_API_KEY else 'MISSING'}"
@@ -2462,10 +2523,22 @@ def main():
     probate = fetch_probate_leads(conn)
     print(f"- {len(probate)} probate lead(s) within {PROBATE_RADIUS_MI} mi of {PROBATE_LOCATION}")
 
+    agent_leads = fetch_agent_leads()
+
     rows = fetch_listings()
-    print(f"- {len(rows)} listing(s) fetched")
-    if not rows:
-        print("  !! 0 listings - likely Homedata monthly quota exhausted or API error.")
+    print(f"- {len(rows)} Homedata listing(s) fetched")
+
+    props = []
+    for row in rows:
+        p = listing_to_property(row)
+        if p:
+            props.append(p)
+    props.extend(agent_leads)   # agent-website listings run through the same pipeline
+    print(f"- {len(props)} listing(s) to process "
+          f"({len(props) - len(agent_leads)} Homedata + {len(agent_leads)} agent)")
+
+    if not props:
+        print("  !! 0 listings from any source (Homedata quota + no agent leads).")
         saved = recover_from_db(conn)
         combined = _combine(saved, auctions, probate)
         if combined:
@@ -2474,13 +2547,6 @@ def main():
         else:
             print("  !! No cached data to fall back to; leaving existing file untouched.")
         conn.close(); return
-
-    props = []
-    for row in rows:
-        p = listing_to_property(row)
-        if p:
-            props.append(p)
-    print(f"- {len(props)} match target types (detached/bungalow/plot, no new-builds)")
 
     # map pins from postcodes (free)
     seed_geocache_from_properties(conn)
