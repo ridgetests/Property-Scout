@@ -1961,6 +1961,34 @@ def epc_lookup(conn, postcode, paon, addr_hint="", budget=None):
     return out
 
 
+def _canon_pc(pc):
+    """Canonical UK postcode (upper, single space before the 3-char inward code) so a
+    subject's noisy postcode matches the bulk EPC file's keys (built the same way)."""
+    s = re.sub(r"\s+", "", (pc or "").upper())
+    return s[:-3] + " " + s[-3:] if len(s) >= 5 else s
+
+
+def subject_epc(conn, postcode, paon, addr_hint="", budget=None):
+    """Floor area / built form / type / UPRN for a SUBJECT property. Prefers the local
+    bulk EPC file (free, offline, EXACT postcode+house-number match) and only calls the
+    live register on a miss - cutting register calls and speeding runs once the bulk file
+    is present, and (with uprn_coords) letting a subject be precisely located offline.
+    Same return shape as epc_lookup, so callers are unchanged. The exact key match means
+    it can never attach a neighbour's certificate."""
+    pc, hn = (postcode or "").strip(), (paon or "").strip()
+    if pc and hn:
+        e = _load_epc_local().get(f"{_canon_pc(pc)}|{hn}".upper())
+        if e and e.get("fa"):
+            return {"floor_area_m2": e.get("fa"),
+                    "built_form": e.get("form") or "",
+                    "property_type": e.get("type") or "",
+                    "age_band": "",
+                    "rating": e.get("rating") or "",
+                    "uprn": e.get("uprn") or "",
+                    "certificate": ""}
+    return epc_lookup(conn, postcode, paon, addr_hint, budget=budget)
+
+
 # RdSAP stores built form / property type as numeric codes in the raw certificate.
 # Standard SAP enumeration - used for LABELLING and (where confident) exclusion.
 _BUILT_FORM_CODES = {1: "Detached", 2: "Semi-Detached", 3: "End-Terrace",
@@ -2155,7 +2183,7 @@ def fetch_probate_leads(conn):
         if not ll:
             continue
         lat, lng = ll
-        epc = epc_lookup(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
+        epc = subject_epc(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
         # (No Homedata EPC fallback: Homedata is reserved for LIVE LISTINGS only - its
         #  ~100/month quota is protected. The free EPC register is the enrichment source.)
         # precise UPRN coordinate (from the EPC certificate) beats the postcode centroid,
@@ -2350,7 +2378,7 @@ def enrich_listings(conn, props, budget):
         addr_line = (p.get("street") or (p.get("address") or "").split(",")[0]).strip()
         paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)
         paon = paon_m.group(1) if paon_m else ""
-        epc = epc_lookup(conn, pc, paon, addr_line, budget=budget) or {}
+        epc = subject_epc(conn, pc, paon, addr_line, budget=budget) or {}
         # snap onto the precise UPRN coordinate if we have one (EPC cert or portal feed),
         # so the plot/footprint match is this dwelling's own, not the enclosing parcel
         _apply_precise_location(p, epc.get("uprn") or (p.get("source") or {}).get("uprn"))

@@ -30,9 +30,10 @@ USAGE - pass the ZIPs, the extracted CSVs, or folders containing certificates.cs
     python make_epc.py certificates.csv                      # single CSV
     python make_epc.py ./epc-downloads/  out.json.gz         # a folder + custom output
 
-OUTPUT - {"certs": {"<POSTCODE>|<PAON>": {"fa","form","type","rooms","date"}}} gz,
-keyed to match run.py's comparables (postcode + Price-Paid house number/name,
-upper-cased). Most-recent certificate wins when a property has several.
+OUTPUT - {"certs": {"<POSTCODE>|<PAON>": {"fa","form","type","rooms","uprn","rating",
+"date"}}} gz, keyed to match run.py's comparables AND subjects (postcode + Price-Paid
+house number/name, upper-cased). Most-recent certificate wins when a property has
+several. The uprn lets a subject be located precisely offline (with uprn_coords.json.gz).
 """
 import csv
 import gzip
@@ -56,6 +57,9 @@ _WANT = {
     "form": "BUILT_FORM",
     "type": "PROPERTY_TYPE",
     "rooms": "NUMBER_HABITABLE_ROOMS",
+    "uprn": "UPRN",                    # present in recent releases; lets the subject read
+                                       # its precise coordinate offline (with uprn_coords)
+    "rating": "CURRENT_ENERGY_RATING",
     "lodged": "LODGEMENT_DATE",
     "inspected": "INSPECTION_DATE",
 }
@@ -156,6 +160,8 @@ def main():
                 "form": (row.get(colmap["form"]) or "").strip() if colmap["form"] else "",
                 "type": (row.get(colmap["type"]) or "").strip() if colmap["type"] else "",
                 "rooms": rooms,
+                "uprn": (row.get(colmap["uprn"]) or "").strip() if colmap["uprn"] else "",
+                "rating": (row.get(colmap["rating"]) or "").strip() if colmap["rating"] else "",
                 "date": (date or "")[:10],
             }
             kept += 1
