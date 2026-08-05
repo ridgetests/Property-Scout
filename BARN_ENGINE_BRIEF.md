@@ -137,14 +137,28 @@ Recorded so we don't re-trip these:
 Cheapest / warmest-lead first. **Steps A–D need no imagery, no LIDAR, no new
 accounts** — mostly data already in the repo.
 
-- **TASK A — Rebuild footprints WITH outlines** *(in progress — this is where we
-  are starting)*. A converter that produces building **polygons** matching the
-  parcels schema `{"a", "b":[latmin,latmax,lonmin,lonmax], "r":[[lat,lon],…]}`,
-  area computed in British National Grid, MultiPolygons handled explicitly
-  (never concatenate rings), clipped to `AREA_POLYGON`, with a loud data-quality
-  report. Delivered as a **workflow button** (phone-only). Unlocks the shape &
-  elongation signals. *(Source route being verified before coding — see Open
-  questions.)*
+- **TASK A — Build footprints WITH outlines** *(converter written; awaiting first
+  workflow run)*. `make_footprints.py` produces building **polygons** matching
+  the parcels schema `{"a", "b":[latmin,latmax,lonmin,lonmax], "r":[[lat,lon],…],
+  "c":[lat,lon], "u":usetag}`, area in British National Grid, MultiPolygons →
+  largest part (never concatenate rings), clipped to `AREA_POLYGON`, loud
+  data-quality report, **fails without writing** if the result looks wrong.
+  Delivered as the **Build barn footprints** workflow button (phone-only).
+  Unlocks the shape & elongation signals.
+  - **Source decision: OpenStreetMap** (via Geofabrik Surrey + Hampshire `.osm.pbf`,
+    parsed with `pyrosm`), NOT OS OpenMap Local. Reason: OSM is the only free
+    source that also carries **building-use tags** (`building=barn` /
+    `farm_auxiliary` / `stable`, `landuse=farmyard`) — a building already tagged
+    "barn" is a near-certain barn, no shape/height guess needed. Licence ODbL
+    (share-alike; surface derived facts only). Trade-off: OSM rural-outbuilding
+    completeness is good-but-not-100% vs OS's authoritative coverage — if it
+    proves patchy, cross-fill geometry from Microsoft's UK footprints (keyless,
+    but no use-tags). Farnham straddles the county line, so both counties are read
+    and deduped.
+  - **Written to a SEPARATE file** (`building_polygons.json.gz`), NOT over the
+    existing `footprints_bowl.json.gz`: the core tool sizes listings from the OS
+    footprints, and silently swapping OS→OSM there could regress that. The barn
+    engine stays decoupled from the live tool; unify later only if warranted.
 - **TASK B — Class Q planning-application mining.** Query planning data for
   agricultural-conversion / prior-approval applications in the bowl; classify
   approved / refused / pending; flag **"approved but not implemented"** (the
@@ -192,9 +206,11 @@ accounts** — mostly data already in the repo.
 
 ## 8. Open questions (verify — don't guess)
 
-- **What is the current access route for building-outline polygons** (OS
-  OpenMap Local vs OSM/Geofabrik vs Overpass)? Needs a key? Direct URL? Cloud-IP
-  friendly? Under 25 MB? *(Being researched now — decides TASK A's source.)*
+- ~~What is the current access route for building-outline polygons?~~
+  **RESOLVED:** OSM via Geofabrik county `.osm.pbf` (keyless, direct URL,
+  cloud-friendly, carries use-tags), parsed with `pyrosm`. *Still unverified:
+  exact county-extract byte size and whether Geofabrik serves GitHub's IP — the
+  workflow probes this on first run and fails loudly if not.*
 - Does `environment.data.gov.uk` serve LIDAR to a GitHub Actions IP? (Probe.)
 - Is the GEE `UK/EA/ENGLAND_1M_TERRAIN/2022` asset ID correct?
 - Does OSM's ODbL share-alike clash with how we surface derived facts?
@@ -208,6 +224,7 @@ accounts** — mostly data already in the repo.
 
 | Date | What happened |
 |---|---|
-| Aug 2026 | Brief written. Reframe + fact-check + plan agreed. Starting TASK A (footprints rebuild). Source route under research. On-market "planning moat" (the listings side) already shipped separately. |
+| Aug 2026 | Brief written. Reframe + fact-check + plan agreed. On-market "planning moat" (listings side) already shipped separately. |
+| Aug 2026 | TASK A: source resolved to **OSM/Geofabrik** (use-tags bonus). `make_footprints.py` + **Build barn footprints** workflow written; writes `building_polygons.json.gz` (separate from the OS footprints). Awaiting first workflow run to verify Geofabrik download from Actions + real building count. |
 
 *Append a row whenever a task lands or a fact changes.*
