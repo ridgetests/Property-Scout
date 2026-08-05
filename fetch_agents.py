@@ -836,15 +836,21 @@ def gather_candidate_urls(fetcher: Fetcher, agent: dict) -> list[dict]:
 
     # 2) discovery via robots.txt (only if asked, or nothing found yet)
     if agent.get("discover") or (not candidates and not agent.get("listing_pages")):
-        anchor = (agent.get("sitemaps") or agent.get("listing_pages")
-                  or [f"https://{agent.get('key','')}"])
-        # Derive a homepage to read robots from
-        home = None
-        for u in (agent.get("sitemaps") or []) + (agent.get("listing_pages") or []):
-            home = u
-            break
-        if home:
-            for sm in fetcher.sitemaps_from_robots(home):
+        # Derive a homepage to read robots.txt from. An explicit "home" is used
+        # first -- this is the ONLY anchor a discover-only agent has (no sitemap,
+        # no listing page), so without it discovery silently does nothing.
+        home = (agent.get("home")
+                or next(iter((agent.get("sitemaps") or [])
+                             + (agent.get("listing_pages") or [])), None))
+        if not home:
+            fetcher.log(f"{agent.get('name','?')}: discover set but no home/sitemap/"
+                        f"listing_pages anchor -- cannot find robots.txt, skipping")
+        else:
+            sms = fetcher.sitemaps_from_robots(home)
+            if not sms:
+                fetcher.log(f"{agent.get('name','?')}: robots.txt lists no sitemap at "
+                            f"{urlparse(home).netloc}")
+            for sm in sms:
                 for e in parse_sitemap(fetcher, sm):
                     add(e)
 
