@@ -68,10 +68,12 @@ absent (comps fall back to area bands; geocoding falls back to postcode centroid
 
 ### Converters (run locally, not on Actions)
 
-`make_uprn.py` builds `uprn_coords.json.gz` from the free OS Open UPRN CSV — see
-its header for usage, and "Precise geocoding" below. The Price Paid and bulk-EPC
-files are built by equivalent local converters (`make_ppd.py` / `make_epc.py`)
-kept outside the deploy path; only their outputs are committed.
+Included: `make_uprn.py` (builds `uprn_coords.json.gz` from OS Open UPRN — see
+"Precise geocoding" below) and `make_epc.py` (builds `epc_region.json.gz` from the
+free EPC Open Data per-council downloads — see its header; this is what turns comps
+into "same type, similar floor area, priced per m²"). The Price Paid file is built
+by an equivalent local converter (`make_ppd.py`) kept outside the deploy path. Run
+these locally; only their outputs are uploaded.
 
 ### Precise geocoding (optional — fixes the plot-mismatch bug)
 
