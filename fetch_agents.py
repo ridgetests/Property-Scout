@@ -649,6 +649,9 @@ def extract_jsonld(html: str) -> dict:
                 tstr = t if isinstance(t, str) else (t[0] if isinstance(t, list) and t else None)
                 if tstr and str(tstr).lower() not in {"product", "offer", "place", "listing"}:
                     out["type"] = str(tstr)
+            # description (feeds downstream planning-signal detection)
+            if "description" not in out and node.get("description"):
+                out["description"] = str(node["description"]).strip()
     return out
 
 
@@ -679,6 +682,8 @@ def extract_meta(html: str) -> dict:
         m = re.search(r"<title[^>]*>(.*?)</title>", html, re.DOTALL | re.IGNORECASE)
         if m:
             out["address"] = re.sub(r"\s+", " ", m.group(1)).strip()
+    if desc:
+        out["description"] = desc
     out["_text_blob"] = " ".join(x for x in (title, desc) if x)
     return out
 
@@ -822,6 +827,13 @@ def extract_listing(html: str, url: str) -> dict:
     # Mark deliberately-unpriced listings so downstream shows "POA" instead of £0.
     if not rec.get("price") and looks_poa(blob):
         rec["price_qualifier"] = "POA"
+    # A short description snippet -- feeds the engine's planning-potential detection
+    # (barn conversion / prior approval / development opportunity). Capped to keep the
+    # committed JSON small; keyword detection needs the gist, not the full brochure.
+    desc = rec.get("description") or meta.get("description") or text
+    if desc:
+        rec["desc"] = re.sub(r"\s+", " ", desc).strip()[:600]
+    rec.pop("description", None)
     return rec
 
 
@@ -992,6 +1004,7 @@ def _to_output(rec: dict) -> dict:
         "price_qualifier": rec.get("price_qualifier"),  # "POA" when deliberately unpriced
         "type": rec.get("type"),
         "link": rec.get("link"),
+        "desc": rec.get("desc"),                        # short snippet for planning-signal detection
         # extras (safe to ignore downstream)
         "source": rec.get("agent_name"),
         "beds": rec.get("beds"),
