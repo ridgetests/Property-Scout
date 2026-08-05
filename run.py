@@ -60,12 +60,16 @@ PROBATE_MIN_PRICE = 300_000              # skip cheap flats / small terraces
 PROBATE_TYPES = ("detached", "semi", "terraced")   # houses only (excludes "flat"); widen/narrow freely
 PROBATE_KEEP_UNKNOWN = True              # keep long-held homes Land Registry can't price (often the best)
 HOME_FLOOR_AREA_M2 = 144                 # 3 Boundstone Close internal floor area (m2), from floor plan
+HOME_FOOTPRINT_M2 = 72                   # home ground-floor footprint (m2) = 144 floor / 2 storeys. The
+                                         # home is a SEMI, so its OS footprint is merged with the neighbour
+                                         # and can't be read directly - this is the derived baseline.
 HOME_PLOT_M2 = 380                       # measured plot area (m2) from title plan SY519861
 HOME_PLOT_OUTLINE = [[-5.27, -19.32], [4.58, -19.32], [6.07, 19.32], [-5.38, 19.32]]  # plot shape, centred metres
 PLOTS_FILE = Path(__file__).resolve().parent / "plots_waverley.json.gz"  # HMLR INSPIRE parcels
 FOOTPRINTS_FILE = Path(__file__).resolve().parent / "footprints_bowl.json.gz"  # OS OpenMap Local buildings
 PPD_FILE = Path(__file__).resolve().parent / "price_paid_region.json.gz"  # HM Land Registry Price Paid (local)
 EPC_LOCAL_FILE = Path(__file__).resolve().parent / "epc_region.json.gz"  # bulk EPC certs for comps (optional)
+UPRN_FILE = Path(__file__).resolve().parent / "uprn_coords.json.gz"  # OS Open UPRN -> precise coords (optional; built by make_uprn.py)
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 EXCLUDE_DISTRICTS = {"GU11", "GU12", "GU14", "GU51", "GU52"}  # Aldershot/Farnborough/Fleet - out of area
@@ -86,7 +90,6 @@ def _is_carehome(text):
 
 def _is_excluded_locality(text):
     return bool(_LOCALITY_RE.search(text or ""))
-COMP_EPC_CAP = 40                        # max comparable-property EPC lookups per run (cached forever)
 LISTING_EPC_CAP = 30                     # max subject EPC lookups for public listings per run (cached forever)
 NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (politeness cap)
 GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
@@ -131,7 +134,10 @@ MAX_PLAUSIBLE_PLOT_M2 = 4000   # ~1 acre; bigger = almost certainly a mis-matche
 MAX_PLAUSIBLE_MAIN_M2 = 600     # a single dwelling footprint above this = merged/estate polygon
 MAX_PLAUSIBLE_COVERAGE = 60     # % of plot built on; above this the parcel match is suspect
 HOMEDATA_BASE = os.environ.get("HOMEDATA_BASE", "https://api.homedata.co.uk")
-ENRICH = True       # floor area / EPC / comps - only fires when a uprn exists
+ENRICH = False      # Homedata per-property enrichment (epc-checker + comparables). MUST
+                    # stay False: Homedata is reserved for live listings only, and its
+                    # ~100/month quota is burned fast by enrichment. Free EPC + local
+                    # Price Paid do the enrichment now. Do not flip without a quota plan.
 ENRICH_TOP_N = 25
 
 ROOT = Path(__file__).parent
@@ -207,7 +213,11 @@ def geocode(postcodes):
     """Postcode -> (lat, lng) via postcodes.io bulk (free, no key)."""
     import requests
     out, uniq = {}, sorted({pc for pc in postcodes if pc})
+    if _dead("postcodes"):
+        return out
     for i in range(0, len(uniq), 100):
+        if _dead("postcodes"):
+            break
         chunk = uniq[i:i + 100]
         for attempt in range(3):
             try:
@@ -221,6 +231,9 @@ def geocode(postcodes):
                 break
             except Exception as e:
                 print(f"   geocode chunk attempt {attempt+1} failed: {e}")
+                if _throttled(e):
+                    _kill("postcodes", "429/403")
+                    break                       # stop retrying/hammering this run
                 time.sleep(1.5 * (attempt + 1))
         time.sleep(0.3)
     print(f"   geocoded {len(out)}/{len(uniq)} postcodes")
@@ -752,10 +765,24 @@ def score_property(p):
     placeholder (1.0) until the constraint layer (Green Belt / AONB) is added."""
     home = HOME_PLOT_M2 or 380
     plot = p.get("plot_m2")
+    approx = "approx-location" in (p.get("flags") or [])   # plot not parcel-precise
     if plot:
         ratio = plot / home
-        potential = min(1.0, 0.25 + 0.22 * ratio)
+        # Diminishing returns so no single axis runs away with the score: a plot
+        # meaningfully bigger than yours is great, but a 5x plot is not 5x better than a
+        # 2x plot for a forever home. Saturating curve (~0.47 at 1x, ~0.59 at 2x, tops
+        # ~0.90 from plot alone) - reaching the top still needs the dev-room bonus and
+        # the other axes. Replaces the old linear ramp that maxed Potential by ~3.4x.
+        eff, clipped = ratio, False
+        if approx and ratio > 4.0:
+            # An UNVERIFIED "huge" plot is the classic centroid-in-the-enclosing-parcel
+            # error (a neighbour's/estate's parcel). Cap the reward at ~4x so a number we
+            # cannot trust can't dominate; a UPRN-precise plot keeps its full ratio.
+            eff, clipped = 4.0, True
+        potential = 0.28 + 0.62 * eff / (eff + 2.0)
         pot_note = f"{plot:,} m\u00b2 plot ({ratio:.1f}\u00d7 your home)"
+        if clipped:
+            pot_note += " \u00b7 approx, capped"
     else:
         ratio, potential, pot_note = 0, 0.35, "plot unverified"
     fb = p.get("footprints") or {}
@@ -809,18 +836,16 @@ def score_property(p):
         ebits.append(f"outbuilding ~{lsec} m\u00b2")
     edge_note = ", ".join(ebits) if ebits else "open market"
     feas = p.get("feasibility", 1.0)
-    core = 0.45 * potential + 0.30 * value + 0.25 * fit
-    p["score"] = int(round(min(100, (core * 85 + edge * 100) * feas)))
-    if ratio >= 2.0:
-        typ = "Plot play"
-    elif price and value >= 0.7:
-        typ = "Anomaly"
-    elif edge >= 0.10:
-        typ = "Motivated seller"
-    elif fit >= 0.7 and ratio >= 1.0:
-        typ = "Forever-fit"
-    else:
-        typ = "Candidate"
+    # Each axis's DISPLAYED contribution equals its ACTUAL contribution to the score,
+    # so the breakdown reconciles with the headline (the old bars summed to 140 and
+    # never matched). The composite is numerically unchanged - only reporting is honest:
+    # 0.45*85*pot + 0.30*85*val + 0.25*85*fit == old core*85.
+    pot_pts = 0.45 * 85 * potential   # up to ~38
+    val_pts = 0.30 * 85 * value       # up to ~26
+    fit_pts = 0.25 * 85 * fit         # up to ~21
+    edge_pts = edge * 100             # up to 20 (edge already capped at 0.20)
+    raw = pot_pts + val_pts + fit_pts + edge_pts
+    p["score"] = int(round(min(100, raw * feas)))
     perm = p.get("permission")
     setting = p.get("setting")
     rural = setting is not None and setting <= 12
@@ -845,17 +870,19 @@ def score_property(p):
     p["typology"] = typ
     p["tier"] = "High" if p["score"] >= 62 else ("Medium" if p["score"] >= 48 else "Low")
     sig = {
-        "Potential": {"score": round(potential * 45), "max": 45, "note": pot_note},
-        "Value": {"score": round(value * 30), "max": 30, "note": val_note},
-        "Fit": {"score": round(fit * 25), "max": 25, "note": fit_note},
-        "Edge": {"score": round(edge * 100), "max": 20, "note": edge_note},
+        "Potential": {"score": round(pot_pts), "max": 38, "note": pot_note},
+        "Value": {"score": round(val_pts), "max": 26, "note": val_note},
+        "Fit": {"score": round(fit_pts), "max": 21, "note": fit_note},
+        "Edge": {"score": round(edge_pts), "max": 20, "note": edge_note},
     }
     if perm is not None:
+        # feasibility is a MULTIPLIER on the whole score, not an additive axis - show it
+        # as such (a restricted site scales the total down, it does not add points).
         ph = p.get("planning") or {}
-        note = f"{p.get('permission_label','')}"
+        note = f"×{feas:.2f} · {p.get('permission_label','')}".strip(" ·")
         if ph.get("decided"):
             note += f" · {ph['approved']} approved / {ph['refused']} refused nearby"
-        sig["Permission"] = {"score": round(perm * 20), "max": 20, "note": note.strip(" ·")}
+        sig["Feasibility"] = {"score": round(feas * 100), "max": 100, "note": note}
     p["signals"] = sig
     return p
 
@@ -910,7 +937,11 @@ def apply_gates(props, conn=None):
         if fb:
             p["footprints"] = fb
             if fb.get("main_m2") and not p.get("floor_area_m2"):
-                p["floor_area_est_m2"] = round(fb["main_m2"] * 2 * 0.9)
+                # footprint -> internal floor area: x storeys x ~0.9 (walls/circulation).
+                # Bungalows/single-storey are one floor, not two - halving the error there.
+                _t = (p.get("property_type") or "").lower()
+                _storeys = 1 if any(k in _t for k in ("bungalow", "single storey", "single-storey")) else 2
+                p["floor_area_est_m2"] = round(fb["main_m2"] * _storeys * 0.9)
         con = fetch_constraints(lat, lng, conn)
         if con:
             p["constraints"] = con["list"]
@@ -923,7 +954,10 @@ def apply_gates(props, conn=None):
             p["permission"] = perm["estimate"]
             p["permission_label"] = perm["label"]
             p["feasibility"] = max(0.4, perm["estimate"])
-        if p.get("is_probate") and (p.get("plot_m2") or p.get("footprints")):
+        # A plot/footprint matched from a POSTCODE-CENTROID coordinate is only indicative
+        # (it can be the enclosing parcel). Flag it - UNLESS we snapped the property onto
+        # its precise UPRN coordinate, in which case the match is this dwelling's own.
+        if (p.get("plot_m2") or p.get("footprints")) and not p.get("precise_location"):
             fl = p.setdefault("flags", [])
             if "approx-location" not in fl:
                 fl.append("approx-location")   # postcode centroid - plot/footprint indicative
@@ -935,15 +969,45 @@ def apply_gates(props, conn=None):
     return out
 
 
+# --- Personal data must not reach a committed artifact. The site runs on free
+# GitHub Pages, so BOTH docs/properties.json (served publicly) and the
+# workflow-committed data/scout.db live in a public repo. The Gazette deceased-
+# estates notices are public statutory records, but aggregating names + executor
+# contacts + notice text into a crawlable file is a standing re-publication we
+# don't want. So strip person-level data at every serialization boundary and keep
+# only the notice URL - the user opens the (already-public) notice on demand. ---
+_PII_KEYS = ("estate_contact", "notice_sample", "uprn")
+
+
+def _public_safe(p):
+    """Return a copy of a property with personal data removed, for anything that
+    gets committed (public Pages JSON + the repo's scout.db). Runtime gates that
+    read owner_note / estate_contact still see the full in-memory dict; only the
+    serialized copy is sanitised."""
+    q = dict(p)
+    for k in _PII_KEYS:
+        q.pop(k, None)
+    if q.get("owner_note"):
+        q["owner_note"] = "Probate lead — see notice"   # drop the deceased's name
+    addr = q.get("address") or ""
+    if addr.startswith("Estate of "):                        # name-only address fallback
+        q["address"] = (f"Probate lead — {q.get('postcode', '')}").strip(" —")
+    src = q.get("source")
+    if isinstance(src, dict) and src.get("uprn"):
+        src = dict(src); src["uprn"] = ""; q["source"] = src
+    return q
+
+
 def _publish(props, conn=None):
     props = apply_gates(props, conn)
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(
         {"generated_at": datetime.now(timezone.utc).isoformat(),
          "count": len(props), "home_floor_m2": HOME_FLOOR_AREA_M2,
+         "home_footprint_m2": HOME_FOOTPRINT_M2,
          "home_plot_m2": HOME_PLOT_M2, "min_plot_m2": MIN_PLOT_M2,
          "home_plot_outline": HOME_PLOT_OUTLINE,
-         "properties": props}, indent=2))
+         "properties": [_public_safe(p) for p in props]}, indent=2))
 
 
 def upsert(conn, p):
@@ -962,7 +1026,8 @@ def upsert(conn, p):
     conn.execute("INSERT INTO properties VALUES (?,?,?,?,?) "
                  "ON CONFLICT(id) DO UPDATE SET last_seen=excluded.last_seen, "
                  "price=excluded.price, payload=excluded.payload",
-                 (p["id"], p["first_seen"], p["last_seen"], p["price"], json.dumps(p)))
+                 (p["id"], p["first_seen"], p["last_seen"], p["price"],
+                  json.dumps(_public_safe(p))))
     conn.commit()
 
 
@@ -1044,7 +1109,7 @@ def _auction_reasons(t, price):
 def fetch_clive_emson():
     """Clive Emson current auction: available lots within range of home.
     Independent of Homedata - works even when that quota is spent."""
-    if not AUCTION_ENABLED:
+    if not AUCTION_ENABLED or _dead("clive_emson"):
         return []
     import requests
     headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
@@ -1055,6 +1120,8 @@ def fetch_clive_emson():
         html = r.text
     except Exception as e:
         print(f"   auction fetch failed: {e}")
+        if _throttled(e):
+            _kill("clive_emson", "429/403")
         return []
 
     coords = [(m.start(), float(m.group(1)), float(m.group(2)))
@@ -1107,7 +1174,7 @@ def fetch_clive_emson():
 def fetch_auction_house(conn):
     """Auction House Sussex & Hampshire: available house/land/bungalow lots,
     geocoded by postcode (cached). Screens out flats/garages/commercial."""
-    if not AUCTION_ENABLED:
+    if not AUCTION_ENABLED or _dead("auction_house"):
         return []
     import requests
     headers = {"User-Agent": _UA, "Accept": "text/html,application/xhtml+xml",
@@ -1118,6 +1185,8 @@ def fetch_auction_house(conn):
         html = r.text
     except Exception as e:
         print(f"   auction-house fetch failed: {e}")
+        if _throttled(e):
+            _kill("auction_house", "429/403")
         return []
 
     pc_re = re.compile(r"\b([A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})\b")
@@ -1493,30 +1562,15 @@ def _load_epc_local():
     return _EPC_LOCAL
 
 
-_COMP_EPC_FETCHES = [0]
-
-
 def _comp_floor_area(r, conn=None):
-    """Floor area for a comparable sale. Order: bulk file (if present) ->
-    SQLite cache -> live register (hard-capped). Cached permanently, so the
-    cost decays to zero after the first few runs."""
+    """Floor area for a comparable sale, from the local bulk EPC file ONLY
+    (epc_region.json.gz, built by make_epc.py). NO live EPC calls for comparables:
+    the register is reserved for subject lookups, so a valuation over dozens of comps
+    can never burn the EPC quota. Absent bulk file -> None -> comps stay type-and-
+    geography matched (not size-matched), degrading gracefully. `conn` is accepted for
+    call-site compatibility and unused."""
     e = _load_epc_local().get((r["pc"] + "|" + r["n"]).upper())
-    if e:
-        return e.get("fa")
-    if conn is None:
-        return None
-    key = f"EPC|{r['pc']}|{r['n']}|".upper()
-    row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
-    if row:
-        try:
-            return (json.loads(row["data"]) or {}).get("floor_area_m2")
-        except Exception:
-            return None
-    if _COMP_EPC_FETCHES[0] >= COMP_EPC_CAP or _dead("epc"):
-        return None
-    _COMP_EPC_FETCHES[0] += 1
-    got = epc_lookup(conn, r["pc"], r["n"], r["n"] + " " + (r.get("s") or ""))
-    return (got or {}).get("floor_area_m2")
+    return e.get("fa") if e else None
 
 def find_comps(postcode, paon, want_type=None, addr_line="", k=6, years=12,
                subject_fa=None, conn=None):
@@ -1929,6 +1983,34 @@ def epc_lookup(conn, postcode, paon, addr_hint="", budget=None):
     return out
 
 
+def _canon_pc(pc):
+    """Canonical UK postcode (upper, single space before the 3-char inward code) so a
+    subject's noisy postcode matches the bulk EPC file's keys (built the same way)."""
+    s = re.sub(r"\s+", "", (pc or "").upper())
+    return s[:-3] + " " + s[-3:] if len(s) >= 5 else s
+
+
+def subject_epc(conn, postcode, paon, addr_hint="", budget=None):
+    """Floor area / built form / type / UPRN for a SUBJECT property. Prefers the local
+    bulk EPC file (free, offline, EXACT postcode+house-number match) and only calls the
+    live register on a miss - cutting register calls and speeding runs once the bulk file
+    is present, and (with uprn_coords) letting a subject be precisely located offline.
+    Same return shape as epc_lookup, so callers are unchanged. The exact key match means
+    it can never attach a neighbour's certificate."""
+    pc, hn = (postcode or "").strip(), (paon or "").strip()
+    if pc and hn:
+        e = _load_epc_local().get(f"{_canon_pc(pc)}|{hn}".upper())
+        if e and e.get("fa"):
+            return {"floor_area_m2": e.get("fa"),
+                    "built_form": e.get("form") or "",
+                    "property_type": e.get("type") or "",
+                    "age_band": "",
+                    "rating": e.get("rating") or "",
+                    "uprn": e.get("uprn") or "",
+                    "certificate": ""}
+    return epc_lookup(conn, postcode, paon, addr_hint, budget=budget)
+
+
 # RdSAP stores built form / property type as numeric codes in the raw certificate.
 # Standard SAP enumeration - used for LABELLING and (where confident) exclusion.
 _BUILT_FORM_CODES = {1: "Detached", 2: "Semi-Detached", 3: "End-Terrace",
@@ -2019,12 +2101,16 @@ def fetch_probate_leads(conn):
               "start-publish-date": since,
               "results-page-size": 100, "sort-by": "latest-date"}
     url = "https://www.thegazette.co.uk/wills-and-probate/notice/data.json"
+    if _dead("gazette"):
+        return []
     try:
         r = requests.get(url, params=params, headers={"User-Agent": _UA}, timeout=30)
         r.raise_for_status()
         data = r.json()
     except Exception as e:
         print(f"   probate fetch failed: {e}")
+        if _throttled(e):
+            _kill("gazette", "429/403")   # parks the notice-page fetches too (same host)
         return []
 
     entries = data.get("entry") or []
@@ -2058,16 +2144,26 @@ def fetch_probate_leads(conn):
             notice_url = f"https://www.thegazette.co.uk/notice/{pid}"
         dod = re.search(r"(?:who )?died on\s+(?:the\s+)?"
                         r"(\d{1,2}(?:st|nd|rd|th)?\s+\w+\s+\d{4})", content, re.I)
-        addr_m = re.search(r"(?:late of|residing at|formerly of|of)\s+(.+?),?\s*"
-                           r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}", content)
-        addr_line = (addr_m.group(1).strip(" ,") if addr_m else "")
+        # Prefer address-specific anchors; only fall back to a bare "of", which can match
+        # too early (e.g. "estate of NAME deceased ... of 43 ...") and swallow the name.
+        # Then strip leading noise so the HOUSE NUMBER, not "Deceased", anchors the line.
+        addr_line = ""
+        _PC = r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}"
+        for _pat in (r"(?:lately residing at|residing at|late of|formerly of)\s+(.+?),?\s*" + _PC,
+                     r"\bof\s+(.+?),?\s*" + _PC):
+            _m = re.search(_pat, content, re.I)
+            if _m:
+                addr_line = _m.group(1).strip(" ,")
+                break
+        addr_line = re.sub(r"^(?:the\s+)?(?:late|deceased|of|and)\b[\s,]*", "",
+                           addr_line, flags=re.I).strip(" ,")
         if _is_carehome(addr_line + " " + content):
             continue
         if _is_excluded_locality(addr_line + " " + content):   # Hale/Badshot Lea/etc - drop pre-fetch
             continue
         if _addr_is_flat(addr_line):
             continue
-        paon_m = re.match(r"([0-9]+[A-Za-z]?)\b", addr_line)
+        paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)   # first house number anywhere, not only leading
         contact = _probate_contact(content, pc_up)
         sample = content[:900]
         if not contact.get("name") and _notice_fetches[0] < NOTICE_DETAIL_CAP:
@@ -2102,8 +2198,6 @@ def fetch_probate_leads(conn):
     save_geocache(conn, fresh)
     coords = {**cache, **fresh}
 
-    pp_cache = {}
-    town_cache = {}
     today = datetime.now(timezone.utc).date().isoformat()
     out = []
     for x in raw:
@@ -2111,9 +2205,15 @@ def fetch_probate_leads(conn):
         if not ll:
             continue
         lat, lng = ll
-        epc = epc_lookup(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
-        if not epc:                                    # fall back to Homedata only if EPC misses
-            epc = homedata_epc(conn, x["postcode"], x.get("paon"))
+        epc = subject_epc(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
+        # (No Homedata EPC fallback: Homedata is reserved for LIVE LISTINGS only - its
+        #  ~100/month quota is protected. The free EPC register is the enrichment source.)
+        # precise UPRN coordinate (from the EPC certificate) beats the postcode centroid,
+        # so the plot/footprint match below is this dwelling's own parcel, not the estate's
+        _pll = uprn_coord(epc.get("uprn"))
+        precise = bool(_pll)
+        if _pll:
+            lat, lng = _pll
         fa = epc.get("floor_area_m2")
         if _form_is_excluded(epc.get("built_form"), epc.get("property_type")):
             print(f"   dropped {x.get('addr_line') or x['postcode']} "
@@ -2132,20 +2232,12 @@ def fetch_probate_leads(conn):
             ctx = price_context_local(x["postcode"], x.get("paon"), epc_type)
             local_comps = []
         basis = ctx.get("basis", "postcode")
-        if not ctx.get("est_mid"):
-            if x["postcode"] not in pp_cache:
-                pp_cache[x["postcode"]] = fetch_price_paid(x["postcode"])
-            ctx = price_context(pp_cache[x["postcode"]], x.get("paon"))
-            basis = "postcode"
-        # fallback: postcode has no Land Registry history -> coarse town-wide estimate
-        if not ctx.get("est_mid"):
-            if PROBATE_LOCATION not in town_cache:
-                town_cache[PROBATE_LOCATION] = fetch_price_paid_town(PROBATE_LOCATION)
-            tctx = price_context(town_cache[PROBATE_LOCATION], None)
-            if tctx.get("est_mid"):
-                ctx["est_low"], ctx["est_high"] = tctx["est_low"], tctx["est_high"]
-                ctx["est_mid"], ctx["n_comps"] = tctx["est_mid"], tctx["n_comps"]
-                basis = "town"
+        # The old live HM Land Registry Price Paid fallbacks (fetch_price_paid /
+        # fetch_price_paid_town) were removed here: that API 403-blocks cloud IPs, so it
+        # must NEVER be called from GitHub Actions (a reinforced IP block is fatal).
+        # price_context_local above already widens sector -> district from the LOCAL
+        # price_paid_region.json.gz (the supported bulk route); a postcode with no local
+        # history simply stays unpriced (kept as "Long-held" when PROBATE_KEEP_UNKNOWN).
         typ = ctx.get("subject_type")
         est = ctx.get("est_mid")
         # interest filter - only trust micro-local (postcode/house) data to EXCLUDE;
@@ -2179,6 +2271,7 @@ def fetch_probate_leads(conn):
             "postcode": x["postcode"], "price": ctx.get("est_mid") or 0, "beds": 0,
             "property_type": (epc.get("built_form") or epc.get("property_type")
                               or ctx.get("subject_type") or "property"), "lat": lat, "lng": lng,
+            "precise_location": precise,
             "dist_mi": round(_haversine_mi(HOME, (lat, lng)), 1),
             "score": 68, "reasons": reasons[:3], "flags": ["probate"],
             "is_probate": True, "low_comp": False, "comps": [],
@@ -2217,6 +2310,61 @@ def _combine(*lists):
     return sorted(out.values(), key=lambda x: -x.get("score", 0))
 
 
+# ===========================================================================
+# PRECISE LOCATION (OS Open UPRN, optional local file)
+# Postcode-centroid geocoding often lands in the wrong ENCLOSING parcel, which is
+# the single biggest plot/footprint accuracy bug. When we can resolve a property's
+# UPRN (from its EPC certificate or a portal feed) to a precise coordinate, we snap
+# the property onto it so parcel_for matches its OWN plot. Absent file -> no-op:
+# everything falls back to centroid geocoding exactly as before.
+# ===========================================================================
+_UPRN = None
+
+
+def _load_uprn():
+    """Optional OS Open UPRN file: {uprn: [lat, lng]} (built by make_uprn.py, uploaded
+    like the other local bulk files). Absent -> {} and the tool degrades gracefully."""
+    global _UPRN
+    if _UPRN is not None:
+        return _UPRN
+    try:
+        with gzip.open(UPRN_FILE, "rt") as f:
+            _UPRN = json.load(f).get("uprns", {})
+        print(f"- loaded {len(_UPRN):,} UPRN coordinates for precise location")
+    except Exception:
+        _UPRN = {}
+    return _UPRN
+
+
+def uprn_coord(uprn):
+    """Precise (lat, lng) for a UPRN, or None if unknown / no local file."""
+    if not uprn:
+        return None
+    v = _load_uprn().get(str(uprn))
+    if isinstance(v, (list, tuple)) and len(v) == 2:
+        return (v[0], v[1])
+    return None
+
+
+def _apply_precise_location(p, uprn):
+    """Snap a property onto its precise UPRN coordinate and mark it precise, so the
+    plot/footprint match is trusted rather than flagged approximate. Re-centres the
+    distance-from-home, aerial thumb and Street View link. Returns True if it snapped."""
+    ll = uprn_coord(uprn)
+    if not ll:
+        return False
+    lat, lng = ll
+    p["lat"], p["lng"] = lat, lng
+    p["precise_location"] = True
+    p["dist_mi"] = round(_haversine_mi(HOME, (lat, lng)), 1)
+    media = p.get("media")
+    if isinstance(media, dict):
+        media["thumb_url"] = _aerial_thumb(lat, lng)
+    if p.get("streetview_url"):
+        p["streetview_url"] = _streetview_url(lat, lng)
+    return True
+
+
 def _listing_want_type(portal_type, epc_built_form):
     """Comparable property type for the local Price Paid file. EPC built form is
     authoritative and wins when present; otherwise fall back to the portal label.
@@ -2252,11 +2400,14 @@ def enrich_listings(conn, props, budget):
         addr_line = (p.get("street") or (p.get("address") or "").split(",")[0]).strip()
         paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)
         paon = paon_m.group(1) if paon_m else ""
-        epc = epc_lookup(conn, pc, paon, addr_line, budget=budget) or {}
+        epc = subject_epc(conn, pc, paon, addr_line, budget=budget) or {}
+        # snap onto the precise UPRN coordinate if we have one (EPC cert or portal feed),
+        # so the plot/footprint match is this dwelling's own, not the enclosing parcel
+        _apply_precise_location(p, epc.get("uprn") or (p.get("source") or {}).get("uprn"))
         want_type = _listing_want_type(p.get("property_type"), epc.get("built_form"))
         fa = epc.get("floor_area_m2")
-        # local, free comps (same routine as probate); size-matched only if a subject
-        # floor area is known and comp EPCs are available (bounded by COMP_EPC_CAP).
+        # local, free comps (same routine as probate); size-matched only when a subject
+        # floor area is known AND the bulk EPC file supplies comp floor areas (no live calls).
         ctx, comps = find_comps(pc, paon, want_type, addr_line, subject_fa=fa, conn=conn)
         if not ctx.get("est_mid"):
             ctx = price_context_local(pc, paon, want_type)

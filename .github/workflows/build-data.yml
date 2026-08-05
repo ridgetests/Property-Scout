@@ -1,0 +1,53 @@
+name: Build data files (accuracy boost)
+
+# Press "Run workflow" on this to fetch the government data and build the two
+# optional accuracy files (uprn_coords.json.gz + epc_region.json.gz). Run it on
+# the main branch after your changes are merged. It is manual-only - it never
+# runs on its own.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build the map file (precise plot sizes)
+        continue-on-error: true          # if this trips, still build the other file
+        env:
+          OS_API_KEY: ${{ secrets.OS_API_KEY }}
+        run: python fetch_uprn.py
+
+      - name: Build the house-size file (size-matched value)
+        continue-on-error: true
+        env:
+          EPC_OPENDATA_EMAIL: ${{ secrets.EPC_OPENDATA_EMAIL }}
+          EPC_OPENDATA_KEY: ${{ secrets.EPC_OPENDATA_KEY }}
+          EPC_API_KEY: ${{ secrets.EPC_API_KEY }}   # reused if no dedicated Open Data key is set
+          EPC_LAS: ${{ secrets.EPC_LAS }}
+        run: |
+          python fetch_epc.py certificates.csv
+          python make_epc.py certificates.csv epc_region.json.gz
+
+      - name: Save the files into the project
+        run: |
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          BUILT=""
+          [ -f uprn_coords.json.gz ] && git add uprn_coords.json.gz && BUILT="$BUILT uprn_coords.json.gz"
+          [ -f epc_region.json.gz ] && git add epc_region.json.gz && BUILT="$BUILT epc_region.json.gz"
+          if [ -z "$BUILT" ]; then
+            echo "Nothing was built - check the two build steps above for the error."
+            exit 1
+          fi
+          git commit -m "Build local data files:$BUILT" || echo "no changes to commit"
+          git push || echo "push skipped"
+          echo "Saved:$BUILT"
