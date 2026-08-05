@@ -125,9 +125,12 @@ def main():
         for row in _rows(path):
             seen += 1
             if colmap is None:
-                # resolve actual column names once (case/space-insensitive)
-                low = {(k or "").strip().lower(): k for k in row.keys()}
-                colmap = {want: low.get(col.lower()) for want, col in _WANT.items()}
+                # resolve actual column names once, tolerating dashes vs underscores vs
+                # spaces (the live API uses "total-floor-area", the bulk files use
+                # "TOTAL_FLOOR_AREA") and any casing.
+                _nk = lambda k: re.sub(r"[\s\-]+", "_", (k or "").strip().lower())
+                low = {_nk(k): k for k in row.keys()}
+                colmap = {want: low.get(_nk(col)) for want, col in _WANT.items()}
                 if not (colmap["postcode"] and colmap["address1"] and colmap["fa"]):
                     print(f"error: missing POSTCODE/ADDRESS1/TOTAL_FLOOR_AREA columns; got {list(row.keys())[:12]}")
                     sys.exit(2)
