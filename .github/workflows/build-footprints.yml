@@ -1,0 +1,52 @@
+name: Build barn footprints (building outlines)
+
+# Manual button. Downloads the Surrey + Hampshire OpenStreetMap extracts, turns
+# the building outlines into building_polygons.json.gz (for the barn/Class-Q
+# scanner), and commits it. Manual-only; never runs on its own; NOT the nightly.
+#
+# If a download 403s or times out, the step FAILS LOUDLY here rather than
+# committing a broken file - that is the point of a probe-style build.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"   # geospatial wheels (pyrosm/geopandas) are safest here
+
+      - name: Install pyrosm
+        run: pip install pyrosm
+
+      - name: Download OSM extracts (Surrey + Hampshire, Geofabrik, free/ODbL)
+        run: |
+          set -e
+          base="https://download.geofabrik.de/europe/united-kingdom/england"
+          for county in surrey hampshire; do
+            echo "downloading $county..."
+            curl -fL --retry 4 --retry-delay 5 -o "$county-latest.osm.pbf" \
+              "$base/$county-latest.osm.pbf"
+            ls -lh "$county-latest.osm.pbf"
+          done
+
+      - name: Build building_polygons.json.gz
+        run: python make_footprints.py surrey-latest.osm.pbf hampshire-latest.osm.pbf
+
+      - name: Save it into the project
+        run: |
+          if [ ! -f building_polygons.json.gz ]; then
+            echo "No file was built - check the step above."; exit 1
+          fi
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add building_polygons.json.gz
+          git commit -m "Build barn footprints (building outlines from OSM)" || echo "no changes"
+          git push || echo "push skipped"
+          echo "Saved building_polygons.json.gz"
