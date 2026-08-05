@@ -38,12 +38,65 @@ TARGET_TYPES = ("detached", "bungalow", "cottage", "farm",
 # south of Farnham. Properties outside this polygon are dropped. Vertices are
 # (lat, lng), tracing south-of-Farnham -> Tilford -> Churt -> Rowledge.
 HOME = (51.198, -0.832)
-AREA_POLYGON = [
+# The tight, hand-drawn core patch. AREA_POLYGON below is this grown outward by
+# AREA_MARGIN_KM, so more nearby agent stock (Godalming/Haslemere/Alton edges)
+# qualifies while the shape stays the same. Set AREA_MARGIN_KM = 0 to revert to the
+# exact bowl. The Aldershot/Fleet district + locality excludes still trim the corners.
+AREA_POLYGON_BASE = [
     (51.268, -0.826), (51.248, -0.792), (51.236, -0.752), (51.232, -0.700), (51.222, -0.664),
     (51.196, -0.646), (51.186, -0.632), (51.160, -0.660), (51.143, -0.716), (51.148, -0.760),
     (51.138, -0.802), (51.132, -0.812), (51.160, -0.858), (51.192, -0.845), (51.212, -0.836),
     (51.224, -0.816), (51.240, -0.875), (51.255, -0.884),
 ]
+AREA_MARGIN_KM = 2.5   # how far to grow the core patch outward, in km (0 = exact bowl)
+
+
+def _convex_hull(points):
+    """Monotone-chain convex hull (lat, lng). Removes the concave dimples in the
+    hand-drawn patch so the widened catchment is guaranteed to CONTAIN the original -
+    a buffer must only ever add area, never carve a sliver out of it."""
+    pts = sorted(set(points))
+    if len(pts) <= 2:
+        return list(pts)
+    def cross(o, a, b):
+        return (a[0]-o[0])*(b[1]-o[1]) - (a[1]-o[1])*(b[0]-o[0])
+    lower = []
+    for p in pts:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    upper = []
+    for p in reversed(pts):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+    return lower[:-1] + upper[:-1]
+
+
+def _expand_polygon(poly, km):
+    """Grow a CONVEX lat/lng polygon outward by ~km in every direction, keeping its
+    shape, by pushing each vertex that far further from the polygon's centre. On a
+    convex polygon this is always a proper superset. Zero new dependencies."""
+    if not poly or km <= 0:
+        return list(poly)
+    clat = sum(p[0] for p in poly) / len(poly)
+    clng = sum(p[1] for p in poly) / len(poly)
+    cosl = math.cos(math.radians(clat))
+    out = []
+    for lat, lng in poly:
+        y = (lat - clat) * 111.0                 # km north of centre
+        x = (lng - clng) * 111.0 * cosl          # km east of centre
+        r = math.hypot(x, y)
+        if r == 0:
+            out.append((lat, lng)); continue
+        s = (r + km) / r                         # extend the radius by km
+        out.append((round(clat + (y * s) / 111.0, 4),
+                    round(clng + (x * s) / (111.0 * cosl), 4)))
+    return out
+
+
+# Convex hull first (guarantees the buffer never drops core area), then grow it out.
+AREA_POLYGON = _expand_polygon(_convex_hull(AREA_POLYGON_BASE), AREA_MARGIN_KM)
 
 AGENTS_ENABLED = True   # local estate-agent website listings (fetch_agents.py) - the
                         # portal-free "Rightmove replacement". Fully guarded: any failure
@@ -2507,6 +2560,19 @@ def _listing_want_type(portal_type, epc_built_form):
     return None
 
 
+def _epc_lookup_tier(p):
+    """How likely a live EPC lookup is to land the RIGHT certificate, so the limited
+    live-EPC budget is spent best-first:
+      0 = has a house number  -> exact postcode+number match possible (best)
+      1 = has a name/street    -> may match by name
+      2 = nothing usable       -> a bare/empty address; a live call can't identify the
+                                  dwelling, so we skip it (comps still run without EPC)."""
+    addr_line = (p.get("street") or (p.get("address") or "").split(",")[0]).strip()
+    if re.search(r"\b\d+[A-Za-z]?\b", addr_line):
+        return 0
+    return 1 if re.search(r"[A-Za-z]{3,}", addr_line) else 2
+
+
 def enrich_listings(conn, props, budget):
     """Give public for-sale listings the SAME comps + EPC evidence probate leads get,
     so both stocks compete under one scoring lens (compare-to-home floor area, and
@@ -2514,16 +2580,25 @@ def enrich_listings(conn, props, budget):
     Paid file (free, never blocked); the subject EPC is a live call, budget-capped and
     circuit-broken. Best-effort and safe: a numberless listing that can't be matched to
     a certificate simply gets comps without a floor area - never a neighbour's cert.
-    Writes the same keys the frontend already renders for probate leads."""
-    enriched = valued = 0
-    for p in props:
+    Writes the same keys the frontend already renders for probate leads.
+
+    Budget discipline: NUMBERED listings are served first (they can make an exact
+    match), and a listing with nothing to match on skips the live call entirely - so
+    the limited EPC budget is never burned on lookups that can't land."""
+    enriched = valued = skipped = 0
+    for p in sorted(props, key=_epc_lookup_tier):   # numbered first, nameless last
         pc = (p.get("postcode") or "").strip()
         if not pc:
             continue
         addr_line = (p.get("street") or (p.get("address") or "").split(",")[0]).strip()
         paon_m = re.search(r"\b(\d+[A-Za-z]?)\b", addr_line)
         paon = paon_m.group(1) if paon_m else ""
-        epc = subject_epc(conn, pc, paon, addr_line, budget=budget) or {}
+        if _epc_lookup_tier(p) == 2:
+            # no house number and no name to match on - a live EPC search can't identify
+            # this dwelling, so don't spend a budget slot on it. Comps still run below.
+            epc, skipped = {}, skipped + 1
+        else:
+            epc = subject_epc(conn, pc, paon, addr_line, budget=budget) or {}
         # snap onto the precise UPRN coordinate if we have one (EPC cert or portal feed),
         # so the plot/footprint match is this dwelling's own, not the enclosing parcel
         _apply_precise_location(p, epc.get("uprn") or (p.get("source") or {}).get("uprn"))
@@ -2555,7 +2630,8 @@ def enrich_listings(conn, props, budget):
             p["local_comps"] = (comps or [])[:6]
             valued += 1
     print(f"- listings enriched: {valued} with a comp estimate, {enriched} with EPC "
-          f"(EPC budget left {budget[0]}/{LISTING_EPC_CAP})")
+          f"(EPC budget left {budget[0]}/{LISTING_EPC_CAP}; "
+          f"{skipped} numberless skipped to save the budget)")
     return props
 
 
