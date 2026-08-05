@@ -60,6 +60,9 @@ PROBATE_MIN_PRICE = 300_000              # skip cheap flats / small terraces
 PROBATE_TYPES = ("detached", "semi", "terraced")   # houses only (excludes "flat"); widen/narrow freely
 PROBATE_KEEP_UNKNOWN = True              # keep long-held homes Land Registry can't price (often the best)
 HOME_FLOOR_AREA_M2 = 144                 # 3 Boundstone Close internal floor area (m2), from floor plan
+HOME_FOOTPRINT_M2 = 72                   # home ground-floor footprint (m2) = 144 floor / 2 storeys. The
+                                         # home is a SEMI, so its OS footprint is merged with the neighbour
+                                         # and can't be read directly - this is the derived baseline.
 HOME_PLOT_M2 = 380                       # measured plot area (m2) from title plan SY519861
 HOME_PLOT_OUTLINE = [[-5.27, -19.32], [4.58, -19.32], [6.07, 19.32], [-5.38, 19.32]]  # plot shape, centred metres
 PLOTS_FILE = Path(__file__).resolve().parent / "plots_waverley.json.gz"  # HMLR INSPIRE parcels
@@ -934,7 +937,11 @@ def apply_gates(props, conn=None):
         if fb:
             p["footprints"] = fb
             if fb.get("main_m2") and not p.get("floor_area_m2"):
-                p["floor_area_est_m2"] = round(fb["main_m2"] * 2 * 0.9)
+                # footprint -> internal floor area: x storeys x ~0.9 (walls/circulation).
+                # Bungalows/single-storey are one floor, not two - halving the error there.
+                _t = (p.get("property_type") or "").lower()
+                _storeys = 1 if any(k in _t for k in ("bungalow", "single storey", "single-storey")) else 2
+                p["floor_area_est_m2"] = round(fb["main_m2"] * _storeys * 0.9)
         con = fetch_constraints(lat, lng, conn)
         if con:
             p["constraints"] = con["list"]
@@ -997,6 +1004,7 @@ def _publish(props, conn=None):
     OUT_PATH.write_text(json.dumps(
         {"generated_at": datetime.now(timezone.utc).isoformat(),
          "count": len(props), "home_floor_m2": HOME_FLOOR_AREA_M2,
+         "home_footprint_m2": HOME_FOOTPRINT_M2,
          "home_plot_m2": HOME_PLOT_M2, "min_plot_m2": MIN_PLOT_M2,
          "home_plot_outline": HOME_PLOT_OUTLINE,
          "properties": [_public_safe(p) for p in props]}, indent=2))

@@ -111,6 +111,8 @@
   .toast.show{opacity:1}
   .why{font-size:11.5px;color:var(--a);margin-top:3px;font-weight:500;line-height:1.3}
 .why{font-size:12.5px;color:var(--ink);font-weight:600;margin-top:4px;line-height:1.35}
+  .vs{font-size:12px;font-weight:700;color:var(--ink);margin-top:4px;line-height:1.3}
+  .vs .vsu{color:var(--hint);font-weight:400}
   .sortsel{margin-left:auto;font-size:12px;padding:5px 8px;border:.5px solid var(--line2);border-radius:8px;background:var(--bg,#fff);color:var(--ink)}
   .hid{font-size:11px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px}
   .dismisslink{width:100%;margin-top:8px;padding:9px;border:none;background:none;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline}
@@ -220,7 +222,7 @@ const SIGNAL_LABELS = {
 };
 const SRC_LABEL = {auction:"AUCTION","off-market":"OFF-MKT"};
 
-let DATA=[], filter='all', selected=null, map, markers=[], HOME_FLOOR=null, HOME_PLOT=null, HOME_PLOT_M2=null;
+let DATA=[], filter='all', selected=null, map, markers=[], HOME_FLOOR=null, HOME_PLOT=null, HOME_PLOT_M2=null, HOME_FOOTPRINT=null;
 let shortlist = JSON.parse(localStorage.getItem('ps_shortlist')||'[]');
 let dismissed = new Set(JSON.parse(localStorage.getItem('ps_dismissed')||'[]'));
 let notes = JSON.parse(localStorage.getItem('ps_notes')||'{}');
@@ -242,12 +244,22 @@ function openById(id){ if(String(id).indexOf('man_')===0) openManual(id); else o
 const sc = s => s>=62?'var(--g)':s>=48?'var(--a)':'var(--gr)';
 function hd(p){const t=(p.property_type||'property').replace(/_/g,' ');return p.beds?`${p.beds} bed ${t}`:(t.charAt(0).toUpperCase()+t.slice(1));}
 const k = n => '£'+Math.round(n/1000)+'k';
+const pct = d => (d>=0?'+':'')+d+'%';
+// Buyer's-eye compare to the user's OWN home: floor area (EPC if we have it, else the
+// footprint-derived estimate) and plot, as % deltas. est=true when floor is estimated.
+function homeCompare(p){
+  const fa = p.floor_area_m2 || p.floor_area_est_m2 || null;
+  const est = !p.floor_area_m2 && !!p.floor_area_est_m2;
+  const floor = (fa && HOME_FLOOR) ? Math.round((fa/HOME_FLOOR-1)*100) : null;
+  const plot  = (p.plot_m2 && HOME_PLOT_M2) ? Math.round((p.plot_m2/HOME_PLOT_M2-1)*100) : null;
+  return {fa, est, floor, plot};
+}
 
 async function load(){
   try{
     const r = await fetch('https://ridgetests.github.io/Property-Scout/properties.json?t='+Date.now(),{cache:'no-store'});
     const j = await r.json();
-    DATA = j.properties||[]; HOME_FLOOR = j.home_floor_m2||null; HOME_PLOT = j.home_plot_outline||null; HOME_PLOT_M2 = j.home_plot_m2||null;
+    DATA = j.properties||[]; HOME_FLOOR = j.home_floor_m2||null; HOME_PLOT = j.home_plot_outline||null; HOME_PLOT_M2 = j.home_plot_m2||null; HOME_FOOTPRINT = j.home_footprint_m2||null;
     document.getElementById('gen').textContent =
       'Updated '+new Date(j.generated_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'});
   }catch(e){ DATA=[]; }
@@ -310,12 +322,18 @@ function card(p){
     + (shortlist.find(s=>s.id==p.id)?'<span class="tag" style="background:#fef9c3;color:#854d0e">★</span>':'');
   const dom = (p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0;
   const days = dom>0 ? dom+' days listed' : 'just listed';
+  const hc = homeCompare(p);
+  const vsBits = [];
+  if(hc.floor!=null) vsBits.push(`${pct(hc.floor)} floor${hc.est?'*':''}`);
+  if(hc.plot!=null) vsBits.push(`${pct(hc.plot)} plot`);
+  const vsHtml = vsBits.length ? `<div class="vs">${vsBits.join(' · ')} <span class="vsu">vs yours${hc.est?' · *est':''}</span></div>` : '';
   return `<div class="card ${selected===p.id?'sel':''}" onclick="openDrawer('${p.id}')">
     <div class="ph">${badge}${thumb}</div>
     <div class="body">
       <div class="ctop"><div class="addr">${hd(p)}<small>${p.address}</small></div>
         <div class="scol">${p.typology?`<div class="typ tier-${(p.tier||'').toLowerCase()}">${p.typology}</div>`:''}<div class="sc" style="color:${sc(p.score)}">${p.score}</div></div></div>
       <div class="sub">${k(p.price)} · ${days}${p.dist_mi!=null?' · '+p.dist_mi+' mi':''}</div>
+      ${vsHtml}
       ${(p.reasons&&p.reasons.length)?`<div class="why">${p.reasons.join(' · ')}</div>`:''}
       ${eq.equity_gain!=null?`<div class="eq">▲ ~${k(eq.equity_gain)} est. equity gain</div>`:''}
       <div class="tags">${tags}</div>
@@ -340,13 +358,15 @@ function keyFacts(p){
   }
   else if(p.price) val=`\u00a3${p.price.toLocaleString()}`;
   if(val) pv.push(`<div class="kfrow"><span>Est. value</span><b>${val}</b></div>`);
-  // --- Land & Buildings: interior ---
+  // --- Land & Buildings: interior (floor area vs your home, EPC or footprint estimate) ---
+  const hcL = homeCompare(p);
   let interior='Awaiting EPC';
-  if(!p.floor_area_m2 && p.floor_area_est_m2){ interior=`~${p.floor_area_est_m2} m\u00b2 (est. from footprint)`; }
-  if(p.floor_area_m2){
-    let cmp='';
-    if(HOME_FLOOR){const d=Math.round((p.floor_area_m2/HOME_FLOOR-1)*100); cmp=`<span class="cmp">${d>=0?'+':''}${d}% vs your home (${HOME_FLOOR} m\u00b2)</span>`;}
-    interior=`${p.floor_area_m2} m\u00b2 (~${Math.round(p.floor_area_m2*10.76)} sq ft)${cmp}`;
+  if(hcL.fa){
+    const cmpBits=[];
+    if(hcL.floor!=null) cmpBits.push(`${pct(hcL.floor)} vs your home (${HOME_FLOOR} m\u00b2)`);
+    if(hcL.est) cmpBits.push('est. from footprint');
+    const cmp = cmpBits.length?`<span class="cmp">${cmpBits.join(' \u00b7 ')}</span>`:'';
+    interior=`${hcL.est?'~':''}${hcL.fa} m\u00b2 (~${Math.round(hcL.fa*10.76)} sq ft)${cmp}`;
   }
   land.push(`<div class="kfrow"><span>Interior</span><b>${interior}</b></div>`);
   // --- Contact: estate contact / notice ---
@@ -370,6 +390,7 @@ function keyFacts(p){
   if(p.footprints){
     const f=p.footprints, extra=f.buildings-1;
     let bl=`Main ~${f.main_m2} m\u00b2`;
+    if(HOME_FOOTPRINT && f.main_m2) bl+=` (${pct(Math.round((f.main_m2/HOME_FOOTPRINT-1)*100))} vs your ~${HOME_FOOTPRINT} m\u00b2 footprint)`;
     if(extra>0) bl+=` + ${extra} outbuilding${extra>1?'s':''} (largest ~${f.largest_secondary_m2} m\u00b2)`;
     const cov=f.coverage_pct!=null?`${f.coverage_pct}% plot coverage`:'';
     const conv=f.outbuilding==='large'?' \u00b7 possible conversion candidate':'';
