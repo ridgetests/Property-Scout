@@ -22,9 +22,12 @@ BASE = "https://epc.opendatacommunities.org/api/v1/domestic/search"
 
 def main():
     email = os.environ.get("EPC_OPENDATA_EMAIL", "").strip()
-    key = os.environ.get("EPC_OPENDATA_KEY", "").strip()
+    # Reuse the existing EPC key (the nightly run's EPC_API_KEY) if no dedicated Open Data
+    # key is set - it often works on the bulk service too, saving a second sign-up.
+    key = os.environ.get("EPC_OPENDATA_KEY", "").strip() or os.environ.get("EPC_API_KEY", "").strip()
     if not email or not key:
-        print("Missing EPC_OPENDATA_EMAIL / EPC_OPENDATA_KEY secrets.")
+        print("Need EPC_OPENDATA_EMAIL (the email your EPC account is registered to) plus an "
+              "EPC key (EPC_OPENDATA_KEY, or your existing EPC_API_KEY).")
         sys.exit(1)
     las = [x.strip() for x in os.environ.get("EPC_LAS", "E07000216,E07000085").split(",") if x.strip()]
     out = sys.argv[1] if len(sys.argv) > 1 else "certificates.csv"

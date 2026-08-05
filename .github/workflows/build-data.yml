@@ -31,6 +31,7 @@ jobs:
         env:
           EPC_OPENDATA_EMAIL: ${{ secrets.EPC_OPENDATA_EMAIL }}
           EPC_OPENDATA_KEY: ${{ secrets.EPC_OPENDATA_KEY }}
+          EPC_API_KEY: ${{ secrets.EPC_API_KEY }}   # reused if no dedicated Open Data key is set
           EPC_LAS: ${{ secrets.EPC_LAS }}
         run: |
           python fetch_epc.py certificates.csv
