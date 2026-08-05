@@ -244,6 +244,10 @@ function openById(id){ if(String(id).indexOf('man_')===0) openManual(id); else o
 const sc = s => s>=62?'var(--g)':s>=48?'var(--a)':'var(--gr)';
 function hd(p){const t=(p.property_type||'property').replace(/_/g,' ');return p.beds?`${p.beds} bed ${t}`:(t.charAt(0).toUpperCase()+t.slice(1));}
 const k = n => '£'+Math.round(n/1000)+'k';
+// Price for display. A price-less listing (agent "price on application", or one we
+// couldn't read) must never render as "£0"/"£0k" — that reads as broken/free.
+const pmk = p => (p&&p.price) ? k(p.price) : 'POA';                       // short (cards)
+const pmf = p => (p&&p.price) ? '£'+p.price.toLocaleString() : 'Price on application';  // full
 const pct = d => (d>=0?'+':'')+d+'%';
 // Buyer's-eye compare to the user's OWN home: floor area (EPC if we have it, else the
 // footprint-derived estimate) and plot, as % deltas. est=true when floor is estimated.
@@ -332,7 +336,7 @@ function card(p){
     <div class="body">
       <div class="ctop"><div class="addr">${hd(p)}<small>${p.address}</small></div>
         <div class="scol">${p.typology?`<div class="typ tier-${(p.tier||'').toLowerCase()}">${p.typology}</div>`:''}<div class="sc" style="color:${sc(p.score)}">${p.score}</div></div></div>
-      <div class="sub">${k(p.price)} · ${days}${p.dist_mi!=null?' · '+p.dist_mi+' mi':''}</div>
+      <div class="sub">${pmk(p)} · ${days}${p.dist_mi!=null?' · '+p.dist_mi+' mi':''}</div>
       ${vsHtml}
       ${(p.reasons&&p.reasons.length)?`<div class="why">${p.reasons.join(' · ')}</div>`:''}
       ${eq.equity_gain!=null?`<div class="eq">▲ ~${k(eq.equity_gain)} est. equity gain</div>`:''}
@@ -465,7 +469,7 @@ function openDrawer(id){
   const thin = 'More detail arrives with the next engine update.';
   document.getElementById('dc').innerHTML = `
     <div class="dh"><h2>${p.address}</h2>
-      <div class="m">${'\u00a3'+p.price.toLocaleString()} \u00b7 ${hd(p)} \u00b7 ${((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0)>0?((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market)+' days on market':'just listed'}</div>
+      <div class="m">${pmf(p)} \u00b7 ${hd(p)} \u00b7 ${((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market||0)>0?((p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||p.days_on_market)+' days on market':'just listed'}</div>
       <div class="s">${(p.source&&p.source.portal)||''} \u00b7 ${p.postcode||''}</div></div>
     <div class="tabs">
       <button class="tab active" onclick="switchTab(this,0)">Overview</button>
@@ -542,7 +546,7 @@ function updateCount(){ const c=document.getElementById('ct'); c.textContent=sho
 
 function share(id){
   const p = DATA.find(x=>x.id==id), eq=(p.enrichment&&p.enrichment.equity)||{};
-  const txt = `🏠 ${p.address} · £${p.price.toLocaleString()}\n`
+  const txt = `🏠 ${p.address} · ${pmf(p)}\n`
     + `Score ${p.score}/100${eq.equity_gain!=null?' · ~'+k(eq.equity_gain)+' equity gain':''}\n`
     + `${hd(p)} · ${p.days_on_market} days\n`
     + ((p.source&&p.source.url)?p.source.url+'\n':'') + '\nVia PropertyScout';

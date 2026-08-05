@@ -2476,11 +2476,15 @@ def agent_to_property(rec):
              (t.split("/")[0].strip() if t and t.split("/")[0].strip().isalpha() else "house"))
     pid = "ag_" + hashlib.sha1((link or (addr + postcode)).lower().encode()).hexdigest()[:10]
     reductions = 1 if rec.get("price_reduced") else 0
+    # Distinguish a deliberately-unpriced listing (price on application) from a real
+    # figure. Without this a POA listing shows as "£0" and reads as broken.
+    price_poa = (not price) and (str(rec.get("price_qualifier") or "").upper() == "POA")
     return {
         "id": pid, "address": addr or postcode, "postcode": postcode,
         "street": addr.split(",")[0].strip() if addr else "",
         "lat": None, "lng": None,
         "property_type": ptype, "beds": int(rec.get("beds") or 0), "price": price,
+        "price_poa": price_poa,
         "status": "live", "streetview_url": "",
         "source": {"portal": "agent", "name": rec.get("source") or "Local agent",
                    "url": link, "agent": rec.get("source") or "", "uprn": ""},

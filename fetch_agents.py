@@ -69,6 +69,7 @@ from __future__ import annotations
 
 import argparse
 import gzip
+import html
 import io
 import json
 import os
@@ -682,18 +683,21 @@ def extract_meta(html: str) -> dict:
     return out
 
 
-def _visible_text(html: str) -> str:
+def _visible_text(page_html: str) -> str:
     if _HAVE_BS4:
         try:
-            soup = BeautifulSoup(html, "html.parser")
+            soup = BeautifulSoup(page_html, "html.parser")
             for s in soup(["script", "style", "noscript"]):
                 s.extract()
             return re.sub(r"\s+", " ", soup.get_text(" "))
         except Exception:
             pass
-    # stdlib fallback
-    txt = re.sub(r"(?is)<(script|style|noscript).*?</\1>", " ", html)
+    # stdlib fallback. Crucially, DECODE HTML entities -- otherwise a price
+    # written as "&pound;850,000" or "&#163;850,000" keeps its literal entity
+    # and the "£" price regex never matches, silently producing a £0 listing.
+    txt = re.sub(r"(?is)<(script|style|noscript).*?</\1>", " ", page_html)
     txt = re.sub(r"(?s)<[^>]+>", " ", txt)
+    txt = html.unescape(txt)
     return re.sub(r"\s+", " ", txt)
 
 
@@ -749,6 +753,19 @@ def parse_status(text: str) -> str | None:
     return None
 
 
+_POA_RE = re.compile(
+    r"price\s+on\s+application|price\s+on\s+request|poa\b|guide\s+price\s+t\.?b\.?c|"
+    r"price\s+guide\s+t\.?b\.?c|offers\s+invited",
+    re.IGNORECASE,
+)
+
+
+def looks_poa(text: str) -> bool:
+    """True when the page says the price is on application / not published, so a
+    missing price is intentional (POA), not a failed extraction."""
+    return bool(_POA_RE.search(text or ""))
+
+
 def parse_beds(text: str) -> int | None:
     m = re.search(r"(\d{1,2})\s*(?:bed(?:room)?s?)\b", text, re.IGNORECASE)
     if m:
@@ -802,6 +819,9 @@ def extract_listing(html: str, url: str) -> dict:
     status = parse_status(blob)
     if status:
         rec["status"] = status
+    # Mark deliberately-unpriced listings so downstream shows "POA" instead of £0.
+    if not rec.get("price") and looks_poa(blob):
+        rec["price_qualifier"] = "POA"
     return rec
 
 
@@ -969,6 +989,7 @@ def _to_output(rec: dict) -> dict:
         "address": rec.get("address"),
         "postcode": rec.get("postcode"),
         "price": rec.get("price"),
+        "price_qualifier": rec.get("price_qualifier"),  # "POA" when deliberately unpriced
         "type": rec.get("type"),
         "link": rec.get("link"),
         # extras (safe to ignore downstream)
