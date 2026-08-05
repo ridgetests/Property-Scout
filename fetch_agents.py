@@ -647,7 +647,11 @@ def extract_jsonld(html: str) -> dict:
             if is_prop and "type" not in out:
                 t = node.get("@type")
                 tstr = t if isinstance(t, str) else (t[0] if isinstance(t, list) and t else None)
-                if tstr and str(tstr).lower() not in {"product", "offer", "place", "listing"}:
+                # skip container/page @types - they are not dwelling types and only
+                # leak as junk labels ("webpage", "realestatelisting", "product").
+                if tstr and str(tstr).lower() not in {
+                        "product", "offer", "place", "listing", "webpage", "website",
+                        "realestatelisting", "organization", "breadcrumblist", "itemlist"}:
                     out["type"] = str(tstr)
             # description (feeds downstream planning-signal detection)
             if "description" not in out and node.get("description"):
@@ -704,6 +708,48 @@ def _visible_text(page_html: str) -> str:
     txt = re.sub(r"(?s)<[^>]+>", " ", txt)
     txt = html.unescape(txt)
     return re.sub(r"\s+", " ", txt)
+
+
+# og:title is very often "Property address | Agent Name" (or with a – / — separator).
+# Keep only the address half so the agent's name doesn't pollute the address (and the
+# postcode/type detectors that read it).
+_AGENT_PIPE_RE = re.compile(r"\s*[|–—]\s.*$")
+_AGENT_DASH_RE = re.compile(
+    r"\s-\s.*\b(estate agents?|property|properties|lettings|sales|homes|& partners|"
+    r"residential)\b.*$", re.IGNORECASE)
+# an outward code (GU9, GU10, RG29) NOT followed by an inward code
+_OUTWARD_RE = re.compile(r"\b([A-Z]{1,2}\d[A-Z\d]?)\b(?!\s*\d[A-Z]{2})", re.IGNORECASE)
+
+
+def _strip_agent_suffix(s: str) -> str:
+    s = _AGENT_PIPE_RE.sub("", s or "")
+    s = _AGENT_DASH_RE.sub("", s)
+    return s.strip(" ,|-–—")
+
+
+def _resolve_postcode(address: str, existing: str, blob: str) -> str:
+    """Postcode for a listing, guarding against the agent's OWN office postcode that
+    frequently sits in the page footer/schema. Priority:
+      1. a FULL postcode written in the address itself (most trustworthy);
+      2. a full postcode found elsewhere (JSON-LD, then page text) - but ONLY if its
+         outward code matches the address's outward code (else it's likely the office);
+      3. the address's outward code alone (correct town, geocoded to its centroid).
+    Returns a full or outward-only postcode, or ''."""
+    addr = address or ""
+    m = _POSTCODE_RE.search(addr)
+    if m:
+        return f"{m.group(1).upper()} {m.group(2).upper()}"
+    ow = _OUTWARD_RE.search(addr)
+    addr_outward = ow.group(1).upper() if ow else None
+    cand = None
+    for src in (existing, blob):
+        mm = _POSTCODE_RE.search(src or "")
+        if mm:
+            cand = f"{mm.group(1).upper()} {mm.group(2).upper()}"
+            break
+    if cand and (addr_outward is None or cand.split()[0] == addr_outward):
+        return cand
+    return addr_outward or ""
 
 
 def parse_price_from_text(text: str) -> int | None:
@@ -783,40 +829,39 @@ def parse_beds(text: str) -> int | None:
     return None
 
 
-def extract_listing(html: str, url: str) -> dict:
+def extract_listing(page_html: str, url: str) -> dict:
     """Combine JSON-LD -> meta -> text heuristics into one record."""
     rec: dict = {"link": url}
-    ld = extract_jsonld(html)
+    ld = extract_jsonld(page_html)
     rec.update({k: v for k, v in ld.items() if v})
 
-    meta = extract_meta(html)
+    meta = extract_meta(page_html)
     for k in ("address", "price"):
         if not rec.get(k) and meta.get(k):
             rec[k] = meta[k]
 
-    text = _visible_text(html)
-    blob = (meta.get("_text_blob", "") + " " + text).strip()
+    text = _visible_text(page_html)
+    # decode entities in the combined blob too: og:title/description come through raw, so
+    # a price written "&pound;650,000" in the description would otherwise be missed.
+    blob = html.unescape((meta.get("_text_blob", "") + " " + text)).strip()
+
+    # Clean the address first: drop the "| Agent Name" tail and decode entities, so the
+    # address (and the postcode/type read from it) isn't polluted by the agent's branding.
+    if rec.get("address"):
+        rec["address"] = _strip_agent_suffix(html.unescape(rec["address"]))
 
     if not rec.get("price"):
         p = parse_price_from_text(blob)
         if p:
             rec["price"] = p
-    if not rec.get("postcode"):
-        pc = parse_postcode_from_text(rec.get("address", "") + " " + blob)
-        if pc:
-            rec["postcode"] = pc
+    # Postcode: address-first, and never silently adopt the agent's office postcode.
+    rec["postcode"] = _resolve_postcode(rec.get("address", ""), rec.get("postcode", ""), blob)
     if not rec.get("type"):
-        t = guess_type(rec.get("address", "") + " " + blob)
+        # match the type on the address + the property description only, NOT the whole
+        # page: nav/footer words like "New Developments" were mis-typing normal homes.
+        t = guess_type(rec.get("address", "") + " " + (meta.get("description") or ""))
         if t:
             rec["type"] = t
-
-    # Tidy address & derive postcode out of it if present
-    if rec.get("address"):
-        rec["address"] = rec["address"].strip(" |-–—")
-        if not rec.get("postcode"):
-            pc = parse_postcode_from_text(rec["address"])
-            if pc:
-                rec["postcode"] = pc
 
     beds = parse_beds(blob)
     if beds is not None:
@@ -997,9 +1042,15 @@ NORMALISED_KEYS = ("address", "postcode", "price", "type", "link")
 
 
 def _to_output(rec: dict) -> dict:
+    # Clean at EMIT time, not just at extraction: listings fetched before this logic
+    # existed are served from state unchanged, so re-clean here every run. Stripping the
+    # "| Agent Name" tail reveals the address's own outward code, which lets us reject a
+    # previously-stored agent-office postcode (e.g. GU7 1HR) without re-fetching the page.
+    addr = _strip_agent_suffix(html.unescape(rec.get("address") or ""))
+    pc = _resolve_postcode(addr, rec.get("postcode") or "", "")
     out = {
-        "address": rec.get("address"),
-        "postcode": rec.get("postcode"),
+        "address": addr or None,
+        "postcode": pc or None,
         "price": rec.get("price"),
         "price_qualifier": rec.get("price_qualifier"),  # "POA" when deliberately unpriced
         "type": rec.get("type"),
