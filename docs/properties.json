@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T06:33:15.260264+00:00",
+  "generated_at": "2026-08-05T06:32:31.595960+00:00",
   "count": 24,
   "home_floor_m2": 144,
   "home_plot_m2": 380,
@@ -43,7 +43,7 @@
       "lat": 51.211508,
       "lng": -0.784031,
       "dist_mi": 2.3,
-      "score": 74,
+      "score": 58,
       "reasons": [
         "Likely to market soon (by ~Jan 2027)",
         "~\u00a3410k\u2013\u00a3998k Farnham-area est"
@@ -127,8 +127,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65250"
       },
-      "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
       "days_on_market": 0,
       "plot_m2": 1007,
       "footprints": {
@@ -139,19 +139,12 @@
       },
       "floor_area_est_m2": 259,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 86,
-        "refused": 9,
-        "decided": 95,
-        "rate": 0.9052631578947369
-      },
-      "permission": 0.91,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.91,
+      "feasibility": 0.75,
       "setting": 254,
       "typology": "Development play",
-      "tier": "High",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 37,
@@ -159,7 +152,7 @@
           "note": "1,007 m\u00b2 plot (2.6\u00d7 your home)"
         },
         "Value": {
-          "score": 26,
+          "score": 22,
           "max": 30,
           "note": "~\u00a3465k"
         },
@@ -174,9 +167,9 @@
           "note": "probate"
         },
         "Permission": {
-          "score": 18,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 86 approved / 9 refused nearby"
+          "note": "development-friendly"
         }
       }
     },
@@ -200,7 +193,7 @@
       "lat": 51.234243,
       "lng": -0.783317,
       "dist_mi": 3.3,
-      "score": 43,
+      "score": 37,
       "reasons": [
         "Likely to market soon (by ~Jan 2027)",
         "Home \u00b7 68 m\u00b2",
@@ -285,21 +278,14 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 79,
-        "refused": 13,
-        "decided": 92,
-        "rate": 0.8586956521739131
-      },
-      "permission": 0.86,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.86,
+      "feasibility": 0.75,
       "setting": 622,
       "typology": "Motivated seller",
       "tier": "Low",
@@ -310,7 +296,7 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 13,
+          "score": 12,
           "max": 30,
           "note": "~\u00a3660k"
         },
@@ -325,9 +311,9 @@
           "note": "probate"
         },
         "Permission": {
-          "score": 17,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 79 approved / 13 refused nearby"
+          "note": "development-friendly"
         }
       }
     },
@@ -344,7 +330,7 @@
       "lat": 51.192623,
       "lng": -0.804019,
       "dist_mi": 1.3,
-      "score": 67,
+      "score": 56,
       "reasons": [
         "Likely to market soon (by ~Nov 2026)",
         "~\u00a3571k\u2013\u00a3720k Farnham-area est"
@@ -428,8 +414,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -440,19 +426,12 @@
       },
       "floor_area_est_m2": 243,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 82,
-        "refused": 11,
-        "decided": 93,
-        "rate": 0.8817204301075269
-      },
-      "permission": 0.88,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.88,
+      "feasibility": 0.75,
       "setting": 301,
       "typology": "Development play",
-      "tier": "High",
+      "tier": "Medium",
       "signals": {
         "Potential": {
           "score": 45,
@@ -460,7 +439,7 @@
           "note": "1,148 m\u00b2 plot (3.0\u00d7 your home) \u00b7 12% built (room to develop)"
         },
         "Value": {
-          "score": 11,
+          "score": 9,
           "max": 30,
           "note": "~\u00a3712k"
         },
@@ -475,9 +454,9 @@
           "note": "probate"
         },
         "Permission": {
-          "score": 18,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 82 approved / 11 refused nearby"
+          "note": "development-friendly"
         }
       }
     },
@@ -494,7 +473,7 @@
       "lat": 51.238578,
       "lng": -0.773103,
       "dist_mi": 3.8,
-      "score": 54,
+      "score": 41,
       "reasons": [
         "Likely to market soon (by ~Oct 2026)",
         "Home \u00b7 86 m\u00b2",
@@ -579,24 +558,17 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65254"
       },
-      "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
       "days_on_market": 0,
       "plot_m2": 444,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 90,
-        "refused": 3,
-        "decided": 93,
-        "rate": 0.967741935483871
-      },
-      "permission": 0.97,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.97,
+      "feasibility": 0.75,
       "setting": 330,
       "typology": "Motivated seller",
-      "tier": "Medium",
+      "tier": "Low",
       "signals": {
         "Potential": {
           "score": 23,
@@ -604,7 +576,7 @@
           "note": "444 m\u00b2 plot (1.2\u00d7 your home)"
         },
         "Value": {
-          "score": 13,
+          "score": 12,
           "max": 30,
           "note": "~\u00a3660k"
         },
@@ -619,9 +591,9 @@
           "note": "probate"
         },
         "Permission": {
-          "score": 19,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 90 approved / 3 refused nearby"
+          "note": "development-friendly"
         }
       }
     },
@@ -682,12 +654,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 17,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 40 approved / 8 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 35,
+      "score": 32,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517890+00:00",
       "flags": [
@@ -703,16 +675,9 @@
       ],
       "plot_m2": null,
       "constraints": [],
-      "planning": {
-        "n": 54,
-        "approved": 40,
-        "refused": 8,
-        "decided": 48,
-        "rate": 0.8333333333333334
-      },
-      "permission": 0.83,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.83,
+      "feasibility": 0.75,
       "setting": 36,
       "typology": "Anomaly",
       "tier": "Low"
@@ -775,12 +740,12 @@
           "note": "reduced"
         },
         "Permission": {
-          "score": 18,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 74 approved / 8 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 43,
+      "score": 36,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490593+00:00",
       "flags": [
@@ -799,16 +764,9 @@
       ],
       "plot_m2": 463,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 74,
-        "refused": 8,
-        "decided": 82,
-        "rate": 0.9024390243902439
-      },
-      "permission": 0.9,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.9,
+      "feasibility": 0.75,
       "setting": 121,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -870,12 +828,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 18,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 84 approved / 7 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 42,
+      "score": 34,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517448+00:00",
       "flags": [],
@@ -896,16 +854,9 @@
       },
       "floor_area_est_m2": 434,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 84,
-        "refused": 7,
-        "decided": 91,
-        "rate": 0.9230769230769231
-      },
-      "permission": 0.92,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.92,
+      "feasibility": 0.75,
       "setting": 515,
       "typology": "Candidate",
       "tier": "Low"
@@ -968,12 +919,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 19,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 4 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 47,
+      "score": 37,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490376+00:00",
       "flags": [],
@@ -997,16 +948,9 @@
       },
       "floor_area_est_m2": 254,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 87,
-        "refused": 4,
-        "decided": 91,
-        "rate": 0.9560439560439561
-      },
-      "permission": 0.96,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.96,
+      "feasibility": 0.75,
       "setting": 464,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1068,12 +1012,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 17,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 83 approved / 12 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 39,
+      "score": 34,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517559+00:00",
       "flags": [],
@@ -1094,16 +1038,9 @@
       },
       "floor_area_est_m2": 216,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 83,
-        "refused": 12,
-        "decided": 95,
-        "rate": 0.8736842105263158
-      },
-      "permission": 0.87,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.87,
+      "feasibility": 0.75,
       "setting": 531,
       "typology": "Candidate",
       "tier": "Low"
@@ -1166,12 +1103,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 19,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 87 approved / 7 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 44,
+      "score": 36,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490441+00:00",
       "flags": [],
@@ -1195,16 +1132,9 @@
       },
       "floor_area_est_m2": 218,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 87,
-        "refused": 7,
-        "decided": 94,
-        "rate": 0.925531914893617
-      },
-      "permission": 0.93,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.93,
+      "feasibility": 0.75,
       "setting": 467,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1267,12 +1197,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 17,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 83 approved / 15 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 41,
+      "score": 36,
       "low_comp": false,
       "scored_at": "2026-06-21T22:46:22.490453+00:00",
       "flags": [],
@@ -1289,16 +1219,9 @@
       ],
       "plot_m2": 461,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 83,
-        "refused": 15,
-        "decided": 98,
-        "rate": 0.8469387755102041
-      },
-      "permission": 0.85,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.85,
+      "feasibility": 0.75,
       "setting": 533,
       "typology": "Forever-fit",
       "tier": "Low"
@@ -1360,12 +1283,12 @@
           "note": "open market"
         },
         "Permission": {
-          "score": 18,
+          "score": 15,
           "max": 20,
-          "note": "development-friendly \u00b7 83 approved / 10 refused nearby"
+          "note": "development-friendly"
         }
       },
-      "score": 49,
+      "score": 41,
       "low_comp": false,
       "scored_at": "2026-06-21T20:27:00.517611+00:00",
       "flags": [],
@@ -1379,19 +1302,12 @@
       ],
       "plot_m2": 1008,
       "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 83,
-        "refused": 10,
-        "decided": 93,
-        "rate": 0.8924731182795699
-      },
-      "permission": 0.89,
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.89,
+      "feasibility": 0.75,
       "setting": 226,
       "typology": "Development play",
-      "tier": "Medium"
+      "tier": "Low"
     },
     {
       "id": "40a2842b-e6bb-41f9-9801-976aabb37492",
