@@ -735,16 +735,29 @@ def fetch_planning_history(lat, lng, krad=0.5, conn=None):
             _kill("planit", "429")
         return {}
     approved = refused = 0
+    classq_seen = classq_approved = 0
     for a in recs:
         st = (a.get("app_state") or "").lower()
         if st in ("permitted", "conditions"):
             approved += 1
         elif st in ("rejected", "refused"):
             refused += 1
+        # Class-Q / agricultural-conversion precedent, from the text we already have.
+        blob = " ".join(str(a.get(k) or "") for k in
+                        ("description", "app_type", "app_size", "other_fields")).lower()
+        is_cq = ("class q" in blob or "prior approval" in blob
+                 or ("agricultural" in blob and any(w in blob for w in
+                     ("dwelling", "residential", "conversion", "dwellinghouse")))
+                 or ("barn" in blob and ("conversion" in blob or "dwelling" in blob)))
+        if is_cq:
+            classq_seen += 1
+            if st in ("permitted", "conditions"):
+                classq_approved += 1
     decided = approved + refused
     rate = (approved / decided) if decided else None
     res = {"n": len(recs), "approved": approved, "refused": refused,
-           "decided": decided, "rate": rate}
+           "decided": decided, "rate": rate,
+           "classq_seen": classq_seen, "classq_approved": classq_approved}
     _PLANIT_CACHE[key] = res
     _cache_put(conn, ck, res)
     return res
@@ -764,6 +777,74 @@ def permission_estimate(datasets, planning):
     est = max(0.05, min(1.0, base - drag))
     label = "development-friendly" if est >= 0.70 else ("mixed" if est >= 0.50 else "restricted")
     return {"estimate": round(est, 2), "label": label}
+
+
+# ---- Planning potential ("moat"): surface genuine development / conversion upside ----
+# Zero API cost: reads the listing text we already hold + the PlanIt precedent already
+# fetched. Tiered by trust -- a CONSENTED permission (granted / prior approval / Class Q)
+# is real, bankable upside; marketing "potential" is a softer, edge-only nudge.
+_CONSENTED_RE = re.compile(
+    r"\b(?:planning\s+(?:permission|consent)\s+(?:has\s+been\s+|is\s+|now\s+)?granted"
+    r"|(?:outline|full|detailed)\s+planning\s+(?:permission|consent)"
+    r"|planning\s+granted"
+    r"|prior\s+approval\s+(?:granted|approved|obtained|in\s+place|secured)"
+    r"|class\s*q\b"
+    r"|permitted\s+development\s+(?:rights|granted|approved)"
+    r"|lawful\s+development\s+certificate"
+    r"|approved\s+for\s+conversion)\b",
+    re.IGNORECASE,
+)
+_OPPORTUNITY_RE = re.compile(
+    r"\b(?:development\s+(?:opportunity|potential)"
+    r"|potential\s+to\s+(?:extend|convert|develop|improve|enlarge)"
+    r"|scope\s+(?:to|for)\s+(?:extend|extension|develop|improve)"
+    r"|subject\s+to\s+(?:the\s+necessary\s+|obtaining\s+)?planning"
+    r"|s\.?t\.?p\.?p\b"
+    r"|building\s+plot"
+    r"|self[\s-]?build\s+(?:plot|opportunity)"
+    r"|ripe\s+for)\b",
+    re.IGNORECASE,
+)
+_AGRI_RE = re.compile(
+    r"\b(?:barns?|agricultural\s+(?:building|land|barn)|former\s+(?:farm|dairy|agricultural)"
+    r"|stables?|equestrian|paddocks?|smallholding|outbuildings?)\b",
+    re.IGNORECASE,
+)
+
+
+def planning_signals(p, planning=None):
+    """Detect development/conversion upside from the listing text (+ any Class-Q
+    precedent already parsed from PlanIt). Returns a dict:
+      boost -> added to the Potential axis (CONSENTED permission only; capped)
+      edge  -> added to the Edge axis (softer, marketed 'potential')
+      tags/reasons -> human-readable, for the UI and the score breakdown."""
+    text = (" ".join(str(p.get(k) or "") for k in ("address", "description_raw"))
+            + " " + " ".join(p.get("reasons") or [])).lower()
+    consented = bool(_CONSENTED_RE.search(text))
+    opportunity = bool(_OPPORTUNITY_RE.search(text))
+    agri = bool(_AGRI_RE.search(text))
+    # Class-Q precedent nearby: barn/agri conversions actually approved in this locality,
+    # read from the PlanIt records we already hold (no extra request).
+    classq = bool((planning or p.get("planning") or {}).get("classq_approved"))
+    boost, edge, tags, reasons = 0.0, 0.0, [], []
+    if consented:
+        boost += 0.15
+        tags.append("Planning consented")
+        reasons.append("Planning consent noted in listing")
+    if agri and (consented or classq):
+        # a barn / agricultural building WITH consent or local Class-Q precedent nearby
+        # is the classic permitted-development conversion play
+        boost += 0.06
+        tags.append("Class Q / barn conversion")
+        reasons.append("Barn/agri conversion potential"
+                       + (" (approvals nearby)" if classq and not consented else ""))
+    if opportunity and not consented:
+        edge += 0.05
+        tags.append("Development angle")
+        reasons.append("Marketed development potential")
+    return {"consented": consented, "opportunity": opportunity, "agri": agri,
+            "classq": classq, "boost": min(0.20, boost), "edge": edge,
+            "tags": tags, "reasons": reasons}
 
 
 def _band01(x, lo, hi):
@@ -824,6 +905,14 @@ def score_property(p):
             val_note = f"~\u00a3{round(price/1000)}k"
     else:
         value, val_note = 0.4, "price unknown"
+    # Planning potential: bankable consent lifts the Potential axis; softer marketed
+    # "potential" is handled below as an Edge nudge. Zero API cost (text + cached PlanIt).
+    psig = planning_signals(p)
+    p["planning_potential"] = {"tags": psig["tags"], "consented": psig["consented"],
+                               "classq": psig["classq"], "agri": psig["agri"]}
+    if psig["boost"]:
+        potential = min(1.0, potential + psig["boost"])
+        pot_note += " · " + psig["tags"][0].lower()
     d = p.get("dist_mi")
     fit = max(0.0, 1.0 - (d if d is not None else 6) / 12.0)
     fit_note = f"{d} mi from home" if d is not None else "distance n/a"
@@ -842,6 +931,8 @@ def score_property(p):
         edge += 0.06; ebits.append("reduced")
     if any(k in txt for k in ("cash only", "cash buyers", "unmortgageable")):
         edge += 0.05; ebits.append("cash-only")
+    if psig["edge"]:
+        edge += psig["edge"]; ebits.append("dev angle")
     edge = min(0.20, edge)
     lsec = fb.get("largest_secondary_m2") or 0
     if lsec >= 60:
@@ -862,8 +953,15 @@ def score_property(p):
     setting = p.get("setting")
     rural = setting is not None and setting <= 12
     outb = (p.get("footprints") or {}).get("outbuilding")
-    # typology: development/setting/conversion plays lead when they stack up
-    if outb == "large" and ratio >= 1.5 and (perm is None or perm >= 0.55):
+    # typology: a stated planning consent leads everything (it's the rarest, hardest
+    # signal to fake); then development/setting/conversion plays when they stack up.
+    if psig["consented"] and psig["agri"]:
+        typ = "Class Q play"
+    elif psig["consented"]:
+        typ = "Consented upside"
+    elif psig["agri"] and psig["classq"]:
+        typ = "Conversion play"
+    elif outb == "large" and ratio >= 1.5 and (perm is None or perm >= 0.55):
         typ = "Conversion play"
     elif ratio >= 2.0 and perm is not None and perm >= 0.70:
         typ = "Development play"
@@ -894,7 +992,15 @@ def score_property(p):
         note = f"×{feas:.2f} · {p.get('permission_label','')}".strip(" ·")
         if ph.get("decided"):
             note += f" · {ph['approved']} approved / {ph['refused']} refused nearby"
+        if ph.get("classq_approved"):
+            note += f" · {ph['classq_approved']} Class-Q approved nearby"
         sig["Feasibility"] = {"score": round(feas * 100), "max": 100, "note": note}
+    if psig["tags"]:
+        sig["Planning"] = {"note": " · ".join(psig["tags"]),
+                           "consented": psig["consented"]}
+        # surface the strongest planning reason on the card (front of the list)
+        existing = [r for r in (p.get("reasons") or []) if r not in psig["reasons"]]
+        p["reasons"] = (psig["reasons"] + existing)[:3]
     p["signals"] = sig
     return p
 
@@ -2499,7 +2605,7 @@ def agent_to_property(rec):
                    "url": link, "agent": rec.get("source") or "", "uprn": ""},
         "source_label": "AGENT",
         "media": {"photo_count": 0, "has_floorplan": False, "thumb_url": ""},
-        "description_raw": "",
+        "description_raw": html.unescape(str(rec.get("desc") or ""))[:600],
         "enrichment": {"market": {"reductions": reductions,
                                   "is_reduced": bool(rec.get("price_reduced")),
                                   "status": rec.get("status"), "dom": None,

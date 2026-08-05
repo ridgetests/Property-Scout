@@ -218,7 +218,8 @@ const FLAG_LABELS = {
 };
 const SIGNAL_LABELS = {
   equity_residual:"Equity / residual", plot_size:"Plot size", structural:"Structural potential",
-  motivation:"Probate / seller", competition:"Low competition", location:"Location / schools"
+  motivation:"Probate / seller", competition:"Low competition", location:"Location / schools",
+  Planning:"Planning potential"
 };
 const SRC_LABEL = {auction:"AUCTION","off-market":"OFF-MKT"};
 
@@ -451,6 +452,13 @@ function openDrawer(id){
   selected = id; render();
   const eq=(p.enrichment&&p.enrichment.equity)||{}, saved=shortlist.find(s=>s.id==id);
   const sigs = Object.entries(p.signals||{}).map(([key,s])=>{
+    // qualitative flags (e.g. Planning) carry a note but no numeric bar — render as a chip row
+    if(s.score==null||s.max==null){
+      const col = s.consented ? 'var(--eq-ink)' : 'var(--muted)';
+      return `<div class="row"><span class="rn">${SIGNAL_LABELS[key]||key}</span>
+        <span style="font-size:12px;font-weight:600;color:${col}">${s.consented?'✓ consent':'potential'}</span></div>
+        <p class="note">${s.note||''}</p>`;
+    }
     const pc = Math.round(s.score/s.max*100);
     return `<div class="row"><span class="rn">${SIGNAL_LABELS[key]||key}</span>
       <div class="bw"><div class="bf" style="width:${pc}%;background:${sc(pc)}"></div></div>
