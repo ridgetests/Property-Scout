@@ -762,10 +762,24 @@ def score_property(p):
     placeholder (1.0) until the constraint layer (Green Belt / AONB) is added."""
     home = HOME_PLOT_M2 or 380
     plot = p.get("plot_m2")
+    approx = "approx-location" in (p.get("flags") or [])   # plot not parcel-precise
     if plot:
         ratio = plot / home
-        potential = min(1.0, 0.25 + 0.22 * ratio)
+        # Diminishing returns so no single axis runs away with the score: a plot
+        # meaningfully bigger than yours is great, but a 5x plot is not 5x better than a
+        # 2x plot for a forever home. Saturating curve (~0.47 at 1x, ~0.59 at 2x, tops
+        # ~0.90 from plot alone) - reaching the top still needs the dev-room bonus and
+        # the other axes. Replaces the old linear ramp that maxed Potential by ~3.4x.
+        eff, clipped = ratio, False
+        if approx and ratio > 4.0:
+            # An UNVERIFIED "huge" plot is the classic centroid-in-the-enclosing-parcel
+            # error (a neighbour's/estate's parcel). Cap the reward at ~4x so a number we
+            # cannot trust can't dominate; a UPRN-precise plot keeps its full ratio.
+            eff, clipped = 4.0, True
+        potential = 0.28 + 0.62 * eff / (eff + 2.0)
         pot_note = f"{plot:,} m\u00b2 plot ({ratio:.1f}\u00d7 your home)"
+        if clipped:
+            pot_note += " \u00b7 approx, capped"
     else:
         ratio, potential, pot_note = 0, 0.35, "plot unverified"
     fb = p.get("footprints") or {}
