@@ -87,7 +87,6 @@ def _is_carehome(text):
 
 def _is_excluded_locality(text):
     return bool(_LOCALITY_RE.search(text or ""))
-COMP_EPC_CAP = 40                        # max comparable-property EPC lookups per run (cached forever)
 LISTING_EPC_CAP = 30                     # max subject EPC lookups for public listings per run (cached forever)
 NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (politeness cap)
 GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
@@ -1541,30 +1540,15 @@ def _load_epc_local():
     return _EPC_LOCAL
 
 
-_COMP_EPC_FETCHES = [0]
-
-
 def _comp_floor_area(r, conn=None):
-    """Floor area for a comparable sale. Order: bulk file (if present) ->
-    SQLite cache -> live register (hard-capped). Cached permanently, so the
-    cost decays to zero after the first few runs."""
+    """Floor area for a comparable sale, from the local bulk EPC file ONLY
+    (epc_region.json.gz, built by make_epc.py). NO live EPC calls for comparables:
+    the register is reserved for subject lookups, so a valuation over dozens of comps
+    can never burn the EPC quota. Absent bulk file -> None -> comps stay type-and-
+    geography matched (not size-matched), degrading gracefully. `conn` is accepted for
+    call-site compatibility and unused."""
     e = _load_epc_local().get((r["pc"] + "|" + r["n"]).upper())
-    if e:
-        return e.get("fa")
-    if conn is None:
-        return None
-    key = f"EPC|{r['pc']}|{r['n']}|".upper()
-    row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
-    if row:
-        try:
-            return (json.loads(row["data"]) or {}).get("floor_area_m2")
-        except Exception:
-            return None
-    if _COMP_EPC_FETCHES[0] >= COMP_EPC_CAP or _dead("epc"):
-        return None
-    _COMP_EPC_FETCHES[0] += 1
-    got = epc_lookup(conn, r["pc"], r["n"], r["n"] + " " + (r.get("s") or ""))
-    return (got or {}).get("floor_area_m2")
+    return e.get("fa") if e else None
 
 def find_comps(postcode, paon, want_type=None, addr_line="", k=6, years=12,
                subject_fa=None, conn=None):
@@ -2372,8 +2356,8 @@ def enrich_listings(conn, props, budget):
         _apply_precise_location(p, epc.get("uprn") or (p.get("source") or {}).get("uprn"))
         want_type = _listing_want_type(p.get("property_type"), epc.get("built_form"))
         fa = epc.get("floor_area_m2")
-        # local, free comps (same routine as probate); size-matched only if a subject
-        # floor area is known and comp EPCs are available (bounded by COMP_EPC_CAP).
+        # local, free comps (same routine as probate); size-matched only when a subject
+        # floor area is known AND the bulk EPC file supplies comp floor areas (no live calls).
         ctx, comps = find_comps(pc, paon, want_type, addr_line, subject_fa=fa, conn=conn)
         if not ctx.get("est_mid"):
             ctx = price_context_local(pc, paon, want_type)
