@@ -2,6 +2,8 @@
 
 *Read this first. It explains what this tool is, why it's built the way it is, the constraints that shaped it, and where it's going — so your analysis is objective and aligned with intent, not generic.*
 
+> **Also read [`LEARNINGS.md`](LEARNINGS.md)** — hard-won operational gotchas (GitHub Actions secret quirks, cloud-IP blocking, the EPC service migration, binary-DB merge conflicts, privacy rules). It will save you re-debugging things we've already hit.
+
 ---
 
 ## Your task
