@@ -161,7 +161,14 @@ def _headers():
 # ===========================================================================
 # HOMEDATA  (boundary -> live listings -> optional enrichment)
 # ===========================================================================
-def resolve_boundary(name):
+def resolve_boundary(name, conn=None):
+    # A boundary name ("Waverley") maps to an ID that never changes, so cache it
+    # permanently: this saves one Homedata call per area, every run. At 2 areas
+    # that halves the daily Homedata usage (~120 -> ~60 calls/month).
+    ck = f"homedata_boundary::{name}"
+    cached = _cache_get(conn, ck)
+    if cached and cached.get("id"):
+        return cached["id"]
     import requests
     if _dead("homedata"):
         return None
@@ -171,8 +178,10 @@ def resolve_boundary(name):
         r.raise_for_status()
         results = r.json().get("results", [])
         if results:
-            print(f"   boundary '{name}' -> id {results[0]['id']} ({results[0].get('name')})")
-            return results[0]["id"]
+            bid = results[0]["id"]
+            print(f"   boundary '{name}' -> id {bid} ({results[0].get('name')})")
+            _cache_put(conn, ck, {"id": bid, "name": results[0].get("name")})
+            return bid
         print(f"   no boundary found for '{name}'")
     except Exception as e:
         print(f"   boundary lookup failed for '{name}': {e}")
@@ -181,7 +190,7 @@ def resolve_boundary(name):
     return None
 
 
-def fetch_listings():
+def fetch_listings(conn=None):
     if USE_MOCK or not HOMEDATA_API_KEY:
         return _mock_listings()
     import requests
@@ -189,7 +198,7 @@ def fetch_listings():
     for area in SEARCH["areas"]:
         if _dead("homedata"):
             break
-        bid = resolve_boundary(area)
+        bid = resolve_boundary(area, conn)
         if not bid:
             continue
         params = {"boundary_id": bid, "transaction_type": "Sale",
@@ -2540,7 +2549,7 @@ def main():
 
     agent_leads = fetch_agent_leads()
 
-    rows = fetch_listings()
+    rows = fetch_listings(conn)
     print(f"- {len(rows)} Homedata listing(s) fetched")
 
     props = []
