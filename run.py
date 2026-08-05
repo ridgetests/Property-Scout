@@ -731,7 +731,14 @@ _CONSTRAINT_PENALTY = {"green-belt": 0.25, "area-of-outstanding-natural-beauty":
                        "listed-building": 0.30, "flood-risk-zone": 0.10}
 _CONSTRAINT_LABEL = {"green-belt": "Green Belt", "area-of-outstanding-natural-beauty": "AONB",
                      "conservation-area": "Conservation Area", "article-4-direction-area": "Article 4",
-                     "listed-building": "Listed", "flood-risk-zone": "Flood zone"}
+                     "listed-building": "Listed", "flood-risk-zone": "Flood zone",
+                     "national-park": "National Park",
+                     "site-of-special-scientific-interest": "SSSI"}
+# Datasets we ASK planning.data.gov.uk about. National Park + SSSI carry no listing
+# penalty (not in _CONSTRAINT_PENALTY) but ARE hard Class-Q exclusions, so the barn
+# scanner needs them in the returned `datasets`.
+_CONSTRAINT_QUERY = tuple(_CONSTRAINT_PENALTY) + ("national-park",
+                                                  "site-of-special-scientific-interest")
 
 
 def fetch_constraints(lat, lng, conn=None):
@@ -753,7 +760,7 @@ def fetch_constraints(lat, lng, conn=None):
         return {}
     import requests
     params = [("latitude", lat), ("longitude", lng), ("limit", 100)]
-    for d in _CONSTRAINT_PENALTY:
+    for d in _CONSTRAINT_QUERY:
         params.append(("dataset", d))
     try:
         r = requests.get("https://www.planning.data.gov.uk/entity.json", params=params,
@@ -761,7 +768,7 @@ def fetch_constraints(lat, lng, conn=None):
         r.raise_for_status()
         data = r.json()
         ents = data.get("entities") or data.get("results") or []
-        found = sorted({e.get("dataset") for e in ents if e.get("dataset") in _CONSTRAINT_PENALTY})
+        found = sorted({e.get("dataset") for e in ents if e.get("dataset") in _CONSTRAINT_QUERY})
         grade = ""
         for e in ents:
             if e.get("dataset") == "listed-building":

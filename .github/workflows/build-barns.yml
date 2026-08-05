@@ -1,0 +1,48 @@
+name: Build barn candidates (shortlist)
+
+# Manual button. Scores every building for the barn/Class-Q signature, then
+# hard-gates the top candidates on LIVE designation data (AONB / Conservation
+# Area / National Park / SSSI / listed = Class Q fails). Writes the ranked
+# shortlist barn_candidates.json. Manual-only; NOT the nightly cron.
+#
+# Needs building_polygons.json.gz (from "Build barn footprints") to exist first.
+# The designation gate makes ~200 planning.data.gov.uk calls (gentle, spaced,
+# behind the circuit-breaker) -- fine for a one-off, never nightly.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Rank + designation-gate barn candidates
+        run: |
+          if [ ! -f building_polygons.json.gz ]; then
+            echo "Missing building_polygons.json.gz - run 'Build barn footprints' first."
+            exit 1
+          fi
+          python make_barn_candidates.py
+
+      - name: Save the shortlist
+        run: |
+          if [ ! -f barn_candidates.json ]; then
+            echo "No shortlist was built - check the step above."; exit 1
+          fi
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add barn_candidates.json
+          git commit -m "Build barn candidates (ranked + designation-gated)" || echo "no changes"
+          git push || echo "push skipped"
+          echo "Saved barn_candidates.json"
