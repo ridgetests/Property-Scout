@@ -35,7 +35,10 @@ def main():
         print("Need EPC_OPENDATA_EMAIL (your EPC account email) plus an EPC key "
               "(EPC_OPENDATA_KEY, or the existing EPC_API_KEY).")
         sys.exit(1)
-    las = [x.strip() for x in os.environ.get("EPC_LAS", "E07000216,E07000085").split(",") if x.strip()]
+    # NB: a workflow env from an UNSET secret arrives as "" (not absent), so os.environ.get's
+    # default never fires - use `or` so an empty EPC_LAS still falls back to the defaults.
+    las_src = (os.environ.get("EPC_LAS") or "").strip() or "E07000216,E07000085"
+    las = [x.strip() for x in las_src.split(",") if x.strip()]
     out = sys.argv[1] if len(sys.argv) > 1 else "certificates.csv"
     print(f"Using email '{email}' and the "
           f"{'dedicated Open Data key' if dedicated else 'existing EPC_API_KEY (fallback)'} "
