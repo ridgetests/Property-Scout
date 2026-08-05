@@ -275,15 +275,20 @@ def fetch_listings(conn=None):
 
 
 def geocode(postcodes):
-    """Postcode -> (lat, lng) via postcodes.io bulk (free, no key)."""
+    """Postcode -> (lat, lng) via postcodes.io (free, no key). Full postcodes go through
+    the bulk endpoint; OUTWARD-only codes (e.g. 'GU9', when a listing's full postcode was
+    withheld/untrustworthy) resolve to the outward-district centroid via /outcodes, so the
+    listing still lands in the right town instead of being dropped or mis-placed."""
     import requests
     out, uniq = {}, sorted({pc for pc in postcodes if pc})
     if _dead("postcodes"):
         return out
-    for i in range(0, len(uniq), 100):
+    full = [pc for pc in uniq if re.match(r"^[A-Z]{1,2}\d[A-Z\d]?\s+\d[A-Z]{2}$", pc.upper())]
+    outward = [pc for pc in uniq if pc not in full]   # 'GU9', 'RG29', etc.
+    for i in range(0, len(full), 100):
         if _dead("postcodes"):
             break
-        chunk = uniq[i:i + 100]
+        chunk = full[i:i + 100]
         for attempt in range(3):
             try:
                 r = requests.post("https://api.postcodes.io/postcodes",
@@ -301,7 +306,25 @@ def geocode(postcodes):
                     break                       # stop retrying/hammering this run
                 time.sleep(1.5 * (attempt + 1))
         time.sleep(0.3)
-    print(f"   geocoded {len(out)}/{len(uniq)} postcodes")
+    for code in outward:                          # deduped already; usually a handful
+        if _dead("postcodes"):
+            break
+        try:
+            r = requests.get(f"https://api.postcodes.io/outcodes/{code.strip().upper()}",
+                             timeout=20)
+            if r.status_code == 404:
+                continue
+            r.raise_for_status()
+            res = r.json().get("result") or {}
+            if res.get("latitude"):
+                out[code] = (res["latitude"], res["longitude"])
+        except Exception as e:
+            print(f"   outcode geocode failed for {code}: {e}")
+            if _throttled(e):
+                _kill("postcodes", "429/403")
+                break
+        time.sleep(0.3)
+    print(f"   geocoded {len(out)}/{len(uniq)} postcodes ({len(outward)} outward-only)")
     return out
 
 
@@ -2078,6 +2101,10 @@ def epc_lookup(conn, postcode, paon, addr_hint="", budget=None):
     always free; a live lookup is only made while budget remains, then it's decremented."""
     if not EPC_ENABLED or not postcode:
         return {}
+    # An outward-only / malformed postcode (e.g. 'GU9') can't identify a single dwelling,
+    # so a live register search on it is wasted budget - skip it.
+    if not re.match(r"^[A-Za-z]{1,2}\d[A-Za-z\d]?\s*\d[A-Za-z]{2}$", postcode.strip()):
+        return {}
     key = f"EPC|{postcode}|{paon}|{(addr_hint or '')[:40]}".upper()
     row = conn.execute("SELECT data FROM epccache WHERE k=?", (key,)).fetchone()
     if row:
@@ -2642,6 +2669,11 @@ def agent_to_property(rec):
     Returns None if there's nothing usable."""
     # decode HTML entities the scrapers leave behind ("St John&#39;s", "Oak &amp; Elm")
     addr = html.unescape((rec.get("address") or "").strip())
+    # strip a trailing "<sep> Agent Name" the fetcher's generic rule couldn't catch (a
+    # bare agency name with no "Estate Agents" keyword, e.g. "... GU9 7AB - Curchods")
+    _src = (rec.get("source") or "").strip()
+    if _src:
+        addr = re.sub(r"\s*[|\-–—]\s*" + re.escape(_src) + r"\s*$", "", addr, flags=re.I).strip(" ,|-–—")
     postcode = (rec.get("postcode") or "").strip().upper()
     if not addr and not postcode:
         return None
@@ -2664,7 +2696,7 @@ def agent_to_property(rec):
              "semi" if "semi" in t else
              "terrace" if "terrac" in t else
              "house" if ("house" in t or "home" in t or "residence" in t or "property" in t) else
-             (t.split("/")[0].strip() if t and t.split("/")[0].strip().isalpha() else "house"))
+             "house")   # unrecognised/junk types (webpage, realestatelisting, development) -> house
     pid = "ag_" + hashlib.sha1((link or (addr + postcode)).lower().encode()).hexdigest()[:10]
     reductions = 1 if rec.get("price_reduced") else 0
     # Distinguish a deliberately-unpriced listing (price on application) from a real
