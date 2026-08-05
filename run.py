@@ -132,7 +132,10 @@ MAX_PLAUSIBLE_PLOT_M2 = 4000   # ~1 acre; bigger = almost certainly a mis-matche
 MAX_PLAUSIBLE_MAIN_M2 = 600     # a single dwelling footprint above this = merged/estate polygon
 MAX_PLAUSIBLE_COVERAGE = 60     # % of plot built on; above this the parcel match is suspect
 HOMEDATA_BASE = os.environ.get("HOMEDATA_BASE", "https://api.homedata.co.uk")
-ENRICH = True       # floor area / EPC / comps - only fires when a uprn exists
+ENRICH = False      # Homedata per-property enrichment (epc-checker + comparables). MUST
+                    # stay False: Homedata is reserved for live listings only, and its
+                    # ~100/month quota is burned fast by enrichment. Free EPC + local
+                    # Price Paid do the enrichment now. Do not flip without a quota plan.
 ENRICH_TOP_N = 25
 
 ROOT = Path(__file__).parent
@@ -2161,8 +2164,6 @@ def fetch_probate_leads(conn):
     save_geocache(conn, fresh)
     coords = {**cache, **fresh}
 
-    pp_cache = {}
-    town_cache = {}
     today = datetime.now(timezone.utc).date().isoformat()
     out = []
     for x in raw:
@@ -2171,8 +2172,8 @@ def fetch_probate_leads(conn):
             continue
         lat, lng = ll
         epc = epc_lookup(conn, x["postcode"], x.get("paon"), x.get("addr_line", ""))
-        if not epc:                                    # fall back to Homedata only if EPC misses
-            epc = homedata_epc(conn, x["postcode"], x.get("paon"))
+        # (No Homedata EPC fallback: Homedata is reserved for LIVE LISTINGS only - its
+        #  ~100/month quota is protected. The free EPC register is the enrichment source.)
         # precise UPRN coordinate (from the EPC certificate) beats the postcode centroid,
         # so the plot/footprint match below is this dwelling's own parcel, not the estate's
         _pll = uprn_coord(epc.get("uprn"))
@@ -2197,24 +2198,12 @@ def fetch_probate_leads(conn):
             ctx = price_context_local(x["postcode"], x.get("paon"), epc_type)
             local_comps = []
         basis = ctx.get("basis", "postcode")
-        if not ctx.get("est_mid"):
-            if x["postcode"] not in pp_cache:
-                pp_cache[x["postcode"]] = fetch_price_paid(x["postcode"])
-            ctx = price_context(pp_cache[x["postcode"]], x.get("paon"))
-            basis = "postcode"
-            if ctx.get("est_mid"):
-                ctx["basis"] = "postcode"     # price_context has no basis key of its own
-        # fallback: postcode has no Land Registry history -> coarse town-wide estimate
-        if not ctx.get("est_mid"):
-            if PROBATE_LOCATION not in town_cache:
-                town_cache[PROBATE_LOCATION] = fetch_price_paid_town(PROBATE_LOCATION)
-            tctx = price_context(town_cache[PROBATE_LOCATION], None)
-            if tctx.get("est_mid"):
-                ctx["est_low"], ctx["est_high"] = tctx["est_low"], tctx["est_high"]
-                ctx["est_mid"], ctx["n_comps"] = tctx["est_mid"], tctx["n_comps"]
-                ctx["basis"] = "town"          # truthful: a town-wide median, not this postcode
-                ctx["basis_type"] = tctx.get("basis_type", "")
-                basis = "town"
+        # The old live HM Land Registry Price Paid fallbacks (fetch_price_paid /
+        # fetch_price_paid_town) were removed here: that API 403-blocks cloud IPs, so it
+        # must NEVER be called from GitHub Actions (a reinforced IP block is fatal).
+        # price_context_local above already widens sector -> district from the LOCAL
+        # price_paid_region.json.gz (the supported bulk route); a postcode with no local
+        # history simply stays unpriced (kept as "Long-held" when PROBATE_KEEP_UNKNOWN).
         typ = ctx.get("subject_type")
         est = ctx.get("est_mid")
         # interest filter - only trust micro-local (postcode/house) data to EXCLUDE;
