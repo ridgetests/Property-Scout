@@ -1,9 +1,13 @@
-name: Build data files (accuracy boost)
+name: Build map file (precise plot sizes)
 
-# Press "Run workflow" on this to fetch the government data and build the two
-# optional accuracy files (uprn_coords.json.gz + epc_region.json.gz). Run it on
-# the main branch after your changes are merged. It is manual-only - it never
-# runs on its own.
+# Press "Run workflow" on this to fetch OS Open UPRN and (re)build the map file
+# uprn_coords.json.gz, which gives precise plot sizes. Run it on the main branch.
+# Manual-only - it never runs on its own.
+#
+# The house-size file (epc_region.json.gz) is NOT built here: the government moved
+# the EPC bulk service behind a login, so it can't be fetched automatically. Build
+# it via the "Build house-size file from upload" workflow instead (see
+# epc_upload/README.md).
 
 on:
   workflow_dispatch:
@@ -21,33 +25,18 @@ jobs:
           python-version: "3.12"
 
       - name: Build the map file (precise plot sizes)
-        continue-on-error: true          # if this trips, still build the other file
         env:
           OS_API_KEY: ${{ secrets.OS_API_KEY }}
         run: python fetch_uprn.py
 
-      - name: Build the house-size file (size-matched value)
-        continue-on-error: true
-        env:
-          EPC_OPENDATA_EMAIL: ${{ secrets.EPC_OPENDATA_EMAIL }}
-          EPC_OPENDATA_KEY: ${{ secrets.EPC_OPENDATA_KEY }}
-          EPC_API_KEY: ${{ secrets.EPC_API_KEY }}   # reused if no dedicated Open Data key is set
-          EPC_LAS: ${{ secrets.EPC_LAS }}
+      - name: Save it into the project
         run: |
-          python fetch_epc.py certificates.csv
-          python make_epc.py certificates.csv epc_region.json.gz
-
-      - name: Save the files into the project
-        run: |
+          if [ ! -f uprn_coords.json.gz ]; then
+            echo "No map file was built - check the step above."; exit 1
+          fi
           git config user.name "scout-bot"
           git config user.email "scout-bot@users.noreply.github.com"
-          BUILT=""
-          [ -f uprn_coords.json.gz ] && git add uprn_coords.json.gz && BUILT="$BUILT uprn_coords.json.gz"
-          [ -f epc_region.json.gz ] && git add epc_region.json.gz && BUILT="$BUILT epc_region.json.gz"
-          if [ -z "$BUILT" ]; then
-            echo "Nothing was built - check the two build steps above for the error."
-            exit 1
-          fi
-          git commit -m "Build local data files:$BUILT" || echo "no changes to commit"
+          git add uprn_coords.json.gz
+          git commit -m "Build map file (uprn_coords.json.gz)" || echo "no changes"
           git push || echo "push skipped"
-          echo "Saved:$BUILT"
+          echo "Saved uprn_coords.json.gz"

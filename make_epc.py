@@ -87,11 +87,14 @@ def _paon(address1):
 
 def _rows(path):
     """Yield csv rows (as dicts) from a CSV, a ZIP (any *certificates.csv member),
-    or a directory tree (any certificates.csv). Tolerates BOM/encoding quirks."""
+    or a directory tree. In a directory we process any .zip and any .csv (skipping
+    recommendations files), so you can just drop whatever you downloaded into the
+    upload folder. Tolerates BOM/encoding quirks."""
     if os.path.isdir(path):
         for root, _dirs, files in os.walk(path):
-            for fn in files:
-                if fn.lower().endswith("certificates.csv"):
+            for fn in sorted(files):
+                low = fn.lower()
+                if low.endswith(".zip") or (low.endswith(".csv") and "recommendation" not in low):
                     yield from _rows(os.path.join(root, fn))
         return
     if path.lower().endswith(".zip"):
@@ -118,56 +121,57 @@ def main():
         print("no input files given")
         sys.exit(1)
 
+    # normalise a column name so dashes/underscores/spaces/casing all match, e.g.
+    # "total-floor-area" (live API) and "TOTAL_FLOOR_AREA" (bulk file) both -> the same.
+    _nk = lambda k: re.sub(r"[\s\-]+", "_", (k or "").strip().lower())
+    want_nk = {logical: _nk(col) for logical, col in _WANT.items()}
+
     certs = {}
-    seen = kept = 0
-    colmap = None
+    seen = warned = 0
     for path in args:
         for row in _rows(path):
             seen += 1
-            if colmap is None:
-                # resolve actual column names once, tolerating dashes vs underscores vs
-                # spaces (the live API uses "total-floor-area", the bulk files use
-                # "TOTAL_FLOOR_AREA") and any casing.
-                _nk = lambda k: re.sub(r"[\s\-]+", "_", (k or "").strip().lower())
-                low = {_nk(k): k for k in row.keys()}
-                colmap = {want: low.get(_nk(col)) for want, col in _WANT.items()}
-                if not (colmap["postcode"] and colmap["address1"] and colmap["fa"]):
-                    print(f"error: missing POSTCODE/ADDRESS1/TOTAL_FLOOR_AREA columns; got {list(row.keys())[:12]}")
-                    sys.exit(2)
-            pc = _norm_pc(row.get(colmap["postcode"]))
+            # resolve columns PER ROW, so a mix of file formats in one folder still works
+            nk = {_nk(k): v for k, v in row.items()}
+            def g(name):
+                return nk.get(want_nk[name])
+            if not (nk.get(want_nk["postcode"]) is not None and nk.get(want_nk["fa"]) is not None):
+                if not warned:
+                    warned = 1
+                    print(f"note: a row had no POSTCODE/TOTAL_FLOOR_AREA column; headers seen: {list(row.keys())[:12]}")
+                continue
+            pc = _norm_pc(g("postcode"))
             if not pc:
                 continue
             if OUTCODES and pc.split(" ")[0] not in OUTCODES:
                 continue
             try:
-                fa = int(round(float(row.get(colmap["fa"]) or 0)))
+                fa = int(round(float(g("fa") or 0)))
             except (TypeError, ValueError):
                 continue
             if fa <= 5 or fa > 2000:           # skip blanks / obvious garbage
                 continue
-            paon = _paon(row.get(colmap["address1"]))
+            paon = _paon(g("address1"))
             if not paon:
                 continue
             key = f"{pc}|{paon}".upper()
-            date = ((colmap["lodged"] and row.get(colmap["lodged"]))
-                    or (colmap["inspected"] and row.get(colmap["inspected"])) or "")
+            date = (g("lodged") or g("inspected") or "")
             prev = certs.get(key)
             if prev and str(prev.get("date", "")) > str(date):
                 continue                        # keep the most recent certificate
             try:
-                rooms = int(float(row.get(colmap["rooms"]) or 0)) or None
+                rooms = int(float(g("rooms") or 0)) or None
             except (TypeError, ValueError):
                 rooms = None
             certs[key] = {
                 "fa": fa,
-                "form": (row.get(colmap["form"]) or "").strip() if colmap["form"] else "",
-                "type": (row.get(colmap["type"]) or "").strip() if colmap["type"] else "",
+                "form": (g("form") or "").strip(),
+                "type": (g("type") or "").strip(),
                 "rooms": rooms,
-                "uprn": (row.get(colmap["uprn"]) or "").strip() if colmap["uprn"] else "",
-                "rating": (row.get(colmap["rating"]) or "").strip() if colmap["rating"] else "",
+                "uprn": (g("uprn") or "").strip(),
+                "rating": (g("rating") or "").strip(),
                 "date": (date or "")[:10],
             }
-            kept += 1
 
     with gzip.open(out, "wt") as f:
         json.dump({"certs": certs}, f)

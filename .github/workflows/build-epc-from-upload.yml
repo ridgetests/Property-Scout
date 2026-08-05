@@ -1,0 +1,44 @@
+name: Build house-size file from upload
+
+# Manual button. After you upload the EPC download into the epc_upload/ folder
+# (see epc_upload/README.md), press "Run workflow" on this to turn it into
+# epc_region.json.gz. Manual-only; never runs on its own.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build epc_region.json.gz from the files in epc_upload/
+        run: |
+          shopt -s nullglob
+          files=(epc_upload/*.zip epc_upload/*.csv)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "Nothing to build: put your EPC .zip or certificates.csv in the epc_upload/ folder first."
+            echo "See epc_upload/README.md for how."
+            exit 1
+          fi
+          echo "Found: ${files[*]}"
+          python make_epc.py epc_upload/ epc_region.json.gz
+
+      - name: Save it into the project
+        run: |
+          if [ ! -f epc_region.json.gz ]; then
+            echo "No file was built - check the step above."; exit 1
+          fi
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add epc_region.json.gz
+          git commit -m "Build house-size file from uploaded EPC data" || echo "no changes"
+          git push || echo "push skipped"
+          echo "Saved epc_region.json.gz"
