@@ -2000,7 +2000,12 @@ def subject_epc(conn, postcode, paon, addr_hint="", budget=None):
     pc, hn = (postcode or "").strip(), (paon or "").strip()
     if pc and hn:
         e = _load_epc_local().get(f"{_canon_pc(pc)}|{hn}".upper())
-        if e and e.get("fa"):
+        # Only short-circuit the live lookup when the bulk file ALSO gives a UPRN - the
+        # UPRN is what drives precise (offline) geocoding, so a bulk file lacking it must
+        # not suppress the live call, or subjects would silently lose their precise plot.
+        # Comparables read the bulk file directly (they need only floor area), so a
+        # UPRN-less bulk file still fully powers size-matched valuation.
+        if e and e.get("fa") and e.get("uprn"):
             return {"floor_area_m2": e.get("fa"),
                     "built_form": e.get("form") or "",
                     "property_type": e.get("type") or "",
