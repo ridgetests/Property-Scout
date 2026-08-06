@@ -1,0 +1,42 @@
+name: Build care-home list (CQC register)
+
+# Manual button. Downloads the CQC register of active care homes, filters to the Farnham
+# area, and writes care_homes_region.json.gz - so probate leads that are actually care
+# homes are dropped automatically (no manual list to keep). Manual-only; NOT the nightly.
+#
+# Re-run occasionally (the CQC file updates monthly). The download is a keyless static
+# file; if CQC changes the monthly filename the step fails loudly rather than writing bad
+# data.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pandas odfpy
+
+      - name: Build care_homes_region.json.gz from the CQC register
+        run: python make_carehomes.py
+
+      - name: Save it into the project
+        run: |
+          if [ ! -f care_homes_region.json.gz ]; then
+            echo "No file was built - check the step above."; exit 1
+          fi
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add care_homes_region.json.gz
+          git commit -m "Build care-home list from CQC register" || echo "no changes"
+          git push || echo "push skipped"
+          echo "Saved care_homes_region.json.gz"

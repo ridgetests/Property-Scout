@@ -128,8 +128,12 @@ function draw(){
     const gb = (st==='ok' && d.green_belt) ? ' · Green Belt (fine for Class Q)' : '';
     const gmaps=`https://www.google.com/maps/search/?api=1&query=${c.lat},${c.lon}`;
     const gearth=`https://earth.google.com/web/@${c.lat},${c.lon},0a,240d,35y,0h,0t,0r`;
+    const deal = c.deal ? `<div class="row" style="color:var(--ink)">Rough offer
+        <b>~£${c.deal.offer_low_k}k–£${c.deal.offer_high_k}k</b>
+        <span style="color:var(--muted)">(end ~£${c.deal.end_k}k − build ~£${c.deal.cost_k}k · indicative)</span></div>` : '';
     m.bindPopup(`<div class="pop"><b>${(c.use_tag||c.tier||'building')} · ${c.area_m2} m²</b>
       <div class="row">Up to <b>${dwellings(c)}</b> dwelling(s) · ${c.class_q_floorspace_m2} m² convertible</div>
+      ${deal}
       <div class="row">Field parcel ${c.parcel_m2? (c.parcel_m2.toLocaleString()+' m²'):'—'} · ${c.neighbours_150m} building(s) within 150 m</div>
       <div class="badge" style="background:${COL[st]}">${eligTxt}${gb}</div>
       <div class="links"><a href="${gmaps}" target="_blank" rel="noopener">Google Maps</a>
