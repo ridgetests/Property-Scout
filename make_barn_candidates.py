@@ -58,23 +58,23 @@ DWELLING_CAP_M2 = 150.0          # Class Q max floorspace per dwelling
 AGRI_TAGS = {"barn", "farm_auxiliary", "cowshed", "cowhouse", "stable", "stables",
              "sty", "farm", "agricultural", "greenhouse", "glasshouse", "silo"}
 
-# Non-residential building PURPOSES worth converting to a home, each with its route and a
-# convertibility/desirability prior (0-1). 'agricultural' = the barn/Class-Q core.
+# The hunt is deliberately narrow: for one person after a HOME, the feasible targets are
+# BARNS (Class Q), DISUSED/DERELICT buildings, and church-owned property (a separate CCOD
+# feed). Schools, halls, commercial and industrial buildings are large commercial
+# conversions -- unfeasible for this purpose -- so they are DROPPED from candidates, not
+# scored. Churches themselves aren't a conversion target either; they matter only as the
+# OWNER of nearby property (handled by the church-owned feed).
 _ROUTE = {
     "agricultural": "Class Q (agricultural → home)",
-    "religious":    "Full planning (redundant chapel / church)",
-    "education":    "Full planning (former school)",
-    "civic":        "Full planning (hall / civic building)",
-    "commercial":   "Class MA (commercial → home)",
-    "industrial":   "Class P/PA (storage / light industrial → home)",
 }
 _CONVERTIBLE = set(_ROUTE)
+# Purposes we explicitly EXCLUDE from candidates (big commercial conversions / owner-anchor
+# churches). A building tagged with one of these is skipped entirely.
+_DROP_CLASSES = {"religious", "education", "civic", "commercial", "industrial"}
 # convertibility prior per class. 'field' = an untagged building on a field (presumed
 # agricultural, but geometry carries it, so prior 0 as before); 'derelict' = disused,
 # purpose unknown.
-_CLASS_PRIOR = {"agricultural": 1.0, "religious": 0.85, "education": 0.80,
-                "civic": 0.75, "commercial": 0.60, "industrial": 0.45,
-                "derelict": 0.5, "field": 0.0, "other": 0.0}
+_CLASS_PRIOR = {"agricultural": 1.0, "derelict": 0.5, "field": 0.0, "other": 0.0}
 
 # Designations that KILL Class Q (Article 2(3) land + listed/SSSI). Green Belt is FINE.
 CLASSQ_EXCLUSIONS = {"area-of-outstanding-natural-beauty", "conservation-area",
@@ -233,6 +233,8 @@ def main():
         c = b.get("c")
         u = (b.get("u") or "").lower()
         cls = (b.get("cls") or "").lower()          # OSM purpose: religious/education/civic/...
+        if cls in _DROP_CLASSES:
+            continue                                 # school/hall/commercial/industrial/church -> not a home lead
         agri = (u in AGRI_TAGS) or cls == "agricultural"
         derelict = bool(b.get("d"))                 # OSM disused / abandoned / ruins
         typed = cls in _CONVERTIBLE                  # a known convertible non-residential type
