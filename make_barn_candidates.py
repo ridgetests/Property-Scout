@@ -58,6 +58,24 @@ DWELLING_CAP_M2 = 150.0          # Class Q max floorspace per dwelling
 AGRI_TAGS = {"barn", "farm_auxiliary", "cowshed", "cowhouse", "stable", "stables",
              "sty", "farm", "agricultural", "greenhouse", "glasshouse", "silo"}
 
+# Non-residential building PURPOSES worth converting to a home, each with its route and a
+# convertibility/desirability prior (0-1). 'agricultural' = the barn/Class-Q core.
+_ROUTE = {
+    "agricultural": "Class Q (agricultural → home)",
+    "religious":    "Full planning (redundant chapel / church)",
+    "education":    "Full planning (former school)",
+    "civic":        "Full planning (hall / civic building)",
+    "commercial":   "Class MA (commercial → home)",
+    "industrial":   "Class P/PA (storage / light industrial → home)",
+}
+_CONVERTIBLE = set(_ROUTE)
+# convertibility prior per class. 'field' = an untagged building on a field (presumed
+# agricultural, but geometry carries it, so prior 0 as before); 'derelict' = disused,
+# purpose unknown.
+_CLASS_PRIOR = {"agricultural": 1.0, "religious": 0.85, "education": 0.80,
+                "civic": 0.75, "commercial": 0.60, "industrial": 0.45,
+                "derelict": 0.5, "field": 0.0, "other": 0.0}
+
 # Designations that KILL Class Q (Article 2(3) land + listed/SSSI). Green Belt is FINE.
 CLASSQ_EXCLUSIONS = {"area-of-outstanding-natural-beauty", "conservation-area",
                      "national-park", "site-of-special-scientific-interest",
@@ -214,13 +232,14 @@ def main():
         a = b.get("a", 0)
         c = b.get("c")
         u = (b.get("u") or "").lower()
-        agri = u in AGRI_TAGS
-        derelict = bool(b.get("d"))         # OSM disused / abandoned / ruins
-        # size band: agri-tagged and DERELICT buildings are kept wider (a tagged/derelict
-        # barn just over 1,000 m2 is still a play; a small disused outbuilding is worth a
-        # look at 100 m2), while plain geometry stays at the 150 m2 floor to limit noise.
-        lo = 100.0 if (agri or derelict) else AREA_MIN
-        hi = 1500.0 if (agri or derelict) else AREA_MAX
+        cls = (b.get("cls") or "").lower()          # OSM purpose: religious/education/civic/...
+        agri = (u in AGRI_TAGS) or cls == "agricultural"
+        derelict = bool(b.get("d"))                 # OSM disused / abandoned / ruins
+        typed = cls in _CONVERTIBLE                  # a known convertible non-residential type
+        # size band: relaxed to 100 m2 for tagged/derelict/typed (a small chapel or disused
+        # outbuilding is worth a look); plain geometry stays at 150 m2 to limit noise.
+        lo = 100.0 if (agri or derelict or typed) else AREA_MIN
+        hi = 1500.0 if (agri or derelict or typed) else AREA_MAX
         if not c or not (lo <= a <= hi):
             continue
         in_band += 1
@@ -233,10 +252,24 @@ def main():
             if bb[0] <= lat <= bb[1] and bb[2] <= lon <= bb[3] and _pip(lat, lon, p["r"]):
                 if host is None or p["a"] > host["a"]:
                     host = p
-        # a building must be on a field OR carry an agricultural tag OR be derelict to qualify
-        if host is None and not agri and not derelict:
+        # qualify if on a field OR agricultural OR derelict OR a known convertible type
+        if host is None and not agri and not derelict and not typed:
             continue
         on_field += 1 if host is not None else 0
+
+        # building purpose + conversion route.
+        if agri:
+            bclass = "agricultural"
+        elif typed:
+            bclass = cls
+        elif derelict:
+            bclass = "derelict"
+        elif host:
+            bclass = "field"          # untagged building on a field -> geometry carries it
+        else:
+            bclass = "other"
+        route = _ROUTE.get(bclass, _ROUTE["agricultural"] if bclass == "field"
+                           else "Conversion (route depends on last use)")
 
         # isolation
         k = M_PER_DEG_LON_EQ * math.cos(math.radians(lat))
@@ -252,28 +285,34 @@ def main():
         elong, nverts = _shape_metrics(b.get("r") or [], lat)
 
         # ---- score (0-1) --------------------------------------------------
-        s_tag = 1.0 if agri else 0.0
-        s_area = min(1.0, (a - 100.0) / 450.0) if a < 600 else 1.0        # mid/large sheds peak
-        s_parcel = (min(1.0, math.log10(host["a"] / PARCEL_FIELD_SCALE + 1.0) / 1.4)
-                    if host else 0.3)
+        # 'tag' term is now the convertibility prior of the building's PURPOSE (barn=1.0,
+        # chapel=0.85, school=0.80, hall=0.75, commercial=0.60, industrial=0.45).
+        s_tag = _CLASS_PRIOR.get(bclass, 0.0)
+        s_area = min(1.0, (a - 100.0) / 450.0) if a < 600 else 1.0        # mid/large peak
+        # a building on a field scores on parcel size; a non-agri convertible (chapel in a
+        # village) isn't expected on a field, so give it a neutral parcel score, not a penalty
+        s_parcel = (min(1.0, math.log10(host["a"] / PARCEL_FIELD_SCALE + 1.0) / 1.4) if host
+                    else (0.5 if typed else 0.3))
         s_iso = max(0.0, 1.0 - neighbours / 12.0)
-        s_simple = max(0.0, 1.0 - max(0, nverts - 4) / 12.0)             # 4-8 verts = shed
-        s_elong = min(1.0, (elong - 1.0) / 2.0)                          # 3:1+ = very shed-like
+        s_simple = max(0.0, 1.0 - max(0, nverts - 4) / 12.0)             # 4-8 verts = simple
+        s_elong = min(1.0, (elong - 1.0) / 2.0)                          # 3:1+ = shed-like
         s_shape = 0.5 * s_simple + 0.5 * s_elong
 
         score = (0.33 * s_tag + 0.14 * s_area + 0.20 * s_parcel
                  + 0.16 * s_iso + 0.17 * s_shape)
-        # a DISUSED building is the redundant asset Class Q targets -> a real uplift
+        # a DISUSED building is the redundant asset a conversion targets -> a real uplift
         if derelict:
             score = min(1.0, score + 0.15)
 
-        tier = "derelict" if derelict else ("tagged-agri" if agri else "geometry")
+        tier = "derelict" if derelict else (bclass if bclass in _CONVERTIBLE else "geometry")
         candidates.append({
             "lat": round(lat, 6), "lon": round(lon, 6),
             "area_m2": int(a),
             "parcel_m2": int(host["a"]) if host else None,
             "neighbours_150m": neighbours,
             "use_tag": u or None,
+            "building_class": bclass,
+            "conversion_route": route,
             "derelict": derelict,
             "tier": tier,
             "elongation": round(elong, 2), "vertices": nverts,
@@ -291,8 +330,9 @@ def main():
     for thr in (0.5, 0.6, 0.7, 0.8):
         print("  ...score >= %.1f              : %d"
               % (thr, sum(1 for x in candidates if x["score"] >= thr)))
-    print("  tagged-agri in shortlist     : %d"
-          % sum(1 for x in candidates if x["tier"] == "tagged-agri"))
+    from collections import Counter
+    bc = Counter(x.get("building_class", "?") for x in candidates)
+    print("  by class: %s" % ", ".join("%s=%d" % (k, v) for k, v in bc.most_common()))
     print("  disused/derelict in shortlist: %d"
           % sum(1 for x in candidates if x.get("derelict")))
 
