@@ -32,8 +32,6 @@ BBOX = os.environ.get("PS_BBOX", "-0.93,51.09,-0.58,51.31")   # lng_min,lat_min,
 CLASSQ_START = "2014-04-06"        # Class Q came into force
 REQUEST_DELAY = float(os.environ.get("PS_PLANIT_DELAY", "10"))   # seconds between calls
 MAX_PAGES_PER_SEARCH = 4
-SELECT = ("name,uid,area_name,address,postcode,description,app_type,app_state,app_size,"
-          "start_date,decided_date,url,link,location_x,location_y,associated_id")
 SEARCHES = ["class q", "prior approval agricultural", "agricultural dwellinghouse",
             "conversion of agricultural building"]
 
@@ -99,36 +97,64 @@ def main():
     import requests
     import run
 
-    bbox = BBOX
-    print("bbox: %s | Class-Q window from %s" % (bbox, CLASSQ_START))
+    print("bbox: %s | Class-Q window from %s" % (BBOX, CLASSQ_START))
     conn = run.db_connect()
     seen = {}       # name -> record (dedupe across searches)
-    requests_made = 0
+    today = str(date.today())
+    URL = "https://www.planit.org.uk/api/applics/json"
+    HDR = {"User-Agent": run._UA, "Accept": "application/json"}
+    cy, cx, krad = 51.20, -0.755, 14      # bowl centre + radius, fallback if bbox is rejected
+    stats = {"req": 0, "win": None}       # request count + the parameter shape that worked
+
+    def _variants(term, page):
+        # fullest first, then progressively simpler; last resort swaps bbox -> lat/lng/krad
+        # (the shape run.py already uses successfully). 'select'/'sort' are dropped entirely
+        # since an unsupported param is exactly what returns 400.
+        base = {"search": term, "pg_sz": 100, "page": page}
+        return [
+            {**base, "bbox": BBOX, "start_date": CLASSQ_START, "end_date": today},
+            {**base, "bbox": BBOX},
+            {**base, "lat": cy, "lng": cx, "krad": krad, "start_date": CLASSQ_START, "end_date": today},
+            {**base, "lat": cy, "lng": cx, "krad": krad},
+        ]
+
+    def _fetch(term, page):
+        """Response JSON, self-discovering a working parameter shape once. A 400 means an
+        unsupported param (not a rate-limit) -> try a simpler variant. A 429 parks PlanIt."""
+        vs = _variants(term, page)
+        order = [stats["win"]] if stats["win"] is not None else list(range(len(vs)))
+        for i in order:
+            if run._dead("planit"):
+                return None
+            try:
+                r = requests.get(URL, params=vs[i], headers=HDR, timeout=30)
+                stats["req"] += 1
+                if r.status_code == 400:
+                    print("  variant %d -> 400 (unsupported params); trying simpler" % i)
+                    time.sleep(REQUEST_DELAY)
+                    continue
+                r.raise_for_status()
+                if stats["win"] is None:
+                    print("  using parameter variant %d (%s)"
+                          % (i, "bbox" if "bbox" in vs[i] else "lat/lng/krad"))
+                stats["win"] = i
+                return r.json()
+            except Exception as ex:
+                print("  %r p%d variant %d failed: %s" % (term, page, i, ex))
+                if run._throttled(ex):
+                    run._kill("planit", "429")
+                    return None
+                time.sleep(REQUEST_DELAY)
+        return None
 
     for term in SEARCHES:
         if run._dead("planit"):
-            print("  planit parked (429) -- stopping search early")
-            break
+            print("  planit parked -- stopping"); break
         page = 1
         while page <= MAX_PAGES_PER_SEARCH:
-            if run._dead("planit"):
+            body = _fetch(term, page)
+            if body is None:
                 break
-            params = {"bbox": bbox, "search": term, "start_date": CLASSQ_START,
-                      "end_date": str(date.today()), "pg_sz": 200, "page": page,
-                      "sort": "-start_date", "select": SELECT}
-            try:
-                r = requests.get("https://www.planit.org.uk/api/applics/json",
-                                 params=params,
-                                 headers={"User-Agent": run._UA, "Accept": "application/json"},
-                                 timeout=30)
-                r.raise_for_status()
-                body = r.json()
-            except Exception as ex:
-                print("  search %r page %d failed: %s" % (term, page, ex))
-                if run._throttled(ex):
-                    run._kill("planit", "429")
-                break
-            requests_made += 1
             recs = body.get("records", []) or []
             total = body.get("total", len(recs))
             for rec in recs:
@@ -136,11 +162,13 @@ def main():
                 if nm and nm not in seen:
                     seen[nm] = rec
             print("  search %r page %d: %d recs (total %s)" % (term, page, len(recs), total))
-            if page * 200 >= (total or 0) or not recs:
+            if not recs or page * 100 >= (total or 0):
                 break
             page += 1
             time.sleep(REQUEST_DELAY)
         time.sleep(REQUEST_DELAY)
+
+    requests_made = stats["req"]
 
     # confirm Class-Q, locate, keep only in-bowl, classify
     leads, dropped_type, dropped_area = [], 0, 0
