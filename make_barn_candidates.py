@@ -46,6 +46,12 @@ PARCEL_FIELD_SCALE = 5000.0      # a field, not a garden
 DENSITY_RADIUS_M = 150.0         # isolation radius
 MAX_OUTPUT = 200                 # matches DESIGNATION_TOP_N so every output cand is gated
 
+# --- deal-sheet assumptions (rough triage, NOT a valuation) ---
+CONV_COST_PER_M2 = 2200.0        # barn conversion build cost, £/m² (materially > refurb)
+DEV_MARGIN = 0.20                # developer's profit margin on end value
+END_DISCOUNT = 0.90              # converted-barn/rural discount vs a standard detached
+DWELLING_CAP_M2 = 150.0          # Class Q max floorspace per dwelling
+
 # OSM building/use tags that genuinely mean "agricultural" (Class-Q relevant).
 # Deliberately TIGHT: 'shed'/'garage'/'outbuilding' are usually domestic, and
 # 'warehouse'/'retail'/'industrial' are commercial -- none are Class-Q agricultural.
@@ -135,6 +141,45 @@ def load_gz(path, key):
         sys.exit("MISSING %s -- build it first (see the workflow)." % path)
     with gzip.open(path, "rt") as fh:
         return json.load(fh).get(key, [])
+
+
+def _regional_ppm2(run):
+    """Median £/m² for a mid-size (~150 m²) detached dwelling locally, from recent Price
+    Paid sales matched to EPC floor areas. This is the right comp for a Class-Q dwelling
+    (<=150 m²), not the prime-house average. Returns (median, p25, p75, n) or (None,...)."""
+    vals = []
+    for r in run._load_ppd():
+        if r.get("t") != "detached" or (r.get("d") or "") < "2020-01-01":
+            continue
+        fa = run._comp_floor_area(r)
+        if fa and 110 <= fa <= 180 and r.get("p"):
+            v = r["p"] / fa
+            if 1500 <= v <= 12000:
+                vals.append(v)
+    if len(vals) < 30:
+        return None, None, None, len(vals)
+    vals.sort()
+    n = len(vals)
+    return vals[n // 2], vals[n // 4], vals[3 * n // 4], n
+
+
+def _deal(area_m2, dwellings, ppm2, p25, p75):
+    """Rough residual-value deal-sheet for a barn. Values each Class-Q dwelling as a
+    ~150 m² local detached, minus a conversion cost and a developer margin -> the residual
+    is roughly what the barn+consent is worth to you (an opening-offer range)."""
+    usable = min(min(area_m2, 1000.0), dwellings * DWELLING_CAP_M2)
+    def offer(rate):
+        end = usable * rate * END_DISCOUNT
+        return end * (1.0 - DEV_MARGIN) - usable * CONV_COST_PER_M2
+    end_mid = usable * ppm2 * END_DISCOUNT
+    return {
+        "usable_m2": round(usable),
+        "dwellings": dwellings,
+        "end_k": round(end_mid / 1000),
+        "cost_k": round(usable * CONV_COST_PER_M2 / 1000),
+        "offer_low_k": round(max(0.0, offer(p25)) / 1000),
+        "offer_high_k": round(max(0.0, offer(p75)) / 1000),
+    }
 
 
 def main():
@@ -243,6 +288,17 @@ def main():
 
     shortlist = candidates[:MAX_OUTPUT]
 
+    # --- deal-sheet: rough residual value (opening-offer range) per candidate ---
+    import run
+    ppm2, p25, p75, nppm2 = _regional_ppm2(run)
+    if ppm2:
+        print("\nDEAL-SHEET basis: %d local mid-size detached sales -> £%d/m² (p25 %d, p75 %d)"
+              % (nppm2, round(ppm2), round(p25), round(p75)))
+        for cand in shortlist:
+            cand["deal"] = _deal(cand["area_m2"], cand["max_dwellings"], ppm2, p25, p75)
+    else:
+        print("\nDEAL-SHEET skipped: only %d matched sales (need >=30); no reliable £/m²" % nppm2)
+
     # --- designation gate (network; top-N only) ---
     gated = 0
     if not no_desig and shortlist:
@@ -281,7 +337,14 @@ def main():
         "params": {"area_min_m2": AREA_MIN, "area_max_m2": AREA_MAX,
                    "parcel_field_scale_m2": PARCEL_FIELD_SCALE,
                    "density_radius_m": DENSITY_RADIUS_M},
+        "valuation": {"ppm2": round(ppm2) if ppm2 else None,
+                      "conv_cost_per_m2": CONV_COST_PER_M2, "dev_margin": DEV_MARGIN,
+                      "end_discount": END_DISCOUNT,
+                      "basis": "local mid-size detached £/m² (Price Paid x EPC), recent sales"},
         "warnings": [
+            "Deal-sheet figures are a ROUGH triage range, not a valuation: end value = a "
+            "local mid-size detached £/m² x convertible floorspace, minus conversion cost "
+            "and a developer margin. Real value swings on structure, access, and scheme.",
             "Class Q eligibility is checked against LIVE designation data. It is a "
             "triage flag, not planning advice -- verify before acting.",
             "Surrey Hills National Landscape is being EXTENDED over parts of this bowl "

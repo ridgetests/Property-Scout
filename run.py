@@ -150,15 +150,36 @@ def _is_excluded_locality(text):
 
 # Some care homes appear in a probate notice by STREET ADDRESS ONLY, with no "care home"
 # wording, so _is_carehome() above cannot catch them (e.g. "43 Waverley Lane" is Waverley
-# Grange Care Home). Seed this with any you spot; a care home almost always owns its whole
-# postcode, so a postcode match is safe. The fuller fix is the CQC register (see roadmap).
+# Grange Care Home). A care home almost always owns its whole postcode, so a postcode match
+# is safe. The authoritative source is the CQC register (care_homes_region.json.gz, built
+# by make_carehomes.py); this hand seed is a fallback for when that file is absent.
 KNOWN_CAREHOME_PCS = {
     "GU9 8BH",   # Waverley Grange Care Home, 43 Waverley Lane, Farnham
 }
+CAREHOMES_FILE = Path(__file__).resolve().parent / "care_homes_region.json.gz"  # CQC-derived (optional)
+_CAREHOME_PCS = None
+
+
+def _load_carehomes():
+    """Care-home postcodes: the CQC-derived file (if present) merged with the hand seed.
+    Absent file -> just the seed. Loaded once."""
+    global _CAREHOME_PCS
+    if _CAREHOME_PCS is not None:
+        return _CAREHOME_PCS
+    s = set(KNOWN_CAREHOME_PCS)
+    try:
+        with gzip.open(CAREHOMES_FILE, "rt") as f:
+            for pc in json.load(f).get("postcodes", []):
+                s.add(re.sub(r"\s+", " ", str(pc).strip().upper()))
+        print(f"- loaded {len(s):,} care-home postcodes (CQC register + seed)")
+    except Exception:
+        pass
+    _CAREHOME_PCS = s
+    return s
 
 
 def _is_known_carehome(postcode):
-    return re.sub(r"\s+", " ", (postcode or "").strip().upper()) in KNOWN_CAREHOME_PCS
+    return re.sub(r"\s+", " ", (postcode or "").strip().upper()) in _load_carehomes()
 
 
 LISTING_EPC_CAP = 30                     # max subject EPC lookups for public listings per run (cached forever)
