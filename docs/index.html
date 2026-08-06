@@ -282,10 +282,13 @@ function initMap(){
 
 function dom_(p){ return (p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||0; }
 const PRICE_CAP = 850000, MIN_BEDS = 2;
-// off-thesis by type: flats/maisonettes/semis/terraces are never what we want
+// keep only DETACHED HOUSES: drop attached dwellings AND non-house types (bungalow,
+// land, development, farm, barn...). A bare 'house'/'property'/'detached' is kept --
+// the source often doesn't state detachment, so we keep the ambiguous ones for now.
 function offThesis(p){
   const t=(p.property_type||'').toLowerCase(), a=(p.address||'').toLowerCase();
-  return /semi|terrace|flat|maisonette|apartment/.test(t) || /\b(flat|apartment|maisonette)\b/.test(a);
+  return /semi|terrace|flat|maisonette|apartment|bungalow|land|plot|development|farm|smallholding|equestrian|barn|webpage/.test(t)
+    || /\b(flat|apartment|maisonette)\b/.test(a);
 }
 function visible(){
   const min = +document.getElementById('ms').value;

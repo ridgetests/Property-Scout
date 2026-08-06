@@ -750,8 +750,16 @@ def analyze_buildings(parcel):
 
 
 def _excluded_type(typ):
+    """True if a listing's type is NOT a detached house. Drops attached dwellings
+    (semi/terrace/flat/maisonette/apartment) AND non-house types the estate-agent
+    feed shouldn't carry (bungalow, land/plot, development, farm/smallholding/
+    equestrian, barn -- the barn engine handles those). A bare 'house'/'property'/
+    'detached' is kept (pragmatic: the source often doesn't label detachment, so we
+    keep the ambiguous ones rather than bin real detached houses)."""
     t = (typ or "").lower()
-    return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment"))
+    return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment",
+                                "bungalow", "land", "plot", "development", "farm",
+                                "smallholding", "equestrian", "barn", "webpage"))
 
 
 def _addr_is_flat(addr):
