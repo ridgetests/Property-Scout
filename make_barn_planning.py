@@ -23,9 +23,16 @@ Heavy/occasional: run as the "Build barn planning leads" workflow button, NOT ni
 
 import json
 import os
+import re
 import sys
 import time
 from datetime import date, datetime
+
+# PlanIt sometimes records the LOCAL AUTHORITY's own office as the application address
+# (e.g. "Waverley Borough Council, The Burys, Godalming") -- that's not a barn. Drop it.
+_LPA_ADDR_RE = re.compile(
+    r"\b(borough|district|county|town|parish)\s+council\b|council offices|"
+    r"civic (offices|centre)|\bthe burys\b", re.IGNORECASE)
 
 OUTPUT = os.environ.get("PS_OUTPUT", "docs/barn_planning.json")
 BBOX = os.environ.get("PS_BBOX", "-0.93,51.09,-0.58,51.31")   # lng_min,lat_min,lng_max,lat_max
@@ -171,8 +178,11 @@ def main():
     requests_made = stats["req"]
 
     # confirm Class-Q, locate, keep only in-bowl, classify
-    leads, dropped_type, dropped_area = [], 0, 0
+    leads, dropped_type, dropped_area, dropped_lpa = [], 0, 0, 0
     for rec in seen.values():
+        if _LPA_ADDR_RE.search(str(rec.get("address") or "")):
+            dropped_lpa += 1        # the council's own office address, not a barn
+            continue
         if not _is_classq(rec):
             dropped_type += 1
             continue
@@ -202,7 +212,8 @@ def main():
     cats = Counter(x["category"] for x in leads)
     print("\nPLANIT MINE (%d requests)" % requests_made)
     print("  Class-Q applications in bowl : %d" % len(leads))
-    print("  dropped (not Class-Q / area) : %d / %d" % (dropped_type, dropped_area))
+    print("  dropped (not Class-Q / area / council-office) : %d / %d / %d"
+          % (dropped_type, dropped_area, dropped_lpa))
     for c in ("approved_dormant", "approved_lapsed", "refused", "approved_recent", "pending"):
         print("  %-18s : %d" % (c, cats.get(c, 0)))
 
