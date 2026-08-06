@@ -49,8 +49,12 @@
   .pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
   #map{height:34vh;width:100%;background:#e8ede8;isolation:isolate;position:relative;z-index:0}
   .list{padding:10px 12px 90px;display:flex;flex-direction:column;gap:8px}
-  .card{background:var(--surface);border:.5px solid var(--line);border-radius:12px;padding:12px;display:flex;gap:10px;cursor:pointer}
+  .card{background:var(--surface);border:.5px solid var(--line);border-radius:12px;padding:12px;display:flex;gap:10px;cursor:pointer;position:relative}
   .card.sel{border-color:var(--ink)}
+  .kill{position:absolute;top:6px;left:6px;width:24px;height:24px;border:none;border-radius:50%;
+    background:rgba(28,28,26,.55);color:#fff;font-size:13px;line-height:1;cursor:pointer;z-index:3;
+    display:flex;align-items:center;justify-content:center;padding:0;-webkit-tap-highlight-color:transparent}
+  .kill:hover{background:#dc2626}
   .ph{width:64px;height:82px;border-radius:8px;flex-shrink:0;position:relative;overflow:hidden;background:#e6e2d8;display:flex;align-items:center;justify-content:center}
   .ph img{width:100%;height:100%;object-fit:cover}
   .ph .src{position:absolute;top:3px;left:3px;background:var(--src-ink);color:#fff;font-size:8px;font-weight:600;padding:2px 4px;border-radius:4px;letter-spacing:.03em}
@@ -277,11 +281,24 @@ function initMap(){
 }
 
 function dom_(p){ return (p.enrichment&&p.enrichment.market&&p.enrichment.market.dom)||0; }
+const PRICE_CAP = 850000, MIN_BEDS = 2;
+// keep only DETACHED HOUSES: drop attached dwellings AND non-house types (bungalow,
+// land, development, farm, barn...). A bare 'house'/'property'/'detached' is kept --
+// the source often doesn't state detachment, so we keep the ambiguous ones for now.
+function offThesis(p){
+  const t=(p.property_type||'').toLowerCase(), a=(p.address||'').toLowerCase();
+  return /semi|terrace|flat|maisonette|apartment|bungalow|land|plot|development|farm|smallholding|equestrian|barn|webpage/.test(t)
+    || /\b(flat|apartment|maisonette)\b/.test(a);
+}
 function visible(){
   const min = +document.getElementById('ms').value;
   const maxd = +(document.getElementById('md')||{}).value || 25;
   const so = (document.getElementById('sort')||{}).value || 'score';
-  const arr = DATA.filter(p => !dismissed.has(p.id) && p.score>=min && (filter!=='low'||p.low_comp) && (maxd>=25 || (p.dist_mi!=null && p.dist_mi<=maxd)));
+  const arr = DATA.filter(p => !dismissed.has(p.id) && p.score>=min && (filter!=='low'||p.low_comp)
+    && (maxd>=25 || (p.dist_mi!=null && p.dist_mi<=maxd))
+    && !(p.price && p.price>PRICE_CAP)          // £850k cap
+    && !(p.beds && p.beds<MIN_BEDS)             // 2 beds minimum (unknown kept)
+    && !offThesis(p));                          // no flats / maisonettes / semis / terraces
   const cmp = {
     score:(a,b)=>b.score-a.score,
     dist:(a,b)=>(a.dist_mi==null?99:a.dist_mi)-(b.dist_mi==null?99:b.dist_mi),
@@ -333,6 +350,7 @@ function card(p){
   if(hc.plot!=null) vsBits.push(`${pct(hc.plot)} plot`);
   const vsHtml = vsBits.length ? `<div class="vs">${vsBits.join(' · ')} <span class="vsu">vs yours${hc.est?' · *est':''}</span></div>` : '';
   return `<div class="card ${selected===p.id?'sel':''}" onclick="openDrawer('${p.id}')">
+    <button class="kill" title="Hide this — not for me" onclick="event.stopPropagation();dismiss('${p.id}')">✕</button>
     <div class="ph">${badge}${thumb}</div>
     <div class="body">
       <div class="ctop"><div class="addr">${hd(p)}<small>${p.address}</small></div>

@@ -24,7 +24,7 @@ from pathlib import Path
 USE_MOCK = False
 
 SEARCH = {
-    "max_price": 800_000,
+    "max_price": 850_000,
     "min_price": 450_000,
     "areas": ["Waverley", "East Hampshire"],   # boundary names
     "min_beds": 2,
@@ -750,8 +750,16 @@ def analyze_buildings(parcel):
 
 
 def _excluded_type(typ):
+    """True if a listing's type is NOT a detached house. Drops attached dwellings
+    (semi/terrace/flat/maisonette/apartment) AND non-house types the estate-agent
+    feed shouldn't carry (bungalow, land/plot, development, farm/smallholding/
+    equestrian, barn -- the barn engine handles those). A bare 'house'/'property'/
+    'detached' is kept (pragmatic: the source often doesn't label detachment, so we
+    keep the ambiguous ones rather than bin real detached houses)."""
     t = (typ or "").lower()
-    return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment"))
+    return any(k in t for k in ("semi", "terrace", "flat", "maisonette", "apartment",
+                                "bungalow", "land", "plot", "development", "farm",
+                                "smallholding", "equestrian", "barn", "webpage"))
 
 
 def _addr_is_flat(addr):
@@ -1127,7 +1135,7 @@ def score_property(p):
 def apply_gates(props, conn=None):
     """Stamp plot size; apply detached + plot-size hard gates (keep unverified plots)."""
     out = []
-    dropped_type = dropped_plot = dropped_area = 0
+    dropped_type = dropped_plot = dropped_area = dropped_offthesis = 0
     for p in props:
         if p.get("lat") is not None and not _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
             dropped_area += 1
@@ -1144,6 +1152,14 @@ def apply_gates(props, conn=None):
             continue
         if DETACHED_ONLY and (_excluded_type(p.get("property_type")) or _addr_is_flat(p.get("address"))):
             dropped_type += 1
+            continue
+        # Uniform price + bedroom limits across BOTH sources. Homedata already filters
+        # these in its query; the agent-website scraper does NOT, so enforce here so a
+        # £1.2m mansion or a 1-bed from an agent site can't slip past.
+        _pr = p.get("price") or 0
+        _bd = p.get("beds") or 0
+        if (_pr and _pr > SEARCH["max_price"]) or (_bd and _bd < SEARCH["min_beds"]):
+            dropped_offthesis += 1
             continue
         lat, lng = p.get("lat"), p.get("lng")
         parcel = parcel_for(lat, lng)
@@ -1201,8 +1217,10 @@ def apply_gates(props, conn=None):
         p["setting"] = _local_density(lat, lng)
         score_property(p)
         out.append(p)
-    if dropped_type or dropped_plot or dropped_area:
-        print(f"- gates: dropped {dropped_area} out-of-area, {dropped_type} non-detached, {dropped_plot} under {MIN_PLOT_M2} m2 plot")
+    if dropped_type or dropped_plot or dropped_area or dropped_offthesis:
+        print(f"- gates: dropped {dropped_area} out-of-area, {dropped_type} non-detached, "
+              f"{dropped_offthesis} over £{SEARCH['max_price']//1000}k / under {SEARCH['min_beds']} bed, "
+              f"{dropped_plot} under {MIN_PLOT_M2} m2 plot")
     return out
 
 

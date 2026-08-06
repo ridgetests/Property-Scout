@@ -1,0 +1,47 @@
+name: Diagnose agent scraper (which agents return listings)
+
+# Manual button. Runs ONLY the local estate-agent website scraper (fetch_agents.py) --
+# no Homedata, no cost -- against a FRESH state so it reports EVERY current listing, not
+# just new ones. Prints a per-agent tally so we can see which agents are working and which
+# are silently failing ("lots of one agent, where's the rest?"). Commits nothing.
+#
+# Politeness is unchanged: robots.txt is respected and the 10s crawl-delay is kept; only
+# the per-agent detail-fetch cap is trimmed so the diagnostic finishes in reasonable time.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies (now incl. BeautifulSoup + lxml)
+        run: pip install -r requirements.txt
+
+      - name: Run the agent scraper (fresh state, no commit)
+        env:
+          AGENTS_STATE_FILE: /tmp/fresh_agents_state.json   # empty -> report ALL, not just new
+          AGENTS_MAX_FETCHES: "8"                            # trim detail fetches so it finishes
+        run: python fetch_agents.py || true
+
+      - name: Per-agent tally
+        run: |
+          python - <<'PY'
+          import json, collections, os
+          if not os.path.exists("agent_listings.json"):
+              print("No agent_listings.json produced -- the scraper returned nothing at all.")
+              raise SystemExit(0)
+          data = json.load(open("agent_listings.json"))
+          rows = data if isinstance(data, list) else (data.get("listings") or [])
+          by = collections.Counter(str(r.get("source") or r.get("agent") or "?") for r in rows)
+          print("TOTAL agent listings:", len(rows))
+          print("by agent:")
+          for name, n in by.most_common():
+              print("  %4d  %s" % (n, name))
+          # agents that produced nothing are the ones to investigate
+          PY
