@@ -1,0 +1,46 @@
+name: Build building heights (LIDAR)
+
+# Manual button. For each eligible barn candidate, downloads its LIDAR ground + surface
+# height via WCS, computes height-above-ground, and writes docs/building_heights.json -
+# so the map can flag tall "house-like" buildings that aren't really barns.
+#
+# Needs docs/barn_candidates.json (run "Build barn candidates" first). ~2 WCS requests
+# per eligible candidate, spaced, behind a small breaker. Manual-only; NOT the nightly.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests pyproj rasterio numpy
+
+      - name: Sample LIDAR heights for eligible candidates
+        run: |
+          if [ ! -f docs/barn_candidates.json ]; then
+            echo "Missing docs/barn_candidates.json - run 'Build barn candidates' first."
+            exit 1
+          fi
+          python make_building_heights.py
+
+      - name: Save the heights
+        run: |
+          if [ ! -f docs/building_heights.json ]; then
+            echo "No heights file was written - check the step above."; exit 1
+          fi
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add docs/building_heights.json
+          git commit -m "Build building heights (LIDAR)" || echo "no changes"
+          git push || echo "push skipped"
+          echo "Saved docs/building_heights.json"

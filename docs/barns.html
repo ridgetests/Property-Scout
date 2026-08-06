@@ -56,6 +56,7 @@
 </header>
 <div class="bar">
   <label><input type="checkbox" id="onlyElig" checked onchange="draw()"> Eligible only</label>
+  <label style="display:none"><input type="checkbox" id="hHouse" onchange="draw()"> Hide house-like (LIDAR)</label>
   <label><input type="checkbox" id="showPlan" checked onchange="draw()"> Planning leads</label>
   <span class="leg"><span class="dot" style="background:var(--ok)"></span>eligible barn</span>
   <span class="leg"><span class="dot" style="background:var(--no)"></span>excluded</span>
@@ -82,7 +83,7 @@ function gate(){ if(localStorage.getItem('ps_auth')===String(PASS_H)){boot();} e
 const HOME=[51.198,-0.832];
 const AREA_POLY=[[51.1126,-0.8303],[51.1502,-0.8904],[51.2691,-0.912],[51.2876,-0.8437],
   [51.2327,-0.6324],[51.1846,-0.5961],[51.1498,-0.628],[51.1231,-0.6991]];
-let MAP, LAYER, PLAYER, DATA=[], PLAN=[];
+let MAP, LAYER, PLAYER, DATA=[], PLAN=[], HEIGHTS={};
 // planning-lead pin colours by category (hottest = gold)
 const PCOL={approved_dormant:'#f59e0b',approved_lapsed:'#ea580c',refused:'#7c3aed',
   approved_recent:'#0a84ff',pending:'#64748b',other:'#94a3b8'};
@@ -103,13 +104,17 @@ function boot(){
   L.polygon(AREA_POLY,{color:'#38bdf8',weight:2,fill:false,dashArray:'6 5',opacity:0.85}).addTo(MAP);
   L.marker(HOME,{icon:L.divIcon({html:'🏠',className:'homeicon',iconSize:[26,26],iconAnchor:[13,13]}),
     zIndexOffset:1000}).addTo(MAP).bindPopup('<div class="pop"><b>Your home</b><div class="row">Wrecclesham</div></div>');
-  // planning leads are optional (built by a separate workflow) - load if present
-  fetch('barn_planning.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) PLAN=j.leads||[]; }).catch(()=>{})
-    .finally(()=>{
-      fetch('barn_candidates.json').then(r=>r.json()).then(j=>{
-        DATA=j.candidates||[]; draw();
-      }).catch(e=>{document.getElementById('sub').textContent='could not load barn_candidates.json';});
-    });
+  // planning leads + heights are optional (separate workflows) - load if present
+  Promise.all([
+    fetch('barn_planning.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) PLAN=j.leads||[]; }).catch(()=>{}),
+    fetch('building_heights.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) HEIGHTS=j.heights||{}; }).catch(()=>{}),
+  ]).finally(()=>{
+    fetch('barn_candidates.json').then(r=>r.json()).then(j=>{
+      DATA=j.candidates||[];
+      if(Object.keys(HEIGHTS).length) document.getElementById('hHouse').parentElement.style.display='';
+      draw();
+    }).catch(e=>{document.getElementById('sub').textContent='could not load barn_candidates.json';});
+  });
 }
 
 function draw(){
@@ -120,6 +125,8 @@ function draw(){
   DATA.forEach(c=>{
     const st=eligState(c);
     if(onlyElig && st!=='ok') return;
+    const h = HEIGHTS[c.lat+','+c.lon];
+    if(document.getElementById('hHouse').checked && h && h.kind && h.kind.indexOf('tall')===0) return;
     const m=L.circleMarker([c.lat,c.lon],{radius:7,color:'#fff',weight:1.5,
       fillColor:COL[st],fillOpacity:0.9});
     const d=c.designation||{};
@@ -131,8 +138,10 @@ function draw(){
     const deal = c.deal ? `<div class="row" style="color:var(--ink)">Rough offer
         <b>~£${c.deal.offer_low_k}k–£${c.deal.offer_high_k}k</b>
         <span style="color:var(--muted)">(end ~£${c.deal.end_k}k − build ~£${c.deal.cost_k}k · indicative)</span></div>` : '';
+    const hLine = h ? `<div class="row">LIDAR height <b>${h.ridge_m} m</b> to ridge · ${h.kind}</div>` : '';
     m.bindPopup(`<div class="pop"><b>${(c.use_tag||c.tier||'building')} · ${c.area_m2} m²</b>
       <div class="row">Up to <b>${dwellings(c)}</b> dwelling(s) · ${c.class_q_floorspace_m2} m² convertible</div>
+      ${hLine}
       ${deal}
       <div class="row">Field parcel ${c.parcel_m2? (c.parcel_m2.toLocaleString()+' m²'):'—'} · ${c.neighbours_150m} building(s) within 150 m</div>
       <div class="badge" style="background:${COL[st]}">${eligTxt}${gb}</div>
