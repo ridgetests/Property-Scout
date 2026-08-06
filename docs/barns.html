@@ -55,9 +55,11 @@
 </header>
 <div class="bar">
   <label><input type="checkbox" id="onlyElig" checked onchange="draw()"> Eligible only</label>
-  <span class="leg"><span class="dot" style="background:var(--ok)"></span>eligible</span>
+  <label><input type="checkbox" id="showPlan" checked onchange="draw()"> Planning leads</label>
+  <span class="leg"><span class="dot" style="background:var(--ok)"></span>eligible barn</span>
   <span class="leg"><span class="dot" style="background:var(--no)"></span>excluded</span>
-  <span class="leg"><span class="dot" style="background:var(--unk)"></span>not checked</span>
+  <span class="leg"><span class="dot" style="background:#f59e0b"></span>approved, dormant</span>
+  <span class="leg"><span class="dot" style="background:#7c3aed"></span>refused</span>
 </div>
 <div id="map"></div>
 <footer id="attrib">Building outlines © OpenStreetMap contributors (ODbL) · Parcels © HM Land Registry (INSPIRE) · Designations © planning.data.gov.uk · Imagery © Esri. Class-Q eligibility is a triage flag, not planning advice — verify before acting.</footer>
@@ -72,7 +74,12 @@ function unlock(){const v=document.getElementById('pc').value;
   else{document.getElementById('lockerr').style.display='block';}}
 function gate(){ if(localStorage.getItem('ps_auth')===String(PASS_H)){boot();} else {document.getElementById('lock').style.display='flex';} }
 
-let MAP, LAYER, DATA=[];
+let MAP, LAYER, PLAYER, DATA=[], PLAN=[];
+// planning-lead pin colours by category (hottest = gold)
+const PCOL={approved_dormant:'#f59e0b',approved_lapsed:'#ea580c',refused:'#7c3aed',
+  approved_recent:'#0a84ff',pending:'#64748b',other:'#94a3b8'};
+const PLABEL={approved_dormant:'Approved but dormant (hottest)',approved_lapsed:'Approved, window lapsed',
+  refused:'Refused (maybe fixable)',approved_recent:'Approved recently',pending:'Pending',other:'Other'};
 function dwellings(c){ if(c.max_dwellings) return c.max_dwellings;
   return Math.min(10, Math.max(1, Math.floor(Math.min(c.area_m2||0,1000)/150))); }
 function eligState(c){ const d=c.designation||{}; if(d.eligible===true) return 'ok';
@@ -84,12 +91,13 @@ function boot(){
   MAP=L.map('map',{zoomControl:true});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     {maxZoom:19, attribution:'Imagery © Esri'}).addTo(MAP);
-  fetch('barn_candidates.json').then(r=>r.json()).then(j=>{
-    DATA=j.candidates||[];
-    const nElig=DATA.filter(c=>eligState(c)==='ok').length;
-    document.getElementById('sub').textContent=`${DATA.length} candidates · ${nElig} Class-Q eligible`;
-    draw();
-  }).catch(e=>{document.getElementById('sub').textContent='could not load barn_candidates.json';});
+  // planning leads are optional (built by a separate workflow) - load if present
+  fetch('barn_planning.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) PLAN=j.leads||[]; }).catch(()=>{})
+    .finally(()=>{
+      fetch('barn_candidates.json').then(r=>r.json()).then(j=>{
+        DATA=j.candidates||[]; draw();
+      }).catch(e=>{document.getElementById('sub').textContent='could not load barn_candidates.json';});
+    });
 }
 
 function draw(){
@@ -116,9 +124,29 @@ function draw(){
         <a href="${gearth}" target="_blank" rel="noopener">Google Earth</a></div></div>`);
     m.addTo(LAYER); pts.push([c.lat,c.lon]);
   });
+  // planning-lead layer (approved-dormant / refused Class-Q applications)
+  if(PLAYER) PLAYER.remove();
+  let nPlan=0;
+  if(document.getElementById('showPlan').checked && PLAN.length){
+    PLAYER=L.layerGroup().addTo(MAP);
+    PLAN.forEach(p=>{
+      const col=PCOL[p.category]||'#94a3b8';
+      const m=L.circleMarker([p.lat,p.lon],{radius:8,color:'#1c1c1a',weight:2,
+        fillColor:col,fillOpacity:0.95});
+      const age=(p.age_years!=null)?` · decided ${p.age_years} yr ago`:'';
+      const link=p.url?`<div class="links"><a href="${p.url}" target="_blank" rel="noopener">Council record</a></div>`:'';
+      m.bindPopup(`<div class="pop"><b>${PLABEL[p.category]||p.category}</b>
+        <div class="row">${p.app_state||''}${age}</div>
+        <div class="row">${(p.address||p.postcode||'')}</div>
+        <div class="row" style="color:var(--ink)">${(p.description||'').slice(0,200)}</div>
+        ${link}</div>`);
+      m.addTo(PLAYER); pts.push([p.lat,p.lon]); nPlan++;
+    });
+  }
   const n=pts.length;
   document.getElementById('sub').textContent =
-    `${DATA.length} candidates · showing ${n} ${onlyElig?'eligible':'(all)'}`;
+    `${DATA.length} barns (${document.getElementById('onlyElig').checked?'eligible shown':'all shown'})`
+    + (PLAN.length?` · ${nPlan} planning leads`:'');
   if(n) MAP.fitBounds(pts,{padding:[40,40],maxZoom:14});
 }
 gate();
