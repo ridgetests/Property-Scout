@@ -1,0 +1,43 @@
+name: Build distress signals (Gazette receivers / insolvency)
+
+# Manual button. Mines The Gazette for pre-market DISTRESS signals near your patch:
+# LPA / fixed-charge receiver appointments (the step before a forced sale, naming the
+# property) and corporate winding-up / administration. Individual bankruptcy / IVAs are
+# excluded. Writes docs/distress.json (postcode + type + link only -- no names/text).
+# Manual-only; NOT the nightly cron.
+#
+# The Gazette crawl-delay is 1 request / 10s; this makes only a couple of calls behind
+# the circuit-breaker. If it 429s it parks and reports -- no ban risk.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Mine Gazette distress notices
+        run: python make_distress.py
+
+      - name: Save the signals
+        run: |
+          if [ ! -f docs/distress.json ]; then
+            echo "No distress file was written (Gazette may have been rate-limited)."; exit 1
+          fi
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add docs/distress.json
+          git commit -m "Build distress signals (Gazette receivers / insolvency)" || echo "no changes"
+          git push || echo "push skipped"
+          echo "Saved docs/distress.json"
