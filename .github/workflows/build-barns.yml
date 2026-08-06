@@ -37,12 +37,12 @@ jobs:
 
       - name: Save the shortlist
         run: |
-          if [ ! -f barn_candidates.json ]; then
+          if [ ! -f docs/barn_candidates.json ]; then
             echo "No shortlist was built - check the step above."; exit 1
           fi
           git config user.name "scout-bot"
           git config user.email "scout-bot@users.noreply.github.com"
-          git add barn_candidates.json
+          git add docs/barn_candidates.json
           git commit -m "Build barn candidates (ranked + designation-gated)" || echo "no changes"
           git push || echo "push skipped"
           echo "Saved barn_candidates.json"

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"/>
+<title>PropertyScout — Barns</title>
+<meta name="theme-color" content="#1c1c1a"/>
+<link rel="apple-touch-icon" href="icon-180.png"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<style>
+  :root{ --bg:#FAFAFA; --surface:#fff; --line:#e7e5e0; --line2:#d6d3cc;
+    --ink:#1c1c1a; --muted:#6b6a66; --hint:#9a988f;
+    --ok:#16a34a; --no:#dc2626; --unk:#94a3b8; }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;background:var(--bg);color:var(--ink);display:flex;flex-direction:column}
+  .lock{position:fixed;inset:0;z-index:1000;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px}
+  .lockbox{width:100%;max-width:300px;text-align:center}
+  .lockbox h2{margin:0 0 4px;font-size:22px}
+  .lockbox p{color:var(--muted);margin:0 0 16px;font-size:14px}
+  .lockbox input{width:100%;padding:13px;border:1px solid var(--line2);border-radius:10px;font-size:16px;margin-bottom:10px;background:var(--surface);color:var(--ink)}
+  .lockbox button{width:100%;padding:13px;border:none;border-radius:10px;background:#0a84ff;color:#fff;font-size:15px;font-weight:600;cursor:pointer}
+  .lockerr{color:#ff3b30;font-size:13px;margin-top:10px}
+  header{background:var(--surface);border-bottom:.5px solid var(--line);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex:0 0 auto}
+  header h1{font-size:15px;font-weight:600;letter-spacing:-.01em}
+  header .sub{font-size:11px;color:var(--hint)}
+  header a.back{font-size:13px;color:#0a84ff;text-decoration:none}
+  .bar{background:var(--surface);border-bottom:.5px solid var(--line);padding:8px 16px;display:flex;align-items:center;gap:12px;flex:0 0 auto;font-size:12px;color:var(--muted);flex-wrap:wrap}
+  .bar label{display:flex;align-items:center;gap:6px;cursor:pointer}
+  .leg{display:inline-flex;align-items:center;gap:4px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  #map{flex:1 1 auto;min-height:0}
+  .pop{font-family:inherit;min-width:190px}
+  .pop b{font-size:13px}
+  .pop .row{font-size:12px;color:var(--muted);margin-top:3px}
+  .pop .badge{display:inline-block;font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;margin-top:6px;color:#fff}
+  .pop .links{margin-top:8px;display:flex;gap:8px}
+  .pop .links a{font-size:12px;color:#0a84ff;text-decoration:none;font-weight:600}
+  footer{background:var(--surface);border-top:.5px solid var(--line);padding:6px 16px;font-size:10px;color:var(--hint);flex:0 0 auto;line-height:1.4}
+</style>
+</head>
+<body>
+<div id="lock" class="lock" style="display:none">
+  <div class="lockbox"><h2>PropertyScout</h2><p>Enter passcode</p>
+    <input id="pc" type="password" inputmode="numeric" onkeydown="if(event.key==='Enter')unlock()" placeholder="Passcode">
+    <button onclick="unlock()">Unlock</button>
+    <div id="lockerr" class="lockerr" style="display:none">Incorrect passcode</div>
+  </div>
+</div>
+
+<header>
+  <div><h1>Barn candidates · Class Q</h1><div class="sub" id="sub">loading…</div></div>
+  <a class="back" href="index.html">‹ Scout</a>
+</header>
+<div class="bar">
+  <label><input type="checkbox" id="onlyElig" checked onchange="draw()"> Eligible only</label>
+  <span class="leg"><span class="dot" style="background:var(--ok)"></span>eligible</span>
+  <span class="leg"><span class="dot" style="background:var(--no)"></span>excluded</span>
+  <span class="leg"><span class="dot" style="background:var(--unk)"></span>not checked</span>
+</div>
+<div id="map"></div>
+<footer id="attrib">Building outlines © OpenStreetMap contributors (ODbL) · Parcels © HM Land Registry (INSPIRE) · Designations © planning.data.gov.uk · Imagery © Esri. Class-Q eligibility is a triage flag, not planning advice — verify before acting.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// --- passcode gate: shares localStorage with the main app, so unlocking Scout unlocks this too ---
+function _h(s){let h=5381;for(let i=0;i<s.length;i++)h=((h*33)^s.charCodeAt(i))>>>0;return h;}
+const PASS_H=4157867882;
+function unlock(){const v=document.getElementById('pc').value;
+  if(_h(v)===PASS_H){localStorage.setItem('ps_auth',String(PASS_H));document.getElementById('lock').style.display='none';boot();}
+  else{document.getElementById('lockerr').style.display='block';}}
+function gate(){ if(localStorage.getItem('ps_auth')===String(PASS_H)){boot();} else {document.getElementById('lock').style.display='flex';} }
+
+let MAP, LAYER, DATA=[];
+function dwellings(c){ if(c.max_dwellings) return c.max_dwellings;
+  return Math.min(10, Math.max(1, Math.floor(Math.min(c.area_m2||0,1000)/150))); }
+function eligState(c){ const d=c.designation||{}; if(d.eligible===true) return 'ok';
+  if(d.eligible===false) return 'no'; return 'unk'; }
+const COL={ok:'#16a34a',no:'#dc2626',unk:'#94a3b8'};
+
+function boot(){
+  if(window._booted) return; window._booted=true;
+  MAP=L.map('map',{zoomControl:true});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    {maxZoom:19, attribution:'Imagery © Esri'}).addTo(MAP);
+  fetch('barn_candidates.json').then(r=>r.json()).then(j=>{
+    DATA=j.candidates||[];
+    const nElig=DATA.filter(c=>eligState(c)==='ok').length;
+    document.getElementById('sub').textContent=`${DATA.length} candidates · ${nElig} Class-Q eligible`;
+    draw();
+  }).catch(e=>{document.getElementById('sub').textContent='could not load barn_candidates.json';});
+}
+
+function draw(){
+  if(LAYER) LAYER.remove();
+  const onlyElig=document.getElementById('onlyElig').checked;
+  LAYER=L.layerGroup().addTo(MAP);
+  const pts=[];
+  DATA.forEach(c=>{
+    const st=eligState(c);
+    if(onlyElig && st!=='ok') return;
+    const m=L.circleMarker([c.lat,c.lon],{radius:7,color:'#fff',weight:1.5,
+      fillColor:COL[st],fillOpacity:0.9});
+    const d=c.designation||{};
+    const eligTxt = st==='ok' ? 'Class-Q ELIGIBLE' : (st==='no'
+        ? 'Excluded: '+((d.excluded_by||[]).join(', ')||'designation') : 'Not checked — verify');
+    const gb = (st==='ok' && d.green_belt) ? ' · Green Belt (fine for Class Q)' : '';
+    const gmaps=`https://www.google.com/maps/search/?api=1&query=${c.lat},${c.lon}`;
+    const gearth=`https://earth.google.com/web/@${c.lat},${c.lon},0a,240d,35y,0h,0t,0r`;
+    m.bindPopup(`<div class="pop"><b>${(c.use_tag||c.tier||'building')} · ${c.area_m2} m²</b>
+      <div class="row">Up to <b>${dwellings(c)}</b> dwelling(s) · ${c.class_q_floorspace_m2} m² convertible</div>
+      <div class="row">Field parcel ${c.parcel_m2? (c.parcel_m2.toLocaleString()+' m²'):'—'} · ${c.neighbours_150m} building(s) within 150 m</div>
+      <div class="badge" style="background:${COL[st]}">${eligTxt}${gb}</div>
+      <div class="links"><a href="${gmaps}" target="_blank" rel="noopener">Google Maps</a>
+        <a href="${gearth}" target="_blank" rel="noopener">Google Earth</a></div></div>`);
+    m.addTo(LAYER); pts.push([c.lat,c.lon]);
+  });
+  const n=pts.length;
+  document.getElementById('sub').textContent =
+    `${DATA.length} candidates · showing ${n} ${onlyElig?'eligible':'(all)'}`;
+  if(n) MAP.fitBounds(pts,{padding:[40,40],maxZoom:14});
+}
+gate();
+</script>
+</body>
+</html>
