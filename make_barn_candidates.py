@@ -215,9 +215,12 @@ def main():
         c = b.get("c")
         u = (b.get("u") or "").lower()
         agri = u in AGRI_TAGS
-        # size band: agri-tagged buildings are kept a bit wider (a tagged barn just
-        # over 1,000 m2 is still a play -- partly convertible)
-        lo, hi = (AREA_MIN, AREA_MAX if not agri else 1500.0)
+        derelict = bool(b.get("d"))         # OSM disused / abandoned / ruins
+        # size band: agri-tagged and DERELICT buildings are kept wider (a tagged/derelict
+        # barn just over 1,000 m2 is still a play; a small disused outbuilding is worth a
+        # look at 100 m2), while plain geometry stays at the 150 m2 floor to limit noise.
+        lo = 100.0 if (agri or derelict) else AREA_MIN
+        hi = 1500.0 if (agri or derelict) else AREA_MAX
         if not c or not (lo <= a <= hi):
             continue
         in_band += 1
@@ -230,8 +233,8 @@ def main():
             if bb[0] <= lat <= bb[1] and bb[2] <= lon <= bb[3] and _pip(lat, lon, p["r"]):
                 if host is None or p["a"] > host["a"]:
                     host = p
-        # a building must be on a field OR carry an agricultural tag to qualify
-        if host is None and not agri:
+        # a building must be on a field OR carry an agricultural tag OR be derelict to qualify
+        if host is None and not agri and not derelict:
             continue
         on_field += 1 if host is not None else 0
 
@@ -250,7 +253,7 @@ def main():
 
         # ---- score (0-1) --------------------------------------------------
         s_tag = 1.0 if agri else 0.0
-        s_area = min(1.0, (a - AREA_MIN) / 450.0) if a < 600 else 1.0     # mid/large sheds peak
+        s_area = min(1.0, (a - 100.0) / 450.0) if a < 600 else 1.0        # mid/large sheds peak
         s_parcel = (min(1.0, math.log10(host["a"] / PARCEL_FIELD_SCALE + 1.0) / 1.4)
                     if host else 0.3)
         s_iso = max(0.0, 1.0 - neighbours / 12.0)
@@ -260,14 +263,19 @@ def main():
 
         score = (0.33 * s_tag + 0.14 * s_area + 0.20 * s_parcel
                  + 0.16 * s_iso + 0.17 * s_shape)
+        # a DISUSED building is the redundant asset Class Q targets -> a real uplift
+        if derelict:
+            score = min(1.0, score + 0.15)
 
+        tier = "derelict" if derelict else ("tagged-agri" if agri else "geometry")
         candidates.append({
             "lat": round(lat, 6), "lon": round(lon, 6),
             "area_m2": int(a),
             "parcel_m2": int(host["a"]) if host else None,
             "neighbours_150m": neighbours,
             "use_tag": u or None,
-            "tier": "tagged-agri" if agri else "geometry",
+            "derelict": derelict,
+            "tier": tier,
             "elongation": round(elong, 2), "vertices": nverts,
             "score": round(score, 4),
             "class_q_floorspace_m2": int(min(a, 1000)),
@@ -285,6 +293,8 @@ def main():
               % (thr, sum(1 for x in candidates if x["score"] >= thr)))
     print("  tagged-agri in shortlist     : %d"
           % sum(1 for x in candidates if x["tier"] == "tagged-agri"))
+    print("  disused/derelict in shortlist: %d"
+          % sum(1 for x in candidates if x.get("derelict")))
 
     shortlist = candidates[:MAX_OUTPUT]
 

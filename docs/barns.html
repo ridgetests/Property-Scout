@@ -139,7 +139,8 @@ function draw(){
         <b>~£${c.deal.offer_low_k}k–£${c.deal.offer_high_k}k</b>
         <span style="color:var(--muted)">(end ~£${c.deal.end_k}k − build ~£${c.deal.cost_k}k · indicative)</span></div>` : '';
     const hLine = h ? `<div class="row">LIDAR height <b>${h.ridge_m} m</b> to ridge · ${h.kind}</div>` : '';
-    m.bindPopup(`<div class="pop"><b>${(c.use_tag||c.tier||'building')} · ${c.area_m2} m²</b>
+    const der = c.derelict ? ' <span style="color:#b45309;font-weight:600">· ⚠ disused/derelict</span>' : '';
+    m.bindPopup(`<div class="pop"><b>${(c.use_tag||c.tier||'building')} · ${c.area_m2} m²${der}</b>
       <div class="row">Up to <b>${dwellings(c)}</b> dwelling(s) · ${c.class_q_floorspace_m2} m² convertible</div>
       ${hLine}
       ${deal}

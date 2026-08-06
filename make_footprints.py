@@ -52,6 +52,30 @@ AGRI_TAGS = {"barn", "farm_auxiliary", "cowshed", "stable", "stables",
              "sty", "greenhouse", "farm", "agricultural", "shed", "hangar",
              "warehouse", "storage_tank", "silo"}
 
+# OSM tags/columns that flag a building as DISUSED / derelict / ruined -- a disused
+# building is exactly the redundant-asset a Class-Q conversion targets. Captured into
+# a "d" flag so the scanner can treat these as prime candidates.
+STATUS_COLS = ["disused:building", "abandoned:building", "abandoned", "ruins",
+               "historic", "building:condition", "building:use", "building:use:condition"]
+
+
+def _is_derelict(getv):
+    """(is_derelict, use_hint) from a per-row column getter. getv(col) -> value or None."""
+    for k in ("disused:building", "abandoned:building"):
+        v = getv(k)
+        if isinstance(v, str) and v and v.lower() not in ("no", "0", "false"):
+            return True, v.lower()
+    if str(getv("ruins") or "").lower() in ("yes", "1") or str(getv("historic") or "").lower() == "ruins":
+        return True, "ruins"
+    if str(getv("abandoned") or "").lower() in ("yes", "1"):
+        return True, "abandoned"
+    if str(getv("building") or "").lower() in ("ruins", "collapsed", "abandoned", "disused"):
+        return True, str(getv("building")).lower()
+    for k in ("building:condition", "building:use:condition"):
+        if str(getv(k) or "").lower() in ("derelict", "abandoned", "disused", "ruins", "poor"):
+            return True, "derelict"
+    return False, None
+
 # Data-quality thresholds (mirrors the barn brief). Fail loudly rather than
 # commit a broken file.
 AREA_SANITY_CEILING = 20000.0     # m2; a single building above this is suspect
@@ -107,12 +131,15 @@ def main():
 
     seen = set()            # dedupe across the two county extracts
     records = []
-    n_multi = n_zero = n_huge = n_agri = 0
+    n_multi = n_zero = n_huge = n_agri = n_derelict = 0
 
     for path in pbf_paths:
         print("\n--- reading %s ---" % path)
         osm = OSM(path, bounding_box=bbox)
-        gdf = osm.get_buildings()
+        try:
+            gdf = osm.get_buildings(extra_attributes=STATUS_COLS)   # keep disused/ruins cols
+        except Exception:
+            gdf = osm.get_buildings()                               # older pyrosm: no extras
         if gdf is None or len(gdf) == 0:
             print("  no buildings returned from %s" % path)
             continue
@@ -124,6 +151,8 @@ def main():
             sys.exit("  reprojection to EPSG:27700 failed (%s). Is pyproj installed?" % e)
 
         tagcol = gdf["building"] if "building" in gdf.columns else None
+        # status columns present in this frame, for the derelict check
+        statuscols = {c: gdf[c] for c in (STATUS_COLS + ["building"]) if c in gdf.columns}
         for idx, geom in gdf.geometry.items():
             if geom is None or geom.is_empty:
                 continue
@@ -164,14 +193,18 @@ def main():
                     u = tv.lower()
             if u in AGRI_TAGS:
                 n_agri += 1
+            derelict, dhint = _is_derelict(lambda k: (statuscols[k].get(idx) if k in statuscols else None))
+            if derelict:
+                n_derelict += 1
+                if not u and dhint:
+                    u = dhint
 
-            records.append({
-                "a": int(round(a)),
-                "b": [min(lats), max(lats), min(lngs), max(lngs)],
-                "r": ring,
-                "c": [lat, lon],
-                "u": u,
-            })
+            rec = {"a": int(round(a)),
+                   "b": [min(lats), max(lats), min(lngs), max(lngs)],
+                   "r": ring, "c": [lat, lon], "u": u}
+            if derelict:
+                rec["d"] = 1                 # disused / derelict / ruins
+            records.append(rec)
 
     total = len(records)
     print("\nDATA QUALITY")
@@ -180,6 +213,7 @@ def main():
     print("  dropped zero/negative area  : %d" % n_zero)
     print("  dropped > %d m2 (suspect)  : %d" % (AREA_SANITY_CEILING, n_huge))
     print("  agricultural-tagged (u in AGRI): %d" % n_agri)
+    print("  disused / derelict (d=1)       : %d" % n_derelict)
 
     # --- fail loudly rather than commit a broken file ---
     if total < MIN_BUILDINGS:
