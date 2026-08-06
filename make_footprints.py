@@ -59,6 +59,37 @@ STATUS_COLS = ["disused:building", "abandoned:building", "abandoned", "ruins",
                "historic", "building:condition", "building:use", "building:use:condition"]
 
 
+# Non-residential building types that can convert to a HOME (with the usual route). Used
+# to widen the hunt beyond agricultural barns. Deliberately excludes ordinary houses and
+# leaves plain town-centre retail/office/industrial as a lower priority downstream.
+_RELIGIOUS = {"church", "chapel", "cathedral", "mosque", "temple", "synagogue",
+              "religious", "monastery", "presbytery", "chapel_of_rest"}
+_EDUCATION = {"school", "college", "university", "kindergarten"}
+_CIVIC = {"civic", "public", "community_centre", "hall", "government", "townhall"}
+_COMMERCIAL = {"commercial", "retail", "office", "kiosk"}
+_INDUSTRIAL = {"industrial", "warehouse", "manufacture"}
+
+
+def _use_class(building, amenity):
+    """Classify a building's PURPOSE (for conversion targeting). '' = residential/uninteresting."""
+    b = (building or "").lower()
+    am = (amenity or "").lower()
+    if am == "place_of_worship" or b in _RELIGIOUS:
+        return "religious"
+    if am in ("school", "college", "university", "kindergarten") or b in _EDUCATION:
+        return "education"
+    if am in ("community_centre", "townhall", "social_centre", "arts_centre",
+              "public_building", "village_hall") or b in _CIVIC:
+        return "civic"
+    if b in AGRI_TAGS:
+        return "agricultural"
+    if am in ("pub", "bar", "restaurant", "cafe") or b in _COMMERCIAL:
+        return "commercial"
+    if b in _INDUSTRIAL:
+        return "industrial"
+    return ""
+
+
 def _is_derelict(getv):
     """(is_derelict, use_hint) from a per-row column getter. getv(col) -> value or None."""
     for k in ("disused:building", "abandoned:building"):
@@ -132,12 +163,13 @@ def main():
     seen = set()            # dedupe across the two county extracts
     records = []
     n_multi = n_zero = n_huge = n_agri = n_derelict = 0
+    n_cls = {}
 
     for path in pbf_paths:
         print("\n--- reading %s ---" % path)
         osm = OSM(path, bounding_box=bbox)
         try:
-            gdf = osm.get_buildings(extra_attributes=STATUS_COLS)   # keep disused/ruins cols
+            gdf = osm.get_buildings(extra_attributes=STATUS_COLS + ["amenity"])  # + purpose
         except Exception:
             gdf = osm.get_buildings()                               # older pyrosm: no extras
         if gdf is None or len(gdf) == 0:
@@ -151,6 +183,7 @@ def main():
             sys.exit("  reprojection to EPSG:27700 failed (%s). Is pyproj installed?" % e)
 
         tagcol = gdf["building"] if "building" in gdf.columns else None
+        amencol = gdf["amenity"] if "amenity" in gdf.columns else None
         # status columns present in this frame, for the derelict check
         statuscols = {c: gdf[c] for c in (STATUS_COLS + ["building"]) if c in gdf.columns}
         for idx, geom in gdf.geometry.items():
@@ -199,11 +232,18 @@ def main():
                 if not u and dhint:
                     u = dhint
 
+            cls = _use_class(tagcol.get(idx) if tagcol is not None else None,
+                             amencol.get(idx) if amencol is not None else None)
+            if cls:
+                n_cls[cls] = n_cls.get(cls, 0) + 1
+
             rec = {"a": int(round(a)),
                    "b": [min(lats), max(lats), min(lngs), max(lngs)],
                    "r": ring, "c": [lat, lon], "u": u}
             if derelict:
                 rec["d"] = 1                 # disused / derelict / ruins
+            if cls:
+                rec["cls"] = cls             # purpose: religious/education/civic/commercial/...
             records.append(rec)
 
     total = len(records)
@@ -214,6 +254,8 @@ def main():
     print("  dropped > %d m2 (suspect)  : %d" % (AREA_SANITY_CEILING, n_huge))
     print("  agricultural-tagged (u in AGRI): %d" % n_agri)
     print("  disused / derelict (d=1)       : %d" % n_derelict)
+    print("  by convertible purpose (cls)   : %s"
+          % (", ".join("%s=%d" % (k, v) for k, v in sorted(n_cls.items())) or "none"))
 
     # --- fail loudly rather than commit a broken file ---
     if total < MIN_BUILDINGS:
