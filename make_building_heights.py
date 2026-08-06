@@ -50,9 +50,8 @@ def _coverage_id(session, wcs, kind):
 
 
 def _coverage(session, wcs, cid, e0, e1, n0, n1):
-    """WCS GetCoverage a small BNG box -> numpy array (float32, nodata->nan). None on miss."""
+    """WCS GetCoverage a small BNG box -> (array float32 nodata->nan, transform). None on miss."""
     import numpy as np
-    import rasterio
     from rasterio.io import MemoryFile
     r = session.get(wcs, params={
         "service": "WCS", "version": "2.0.1", "request": "GetCoverage",
@@ -65,7 +64,23 @@ def _coverage(session, wcs, cid, e0, e1, n0, n1):
         if ds.nodata is not None:
             arr[arr == ds.nodata] = np.nan
         arr[arr < -100] = np.nan          # LIDAR sentinel nodata
-        return arr
+        return arr, ds.transform
+
+
+def _load_rings():
+    """centroid-key -> building outline ring [[lat,lon],...] from building_polygons.json.gz,
+    so we sample the BUILDING's roof, not a box that catches nearby trees."""
+    import gzip
+    rings = {}
+    try:
+        with gzip.open("building_polygons.json.gz", "rt") as f:
+            for b in json.load(f).get("buildings", []):
+                c = b.get("c")
+                if c and b.get("r"):
+                    rings["%s,%s" % (c[0], c[1])] = b["r"]
+    except Exception as e:
+        print("  (building_polygons.json.gz unavailable: %s; falling back to boxes)" % e)
+    return rings
 
 
 def main():
@@ -90,16 +105,29 @@ def main():
     if not dtm_id or not dsm_id:
         sys.exit("ABORT: could not resolve WCS coverage ids.")
 
+    from rasterio.features import rasterize
+    rings = _load_rings()
+    print("building outlines available:", len(rings))
     to_bng = Transformer.from_crs(4326, 27700, always_xy=True)
-    heights, dead, sampled = {}, 0, 0
+    heights, dead, sampled, boxed = {}, 0, 0, 0
     for i, c in enumerate(todo):
         e, n = to_bng.transform(c["lon"], c["lat"])
         e, n = int(e), int(n)
-        hw = int(max(15, (c.get("area_m2", 200) ** 0.5) / 2 + 8))   # box ~ building + margin
+        ring = rings.get("%s,%s" % (c["lat"], c["lon"]))
+        # BNG polygon of the building outline; else a tight box (last resort)
+        if ring:
+            pts = [to_bng.transform(lon, lat) for lat, lon in ring]  # ring is [lat,lon]
+            geom = {"type": "Polygon", "coordinates": [[[px, py] for px, py in pts]]}
+            es = [p[0] for p in pts]; ns = [p[1] for p in pts]
+            e0, e1, n0, n1 = int(min(es)) - 2, int(max(es)) + 2, int(min(ns)) - 2, int(max(ns)) + 2
+        else:
+            boxed += 1
+            hw = int(max(5, (c.get("area_m2", 200) ** 0.5) / 2 * 0.5))  # inner core only
+            geom, e0, e1, n0, n1 = None, e - hw, e + hw, n - hw, n + hw
         try:
-            dtm = _coverage(s, DTM_WCS, dtm_id, e - hw, e + hw, n - hw, n + hw)
+            dtm = _coverage(s, DTM_WCS, dtm_id, e0, e1, n0, n1)
             time.sleep(DELAY)
-            dsm = _coverage(s, DSM_WCS, dsm_id, e - hw, e + hw, n - hw, n + hw)
+            dsm = _coverage(s, DSM_WCS, dsm_id, e0, e1, n0, n1)
             time.sleep(DELAY)
         except Exception as ex:
             print("  %d: WCS error %s" % (i, ex))
@@ -110,13 +138,21 @@ def main():
             continue
         if dtm is None or dsm is None:
             continue
-        h, w = min(dtm.shape[0], dsm.shape[0]), min(dtm.shape[1], dsm.shape[1])
-        ndsm = dsm[:h, :w] - dtm[:h, :w]
-        vals = ndsm[np.isfinite(ndsm)]
+        (dtm_a, tr), (dsm_a, _) = dtm, dsm
+        h, w = min(dtm_a.shape[0], dsm_a.shape[0]), min(dtm_a.shape[1], dsm_a.shape[1])
+        ndsm = dsm_a[:h, :w] - dtm_a[:h, :w]
+        if geom is not None:
+            # mask to the building footprint so nearby trees/ground are excluded
+            mask = rasterize([(geom, 1)], out_shape=(h, w), transform=tr,
+                             fill=0, dtype="uint8").astype(bool)
+            vals = ndsm[mask & np.isfinite(ndsm)]
+        else:
+            vals = ndsm[np.isfinite(ndsm)]
         if vals.size < 4:
             continue
-        ridge = float(np.nanmax(vals))
-        mean = float(np.nanmean(vals[vals > 0.5])) if np.any(vals > 0.5) else 0.0
+        # 95th percentile = ridge (robust to a stray tall pixel); avoids single-tree spikes
+        ridge = float(np.percentile(vals, 95))
+        mean = float(np.mean(vals[vals > 0.5])) if np.any(vals > 0.5) else 0.0
         # a barn is LOW for its size; a house is tall. Rough single-signal read:
         storeys = 1 if ridge < 6.5 else (2 if ridge < 10.0 else 3)
         kind = ("low (barn-like)" if ridge < 7.0 else
@@ -130,7 +166,8 @@ def main():
 
     from collections import Counter
     kinds = Counter(v["kind"] for v in heights.values())
-    print("\nHEIGHTS: sampled %d of %d" % (sampled, len(todo)))
+    print("\nHEIGHTS: sampled %d of %d (%d fell back to a box, no outline)"
+          % (sampled, len(todo), boxed))
     for k in ("low (barn-like)", "mid", "tall (house-like)"):
         print("  %-18s : %d" % (k, kinds.get(k, 0)))
 
