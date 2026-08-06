@@ -91,9 +91,22 @@ def main():
         cands = json.load(open(CANDS)).get("candidates", [])
     except Exception as e:
         sys.exit("cannot read %s (%s)" % (CANDS, e))
-    elig = [c for c in cands if (c.get("designation") or {}).get("eligible")]
-    todo = elig or cands
-    print("candidates: %d | eligible (sampled): %d" % (len(cands), len(todo)))
+
+    # BARNS ONLY. LIDAR height exists to tell a LOW barn from a TALL house -- that test
+    # only makes sense for barns/untyped field buildings. A chapel, school or hall is
+    # MEANT to be tall (height wouldn't flag it as a hidden house), and a disused/derelict
+    # building's height says nothing useful either. Skipping them also spares LIDAR
+    # requests (protect access). So: agricultural / field, not derelict, not a typed
+    # chapel/school/hall/commercial/industrial.
+    def _is_barn(c):
+        bc = (c.get("building_class") or "").lower()
+        return bc in ("agricultural", "field", "") and not c.get("derelict")
+
+    barns = [c for c in cands if _is_barn(c)]
+    elig = [c for c in barns if (c.get("designation") or {}).get("eligible")]
+    todo = elig or barns
+    print("candidates: %d | barns: %d | eligible barns (sampled): %d"
+          % (len(cands), len(barns), len(todo)))
 
     import requests
     s = requests.Session()
