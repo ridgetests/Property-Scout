@@ -146,6 +146,21 @@ def _is_carehome(text):
 
 def _is_excluded_locality(text):
     return bool(_LOCALITY_RE.search(text or ""))
+
+
+# Some care homes appear in a probate notice by STREET ADDRESS ONLY, with no "care home"
+# wording, so _is_carehome() above cannot catch them (e.g. "43 Waverley Lane" is Waverley
+# Grange Care Home). Seed this with any you spot; a care home almost always owns its whole
+# postcode, so a postcode match is safe. The fuller fix is the CQC register (see roadmap).
+KNOWN_CAREHOME_PCS = {
+    "GU9 8BH",   # Waverley Grange Care Home, 43 Waverley Lane, Farnham
+}
+
+
+def _is_known_carehome(postcode):
+    return re.sub(r"\s+", " ", (postcode or "").strip().upper()) in KNOWN_CAREHOME_PCS
+
+
 LISTING_EPC_CAP = 30                     # max subject EPC lookups for public listings per run (cached forever)
 NOTICE_DETAIL_CAP = 15                   # max per-notice page fetches per run (politeness cap)
 GAZETTE_CRAWL_DELAY = 10                  # seconds between Gazette requests (their published crawl-delay)
@@ -1103,7 +1118,7 @@ def apply_gates(props, conn=None):
             continue
         _txt = " ".join(str(p.get(k) or "") for k in ("address", "owner_note", "notice_sample")) \
             + " " + str((p.get("estate_contact") or {}).get("name") or "")
-        if _is_carehome(_txt) or _is_excluded_locality(_txt):
+        if _is_carehome(_txt) or _is_excluded_locality(_txt) or _is_known_carehome(p.get("postcode")):
             dropped_area += 1
             continue
         if DETACHED_ONLY and (_excluded_type(p.get("property_type")) or _addr_is_flat(p.get("address"))):
@@ -2367,7 +2382,7 @@ def fetch_probate_leads(conn):
                 break
         addr_line = re.sub(r"^(?:the\s+)?(?:late|deceased|of|and)\b[\s,]*", "",
                            addr_line, flags=re.I).strip(" ,")
-        if _is_carehome(addr_line + " " + content):
+        if _is_carehome(addr_line + " " + content) or _is_known_carehome(pc_up):
             continue
         if _is_excluded_locality(addr_line + " " + content):   # Hale/Badshot Lea/etc - drop pre-fetch
             continue

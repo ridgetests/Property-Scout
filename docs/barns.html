@@ -31,6 +31,7 @@
   .leg{display:inline-flex;align-items:center;gap:4px}
   .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
   #map{flex:1 1 auto;min-height:0}
+  .homeicon{font-size:20px;line-height:26px;text-align:center;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
   .pop{font-family:inherit;min-width:190px}
   .pop b{font-size:13px}
   .pop .row{font-size:12px;color:var(--muted);margin-top:3px}
@@ -60,6 +61,8 @@
   <span class="leg"><span class="dot" style="background:var(--no)"></span>excluded</span>
   <span class="leg"><span class="dot" style="background:#f59e0b"></span>approved, dormant</span>
   <span class="leg"><span class="dot" style="background:#7c3aed"></span>refused</span>
+  <span class="leg">🏠 home</span>
+  <span class="leg"><span style="display:inline-block;width:14px;border-top:2px dashed #38bdf8"></span>search area</span>
 </div>
 <div id="map"></div>
 <footer id="attrib">Building outlines © OpenStreetMap contributors (ODbL) · Parcels © HM Land Registry (INSPIRE) · Designations © planning.data.gov.uk · Imagery © Esri. Class-Q eligibility is a triage flag, not planning advice — verify before acting.</footer>
@@ -74,6 +77,11 @@ function unlock(){const v=document.getElementById('pc').value;
   else{document.getElementById('lockerr').style.display='block';}}
 function gate(){ if(localStorage.getItem('ps_auth')===String(PASS_H)){boot();} else {document.getElementById('lock').style.display='flex';} }
 
+// Home anchor + the search-area outline, for orientation. (Mirrors run.py HOME /
+// AREA_POLYGON; refresh if that polygon is ever widened.)
+const HOME=[51.198,-0.832];
+const AREA_POLY=[[51.1126,-0.8303],[51.1502,-0.8904],[51.2691,-0.912],[51.2876,-0.8437],
+  [51.2327,-0.6324],[51.1846,-0.5961],[51.1498,-0.628],[51.1231,-0.6991]];
 let MAP, LAYER, PLAYER, DATA=[], PLAN=[];
 // planning-lead pin colours by category (hottest = gold)
 const PCOL={approved_dormant:'#f59e0b',approved_lapsed:'#ea580c',refused:'#7c3aed',
@@ -91,6 +99,10 @@ function boot(){
   MAP=L.map('map',{zoomControl:true});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     {maxZoom:19, attribution:'Imagery © Esri'}).addTo(MAP);
+  // orientation: dashed search-area boundary + a home marker
+  L.polygon(AREA_POLY,{color:'#38bdf8',weight:2,fill:false,dashArray:'6 5',opacity:0.85}).addTo(MAP);
+  L.marker(HOME,{icon:L.divIcon({html:'🏠',className:'homeicon',iconSize:[26,26],iconAnchor:[13,13]}),
+    zIndexOffset:1000}).addTo(MAP).bindPopup('<div class="pop"><b>Your home</b><div class="row">Wrecclesham</div></div>');
   // planning leads are optional (built by a separate workflow) - load if present
   fetch('barn_planning.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) PLAN=j.leads||[]; }).catch(()=>{})
     .finally(()=>{
