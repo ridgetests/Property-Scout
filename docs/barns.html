@@ -58,10 +58,12 @@
   <label><input type="checkbox" id="onlyElig" checked onchange="draw()"> Eligible only</label>
   <label style="display:none"><input type="checkbox" id="hHouse" onchange="draw()"> Hide house-like (LIDAR)</label>
   <label><input type="checkbox" id="showPlan" checked onchange="draw()"> Planning leads</label>
+  <label id="distTog" style="display:none"><input type="checkbox" id="showDist" checked onchange="draw()"> Distress signals</label>
   <span class="leg"><span class="dot" style="background:var(--ok)"></span>eligible barn</span>
   <span class="leg"><span class="dot" style="background:var(--no)"></span>excluded</span>
   <span class="leg"><span class="dot" style="background:#f59e0b"></span>approved, dormant</span>
   <span class="leg"><span class="dot" style="background:#7c3aed"></span>refused</span>
+  <span class="leg"><span class="dot" style="background:#e11d48"></span>receiver / distress</span>
   <span class="leg">🏠 home</span>
   <span class="leg"><span style="display:inline-block;width:14px;border-top:2px dashed #38bdf8"></span>search area</span>
 </div>
@@ -83,7 +85,10 @@ function gate(){ if(localStorage.getItem('ps_auth')===String(PASS_H)){boot();} e
 const HOME=[51.198,-0.832];
 const AREA_POLY=[[51.1126,-0.8303],[51.1502,-0.8904],[51.2691,-0.912],[51.2876,-0.8437],
   [51.2327,-0.6324],[51.1846,-0.5961],[51.1498,-0.628],[51.1231,-0.6991]];
-let MAP, LAYER, PLAYER, DATA=[], PLAN=[], HEIGHTS={};
+let MAP, LAYER, PLAYER, DLAYER, DATA=[], PLAN=[], HEIGHTS={}, DISTRESS=[];
+// distress-signal styling (Gazette: receiver = hottest)
+const DCOL={receiver:'#e11d48',administration:'#f97316',winding_up:'#a16207'};
+const DLABEL={receiver:'Receiver appointed (pre-repossession)',administration:'Company in administration',winding_up:'Winding-up / liquidation'};
 // planning-lead pin colours by category (hottest = gold)
 const PCOL={approved_dormant:'#f59e0b',approved_lapsed:'#ea580c',refused:'#7c3aed',
   approved_recent:'#0a84ff',pending:'#64748b',other:'#94a3b8'};
@@ -108,10 +113,12 @@ function boot(){
   Promise.all([
     fetch('barn_planning.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) PLAN=j.leads||[]; }).catch(()=>{}),
     fetch('building_heights.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) HEIGHTS=j.heights||{}; }).catch(()=>{}),
+    fetch('distress.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) DISTRESS=j.distress||[]; }).catch(()=>{}),
   ]).finally(()=>{
     fetch('barn_candidates.json').then(r=>r.json()).then(j=>{
       DATA=j.candidates||[];
       if(Object.keys(HEIGHTS).length) document.getElementById('hHouse').parentElement.style.display='';
+      if(DISTRESS.length) document.getElementById('distTog').style.display='';
       draw();
     }).catch(e=>{document.getElementById('sub').textContent='could not load barn_candidates.json';});
   });
@@ -183,10 +190,29 @@ function draw(){
       m.addTo(PLAYER); pts.push([p.lat,p.lon]); nPlan++;
     });
   }
+  // distress-signal layer (Gazette receivers / corporate insolvency near your patch)
+  if(DLAYER) DLAYER.remove();
+  let nDist=0;
+  if(document.getElementById('showDist') && document.getElementById('showDist').checked && DISTRESS.length){
+    DLAYER=L.layerGroup().addTo(MAP);
+    DISTRESS.forEach(d=>{
+      if(d.lat==null||d.lon==null) return;   // couldn't geocode the postcode -> no pin
+      const col=DCOL[d.type]||'#e11d48';
+      const m=L.circleMarker([d.lat,d.lon],{radius:8,color:'#1c1c1a',weight:2,
+        fillColor:col,fillOpacity:0.95,dashArray:'2 2'});
+      const link=d.url?`<div class="links"><a href="${d.url}" target="_blank" rel="noopener">Gazette notice</a></div>`:'';
+      m.bindPopup(`<div class="pop"><b>${DLABEL[d.type]||d.type}</b>
+        <div class="row">${d.postcode||''}${d.date?' · '+d.date:''}</div>
+        <div class="row" style="color:var(--muted)">Public record (The Gazette) · postcode-level — open the notice to confirm the property</div>
+        ${link}</div>`);
+      m.addTo(DLAYER); pts.push([d.lat,d.lon]); nDist++;
+    });
+  }
   const n=pts.length;
   document.getElementById('sub').textContent =
     `${DATA.length} barns (${document.getElementById('onlyElig').checked?'eligible shown':'all shown'})`
-    + (PLAN.length?` · ${nPlan} planning leads`:'');
+    + (PLAN.length?` · ${nPlan} planning leads`:'')
+    + (nDist?` · ${nDist} distress`:'');
   if(n) MAP.fitBounds(pts,{padding:[40,40],maxZoom:14});
 }
 gate();
