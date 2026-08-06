@@ -1,0 +1,41 @@
+name: Build barn planning leads (Class Q applications)
+
+# Manual button. Mines PlanIt for Class-Q / agricultural-conversion applications in
+# the bowl and flags the warmest leads (approved-but-dormant, refused-but-fixable).
+# Writes docs/barn_planning.json. Manual-only; NOT the nightly cron.
+#
+# PlanIt rate-limits, so this makes only a few requests, SPACED 10s apart, behind the
+# circuit-breaker. If PlanIt 429s it parks and the run reports it -- no ban risk.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Mine Class-Q planning applications
+        run: python make_barn_planning.py
+
+      - name: Save the leads
+        run: |
+          if [ ! -f docs/barn_planning.json ]; then
+            echo "No leads file was written (PlanIt may have been rate-limited)."; exit 1
+          fi
+          git config user.name "scout-bot"
+          git config user.email "scout-bot@users.noreply.github.com"
+          git add docs/barn_planning.json
+          git commit -m "Build barn planning leads (Class-Q applications)" || echo "no changes"
+          git push || echo "push skipped"
+          echo "Saved docs/barn_planning.json"
