@@ -25,6 +25,12 @@ import os
 import re
 import sys
 import time
+import warnings
+
+# rasterio's raster read trips a NumPy 2.5 deprecation ("Setting the shape on a
+# NumPy array...") once per tile -- harmless library noise that otherwise buries
+# the useful output. Silence just that message; keep every other warning.
+warnings.filterwarnings("ignore", message=r".*Setting the shape on a NumPy array.*")
 
 DTM_WCS = ("https://environment.data.gov.uk/spatialdata/"
            "lidar-composite-digital-terrain-model-dtm-1m/wcs")
