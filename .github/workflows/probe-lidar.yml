@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install requests
-        run: pip install requests
+      - name: Install requests + pyproj
+        run: pip install requests pyproj
       - name: Probe EA LIDAR reachability
         run: python make_lidar_probe.py

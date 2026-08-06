@@ -1,49 +1,48 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-make_lidar_probe.py -- PROBE (v2) for EA LIDAR Composite 1m download.
+make_lidar_probe.py -- PROBE (v3) for EA LIDAR download via WCS.
 
-v1 proved the catalogue SEARCH works from Actions (HTTP 200, real tiles) -- so GitHub's
-IP is NOT blocked. Two things were wrong: the product is labelled "DTM"/"DSM" (not
-"terrain"/"surface"), and the tile DOWNLOAD via {uri}?subscription-key=public returned 401.
+Findings so far:
+  v1: catalogue SEARCH works from Actions (HTTP 200) -> IP NOT blocked.
+  v2: the /tiles/... download is auth-gated (401 every way), BUT the WCS endpoint's
+      GetCapabilities returned HTTP 200 -> WCS is the way in.
 
-v2 finds the correct download call: it dumps one full result record (to reveal the real
-download link/fields), then tries several download methods on ONE DTM-1m tile, plus the
-WCS route -- reporting the status of each. Downloads at most a few bytes; commits nothing.
+v3 nails the WCS GetCoverage call: read the coverage id + axis labels (GetCapabilities +
+DescribeCoverage), then request a TINY box around home and confirm a real GeoTIFF comes
+back (magic bytes II*/MM*). Tries a few axis/CRS spellings since WCS is fussy. Read-only;
+saves nothing but the tiny test tiff is discarded.
 
-  pip install requests
+  pip install requests pyproj
   python3 make_lidar_probe.py
 """
 
-import json
+import re
 import sys
 
 _HOME_LAT, _HOME_LON = 51.198, -0.832
-_D = 0.03
-AOI = {"type": "Polygon", "coordinates": [[
-    [_HOME_LON - _D, _HOME_LAT - _D], [_HOME_LON + _D, _HOME_LAT - _D],
-    [_HOME_LON + _D, _HOME_LAT + _D], [_HOME_LON - _D, _HOME_LAT + _D],
-    [_HOME_LON - _D, _HOME_LAT - _D]]]}
-SEARCH = "https://environment.data.gov.uk/backend/catalog/api/tiles/collections/survey/search"
-WCS_DTM = ("https://environment.data.gov.uk/spatialdata/"
-           "lidar-composite-digital-terrain-model-dtm-1m/wcs")
+WCS = ("https://environment.data.gov.uk/spatialdata/"
+       "lidar-composite-digital-terrain-model-dtm-1m/wcs")
 UA = ("Mozilla/5.0 (compatible; PropertyScout LIDAR probe; +personal property research; "
       "contact: heystevenridgeway@gmail.com)")
+_TIFF = (b"II*\x00", b"MM\x00*")
 
 
-def _first_bytes(session, url, headers=None, label=""):
+def _get(s, params, label):
+    """GET the WCS with params; report + return (ok_is_tiff, content)."""
     try:
-        with session.get(url, headers=headers, timeout=90, stream=True) as g:
-            head = next(g.iter_content(chunk_size=16), b"")
-            zip_ok = g.status_code == 200 and head[:2] == b"PK"
-            print("  [%s] HTTP %s | ct=%s | len=%s | first=%r %s"
-                  % (label, g.status_code, g.headers.get("content-type"),
-                     g.headers.get("content-length"), head[:12],
-                     "  <-- ZIP OK" if zip_ok else ""))
-            return zip_ok
+        r = s.get(WCS, params={"service": "WCS", "version": "2.0.1", **params}, timeout=120)
+        head = r.content[:4]
+        is_tiff = r.status_code == 200 and head in _TIFF
+        print("  [%s] HTTP %s | ct=%s | %s bytes | first=%r%s"
+              % (label, r.status_code, r.headers.get("content-type"),
+                 len(r.content), head, "  <-- GeoTIFF ✓" if is_tiff else ""))
+        if r.status_code != 200 and r.content[:400]:
+            print("      body:", r.text[:200])
+        return is_tiff, r
     except Exception as e:
         print("  [%s] failed: %s" % (label, e))
-        return False
+        return False, None
 
 
 def main():
@@ -51,76 +50,70 @@ def main():
     s = requests.Session()
     s.headers.update({"User-Agent": UA})
 
-    print("=== 1) catalogue search ===")
+    print("=== GetCapabilities -> coverage ids ===")
+    ok, cap = _get(s, {"request": "GetCapabilities"}, "GetCapabilities")
+    if not cap or cap.status_code != 200:
+        print("VERDICT: WCS GetCapabilities not reachable; cannot probe."); return
+    ids = re.findall(r"<(?:wcs:)?CoverageId>([^<]+)</(?:wcs:)?CoverageId>", cap.text)
+    if not ids:
+        ids = re.findall(r"coverageId[\"'>=\s]+([A-Za-z0-9_.:\-]+)", cap.text)
+    print("  coverage ids found:", ids[:8] or "(none parsed)")
+    cid = ids[0] if ids else None
+    if not cid:
+        print("  capabilities sample:", cap.text[:400])
+        print("VERDICT: could not parse a CoverageId from GetCapabilities."); return
+
+    print("\n=== DescribeCoverage (reveals axis labels + CRS) ===")
+    ok, desc = _get(s, {"request": "DescribeCoverage", "coverageId": cid}, "DescribeCoverage")
+    if desc is not None and desc.status_code == 200:
+        txt = desc.text
+        axes = re.findall(r'axisLabels="([^"]+)"', txt)
+        lc = re.findall(r"<(?:gml:)?lowerCorner>([^<]+)</(?:gml:)?lowerCorner>", txt)
+        uc = re.findall(r"<(?:gml:)?upperCorner>([^<]+)</(?:gml:)?upperCorner>", txt)
+        print("  axisLabels:", axes[:3], "| lowerCorner:", lc[:1], "| upperCorner:", uc[:1])
+        print("  describe sample:", txt[:300])
+
+    # tiny box around home, in BNG (native) via pyproj
     try:
-        r = s.post(SEARCH, json=AOI, timeout=60, headers={
-            "Content-Type": "application/geo+json", "Accept": "application/json",
-            "Origin": "https://environment.data.gov.uk",
-            "Referer": "https://environment.data.gov.uk/",
-            "Cookie": "defra-cookie-banner-dismissed=true"})
-        print("  HTTP", r.status_code, "| count:", (r.json().get("count") if r.ok else "-"))
-        results = r.json().get("results", []) if r.ok else []
-    except Exception as e:
-        print("  search failed:", e); return
-    if not results:
-        print("VERDICT: no results; cannot probe download."); return
+        from pyproj import Transformer
+        e, n = Transformer.from_crs(4326, 27700, always_xy=True).transform(_HOME_LON, _HOME_LAT)
+        e, n = int(e), int(n)
+        print("\nhome BNG ~ E%d N%d" % (e, n))
+    except Exception as ex:
+        print("\npyproj unavailable (%s); using a hardcoded in-area BNG box" % ex)
+        e, n = 482500, 144800
+    de = 200
 
-    # dump ONE full record so we can see EVERY field (esp. any real download link)
-    print("\n=== 2) full first record (all fields) ===")
-    print(json.dumps(results[0], indent=1)[:1400])
-
-    # DTM 1m tiles, matched on product.id + resolution.id (the correct fields)
-    def is_dtm1(it):
-        return (((it.get("product") or {}).get("id") == "lidar_composite_dtm")
-                and str((it.get("resolution") or {}).get("id")) == "1")
-    dtm1 = [it for it in results if is_dtm1(it)]
-    print("\nDTM-1m tiles matched:", len(dtm1))
-    if not dtm1:
-        print("VERDICT: matcher still wrong -- inspect the record above."); return
-    it = dtm1[0]
-    uri = it.get("uri") or ""
-    tile = (it.get("tile") or {}).get("id")
-    print("picked tile", tile, "uri:", uri)
-
-    # collect any link-like fields from the record to try as downloads
-    cand_urls = []
-    if uri:
-        cand_urls.append(("uri", uri))
-    for k in ("download", "url", "asset", "href"):
-        if it.get(k):
-            cand_urls.append((k, it[k]))
-    for ln in (it.get("links") or []):
-        if isinstance(ln, dict) and ln.get("href"):
-            cand_urls.append(("link:%s" % ln.get("rel"), ln["href"]))
-
-    print("\n=== 3) download attempts on ONE DTM-1m tile ===")
-    ok = False
-    hdr_key = {"Ocp-Apim-Subscription-Key": "public"}
-    for name, u in cand_urls:
-        ok = _first_bytes(s, u, label="%s (bare)" % name) or ok
-        ok = _first_bytes(s, u + ("&" if "?" in u else "?") + "subscription-key=public",
-                          label="%s ?key" % name) or ok
-        ok = _first_bytes(s, u, headers=hdr_key, label="%s hdr-key" % name) or ok
-        ok = _first_bytes(s, u + ("&" if "?" in u else "?") + "f=zip", label="%s ?f=zip" % name) or ok
-        if ok:
+    print("\n=== GetCoverage attempts (200 m box) ===")
+    attempts = [
+        {"request": "GetCoverage", "coverageId": cid, "format": "image/tiff",
+         "subset": ["E(%d,%d)" % (e - de, e + de), "N(%d,%d)" % (n - de, n + de)]},
+        {"request": "GetCoverage", "coverageId": cid, "format": "image/tiff",
+         "subset": ["x(%d,%d)" % (e - de, e + de), "y(%d,%d)" % (n - de, n + de)]},
+        {"request": "GetCoverage", "coverageId": cid, "format": "image/geotiff",
+         "subset": ["E(%d,%d)" % (e - de, e + de), "N(%d,%d)" % (n - de, n + de)]},
+        {"request": "GetCoverage", "coverageId": cid, "format": "image/tiff",
+         "subsettingCrs": "http://www.opengis.net/def/crs/EPSG/0/4326",
+         "subset": ["Lat(%f,%f)" % (_HOME_LAT - 0.002, _HOME_LAT + 0.002),
+                    "Long(%f,%f)" % (_HOME_LON - 0.002, _HOME_LON + 0.002)]},
+    ]
+    win = None
+    for i, p in enumerate(attempts):
+        got, _ = _get(s, p, "GetCoverage v%d" % (i + 1))
+        if got:
+            win = (i + 1, p)
             break
 
-    print("\n=== 4) WCS route (bbox -> GeoTIFF, no tiles) ===")
-    try:
-        cap = s.get(WCS_DTM, params={"service": "WCS", "version": "2.0.1",
-                                     "request": "GetCapabilities"}, timeout=60)
-        print("  GetCapabilities HTTP %s | ct=%s | starts %r"
-              % (cap.status_code, cap.headers.get("content-type"), cap.text[:80]))
-    except Exception as e:
-        print("  WCS GetCapabilities failed:", e)
-
     print("\n=== VERDICT ===")
-    if ok:
-        print("Tile DOWNLOAD works ✓ -- note which method above succeeded; build the pipeline on it.")
+    if win:
+        print("WCS GetCoverage WORKS ✓ (attempt %d) coverageId=%s" % (win[0], cid))
+        print("  -> build the pipeline: WCS GetCoverage the bowl bbox for DTM + first-return")
+        print("     DSM, nDSM = DSM - DTM, per-building ridge/mean height (rasterio +")
+        print("     rasterstats), emit building_heights.json.gz. Never commit raster.")
     else:
-        print("Search works but no download method returned a zip. Read the full record (part 2)")
-        print("and the attempt statuses (part 3) -- the real download field/auth is in there,")
-        print("or the WCS route (part 4) is the way in.")
+        print("GetCapabilities/DescribeCoverage worked but no GetCoverage variant returned a")
+        print("GeoTIFF. Read the DescribeCoverage axisLabels above -- the subset axis names")
+        print("or CRS need to match those exactly; that's the last detail to fix.")
 
 
 if __name__ == "__main__":
