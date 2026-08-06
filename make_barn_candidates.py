@@ -37,7 +37,7 @@ import os
 import sys
 
 BUILDINGS = os.environ.get("PS_BUILDINGS", "building_polygons.json.gz")
-OUTPUT = os.environ.get("PS_OUTPUT", "barn_candidates.json")
+OUTPUT = os.environ.get("PS_OUTPUT", "docs/barn_candidates.json")   # in docs/ so the viewer can load it
 DESIGNATION_TOP_N = int(os.environ.get("PS_DESIGNATION_N", "200"))
 
 # Class Q: up to 1,000 m2 converted; below ~150 m2 you're in stable/garage territory.
@@ -226,6 +226,8 @@ def main():
             "elongation": round(elong, 2), "vertices": nverts,
             "score": round(score, 4),
             "class_q_floorspace_m2": int(min(a, 1000)),
+            # Class Q ceiling: 10 dwellings / 1,000 m2 total / 150 m2 each
+            "max_dwellings": min(10, max(1, int(min(a, 1000) // 150))),
         })
 
     candidates.sort(key=lambda x: -x["score"])
@@ -253,15 +255,20 @@ def main():
             if run._dead("planning_data"):
                 print("  planning_data parked (429/403) -- remaining left unchecked")
                 break
-            con = run.fetch_constraints(cand["lat"], cand["lon"], conn) or {}
-            ds = set(con.get("datasets") or [])
-            excl = sorted(ds & CLASSQ_EXCLUSIONS)
-            cand["designation"] = {
-                "eligible": len(excl) == 0,
-                "excluded_by": [run._CONSTRAINT_LABEL.get(d, d) for d in excl],
-                "green_belt": "green-belt" in ds,
-                "all": [run._CONSTRAINT_LABEL.get(d, d) for d in sorted(ds)],
-            }
+            con = run.fetch_constraints(cand["lat"], cand["lon"], conn)
+            if not con or "datasets" not in con:
+                # fetch failed (e.g. a 502) or the source parked -- do NOT assume
+                # eligible; mark it unchecked so the viewer shows "verify".
+                cand["designation"] = {"eligible": None, "checked": False}
+            else:
+                ds = set(con.get("datasets") or [])
+                excl = sorted(ds & CLASSQ_EXCLUSIONS)
+                cand["designation"] = {
+                    "eligible": len(excl) == 0, "checked": True,
+                    "excluded_by": [run._CONSTRAINT_LABEL.get(d, d) for d in excl],
+                    "green_belt": "green-belt" in ds,
+                    "all": [run._CONSTRAINT_LABEL.get(d, d) for d in sorted(ds)],
+                }
             gated += 1
             time.sleep(0.4)     # be gentle on planning.data.gov.uk
         eligible = sum(1 for c in shortlist if c.get("designation", {}).get("eligible"))
