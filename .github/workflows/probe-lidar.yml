@@ -1,0 +1,25 @@
+name: Probe LIDAR (can we download it?)
+
+# Manual button. A ONE-OFF check of whether GitHub Actions can fetch EA LIDAR from the
+# new DEFRA catalogue API (the old portal is retired). Does one search + one tile
+# download with loud diagnostics, then prints a verdict. Downloads nothing else, commits
+# nothing. Run this BEFORE building the full height pipeline. Manual-only; never nightly.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install requests
+        run: pip install requests
+      - name: Probe EA LIDAR reachability
+        run: python make_lidar_probe.py
