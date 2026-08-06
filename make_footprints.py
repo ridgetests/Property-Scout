@@ -72,8 +72,10 @@ _INDUSTRIAL = {"industrial", "warehouse", "manufacture"}
 
 def _use_class(building, amenity):
     """Classify a building's PURPOSE (for conversion targeting). '' = residential/uninteresting."""
-    b = (building or "").lower()
-    am = (amenity or "").lower()
+    # pandas hands back NaN (a float), not None, for empty cells -> coerce anything
+    # that isn't a real string to "" before .lower().
+    b = building.lower() if isinstance(building, str) else ""
+    am = amenity.lower() if isinstance(amenity, str) else ""
     if am == "place_of_worship" or b in _RELIGIOUS:
         return "religious"
     if am in ("school", "college", "university", "kindergarten") or b in _EDUCATION:
