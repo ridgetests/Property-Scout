@@ -291,6 +291,39 @@ AGENTS = [
                  "JS-rendered; if so, an XML property sitemap is the fallback to add.",
     },
     {
+        "key": "grantley",
+        "name": "Grantley",
+        "home": "https://grantley.co.uk",
+        "sitemaps": ["https://grantley.co.uk/property-sitemap.xml"],  # guess; robots.txt is authoritative
+        "discover": True,
+        "listing_pages": ["https://grantley.co.uk/sales/"],
+        "detail_patterns": [r"/property/", r"/sales/[^/]+/[^/]"],
+        "enabled": True,
+        "notes": "Local independent (Surrey/W.Sussex/Hants); covers Farnham GU9-GU10. Sitemap "
+                 "guessed -- verify detail_patterns from the first diagnostic.",
+    },
+    {
+        "key": "hamptons_farnham",
+        "name": "Hamptons (Farnham)",
+        "home": "https://www.hamptons.co.uk",
+        # National franchise -> global sitemap is huge, so crawl the Farnham branch pages.
+        "listing_pages": ["https://www.hamptons.co.uk/branches/farnham/sales"],
+        "detail_patterns": [r"/property", r"/branches/farnham/sales/[^/?]+$"],
+        "enabled": True,
+        "notes": "~127 Farnham listings; branch pages are server-rendered (page-N pagination). "
+                 "If the detail HTML is JS-only this yields little -- confirm from diagnostic.",
+    },
+    {
+        "key": "strutt_parker_farnham",
+        "name": "Strutt & Parker (Farnham)",
+        "home": "https://www.struttandparker.com",
+        "listing_pages": ["https://www.struttandparker.com/properties/residential/for-sale/surrey/farnham"],
+        "detail_patterns": [r"/property/", r"/properties/[^/]+/[^/]"],
+        "enabled": True,
+        "notes": "High-end GU10 stock (Tilford/Lower Bourne/Churt). Franchise -- may be "
+                 "JS-rendered; verify from diagnostic.",
+    },
+    {
         "key": "henry_adams",
         "name": "Henry Adams (Haslemere)",
         "discover": True,
