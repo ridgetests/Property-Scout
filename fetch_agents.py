@@ -716,6 +716,15 @@ def extract_jsonld(html: str) -> dict:
             # description (feeds downstream planning-signal detection)
             if "description" not in out and node.get("description"):
                 out["description"] = str(node["description"]).strip()
+            # main photo (schema.org image: string | list | ImageObject)
+            if "image" not in out and node.get("image"):
+                img = node["image"]
+                if isinstance(img, list) and img:
+                    img = img[0]
+                if isinstance(img, dict):
+                    img = img.get("url") or img.get("contentUrl")
+                if isinstance(img, str) and img.strip().startswith("http"):
+                    out["image"] = img.strip()
     return out
 
 
@@ -748,6 +757,9 @@ def extract_meta(html: str) -> dict:
             out["address"] = re.sub(r"\s+", " ", m.group(1)).strip()
     if desc:
         out["description"] = desc
+    img = meta("og:image") or meta("og:image:secure_url") or meta("twitter:image")
+    if img and img.strip().startswith("http"):
+        out["image"] = img.strip()
     out["_text_blob"] = " ".join(x for x in (title, desc) if x)
     return out
 
@@ -896,7 +908,7 @@ def extract_listing(page_html: str, url: str) -> dict:
     rec.update({k: v for k, v in ld.items() if v})
 
     meta = extract_meta(page_html)
-    for k in ("address", "price"):
+    for k in ("address", "price", "image"):
         if not rec.get(k) and meta.get(k):
             rec[k] = meta[k]
 

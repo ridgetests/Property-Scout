@@ -55,8 +55,10 @@
     background:rgba(28,28,26,.55);color:#fff;font-size:13px;line-height:1;cursor:pointer;z-index:3;
     display:flex;align-items:center;justify-content:center;padding:0;-webkit-tap-highlight-color:transparent}
   .kill:hover{background:#dc2626}
-  .ph{width:64px;height:82px;border-radius:8px;flex-shrink:0;position:relative;overflow:hidden;background:#e6e2d8;display:flex;align-items:center;justify-content:center}
+  .ph{width:116px;height:116px;border-radius:8px;flex-shrink:0;position:relative;overflow:hidden;background:#e6e2d8;display:flex;align-items:center;justify-content:center;font-size:30px}
   .ph img{width:100%;height:100%;object-fit:cover}
+  .srcname{font-size:11px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:4px}
+  .srcname b{color:var(--ink);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .ph .src{position:absolute;top:3px;left:3px;background:var(--src-ink);color:#fff;font-size:8px;font-weight:600;padding:2px 4px;border-radius:4px;letter-spacing:.03em}
   .body{flex:1;min-width:0}
   .ctop{display:flex;justify-content:space-between;gap:6px;align-items:flex-start}
@@ -334,11 +336,21 @@ function topReason(p){
     const r=sg.max?sg.score/sg.max:0; if(r>bestR){bestR=r;best=sg;}}
   return best?best.note:'';
 }
+// who's advertising it: agent name, else source name (e.g. The Gazette), else a friendly portal label
+function srcName(p){
+  const s=p.source||{};
+  return s.agent || s.name || ({homedata:'Portal listing',agent:'Local agent'}[s.portal]) || p.source_label || 'Listing';
+}
 function card(p){
   const eq = (p.enrichment&&p.enrichment.equity)||{};
   const src = p.source&&p.source.portal;
   const badge = SRC_LABEL[src] ? `<div class="src">${SRC_LABEL[src]}</div>` : '';
-  const thumb = (p.media&&p.media.thumb_url) ? `<img src="${p.media.thumb_url}" alt=""/>` : '🏠';
+  // prefer the REAL listing photo; fall back to the aerial tile, then an emoji
+  const m = p.media||{}, aerial = m.thumb_url||'';
+  const photo = m.photo_url||aerial;
+  const thumb = photo
+    ? `<img src="${photo}" loading="lazy" alt=""${m.photo_url&&aerial?` onerror="this.onerror=null;this.src='${aerial}'"`:''}/>`
+    : '🏠';
   const tags = (p.flags||[]).slice(0,1).map(f=>`<span class="tag fl">${FLAG_LABELS[f]||f}</span>`).join('')
     + (notes[p.id]?'<span class="tag" style="background:#fef3c7;color:#92400e">✎ note</span>':'')
     + (shortlist.find(s=>s.id==p.id)?'<span class="tag" style="background:#fef9c3;color:#854d0e">★</span>':'');
@@ -356,6 +368,7 @@ function card(p){
       <div class="ctop"><div class="addr">${hd(p)}<small>${p.address}</small></div>
         <div class="scol">${p.typology?`<div class="typ tier-${(p.tier||'').toLowerCase()}">${p.typology}</div>`:''}<div class="sc" style="color:${sc(p.score)}">${p.score}</div></div></div>
       <div class="sub">${pmk(p)} · ${days}${p.dist_mi!=null?' · '+p.dist_mi+' mi':''}</div>
+      <div class="srcname">🏷 <b>${srcName(p)}</b></div>
       ${vsHtml}
       ${(p.reasons&&p.reasons.length)?`<div class="why">${p.reasons.join(' · ')}</div>`:''}
       ${eq.equity_gain!=null?`<div class="eq">▲ ~${k(eq.equity_gain)} est. equity gain</div>`:''}

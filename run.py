@@ -2774,7 +2774,10 @@ def agent_to_property(rec):
         "source": {"portal": "agent", "name": rec.get("source") or "Local agent",
                    "url": link, "agent": rec.get("source") or "", "uprn": ""},
         "source_label": "AGENT",
-        "media": {"photo_count": 0, "has_floorplan": False, "thumb_url": ""},
+        # photo_url = the real listing photo (og:image / JSON-LD) when the scraper found
+        # one; kept separate from thumb_url, which is later overwritten with an aerial tile.
+        "media": {"photo_count": 1 if rec.get("image") else 0, "has_floorplan": False,
+                  "thumb_url": "", "photo_url": rec.get("image") or ""},
         "description_raw": html.unescape(str(rec.get("desc") or ""))[:600],
         "enrichment": {"market": {"reductions": reductions,
                                   "is_reduced": bool(rec.get("price_reduced")),
