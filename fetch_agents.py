@@ -1130,6 +1130,7 @@ def _to_output(rec: dict) -> dict:
         "price_qualifier": rec.get("price_qualifier"),  # "POA" when deliberately unpriced
         "type": rec.get("type"),
         "link": rec.get("link"),
+        "image": rec.get("image"),                      # main listing photo (og:image / JSON-LD)
         "desc": rec.get("desc"),                        # short snippet for planning-signal detection
         # extras (safe to ignore downstream)
         "source": rec.get("agent_name"),
