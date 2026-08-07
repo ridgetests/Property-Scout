@@ -38,10 +38,21 @@ jobs:
               raise SystemExit(0)
           data = json.load(open("agent_listings.json"))
           rows = data if isinstance(data, list) else (data.get("listings") or [])
-          by = collections.Counter(str(r.get("source") or r.get("agent") or "?") for r in rows)
-          print("TOTAL agent listings:", len(rows))
-          print("by agent:")
+          def who(r): return str(r.get("source") or r.get("agent") or "?")
+          by = collections.Counter(who(r) for r in rows)
+          img = collections.Counter(who(r) for r in rows if r.get("image"))
+          n_img = sum(1 for r in rows if r.get("image"))
+          print("TOTAL agent listings:", len(rows), "| with a photo:", n_img)
+          print("by agent  (listings / with photo):")
           for name, n in by.most_common():
-              print("  %4d  %s" % (n, name))
-          # agents that produced nothing are the ones to investigate
+              print("  %4d  %3d photo  %s" % (n, img.get(name, 0), name))
+          print("\nexample photo URLs (proves the capture works):")
+          shown = 0
+          for r in rows:
+              if r.get("image") and shown < 4:
+                  print("  [%s] %s" % (who(r), r["image"][:110]))
+                  shown += 1
+          if not shown:
+              print("  (none captured -- flag this to Claude)")
+          # agents at 0 listings, or 0 photos, are the ones to investigate
           PY
