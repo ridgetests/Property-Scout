@@ -82,8 +82,8 @@ function gate(){ if(localStorage.getItem('ps_auth')===String(PASS_H)){boot();} e
 
 // Home anchor + the search-area outline, for orientation. (Mirrors run.py HOME /
 // AREA_POLYGON; refresh if that polygon is ever widened.)
-const HOME_PC='GU10 4RW';
-let HOME=[51.189,-0.805];   // GU10 4RW approx; refined to the exact postcode point at load
+const HOME_LABEL='Boundstone Close · GU10 4RW';
+const HOME=[51.1865,-0.8173];   // 3 Boundstone Close, Boundstone/Rowledge (from the OS grid ref)
 const AREA_POLY=[[51.1126,-0.8303],[51.1502,-0.8904],[51.2691,-0.912],[51.2876,-0.8437],
   [51.2327,-0.6324],[51.1846,-0.5961],[51.1498,-0.628],[51.1231,-0.6991]];
 let MAP, LAYER, PLAYER, DLAYER, DATA=[], PLAN=[], HEIGHTS={}, DISTRESS=[];
@@ -108,13 +108,8 @@ function boot(){
     {maxZoom:19, attribution:'Imagery © Esri'}).addTo(MAP);
   // orientation: dashed search-area boundary + a home marker
   L.polygon(AREA_POLY,{color:'#38bdf8',weight:2,fill:false,dashArray:'6 5',opacity:0.85}).addTo(MAP);
-  const homeMarker=L.marker(HOME,{icon:L.divIcon({html:'🏠',className:'homeicon',iconSize:[26,26],iconAnchor:[13,13]}),
-    zIndexOffset:1000}).addTo(MAP).bindPopup('<div class="pop"><b>Your home</b><div class="row">'+HOME_PC+'</div></div>');
-  // pin the home on the EXACT postcode point (the browser can reach the geocoder even though
-  // the build server can't). Falls back to the approx coord above if the lookup fails.
-  fetch('https://api.postcodes.io/postcodes/'+encodeURIComponent(HOME_PC.replace(/\s+/g,'')))
-    .then(r=>r.ok?r.json():null).then(j=>{ const R=j&&j.result;
-      if(R&&R.latitude){ HOME=[R.latitude,R.longitude]; homeMarker.setLatLng(HOME); } }).catch(()=>{});
+  L.marker(HOME,{icon:L.divIcon({html:'🏠',className:'homeicon',iconSize:[26,26],iconAnchor:[13,13]}),
+    zIndexOffset:1000}).addTo(MAP).bindPopup('<div class="pop"><b>Your home</b><div class="row">'+HOME_LABEL+'</div></div>');
   // planning leads + heights are optional (separate workflows) - load if present
   Promise.all([
     fetch('barn_planning.json').then(r=>r.ok?r.json():null).then(j=>{ if(j) PLAN=j.leads||[]; }).catch(()=>{}),

@@ -37,8 +37,8 @@ TARGET_TYPES = ("detached", "bungalow", "cottage", "farm",
 # Home anchor (GU10 4RW, Wrecclesham) and the hand-drawn target patch: the rural
 # bowl south of Farnham. Properties outside this polygon are dropped. Vertices are
 # (lat, lng), tracing south-of-Farnham -> Tilford -> Churt -> Rowledge.
-# (Approx GU10 4RW; the barns map geocodes the exact postcode point client-side.)
-HOME = (51.189, -0.805)
+# (3 Boundstone Close, GU10 4RW -- Boundstone/Rowledge; from the OS grid reference.)
+HOME = (51.1865, -0.8173)
 # The tight, hand-drawn core patch. AREA_POLYGON below is this grown outward by
 # AREA_MARGIN_KM, so more nearby agent stock (Godalming/Haslemere/Alton edges)
 # qualifies while the shape stays the same. Set AREA_MARGIN_KM = 0 to revert to the
