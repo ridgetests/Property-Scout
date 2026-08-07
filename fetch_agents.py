@@ -102,7 +102,7 @@ USER_AGENT = os.environ.get(
 )
 
 DEFAULT_CRAWL_DELAY = float(os.environ.get("AGENTS_CRAWL_DELAY", "10"))   # seconds, floor
-REQUEST_TIMEOUT = float(os.environ.get("AGENTS_TIMEOUT", "20"))          # seconds
+REQUEST_TIMEOUT = float(os.environ.get("AGENTS_TIMEOUT", "30"))          # seconds (retried x3 w/ backoff)
 MAX_DETAIL_FETCHES_PER_AGENT = int(os.environ.get("AGENTS_MAX_FETCHES", "40"))
 MAX_URLS_PER_AGENT = int(os.environ.get("AGENTS_MAX_URLS", "600"))        # sitemap safety cap
 MAX_LISTING_PAGES = int(os.environ.get("AGENTS_MAX_LISTING_PAGES", "25"))  # listing-mode page cap
@@ -324,6 +324,19 @@ AGENTS = [
                  "JS-rendered; verify from diagnostic.",
     },
     {
+        "key": "purplebricks",
+        "name": "Purplebricks (online / ex-Strike)",
+        "home": "https://www.purplebricks.co.uk",
+        # Online/DIY agent -- the "not a high-street agency" angle. Strike merged into it.
+        "listing_pages": ["https://www.purplebricks.co.uk/search/property-for-sale/surrey/farnham"],
+        "detail_patterns": [r"/property-for-sale/"],
+        "discover": True,
+        "enabled": True,
+        "notes": "Few local listings (~4) and a JS-heavy site, so may yield little. Most "
+                 "Purplebricks/Strike stock also reaches us via Homedata (it's on the "
+                 "portals). Experimental; verify from diagnostic.",
+    },
+    {
         "key": "henry_adams",
         "name": "Henry Adams (Haslemere)",
         "discover": True,
@@ -437,12 +450,26 @@ class Fetcher:
                 wait = delay - (time.monotonic() - last)
                 if wait > 0:
                     time.sleep(wait)
-        try:
-            resp = self.session.get(url, timeout=REQUEST_TIMEOUT, allow_redirects=True)
-        except requests.RequestException as e:
-            self.log(f"GET failed {url}: {e}")
-            self._last_request_at[dom] = time.monotonic()
-            return None
+        # A slow-but-alive server (Andrew Lodge times out intermittently) or a dropped
+        # connection (Strutt & Parker: RemoteDisconnected) is transient -- retry a couple
+        # of times with backoff and a longer timeout before giving up.
+        resp = None
+        for attempt in range(3):
+            try:
+                resp = self.session.get(url, timeout=REQUEST_TIMEOUT * (1 + attempt),
+                                        allow_redirects=True)
+                break
+            except (requests.Timeout, requests.ConnectionError) as e:
+                self._last_request_at[dom] = time.monotonic()
+                if attempt < 2:
+                    time.sleep(3 * (attempt + 1))            # 3s, 6s -- polite, brief
+                    continue
+                self.log(f"GET failed {url} after {attempt + 1} tries: {e}")
+                return None
+            except requests.RequestException as e:
+                self.log(f"GET failed {url}: {e}")
+                self._last_request_at[dom] = time.monotonic()
+                return None
         self._last_request_at[dom] = time.monotonic()
         if resp.status_code in _BREAKER_STATUSES:
             self.kill(url, f"GET {url} -> {resp.status_code}")
