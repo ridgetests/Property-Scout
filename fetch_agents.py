@@ -105,7 +105,9 @@ DEFAULT_CRAWL_DELAY = float(os.environ.get("AGENTS_CRAWL_DELAY", "10"))   # seco
 REQUEST_TIMEOUT = float(os.environ.get("AGENTS_TIMEOUT", "30"))          # seconds (retried x3 w/ backoff)
 MAX_DETAIL_FETCHES_PER_AGENT = int(os.environ.get("AGENTS_MAX_FETCHES", "40"))
 MAX_URLS_PER_AGENT = int(os.environ.get("AGENTS_MAX_URLS", "600"))        # sitemap safety cap
-MAX_LISTING_PAGES = int(os.environ.get("AGENTS_MAX_LISTING_PAGES", "25"))  # listing-mode page cap
+MAX_LISTING_PAGES = int(os.environ.get("AGENTS_MAX_LISTING_PAGES", "6"))  # listing-mode page cap
+# (was 25 -- real local agents stop after ~3 pages via the no-new-links guard; only a
+#  national site like Purplebricks ran to the cap, crawling out-of-area stock. 6 = headroom.)
 
 STATE_FILE = os.environ.get("AGENTS_STATE_FILE", "agents_state.json")
 OUTPUT_FILE = os.environ.get("AGENTS_OUTPUT_FILE", "agent_listings.json")
@@ -328,13 +330,14 @@ AGENTS = [
         "name": "Purplebricks (online / ex-Strike)",
         "home": "https://www.purplebricks.co.uk",
         # Online/DIY agent -- the "not a high-street agency" angle. Strike merged into it.
+        # NO discover: its national sitemap is ~12k URLs and blew the run out to 1h+. The
+        # Farnham search page alone is enough for the handful of genuinely-local listings.
         "listing_pages": ["https://www.purplebricks.co.uk/search/property-for-sale/surrey/farnham"],
         "detail_patterns": [r"/property-for-sale/"],
-        "discover": True,
         "enabled": True,
-        "notes": "Few local listings (~4) and a JS-heavy site, so may yield little. Most "
-                 "Purplebricks/Strike stock also reaches us via Homedata (it's on the "
-                 "portals). Experimental; verify from diagnostic.",
+        "notes": "Few local listings (~4). National site -> discover OFF and the page cap "
+                 "keeps its search pagination from crawling the whole country. Most "
+                 "Purplebricks stock also reaches us via Homedata anyway.",
     },
     {
         "key": "henry_adams",
