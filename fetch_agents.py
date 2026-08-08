@@ -98,7 +98,7 @@ except Exception:  # pragma: no cover
 # you rather than block you.
 USER_AGENT = os.environ.get(
     "PROPERTYSCOUT_UA",
-    "PropertyScoutBot/1.0 (+personal property research; contact: heystevenridgeway@gmail.com)",
+    "PropertyScoutBot/1.0 (+personal property research)",
 )
 
 DEFAULT_CRAWL_DELAY = float(os.environ.get("AGENTS_CRAWL_DELAY", "10"))   # seconds, floor

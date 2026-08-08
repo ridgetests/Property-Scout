@@ -39,8 +39,8 @@ DSM_WCS = ("https://environment.data.gov.uk/spatialdata/"
 CANDS = os.environ.get("PS_CANDS", "docs/barn_candidates.json")
 OUTPUT = os.environ.get("PS_OUTPUT", "docs/building_heights.json")
 DELAY = float(os.environ.get("PS_WCS_DELAY", "0.4"))
-UA = ("Mozilla/5.0 (compatible; PropertyScout LIDAR heights; +personal property research; "
-      "contact: heystevenridgeway@gmail.com)")
+UA = ("Mozilla/5.0 (compatible; PropertyScout LIDAR heights; "
+      "+personal property research)")
 
 
 def _coverage_id(session, wcs, kind):
