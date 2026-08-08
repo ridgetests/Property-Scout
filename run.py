@@ -2898,8 +2898,12 @@ def main():
     for p in props:
         if not _area_ok(p["lat"], p["lng"], p.get("postcode")):
             continue
-        if not _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
-            p["approx_location"] = True                 # placed at the district centroid
+        # An outward-only postcode is placed at the DISTRICT CENTROID, so the location is
+        # approximate whether or not that centroid happens to fall inside the polygon.
+        # Flag it so the parcel/plot lookup is skipped (a 50 m2 parcel at the centroid was
+        # binning every Andrew Lodge listing via the plot-size gate).
+        if _outward_only(p.get("postcode")):
+            p["approx_location"] = True
             fl = p.setdefault("flags", [])
             if "approx-location" not in fl:
                 fl.append("approx-location")
