@@ -38,6 +38,14 @@
   .pop .badge{display:inline-block;font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;margin-top:6px;color:#fff}
   .pop .links{margin-top:8px;display:flex;gap:8px}
   .pop .links a{font-size:12px;color:#0a84ff;text-decoration:none;font-weight:600}
+  .pop .slbtn{margin-top:8px;width:100%;padding:8px;border:1px solid var(--line2);border-radius:8px;
+    background:var(--surface);color:var(--ink);font-size:13px;font-weight:600;cursor:pointer}
+  .pop .slbtn.on{background:#fef9c3;border-color:#eab308;color:#854d0e}
+  .pop details.steps{margin-top:8px}
+  .pop details.steps summary{font-size:12px;font-weight:600;color:#0a84ff;cursor:pointer}
+  .pop details.steps ol{margin:6px 0 0;padding-left:16px;font-size:11.5px;color:var(--ink);line-height:1.5}
+  .pop details.steps li{margin-bottom:4px}
+  .pop details.steps a{color:#0a84ff;font-weight:600;text-decoration:none}
   footer{background:var(--surface);border-top:.5px solid var(--line);padding:6px 16px;font-size:10px;color:var(--hint);flex:0 0 auto;line-height:1.4}
 </style>
 </head>
@@ -58,6 +66,7 @@
   <label><input type="checkbox" id="onlyElig" checked onchange="draw()"> Eligible only</label>
   <label style="display:none"><input type="checkbox" id="hHouse" onchange="draw()"> Hide house-like (LIDAR)</label>
   <label><input type="checkbox" id="showPlan" checked onchange="draw()"> Planning leads</label>
+  <label><input type="checkbox" id="shortOnly" onchange="draw()"> ★ Shortlist only</label>
   <label id="distTog" style="display:none"><input type="checkbox" id="showDist" checked onchange="draw()"> Distress signals</label>
   <span class="leg"><span class="dot" style="background:var(--ok)"></span>eligible barn</span>
   <span class="leg"><span class="dot" style="background:var(--no)"></span>excluded</span>
@@ -87,6 +96,16 @@ const HOME=[51.1865,-0.8173];   // 3 Boundstone Close, Boundstone/Rowledge (from
 const AREA_POLY=[[51.1126,-0.8303],[51.1502,-0.8904],[51.2691,-0.912],[51.2876,-0.8437],
   [51.2327,-0.6324],[51.1846,-0.5961],[51.1498,-0.628],[51.1231,-0.6991]];
 let MAP, LAYER, PLAYER, DLAYER, DATA=[], PLAN=[], HEIGHTS={}, DISTRESS=[];
+// shortlist of barns to investigate (persisted on this device)
+let SHORT = JSON.parse(localStorage.getItem('ps_barn_short')||'[]');
+const bKey = c => c.lat+','+c.lon;
+const isShort = k => SHORT.indexOf(k)>=0;
+function toggleShort(k){
+  const i=SHORT.indexOf(k);
+  if(i>=0) SHORT.splice(i,1); else SHORT.push(k);
+  localStorage.setItem('ps_barn_short', JSON.stringify(SHORT));
+  draw();
+}
 // distress-signal styling (Gazette: receiver = hottest)
 const DCOL={receiver:'#e11d48',administration:'#f97316',winding_up:'#a16207'};
 const DLABEL={receiver:'Receiver appointed (pre-repossession)',administration:'Company in administration',winding_up:'Winding-up / liquidation'};
@@ -137,11 +156,14 @@ function draw(){
     // not a hard bar. So the eligible/excluded gate only applies to the Class-Q types.
     const classQ = !c.building_class || ['agricultural','field','derelict'].includes(c.building_class);
     if(onlyElig && classQ && st!=='ok') return;
+    const key=bKey(c), sl=isShort(key);
+    if(document.getElementById('shortOnly').checked && !sl) return;
     const h = HEIGHTS[c.lat+','+c.lon];
     if(document.getElementById('hHouse').checked && h && h.kind && h.kind.indexOf('tall')===0) return;
     const fill = classQ ? COL[st] : '#0a84ff';   // blue = other conversion route
-    const m=L.circleMarker([c.lat,c.lon],{radius:7,color:'#fff',weight:1.5,
-      fillColor:fill,fillOpacity:0.9});
+    // shortlisted barns get a gold ring so they stand out
+    const m=L.circleMarker([c.lat,c.lon],{radius:sl?8:7,color:sl?'#eab308':'#fff',
+      weight:sl?3:1.5,fillColor:fill,fillOpacity:0.9});
     const d=c.designation||{};
     const eligTxt = st==='ok' ? 'Class-Q ELIGIBLE' : (st==='no'
         ? 'Excluded: '+((d.excluded_by||[]).join(', ')||'designation') : 'Not checked — verify');
@@ -169,7 +191,17 @@ function draw(){
       <div class="row">Parcel ${c.parcel_m2? (c.parcel_m2.toLocaleString()+' m²'):'—'} · ${c.neighbours_150m} building(s) within 150 m</div>
       ${badge}
       <div class="links"><a href="${gmaps}" target="_blank" rel="noopener">Google Maps</a>
-        <a href="${gearth}" target="_blank" rel="noopener">Google Earth</a></div></div>`);
+        <a href="${gearth}" target="_blank" rel="noopener">Google Earth</a></div>
+      <button class="slbtn ${sl?'on':''}" onclick="toggleShort('${key}')">${sl?'★ Shortlisted — tap to remove':'☆ Shortlist for investigation'}</button>
+      <details class="steps"><summary>▸ Next steps</summary>
+        <ol>
+          <li><b>Confirm the building</b> on the satellite/Earth links above.</li>
+          <li><b>Find who owns it</b> — HM Land Registry <a href="https://www.gov.uk/search-property-information-land-registry" target="_blank" rel="noopener">Search for land &amp; property information</a> (~£3): locate this spot on their map and buy the <i>title register</i> for the owner + a correspondence address.</li>
+          <li><b>Check planning history</b> — any 🟠/🟣 pins near here are existing Class-Q applications; also search the local council's planning portal for this parcel.</li>
+          <li><b>Class-Q sense-check</b> — was it agricultural on/before 20 Mar 2013 and in agricultural use within the last 10 yrs? Not listed / AONB / National Park (this one: ${eligTxt})? Structurally sound enough to convert? If yes → a <b>prior-approval application</b> to the council.</li>
+          <li><b>Approach the owner</b> — a polite letter expressing interest in buying.</li>
+        </ol>
+      </details></div>`);
     m.addTo(LAYER); pts.push([c.lat,c.lon]);
   });
   // planning-lead layer (approved-dormant / refused Class-Q applications)
@@ -213,8 +245,10 @@ function draw(){
   document.getElementById('sub').textContent =
     `${DATA.length} barns (${document.getElementById('onlyElig').checked?'eligible shown':'all shown'})`
     + (PLAN.length?` · ${nPlan} planning leads`:'')
-    + (nDist?` · ${nDist} distress`:'');
-  if(n) MAP.fitBounds(pts,{padding:[40,40],maxZoom:14});
+    + (nDist?` · ${nDist} distress`:'')
+    + (SHORT.length?` · ★ ${SHORT.length} shortlisted`:'');
+  // fit the view once on first load; don't yank the map on later filter/shortlist toggles
+  if(n && !window._fitted){ MAP.fitBounds(pts,{padding:[40,40],maxZoom:14}); window._fitted=true; }
 }
 gate();
 </script>
