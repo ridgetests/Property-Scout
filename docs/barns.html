@@ -41,6 +41,8 @@
   .pop .slbtn{margin-top:8px;width:100%;padding:8px;border:1px solid var(--line2);border-radius:8px;
     background:var(--surface);color:var(--ink);font-size:13px;font-weight:600;cursor:pointer}
   .pop .slbtn.on{background:#fef9c3;border-color:#eab308;color:#854d0e}
+  .pop .rmbtn{margin-top:6px;width:100%;padding:7px;border:1px solid var(--line2);border-radius:8px;
+    background:var(--surface);color:#dc2626;font-size:12.5px;font-weight:600;cursor:pointer}
   .pop details.steps{margin-top:8px}
   .pop details.steps summary{font-size:12px;font-weight:600;color:#0a84ff;cursor:pointer}
   .pop details.steps ol{margin:6px 0 0;padding-left:16px;font-size:11.5px;color:var(--ink);line-height:1.5}
@@ -67,6 +69,7 @@
   <label style="display:none"><input type="checkbox" id="hHouse" onchange="draw()"> Hide house-like (LIDAR)</label>
   <label><input type="checkbox" id="showPlan" checked onchange="draw()"> Planning leads</label>
   <label><input type="checkbox" id="shortOnly" onchange="draw()"> ★ Shortlist only</label>
+  <span id="restoreBar" class="leg" style="display:none;cursor:pointer;color:#0a84ff;font-weight:600" onclick="restoreBarns()"></span>
   <label id="distTog" style="display:none"><input type="checkbox" id="showDist" checked onchange="draw()"> Distress signals</label>
   <span class="leg"><span class="dot" style="background:var(--ok)"></span>eligible barn</span>
   <span class="leg"><span class="dot" style="background:var(--no)"></span>excluded</span>
@@ -106,6 +109,17 @@ function toggleShort(k){
   localStorage.setItem('ps_barn_short', JSON.stringify(SHORT));
   draw();
 }
+// removed / no-go barns (hidden from the map; restorable)
+let DISMISS = JSON.parse(localStorage.getItem('ps_barn_dismissed')||'[]');
+const isDismissed = k => DISMISS.indexOf(k)>=0;
+function dismissBarn(k){
+  if(!isDismissed(k)) DISMISS.push(k);
+  const si=SHORT.indexOf(k); if(si>=0){ SHORT.splice(si,1); localStorage.setItem('ps_barn_short',JSON.stringify(SHORT)); }
+  localStorage.setItem('ps_barn_dismissed', JSON.stringify(DISMISS));
+  if(MAP) MAP.closePopup();
+  draw();
+}
+function restoreBarns(){ DISMISS=[]; localStorage.removeItem('ps_barn_dismissed'); draw(); }
 // distress-signal styling (Gazette: receiver = hottest)
 const DCOL={receiver:'#e11d48',administration:'#f97316',winding_up:'#a16207'};
 const DLABEL={receiver:'Receiver appointed (pre-repossession)',administration:'Company in administration',winding_up:'Winding-up / liquidation'};
@@ -157,6 +171,7 @@ function draw(){
     const classQ = !c.building_class || ['agricultural','field','derelict'].includes(c.building_class);
     if(onlyElig && classQ && st!=='ok') return;
     const key=bKey(c), sl=isShort(key);
+    if(isDismissed(key)) return;                       // removed as no-go
     if(document.getElementById('shortOnly').checked && !sl) return;
     const h = HEIGHTS[c.lat+','+c.lon];
     if(document.getElementById('hHouse').checked && h && h.kind && h.kind.indexOf('tall')===0) return;
@@ -193,6 +208,7 @@ function draw(){
       <div class="links"><a href="${gmaps}" target="_blank" rel="noopener">Google Maps</a>
         <a href="${gearth}" target="_blank" rel="noopener">Google Earth</a></div>
       <button class="slbtn ${sl?'on':''}" onclick="toggleShort('${key}')">${sl?'★ Shortlisted — tap to remove':'☆ Shortlist for investigation'}</button>
+      <button class="rmbtn" onclick="dismissBarn('${key}')">✕ Remove — no-go</button>
       <details class="steps"><summary>▸ Next steps</summary>
         <ol>
           <li><b>Confirm the building</b> on the satellite/Earth links above.</li>
@@ -247,6 +263,8 @@ function draw(){
     + (PLAN.length?` · ${nPlan} planning leads`:'')
     + (nDist?` · ${nDist} distress`:'')
     + (SHORT.length?` · ★ ${SHORT.length} shortlisted`:'');
+  const rb=document.getElementById('restoreBar');
+  if(rb){ if(DISMISS.length){ rb.style.display=''; rb.textContent='↺ '+DISMISS.length+' removed — restore'; } else rb.style.display='none'; }
   // fit the view once on first load; don't yank the map on later filter/shortlist toggles
   if(n && !window._fitted){ MAP.fitBounds(pts,{padding:[40,40],maxZoom:14}); window._fitted=true; }
 }
