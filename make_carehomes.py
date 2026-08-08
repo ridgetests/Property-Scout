@@ -34,7 +34,7 @@ OUTPUT = os.environ.get("PS_OUTPUT", "care_homes_region.json.gz")
 PAGE = "https://www.cqc.org.uk/about-us/transparency/using-cqc-data"
 # CQC's WAF 403s a bare python-requests UA -- present a browser-like one.
 UA = ("Mozilla/5.0 (compatible; PropertyScout care-home filter; "
-      "+personal property research; contact: heystevenridgeway@gmail.com)")
+      "+personal property research)")
 # Farnham / Alton / Fleet / Bordon postcode districts (outward codes).
 DISTRICTS = {"GU7", "GU8", "GU9", "GU10", "GU30", "GU33", "GU34", "GU35", "GU51", "GU52",
              "RG29"}

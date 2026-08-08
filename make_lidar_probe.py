@@ -23,8 +23,8 @@ import sys
 _HOME_LAT, _HOME_LON = 51.198, -0.832
 WCS = ("https://environment.data.gov.uk/spatialdata/"
        "lidar-composite-digital-terrain-model-dtm-1m/wcs")
-UA = ("Mozilla/5.0 (compatible; PropertyScout LIDAR probe; +personal property research; "
-      "contact: heystevenridgeway@gmail.com)")
+UA = ("Mozilla/5.0 (compatible; PropertyScout LIDAR probe; "
+      "+personal property research)")
 _TIFF = (b"II*\x00", b"MM\x00*")
 
 
