@@ -130,6 +130,12 @@ UPRN_FILE = Path(__file__).resolve().parent / "uprn_coords.json.gz"  # OS Open U
 MIN_PLOT_M2 = HOME_PLOT_M2               # gate: lead plot must be >= your home plot
 DETACHED_ONLY = True                     # gate: drop clear non-detached dwellings
 EXCLUDE_DISTRICTS = {"GU11", "GU12", "GU14", "GU51", "GU52"}  # Aldershot/Farnborough/Fleet - out of area
+# Home-patch districts. Some agents (e.g. Andrew Lodge) publish only the OUTWARD code
+# ("Frensham, GU10"), which geocodes to the district centroid -- a single point that can
+# fall just outside the hand-drawn bowl even for a genuinely-local property. So an
+# outward-only listing in one of these districts is kept (as an approximate-location lead)
+# rather than dropped.
+IN_AREA_OUTWARD = {"GU9", "GU10"}
 EXCLUDE_LOCALITIES = {"Hale", "Badshot Lea", "Heath End", "Weybourne"}  # out-of-area GU9/GU10 sprawl
 
 _CAREHOME_RE = re.compile(
@@ -1133,12 +1139,31 @@ def score_property(p):
     return p
 
 
+_FULL_PC_RE = re.compile(r"^[A-Z]{1,2}\d[A-Z\d]?\s+\d[A-Z]{2}$", re.I)
+
+
+def _outward_only(postcode):
+    """True if we only have the outward code (e.g. 'GU10'), not a full postcode."""
+    pc = (postcode or "").strip().upper()
+    return bool(pc) and not _FULL_PC_RE.match(pc)
+
+
+def _area_ok(lat, lng, postcode=None):
+    """Inside the hand-drawn bowl -- OR an outward-only postcode whose district is the
+    home patch (its centroid can miss the fine polygon even when the property is local)."""
+    if lat is None:
+        return False
+    if _in_polygon(lat, lng, AREA_POLYGON):
+        return True
+    return _outward_only(postcode) and (postcode or "").strip().upper().split()[0] in IN_AREA_OUTWARD
+
+
 def apply_gates(props, conn=None):
     """Stamp plot size; apply detached + plot-size hard gates (keep unverified plots)."""
     out = []
     dropped_type = dropped_plot = dropped_area = dropped_offthesis = 0
     for p in props:
-        if p.get("lat") is not None and not _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
+        if p.get("lat") is not None and not _area_ok(p["lat"], p["lng"], p.get("postcode")):
             dropped_area += 1
             continue
         _pcd_parts = (p.get("postcode") or "").split()
@@ -1163,7 +1188,9 @@ def apply_gates(props, conn=None):
             dropped_offthesis += 1
             continue
         lat, lng = p.get("lat"), p.get("lng")
-        parcel = parcel_for(lat, lng)
+        # An approximate (outward-code) location sits at the district centroid, so a parcel
+        # lookup there is meaningless -- skip it and let the plot show as unverified.
+        parcel = None if p.get("approx_location") else parcel_for(lat, lng)
         area = parcel["a"] if parcel else None
         # Sanity: a postcode-centroid coordinate often lands inside a big ENCLOSING parcel
         # (a whole estate/field) rather than the property's own plot. Publishing that as
@@ -2865,13 +2892,20 @@ def main():
     have = sum(1 for p in props if p["lat"] is not None)
     print(f"- coords {have}/{len(props)} (cached {len(cache)}, fresh {len(fresh)})")
 
-    # keep only what falls inside the hand-drawn target patch
+    # keep what falls inside the hand-drawn target patch, plus outward-only leads whose
+    # district is the home patch (their centroid can miss the fine polygon -- flag approx)
     inside = []
     for p in props:
-        if p["lat"] is not None and _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
-            p["dist_mi"] = round(_haversine_mi(HOME, (p["lat"], p["lng"])), 1)
-            p["media"]["thumb_url"] = _aerial_thumb(p["lat"], p["lng"])
-            inside.append(p)
+        if not _area_ok(p["lat"], p["lng"], p.get("postcode")):
+            continue
+        if not _in_polygon(p["lat"], p["lng"], AREA_POLYGON):
+            p["approx_location"] = True                 # placed at the district centroid
+            fl = p.setdefault("flags", [])
+            if "approx-location" not in fl:
+                fl.append("approx-location")
+        p["dist_mi"] = round(_haversine_mi(HOME, (p["lat"], p["lng"])), 1)
+        p["media"]["thumb_url"] = _aerial_thumb(p["lat"], p["lng"])
+        inside.append(p)
     props = inside
     print(f"- {len(props)} inside target area")
 
