@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-08T11:36:33.634008+00:00",
-  "count": 51,
+  "generated_at": "2026-08-08T13:13:06.725349+00:00",
+  "count": 89,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -1625,6 +1625,468 @@
       }
     },
     {
+      "id": "ag_b6bed4b008",
+      "address": "Frensham Road, Lower Bourne, GU10",
+      "postcode": "GU10",
+      "street": "Frensham Road",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 2,
+      "price": 270000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/43-frensham-road/farnham/frensham-road-lower-bourne-gu10/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d7d-14d8-4716-acd4-ec262f670fc5/0/1200.jpg"
+      },
+      "description_raw": "Frensham Road, Lower Bourne, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Flat - For Sale Frensham Road, Lower Bourne, GU10 Guide Price \u00a3270,000 2 2 1 A spacious two bedroom first-floor apartment, forming part of this respected development in Lower Bourne ** No Onward Chain ** Request a Viewing Key Features 2 bedrooms Sitting/dining room Kitchen Bathroom Garage Allocated parking space Communal gardens Property Summary A spacious two bedroom first floor apartment with far reaching views and is conveniently located in L",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:14:13Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 50,
+      "typology": "Anomaly",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 26,
+          "max": 26,
+          "note": "\u00a3270k vs \u00a3732k comps (+50%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 270000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
+      "id": "ag_386a89be92",
+      "address": "Latchwood Lane, Lower Bourne, GU10",
+      "postcode": "GU10",
+      "street": "Latchwood Lane",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 2,
+      "price": 295000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/lower-bourne/farnham/latchwood-lane-lower-bourne-gu10/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d44-1214-4b81-9cc6-279ec794e0b9/0/1200.jpg"
+      },
+      "description_raw": "Latchwood Lane, Lower Bourne, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 2 Beds - Property - Sold STC Latchwood Lane, Lower Bourne, GU10 Guide Price \u00a3295,000 2 2 2 A spaciously designed 2 double bedroom ground floor apartment offering great potential and found most convenient to the village of Lower Bourne * No Onward Chain * Request a Viewing Key Features 2 double bedrooms 2 bath/shower rooms (1 en-suite) Sitting room Dining room Kitchen/breakfast room Garage Store room Visitor parking Wonderful communal gardens A spaciously",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T19:01:03Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 50,
+      "typology": "Anomaly",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 26,
+          "max": 26,
+          "note": "\u00a3295k vs \u00a3732k comps (+50%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 295000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
+      "id": "ag_a64685d257",
+      "address": "Abbey Street, Providence Place Abbey Street, GU9",
+      "postcode": "GU9",
+      "street": "Abbey Street",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 195000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/abbey-street-providence-place-abbey-street-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/446ade53-961d-40e2-9781-f6748973a6f8/0/1200.jpg"
+      },
+      "description_raw": "Abbey Street, Providence Place Abbey Street, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Flat - For Sale Abbey Street, Providence Place Abbey Street, GU9 Guide Price \u00a3195,000 2 1 1 A delightful first floor 2 bedroom retirement apartment with a lift, modern shower room, fitted kitchen, communal gardens and parking situated in the town centre. Request a Viewing Brochure Key Features 2 bedrooms Shower room Sitting room Kitchen Communal resident's lounge Use of laundry room Communal gardens Communal parking Access onto Go",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T17:10:27Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 49,
+      "typology": "Anomaly",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 26,
+          "max": 26,
+          "note": "\u00a3195k vs \u00a3451k comps (+50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 195000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_0990a7af1b",
+      "address": "Clare Mead, Rowledge, GU10",
+      "postcode": "GU10",
+      "street": "Clare Mead",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 2,
+      "price": 415000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/clare-mead-rowledge-gu10/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d7c-3c92-4f0d-9c5e-68a5a7d14125/0/1200.jpg"
+      },
+      "description_raw": "Clare Mead, Rowledge, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - House - For Sale Clare Mead, Rowledge, GU10 Guide Price \u00a3415,000 2 1 1 * No Onward Chain * A well proportioned two bedroom mid-terrace home with a single garage located within close proximity of Rowledge village Request a Viewing Brochure Key Features Two double bedrooms Shower room Newly fitted front-aspect kitchen Rear-aspect living/dining room Conservatory Enclosed rear patio garden Single garage with electric door Vacant possession Property Summary",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:12:57Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 48,
+      "typology": "Anomaly",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 24,
+          "max": 26,
+          "note": "\u00a3415k vs \u00a3732k comps (+43%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 415000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
       "id": "ag_f027916a45",
       "address": "Greenfield Road, Farnham, GU9 8TQ",
       "postcode": "GU9 8TQ",
@@ -1787,6 +2249,236 @@
       "permission_label": "development-friendly",
       "feasibility": 0.92,
       "setting": 603
+    },
+    {
+      "id": "ag_59084fc010",
+      "address": "Kiln Lane, Lower Bourne, GU10",
+      "postcode": "GU10",
+      "street": "Kiln Lane",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 2,
+      "price": 495000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/kiln-lane-lower-bourne-gu10-2/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a180cacb-7ee4-45eb-8c7f-8e3c80bc008b/0/1200.jpg"
+      },
+      "description_raw": "Kiln Lane, Lower Bourne, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Bungalow - For Sale Kiln Lane, Lower Bourne, GU10 Guide Price \u00a3495,000 2 1 A well-presented two-bedroom semi-detached bungalow occupying a pleasant position close to the heart of the sought-after village of Lower Bourne * No Onward Chain * Request a Viewing Brochure Key Features Well-presented semi-detached bungalow Two bedrooms Sitting room Fitted kitchen Conservatory Modern bathroom Secluded rear garden Garage Driveway parking for several vehicles",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:12:36Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 46,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 21,
+          "max": 26,
+          "note": "\u00a3495k vs \u00a3732k comps (+32%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 495000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
+      "id": "ag_56d6a42fa3",
+      "address": "Beavers Close, The Lodge Beavers Close, GU9",
+      "postcode": "GU9",
+      "street": "Beavers Close",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 275000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/beavers-close-the-lodge-beavers-close-gu9-2/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": ""
+      },
+      "description_raw": "Beavers Close, The Lodge Beavers Close, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Apartment - For Sale Beavers Close, The Lodge Beavers Close, GU9 Guide Price \u00a3275,000 2 1 1 * No Onward Chain * An attractive 2 double bedroom first floor apartment with 2 parking spaces and within walking distance of the Georgian town centre Request a Viewing Brochure Key Features 2 double bedrooms Sitting/dining room Kitchen Bathroom 2 allocated parking spaces Walking distance of the town centre Property Summary A spaciously designed",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T18:58:20Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 47,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 23,
+          "max": 26,
+          "note": "\u00a3275k vs \u00a3451k comps (+39%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 275000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
     },
     {
       "id": "ag_d348584742",
@@ -2271,6 +2963,276 @@
       "permission_label": "development-friendly",
       "feasibility": 0.92,
       "setting": 284
+    },
+    {
+      "id": "ag_6b05045ba5",
+      "address": "Sumner Road, Farnham, Surrey, GU9 7JX",
+      "postcode": "GU9 7JX",
+      "street": "Sumner Road",
+      "lat": 51.218763,
+      "lng": -0.79339,
+      "property_type": "house",
+      "beds": 2,
+      "price": 225000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://www.truemanandgrundy.co.uk/property/sumner-road-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43753/65247",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/TFJPgO3CD0GMwyTk4rBy3Q.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:01:38Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.5,
+      "est_low": 227676,
+      "est_mid": 552929,
+      "est_high": 696969,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "SUMNER COURT Sumner Road",
+          "price": 240000,
+          "year": "2026",
+          "adj": 240000,
+          "pc": "GU9 7JX"
+        },
+        {
+          "addr": "SUMNER COURT Sumner Road",
+          "price": 245000,
+          "year": "2025",
+          "adj": 227676,
+          "pc": "GU9 7JX"
+        },
+        {
+          "addr": "9 Sumner Road",
+          "price": 755000,
+          "year": "2025",
+          "adj": 701616,
+          "pc": "GU9 7JU"
+        },
+        {
+          "addr": "SUMNER COURT Sumner Road",
+          "price": 231000,
+          "year": "2025",
+          "adj": 214666,
+          "pc": "GU9 7JX"
+        },
+        {
+          "addr": "10 Sumner Road",
+          "price": 750000,
+          "year": "2024",
+          "adj": 696969,
+          "pc": "GU9 7JU"
+        },
+        {
+          "addr": "8 Sumner Road",
+          "price": 595000,
+          "year": "2024",
+          "adj": 552929,
+          "pc": "GU9 7JU"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 47,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 22,
+          "max": 26,
+          "note": "\u00a3225k vs \u00a3553k comps (+50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 89,
+          "max": 100,
+          "note": "\u00d70.89 \u00b7 development-friendly \u00b7 82 approved / 10 refused nearby \u00b7 4 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 225000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 82,
+        "refused": 10,
+        "decided": 92,
+        "rate": 0.8913043478260869,
+        "classq_seen": 6,
+        "classq_approved": 4
+      },
+      "permission": 0.89,
+      "permission_label": "development-friendly",
+      "feasibility": 0.89,
+      "setting": 377
+    },
+    {
+      "id": "ag_8c997647b0",
+      "address": "Crondall Lane, The Old Kiln Crondall Lane, GU9",
+      "postcode": "GU9",
+      "street": "Crondall Lane",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 315000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/crondall-lane-the-old-kiln-crondall-lane-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/26601645-895f-444c-aa7c-b8278afc99f7/0/1200.jpg"
+      },
+      "description_raw": "Crondall Lane, The Old Kiln Crondall Lane, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Flat - For Sale Crondall Lane, The Old Kiln Crondall Lane, GU9 Guide Price \u00a3315,000 2 1 A unique and well presented 2 bedroom top-floor apartment, forming part of a Hop Kiln conversion found most convenient to the Georgian town centre Request a Viewing Brochure Key Features Unique top-floor apartment within a former hop kiln conversion Vaulted ceilings throughout Three useful mezzanine areas Open-plan kitchen/living/dining room Fitt",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T17:14:24Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 45,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3315k vs \u00a3451k comps (+30%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 315000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
     },
     {
       "id": "ag_875d10865e",
@@ -2869,6 +3831,750 @@
       "setting": 464
     },
     {
+      "id": "ag_c5595c5c41",
+      "address": "Alfred Road, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Alfred Road",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 325000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/alfred-road-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d93-6758-4d8e-9865-f1995bcaa070/0/1200.jpg"
+      },
+      "description_raw": "Alfred Road, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Flat - For Sale Alfred Road, Farnham, GU9 Guide Price \u00a3325,000 2 2 1 Spacious 2 bedroom first-floor flat with parking and double length garage situated close to the town centre and station. Request a Viewing Brochure Key Features First floor flat 2 double bedrooms Principal bedroom with en-suite One allocated parking space Double length garage Outside communal area Planning permission to improve Views of Farnham Castle Walking distance to town and train",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:12:04Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 44,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3325k vs \u00a3451k comps (+28%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 325000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_cc4987fe36",
+      "address": "Weydon Lane, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Weydon Lane",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 325000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/weydon-lane-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/29d0e2a1-7621-4249-bbac-8980a0f86a5a/0/1200.jpg"
+      },
+      "description_raw": "Weydon Lane, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Flat - For Sale Weydon Lane, Farnham, GU9 Guide Price \u00a3325,000 2 1 1 An impressive 2 bedroom flat with stunning views close to Farnham town centre and station. No onward chain. Request a Viewing Brochure Key Features 2 bedrooms Shower room Large sitting/dining room with vaulted ceiling Kitchen Garage in block Far reaching views towards Farnham Communal garden This attractive two bedroom flat offers a wonderful blend of period character and modern conven",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-07T05:45:45Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 44,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3325k vs \u00a3451k comps (+28%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-07",
+          "price": 325000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_0c9cdef8e9",
+      "address": "Quennells Hill, Wrecclesham, GU10",
+      "postcode": "GU10",
+      "street": "Quennells Hill",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 4,
+      "price": 599950,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/quennells-hill-wrecclesham-gu10/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da7-a6b9-49c3-a875-879fc949fd16/0/1200.jpg"
+      },
+      "description_raw": "Quennells Hill, Wrecclesham, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - Property - Sold STC Quennells Hill, Wrecclesham, GU10 Guide Price \u00a3599,950 4 2 1 A spaciously designed four bedroom semi-detached home tucked away within a small residential development in south Farnham ** No Onward Chain ** Request a Viewing Key Features Living room Kitchen/dining room Principal bedroom with en-suite 3 further bedrooms The ground floor comprises an entrance hallway with a downstairs cloakroom. The rear aspect living room has oak",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-07T05:46:48Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 43,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 17,
+          "max": 26,
+          "note": "\u00a3600k vs \u00a3732k comps (+18%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-07",
+          "price": 599950
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
+      "id": "ag_ad5ad2636d",
+      "address": "Burnt Hill Road, Wrecclesham, GU10",
+      "postcode": "GU10",
+      "street": "Burnt Hill Road",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 4,
+      "price": 750000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/burnt-hill-road-wrecclesham-gu10/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": ""
+      },
+      "description_raw": "Burnt Hill Road, Wrecclesham, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - House - Sold STC Burnt Hill Road, Wrecclesham, GU10 Guide Price \u00a3750,000 4 1 2 * A rare and exciting opportunity * An individual 4 bedroom detached family home set on a generous plot of approximately 0.39 acres offering tremendous scope for improvement/enlargement stpp Request a Viewing Key Features 4 bedrooms Bathroom Sitting room Dining room Kitchen/Breakfast room Double garage and workshop Secluded plot extending to approx. 0.39 acres Sold as",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-07T05:47:31Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [
+          "Development angle"
+        ],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 43,
+      "typology": "Candidate",
+      "tier": "Low",
+      "reasons": [
+        "Marketed development potential",
+        "In your target area"
+      ],
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 12,
+          "max": 26,
+          "note": "\u00a3750k vs \u00a3732k comps (-2%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 5,
+          "max": 20,
+          "note": "dev angle"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        },
+        "Planning": {
+          "note": "Development angle",
+          "consented": false
+        }
+      },
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-07",
+          "price": 750000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
+      "id": "ag_d9d88370e4",
+      "address": "Guildford Road, Farnham, Surrey, GU9 9PP",
+      "postcode": "GU9 9PP",
+      "street": "Guildford Road",
+      "lat": 51.218854,
+      "lng": -0.785627,
+      "property_type": "house",
+      "beds": 2,
+      "price": 285000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://www.truemanandgrundy.co.uk/property/guildford-road-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43753/65249",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/qGn6QLUbek-w0qgenuLUWQ.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:00:02Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.6,
+      "est_low": 394949,
+      "est_mid": 464646,
+      "est_high": 464646,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "35 Guildford Road",
+          "price": 975000,
+          "year": "2026",
+          "adj": 975000,
+          "pc": "GU9 9PU"
+        },
+        {
+          "addr": "26 Guildford Road",
+          "price": 482500,
+          "year": "2025",
+          "adj": 448383,
+          "pc": "GU9 9QB"
+        },
+        {
+          "addr": "MILLGATE COURT Guildford Road",
+          "price": 285000,
+          "year": "2025",
+          "adj": 264848,
+          "pc": "GU9 9PP"
+        },
+        {
+          "addr": "21A Guildford Road",
+          "price": 500000,
+          "year": "2024",
+          "adj": 464646,
+          "pc": "GU9 9PU"
+        },
+        {
+          "addr": "19 Guildford Road",
+          "price": 425000,
+          "year": "2024",
+          "adj": 394949,
+          "pc": "GU9 9PU"
+        },
+        {
+          "addr": "21 Guildford Road",
+          "price": 500000,
+          "year": "2024",
+          "adj": 464646,
+          "pc": "GU9 9PU"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 54,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 27,
+          "max": 38,
+          "note": "1,853 m\u00b2 plot (4.9\u00d7 your home) \u00b7 approx, capped"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3285k vs \u00a3465k comps (+39%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 85,
+          "max": 100,
+          "note": "\u00d70.85 \u00b7 development-friendly \u00b7 73 approved / 13 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 285000
+        }
+      ],
+      "plot_m2": 1853,
+      "footprints": {
+        "main_m2": 480,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 26
+      },
+      "floor_area_est_m2": 864,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 73,
+        "refused": 13,
+        "decided": 86,
+        "rate": 0.8488372093023255,
+        "classq_seen": 7,
+        "classq_approved": 3
+      },
+      "permission": 0.85,
+      "permission_label": "development-friendly",
+      "feasibility": 0.85,
+      "setting": 484
+    },
+    {
+      "id": "ag_264a172291",
+      "address": "Towns End Gardens, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Towns End Gardens",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 450000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/towns-end-gardens-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d6b-cd45-4584-8861-5a2bd983522b/0/1200.jpg"
+      },
+      "description_raw": "Towns End Gardens, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 2 Beds - House - Sold STC Towns End Gardens, Farnham, GU9 Guide Price \u00a3450,000 2 2 1 An immaculately presented two bedroom, two en-suite home with parking for 2 vehicles and landscaped courtyard garden close to Farnham town centre. Offered to the market with no onward chain Request a Viewing Brochure Key Features Beautifully presented modern semi-detached house Small and select development Convenient for Farnham's Georgian town centre Two double bedrooms Tw",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T17:16:48Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 43,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 19,
+          "max": 26,
+          "note": "~\u00a3450k"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 450000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
       "id": "ag_8b85a29de7",
       "address": "Rosemary Cottages, Hamlash Lane, Frensham, Farnham, GU10 3AU",
       "postcode": "GU10 3AU",
@@ -3034,6 +4740,162 @@
       "permission_label": "development-friendly",
       "feasibility": 0.89,
       "setting": 192
+    },
+    {
+      "id": "ag_040378133e",
+      "address": "Roman Way, Farnham, Surrey, GU9 9RG",
+      "postcode": "GU9 9RG",
+      "street": "Roman Way",
+      "lat": 51.222056,
+      "lng": -0.78139,
+      "property_type": "house",
+      "beds": 3,
+      "price": 215000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://www.truemanandgrundy.co.uk/property/roman-way-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43751/65251",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/Vn6rPQEBzkKbQI3s6aCVCQ.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:01:48Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.9,
+      "est_low": 186500,
+      "est_mid": 329898,
+      "est_high": 371717,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "91 Roman Way",
+          "price": 186500,
+          "year": "2026",
+          "adj": 186500,
+          "pc": "GU9 9RG"
+        },
+        {
+          "addr": "77 Roman Way",
+          "price": 400000,
+          "year": "2025",
+          "adj": 371717,
+          "pc": "GU9 9RG"
+        },
+        {
+          "addr": "1 Roman Way",
+          "price": 460000,
+          "year": "2025",
+          "adj": 427474,
+          "pc": "GU9 9RF"
+        },
+        {
+          "addr": "79 Roman Way",
+          "price": 330000,
+          "year": "2025",
+          "adj": 306666,
+          "pc": "GU9 9RG"
+        },
+        {
+          "addr": "73 Roman Way",
+          "price": 355000,
+          "year": "2025",
+          "adj": 329898,
+          "pc": "GU9 9RG"
+        },
+        {
+          "addr": "141 Roman Way",
+          "price": 165000,
+          "year": "2025",
+          "adj": 153333,
+          "pc": "GU9 9RQ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 42,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 19,
+          "max": 26,
+          "note": "\u00a3215k vs \u00a3330k comps (+35%)"
+        },
+        "Fit": {
+          "score": 16,
+          "max": 21,
+          "note": "2.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 77 approved / 13 refused nearby \u00b7 6 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 215000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 77,
+        "refused": 13,
+        "decided": 90,
+        "rate": 0.8555555555555555,
+        "classq_seen": 6,
+        "classq_approved": 6
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 299
     },
     {
       "id": "ag_46cb258893",
@@ -3997,6 +5859,120 @@
       "setting": 323
     },
     {
+      "id": "ag_d8ac2245f2",
+      "address": "Shortheath Road, Farnham Cloisters, GU9",
+      "postcode": "GU9",
+      "street": "Shortheath Road",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 400000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/41-shortheath-road/farnham/shortheath-road-farnham-cloisters-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d37-984a-4395-91e3-4525040bd11f/0/1200.jpg"
+      },
+      "description_raw": "Shortheath Road, Farnham Cloisters, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 2 Beds - Flat - Sold STC Shortheath Road, Farnham Cloisters, GU9 Offers over \u00a3400,000 2 2 1 A charming 2 bedroom ground floor apartment with private garden, situated within close proximity of Farnham town centre Request a Viewing Brochure Key Features Ground floor two-bedroom apartment Private rear garden Spacious living room with garden access Modern integrated kitchen Two well-proportioned bedrooms (one en-suite) Family bathroom Allocated parking ",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T17:14:03Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 40,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 16,
+          "max": 26,
+          "note": "\u00a3400k vs \u00a3451k comps (+11%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 400000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
       "id": "ag_7b884871f8",
       "address": "Hurlands Close, Farnham, Surrey, GU9 9JF",
       "postcode": "GU9 9JF",
@@ -4158,6 +6134,397 @@
       "permission_label": "development-friendly",
       "feasibility": 0.94,
       "setting": 199
+    },
+    {
+      "id": "ag_7d63eea75e",
+      "address": "Oxenden Road, Tongham, Farnham, Surrey, GU10 1AR",
+      "postcode": "GU10 1AR",
+      "street": "Oxenden Road",
+      "lat": 51.239487,
+      "lng": -0.733512,
+      "property_type": "house",
+      "beds": 0,
+      "price": 500000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Mackenzie Smith",
+        "url": "https://www.mackenziesmith.co.uk/property/oxenden-road-tongham-farnham-surrey-gu10-1ar-3/",
+        "agent": "Mackenzie Smith",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65268",
+        "photo_url": "https://assets.reapit.net/mck/live/pictures/ALD/24/ALD240148_09.jpg"
+      },
+      "description_raw": "Oxenden Road, Tongham, Farnham, Surrey, GU10 1AR offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Oxenden Road, Tongham, Farnham, Surrey, GU10 1AR to view.",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:44:22Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 5.2,
+      "est_low": 205000,
+      "est_mid": 835000,
+      "est_high": 1765656,
+      "est_basis": "nearby (GU10 1)",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "THE COURTYARD Moor Park House Way",
+          "price": 835000,
+          "year": "2026",
+          "adj": 835000,
+          "pc": "GU10 1FE"
+        },
+        {
+          "addr": "SANDHURST Guildford Road",
+          "price": 205000,
+          "year": "2026",
+          "adj": 205000,
+          "pc": "GU10 1PG"
+        },
+        {
+          "addr": "HOP KILN COTTA Moor Park Lane",
+          "price": 620000,
+          "year": "2025",
+          "adj": 576161,
+          "pc": "GU10 1NS"
+        },
+        {
+          "addr": "1 Camp Hill",
+          "price": 1900000,
+          "year": "2025",
+          "adj": 1765656,
+          "pc": "GU10 1RJ"
+        },
+        {
+          "addr": "2 Swifts Close",
+          "price": 1915000,
+          "year": "2025",
+          "adj": 1779595,
+          "pc": "GU10 1QX"
+        },
+        {
+          "addr": "SANDHURST Guildford Road",
+          "price": 159000,
+          "year": "2025",
+          "adj": 147757,
+          "pc": "GU10 1PG"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 35,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3500k vs \u00a3835k comps (+40%)"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 21,
+          "note": "5.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 76,
+          "max": 100,
+          "note": "\u00d70.76 \u00b7 development-friendly \u00b7 70 approved / 22 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 500000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 70,
+        "refused": 22,
+        "decided": 92,
+        "rate": 0.7608695652173914,
+        "classq_seen": 1,
+        "classq_approved": 1
+      },
+      "permission": 0.76,
+      "permission_label": "development-friendly",
+      "feasibility": 0.76,
+      "setting": 0
+    },
+    {
+      "id": "ag_a4f70c47ec",
+      "address": "Peakfield, Frensham, GU10",
+      "postcode": "GU10",
+      "street": "Peakfield",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 4,
+      "price": 750000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/peakfield-frensham-gu10/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d9b-8ad7-4a9a-a264-e738d8f4a867/0/1200.jpg"
+      },
+      "description_raw": "Peakfield, Frensham, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 4 Beds - House - For Sale Peakfield, Frensham, GU10 Guide Price \u00a3750,000 4 2 2 A well presented, spacious and versatile 4/5 bedroom semi-detached family home in the highly sought after village of Frensham Request a Viewing Key Features 4/5 bedrooms 2 bath/shower rooms Sitting room Study/Bedroom 5 Kitchen/dining/family room Parking on driveway for 2 vehicles Large garden backing onto playing field Stunning views over surrounding countryside Property Summary Havin",
+      "enrichment": {
+        "market": {
+          "reductions": 1,
+          "is_reduced": true,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-07T05:47:10Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "price_reduced",
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 44,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 12,
+          "max": 26,
+          "note": "\u00a3750k vs \u00a3732k comps (-2%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 6,
+          "max": 20,
+          "note": "reduced"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        }
+      },
+      "reasons": [
+        "Recently reduced"
+      ],
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-07",
+          "price": 775000
+        },
+        {
+          "date": "2026-08-08",
+          "price": 750000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
+      "id": "ag_b13f9618e1",
+      "address": "Heron Close, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Heron Close",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 410000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/heron-close-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": ""
+      },
+      "description_raw": "Heron Close, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 3 Beds - House - Sold STC Heron Close, Farnham, GU9 Guide Price \u00a3410,000 3 1 1 A spacious three bedroom mid-terrace home set over three floors, offering versatile living accommodation, situated in a quiet residential cul-de-sac * No Onward Chain * Request a Viewing Key Features 3 bedrooms Accommodation arranged over three floors Front aspect kitchen Rear aspect living room with garden access Family bathroom Driveway parking for two vehicles Enclosed rear garden C",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T19:01:46Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 40,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 15,
+          "max": 26,
+          "note": "\u00a3410k vs \u00a3451k comps (+9%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 410000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
     },
     {
       "id": "ag_5dcb8f9141",
@@ -4808,6 +7175,162 @@
       "setting": 112
     },
     {
+      "id": "ag_085358b007",
+      "address": "Thurbans Road, Farnham, Surrey, GU9 8TD",
+      "postcode": "GU9 8TD",
+      "street": "Thurbans Road",
+      "lat": 51.199306,
+      "lng": -0.810373,
+      "property_type": "house",
+      "beds": 2,
+      "price": 265000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://www.truemanandgrundy.co.uk/property/thurbans-road-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65240",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/C5DRdMr0hkWSEWlY266sYA.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:01:27Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 0.9,
+      "est_low": 202400,
+      "est_mid": 241616,
+      "est_high": 320606,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "19 Thurbans Road",
+          "price": 260000,
+          "year": "2025",
+          "adj": 241616,
+          "pc": "GU9 8TD"
+        },
+        {
+          "addr": "WELLS COTTAGES Thurbans Road",
+          "price": 355000,
+          "year": "2025",
+          "adj": 329898,
+          "pc": "GU9 8TS"
+        },
+        {
+          "addr": "WELLS COTTAGES Thurbans Road",
+          "price": 345000,
+          "year": "2025",
+          "adj": 320606,
+          "pc": "GU9 8TS"
+        },
+        {
+          "addr": "15 Thurbans Road",
+          "price": 220000,
+          "year": "2022",
+          "adj": 202400,
+          "pc": "GU9 8TD"
+        },
+        {
+          "addr": "2 Thurbans Road",
+          "price": 234000,
+          "year": "2022",
+          "adj": 215280,
+          "pc": "GU9 8TD"
+        },
+        {
+          "addr": "13 Thurbans Road",
+          "price": 200000,
+          "year": "2022",
+          "adj": 184000,
+          "pc": "GU9 8TD"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 37,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 11,
+          "max": 26,
+          "note": "\u00a3265k vs \u00a3242k comps (-10%)"
+        },
+        "Fit": {
+          "score": 20,
+          "max": 21,
+          "note": "0.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 84,
+          "max": 100,
+          "note": "\u00d70.84 \u00b7 development-friendly \u00b7 80 approved / 15 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 265000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 80,
+        "refused": 15,
+        "decided": 95,
+        "rate": 0.8421052631578947,
+        "classq_seen": 4,
+        "classq_approved": 3
+      },
+      "permission": 0.84,
+      "permission_label": "development-friendly",
+      "feasibility": 0.84,
+      "setting": 599
+    },
+    {
       "id": "ag_92f288f18e",
       "address": "Properties for sale from Farnham branch, Hamptons.",
       "postcode": "GU9 7HS",
@@ -5295,6 +7818,122 @@
       "setting": 215
     },
     {
+      "id": "ag_13c26e0c13",
+      "address": "Gorse Lane, Wrecclesham, GU10",
+      "postcode": "GU10",
+      "street": "Gorse Lane",
+      "lat": 51.19723035096643,
+      "lng": -0.7967693062054939,
+      "property_type": "house",
+      "beds": 4,
+      "price": 850000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/gorse-lane-wrecclesham-gu10/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d51-2b29-492e-80f3-bd9ec84f638c/0/1200.jpg"
+      },
+      "description_raw": "Gorse Lane, Wrecclesham, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - Property - Sold STC Gorse Lane, Wrecclesham, GU10 Guide Price \u00a3850,000 4 2 3 A well proportioned 4 bedroom detached family home situated on an unmade road in south Farnham Request a Viewing Key Features 4 good size double bedrooms Family bathroom Family room/bedroom Dining room Dual aspect sitting room Kitchen Conservatory South facing rear garden Driveway parking for multiple vehicles This is a wonderful opportunity to acquire a family home in one o",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T18:59:13Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 1.2,
+      "est_low": 500717,
+      "est_mid": 732043,
+      "est_high": 1022222,
+      "est_basis": "district",
+      "est_n": 2519,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 35,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 9,
+          "max": 26,
+          "note": "\u00a3850k vs \u00a3732k comps (-16%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 86,
+          "max": 100,
+          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 850000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Flood zone"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 8,
+        "decided": 93,
+        "rate": 0.9139784946236559,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.86,
+      "permission_label": "development-friendly",
+      "feasibility": 0.86,
+      "setting": 467
+    },
+    {
       "id": "ag_35e8ee33a7",
       "address": "Lake Lane, Dockenfield, Farnham, Surrey, GU10 4JB",
       "postcode": "GU10 4JB",
@@ -5621,6 +8260,241 @@
       "permission_label": "development-friendly",
       "feasibility": 0.91,
       "setting": 508
+    },
+    {
+      "id": "ag_5aaf1d53d4",
+      "address": "Three Stiles Road, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Three Stiles Road",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 595000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/three-stiles-road-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4db6-8b69-493b-b318-27fae589b0cd/0/1200.jpg"
+      },
+      "description_raw": "Three Stiles Road, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Bungalow - For Sale Three Stiles Road, Farnham, GU9 Guide Price \u00a3595,000 2 1 1 A well maintained two bedroom detached bungalow offering comfortable and versatile accommodation together with exciting potential for further enhancement ** No Onward Chain ** Request a Viewing Brochure Key Features 2 double bedrooms Sitting/ dining room Kitchen Bathroom Cloakroom Scope for enlargement STPP South facing rear garden Property Summary Conveniently position",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:13:19Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [
+          "Development angle"
+        ],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 35,
+      "typology": "Candidate",
+      "tier": "Low",
+      "reasons": [
+        "Marketed development potential",
+        "In your target area"
+      ],
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 5,
+          "max": 26,
+          "note": "\u00a3595k vs \u00a3451k comps (-32%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 5,
+          "max": 20,
+          "note": "dev angle"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        },
+        "Planning": {
+          "note": "Development angle",
+          "consented": false
+        }
+      },
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 595000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_0aea7078b3",
+      "address": "East Street, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "East Street",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 2,
+      "price": 500000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/east-street-farnham-gu9-2/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d13-f593-47f6-b988-a90f0bb9f65a/0/1200.jpg"
+      },
+      "description_raw": "East Street, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Flat - For Sale East Street, Farnham, GU9 Guide Price \u00a3500,000 2 2 1 An exceptional top floor Georgian apartment with stunning gardens and home office within a moments walk of Farnham Town Centre. Request a Viewing Brochure Key Features 2 double bedrooms 2 bath/shower rooms (1 en-suite) Sitting room Study Kitchen/dining room Landscaped garden Home office/garden room No onward chain Occupying the top floor of an attractive Georgian terrace, this beautifu",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:15:52Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 35,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 10,
+          "max": 26,
+          "note": "\u00a3500k vs \u00a3451k comps (-11%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 500000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
     },
     {
       "id": "ag_68bbc8c3e5",
@@ -6426,6 +9300,226 @@
       "setting": 30
     },
     {
+      "id": "ag_28b7737afb",
+      "address": "Santina Close, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Santina Close",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 515000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/santina-close-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d9f-a362-443e-a0e0-38cdf20a31b2/0/1200.jpg"
+      },
+      "description_raw": "Santina Close, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 3 Beds - House - For Sale Santina Close, Farnham, GU9 Guide Price \u00a3515,000 3 1 2 A spacious 3 bedroom detached family home situated in a cul-de-sac and within close proximity of a selection of schools Request a Viewing Key Features Sitting room Dining room Kitchen Utility room Cloakroom 3 bedrooms Family bathroom Private enclosed garden Driveway providing parking Property Summary Nestled within a cul-de-sac setting, this charming three-bedroom detached home of",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:16:14Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 35,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 9,
+          "max": 26,
+          "note": "\u00a3515k vs \u00a3451k comps (-14%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 515000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_fc8269496f",
+      "address": "Westwood Lane, Normandy, Guildford, Surrey, GU3 2ES",
+      "postcode": "GU3 2ES",
+      "street": "Westwood Lane",
+      "lat": 51.240864,
+      "lng": -0.672775,
+      "property_type": "house",
+      "beds": 0,
+      "price": 500000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Mackenzie Smith",
+        "url": "https://www.mackenziesmith.co.uk/property/westwood-lane-normandy-guildford-surrey-gu3-2es/",
+        "agent": "Mackenzie Smith",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43740/65291",
+        "photo_url": "https://assets.reapit.net/mck/live/pictures/AVA/24/AVA240275_17.jpg"
+      },
+      "description_raw": "Westwood Lane, Normandy, Guildford, Surrey, GU3 2ES offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Westwood Lane, Normandy, Guildford, Surrey, GU3 2ES to view.",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:44:00Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 7.3,
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 29,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 17,
+          "max": 26,
+          "note": "~\u00a3500k"
+        },
+        "Fit": {
+          "score": 8,
+          "max": 21,
+          "note": "7.3 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly \u00b7 68 approved / 23 refused nearby \u00b7 2 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 500000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 68,
+        "refused": 23,
+        "decided": 91,
+        "rate": 0.7472527472527473,
+        "classq_seen": 2,
+        "classq_approved": 2
+      },
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
       "id": "ag_7151a1b6b1",
       "address": "The Fairfield, Farnham, Surrey, GU9 8AH",
       "postcode": "GU9 8AH",
@@ -6902,6 +9996,248 @@
       "setting": 0
     },
     {
+      "id": "ag_455d43ae8f",
+      "address": "Tilford Road, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Tilford Road",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 700000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/tilford-road-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": ""
+      },
+      "description_raw": "Tilford Road, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 3 Beds - Property - Sold STC Tilford Road, Farnham, GU9 Guide Price \u00a3700,000 3 1 2 A 3 bedroom detached family home offering scope for improvement (s.t.p.p.) occupying a delightful plot found most convenient to, mainline station and excellent local schools * No Onward Chain * Request a Viewing Key Features 3 bedrooms Bathroom Sitting room Dining room Kitchen Cloakroom Garage Driveway Offering tremendous scope for improvement/enlargement, an increasingly rare opp",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T19:03:12Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [
+          "Development angle"
+        ],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 31,
+      "typology": "Candidate",
+      "tier": "Low",
+      "reasons": [
+        "Marketed development potential",
+        "In your target area"
+      ],
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3700k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 5,
+          "max": 20,
+          "note": "dev angle"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        },
+        "Planning": {
+          "note": "Development angle",
+          "consented": false
+        }
+      },
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 700000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_6517780a59",
+      "address": "Aveley Close, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Aveley Close",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 700000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/aveley-close-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d71-bbf3-4b68-854f-3a519a73b9f5/0/1200.jpg"
+      },
+      "description_raw": "Aveley Close, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 3 Beds - House - For Sale Aveley Close, Farnham, GU9 Guide Price \u00a3700,000 3 1 2 Of local historic interest, a 3 bedroom detached period cottage offering scope for improvement/enlargement subject to planning permission, and occupying a delightful southerly plot Request a Viewing Key Features 3 bedrooms Bathroom Sitting room Dining room Kitchen 0.45 acre plot Scope for enlargement s.t.p.p Tucked away location Property Summary A detached period cottage dating back",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-07T05:48:56Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [
+          "Development angle"
+        ],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 31,
+      "typology": "Candidate",
+      "tier": "Low",
+      "reasons": [
+        "Marketed development potential",
+        "In your target area"
+      ],
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3700k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 5,
+          "max": 20,
+          "note": "dev angle"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        },
+        "Planning": {
+          "note": "Development angle",
+          "consented": false
+        }
+      },
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-07",
+          "price": 700000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
       "id": "ag_3d43238fac",
       "address": "Amberley Farm Cottages, Amberley Lane, Milford, Godalming, GU8 5EB",
       "postcode": "GU8 5EB",
@@ -7069,6 +10405,120 @@
       "setting": 121
     },
     {
+      "id": "ag_7e330ad7a4",
+      "address": "Copse Avenue, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Copse Avenue",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 629950,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/copse-avenue-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d9c-dbaa-419b-9156-5dab1d4f481f/0/1200.jpg"
+      },
+      "description_raw": "Copse Avenue, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 3 Beds - Bungalow - For Sale Copse Avenue, Farnham, GU9 Guide Price \u00a3629,950 3 1 2 A well-presented three-bedroom detached bungalow in a quiet and sought-after residential location, conveniently positioned close to local amenities and transport links Request a Viewing Brochure Key Features 3 bedrooms Sitting/dining room Well-fitted kitchen Conservatory Shower room Separate cloakroom Garage Driveway parking for two cars Landscaped secluded rear garden Property S",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-05T17:17:20Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 29,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 3,
+          "max": 26,
+          "note": "\u00a3630k vs \u00a3451k comps (-40%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 629950
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
       "id": "ag_0327e87cbb",
       "address": "Dunsfold, Godalming, Surrey",
       "postcode": "GU7 1AU",
@@ -7090,10 +10540,10 @@
       },
       "source_label": "AGENT",
       "media": {
-        "photo_count": 0,
+        "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": ""
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD220175/0/1200.jpg"
       },
       "description_raw": "Dunsfold, Godalming, Surrey | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Dunsfold, Godalming, Surrey Back to search Photos Location Floorplan EPC Dunsfold, Godalming, Surrey 2 bedroom Terraced House Under Offer ",
       "enrichment": {
@@ -7383,6 +10833,918 @@
       "permission_label": "development-friendly",
       "feasibility": 0.83,
       "setting": 0
+    },
+    {
+      "id": "ag_9b2b40e9e4",
+      "address": "Mount Pleasant, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Mount Pleasant",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 800000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/mount-pleasant-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da0-6a5a-43b1-a064-94b5dd6cd339/0/1200.jpg"
+      },
+      "description_raw": "Mount Pleasant, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 3 Beds - Property - Sold STC Mount Pleasant, Farnham, GU9 Guide Price \u00a3800,000 3 1 3 A spacious and well-presented 3 bedroom semi-detached family home, ideally positioned within walking distance of Farnham town centre, well-regarded schools and the mainline train station Request a Viewing Key Features Spacious three-bedroom semi-detached family home Walking distance to Farnham town centre Convenient for schools and mainline train station Front-aspect living ro",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T17:13:41Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3800k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 800000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_5f43ef1ef2",
+      "address": "Langham Court, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Langham Court",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 4,
+      "price": 725000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/langham-court-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d49-63d7-4acb-b308-01d1216c520f/0/1200.jpg"
+      },
+      "description_raw": "Langham Court, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - Property - Sold STC Langham Court, Farnham, GU9 Guide Price \u00a3725,000 4 2 1 A stylish 4-bedroom semi-detached family home in the sought-after location of South Farnham, with views overlooking Langham's recreation ground. Request a Viewing Key Features Living room Kitchen 2 Cloakrooms 4 bedrooms Family bathroom En - suite shower room Enclosed rear garden Parking for 2 vehicles Views over Langham's recreation ground Positioned in a quiet development with ",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T17:13:52Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3725k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 725000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_09ad53c753",
+      "address": "Aveley Lane, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Aveley Lane",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 4,
+      "price": 850000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/aveley-lane-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d21-4142-4a3a-98fe-301fbdf1c248/0/1200.jpg"
+      },
+      "description_raw": "Aveley Lane, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - House - Sold STC Aveley Lane, Farnham, GU9 Guide Price \u00a3850,000 4 2 2 An elegant 4 bedroom Victorian style detached modern family home in a highly desirable south Farnham location offering ample parking and a secluded setting * No Onward Chain * Request a Viewing Brochure Key Features 4 bedrooms 2 luxury bath/shower rooms (1 en-suite) Sitting room Study Kitchen/dining room Reception hall and cloakroom Parking for several vehicles Secluded landscaped gard",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T17:17:09Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3850k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 850000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_03b73df0fe",
+      "address": "Little Green Lane, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Little Green Lane",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 4,
+      "price": 695000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/little-green-lane-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d10-d031-4d62-a6eb-eccbdbb50308/0/1200.jpg"
+      },
+      "description_raw": "Little Green Lane, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - House - Sold STC Little Green Lane, Farnham, GU9 Guide Price \u00a3695,000 4 3 1 A spacious 4 bedroom detached family home offering tremendous scope for improvement and situated in a highly popular location convenient to excellent local schools * No Onward Chain * Request a Viewing Brochure Key Features 4 bedrooms 3 bath/shower rooms (1 en-suite) Sitting room Study Kitchen Cloakroom Parking & turning for several vehicles Garage (at rear) Large garden Pr",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T18:57:47Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3695k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 695000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_ad8c812931",
+      "address": "Coniston Drive, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Coniston Drive",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 4,
+      "price": 695000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/coniston-drive-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d16-fb55-49fb-b1e6-0f00ee684755/0/1200.jpg"
+      },
+      "description_raw": "Coniston Drive, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - Property - Sold STC Coniston Drive, Farnham, GU9 Guide Price \u00a3695,000 4 2 2 A well presented 4 bedroom detached family home offering spacious accommodation with garage, parking and secluded rear garden Request a Viewing Key Features 4 bedrooms En-suite shower room Family bathroom Sitting room Dining room Study Kitchen/breakfast room Utility room and cloakroom Garage and parking Built in 1971, this well-proportioned family home is located in a sought-a",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T19:00:52Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3695k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 695000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_2ad50163a3",
+      "address": "Melrose Close, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Melrose Close",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 750000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/melrose-close-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d4e-5ec4-4150-aaba-886255814438/0/1200.jpg"
+      },
+      "description_raw": "Melrose Close, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 3 Beds - House - Sold STC Melrose Close, Farnham, GU9 Guide Price \u00a3750,000 3 2 1 A beautifully appointed three bedroom detached family home within walking distance of the town centre and local schools Request a Viewing Key Features Principal bedroom with fitted wardrobes and en suite 2 further double bedrooms Triple-aspect sitting room Integrated kitchen with dining area Enclosed garden with patio and decking areas Single garage (with EV charging point) Drivewa",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-05T19:01:24Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3750k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-05",
+          "price": 750000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_0775257a98",
+      "address": "Kingham Place, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Kingham Place",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 775000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/kingham-place-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d72-7da3-4eb5-b697-474ac7b00f77/0/1200.jpg"
+      },
+      "description_raw": "Kingham Place, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 3 Beds - Property - For Sale Kingham Place, Farnham, GU9 Guide Price \u00a3775,000 3 2 1 A spaciously designed 3 bedroom semi detached property tucked away in the heart of the Georgian town centre Request a Viewing Brochure Key Features 3 bedrooms Family bathroom En-suite shower room Sitting/dining room Kitchen Cloakroom Parking space Private and communal gardens Built in 2001, this well proportioned 3 bedroom semi detached property is situated in a prime location ",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-07T05:48:34Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3775k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-07",
+          "price": 775000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
+    },
+    {
+      "id": "ag_863d254234",
+      "address": "Weydon Hill Road, Farnham, GU9",
+      "postcode": "GU9",
+      "street": "Weydon Hill Road",
+      "lat": 51.21917359393933,
+      "lng": -0.7942443999999997,
+      "property_type": "house",
+      "beds": 3,
+      "price": 750000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Andrew Lodge",
+        "url": "https://andrewlodge.net/properties/sale/uncategorized/farnham/weydon-hill-road-farnham-gu9/",
+        "agent": "Andrew Lodge",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4dc2-44d3-4d07-be7d-eea98a2ea0ad/0/1200.jpg"
+      },
+      "description_raw": "Weydon Hill Road, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 3 Beds - House - For Sale Weydon Hill Road, Farnham, GU9 Offers over \u00a3750,000 3 1 2 A charming 3 bedroom semi-detached family home situated in a sought after South Farnham road close to schools, the station and amenities Request a Viewing Key Features Living room with bay window Sitting room/Snug Kitchen/dining room 3 bedrooms Family bathroom Driveway Garden Views towards the town Property Summary Situated in one of South Farnham\u2019s most sought-after locatio",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": null,
+          "added_date": "2026-08-08T05:01:50Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "approx_location": true,
+      "flags": [
+        "plot-unverified"
+      ],
+      "dist_mi": 2.5,
+      "est_low": 336720,
+      "est_mid": 451196,
+      "est_high": 621000,
+      "est_basis": "district",
+      "est_n": 5335,
+      "est_basis_type": "all types",
+      "local_comps": [],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 0,
+          "max": 26,
+          "note": "\u00a3750k vs \u00a3451k comps (-50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 750000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 78,
+        "refused": 11,
+        "decided": 89,
+        "rate": 0.8764044943820225,
+        "classq_seen": 5,
+        "classq_approved": 3
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 358
     },
     {
       "id": "ag_76ce6130ab",
@@ -7700,22 +12062,22 @@
       "setting": 51
     },
     {
-      "id": "ag_5802ee3b7c",
+      "id": "ag_8c9045a652",
       "address": "Elstead, Godalming, Surrey",
       "postcode": "GU7 1AU",
       "street": "Elstead",
       "lat": 51.185549,
       "lng": -0.612177,
       "property_type": "house",
-      "beds": 3,
-      "price": 840000,
+      "beds": 2,
+      "price": 610000,
       "price_poa": false,
       "status": "live",
       "streetview_url": "",
       "source": {
         "portal": "agent",
         "name": "Warren Powell Richards",
-        "url": "https://www.wpr.co.uk/properties/sale/godalming/godalming/elstead-godalming-surrey-2/",
+        "url": "https://www.wpr.co.uk/properties/sale/godalming/godalming/elstead-godalming-surrey/",
         "agent": "Warren Powell Richards",
         "uprn": ""
       },
@@ -7724,16 +12086,16 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD220185/0/1200.jpg"
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD240201/0/1200.jpg"
       },
-      "description_raw": "Elstead, Godalming, Surrey | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Elstead, Godalming, Surrey Back to search Photos Location Floorplan EPC Elstead, Godalming, Surrey 3 bedroom Detached house Under Offer \u00a384",
+      "description_raw": "Elstead, Godalming, Surrey | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Elstead, Godalming, Surrey Back to search Photos Location Floorplan EPC Elstead, Godalming, Surrey 2 bedroom Property for sale \u00a3610,000 2 b",
       "enrichment": {
         "market": {
           "reductions": 0,
           "is_reduced": false,
-          "status": "Under Offer",
+          "status": null,
           "dom": null,
-          "added_date": "2026-08-08T05:26:45Z"
+          "added_date": "2026-08-08T12:10:55Z"
         },
         "plot": {}
       },
@@ -7795,7 +12157,7 @@
         "classq": true,
         "agri": false
       },
-      "score": 18,
+      "score": 23,
       "typology": "Candidate",
       "tier": "Low",
       "signals": {
@@ -7805,9 +12167,168 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 3,
+          "score": 9,
           "max": 26,
-          "note": "\u00a3840k vs \u00a3500k comps (-50%)"
+          "note": "\u00a3610k vs \u00a3500k comps (-22%)"
+        },
+        "Fit": {
+          "score": 5,
+          "max": 21,
+          "note": "8.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 83,
+          "max": 100,
+          "note": "\u00d70.83 \u00b7 development-friendly \u00b7 82 approved / 8 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "priced_just_above",
+        "plot-unverified"
+      ],
+      "reasons": [
+        "Priced just above a round number"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 610000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Conservation Area"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 82,
+        "refused": 8,
+        "decided": 90,
+        "rate": 0.9111111111111111,
+        "classq_seen": 3,
+        "classq_approved": 3
+      },
+      "permission": 0.83,
+      "permission_label": "development-friendly",
+      "feasibility": 0.83,
+      "setting": 0
+    },
+    {
+      "id": "ag_bb809a5c30",
+      "address": "Chiddingfold, Godalming, Surrey",
+      "postcode": "GU7 1AU",
+      "street": "Chiddingfold",
+      "lat": 51.185549,
+      "lng": -0.612177,
+      "property_type": "house",
+      "beds": 4,
+      "price": 650000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Warren Powell Richards",
+        "url": "https://www.wpr.co.uk/properties/sale/godalming/godalming/chiddingfold-godalming-surrey/",
+        "agent": "Warren Powell Richards",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/HAS260035/0/1200.jpg"
+      },
+      "description_raw": "Chiddingfold, Godalming, Surrey | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Chiddingfold, Godalming, Surrey Back to search Photos Location Floorplan EPC Chiddingfold, Godalming, Surrey 4 bedroom Semi-detached h",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:14:30Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.9,
+      "est_low": 168000,
+      "est_mid": 500000,
+      "est_high": 545000,
+      "est_basis": "nearby (GU7 1)",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "10 Lammas Close",
+          "price": 500000,
+          "year": "2026",
+          "adj": 500000,
+          "pc": "GU7 1YZ"
+        },
+        {
+          "addr": "9 Grayling Close",
+          "price": 545000,
+          "year": "2026",
+          "adj": 545000,
+          "pc": "GU7 1AG"
+        },
+        {
+          "addr": "STUART COURT Town End Street",
+          "price": 110000,
+          "year": "2026",
+          "adj": 110000,
+          "pc": "GU7 1BJ"
+        },
+        {
+          "addr": "38 Alderbank Drive",
+          "price": 820000,
+          "year": "2026",
+          "adj": 820000,
+          "pc": "GU7 1GB"
+        },
+        {
+          "addr": "11 Wey Road",
+          "price": 168000,
+          "year": "2026",
+          "adj": 168000,
+          "pc": "GU7 1ND"
+        },
+        {
+          "addr": "EDISON HOUSE Flambard Way",
+          "price": 245000,
+          "year": "2026",
+          "adj": 245000,
+          "pc": "GU7 1FF"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 22,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 7,
+          "max": 26,
+          "note": "\u00a3650k vs \u00a3500k comps (-30%)"
         },
         "Fit": {
           "score": 5,
@@ -7836,7 +12357,165 @@
       "price_history": [
         {
           "date": "2026-08-08",
-          "price": 840000
+          "price": 650000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [
+        "Conservation Area"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 82,
+        "refused": 8,
+        "decided": 90,
+        "rate": 0.9111111111111111,
+        "classq_seen": 3,
+        "classq_approved": 3
+      },
+      "permission": 0.83,
+      "permission_label": "development-friendly",
+      "feasibility": 0.83,
+      "setting": 0
+    },
+    {
+      "id": "ag_4accb42a89",
+      "address": "Farncombe, Surrey",
+      "postcode": "GU7 1AU",
+      "street": "Farncombe",
+      "lat": 51.185549,
+      "lng": -0.612177,
+      "property_type": "house",
+      "beds": 3,
+      "price": 670000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Warren Powell Richards",
+        "url": "https://www.wpr.co.uk/properties/sale/surrey/surrey/farncombe-surrey/",
+        "agent": "Warren Powell Richards",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD250074/0/1200.jpg"
+      },
+      "description_raw": "Farncombe, Surrey | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Farncombe, Surrey Back to search Photos Location Floorplan EPC Farncombe, Surrey 3 bedroom Detached house Under Offer \u00a3670,000 3 bedroom 2 bathroom ",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Under Offer",
+          "dom": null,
+          "added_date": "2026-08-08T12:11:05Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.9,
+      "est_low": 168000,
+      "est_mid": 500000,
+      "est_high": 545000,
+      "est_basis": "nearby (GU7 1)",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "10 Lammas Close",
+          "price": 500000,
+          "year": "2026",
+          "adj": 500000,
+          "pc": "GU7 1YZ"
+        },
+        {
+          "addr": "9 Grayling Close",
+          "price": 545000,
+          "year": "2026",
+          "adj": 545000,
+          "pc": "GU7 1AG"
+        },
+        {
+          "addr": "STUART COURT Town End Street",
+          "price": 110000,
+          "year": "2026",
+          "adj": 110000,
+          "pc": "GU7 1BJ"
+        },
+        {
+          "addr": "38 Alderbank Drive",
+          "price": 820000,
+          "year": "2026",
+          "adj": 820000,
+          "pc": "GU7 1GB"
+        },
+        {
+          "addr": "11 Wey Road",
+          "price": 168000,
+          "year": "2026",
+          "adj": 168000,
+          "pc": "GU7 1ND"
+        },
+        {
+          "addr": "EDISON HOUSE Flambard Way",
+          "price": 245000,
+          "year": "2026",
+          "adj": 245000,
+          "pc": "GU7 1FF"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 21,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 6,
+          "max": 26,
+          "note": "\u00a3670k vs \u00a3500k comps (-34%)"
+        },
+        "Fit": {
+          "score": 5,
+          "max": 21,
+          "note": "8.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 83,
+          "max": 100,
+          "note": "\u00d70.83 \u00b7 development-friendly \u00b7 82 approved / 8 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-08-08",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 670000
         }
       ],
       "plot_m2": null,
