@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-20T05:50:28.989591+00:00",
-  "count": 95,
+  "generated_at": "2026-08-21T05:58:25.169834+00:00",
+  "count": 133,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -24,6 +24,163 @@
     ]
   ],
   "properties": [
+    {
+      "id": "gz_5189748",
+      "address": "Tara, Milford Road, Elstead, Godalming \u2014 GU8 6HS",
+      "owner_note": "Probate lead \u2014 see notice",
+      "postcode": "GU8 6HS",
+      "price": 715634,
+      "beds": 0,
+      "property_type": "Detached",
+      "lat": 51.184013,
+      "lng": -0.695899,
+      "precise_location": true,
+      "dist_mi": 5.3,
+      "score": 40,
+      "reasons": [
+        "Est. on market Sep 2026\u2013Feb 2027",
+        "Home \u00b7 140 m\u00b2",
+        "~\u00a3707k\u2013\u00a3751k Farnham-area est"
+      ],
+      "flags": [
+        "probate"
+      ],
+      "is_probate": true,
+      "low_comp": false,
+      "comps": [],
+      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.184013,-0.695899",
+      "floor_area_m2": 140,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "market_window": "Est. on market Sep 2026\u2013Feb 2027",
+      "est_low": 707098,
+      "est_high": 751812,
+      "est_mid": 715634,
+      "local_comps": [
+        {
+          "addr": "DERWENT Milford Road",
+          "price": 710000,
+          "year": "2024",
+          "adj": 659797,
+          "pc": "GU8 6HR"
+        },
+        {
+          "addr": "CROSSWAYS Milford Road",
+          "price": 705000,
+          "year": "2024",
+          "adj": 655151,
+          "pc": "GU8 6HL"
+        },
+        {
+          "addr": "ST MARYS Milford Road",
+          "price": 490500,
+          "year": "2021",
+          "adj": 485225,
+          "pc": "GU8 6HS"
+        },
+        {
+          "addr": "KELOWNA Milford Road",
+          "price": 600000,
+          "year": "2020",
+          "adj": 613401,
+          "pc": "GU8 6HR"
+        },
+        {
+          "addr": "ST MARYS Milford Road",
+          "price": 465000,
+          "year": "2019",
+          "adj": 511722,
+          "pc": "GU8 6HS"
+        },
+        {
+          "addr": "DERWENT Milford Road",
+          "price": 615000,
+          "year": "2019",
+          "adj": 676794,
+          "pc": "GU8 6HR"
+        }
+      ],
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 4,
+      "est_basis_type": "detached",
+      "source": {
+        "name": "The Gazette",
+        "url": "https://www.thegazette.co.uk/notice/5189748",
+        "uprn": ""
+      },
+      "source_label": "PROBATE",
+      "enrichment": {
+        "market": {},
+        "plot": {},
+        "equity": {}
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
+      },
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "days_on_market": 0,
+      "plot_m2": 863,
+      "footprints": {
+        "main_m2": 104,
+        "buildings": 2,
+        "largest_secondary_m2": 27,
+        "coverage_pct": 15
+      },
+      "constraints": [
+        "AONB"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 86,
+        "refused": 9,
+        "decided": 95,
+        "rate": 0.9052631578947369,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.76,
+      "permission_label": "development-friendly",
+      "feasibility": 0.76,
+      "setting": 373,
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "typology": "Development play",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 23,
+          "max": 38,
+          "note": "863 m\u00b2 plot (2.3\u00d7 your home)"
+        },
+        "Value": {
+          "score": 8,
+          "max": 26,
+          "note": "~\u00a3716k"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 21,
+          "note": "5.3 mi from home"
+        },
+        "Edge": {
+          "score": 10,
+          "max": 20,
+          "note": "probate"
+        },
+        "Feasibility": {
+          "score": 76,
+          "max": 100,
+          "note": "\u00d70.76 \u00b7 development-friendly \u00b7 86 approved / 9 refused nearby"
+        }
+      }
+    },
     {
       "id": "gz_5178685",
       "address": "The Oast, Farnham \u2014 GU10 5NX",
@@ -119,8 +276,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -271,8 +428,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": 706,
       "footprints": {
@@ -426,8 +583,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -575,8 +732,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65241"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": 1583,
       "footprints": {
@@ -731,8 +888,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -880,8 +1037,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1023,8 +1180,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1172,8 +1329,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -1307,8 +1464,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43769/65215"
       },
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "days_on_market": 0,
       "plot_m2": 615,
       "constraints": [],
@@ -1452,7 +1609,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1568,7 +1725,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1684,7 +1841,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1804,7 +1961,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1918,7 +2075,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2076,7 +2233,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2196,7 +2353,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2312,7 +2469,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2463,7 +2620,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2583,7 +2740,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2745,7 +2902,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2912,7 +3069,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3072,7 +3229,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -3211,7 +3368,7 @@
         "Recently reduced"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3329,7 +3486,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3466,7 +3623,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3628,7 +3785,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3777,7 +3934,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3902,7 +4059,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4016,7 +4173,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4130,7 +4287,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4253,7 +4410,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4277,6 +4434,166 @@
       "permission_label": "development-friendly",
       "feasibility": 0.86,
       "setting": 467
+    },
+    {
+      "id": "440dc127-0d97-4131-8087-b162f05b0733",
+      "address": "Grove End Road, GU9 8RE",
+      "postcode": "GU9 8RE",
+      "street": "Grove End Road",
+      "lat": 51.20385,
+      "lng": -0.801796,
+      "property_type": "detached",
+      "beds": 2,
+      "price": 550000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "440dc127-0d97-4131-8087-b162f05b0733",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65244"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 9,
+          "added_date": "2026-08-12"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.4,
+      "est_low": 500888,
+      "est_mid": 696969,
+      "est_high": 706262,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "23 Grove End Road",
+          "price": 760000,
+          "year": "2025",
+          "adj": 706262,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "8 Grove End Road",
+          "price": 525000,
+          "year": "2025",
+          "adj": 487878,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "50 Grove End Road",
+          "price": 750000,
+          "year": "2024",
+          "adj": 696969,
+          "pc": "GU9 8RB"
+        },
+        {
+          "addr": "27 Grove End Road",
+          "price": 539000,
+          "year": "2024",
+          "adj": 500888,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "10 Grove End Road",
+          "price": 890000,
+          "year": "2022",
+          "adj": 818800,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "2 Grove End Road",
+          "price": 670000,
+          "year": "2021",
+          "adj": 662795,
+          "pc": "GU9 8RD"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 50,
+      "typology": "Forever-fit",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 21,
+          "max": 38,
+          "note": "546 m\u00b2 plot (1.4\u00d7 your home)"
+        },
+        "Value": {
+          "score": 17,
+          "max": 26,
+          "note": "\u00a3550k vs \u00a3697k comps (+21%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.4 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 90,
+          "max": 100,
+          "note": "\u00d70.90 \u00b7 development-friendly \u00b7 86 approved / 10 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 550000
+        }
+      ],
+      "plot_m2": 546,
+      "footprints": {
+        "main_m2": 113,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 21
+      },
+      "floor_area_est_m2": 203,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 86,
+        "refused": 10,
+        "decided": 96,
+        "rate": 0.8958333333333334,
+        "classq_seen": 1,
+        "classq_approved": 1
+      },
+      "permission": 0.9,
+      "permission_label": "development-friendly",
+      "feasibility": 0.9,
+      "setting": 532
     },
     {
       "id": "ag_264a172291",
@@ -4369,7 +4686,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4525,7 +4842,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4692,7 +5009,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -4848,7 +5165,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4995,7 +5312,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5161,7 +5478,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -5321,7 +5638,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5477,7 +5794,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5633,7 +5950,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5798,7 +6115,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5831,6 +6148,166 @@
       "permission_label": "development-friendly",
       "feasibility": 0.97,
       "setting": 323
+    },
+    {
+      "id": "632a5cac-7002-465c-a827-990fe474e94c",
+      "address": "Armsworth Way, GU9 0FJ",
+      "postcode": "GU9 0FJ",
+      "street": "Armsworth Way",
+      "lat": 51.228475,
+      "lng": -0.808318,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 650000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "632a5cac-7002-465c-a827-990fe474e94c",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43747/65241"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 29,
+          "added_date": "2026-07-23"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.9,
+      "est_low": 621000,
+      "est_mid": 828000,
+      "est_high": 864800,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "10 Armsworth Way",
+          "price": 891000,
+          "year": "2025",
+          "adj": 828000,
+          "pc": "GU9 0FJ"
+        },
+        {
+          "addr": "3 Armsworth Way",
+          "price": 820000,
+          "year": "2024",
+          "adj": 762020,
+          "pc": "GU9 0FJ"
+        },
+        {
+          "addr": "HORNBEAMS, 22 Armsworth Way",
+          "price": 950000,
+          "year": "2022",
+          "adj": 874000,
+          "pc": "GU9 0FJ"
+        },
+        {
+          "addr": "24 Armsworth Way",
+          "price": 940000,
+          "year": "2022",
+          "adj": 864800,
+          "pc": "GU9 0FJ"
+        },
+        {
+          "addr": "2 Armsworth Way",
+          "price": 675000,
+          "year": "2022",
+          "adj": 621000,
+          "pc": "GU9 0FJ"
+        },
+        {
+          "addr": "4 Armsworth Way",
+          "price": 580000,
+          "year": "2022",
+          "adj": 533600,
+          "pc": "GU9 0FJ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 47,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 20,
+          "max": 38,
+          "note": "480 m\u00b2 plot (1.3\u00d7 your home)"
+        },
+        "Value": {
+          "score": 17,
+          "max": 26,
+          "note": "\u00a3650k vs \u00a3828k comps (+21%)"
+        },
+        "Fit": {
+          "score": 16,
+          "max": 21,
+          "note": "2.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 89,
+          "max": 100,
+          "note": "\u00d70.89 \u00b7 development-friendly \u00b7 82 approved / 10 refused nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 650000
+        }
+      ],
+      "plot_m2": 480,
+      "footprints": {
+        "main_m2": 111,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 23
+      },
+      "floor_area_est_m2": 200,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 82,
+        "refused": 10,
+        "decided": 92,
+        "rate": 0.8913043478260869,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.89,
+      "permission_label": "development-friendly",
+      "feasibility": 0.89,
+      "setting": 341
     },
     {
       "id": "ag_d8ac2245f2",
@@ -5923,7 +6400,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6079,7 +6556,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6242,7 +6719,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6264,6 +6741,291 @@
       "permission_label": "development-friendly",
       "feasibility": 0.76,
       "setting": 0
+    },
+    {
+      "id": "ee73de79-51ee-4749-8e5a-02587cd5907c",
+      "address": "Farnham Park Close, GU9 0HT",
+      "postcode": "GU9 0HT",
+      "street": "Farnham Park Close",
+      "lat": 51.231735,
+      "lng": -0.801774,
+      "property_type": "detached",
+      "beds": 2,
+      "price": 450000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "ee73de79-51ee-4749-8e5a-02587cd5907c",
+        "url": "",
+        "agent": "Romans",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65244"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 25,
+          "added_date": "2026-07-27"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.2,
+      "est_low": 502453,
+      "est_mid": 593648,
+      "est_high": 721234,
+      "est_basis": "same street",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "13 Farnham Park Close",
+          "price": 467500,
+          "year": "2018",
+          "adj": 502453,
+          "pc": "GU9 0HT"
+        },
+        {
+          "addr": "12 Farnham Park Close",
+          "price": 635000,
+          "year": "2017",
+          "adj": 721234,
+          "pc": "GU9 0HT"
+        },
+        {
+          "addr": "7 Farnham Park Close",
+          "price": 477500,
+          "year": "2015",
+          "adj": 593648,
+          "pc": "GU9 0HT"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 46,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 20,
+          "max": 38,
+          "note": "503 m\u00b2 plot (1.3\u00d7 your home)"
+        },
+        "Value": {
+          "score": 16,
+          "max": 26,
+          "note": "\u00a3450k vs \u00a3594k comps (+24%)"
+        },
+        "Fit": {
+          "score": 16,
+          "max": 21,
+          "note": "3.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 88,
+          "max": 100,
+          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 83 approved / 11 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 450000
+        }
+      ],
+      "plot_m2": 503,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 11,
+        "decided": 94,
+        "rate": 0.8829787234042553,
+        "classq_seen": 2,
+        "classq_approved": 1
+      },
+      "permission": 0.88,
+      "permission_label": "development-friendly",
+      "feasibility": 0.88,
+      "setting": 543
+    },
+    {
+      "id": "c5052c85-bedb-4250-9ba4-14894663b56b",
+      "address": "Osborne Manor, GU35 0QP",
+      "postcode": "GU35 0QP",
+      "street": "Osborne Manor",
+      "lat": 51.143779,
+      "lng": -0.85017,
+      "property_type": "detached",
+      "beds": 5,
+      "price": 500000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "c5052c85-bedb-4250-9ba4-14894663b56b",
+        "url": "",
+        "agent": "",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43796/65226"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 30,
+          "added_date": "2026-07-22"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.3,
+      "est_low": 450000,
+      "est_mid": 605000,
+      "est_high": 635000,
+      "est_basis": "nearby (GU35 0)",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "2 Taylors Lane",
+          "price": 639950,
+          "year": "2026",
+          "adj": 639950,
+          "pc": "GU35 0SW"
+        },
+        {
+          "addr": "21 Imadene Crescent",
+          "price": 515000,
+          "year": "2026",
+          "adj": 515000,
+          "pc": "GU35 0PH"
+        },
+        {
+          "addr": "19 Windsor Road",
+          "price": 450000,
+          "year": "2026",
+          "adj": 450000,
+          "pc": "GU35 0RY"
+        },
+        {
+          "addr": "71 Liphook Road",
+          "price": 605000,
+          "year": "2026",
+          "adj": 605000,
+          "pc": "GU35 0PN"
+        },
+        {
+          "addr": "ROTHERWICK Washford Lane",
+          "price": 325000,
+          "year": "2026",
+          "adj": 325000,
+          "pc": "GU35 0ET"
+        },
+        {
+          "addr": "6 Oxney Way",
+          "price": 635000,
+          "year": "2026",
+          "adj": 635000,
+          "pc": "GU35 0GQ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 52,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 27,
+          "max": 38,
+          "note": "3,786 m\u00b2 plot (10.0\u00d7 your home) \u00b7 approx, capped"
+        },
+        "Value": {
+          "score": 16,
+          "max": 26,
+          "note": "\u00a3500k vs \u00a3605k comps (+17%)"
+        },
+        "Fit": {
+          "score": 15,
+          "max": 21,
+          "note": "3.3 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 89,
+          "max": 100,
+          "note": "\u00d70.89 \u00b7 development-friendly \u00b7 31 approved / 4 refused nearby \u00b7 7 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 500000
+        }
+      ],
+      "plot_m2": 3786,
+      "constraints": [],
+      "planning": {
+        "n": 45,
+        "approved": 31,
+        "refused": 4,
+        "decided": 35,
+        "rate": 0.8857142857142857,
+        "classq_seen": 11,
+        "classq_approved": 7
+      },
+      "permission": 0.89,
+      "permission_label": "development-friendly",
+      "feasibility": 0.89,
+      "setting": 11
     },
     {
       "id": "ag_b13f9618e1",
@@ -6356,7 +7118,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6411,7 +7173,7 @@
         "market": {
           "reductions": 0,
           "is_reduced": false,
-          "status": null,
+          "status": "Sold STC",
           "dom": null,
           "added_date": "2026-08-07T05:47:10Z"
         },
@@ -6470,7 +7232,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -6613,7 +7375,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6781,7 +7543,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6811,6 +7573,299 @@
       "permission_label": "development-friendly",
       "feasibility": 0.93,
       "setting": 488
+    },
+    {
+      "id": "3ef11146-ba1c-4998-9567-2c5ba1e5e860",
+      "address": "Verdun Street, GU9 0FD",
+      "postcode": "GU9 0FD",
+      "street": "Verdun Street",
+      "lat": 51.227911,
+      "lng": -0.80859,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 650000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "3ef11146-ba1c-4998-9567-2c5ba1e5e860",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43747/65241"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 30,
+          "added_date": "2026-07-22"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.9,
+      "est_low": 515200,
+      "est_mid": 735954,
+      "est_high": 735995,
+      "est_basis": "same street",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "7 Verdun Street",
+          "price": 799995,
+          "year": "2022",
+          "adj": 735995,
+          "pc": "GU9 0FD"
+        },
+        {
+          "addr": "10 Verdun Street",
+          "price": 799950,
+          "year": "2022",
+          "adj": 735954,
+          "pc": "GU9 0FD"
+        },
+        {
+          "addr": "1 Verdun Street",
+          "price": 560000,
+          "year": "2022",
+          "adj": 515200,
+          "pc": "GU9 0FD"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 49,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 24,
+          "max": 38,
+          "note": "990 m\u00b2 plot (2.6\u00d7 your home)"
+        },
+        "Value": {
+          "score": 15,
+          "max": 26,
+          "note": "\u00a3650k vs \u00a3736k comps (+12%)"
+        },
+        "Fit": {
+          "score": 16,
+          "max": 21,
+          "note": "2.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "outbuilding ~94 m\u00b2"
+        },
+        "Feasibility": {
+          "score": 90,
+          "max": 100,
+          "note": "\u00d70.90 \u00b7 development-friendly \u00b7 83 approved / 9 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 650000
+        }
+      ],
+      "plot_m2": 990,
+      "footprints": {
+        "main_m2": 109,
+        "buildings": 2,
+        "largest_secondary_m2": 94,
+        "coverage_pct": 21,
+        "outbuilding": "medium"
+      },
+      "floor_area_est_m2": 196,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 9,
+        "decided": 92,
+        "rate": 0.9021739130434783,
+        "classq_seen": 3,
+        "classq_approved": 3
+      },
+      "permission": 0.9,
+      "permission_label": "development-friendly",
+      "feasibility": 0.9,
+      "setting": 303
+    },
+    {
+      "id": "5f7c677f-486d-416f-aa4a-c7b486903eb6",
+      "address": "Beech Hill, GU35 8HS",
+      "postcode": "GU35 8HS",
+      "street": "Beech Hill",
+      "lat": 51.120508,
+      "lng": -0.805495,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 525000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "5f7c677f-486d-416f-aa4a-c7b486903eb6",
+        "url": "",
+        "agent": "Winkworth",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43810/65242"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 17,
+          "added_date": "2026-08-04"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.6,
+      "est_low": 478585,
+      "est_mid": 696969,
+      "est_high": 743000,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "KENT COTTAGE Beech Hill",
+          "price": 743000,
+          "year": "2026",
+          "adj": 743000,
+          "pc": "GU35 8HS"
+        },
+        {
+          "addr": "MASADA Beech Hill",
+          "price": 433000,
+          "year": "2025",
+          "adj": 402383,
+          "pc": "GU35 8NL"
+        },
+        {
+          "addr": "HAVEN COTTAGE Beech Hill",
+          "price": 1200000,
+          "year": "2025",
+          "adj": 1115151,
+          "pc": "GU35 8NL"
+        },
+        {
+          "addr": "PINEWOOD COTTA Beech Hill",
+          "price": 750000,
+          "year": "2024",
+          "adj": 696969,
+          "pc": "GU35 8HR"
+        },
+        {
+          "addr": "OLD WELL Beech Hill",
+          "price": 605000,
+          "year": "2024",
+          "adj": 562222,
+          "pc": "GU35 8EQ"
+        },
+        {
+          "addr": "APRIL COTTAGE Beech Hill",
+          "price": 515000,
+          "year": "2024",
+          "adj": 478585,
+          "pc": "GU35 8EQ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 42,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 17,
+          "max": 26,
+          "note": "\u00a3525k vs \u00a3697k comps (+25%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 95,
+          "max": 100,
+          "note": "\u00d70.95 \u00b7 development-friendly \u00b7 84 approved / 4 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 525000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 84,
+        "refused": 4,
+        "decided": 88,
+        "rate": 0.9545454545454546,
+        "classq_seen": 1,
+        "classq_approved": 1
+      },
+      "permission": 0.95,
+      "permission_label": "development-friendly",
+      "feasibility": 0.95,
+      "setting": 0
     },
     {
       "id": "ag_2d7836b995",
@@ -6947,7 +8002,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7111,7 +8166,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7280,7 +8335,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7436,7 +8491,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7460,6 +8515,466 @@
       "permission_label": "development-friendly",
       "feasibility": 0.76,
       "setting": 798
+    },
+    {
+      "id": "45ba797c-0899-4609-8526-4fd5b51ad264",
+      "address": "Oast House Crescent, GU9 0NP",
+      "postcode": "GU9 0NP",
+      "street": "Oast House Crescent",
+      "lat": 51.229778,
+      "lng": -0.790653,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 595000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "45ba797c-0899-4609-8526-4fd5b51ad264",
+        "url": "",
+        "agent": "Bridges Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43746/65248"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 17,
+          "added_date": "2026-08-04"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.2,
+      "precise_location": true,
+      "floor_area_m2": 185,
+      "built_form": "Detached",
+      "epc_rating": "C",
+      "est_low": 557411,
+      "est_mid": 590540,
+      "est_high": 598066,
+      "est_basis": "same street",
+      "est_n": 4,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "3B Oast House Crescent",
+          "price": 585000,
+          "year": "2020",
+          "adj": 598066,
+          "pc": "GU9 0NP"
+        },
+        {
+          "addr": "1 Oast House Crescent",
+          "price": 475000,
+          "year": "2015",
+          "adj": 590540,
+          "pc": "GU9 0NP"
+        },
+        {
+          "addr": "24 Oast House Crescent",
+          "price": 387500,
+          "year": "2014",
+          "adj": 524264,
+          "pc": "GU9 0NR"
+        },
+        {
+          "addr": "3B Oast House Crescent",
+          "price": 412000,
+          "year": "2014",
+          "adj": 557411,
+          "pc": "GU9 0NP"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 44,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 21,
+          "max": 38,
+          "note": "556 m\u00b2 plot (1.5\u00d7 your home)"
+        },
+        "Value": {
+          "score": 13,
+          "max": 26,
+          "note": "\u00a3595k vs \u00a3591k comps (-1%)"
+        },
+        "Fit": {
+          "score": 16,
+          "max": 21,
+          "note": "3.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 89,
+          "max": 100,
+          "note": "\u00d70.89 \u00b7 development-friendly \u00b7 85 approved / 11 refused nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 595000
+        }
+      ],
+      "plot_m2": 556,
+      "footprints": {
+        "main_m2": 107,
+        "buildings": 2,
+        "largest_secondary_m2": 25,
+        "coverage_pct": 24
+      },
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 85,
+        "refused": 11,
+        "decided": 96,
+        "rate": 0.8854166666666666,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.89,
+      "permission_label": "development-friendly",
+      "feasibility": 0.89,
+      "setting": 422
+    },
+    {
+      "id": "47c6a0c9-8d03-4b3e-a206-249a567dbe47",
+      "address": "Tongham Road, GU10 1PH",
+      "postcode": "GU10 1PH",
+      "street": "Tongham Road",
+      "lat": 51.221679,
+      "lng": -0.754965,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 850000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "47c6a0c9-8d03-4b3e-a206-249a567dbe47",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43751/65261"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 23,
+          "added_date": "2026-07-29"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.6,
+      "est_low": 412679,
+      "est_mid": 883884,
+      "est_high": 1434408,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "9 Tongham Road",
+          "price": 960000,
+          "year": "2023",
+          "adj": 883884,
+          "pc": "GU10 1PH"
+        },
+        {
+          "addr": "HEWETTS FARMHO Tongham Road",
+          "price": 1450000,
+          "year": "2021",
+          "adj": 1434408,
+          "pc": "GU10 1PJ"
+        },
+        {
+          "addr": "CHRISTMAS PIE  Tongham Road",
+          "price": 1600000,
+          "year": "2021",
+          "adj": 1582795,
+          "pc": "GU10 1PJ"
+        },
+        {
+          "addr": "7 Tongham Road",
+          "price": 375000,
+          "year": "2019",
+          "adj": 412679,
+          "pc": "GU10 1PH"
+        },
+        {
+          "addr": "3 Tongham Road",
+          "price": 375000,
+          "year": "2018",
+          "adj": 403037,
+          "pc": "GU10 1PH"
+        },
+        {
+          "addr": "SUNCHYME, 15 Tongham Road",
+          "price": 482000,
+          "year": "2015",
+          "adj": 599243,
+          "pc": "GU10 1PH"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 46,
+      "typology": "Development play",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 23,
+          "max": 38,
+          "note": "841 m\u00b2 plot (2.2\u00d7 your home)"
+        },
+        "Value": {
+          "score": 13,
+          "max": 26,
+          "note": "\u00a3850k vs \u00a3884k comps (+4%)"
+        },
+        "Fit": {
+          "score": 15,
+          "max": 21,
+          "note": "3.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 90,
+          "max": 100,
+          "note": "\u00d70.90 \u00b7 development-friendly \u00b7 80 approved / 9 refused nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 850000
+        }
+      ],
+      "plot_m2": 841,
+      "footprints": {
+        "main_m2": 129,
+        "buildings": 2,
+        "largest_secondary_m2": 49,
+        "coverage_pct": 21
+      },
+      "floor_area_est_m2": 232,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 80,
+        "refused": 9,
+        "decided": 89,
+        "rate": 0.898876404494382,
+        "classq_seen": 1,
+        "classq_approved": 0
+      },
+      "permission": 0.9,
+      "permission_label": "development-friendly",
+      "feasibility": 0.9,
+      "setting": 133
+    },
+    {
+      "id": "b1e8faf1-e055-4352-abd0-ad4e05c47a37",
+      "address": "Yew Tree Road, GU8 5RH",
+      "postcode": "GU8 5RH",
+      "street": "Yew Tree Road",
+      "lat": 51.158603,
+      "lng": -0.658117,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 500000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "b1e8faf1-e055-4352-abd0-ad4e05c47a37",
+        "url": "",
+        "agent": "Masella Coupe",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43788/65296"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 35,
+          "added_date": "2026-07-17"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 7.2,
+      "est_low": 684964,
+      "est_mid": 800000,
+      "est_high": 851000,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "1 Yew Tree Road",
+          "price": 800000,
+          "year": "2026",
+          "adj": 800000,
+          "pc": "GU8 5RQ"
+        },
+        {
+          "addr": "57 Yew Tree Road",
+          "price": 935000,
+          "year": "2025",
+          "adj": 868888,
+          "pc": "GU8 5RQ"
+        },
+        {
+          "addr": "24 Yew Tree Road",
+          "price": 750000,
+          "year": "2024",
+          "adj": 696969,
+          "pc": "GU8 5RH"
+        },
+        {
+          "addr": "53 Yew Tree Road",
+          "price": 925000,
+          "year": "2022",
+          "adj": 851000,
+          "pc": "GU8 5RQ"
+        },
+        {
+          "addr": "42 Yew Tree Road",
+          "price": 560000,
+          "year": "2021",
+          "adj": 553978,
+          "pc": "GU8 5RH"
+        },
+        {
+          "addr": "46 Yew Tree Road",
+          "price": 670000,
+          "year": "2020",
+          "adj": 684964,
+          "pc": "GU8 5RH"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 40,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3500k vs \u00a3800k comps (+38%)"
+        },
+        "Fit": {
+          "score": 8,
+          "max": 21,
+          "note": "7.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 96,
+          "max": 100,
+          "note": "\u00d70.96 \u00b7 development-friendly \u00b7 87 approved / 4 refused nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 500000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 4,
+        "decided": 91,
+        "rate": 0.9560439560439561,
+        "classq_seen": 1,
+        "classq_approved": 0
+      },
+      "permission": 0.96,
+      "permission_label": "development-friendly",
+      "feasibility": 0.96,
+      "setting": 0
     },
     {
       "id": "ag_1e7caf947d",
@@ -7594,7 +9109,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7760,7 +9275,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7881,7 +9396,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -7905,6 +9420,739 @@
       "permission_label": "development-friendly",
       "feasibility": 0.86,
       "setting": 467
+    },
+    {
+      "id": "188339f6-c5e6-4412-b830-c861abfc3545",
+      "address": "Alma Way, GU9 0QN",
+      "postcode": "GU9 0QN",
+      "street": "Alma Way",
+      "lat": 51.23761,
+      "lng": -0.788872,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 780000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "188339f6-c5e6-4412-b830-c861abfc3545",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65248"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 8,
+          "added_date": "2026-08-13"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.7,
+      "precise_location": true,
+      "floor_area_m2": 218,
+      "built_form": "Detached",
+      "epc_rating": "C",
+      "est_low": 717153,
+      "est_mid": 771313,
+      "est_high": 972944,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "THE ELMS Alma Way",
+          "price": 830000,
+          "year": "2024",
+          "adj": 771313,
+          "pc": "GU9 0QN"
+        },
+        {
+          "addr": "HIGH TREES Alma Way",
+          "price": 650000,
+          "year": "2020",
+          "adj": 664518,
+          "pc": "GU9 0QN"
+        },
+        {
+          "addr": "7 Alma Way",
+          "price": 730000,
+          "year": "2019",
+          "adj": 803349,
+          "pc": "GU9 0QN"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 47,
+      "typology": "Development play",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 24,
+          "max": 38,
+          "note": "941 m\u00b2 plot (2.5\u00d7 your home)"
+        },
+        "Value": {
+          "score": 13,
+          "max": 26,
+          "note": "\u00a3780k vs \u00a3771k comps (-1%)"
+        },
+        "Fit": {
+          "score": 15,
+          "max": 21,
+          "note": "3.7 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 92,
+          "max": 100,
+          "note": "\u00d70.92 \u00b7 development-friendly \u00b7 83 approved / 7 refused nearby \u00b7 4 Class-Q approved nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 780000
+        }
+      ],
+      "plot_m2": 941,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 83,
+        "refused": 7,
+        "decided": 90,
+        "rate": 0.9222222222222223,
+        "classq_seen": 4,
+        "classq_approved": 4
+      },
+      "permission": 0.92,
+      "permission_label": "development-friendly",
+      "feasibility": 0.92,
+      "setting": 661
+    },
+    {
+      "id": "c7744bbf-bc5e-44d9-8d4d-ef9f21a51dda",
+      "address": "Copse Avenue, GU9 9ED",
+      "postcode": "GU9 9ED",
+      "street": "Copse Avenue",
+      "lat": 51.237529,
+      "lng": -0.777687,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 555000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "c7744bbf-bc5e-44d9-8d4d-ef9f21a51dda",
+        "url": "",
+        "agent": "British Homesellers",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65252"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 23,
+          "added_date": "2026-07-29"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.9,
+      "est_low": 515599,
+      "est_mid": 569191,
+      "est_high": 598000,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "92 Copse Avenue",
+          "price": 612500,
+          "year": "2026",
+          "adj": 612500,
+          "pc": "GU9 9DZ"
+        },
+        {
+          "addr": "72 Copse Avenue",
+          "price": 582740,
+          "year": "2025",
+          "adj": 541536,
+          "pc": "GU9 9EA"
+        },
+        {
+          "addr": "86 Copse Avenue",
+          "price": 612500,
+          "year": "2025",
+          "adj": 569191,
+          "pc": "GU9 9DZ"
+        },
+        {
+          "addr": "57 Copse Avenue",
+          "price": 560000,
+          "year": "2023",
+          "adj": 515599,
+          "pc": "GU9 9DZ"
+        },
+        {
+          "addr": "60 Copse Avenue",
+          "price": 650000,
+          "year": "2022",
+          "adj": 598000,
+          "pc": "GU9 9EA"
+        },
+        {
+          "addr": "5 Copse Avenue",
+          "price": 535000,
+          "year": "2022",
+          "adj": 492200,
+          "pc": "GU9 9ED"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 47,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 22,
+          "max": 38,
+          "note": "737 m\u00b2 plot (1.9\u00d7 your home)"
+        },
+        "Value": {
+          "score": 13,
+          "max": 26,
+          "note": "\u00a3555k vs \u00a3569k comps (+2%)"
+        },
+        "Fit": {
+          "score": 14,
+          "max": 21,
+          "note": "3.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 95,
+          "max": 100,
+          "note": "\u00d70.95 \u00b7 development-friendly \u00b7 92 approved / 5 refused nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 555000
+        }
+      ],
+      "plot_m2": 737,
+      "footprints": {
+        "main_m2": 120,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 16
+      },
+      "floor_area_est_m2": 216,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 92,
+        "refused": 5,
+        "decided": 97,
+        "rate": 0.9484536082474226,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.95,
+      "permission_label": "development-friendly",
+      "feasibility": 0.95,
+      "setting": 471
+    },
+    {
+      "id": "78f53028-43a6-40f4-ad9a-9ce730e510e5",
+      "address": "Grove End Road, GU9 8RB",
+      "postcode": "GU9 8RB",
+      "street": "Grove End Road",
+      "lat": 51.202272,
+      "lng": -0.805816,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 695000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "78f53028-43a6-40f4-ad9a-9ce730e510e5",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65242"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 29,
+          "added_date": "2026-07-23"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.2,
+      "est_low": 500888,
+      "est_mid": 696969,
+      "est_high": 706262,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "23 Grove End Road",
+          "price": 760000,
+          "year": "2025",
+          "adj": 706262,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "8 Grove End Road",
+          "price": 525000,
+          "year": "2025",
+          "adj": 487878,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "50 Grove End Road",
+          "price": 750000,
+          "year": "2024",
+          "adj": 696969,
+          "pc": "GU9 8RB"
+        },
+        {
+          "addr": "27 Grove End Road",
+          "price": 539000,
+          "year": "2024",
+          "adj": 500888,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "10 Grove End Road",
+          "price": 890000,
+          "year": "2022",
+          "adj": 818800,
+          "pc": "GU9 8RD"
+        },
+        {
+          "addr": "2 Grove End Road",
+          "price": 670000,
+          "year": "2021",
+          "adj": 662795,
+          "pc": "GU9 8RD"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 35,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 19,
+          "max": 38,
+          "note": "438 m\u00b2 plot (1.2\u00d7 your home)"
+        },
+        "Value": {
+          "score": 9,
+          "max": 26,
+          "note": "~\u00a3695k"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 695000
+        }
+      ],
+      "plot_m2": 438,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 542
+    },
+    {
+      "id": "fdc2938d-37b9-444c-8f19-869e56ef7495",
+      "address": "Lawday Link, GU9 0BS",
+      "postcode": "GU9 0BS",
+      "street": "Lawday Link",
+      "lat": 51.235134,
+      "lng": -0.810524,
+      "property_type": "detached",
+      "beds": 5,
+      "price": 795000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "fdc2938d-37b9-444c-8f19-869e56ef7495",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43743/65240"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 38,
+          "added_date": "2026-07-14"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.4,
+      "est_low": 569500,
+      "est_mid": 780000,
+      "est_high": 935000,
+      "est_basis": "nearby (GU9 0)",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "2 Elm Road",
+          "price": 471700,
+          "year": "2026",
+          "adj": 471700,
+          "pc": "GU9 0QD"
+        },
+        {
+          "addr": "20 Ambleside Crescent",
+          "price": 569500,
+          "year": "2026",
+          "adj": 569500,
+          "pc": "GU9 0RZ"
+        },
+        {
+          "addr": "20 Heath Lane",
+          "price": 780000,
+          "year": "2026",
+          "adj": 780000,
+          "pc": "GU9 0PU"
+        },
+        {
+          "addr": "21 West Avenue",
+          "price": 587500,
+          "year": "2026",
+          "adj": 587500,
+          "pc": "GU9 0RH"
+        },
+        {
+          "addr": "GLENWOOD Nutshell Lane",
+          "price": 935000,
+          "year": "2026",
+          "adj": 935000,
+          "pc": "GU9 0FE"
+        },
+        {
+          "addr": "14 Old Park Lane",
+          "price": 1150000,
+          "year": "2026",
+          "adj": 1150000,
+          "pc": "GU9 0AH"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 38,
+      "typology": "Development play",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 23,
+          "max": 38,
+          "note": "785 m\u00b2 plot (2.1\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 26,
+          "note": "\u00a3795k vs \u00a3780k comps (-2%)"
+        },
+        "Fit": {
+          "score": 15,
+          "max": 21,
+          "note": "3.4 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 795000
+        }
+      ],
+      "plot_m2": 785,
+      "footprints": {
+        "main_m2": 113,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 14
+      },
+      "floor_area_est_m2": 203,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 331
+    },
+    {
+      "id": "2cce6571-aed4-43e2-b1d6-473a2114ddf1",
+      "address": "West View Road, GU35 8JS",
+      "postcode": "GU35 8JS",
+      "street": "West View Road",
+      "lat": 51.11701,
+      "lng": -0.797555,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 650000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "2cce6571-aed4-43e2-b1d6-473a2114ddf1",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43812/65245"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 37,
+          "added_date": "2026-07-15"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.9,
+      "est_low": 644080,
+      "est_mid": 724590,
+      "est_high": 808484,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "GRENVILLE HOUS West View Road",
+          "price": 870000,
+          "year": "2024",
+          "adj": 808484,
+          "pc": "GU35 8JS"
+        },
+        {
+          "addr": "KINGS LODGE West View Road",
+          "price": 775000,
+          "year": "2019",
+          "adj": 852870,
+          "pc": "GU35 8JS"
+        },
+        {
+          "addr": "WOODCOT HOUSE West View Road",
+          "price": 560000,
+          "year": "2019",
+          "adj": 616267,
+          "pc": "GU35 8JS"
+        },
+        {
+          "addr": "BRACKEN BANK West View Road",
+          "price": 640000,
+          "year": "2018",
+          "adj": 687850,
+          "pc": "GU35 8JS"
+        },
+        {
+          "addr": "PINE CROFT West View Road",
+          "price": 560000,
+          "year": "2016",
+          "adj": 644080,
+          "pc": "GU35 8JS"
+        },
+        {
+          "addr": "GRENVILLE HOUS West View Road",
+          "price": 630000,
+          "year": "2016",
+          "adj": 724590,
+          "pc": "GU35 8JS"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 30,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 15,
+          "max": 26,
+          "note": "\u00a3650k vs \u00a3725k comps (+10%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 650000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
     },
     {
       "id": "ag_13c26e0c13",
@@ -7997,7 +10245,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8157,7 +10405,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8323,7 +10571,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8351,103 +10599,247 @@
       "setting": 508
     },
     {
-      "id": "ag_16f1e32ae0",
-      "address": "Godalming, Surrey",
-      "postcode": "GU7 1AU",
-      "street": "Godalming",
-      "lat": 51.185549,
-      "lng": -0.612177,
-      "property_type": "house",
-      "beds": 0,
-      "price": 150000,
-      "price_poa": false,
+      "id": "b939c7e4-4f3f-4b5a-b663-bd4b7c59e179",
+      "address": "Parkhurst Fields, GU10 2PG",
+      "postcode": "GU10 2PG",
+      "street": "Parkhurst Fields",
+      "lat": 51.136012,
+      "lng": -0.776022,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 775000,
       "status": "live",
-      "streetview_url": "",
+      "relisted_count": 0,
       "source": {
-        "portal": "agent",
-        "name": "Warren Powell Richards",
-        "url": "https://www.wpr.co.uk/properties/sale/surrey/surrey/godalming-surrey-29/",
-        "agent": "Warren Powell Richards",
+        "portal": "homedata",
+        "listing_id": "b939c7e4-4f3f-4b5a-b663-bd4b7c59e179",
+        "url": "",
+        "agent": "Seymours Estate Agents",
         "uprn": ""
       },
-      "source_label": "AGENT",
       "media": {
-        "photo_count": 1,
+        "photo_count": 0,
         "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD230264/0/1200.jpg"
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43801/65253"
       },
-      "description_raw": "Godalming, Surrey | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Godalming, Surrey Back to search Photos Location Floorplan EPC Godalming, Surrey 0 bedroom Ground floor flat for sale \u00a3150,000 1 bathroom 1 receptio",
+      "description_raw": "",
       "enrichment": {
         "market": {
           "reductions": 0,
           "is_reduced": false,
-          "status": "Under Offer",
-          "dom": null,
-          "added_date": "2026-08-09T05:30:02Z"
+          "status": "For sale",
+          "dom": 24,
+          "added_date": "2026-07-28"
         },
         "plot": {}
       },
       "comps": [],
-      "dist_mi": 8.9,
-      "est_low": 168000,
-      "est_mid": 500000,
-      "est_high": 545000,
-      "est_basis": "nearby (GU7 1)",
+      "dist_mi": 3.9,
+      "est_low": 717600,
+      "est_mid": 759587,
+      "est_high": 782000,
+      "est_basis": "same street",
       "est_n": 6,
-      "est_basis_type": "mixed",
+      "est_basis_type": "detached",
       "local_comps": [
         {
-          "addr": "10 Lammas Close",
-          "price": 500000,
+          "addr": "67 Parkhurst Fields",
+          "price": 840000,
           "year": "2026",
-          "adj": 500000,
-          "pc": "GU7 1YZ"
+          "adj": 840000,
+          "pc": "GU10 2PQ"
         },
         {
-          "addr": "9 Grayling Close",
-          "price": 545000,
-          "year": "2026",
-          "adj": 545000,
-          "pc": "GU7 1AG"
+          "addr": "60 Parkhurst Fields",
+          "price": 825000,
+          "year": "2023",
+          "adj": 759587,
+          "pc": "GU10 2PQ"
         },
         {
-          "addr": "STUART COURT Town End Street",
-          "price": 110000,
-          "year": "2026",
-          "adj": 110000,
-          "pc": "GU7 1BJ"
+          "addr": "10 Parkhurst Fields",
+          "price": 825000,
+          "year": "2023",
+          "adj": 759587,
+          "pc": "GU10 2PG"
         },
         {
-          "addr": "38 Alderbank Drive",
-          "price": 820000,
-          "year": "2026",
-          "adj": 820000,
-          "pc": "GU7 1GB"
+          "addr": "79 Parkhurst Fields",
+          "price": 850000,
+          "year": "2022",
+          "adj": 782000,
+          "pc": "GU10 2PQ"
         },
         {
-          "addr": "11 Wey Road",
-          "price": 168000,
-          "year": "2026",
-          "adj": 168000,
-          "pc": "GU7 1ND"
+          "addr": "7 Parkhurst Fields",
+          "price": 780000,
+          "year": "2022",
+          "adj": 717600,
+          "pc": "GU10 2PG"
         },
         {
-          "addr": "EDISON HOUSE Flambard Way",
-          "price": 245000,
-          "year": "2026",
-          "adj": 245000,
-          "pc": "GU7 1FF"
+          "addr": "5 Parkhurst Fields",
+          "price": 715000,
+          "year": "2021",
+          "adj": 707311,
+          "pc": "GU10 2PG"
         }
       ],
       "planning_potential": {
         "tags": [],
         "consented": false,
-        "classq": true,
+        "classq": false,
         "agri": false
       },
-      "score": 34,
-      "typology": "Anomaly",
+      "score": 19,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 22,
+          "max": 38,
+          "note": "670 m\u00b2 plot (1.8\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 26,
+          "note": "\u00a3775k vs \u00a3760k comps (-2%)"
+        },
+        "Fit": {
+          "score": 14,
+          "max": 21,
+          "note": "3.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 40,
+          "max": 100,
+          "note": "\u00d70.40 \u00b7 restricted"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 775000
+        }
+      ],
+      "plot_m2": 670,
+      "constraints": [
+        "AONB",
+        "Green Belt"
+      ],
+      "permission": 0.3,
+      "permission_label": "restricted",
+      "feasibility": 0.4,
+      "setting": 193
+    },
+    {
+      "id": "fc84a6d4-d65c-4d92-9746-86085409da24",
+      "address": "Hilland Rise, GU35 8LX",
+      "postcode": "GU35 8LX",
+      "street": "Hilland Rise",
+      "lat": 51.117124,
+      "lng": -0.819355,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 565000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "fc84a6d4-d65c-4d92-9746-86085409da24",
+        "url": "",
+        "agent": "Homes Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43812/65237"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 37,
+          "added_date": "2026-07-15"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.8,
+      "est_low": 544086,
+      "est_mid": 617979,
+      "est_high": 665268,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "18 Hilland Rise",
+          "price": 495000,
+          "year": "2026",
+          "adj": 495000,
+          "pc": "GU35 8LX"
+        },
+        {
+          "addr": "55 Hilland Rise",
+          "price": 665000,
+          "year": "2025",
+          "adj": 617979,
+          "pc": "GU35 8LZ"
+        },
+        {
+          "addr": "54 Hilland Rise",
+          "price": 775000,
+          "year": "2023",
+          "adj": 713552,
+          "pc": "GU35 8LZ"
+        },
+        {
+          "addr": "36 Hilland Rise",
+          "price": 640000,
+          "year": "2022",
+          "adj": 588800,
+          "pc": "GU35 8LX"
+        },
+        {
+          "addr": "48 Hilland Rise",
+          "price": 672500,
+          "year": "2021",
+          "adj": 665268,
+          "pc": "GU35 8LZ"
+        },
+        {
+          "addr": "45 Hilland Rise",
+          "price": 550000,
+          "year": "2021",
+          "adj": 544086,
+          "pc": "GU35 8LZ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 30,
+      "typology": "Candidate",
       "tier": "Low",
       "signals": {
         "Potential": {
@@ -8456,14 +10848,14 @@
           "note": "plot unverified"
         },
         "Value": {
-          "score": 22,
+          "score": 14,
           "max": 26,
-          "note": "\u00a3150k vs \u00a3500k comps (+50%)"
+          "note": "\u00a3565k vs \u00a3618k comps (+9%)"
         },
         "Fit": {
-          "score": 5,
+          "score": 13,
           "max": 21,
-          "note": "8.9 mi from home"
+          "note": "4.8 mi from home"
         },
         "Edge": {
           "score": 0,
@@ -8471,9 +10863,9 @@
           "note": "open market"
         },
         "Feasibility": {
-          "score": 83,
+          "score": 75,
           "max": 100,
-          "note": "\u00d70.83 \u00b7 development-friendly \u00b7 82 approved / 8 refused nearby \u00b7 3 Class-Q approved nearby"
+          "note": "\u00d70.75 \u00b7 development-friendly"
         }
       },
       "flags": [
@@ -8482,30 +10874,19 @@
       "reasons": [
         "In your target area"
       ],
-      "first_seen": "2026-08-09",
-      "last_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
-          "date": "2026-08-09",
-          "price": 150000
+          "date": "2026-08-21",
+          "price": 565000
         }
       ],
       "plot_m2": null,
-      "constraints": [
-        "Conservation Area"
-      ],
-      "planning": {
-        "n": 100,
-        "approved": 82,
-        "refused": 8,
-        "decided": 90,
-        "rate": 0.9111111111111111,
-        "classq_seen": 3,
-        "classq_approved": 3
-      },
-      "permission": 0.83,
+      "constraints": [],
+      "permission": 0.75,
       "permission_label": "development-friendly",
-      "feasibility": 0.83,
+      "feasibility": 0.75,
       "setting": 0
     },
     {
@@ -8606,7 +10987,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8720,7 +11101,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8878,7 +11259,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9044,7 +11425,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9200,7 +11581,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9358,7 +11739,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9387,6 +11768,294 @@
       "permission_label": "development-friendly",
       "feasibility": 0.83,
       "setting": 30
+    },
+    {
+      "id": "9d0707a5-11ee-47f7-9cee-f61a1bab87f0",
+      "address": "Carlos Street, GU7 1BP",
+      "postcode": "GU7 1BP",
+      "street": "Carlos Street",
+      "lat": 51.18397,
+      "lng": -0.611022,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 590000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "9d0707a5-11ee-47f7-9cee-f61a1bab87f0",
+        "url": "",
+        "agent": "Gascoigne-Pees",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65313"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 24,
+          "added_date": "2026-07-28"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.9,
+      "est_low": 830000,
+      "est_mid": 1005000,
+      "est_high": 1010000,
+      "est_basis": "nearby (GU7 1)",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "37 Latimer Road",
+          "price": 830000,
+          "year": "2026",
+          "adj": 830000,
+          "pc": "GU7 1BW"
+        },
+        {
+          "addr": "FIRBANK Brighton Road",
+          "price": 1005000,
+          "year": "2026",
+          "adj": 1005000,
+          "pc": "GU7 1PW"
+        },
+        {
+          "addr": "36 Crownpits Lane",
+          "price": 900000,
+          "year": "2026",
+          "adj": 900000,
+          "pc": "GU7 1PB"
+        },
+        {
+          "addr": "SCOTWOOD HOUSE Grosvenor Road",
+          "price": 1616000,
+          "year": "2026",
+          "adj": 1616000,
+          "pc": "GU7 1PA"
+        },
+        {
+          "addr": "7 Blewfield",
+          "price": 683000,
+          "year": "2026",
+          "adj": 683000,
+          "pc": "GU7 1TR"
+        },
+        {
+          "addr": "121 Busbridge Lane",
+          "price": 1010000,
+          "year": "2026",
+          "adj": 1010000,
+          "pc": "GU7 1QJ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 30,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3590k vs \u00a31005k comps (+41%)"
+        },
+        "Fit": {
+          "score": 5,
+          "max": 21,
+          "note": "8.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 590000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "859b5af6-6d9d-4ee6-9cca-bea61e849e79",
+      "address": "Beech Hill Road, GU35 8DN",
+      "postcode": "GU35 8DN",
+      "street": "Beech Hill Road",
+      "lat": 51.121935,
+      "lng": -0.814946,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 575000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "859b5af6-6d9d-4ee6-9cca-bea61e849e79",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65239"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 30,
+          "added_date": "2026-07-22"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.5,
+      "est_low": 515757,
+      "est_mid": 552000,
+      "est_high": 696969,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "ROSEBANK Beech Hill Road",
+          "price": 555000,
+          "year": "2025",
+          "adj": 515757,
+          "pc": "GU35 8DB"
+        },
+        {
+          "addr": "YEW TREE COTTA Beech Hill Road",
+          "price": 750000,
+          "year": "2025",
+          "adj": 696969,
+          "pc": "GU35 8DW"
+        },
+        {
+          "addr": "FELLMONGERS Beech Hill Road",
+          "price": 570000,
+          "year": "2024",
+          "adj": 529696,
+          "pc": "GU35 8DA"
+        },
+        {
+          "addr": "WHISTLEDOWN Beech Hill Road",
+          "price": 600000,
+          "year": "2022",
+          "adj": 552000,
+          "pc": "GU35 8DW"
+        },
+        {
+          "addr": "TREE TOPS Beech Hill Road",
+          "price": 1200000,
+          "year": "2021",
+          "adj": 1187096,
+          "pc": "GU35 8DW"
+        },
+        {
+          "addr": "LAMORNA COTTAG Beech Hill Road",
+          "price": 515000,
+          "year": "2021",
+          "adj": 509462,
+          "pc": "GU35 8DN"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 29,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 12,
+          "max": 26,
+          "note": "\u00a3575k vs \u00a3552k comps (-4%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 575000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
     },
     {
       "id": "ag_28b7737afb",
@@ -9479,7 +12148,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9585,7 +12254,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9603,6 +12272,1002 @@
         "classq_seen": 2,
         "classq_approved": 2
       },
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "2286a713-75c6-4c41-a0dd-be737702536a",
+      "address": "Hazell Road, GU9 7BW",
+      "postcode": "GU9 7BW",
+      "street": "Hazell Road",
+      "lat": 51.211641,
+      "lng": -0.816269,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 800000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "2286a713-75c6-4c41-a0dd-be737702536a",
+        "url": "",
+        "agent": "Yopa",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43757/65238"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 1,
+          "is_reduced": true,
+          "status": "For sale",
+          "dom": 10,
+          "added_date": "2026-08-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.7,
+      "est_low": 499100,
+      "est_mid": 587843,
+      "est_high": 678383,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "36 Hazell Road",
+          "price": 730000,
+          "year": "2025",
+          "adj": 678383,
+          "pc": "GU9 7BW"
+        },
+        {
+          "addr": "9 Hazell Road",
+          "price": 925000,
+          "year": "2022",
+          "adj": 851000,
+          "pc": "GU9 7BW"
+        },
+        {
+          "addr": "3 Hazell Road",
+          "price": 542500,
+          "year": "2022",
+          "adj": 499100,
+          "pc": "GU9 7BW"
+        },
+        {
+          "addr": "7 Hazell Road",
+          "price": 520000,
+          "year": "2022",
+          "adj": 478400,
+          "pc": "GU9 7BW"
+        },
+        {
+          "addr": "44 Hazell Road",
+          "price": 505000,
+          "year": "2020",
+          "adj": 516279,
+          "pc": "GU9 7BP"
+        },
+        {
+          "addr": "8 Hazell Road",
+          "price": 575000,
+          "year": "2020",
+          "adj": 587843,
+          "pc": "GU9 7BW"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 37,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 20,
+          "max": 38,
+          "note": "466 m\u00b2 plot (1.2\u00d7 your home)"
+        },
+        "Value": {
+          "score": 6,
+          "max": 26,
+          "note": "\u00a3800k vs \u00a3588k comps (-36%)"
+        },
+        "Fit": {
+          "score": 18,
+          "max": 21,
+          "note": "1.7 mi from home"
+        },
+        "Edge": {
+          "score": 6,
+          "max": 20,
+          "note": "reduced"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "price_reduced",
+        "approx-location"
+      ],
+      "reasons": [
+        "Recently reduced"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 800000
+        }
+      ],
+      "plot_m2": 466,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 282
+    },
+    {
+      "id": "dd83eda5-266e-4843-9a31-b53bf2311467",
+      "address": "Cramhurst Lane, GU8 5QZ",
+      "postcode": "GU8 5QZ",
+      "street": "Cramhurst Lane",
+      "lat": 51.157954,
+      "lng": -0.656377,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 600000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "dd83eda5-266e-4843-9a31-b53bf2311467",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43788/65297"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 23,
+          "added_date": "2026-07-29"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 7.2,
+      "precise_location": true,
+      "floor_area_m2": 154,
+      "built_form": "Detached",
+      "epc_rating": "C",
+      "est_low": 677865,
+      "est_mid": 712933,
+      "est_high": 791812,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "70 Cramhurst Lane",
+          "price": 731500,
+          "year": "2025",
+          "adj": 679777,
+          "pc": "GU8 5RD"
+        },
+        {
+          "addr": "20A Cramhurst Lane",
+          "price": 860000,
+          "year": "2023",
+          "adj": 791812,
+          "pc": "GU8 5QZ"
+        },
+        {
+          "addr": "27 Cramhurst Lane",
+          "price": 990000,
+          "year": "2022",
+          "adj": 910800,
+          "pc": "GU8 5RA"
+        },
+        {
+          "addr": "23A Cramhurst Lane",
+          "price": 870000,
+          "year": "2022",
+          "adj": 800400,
+          "pc": "GU8 5RA"
+        },
+        {
+          "addr": "74 Cramhurst Lane",
+          "price": 620000,
+          "year": "2020",
+          "adj": 633848,
+          "pc": "GU8 5RD"
+        },
+        {
+          "addr": "17 Cramhurst Lane",
+          "price": 720000,
+          "year": "2020",
+          "adj": 736081,
+          "pc": "GU8 5RA"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 28,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 16,
+          "max": 26,
+          "note": "\u00a3600k vs \u00a3713k comps (+16%)"
+        },
+        "Fit": {
+          "score": 8,
+          "max": 21,
+          "note": "7.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 600000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "148dec04-1caa-41de-9215-f57be049de78",
+      "address": "Phillips Close, GU35 8LY",
+      "postcode": "GU35 8LY",
+      "street": "Phillips Close",
+      "lat": 51.118087,
+      "lng": -0.818531,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 595000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "148dec04-1caa-41de-9215-f57be049de78",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43811/65237"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 23,
+          "added_date": "2026-07-29"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.7,
+      "est_low": 469354,
+      "est_mid": 557575,
+      "est_high": 617979,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "14 Phillips Close",
+          "price": 665000,
+          "year": "2025",
+          "adj": 617979,
+          "pc": "GU35 8LY"
+        },
+        {
+          "addr": "11 Phillips Close",
+          "price": 600000,
+          "year": "2024",
+          "adj": 557575,
+          "pc": "GU35 8LY"
+        },
+        {
+          "addr": "8 Phillips Close",
+          "price": 725000,
+          "year": "2022",
+          "adj": 667000,
+          "pc": "GU35 8LY"
+        },
+        {
+          "addr": "4 Phillips Close",
+          "price": 407500,
+          "year": "2019",
+          "adj": 448444,
+          "pc": "GU35 8LY"
+        },
+        {
+          "addr": "6 Phillips Close",
+          "price": 426500,
+          "year": "2019",
+          "adj": 469354,
+          "pc": "GU35 8LY"
+        },
+        {
+          "addr": "14 Phillips Close",
+          "price": 403000,
+          "year": "2015",
+          "adj": 501027,
+          "pc": "GU35 8LY"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 28,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 11,
+          "max": 26,
+          "note": "\u00a3595k vs \u00a3558k comps (-7%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.7 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 595000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "3bbc5085-3bc4-4b71-8b15-fa66fab23909",
+      "address": "High Ridge, GU7 1YF",
+      "postcode": "GU7 1YF",
+      "street": "High Ridge",
+      "lat": 51.176671,
+      "lng": -0.619582,
+      "property_type": "detached",
+      "beds": 2,
+      "price": 450000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "3bbc5085-3bc4-4b71-8b15-fa66fab23909",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43777/65310"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 4,
+          "added_date": "2026-08-17"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.6,
+      "est_low": 469892,
+      "est_mid": 593548,
+      "est_high": 626084,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "63 High Ridge",
+          "price": 700000,
+          "year": "2024",
+          "adj": 650505,
+          "pc": "GU7 1YF"
+        },
+        {
+          "addr": "45 High Ridge",
+          "price": 440000,
+          "year": "2023",
+          "adj": 405113,
+          "pc": "GU7 1YF"
+        },
+        {
+          "addr": "2 High Ridge",
+          "price": 680000,
+          "year": "2023",
+          "adj": 626084,
+          "pc": "GU7 1YE"
+        },
+        {
+          "addr": "26 High Ridge",
+          "price": 475000,
+          "year": "2021",
+          "adj": 469892,
+          "pc": "GU7 1YE"
+        },
+        {
+          "addr": "42 High Ridge",
+          "price": 600000,
+          "year": "2021",
+          "adj": 593548,
+          "pc": "GU7 1YF"
+        },
+        {
+          "addr": "2 High Ridge",
+          "price": 565000,
+          "year": "2020",
+          "adj": 577619,
+          "pc": "GU7 1YE"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 28,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 17,
+          "max": 26,
+          "note": "\u00a3450k vs \u00a3594k comps (+24%)"
+        },
+        "Fit": {
+          "score": 6,
+          "max": 21,
+          "note": "8.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 450000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "000aa07a-106b-4675-9b39-c2f305e4c6a4",
+      "address": "Wrecclesham Hill, GU10 4JW",
+      "postcode": "GU10 4JW",
+      "street": "Wrecclesham Hill",
+      "lat": 51.195575,
+      "lng": -0.821989,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 800000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "000aa07a-106b-4675-9b39-c2f305e4c6a4",
+        "url": "",
+        "agent": "Keats Fearn",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65236"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 10,
+          "added_date": "2026-08-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 0.7,
+      "precise_location": true,
+      "floor_area_m2": 99,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 450941,
+      "est_mid": 469663,
+      "est_high": 532631,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 5,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "32 Wrecclesham Hill",
+          "price": 825000,
+          "year": "2025",
+          "adj": 766666,
+          "pc": "GU10 4JW"
+        },
+        {
+          "addr": "11 Wrecclesham Hill",
+          "price": 607500,
+          "year": "2024",
+          "adj": 564545,
+          "pc": "GU10 4JN"
+        },
+        {
+          "addr": "46 Wrecclesham Hill",
+          "price": 350000,
+          "year": "2023",
+          "adj": 322249,
+          "pc": "GU10 4JW"
+        },
+        {
+          "addr": "APRIL COTTAGE, Wrecclesham Hill",
+          "price": 590000,
+          "year": "2021",
+          "adj": 583655,
+          "pc": "GU10 4JW"
+        },
+        {
+          "addr": "32 Wrecclesham Hill",
+          "price": 450000,
+          "year": "2020",
+          "adj": 460051,
+          "pc": "GU10 4JW"
+        },
+        {
+          "addr": "56 Wrecclesham Hill",
+          "price": 440000,
+          "year": "2019",
+          "adj": 484210,
+          "pc": "GU10 4JS"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 29,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 19,
+          "max": 38,
+          "note": "405 m\u00b2 plot (1.1\u00d7 your home)"
+        },
+        "Value": {
+          "score": 4,
+          "max": 26,
+          "note": "\u00a3800k vs \u00a3470k comps (-50%)"
+        },
+        "Fit": {
+          "score": 20,
+          "max": 21,
+          "note": "0.7 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 67,
+          "max": 100,
+          "note": "\u00d70.67 \u00b7 mixed"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 800000
+        }
+      ],
+      "plot_m2": 405,
+      "constraints": [
+        "Conservation Area"
+      ],
+      "permission": 0.67,
+      "permission_label": "mixed",
+      "feasibility": 0.67,
+      "setting": 606
+    },
+    {
+      "id": "887fef33-c3c9-418c-93c8-68e88eea42c4",
+      "address": "Windsor Crescent, GU9 0DH",
+      "postcode": "GU9 0DH",
+      "street": "Windsor Crescent",
+      "lat": 51.229649,
+      "lng": -0.80528,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 650000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "887fef33-c3c9-418c-93c8-68e88eea42c4",
+        "url": "",
+        "agent": "Romans",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43746/65242"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 36,
+          "added_date": "2026-07-16"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.0,
+      "est_low": 469292,
+      "est_mid": 506220,
+      "est_high": 573763,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "7 Windsor Crescent",
+          "price": 505000,
+          "year": "2024",
+          "adj": 469292,
+          "pc": "GU9 0DH"
+        },
+        {
+          "addr": "9 Windsor Crescent",
+          "price": 580000,
+          "year": "2021",
+          "adj": 573763,
+          "pc": "GU9 0DH"
+        },
+        {
+          "addr": "4 Windsor Crescent",
+          "price": 490000,
+          "year": "2020",
+          "adj": 500944,
+          "pc": "GU9 0DH"
+        },
+        {
+          "addr": "8 Windsor Crescent",
+          "price": 460000,
+          "year": "2019",
+          "adj": 506220,
+          "pc": "GU9 0DH"
+        },
+        {
+          "addr": "9 Windsor Crescent",
+          "price": 515000,
+          "year": "2017",
+          "adj": 584938,
+          "pc": "GU9 0DH"
+        },
+        {
+          "addr": "10 Windsor Crescent",
+          "price": 372500,
+          "year": "2015",
+          "adj": 463108,
+          "pc": "GU9 0DH"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 32,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 19,
+          "max": 38,
+          "note": "392 m\u00b2 plot (1.0\u00d7 your home)"
+        },
+        "Value": {
+          "score": 7,
+          "max": 26,
+          "note": "\u00a3650k vs \u00a3506k comps (-28%)"
+        },
+        "Fit": {
+          "score": 16,
+          "max": 21,
+          "note": "3.0 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 650000
+        }
+      ],
+      "plot_m2": 392,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 431
+    },
+    {
+      "id": "245dd0fb-fa2d-4d7f-971b-3f2435f16cfc",
+      "address": "Crabtree Gardens, GU35 8LN",
+      "postcode": "GU35 8LN",
+      "street": "Crabtree Gardens",
+      "lat": 51.118348,
+      "lng": -0.822996,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 735000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "245dd0fb-fa2d-4d7f-971b-3f2435f16cfc",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43811/65236"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 35,
+          "added_date": "2026-07-17"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.7,
+      "est_low": 517564,
+      "est_mid": 632579,
+      "est_high": 737320,
+      "est_basis": "same street",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "12 Crabtree Gardens",
+          "price": 670000,
+          "year": "2019",
+          "adj": 737320,
+          "pc": "GU35 8LN"
+        },
+        {
+          "addr": "5 Crabtree Gardens",
+          "price": 550000,
+          "year": "2016",
+          "adj": 632579,
+          "pc": "GU35 8LN"
+        },
+        {
+          "addr": "3 Crabtree Gardens",
+          "price": 450000,
+          "year": "2016",
+          "adj": 517564,
+          "pc": "GU35 8LN"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 10,
+          "max": 26,
+          "note": "\u00a3735k vs \u00a3633k comps (-16%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.7 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 735000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
       "permission": 0.75,
       "permission_label": "development-friendly",
       "feasibility": 0.75,
@@ -9743,7 +13408,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9765,6 +13430,442 @@
       "permission_label": "development-friendly",
       "feasibility": 0.9,
       "setting": 468
+    },
+    {
+      "id": "9106fb0c-0a88-4593-998e-e29d06f63f64",
+      "address": "Oxted Green, GU8 5DD",
+      "postcode": "GU8 5DD",
+      "street": "Oxted Green",
+      "lat": 51.161904,
+      "lng": -0.654217,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 675000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "9106fb0c-0a88-4593-998e-e29d06f63f64",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43786/65297"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 8,
+          "added_date": "2026-08-13"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 7.3,
+      "precise_location": true,
+      "floor_area_m2": 142,
+      "built_form": "Detached",
+      "epc_rating": "C",
+      "est_low": 685679,
+      "est_mid": 744575,
+      "est_high": 796568,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "15 Oxted Green",
+          "price": 1010000,
+          "year": "2024",
+          "adj": 938585,
+          "pc": "GU8 5DD"
+        },
+        {
+          "addr": "CHERFOLD COTTA Oxted Green",
+          "price": 957500,
+          "year": "2023",
+          "adj": 881582,
+          "pc": "GU8 5DG"
+        },
+        {
+          "addr": "39A Oxted Green",
+          "price": 730000,
+          "year": "2023",
+          "adj": 672120,
+          "pc": "GU8 5DD"
+        },
+        {
+          "addr": "52 Oxted Green",
+          "price": 920000,
+          "year": "2023",
+          "adj": 847055,
+          "pc": "GU8 5DE"
+        },
+        {
+          "addr": "9 Oxted Green",
+          "price": 950000,
+          "year": "2022",
+          "adj": 874000,
+          "pc": "GU8 5DA"
+        },
+        {
+          "addr": "WILLINGS, 17 Oxted Green",
+          "price": 800000,
+          "year": "2022",
+          "adj": 736000,
+          "pc": "GU8 5DD"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 14,
+          "max": 26,
+          "note": "\u00a3675k vs \u00a3745k comps (+9%)"
+        },
+        "Fit": {
+          "score": 8,
+          "max": 21,
+          "note": "7.3 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 675000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 1
+    },
+    {
+      "id": "375df1f2-093f-4c02-ada9-5d7755f58dab",
+      "address": "Kenley Road, GU35 8EJ",
+      "postcode": "GU35 8EJ",
+      "street": "Kenley Road",
+      "lat": 51.118486,
+      "lng": -0.800346,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 700000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "375df1f2-093f-4c02-ada9-5d7755f58dab",
+        "url": "",
+        "agent": "Exp UK",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43811/65244"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 8,
+          "added_date": "2026-08-13"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.8,
+      "est_low": 534193,
+      "est_mid": 603440,
+      "est_high": 757620,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "BABBACOMBE Kenley Road",
+          "price": 587100,
+          "year": "2024",
+          "adj": 545587,
+          "pc": "GU35 8EJ"
+        },
+        {
+          "addr": "PETITOR Kenley Road",
+          "price": 823500,
+          "year": "2022",
+          "adj": 757620,
+          "pc": "GU35 8EJ"
+        },
+        {
+          "addr": "HILL VALLEY Kenley Road",
+          "price": 610000,
+          "year": "2021",
+          "adj": 603440,
+          "pc": "GU35 8EJ"
+        },
+        {
+          "addr": "LARCHPINE Kenley Road",
+          "price": 540000,
+          "year": "2021",
+          "adj": 534193,
+          "pc": "GU35 8EJ"
+        },
+        {
+          "addr": "THE CEDARS Kenley Road",
+          "price": 415000,
+          "year": "2021",
+          "adj": 410537,
+          "pc": "GU35 8EJ"
+        },
+        {
+          "addr": "HETHELIE Kenley Road",
+          "price": 665000,
+          "year": "2016",
+          "adj": 764845,
+          "pc": "GU35 8EJ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 10,
+          "max": 26,
+          "note": "\u00a3700k vs \u00a3603k comps (-16%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.8 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 700000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "f7713d57-21f1-4dc7-9c86-955444d6b456",
+      "address": "Churchill Crescent, GU35 8ND",
+      "postcode": "GU35 8ND",
+      "street": "Churchill Crescent",
+      "lat": 51.11629,
+      "lng": -0.818691,
+      "property_type": "detached",
+      "beds": 2,
+      "price": 465000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "f7713d57-21f1-4dc7-9c86-955444d6b456",
+        "url": "",
+        "agent": "Warren Powell-Richards",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43812/65237"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 28,
+          "added_date": "2026-07-24"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.9,
+      "est_low": 376363,
+      "est_mid": 399595,
+      "est_high": 413535,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "17 Churchill Crescent",
+          "price": 510000,
+          "year": "2025",
+          "adj": 473939,
+          "pc": "GU35 8ND"
+        },
+        {
+          "addr": "30 Churchill Crescent",
+          "price": 430000,
+          "year": "2025",
+          "adj": 399595,
+          "pc": "GU35 8ND"
+        },
+        {
+          "addr": "46 Churchill Crescent",
+          "price": 375000,
+          "year": "2025",
+          "adj": 348484,
+          "pc": "GU35 8ND"
+        },
+        {
+          "addr": "24 Churchill Crescent",
+          "price": 420000,
+          "year": "2024",
+          "adj": 390303,
+          "pc": "GU35 8ND"
+        },
+        {
+          "addr": "22 Churchill Crescent",
+          "price": 405000,
+          "year": "2024",
+          "adj": 376363,
+          "pc": "GU35 8ND"
+        },
+        {
+          "addr": "42 Churchill Crescent",
+          "price": 445000,
+          "year": "2024",
+          "adj": 413535,
+          "pc": "GU35 8ND"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 10,
+          "max": 26,
+          "note": "\u00a3465k vs \u00a3400k comps (-16%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 465000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
     },
     {
       "id": "ag_9b1469a96d",
@@ -9899,7 +14000,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10059,7 +14160,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -10217,7 +14318,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -10240,6 +14341,441 @@
       "permission": 0.83,
       "permission_label": "development-friendly",
       "feasibility": 0.83,
+      "setting": 0
+    },
+    {
+      "id": "ag_e2e7ba546a",
+      "address": "5 bedroom detached house for sale in Bordon Hampshire",
+      "postcode": "GU35 0QB",
+      "street": "5 bedroom detached house for sale in Bordon Hampshire",
+      "lat": 51.121838,
+      "lng": -0.842898,
+      "property_type": "detached",
+      "beds": 5,
+      "price": 695000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Purplebricks (online / ex-Strike)",
+        "url": "https://www.purplebricks.co.uk/property-for-sale/5-bedroom-detached-house-lindford-1838102",
+        "agent": "Purplebricks (online / ex-Strike)",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65229",
+        "photo_url": "https://purplebricks-photography.imgix.net/orders2025/1773393/photosfinal/dsc00009-fa-gu350qb.jpg?auto=format&amp;w=1200&amp;h=630&amp;q=70&amp;fit=crop&amp;fill=solid&amp;fill-color=000000"
+      },
+      "description_raw": "**Please take the 360 tour to appreciate this home** **5 Bedroomed Detached family home** **3 Reception rooms, separate utility room and downstairs cloakroom**\u2026",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-21T05:55:44Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.6,
+      "est_low": 542800,
+      "est_mid": 585454,
+      "est_high": 594747,
+      "est_basis": "this postcode",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "2 Grayshott Laurels",
+          "price": 640000,
+          "year": "2025",
+          "adj": 594747,
+          "pc": "GU35 0QB"
+        },
+        {
+          "addr": "10 Grayshott Laurels",
+          "price": 610000,
+          "year": "2025",
+          "adj": 566868,
+          "pc": "GU35 0QB"
+        },
+        {
+          "addr": "28 Grayshott Laurels",
+          "price": 650100,
+          "year": "2024",
+          "adj": 604133,
+          "pc": "GU35 0QB"
+        },
+        {
+          "addr": "21 Grayshott Laurels",
+          "price": 580000,
+          "year": "2024",
+          "adj": 538989,
+          "pc": "GU35 0QB"
+        },
+        {
+          "addr": "26 Grayshott Laurels",
+          "price": 630000,
+          "year": "2024",
+          "adj": 585454,
+          "pc": "GU35 0QB"
+        },
+        {
+          "addr": "14 Grayshott Laurels",
+          "price": 590000,
+          "year": "2022",
+          "adj": 542800,
+          "pc": "GU35 0QB"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 27,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 9,
+          "max": 26,
+          "note": "\u00a3695k vs \u00a3585k comps (-19%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 695000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "f85b51a3-37ad-4efc-a1e1-e882d383804b",
+      "address": "Southview Road, GU35 8HY",
+      "postcode": "GU35 8HY",
+      "street": "Southview Road",
+      "lat": 51.119926,
+      "lng": -0.804867,
+      "property_type": "detached",
+      "beds": 5,
+      "price": 825000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "f85b51a3-37ad-4efc-a1e1-e882d383804b",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43810/65242"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 29,
+          "added_date": "2026-07-23"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.6,
+      "est_low": 460000,
+      "est_mid": 678383,
+      "est_high": 683030,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "CHESTNUTS Southview Road",
+          "price": 730000,
+          "year": "2025",
+          "adj": 678383,
+          "pc": "GU35 8HY"
+        },
+        {
+          "addr": "LINARD Southview Road",
+          "price": 737500,
+          "year": "2024",
+          "adj": 685353,
+          "pc": "GU35 8HX"
+        },
+        {
+          "addr": "WHITE LODGE Southview Road",
+          "price": 735000,
+          "year": "2024",
+          "adj": 683030,
+          "pc": "GU35 8HY"
+        },
+        {
+          "addr": "WYNDERMERE Southview Road",
+          "price": 300000,
+          "year": "2022",
+          "adj": 276000,
+          "pc": "GU35 8HY"
+        },
+        {
+          "addr": "KING HAROLDS C Southview Road",
+          "price": 557000,
+          "year": "2021",
+          "adj": 551010,
+          "pc": "GU35 8HY"
+        },
+        {
+          "addr": "WHITE LODGE Southview Road",
+          "price": 465000,
+          "year": "2021",
+          "adj": 460000,
+          "pc": "GU35 8HY"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 26,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 9,
+          "max": 26,
+          "note": "\u00a3825k vs \u00a3678k comps (-22%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 825000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "5746cb68-0c53-4c94-bf33-72e78f4933e7",
+      "address": "Church Lane, GU35 8PJ",
+      "postcode": "GU35 8PJ",
+      "street": "Church Lane",
+      "lat": 51.123146,
+      "lng": -0.828905,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 675000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "5746cb68-0c53-4c94-bf33-72e78f4933e7",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65234"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 37,
+          "added_date": "2026-07-15"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.4,
+      "est_low": 500944,
+      "est_mid": 536726,
+      "est_high": 598066,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "GLENROSE Church Lane",
+          "price": 795000,
+          "year": "2025",
+          "adj": 738787,
+          "pc": "GU35 8PJ"
+        },
+        {
+          "addr": "DENE Church Lane",
+          "price": 565500,
+          "year": "2022",
+          "adj": 520260,
+          "pc": "GU35 8PJ"
+        },
+        {
+          "addr": "SEPTEMBER COTT Church Lane",
+          "price": 490000,
+          "year": "2020",
+          "adj": 500944,
+          "pc": "GU35 8PJ"
+        },
+        {
+          "addr": "WOODSIDE Church Lane",
+          "price": 525000,
+          "year": "2020",
+          "adj": 536726,
+          "pc": "GU35 8PJ"
+        },
+        {
+          "addr": "2 Church Lane",
+          "price": 585000,
+          "year": "2020",
+          "adj": 598066,
+          "pc": "GU35 8PL"
+        },
+        {
+          "addr": "8 Church Lane",
+          "price": 355000,
+          "year": "2014",
+          "adj": 480294,
+          "pc": "GU35 8PL"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 26,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 8,
+          "max": 26,
+          "note": "\u00a3675k vs \u00a3537k comps (-26%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.4 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 675000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
       "setting": 0
     },
     {
@@ -10340,7 +14876,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10461,7 +14997,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -10617,7 +15153,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -10784,7 +15320,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -10817,6 +15353,451 @@
       "permission_label": "restricted",
       "feasibility": 0.46,
       "setting": 121
+    },
+    {
+      "id": "823b8183-304a-44e4-8853-4c1c9b3515a2",
+      "address": "High Ridge, GU7 1YE",
+      "postcode": "GU7 1YE",
+      "street": "High Ridge",
+      "lat": 51.176944,
+      "lng": -0.619874,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 550000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "823b8183-304a-44e4-8853-4c1c9b3515a2",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43777/65310"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 2,
+          "added_date": "2026-08-19"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.6,
+      "est_low": 469892,
+      "est_mid": 593548,
+      "est_high": 626084,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "63 High Ridge",
+          "price": 700000,
+          "year": "2024",
+          "adj": 650505,
+          "pc": "GU7 1YF"
+        },
+        {
+          "addr": "45 High Ridge",
+          "price": 440000,
+          "year": "2023",
+          "adj": 405113,
+          "pc": "GU7 1YF"
+        },
+        {
+          "addr": "2 High Ridge",
+          "price": 680000,
+          "year": "2023",
+          "adj": 626084,
+          "pc": "GU7 1YE"
+        },
+        {
+          "addr": "26 High Ridge",
+          "price": 475000,
+          "year": "2021",
+          "adj": 469892,
+          "pc": "GU7 1YE"
+        },
+        {
+          "addr": "42 High Ridge",
+          "price": 600000,
+          "year": "2021",
+          "adj": 593548,
+          "pc": "GU7 1YF"
+        },
+        {
+          "addr": "2 High Ridge",
+          "price": 565000,
+          "year": "2020",
+          "adj": 577619,
+          "pc": "GU7 1YE"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 25,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 14,
+          "max": 26,
+          "note": "\u00a3550k vs \u00a3594k comps (+7%)"
+        },
+        "Fit": {
+          "score": 6,
+          "max": 21,
+          "note": "8.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 550000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
+    },
+    {
+      "id": "357222b5-e615-4dc7-ab5d-75d4015ea773",
+      "address": "Red House Lane, GU8 6DS",
+      "postcode": "GU8 6DS",
+      "street": "Red House Lane",
+      "lat": 51.178612,
+      "lng": -0.707639,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 775000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "357222b5-e615-4dc7-ab5d-75d4015ea773",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65278"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 9,
+          "added_date": "2026-08-12"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.8,
+      "precise_location": true,
+      "floor_area_m2": 93,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 557218,
+      "est_mid": 598162,
+      "est_high": 696702,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "FIR TREES Red House Lane",
+          "price": 855000,
+          "year": "2022",
+          "adj": 786600,
+          "pc": "GU8 6DR"
+        },
+        {
+          "addr": "TREETOPS Red House Lane",
+          "price": 790000,
+          "year": "2022",
+          "adj": 726800,
+          "pc": "GU8 6DR"
+        },
+        {
+          "addr": "LYNTON Red House Lane",
+          "price": 775000,
+          "year": "2022",
+          "adj": 713000,
+          "pc": "GU8 6DS"
+        },
+        {
+          "addr": "LITTLE TARA Red House Lane",
+          "price": 1110000,
+          "year": "2021",
+          "adj": 1098064,
+          "pc": "GU8 6DR"
+        },
+        {
+          "addr": "KEMAMAN Red House Lane",
+          "price": 694000,
+          "year": "2020",
+          "adj": 709501,
+          "pc": "GU8 6DS"
+        },
+        {
+          "addr": "KEMAMAN Red House Lane",
+          "price": 565000,
+          "year": "2014",
+          "adj": 764411,
+          "pc": "GU8 6DS"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 24,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 19,
+          "max": 38,
+          "note": "445 m\u00b2 plot (1.2\u00d7 your home)"
+        },
+        "Value": {
+          "score": 8,
+          "max": 26,
+          "note": "\u00a3775k vs \u00a3598k comps (-30%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.8 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 60,
+          "max": 100,
+          "note": "\u00d70.60 \u00b7 mixed"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 775000
+        }
+      ],
+      "plot_m2": 445,
+      "constraints": [
+        "AONB"
+      ],
+      "permission": 0.6,
+      "permission_label": "mixed",
+      "feasibility": 0.6,
+      "setting": 304
+    },
+    {
+      "id": "dc4347a5-6088-428f-b83d-1c2a397040cb",
+      "address": "Fairview Road, GU35 8HG",
+      "postcode": "GU35 8HG",
+      "street": "Fairview Road",
+      "lat": 51.118577,
+      "lng": -0.798672,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 750000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "dc4347a5-6088-428f-b83d-1c2a397040cb",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43811/65245"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 17,
+          "added_date": "2026-08-04"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.8,
+      "est_low": 529696,
+      "est_mid": 584645,
+      "est_high": 639400,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "11 Fairview Road",
+          "price": 762500,
+          "year": "2025",
+          "adj": 708585,
+          "pc": "GU35 8JP"
+        },
+        {
+          "addr": "18 Fairview Road",
+          "price": 570000,
+          "year": "2025",
+          "adj": 529696,
+          "pc": "GU35 8JP"
+        },
+        {
+          "addr": "35 Fairview Road",
+          "price": 605000,
+          "year": "2022",
+          "adj": 556600,
+          "pc": "GU35 8HG"
+        },
+        {
+          "addr": "69 Fairview Road",
+          "price": 695000,
+          "year": "2022",
+          "adj": 639400,
+          "pc": "GU35 8HQ"
+        },
+        {
+          "addr": "54 Fairview Road",
+          "price": 591000,
+          "year": "2021",
+          "adj": 584645,
+          "pc": "GU35 8HQ"
+        },
+        {
+          "addr": "25 Fairview Road",
+          "price": 495000,
+          "year": "2021",
+          "adj": 489677,
+          "pc": "GU35 8HG"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 28,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 7,
+          "max": 26,
+          "note": "\u00a3750k vs \u00a3585k comps (-28%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.8 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 84,
+          "max": 100,
+          "note": "\u00d70.84 \u00b7 development-friendly \u00b7 65 approved / 12 refused nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 750000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 65,
+        "refused": 12,
+        "decided": 77,
+        "rate": 0.8441558441558441,
+        "classq_seen": 0,
+        "classq_approved": 0
+      },
+      "permission": 0.84,
+      "permission_label": "development-friendly",
+      "feasibility": 0.84,
+      "setting": 0
     },
     {
       "id": "ag_7e330ad7a4",
@@ -10909,7 +15890,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11065,7 +16046,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -11223,7 +16204,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -11339,7 +16320,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11495,7 +16476,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-18",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-18",
@@ -11516,6 +16497,290 @@
       "permission": 0.84,
       "permission_label": "development-friendly",
       "feasibility": 0.84,
+      "setting": 0
+    },
+    {
+      "id": "61e83815-3d03-48f1-bd3a-2f8347eedefa",
+      "address": "Franklyn Road, GU7 2LD",
+      "postcode": "GU7 2LD",
+      "street": "Franklyn Road",
+      "lat": 51.181831,
+      "lng": -0.631661,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 625000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "61e83815-3d03-48f1-bd3a-2f8347eedefa",
+        "url": "",
+        "agent": "Bourne Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43774/65306"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 7,
+          "added_date": "2026-08-14"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.0,
+      "floor_area_m2": 104,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 512479,
+      "est_mid": 518264,
+      "est_high": 526766,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 5,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "10 Franklyn Road",
+          "price": 525000,
+          "year": "2024",
+          "adj": 487878,
+          "pc": "GU7 2LD"
+        },
+        {
+          "addr": "10 Franklyn Road",
+          "price": 403000,
+          "year": "2019",
+          "adj": 443492,
+          "pc": "GU7 2LD"
+        },
+        {
+          "addr": "10 Franklyn Road",
+          "price": 389950,
+          "year": "2016",
+          "adj": 448498,
+          "pc": "GU7 2LD"
+        },
+        {
+          "addr": "16 Franklyn Road",
+          "price": 397950,
+          "year": "2015",
+          "adj": 494748,
+          "pc": "GU7 2LD"
+        },
+        {
+          "addr": "34 Franklyn Road",
+          "price": 330000,
+          "year": "2015",
+          "adj": 410270,
+          "pc": "GU7 2LD"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 22,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 9,
+          "max": 26,
+          "note": "\u00a3625k vs \u00a3518k comps (-21%)"
+        },
+        "Fit": {
+          "score": 7,
+          "max": 21,
+          "note": "8.0 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 625000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 1
+    },
+    {
+      "id": "4f234ffc-cc8a-45d8-8b5b-44bf90ff9eb7",
+      "address": "The Briars, GU7 2HQ",
+      "postcode": "GU7 2HQ",
+      "street": "The Briars",
+      "lat": 51.196553,
+      "lng": -0.611918,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 795000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "4f234ffc-cc8a-45d8-8b5b-44bf90ff9eb7",
+        "url": "",
+        "agent": "Masella Coupe",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65313"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 35,
+          "added_date": "2026-07-17"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.9,
+      "est_low": 570000,
+      "est_mid": 740000,
+      "est_high": 920000,
+      "est_basis": "nearby (GU7 2)",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "SAQQARA Knoll Road",
+          "price": 740000,
+          "year": "2026",
+          "adj": 740000,
+          "pc": "GU7 2ER"
+        },
+        {
+          "addr": "2 Weston Close",
+          "price": 720000,
+          "year": "2026",
+          "adj": 720000,
+          "pc": "GU7 2EY"
+        },
+        {
+          "addr": "MIDSUMMERS Mark Way",
+          "price": 2400000,
+          "year": "2026",
+          "adj": 2400000,
+          "pc": "GU7 2BD"
+        },
+        {
+          "addr": "49 Coopers Rise",
+          "price": 430000,
+          "year": "2026",
+          "adj": 430000,
+          "pc": "GU7 2NH"
+        },
+        {
+          "addr": "THE SLOPES Charterhouse Road",
+          "price": 920000,
+          "year": "2026",
+          "adj": 920000,
+          "pc": "GU7 2AW"
+        },
+        {
+          "addr": "5 Woodstock Grove",
+          "price": 570000,
+          "year": "2026",
+          "adj": 570000,
+          "pc": "GU7 2AX"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 23,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 11,
+          "max": 26,
+          "note": "\u00a3795k vs \u00a3740k comps (-7%)"
+        },
+        "Fit": {
+          "score": 5,
+          "max": 21,
+          "note": "8.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 795000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
       "setting": 0
     },
     {
@@ -11609,7 +16874,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11723,7 +16988,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11837,7 +17102,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11951,7 +17216,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12065,7 +17330,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12179,7 +17444,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12293,7 +17558,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -12407,7 +17672,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12563,7 +17828,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12719,7 +17984,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -12877,7 +18142,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -13037,7 +18302,7 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -13195,7 +18460,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -13218,6 +18483,129 @@
       "permission": 0.83,
       "permission_label": "development-friendly",
       "feasibility": 0.83,
+      "setting": 0
+    },
+    {
+      "id": "977c9f8d-1ab5-4585-bf85-b9271d914738",
+      "address": "Alvernia Close, GU7 1YJ",
+      "postcode": "GU7 1YJ",
+      "street": "Alvernia Close",
+      "lat": 51.176809,
+      "lng": -0.621409,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 850000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "977c9f8d-1ab5-4585-bf85-b9271d914738",
+        "url": "",
+        "agent": "Seymours Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43777/65309"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 10,
+          "added_date": "2026-08-11"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 8.5,
+      "est_low": 501818,
+      "est_mid": 529696,
+      "est_high": 770334,
+      "est_basis": "same street",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "2 Alvernia Close",
+          "price": 540000,
+          "year": "2025",
+          "adj": 501818,
+          "pc": "GU7 1YJ"
+        },
+        {
+          "addr": "9 Alvernia Close",
+          "price": 570000,
+          "year": "2024",
+          "adj": 529696,
+          "pc": "GU7 1YJ"
+        },
+        {
+          "addr": "6 Alvernia Close",
+          "price": 700000,
+          "year": "2019",
+          "adj": 770334,
+          "pc": "GU7 1YJ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 19,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 5,
+          "max": 26,
+          "note": "\u00a3850k vs \u00a3530k comps (-50%)"
+        },
+        "Fit": {
+          "score": 6,
+          "max": 21,
+          "note": "8.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 850000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
       "setting": 0
     },
     {
@@ -13353,7 +18741,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -13376,6 +18764,154 @@
       "permission": 0.83,
       "permission_label": "development-friendly",
       "feasibility": 0.83,
+      "setting": 0
+    },
+    {
+      "id": "7a9b07ad-75c7-4e62-9a9c-f8b857180db3",
+      "address": "Upper Manor Road, GU7 2HZ",
+      "postcode": "GU7 2HZ",
+      "street": "Upper Manor Road",
+      "lat": 51.19685,
+      "lng": -0.611207,
+      "property_type": "detached",
+      "beds": 4,
+      "price": 850000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "7a9b07ad-75c7-4e62-9a9c-f8b857180db3",
+        "url": "",
+        "agent": "Chantries and Pewleys Estate Agents",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65313"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "Sold STC",
+          "dom": 16,
+          "added_date": "2026-08-05"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 9.0,
+      "precise_location": true,
+      "floor_area_m2": 93,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 582860,
+      "est_mid": 591468,
+      "est_high": 655581,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 4,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "BRIDGE END Upper Manor Road",
+          "price": 740000,
+          "year": "2025",
+          "adj": 687676,
+          "pc": "GU7 2HY"
+        },
+        {
+          "addr": "WOODLANDS Upper Manor Road",
+          "price": 800000,
+          "year": "2025",
+          "adj": 743434,
+          "pc": "GU7 2HZ"
+        },
+        {
+          "addr": "HILL CREST Upper Manor Road",
+          "price": 580000,
+          "year": "2024",
+          "adj": 538989,
+          "pc": "GU7 2HZ"
+        },
+        {
+          "addr": "HILL CREST Upper Manor Road",
+          "price": 535000,
+          "year": "2020",
+          "adj": 546949,
+          "pc": "GU7 2HZ"
+        },
+        {
+          "addr": "DEVANHA Upper Manor Road",
+          "price": 570000,
+          "year": "2016",
+          "adj": 655581,
+          "pc": "GU7 2HZ"
+        },
+        {
+          "addr": "BARGATE Upper Manor Road",
+          "price": 435000,
+          "year": "2016",
+          "adj": 500312,
+          "pc": "GU7 2HY"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 18,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 6,
+          "max": 26,
+          "note": "\u00a3850k vs \u00a3591k comps (-44%)"
+        },
+        "Fit": {
+          "score": 5,
+          "max": 21,
+          "note": "9.0 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-08-21",
+      "price_history": [
+        {
+          "date": "2026-08-21",
+          "price": 850000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
       "setting": 0
     },
     {
@@ -13511,7 +19047,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-08-20",
+      "last_seen": "2026-08-21",
       "price_history": [
         {
           "date": "2026-08-11",
