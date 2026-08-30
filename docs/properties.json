@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T12:17:04.535534+00:00",
-  "count": 138,
+  "generated_at": "2026-08-30T11:03:05.370894+00:00",
+  "count": 127,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -119,8 +119,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65311"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -268,8 +268,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": 863,
       "footprints": {
@@ -425,8 +425,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -577,8 +577,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": 706,
       "footprints": {
@@ -732,8 +732,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -881,8 +881,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65241"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": 1583,
       "footprints": {
@@ -1037,8 +1037,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1186,8 +1186,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1329,8 +1329,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1478,8 +1478,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "first_seen": "2026-08-30",
+      "last_seen": "2026-08-30",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -1637,7 +1637,7 @@
         }
       },
       "first_seen": "2026-08-20",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-20",
@@ -1761,7 +1761,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1877,7 +1877,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1993,7 +1993,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2113,7 +2113,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2227,7 +2227,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2385,7 +2385,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2505,7 +2505,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2621,7 +2621,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2772,7 +2772,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2892,7 +2892,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-27",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-27",
@@ -3008,7 +3008,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3170,7 +3170,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3337,7 +3337,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3497,7 +3497,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -3611,7 +3611,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3748,7 +3748,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3891,7 +3891,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4051,7 +4051,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4200,7 +4200,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4367,7 +4367,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-26",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-26",
@@ -4488,7 +4488,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4602,7 +4602,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4716,7 +4716,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4839,7 +4839,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4894,7 +4894,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 17,
+          "dom": 18,
           "added_date": "2026-08-12"
         },
         "plot": {}
@@ -4994,7 +4994,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -5115,7 +5115,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5271,7 +5271,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5438,7 +5438,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -5594,7 +5594,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5741,7 +5741,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5907,7 +5907,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -5960,7 +5960,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Under offer",
-          "dom": 32,
+          "dom": 33,
           "added_date": "2026-07-28"
         },
         "plot": {}
@@ -6062,7 +6062,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -6228,7 +6228,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6384,7 +6384,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6540,7 +6540,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6705,7 +6705,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6769,7 +6769,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 1,
+          "dom": 2,
           "added_date": "2026-08-28"
         },
         "plot": {}
@@ -6859,7 +6859,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-29",
@@ -6912,7 +6912,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 37,
+          "dom": 38,
           "added_date": "2026-07-23"
         },
         "plot": {}
@@ -7012,7 +7012,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -7133,7 +7133,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7289,7 +7289,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7445,7 +7445,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-23",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-23",
@@ -7505,7 +7505,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 8,
+          "dom": 9,
           "added_date": "2026-08-21"
         },
         "plot": {}
@@ -7609,7 +7609,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-22",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-22",
@@ -7662,7 +7662,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 33,
+          "dom": 34,
           "added_date": "2026-07-27"
         },
         "plot": {}
@@ -7741,7 +7741,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -7763,159 +7763,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.88,
       "setting": 543
-    },
-    {
-      "id": "c5052c85-bedb-4250-9ba4-14894663b56b",
-      "address": "Osborne Manor, GU35 0QP",
-      "postcode": "GU35 0QP",
-      "street": "Osborne Manor",
-      "lat": 51.143779,
-      "lng": -0.85017,
-      "property_type": "detached",
-      "beds": 5,
-      "price": 500000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "c5052c85-bedb-4250-9ba4-14894663b56b",
-        "url": "",
-        "agent": "",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43796/65226"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Sold STC",
-          "dom": 38,
-          "added_date": "2026-07-22"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 3.3,
-      "est_low": 450000,
-      "est_mid": 605000,
-      "est_high": 635000,
-      "est_basis": "nearby (GU35 0)",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "2 Taylors Lane",
-          "price": 639950,
-          "year": "2026",
-          "adj": 639950,
-          "pc": "GU35 0SW"
-        },
-        {
-          "addr": "21 Imadene Crescent",
-          "price": 515000,
-          "year": "2026",
-          "adj": 515000,
-          "pc": "GU35 0PH"
-        },
-        {
-          "addr": "19 Windsor Road",
-          "price": 450000,
-          "year": "2026",
-          "adj": 450000,
-          "pc": "GU35 0RY"
-        },
-        {
-          "addr": "71 Liphook Road",
-          "price": 605000,
-          "year": "2026",
-          "adj": 605000,
-          "pc": "GU35 0PN"
-        },
-        {
-          "addr": "ROTHERWICK Washford Lane",
-          "price": 325000,
-          "year": "2026",
-          "adj": 325000,
-          "pc": "GU35 0ET"
-        },
-        {
-          "addr": "6 Oxney Way",
-          "price": 635000,
-          "year": "2026",
-          "adj": 635000,
-          "pc": "GU35 0GQ"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 52,
-      "typology": "Development play",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 27,
-          "max": 38,
-          "note": "3,786 m\u00b2 plot (10.0\u00d7 your home) \u00b7 approx, capped"
-        },
-        "Value": {
-          "score": 16,
-          "max": 26,
-          "note": "\u00a3500k vs \u00a3605k comps (+17%)"
-        },
-        "Fit": {
-          "score": 15,
-          "max": 21,
-          "note": "3.3 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 89,
-          "max": 100,
-          "note": "\u00d70.89 \u00b7 development-friendly \u00b7 31 approved / 4 refused nearby \u00b7 7 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "approx-location"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 500000
-        }
-      ],
-      "plot_m2": 3786,
-      "constraints": [],
-      "planning": {
-        "n": 45,
-        "approved": 31,
-        "refused": 4,
-        "decided": 35,
-        "rate": 0.8857142857142857,
-        "classq_seen": 11,
-        "classq_approved": 7
-      },
-      "permission": 0.89,
-      "permission_label": "development-friendly",
-      "feasibility": 0.89,
-      "setting": 11
     },
     {
       "id": "ag_b13f9618e1",
@@ -8008,7 +7855,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8122,7 +7969,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -8265,7 +8112,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8433,7 +8280,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -8494,7 +8341,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 38,
+          "dom": 39,
           "added_date": "2026-07-22"
         },
         "plot": {}
@@ -8573,7 +8420,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -8603,159 +8450,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.9,
       "setting": 303
-    },
-    {
-      "id": "5f7c677f-486d-416f-aa4a-c7b486903eb6",
-      "address": "Beech Hill, GU35 8HS",
-      "postcode": "GU35 8HS",
-      "street": "Beech Hill",
-      "lat": 51.120508,
-      "lng": -0.805495,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 525000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "5f7c677f-486d-416f-aa4a-c7b486903eb6",
-        "url": "",
-        "agent": "Winkworth",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43810/65242"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 25,
-          "added_date": "2026-08-04"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.6,
-      "est_low": 478585,
-      "est_mid": 696969,
-      "est_high": 743000,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "KENT COTTAGE Beech Hill",
-          "price": 743000,
-          "year": "2026",
-          "adj": 743000,
-          "pc": "GU35 8HS"
-        },
-        {
-          "addr": "MASADA Beech Hill",
-          "price": 433000,
-          "year": "2025",
-          "adj": 402383,
-          "pc": "GU35 8NL"
-        },
-        {
-          "addr": "HAVEN COTTAGE Beech Hill",
-          "price": 1200000,
-          "year": "2025",
-          "adj": 1115151,
-          "pc": "GU35 8NL"
-        },
-        {
-          "addr": "PINEWOOD COTTA Beech Hill",
-          "price": 750000,
-          "year": "2024",
-          "adj": 696969,
-          "pc": "GU35 8HR"
-        },
-        {
-          "addr": "OLD WELL Beech Hill",
-          "price": 605000,
-          "year": "2024",
-          "adj": 562222,
-          "pc": "GU35 8EQ"
-        },
-        {
-          "addr": "APRIL COTTAGE Beech Hill",
-          "price": 515000,
-          "year": "2024",
-          "adj": 478585,
-          "pc": "GU35 8EQ"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 42,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 17,
-          "max": 26,
-          "note": "\u00a3525k vs \u00a3697k comps (+25%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.6 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 95,
-          "max": 100,
-          "note": "\u00d70.95 \u00b7 development-friendly \u00b7 84 approved / 4 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 525000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 84,
-        "refused": 4,
-        "decided": 88,
-        "rate": 0.9545454545454546,
-        "classq_seen": 1,
-        "classq_approved": 1
-      },
-      "permission": 0.95,
-      "permission_label": "development-friendly",
-      "feasibility": 0.95,
-      "setting": 0
     },
     {
       "id": "ag_2d7836b995",
@@ -8892,7 +8586,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9056,7 +8750,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9225,7 +8919,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9339,7 +9033,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-22",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-22",
@@ -9495,7 +9189,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9550,7 +9244,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 2,
+          "dom": 3,
           "added_date": "2026-08-27"
         },
         "plot": {}
@@ -9652,7 +9346,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-28",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-28",
@@ -9711,7 +9405,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 25,
+          "dom": 26,
           "added_date": "2026-08-04"
         },
         "plot": {}
@@ -9799,7 +9493,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -9858,7 +9552,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 31,
+          "dom": 32,
           "added_date": "2026-07-29"
         },
         "plot": {}
@@ -9958,7 +9652,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -10018,7 +9712,7 @@
           "reductions": 1,
           "is_reduced": true,
           "status": "For sale",
-          "dom": 31,
+          "dom": 32,
           "added_date": "2026-07-29"
         },
         "plot": {}
@@ -10119,7 +9813,7 @@
         "Recently reduced"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -10286,7 +9980,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10452,7 +10146,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10573,7 +10267,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -10628,7 +10322,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 1,
+          "dom": 2,
           "added_date": "2026-08-28"
         },
         "plot": {}
@@ -10730,7 +10424,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-29",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-29",
@@ -10789,7 +10483,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 16,
+          "dom": 17,
           "added_date": "2026-08-13"
         },
         "plot": {}
@@ -10870,7 +10564,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -10923,7 +10617,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 37,
+          "dom": 38,
           "added_date": "2026-07-23"
         },
         "plot": {}
@@ -11023,7 +10717,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -11045,159 +10739,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.89,
       "setting": 542
-    },
-    {
-      "id": "2cce6571-aed4-43e2-b1d6-473a2114ddf1",
-      "address": "West View Road, GU35 8JS",
-      "postcode": "GU35 8JS",
-      "street": "West View Road",
-      "lat": 51.11701,
-      "lng": -0.797555,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 650000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "2cce6571-aed4-43e2-b1d6-473a2114ddf1",
-        "url": "",
-        "agent": "Seymours Estate Agents",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43812/65245"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Sold STC",
-          "dom": 45,
-          "added_date": "2026-07-15"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.9,
-      "est_low": 644080,
-      "est_mid": 724590,
-      "est_high": 808484,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "GRENVILLE HOUS West View Road",
-          "price": 870000,
-          "year": "2024",
-          "adj": 808484,
-          "pc": "GU35 8JS"
-        },
-        {
-          "addr": "KINGS LODGE West View Road",
-          "price": 775000,
-          "year": "2019",
-          "adj": 852870,
-          "pc": "GU35 8JS"
-        },
-        {
-          "addr": "WOODCOT HOUSE West View Road",
-          "price": 560000,
-          "year": "2019",
-          "adj": 616267,
-          "pc": "GU35 8JS"
-        },
-        {
-          "addr": "BRACKEN BANK West View Road",
-          "price": 640000,
-          "year": "2018",
-          "adj": 687850,
-          "pc": "GU35 8JS"
-        },
-        {
-          "addr": "PINE CROFT West View Road",
-          "price": 560000,
-          "year": "2016",
-          "adj": 644080,
-          "pc": "GU35 8JS"
-        },
-        {
-          "addr": "GRENVILLE HOUS West View Road",
-          "price": 630000,
-          "year": "2016",
-          "adj": 724590,
-          "pc": "GU35 8JS"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "score": 34,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 15,
-          "max": 26,
-          "note": "\u00a3650k vs \u00a3725k comps (+10%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.9 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 84,
-          "max": 100,
-          "note": "\u00d70.84 \u00b7 development-friendly \u00b7 69 approved / 13 refused nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 650000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 69,
-        "refused": 13,
-        "decided": 82,
-        "rate": 0.8414634146341463,
-        "classq_seen": 1,
-        "classq_approved": 0
-      },
-      "permission": 0.84,
-      "permission_label": "development-friendly",
-      "feasibility": 0.84,
-      "setting": 0
     },
     {
       "id": "ag_13c26e0c13",
@@ -11290,7 +10831,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11450,7 +10991,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11616,7 +11157,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11673,7 +11214,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 32,
+          "dom": 33,
           "added_date": "2026-07-28"
         },
         "plot": {}
@@ -11773,7 +11314,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -11798,159 +11339,6 @@
       "permission_label": "restricted",
       "feasibility": 0.4,
       "setting": 193
-    },
-    {
-      "id": "fc84a6d4-d65c-4d92-9746-86085409da24",
-      "address": "Hilland Rise, GU35 8LX",
-      "postcode": "GU35 8LX",
-      "street": "Hilland Rise",
-      "lat": 51.117124,
-      "lng": -0.819355,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 565000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "fc84a6d4-d65c-4d92-9746-86085409da24",
-        "url": "",
-        "agent": "Homes Estate Agents",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43812/65237"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 45,
-          "added_date": "2026-07-15"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.8,
-      "est_low": 544086,
-      "est_mid": 617979,
-      "est_high": 665268,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "18 Hilland Rise",
-          "price": 495000,
-          "year": "2026",
-          "adj": 495000,
-          "pc": "GU35 8LX"
-        },
-        {
-          "addr": "55 Hilland Rise",
-          "price": 665000,
-          "year": "2025",
-          "adj": 617979,
-          "pc": "GU35 8LZ"
-        },
-        {
-          "addr": "54 Hilland Rise",
-          "price": 775000,
-          "year": "2023",
-          "adj": 713552,
-          "pc": "GU35 8LZ"
-        },
-        {
-          "addr": "36 Hilland Rise",
-          "price": 640000,
-          "year": "2022",
-          "adj": 588800,
-          "pc": "GU35 8LX"
-        },
-        {
-          "addr": "48 Hilland Rise",
-          "price": 672500,
-          "year": "2021",
-          "adj": 665268,
-          "pc": "GU35 8LZ"
-        },
-        {
-          "addr": "45 Hilland Rise",
-          "price": 550000,
-          "year": "2021",
-          "adj": 544086,
-          "pc": "GU35 8LZ"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "score": 34,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 14,
-          "max": 26,
-          "note": "\u00a3565k vs \u00a3618k comps (+9%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.8 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 85,
-          "max": 100,
-          "note": "\u00d70.85 \u00b7 development-friendly \u00b7 72 approved / 13 refused nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 565000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 72,
-        "refused": 13,
-        "decided": 85,
-        "rate": 0.8470588235294118,
-        "classq_seen": 0,
-        "classq_approved": 0
-      },
-      "permission": 0.85,
-      "permission_label": "development-friendly",
-      "feasibility": 0.85,
-      "setting": 0
     },
     {
       "id": "ag_5aaf1d53d4",
@@ -12050,7 +11438,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12164,7 +11552,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12322,7 +11710,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12488,7 +11876,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12644,7 +12032,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12802,7 +12190,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12831,159 +12219,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.83,
       "setting": 30
-    },
-    {
-      "id": "859b5af6-6d9d-4ee6-9cca-bea61e849e79",
-      "address": "Beech Hill Road, GU35 8DN",
-      "postcode": "GU35 8DN",
-      "street": "Beech Hill Road",
-      "lat": 51.121935,
-      "lng": -0.814946,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 575000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "859b5af6-6d9d-4ee6-9cca-bea61e849e79",
-        "url": "",
-        "agent": "Seymours Estate Agents",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65239"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Sold STC",
-          "dom": 38,
-          "added_date": "2026-07-22"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.5,
-      "est_low": 515757,
-      "est_mid": 552000,
-      "est_high": 696969,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "ROSEBANK Beech Hill Road",
-          "price": 555000,
-          "year": "2025",
-          "adj": 515757,
-          "pc": "GU35 8DB"
-        },
-        {
-          "addr": "YEW TREE COTTA Beech Hill Road",
-          "price": 750000,
-          "year": "2025",
-          "adj": 696969,
-          "pc": "GU35 8DW"
-        },
-        {
-          "addr": "FELLMONGERS Beech Hill Road",
-          "price": 570000,
-          "year": "2024",
-          "adj": 529696,
-          "pc": "GU35 8DA"
-        },
-        {
-          "addr": "WHISTLEDOWN Beech Hill Road",
-          "price": 600000,
-          "year": "2022",
-          "adj": 552000,
-          "pc": "GU35 8DW"
-        },
-        {
-          "addr": "TREE TOPS Beech Hill Road",
-          "price": 1200000,
-          "year": "2021",
-          "adj": 1187096,
-          "pc": "GU35 8DW"
-        },
-        {
-          "addr": "LAMORNA COTTAG Beech Hill Road",
-          "price": 515000,
-          "year": "2021",
-          "adj": 509462,
-          "pc": "GU35 8DN"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "score": 36,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 12,
-          "max": 26,
-          "note": "\u00a3575k vs \u00a3552k comps (-4%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.5 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 94,
-          "max": 100,
-          "note": "\u00d70.94 \u00b7 development-friendly \u00b7 74 approved / 5 refused nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 575000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 74,
-        "refused": 5,
-        "decided": 79,
-        "rate": 0.9367088607594937,
-        "classq_seen": 0,
-        "classq_approved": 0
-      },
-      "permission": 0.94,
-      "permission_label": "development-friendly",
-      "feasibility": 0.94,
-      "setting": 0
     },
     {
       "id": "ag_28b7737afb",
@@ -13076,7 +12311,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -13182,7 +12417,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -13235,7 +12470,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 2,
+          "dom": 3,
           "added_date": "2026-08-27"
         },
         "plot": {}
@@ -13335,7 +12570,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-28",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-28",
@@ -13395,7 +12630,7 @@
           "reductions": 1,
           "is_reduced": true,
           "status": "For sale",
-          "dom": 18,
+          "dom": 19,
           "added_date": "2026-08-11"
         },
         "plot": {}
@@ -13496,7 +12731,7 @@
         "Recently reduced"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -13549,7 +12784,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 31,
+          "dom": 32,
           "added_date": "2026-07-29"
         },
         "plot": {}
@@ -13653,7 +12888,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -13706,7 +12941,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 12,
+          "dom": 13,
           "added_date": "2026-08-17"
         },
         "plot": {}
@@ -13806,7 +13041,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -13859,7 +13094,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 18,
+          "dom": 19,
           "added_date": "2026-08-11"
         },
         "plot": {}
@@ -13961,7 +13196,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -13985,138 +13220,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.84,
       "setting": 606
-    },
-    {
-      "id": "245dd0fb-fa2d-4d7f-971b-3f2435f16cfc",
-      "address": "Crabtree Gardens, GU35 8LN",
-      "postcode": "GU35 8LN",
-      "street": "Crabtree Gardens",
-      "lat": 51.118348,
-      "lng": -0.822996,
-      "property_type": "detached",
-      "beds": 3,
-      "price": 735000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "245dd0fb-fa2d-4d7f-971b-3f2435f16cfc",
-        "url": "",
-        "agent": "Seymours Estate Agents",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43811/65236"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Sold STC",
-          "dom": 43,
-          "added_date": "2026-07-17"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.7,
-      "est_low": 517564,
-      "est_mid": 632579,
-      "est_high": 737320,
-      "est_basis": "same street",
-      "est_n": 3,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "12 Crabtree Gardens",
-          "price": 670000,
-          "year": "2019",
-          "adj": 737320,
-          "pc": "GU35 8LN"
-        },
-        {
-          "addr": "5 Crabtree Gardens",
-          "price": 550000,
-          "year": "2016",
-          "adj": 632579,
-          "pc": "GU35 8LN"
-        },
-        {
-          "addr": "3 Crabtree Gardens",
-          "price": 450000,
-          "year": "2016",
-          "adj": 517564,
-          "pc": "GU35 8LN"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 31,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 10,
-          "max": 26,
-          "note": "\u00a3735k vs \u00a3633k comps (-16%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.7 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 84,
-          "max": 100,
-          "note": "\u00d70.84 \u00b7 development-friendly \u00b7 67 approved / 13 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 735000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 67,
-        "refused": 13,
-        "decided": 80,
-        "rate": 0.8375,
-        "classq_seen": 1,
-        "classq_approved": 1
-      },
-      "permission": 0.84,
-      "permission_label": "development-friendly",
-      "feasibility": 0.84,
-      "setting": 0
     },
     {
       "id": "ag_7151a1b6b1",
@@ -14253,7 +13356,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -14306,7 +13409,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 16,
+          "dom": 17,
           "added_date": "2026-08-13"
         },
         "plot": {}
@@ -14410,7 +13513,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -14432,312 +13535,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.89,
       "setting": 1
-    },
-    {
-      "id": "375df1f2-093f-4c02-ada9-5d7755f58dab",
-      "address": "Kenley Road, GU35 8EJ",
-      "postcode": "GU35 8EJ",
-      "street": "Kenley Road",
-      "lat": 51.118486,
-      "lng": -0.800346,
-      "property_type": "detached",
-      "beds": 4,
-      "price": 700000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "375df1f2-093f-4c02-ada9-5d7755f58dab",
-        "url": "",
-        "agent": "Exp UK",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43811/65244"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 16,
-          "added_date": "2026-08-13"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.8,
-      "est_low": 534193,
-      "est_mid": 603440,
-      "est_high": 757620,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "BABBACOMBE Kenley Road",
-          "price": 587100,
-          "year": "2024",
-          "adj": 545587,
-          "pc": "GU35 8EJ"
-        },
-        {
-          "addr": "PETITOR Kenley Road",
-          "price": 823500,
-          "year": "2022",
-          "adj": 757620,
-          "pc": "GU35 8EJ"
-        },
-        {
-          "addr": "HILL VALLEY Kenley Road",
-          "price": 610000,
-          "year": "2021",
-          "adj": 603440,
-          "pc": "GU35 8EJ"
-        },
-        {
-          "addr": "LARCHPINE Kenley Road",
-          "price": 540000,
-          "year": "2021",
-          "adj": 534193,
-          "pc": "GU35 8EJ"
-        },
-        {
-          "addr": "THE CEDARS Kenley Road",
-          "price": 415000,
-          "year": "2021",
-          "adj": 410537,
-          "pc": "GU35 8EJ"
-        },
-        {
-          "addr": "HETHELIE Kenley Road",
-          "price": 665000,
-          "year": "2016",
-          "adj": 764845,
-          "pc": "GU35 8EJ"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "score": 31,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 10,
-          "max": 26,
-          "note": "\u00a3700k vs \u00a3603k comps (-16%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.8 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 86,
-          "max": 100,
-          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 64 approved / 10 refused nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 700000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 64,
-        "refused": 10,
-        "decided": 74,
-        "rate": 0.8648648648648649,
-        "classq_seen": 0,
-        "classq_approved": 0
-      },
-      "permission": 0.86,
-      "permission_label": "development-friendly",
-      "feasibility": 0.86,
-      "setting": 0
-    },
-    {
-      "id": "f7713d57-21f1-4dc7-9c86-955444d6b456",
-      "address": "Churchill Crescent, GU35 8ND",
-      "postcode": "GU35 8ND",
-      "street": "Churchill Crescent",
-      "lat": 51.11629,
-      "lng": -0.818691,
-      "property_type": "detached",
-      "beds": 2,
-      "price": 465000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "f7713d57-21f1-4dc7-9c86-955444d6b456",
-        "url": "",
-        "agent": "Warren Powell-Richards",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43812/65237"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 36,
-          "added_date": "2026-07-24"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.9,
-      "est_low": 376363,
-      "est_mid": 399595,
-      "est_high": 413535,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "17 Churchill Crescent",
-          "price": 510000,
-          "year": "2025",
-          "adj": 473939,
-          "pc": "GU35 8ND"
-        },
-        {
-          "addr": "30 Churchill Crescent",
-          "price": 430000,
-          "year": "2025",
-          "adj": 399595,
-          "pc": "GU35 8ND"
-        },
-        {
-          "addr": "46 Churchill Crescent",
-          "price": 375000,
-          "year": "2025",
-          "adj": 348484,
-          "pc": "GU35 8ND"
-        },
-        {
-          "addr": "24 Churchill Crescent",
-          "price": 420000,
-          "year": "2024",
-          "adj": 390303,
-          "pc": "GU35 8ND"
-        },
-        {
-          "addr": "22 Churchill Crescent",
-          "price": 405000,
-          "year": "2024",
-          "adj": 376363,
-          "pc": "GU35 8ND"
-        },
-        {
-          "addr": "42 Churchill Crescent",
-          "price": 445000,
-          "year": "2024",
-          "adj": 413535,
-          "pc": "GU35 8ND"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "score": 31,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 10,
-          "max": 26,
-          "note": "\u00a3465k vs \u00a3400k comps (-16%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.9 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 86,
-          "max": 100,
-          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 74 approved / 12 refused nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 465000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 74,
-        "refused": 12,
-        "decided": 86,
-        "rate": 0.8604651162790697,
-        "classq_seen": 0,
-        "classq_approved": 0
-      },
-      "permission": 0.86,
-      "permission_label": "development-friendly",
-      "feasibility": 0.86,
-      "setting": 0
     },
     {
       "id": "ag_9b1469a96d",
@@ -14872,7 +13669,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15032,7 +13829,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -15190,7 +13987,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -15348,7 +14145,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -15365,312 +14162,6 @@
         "rate": 0.9036144578313253,
         "classq_seen": 1,
         "classq_approved": 1
-      },
-      "permission": 0.9,
-      "permission_label": "development-friendly",
-      "feasibility": 0.9,
-      "setting": 0
-    },
-    {
-      "id": "f85b51a3-37ad-4efc-a1e1-e882d383804b",
-      "address": "Southview Road, GU35 8HY",
-      "postcode": "GU35 8HY",
-      "street": "Southview Road",
-      "lat": 51.119926,
-      "lng": -0.804867,
-      "property_type": "detached",
-      "beds": 5,
-      "price": 825000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "f85b51a3-37ad-4efc-a1e1-e882d383804b",
-        "url": "",
-        "agent": "Seymours Estate Agents",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43810/65242"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 37,
-          "added_date": "2026-07-23"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.6,
-      "est_low": 460000,
-      "est_mid": 678383,
-      "est_high": 683030,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "CHESTNUTS Southview Road",
-          "price": 730000,
-          "year": "2025",
-          "adj": 678383,
-          "pc": "GU35 8HY"
-        },
-        {
-          "addr": "LINARD Southview Road",
-          "price": 737500,
-          "year": "2024",
-          "adj": 685353,
-          "pc": "GU35 8HX"
-        },
-        {
-          "addr": "WHITE LODGE Southview Road",
-          "price": 735000,
-          "year": "2024",
-          "adj": 683030,
-          "pc": "GU35 8HY"
-        },
-        {
-          "addr": "WYNDERMERE Southview Road",
-          "price": 300000,
-          "year": "2022",
-          "adj": 276000,
-          "pc": "GU35 8HY"
-        },
-        {
-          "addr": "KING HAROLDS C Southview Road",
-          "price": 557000,
-          "year": "2021",
-          "adj": 551010,
-          "pc": "GU35 8HY"
-        },
-        {
-          "addr": "WHITE LODGE Southview Road",
-          "price": 465000,
-          "year": "2021",
-          "adj": 460000,
-          "pc": "GU35 8HY"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 33,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 9,
-          "max": 26,
-          "note": "\u00a3825k vs \u00a3678k comps (-22%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.6 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 93,
-          "max": 100,
-          "note": "\u00d70.93 \u00b7 development-friendly \u00b7 82 approved / 6 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 825000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 82,
-        "refused": 6,
-        "decided": 88,
-        "rate": 0.9318181818181818,
-        "classq_seen": 1,
-        "classq_approved": 1
-      },
-      "permission": 0.93,
-      "permission_label": "development-friendly",
-      "feasibility": 0.93,
-      "setting": 0
-    },
-    {
-      "id": "5746cb68-0c53-4c94-bf33-72e78f4933e7",
-      "address": "Church Lane, GU35 8PJ",
-      "postcode": "GU35 8PJ",
-      "street": "Church Lane",
-      "lat": 51.123146,
-      "lng": -0.828905,
-      "property_type": "detached",
-      "beds": 4,
-      "price": 675000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "5746cb68-0c53-4c94-bf33-72e78f4933e7",
-        "url": "",
-        "agent": "Seymours Estate Agents",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65234"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Sold STC",
-          "dom": 45,
-          "added_date": "2026-07-15"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.4,
-      "est_low": 500944,
-      "est_mid": 536726,
-      "est_high": 598066,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "GLENROSE Church Lane",
-          "price": 795000,
-          "year": "2025",
-          "adj": 738787,
-          "pc": "GU35 8PJ"
-        },
-        {
-          "addr": "DENE Church Lane",
-          "price": 565500,
-          "year": "2022",
-          "adj": 520260,
-          "pc": "GU35 8PJ"
-        },
-        {
-          "addr": "SEPTEMBER COTT Church Lane",
-          "price": 490000,
-          "year": "2020",
-          "adj": 500944,
-          "pc": "GU35 8PJ"
-        },
-        {
-          "addr": "WOODSIDE Church Lane",
-          "price": 525000,
-          "year": "2020",
-          "adj": 536726,
-          "pc": "GU35 8PJ"
-        },
-        {
-          "addr": "2 Church Lane",
-          "price": 585000,
-          "year": "2020",
-          "adj": 598066,
-          "pc": "GU35 8PL"
-        },
-        {
-          "addr": "8 Church Lane",
-          "price": 355000,
-          "year": "2014",
-          "adj": 480294,
-          "pc": "GU35 8PL"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "score": 31,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 8,
-          "max": 26,
-          "note": "\u00a3675k vs \u00a3537k comps (-26%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.4 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 90,
-          "max": 100,
-          "note": "\u00d70.90 \u00b7 development-friendly \u00b7 75 approved / 8 refused nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 675000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 75,
-        "refused": 8,
-        "decided": 83,
-        "rate": 0.9036144578313253,
-        "classq_seen": 0,
-        "classq_approved": 0
       },
       "permission": 0.9,
       "permission_label": "development-friendly",
@@ -15775,7 +14266,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15896,7 +14387,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -16052,7 +14543,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -16219,7 +14710,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -16283,7 +14774,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 10,
+          "dom": 11,
           "added_date": "2026-08-19"
         },
         "plot": {}
@@ -16383,7 +14874,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -16436,7 +14927,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 17,
+          "dom": 18,
           "added_date": "2026-08-12"
         },
         "plot": {}
@@ -16538,7 +15029,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -16562,159 +15053,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.78,
       "setting": 304
-    },
-    {
-      "id": "dc4347a5-6088-428f-b83d-1c2a397040cb",
-      "address": "Fairview Road, GU35 8HG",
-      "postcode": "GU35 8HG",
-      "street": "Fairview Road",
-      "lat": 51.118577,
-      "lng": -0.798672,
-      "property_type": "detached",
-      "beds": 4,
-      "price": 750000,
-      "status": "live",
-      "relisted_count": 0,
-      "source": {
-        "portal": "homedata",
-        "listing_id": "dc4347a5-6088-428f-b83d-1c2a397040cb",
-        "url": "",
-        "agent": "Seymours Estate Agents",
-        "uprn": ""
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43811/65245"
-      },
-      "description_raw": "",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "For sale",
-          "dom": 25,
-          "added_date": "2026-08-04"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.8,
-      "est_low": 529696,
-      "est_mid": 584645,
-      "est_high": 639400,
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "11 Fairview Road",
-          "price": 762500,
-          "year": "2025",
-          "adj": 708585,
-          "pc": "GU35 8JP"
-        },
-        {
-          "addr": "18 Fairview Road",
-          "price": 570000,
-          "year": "2025",
-          "adj": 529696,
-          "pc": "GU35 8JP"
-        },
-        {
-          "addr": "35 Fairview Road",
-          "price": 605000,
-          "year": "2022",
-          "adj": 556600,
-          "pc": "GU35 8HG"
-        },
-        {
-          "addr": "69 Fairview Road",
-          "price": 695000,
-          "year": "2022",
-          "adj": 639400,
-          "pc": "GU35 8HQ"
-        },
-        {
-          "addr": "54 Fairview Road",
-          "price": 591000,
-          "year": "2021",
-          "adj": 584645,
-          "pc": "GU35 8HQ"
-        },
-        {
-          "addr": "25 Fairview Road",
-          "price": 495000,
-          "year": "2021",
-          "adj": 489677,
-          "pc": "GU35 8HG"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "score": 28,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 7,
-          "max": 26,
-          "note": "\u00a3750k vs \u00a3585k comps (-28%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.8 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 84,
-          "max": 100,
-          "note": "\u00d70.84 \u00b7 development-friendly \u00b7 65 approved / 12 refused nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 750000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 65,
-        "refused": 12,
-        "decided": 77,
-        "rate": 0.8441558441558441,
-        "classq_seen": 0,
-        "classq_approved": 0
-      },
-      "permission": 0.84,
-      "permission_label": "development-friendly",
-      "feasibility": 0.84,
-      "setting": 0
     },
     {
       "id": "ag_0327e87cbb",
@@ -16849,7 +15187,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -17007,7 +15345,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -17062,7 +15400,7 @@
           "reductions": 1,
           "is_reduced": true,
           "status": "For sale",
-          "dom": 36,
+          "dom": 37,
           "added_date": "2026-07-24"
         },
         "plot": {}
@@ -17166,7 +15504,7 @@
         "Recently reduced"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -17286,7 +15624,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -17442,7 +15780,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-18",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-18",
@@ -17495,7 +15833,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 15,
+          "dom": 16,
           "added_date": "2026-08-14"
         },
         "plot": {}
@@ -17591,7 +15929,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -17705,7 +16043,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -17819,7 +16157,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -17933,7 +16271,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -18047,7 +16385,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -18161,7 +16499,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -18275,7 +16613,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -18389,7 +16727,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -18503,7 +16841,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -18659,7 +16997,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -18815,7 +17153,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -18973,7 +17311,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -19133,7 +17471,7 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -19291,7 +17629,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -19346,7 +17684,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 18,
+          "dom": 19,
           "added_date": "2026-08-11"
         },
         "plot": {}
@@ -19425,7 +17763,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -19581,7 +17919,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -19636,7 +17974,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 24,
+          "dom": 25,
           "added_date": "2026-08-05"
         },
         "plot": {}
@@ -19740,7 +18078,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -19793,7 +18131,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 32,
+          "dom": 33,
           "added_date": "2026-07-28"
         },
         "plot": {}
@@ -19897,7 +18235,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -20053,7 +18391,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-08-29",
+      "last_seen": "2026-08-30",
       "price_history": [
         {
           "date": "2026-08-11",
