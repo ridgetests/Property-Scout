@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-13T10:23:10.386396+00:00",
-  "count": 118,
+  "generated_at": "2026-09-14T10:52:45.677791+00:00",
+  "count": 121,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -119,8 +119,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65311"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -268,8 +268,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": 863,
       "footprints": {
@@ -425,8 +425,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -577,8 +577,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": 706,
       "footprints": {
@@ -732,8 +732,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -881,8 +881,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65241"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": 1583,
       "footprints": {
@@ -1037,8 +1037,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1186,8 +1186,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1329,8 +1329,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1478,8 +1478,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65243"
       },
-      "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
       "days_on_market": 0,
       "plot_m2": 1148,
       "footprints": {
@@ -1637,7 +1637,7 @@
         }
       },
       "first_seen": "2026-08-20",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-20",
@@ -1761,7 +1761,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1877,7 +1877,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1993,7 +1993,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2157,7 +2157,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2321,7 +2321,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2449,7 +2449,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2607,7 +2607,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -2758,7 +2758,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2786,120 +2786,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.87,
       "setting": 482
-    },
-    {
-      "id": "ag_9974450cdd",
-      "address": "Beavers Close, The Lodge Beavers Close, GU9",
-      "postcode": "GU9",
-      "street": "Beavers Close",
-      "lat": 51.21917359393933,
-      "lng": -0.7942443999999997,
-      "property_type": "house",
-      "beds": 2,
-      "price": 275000,
-      "price_poa": false,
-      "status": "live",
-      "streetview_url": "",
-      "source": {
-        "portal": "agent",
-        "name": "Andrew Lodge",
-        "url": "https://andrewlodge.net/properties/sale/farnham/farnham/beavers-close-the-lodge-beavers-close-gu9/",
-        "agent": "Andrew Lodge",
-        "uprn": ""
-      },
-      "source_label": "AGENT",
-      "media": {
-        "photo_count": 1,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d62-1c58-4f99-bd58-2ee4d615754b/0/1200.jpg"
-      },
-      "description_raw": "Beavers Close, The Lodge Beavers Close, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Available Photos Floorplan EPC 2 Beds - Flat - For Sale Beavers Close, The Lodge Beavers Close, GU9 Guide Price \u00a3275,000 2 1 1 A two bedroom first-floor apartment, perfectly positioned within easy reach of Farnham\u2019s vibrant town centre * No Onward Chain * Request a Viewing Brochure Key Features No onward chain 2 bedrooms Sitting/dining room with Juliet Balcony Kitchen Bathroom 2 allocated parking spaces Walking distance to town Property Summary A generously proportioned two-",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": null,
-          "dom": null,
-          "added_date": "2026-08-07T05:44:21Z"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "approx_location": true,
-      "flags": [
-        "plot-unverified"
-      ],
-      "dist_mi": 2.5,
-      "est_low": 336720,
-      "est_mid": 451196,
-      "est_high": 621000,
-      "est_basis": "district",
-      "est_n": 5335,
-      "est_basis_type": "all types",
-      "local_comps": [],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 47,
-      "typology": "Anomaly",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 23,
-          "max": 26,
-          "note": "\u00a3275k vs \u00a3451k comps (+39%)"
-        },
-        "Fit": {
-          "score": 17,
-          "max": 21,
-          "note": "2.5 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 88,
-          "max": 100,
-          "note": "\u00d70.88 \u00b7 development-friendly \u00b7 78 approved / 11 refused nearby \u00b7 3 Class-Q approved nearby"
-        }
-      },
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
-      "price_history": [
-        {
-          "date": "2026-08-07",
-          "price": 275000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 78,
-        "refused": 11,
-        "decided": 89,
-        "rate": 0.8764044943820225,
-        "classq_seen": 5,
-        "classq_approved": 3
-      },
-      "permission": 0.88,
-      "permission_label": "development-friendly",
-      "feasibility": 0.88,
-      "setting": 358
     },
     {
       "id": "ag_a2ce787477",
@@ -2992,7 +2878,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-27",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-27",
@@ -3108,7 +2994,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3270,7 +3156,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3437,7 +3323,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3597,7 +3483,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -3734,7 +3620,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3877,7 +3763,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4037,7 +3923,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4200,7 +4086,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-26",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-26",
@@ -4232,7 +4118,7 @@
     },
     {
       "id": "ag_0c9cdef8e9",
-      "address": "Quennells Hill, Wrecclesham, GU10",
+      "address": "Quennells Hill, Wrecclesham, GU10, Farnham",
       "postcode": "GU10",
       "street": "Quennells Hill",
       "lat": 51.19723035096643,
@@ -4255,9 +4141,9 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
-        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da7-a6b9-49c3-a875-879fc949fd16/0/1200.jpg"
+        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da7-a6b9-49c3-a875-879fc949fd16/0/0.jpg"
       },
-      "description_raw": "Quennells Hill, Wrecclesham, GU10 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - Property - Sold STC Quennells Hill, Wrecclesham, GU10 Guide Price \u00a3599,950 4 2 1 A spaciously designed four bedroom semi-detached home tucked away within a small residential development in south Farnham ** No Onward Chain ** Request a Viewing Key Features Living room Kitchen/dining room Principal bedroom with en-suite 3 further bedrooms The ground floor comprises an entrance hallway with a downstairs cloakroom. The rear aspect living room has oak",
+      "description_raw": "A spaciously designed four bedroom semi-detached home tucked away within a small residential development in south Farnham ** No Onward Chain **",
       "enrichment": {
         "market": {
           "reductions": 0,
@@ -4321,7 +4207,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4444,7 +4330,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4560,7 +4446,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4716,7 +4602,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4883,7 +4769,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -5039,7 +4925,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5186,7 +5072,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5352,7 +5238,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -5374,6 +5260,162 @@
       "permission_label": "development-friendly",
       "feasibility": 0.85,
       "setting": 215
+    },
+    {
+      "id": "ag_12fb076e05",
+      "address": "Bardsley Drive, Farnham, Surrey, GU9 8UH",
+      "postcode": "GU9 8UH",
+      "street": "Bardsley Drive",
+      "lat": 51.202184,
+      "lng": -0.812131,
+      "property_type": "house",
+      "beds": 0,
+      "price": 270000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Mackenzie Smith",
+        "url": "https://www.mackenziesmith.co.uk/property/bardsley-drive-farnham-surrey-gu9-8uh/",
+        "agent": "Mackenzie Smith",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65240",
+        "photo_url": "https://assets.reapit.net/mck/live/pictures/ALD/24/ALD240276_31.jpg"
+      },
+      "description_raw": "Bardsley Drive, Farnham, Surrey, GU9 8UH offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Bardsley Drive, Farnham, Surrey, GU9 8UH to view.",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-09-08T09:29:05Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.1,
+      "est_low": 243939,
+      "est_mid": 310000,
+      "est_high": 325252,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "24 Bardsley Drive",
+          "price": 310000,
+          "year": "2026",
+          "adj": 310000,
+          "pc": "GU9 8UH"
+        },
+        {
+          "addr": "94 Bardsley Drive",
+          "price": 262500,
+          "year": "2025",
+          "adj": 243939,
+          "pc": "GU9 8UH"
+        },
+        {
+          "addr": "89 Bardsley Drive",
+          "price": 325000,
+          "year": "2025",
+          "adj": 302020,
+          "pc": "GU9 8UQ"
+        },
+        {
+          "addr": "42 Bardsley Drive",
+          "price": 427000,
+          "year": "2025",
+          "adj": 396808,
+          "pc": "GU9 8UH"
+        },
+        {
+          "addr": "85 Bardsley Drive",
+          "price": 350000,
+          "year": "2024",
+          "adj": 325252,
+          "pc": "GU9 8UQ"
+        },
+        {
+          "addr": "25 Bardsley Drive",
+          "price": 165000,
+          "year": "2024",
+          "adj": 153333,
+          "pc": "GU9 8UQ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 44,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 15,
+          "max": 26,
+          "note": "\u00a3270k vs \u00a3310k comps (+13%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.1 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 91,
+          "max": 100,
+          "note": "\u00d70.91 \u00b7 development-friendly \u00b7 82 approved / 8 refused nearby \u00b7 2 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-09-14",
+      "price_history": [
+        {
+          "date": "2026-09-08",
+          "price": 270000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 82,
+        "refused": 8,
+        "decided": 90,
+        "rate": 0.9111111111111111,
+        "classq_seen": 2,
+        "classq_approved": 2
+      },
+      "permission": 0.91,
+      "permission_label": "development-friendly",
+      "feasibility": 0.91,
+      "setting": 462
     },
     {
       "id": "ag_6470a2b4e5",
@@ -5508,7 +5550,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -5568,7 +5610,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 9,
+          "dom": 10,
           "added_date": "2026-09-04"
         },
         "plot": {}
@@ -5668,7 +5710,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -5824,7 +5866,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5980,7 +6022,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6145,7 +6187,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6209,7 +6251,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 16,
+          "dom": 17,
           "added_date": "2026-08-28"
         },
         "plot": {}
@@ -6299,7 +6341,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-29",
@@ -6320,6 +6362,162 @@
       "permission": 0.89,
       "permission_label": "development-friendly",
       "feasibility": 0.89,
+      "setting": 0
+    },
+    {
+      "id": "ag_7d63eea75e",
+      "address": "Oxenden Road, Tongham, Farnham, Surrey, GU10 1AR",
+      "postcode": "GU10 1AR",
+      "street": "Oxenden Road",
+      "lat": 51.239487,
+      "lng": -0.733512,
+      "property_type": "house",
+      "beds": 0,
+      "price": 500000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Mackenzie Smith",
+        "url": "https://www.mackenziesmith.co.uk/property/oxenden-road-tongham-farnham-surrey-gu10-1ar-3/",
+        "agent": "Mackenzie Smith",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43741/65268",
+        "photo_url": "https://assets.reapit.net/mck/live/pictures/ALD/24/ALD240148_09.jpg"
+      },
+      "description_raw": "Oxenden Road, Tongham, Farnham, Surrey, GU10 1AR offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Oxenden Road, Tongham, Farnham, Surrey, GU10 1AR to view.",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:44:22Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 5.2,
+      "est_low": 205000,
+      "est_mid": 835000,
+      "est_high": 1765656,
+      "est_basis": "nearby (GU10 1)",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "THE COURTYARD Moor Park House Way",
+          "price": 835000,
+          "year": "2026",
+          "adj": 835000,
+          "pc": "GU10 1FE"
+        },
+        {
+          "addr": "SANDHURST Guildford Road",
+          "price": 205000,
+          "year": "2026",
+          "adj": 205000,
+          "pc": "GU10 1PG"
+        },
+        {
+          "addr": "HOP KILN COTTA Moor Park Lane",
+          "price": 620000,
+          "year": "2025",
+          "adj": 576161,
+          "pc": "GU10 1NS"
+        },
+        {
+          "addr": "1 Camp Hill",
+          "price": 1900000,
+          "year": "2025",
+          "adj": 1765656,
+          "pc": "GU10 1RJ"
+        },
+        {
+          "addr": "2 Swifts Close",
+          "price": 1915000,
+          "year": "2025",
+          "adj": 1779595,
+          "pc": "GU10 1QX"
+        },
+        {
+          "addr": "SANDHURST Guildford Road",
+          "price": 159000,
+          "year": "2025",
+          "adj": 147757,
+          "pc": "GU10 1PG"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 35,
+      "typology": "Anomaly",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3500k vs \u00a3835k comps (+40%)"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 21,
+          "note": "5.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 76,
+          "max": 100,
+          "note": "\u00d70.76 \u00b7 development-friendly \u00b7 70 approved / 22 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-09-14",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 500000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 70,
+        "refused": 22,
+        "decided": 92,
+        "rate": 0.7608695652173914,
+        "classq_seen": 1,
+        "classq_approved": 1
+      },
+      "permission": 0.76,
+      "permission_label": "development-friendly",
+      "feasibility": 0.76,
       "setting": 0
     },
     {
@@ -6455,7 +6653,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-23",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-23",
@@ -6618,7 +6816,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -6671,7 +6869,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 11,
+          "dom": 12,
           "added_date": "2026-09-02"
         },
         "plot": {}
@@ -6773,7 +6971,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -6826,7 +7024,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 23,
+          "dom": 24,
           "added_date": "2026-08-21"
         },
         "plot": {}
@@ -6930,7 +7128,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-22",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-22",
@@ -7044,7 +7242,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7158,7 +7356,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -7301,7 +7499,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7469,7 +7667,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7635,7 +7833,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7799,7 +7997,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7968,7 +8166,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -8124,7 +8322,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -8179,7 +8377,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 17,
+          "dom": 18,
           "added_date": "2026-08-27"
         },
         "plot": {}
@@ -8281,7 +8479,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-28",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-28",
@@ -8401,7 +8599,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8563,7 +8761,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8729,7 +8927,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8789,7 +8987,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 1,
+          "dom": 2,
           "added_date": "2026-09-12"
         },
         "plot": {}
@@ -8891,7 +9089,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-13",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-13",
@@ -8950,7 +9148,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 2,
+          "dom": 3,
           "added_date": "2026-09-11"
         },
         "plot": {}
@@ -9038,7 +9236,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -9097,7 +9295,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "Sold STC",
-          "dom": 16,
+          "dom": 17,
           "added_date": "2026-08-28"
         },
         "plot": {}
@@ -9199,7 +9397,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-29",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-29",
@@ -9258,7 +9456,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 31,
+          "dom": 32,
           "added_date": "2026-08-13"
         },
         "plot": {}
@@ -9339,7 +9537,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -9392,7 +9590,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 9,
+          "dom": 10,
           "added_date": "2026-09-04"
         },
         "plot": {}
@@ -9478,7 +9676,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -9592,7 +9790,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9752,7 +9950,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9918,7 +10116,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10082,7 +10280,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-22",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-22",
@@ -10240,7 +10438,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10402,7 +10600,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10560,7 +10758,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -10620,7 +10818,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 10,
+          "dom": 11,
           "added_date": "2026-09-03"
         },
         "plot": {}
@@ -10720,7 +10918,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -10780,7 +10978,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 40,
+          "dom": 41,
           "added_date": "2026-08-04"
         },
         "plot": {}
@@ -10884,7 +11082,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -10998,7 +11196,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11020,6 +11218,112 @@
       "permission_label": "development-friendly",
       "feasibility": 0.88,
       "setting": 358
+    },
+    {
+      "id": "ag_fc8269496f",
+      "address": "Westwood Lane, Normandy, Guildford, Surrey, GU3 2ES",
+      "postcode": "GU3 2ES",
+      "street": "Westwood Lane",
+      "lat": 51.240864,
+      "lng": -0.672775,
+      "property_type": "house",
+      "beds": 0,
+      "price": 500000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Mackenzie Smith",
+        "url": "https://www.mackenziesmith.co.uk/property/westwood-lane-normandy-guildford-surrey-gu3-2es/",
+        "agent": "Mackenzie Smith",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43740/65291",
+        "photo_url": "https://assets.reapit.net/mck/live/pictures/AVA/24/AVA240275_17.jpg"
+      },
+      "description_raw": "Westwood Lane, Normandy, Guildford, Surrey, GU3 2ES offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Westwood Lane, Normandy, Guildford, Surrey, GU3 2ES to view.",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-08-08T12:44:00Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 7.3,
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 29,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 17,
+          "max": 26,
+          "note": "~\u00a3500k"
+        },
+        "Fit": {
+          "score": 8,
+          "max": 21,
+          "note": "7.3 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 75,
+          "max": 100,
+          "note": "\u00d70.75 \u00b7 development-friendly \u00b7 68 approved / 23 refused nearby \u00b7 2 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-08-08",
+      "last_seen": "2026-09-14",
+      "price_history": [
+        {
+          "date": "2026-08-08",
+          "price": 500000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 68,
+        "refused": 23,
+        "decided": 91,
+        "rate": 0.7472527472527473,
+        "classq_seen": 2,
+        "classq_approved": 2
+      },
+      "permission": 0.75,
+      "permission_label": "development-friendly",
+      "feasibility": 0.75,
+      "setting": 0
     },
     {
       "id": "760dd303-6c83-45e0-9386-a6409b7331ee",
@@ -11051,7 +11355,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 4,
+          "dom": 5,
           "added_date": "2026-09-09"
         },
         "plot": {}
@@ -11151,7 +11455,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -11206,7 +11510,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 17,
+          "dom": 18,
           "added_date": "2026-08-27"
         },
         "plot": {}
@@ -11306,7 +11610,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-28",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-28",
@@ -11366,7 +11670,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 27,
+          "dom": 28,
           "added_date": "2026-08-17"
         },
         "plot": {}
@@ -11466,7 +11770,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -11624,7 +11928,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11677,7 +11981,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 2,
+          "dom": 3,
           "added_date": "2026-09-11"
         },
         "plot": {}
@@ -11781,7 +12085,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -11834,7 +12138,7 @@
           "reductions": 1,
           "is_reduced": true,
           "status": "For sale",
-          "dom": 31,
+          "dom": 32,
           "added_date": "2026-08-13"
         },
         "plot": {}
@@ -11939,7 +12243,7 @@
         "Recently reduced"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -12099,7 +12403,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12259,7 +12563,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -12417,7 +12721,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -12575,7 +12879,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -12628,7 +12932,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 11,
+          "dom": 12,
           "added_date": "2026-09-02"
         },
         "plot": {}
@@ -12728,7 +13032,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -12749,6 +13053,142 @@
       "permission": 0.99,
       "permission_label": "development-friendly",
       "feasibility": 0.99,
+      "setting": 0
+    },
+    {
+      "id": "b406a673-d74f-4d1c-9d5c-8e5d1ce2f0a7",
+      "address": "Frensham Lane, GU35 0QJ",
+      "postcode": "GU35 0QJ",
+      "street": "Frensham Lane",
+      "lat": 51.122818,
+      "lng": -0.843859,
+      "property_type": "detached",
+      "beds": 3,
+      "price": 525000,
+      "status": "live",
+      "relisted_count": 0,
+      "source": {
+        "portal": "homedata",
+        "listing_id": "b406a673-d74f-4d1c-9d5c-8e5d1ce2f0a7",
+        "url": "",
+        "agent": "Emoov",
+        "uprn": ""
+      },
+      "media": {
+        "photo_count": 0,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65228"
+      },
+      "description_raw": "",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": "For sale",
+          "dom": 1,
+          "added_date": "2026-09-13"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 4.5,
+      "precise_location": true,
+      "floor_area_m2": 72,
+      "built_form": "Detached",
+      "epc_rating": "E",
+      "est_low": 249784,
+      "est_mid": 402811,
+      "est_high": 1094976,
+      "est_basis": "same street",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "STONE EDGE Frensham Lane",
+          "price": 437500,
+          "year": "2023",
+          "adj": 402811,
+          "pc": "GU35 0QJ"
+        },
+        {
+          "addr": "COLYTON Frensham Lane",
+          "price": 252500,
+          "year": "2021",
+          "adj": 249784,
+          "pc": "GU35 0QJ"
+        },
+        {
+          "addr": "TIGNALS Frensham Lane",
+          "price": 995000,
+          "year": "2019",
+          "adj": 1094976,
+          "pc": "GU35 8TB"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 32,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 8,
+          "max": 26,
+          "note": "\u00a3525k vs \u00a3403k comps (-30%)"
+        },
+        "Fit": {
+          "score": 13,
+          "max": 21,
+          "note": "4.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 91,
+          "max": 100,
+          "note": "\u00d70.91 \u00b7 development-friendly \u00b7 73 approved / 7 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-14",
+      "price_history": [
+        {
+          "date": "2026-09-14",
+          "price": 525000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 73,
+        "refused": 7,
+        "decided": 80,
+        "rate": 0.9125,
+        "classq_seen": 3,
+        "classq_approved": 3
+      },
+      "permission": 0.91,
+      "permission_label": "development-friendly",
+      "feasibility": 0.91,
       "setting": 0
     },
     {
@@ -12842,7 +13282,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12963,7 +13403,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -13084,7 +13524,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -13240,7 +13680,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -13407,7 +13847,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -13471,7 +13911,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 32,
+          "dom": 33,
           "added_date": "2026-08-12"
         },
         "plot": {}
@@ -13573,7 +14013,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -13628,7 +14068,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 40,
+          "dom": 41,
           "added_date": "2026-08-04"
         },
         "plot": {}
@@ -13728,7 +14168,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -13781,7 +14221,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 9,
+          "dom": 10,
           "added_date": "2026-09-04"
         },
         "plot": {}
@@ -13881,7 +14321,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -14037,7 +14477,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -14195,7 +14635,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -14311,7 +14751,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -14364,7 +14804,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 2,
+          "dom": 3,
           "added_date": "2026-09-11"
         },
         "plot": {}
@@ -14468,7 +14908,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -14521,7 +14961,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 31,
+          "dom": 32,
           "added_date": "2026-08-13"
         },
         "plot": {}
@@ -14625,7 +15065,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -14678,7 +15118,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 4,
+          "dom": 5,
           "added_date": "2026-09-09"
         },
         "plot": {}
@@ -14778,7 +15218,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -14831,7 +15271,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 30,
+          "dom": 31,
           "added_date": "2026-08-14"
         },
         "plot": {}
@@ -14927,7 +15367,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-21",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-21",
@@ -14975,9 +15415,9 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da0-6a5a-43b1-a064-94b5dd6cd339/0/1200.jpg"
+        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da0-6a5a-43b1-a064-94b5dd6cd339/0/0.jpg"
       },
-      "description_raw": "Mount Pleasant, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 3 Beds - Property - Sold STC Mount Pleasant, Farnham, GU9 Guide Price \u00a3800,000 3 1 3 A spacious and well-presented 3 bedroom semi-detached family home, ideally positioned within walking distance of Farnham town centre, well-regarded schools and the mainline train station Request a Viewing Key Features Spacious three-bedroom semi-detached family home Walking distance to Farnham town centre Convenient for schools and mainline train station Front-aspect living ro",
+      "description_raw": "A spacious and well-presented 3 bedroom semi-detached family home, ideally positioned within walking distance of Farnham town centre, well-regarded schools and the mainline train station",
       "enrichment": {
         "market": {
           "reductions": 0,
@@ -15041,7 +15481,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15089,9 +15529,9 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d49-63d7-4acb-b308-01d1216c520f/0/1200.jpg"
+        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d49-63d7-4acb-b308-01d1216c520f/0/0.jpg"
       },
-      "description_raw": "Langham Court, Farnham, GU9 | Andrew Lodge Estate Agents Skip to content Valuation Search Instagram Menu Sold STC Photos Floorplan EPC 4 Beds - Property - Sold STC Langham Court, Farnham, GU9 Guide Price \u00a3725,000 4 2 1 A stylish 4-bedroom semi-detached family home in the sought-after location of South Farnham, with views overlooking Langham's recreation ground. Request a Viewing Key Features Living room Kitchen 2 Cloakrooms 4 bedrooms Family bathroom En - suite shower room Enclosed rear garden Parking for 2 vehicles Views over Langham's recreation ground Positioned in a quiet development with ",
+      "description_raw": "A stylish 4-bedroom semi-detached family home in the sought-after location of South Farnham, with views overlooking Langham's recreation ground.",
       "enrichment": {
         "market": {
           "reductions": 0,
@@ -15155,7 +15595,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15269,7 +15709,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15383,7 +15823,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15497,7 +15937,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15611,7 +16051,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -15725,7 +16165,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -15839,7 +16279,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -15995,7 +16435,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -16151,7 +16591,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -16206,7 +16646,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 11,
+          "dom": 12,
           "added_date": "2026-09-02"
         },
         "plot": {}
@@ -16289,7 +16729,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -16342,7 +16782,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 12,
+          "dom": 13,
           "added_date": "2026-09-01"
         },
         "plot": {}
@@ -16446,7 +16886,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-10",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-10",
@@ -16602,7 +17042,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -16760,7 +17200,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -16920,7 +17360,7 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -16975,7 +17415,7 @@
           "reductions": 0,
           "is_reduced": false,
           "status": "For sale",
-          "dom": 3,
+          "dom": 4,
           "added_date": "2026-09-10"
         },
         "plot": {}
@@ -17079,7 +17519,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -17235,7 +17675,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -17393,7 +17833,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-09-13",
+      "last_seen": "2026-09-14",
       "price_history": [
         {
           "date": "2026-08-11",
