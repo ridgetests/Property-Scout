@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-30T11:30:10.680588+00:00",
-  "count": 93,
+  "generated_at": "2026-10-01T12:04:01.101942+00:00",
+  "count": 89,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -38,7 +38,7 @@
       "dist_mi": 4.8,
       "score": 40,
       "reasons": [
-        "Est. on market Oct 2026\u2013Mar 2027",
+        "Likely to market soon (by ~Mar 2027)",
         "Home \u00b7 206 m\u00b2",
         "~\u00a3764k\u2013\u00a3926k Farnham-area est"
       ],
@@ -52,7 +52,7 @@
       "floor_area_m2": 206,
       "built_form": "Detached",
       "epc_rating": "D",
-      "market_window": "Est. on market Oct 2026\u2013Mar 2027",
+      "market_window": "Likely to market soon (by ~Mar 2027)",
       "est_low": 764411,
       "est_high": 926764,
       "est_mid": 831717,
@@ -112,8 +112,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65278"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": 1060,
       "footprints": {
@@ -188,7 +188,7 @@
       "dist_mi": 8.5,
       "score": 42,
       "reasons": [
-        "Est. on market Oct 2026\u2013Mar 2027",
+        "Likely to market soon (by ~Mar 2027)",
         "Home \u00b7 89 m\u00b2",
         "~\u00a3527k\u2013\u00a3564k Farnham-area est"
       ],
@@ -203,7 +203,7 @@
       "floor_area_m2": 89,
       "built_form": "Detached",
       "epc_rating": "D",
-      "market_window": "Est. on market Oct 2026\u2013Mar 2027",
+      "market_window": "Likely to market soon (by ~Mar 2027)",
       "est_low": 527613,
       "est_high": 564851,
       "est_mid": 561342,
@@ -270,8 +270,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65309"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -321,155 +321,6 @@
           "score": 96,
           "max": 100,
           "note": "\u00d70.96 \u00b7 development-friendly \u00b7 91 approved / 4 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5200080",
-      "address": "11 Peperharow Road, Godalming \u2014 GU7 2PH",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU7 2PH",
-      "price": 557575,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.19213,
-      "lng": -0.61736,
-      "precise_location": false,
-      "dist_mi": 8.7,
-      "score": 40,
-      "reasons": [
-        "Likely to market soon (by ~Feb 2027)",
-        "~\u00a3223k\u2013\u00a3611k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.19213,-0.61736",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "market_window": "Likely to market soon (by ~Feb 2027)",
-      "est_low": 223030,
-      "est_high": 611474,
-      "est_mid": 557575,
-      "local_comps": [
-        {
-          "addr": "96 Peperharow Road",
-          "price": 200000,
-          "year": "2025",
-          "adj": 185858,
-          "pc": "GU7 2PN"
-        },
-        {
-          "addr": "30 Peperharow Road",
-          "price": 658000,
-          "year": "2025",
-          "adj": 611474,
-          "pc": "GU7 2PH"
-        },
-        {
-          "addr": "17 Peperharow Road",
-          "price": 600000,
-          "year": "2025",
-          "adj": 557575,
-          "pc": "GU7 2PH"
-        },
-        {
-          "addr": "120 Peperharow Road",
-          "price": 1250000,
-          "year": "2025",
-          "adj": 1161616,
-          "pc": "GU7 2PN"
-        },
-        {
-          "addr": "90 Peperharow Road",
-          "price": 240000,
-          "year": "2025",
-          "adj": 223030,
-          "pc": "GU7 2PN"
-        },
-        {
-          "addr": "41A Peperharow Road",
-          "price": 260000,
-          "year": "2025",
-          "adj": 241616,
-          "pc": "GU7 2PH"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5200080",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65311"
-      },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 85,
-        "refused": 8,
-        "decided": 93,
-        "rate": 0.9139784946236559,
-        "classq_seen": 5,
-        "classq_approved": 2
-      },
-      "permission": 0.91,
-      "permission_label": "development-friendly",
-      "feasibility": 0.91,
-      "setting": 0,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 15,
-          "max": 26,
-          "note": "~\u00a3558k"
-        },
-        "Fit": {
-          "score": 6,
-          "max": 21,
-          "note": "8.7 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 91,
-          "max": 100,
-          "note": "\u00d70.91 \u00b7 development-friendly \u00b7 85 approved / 8 refused nearby \u00b7 2 Class-Q approved nearby"
         }
       }
     },
@@ -568,8 +419,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": 863,
       "footprints": {
@@ -725,8 +576,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -877,8 +728,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": 706,
       "footprints": {
@@ -1032,8 +883,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1181,8 +1032,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65241"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": 1583,
       "footprints": {
@@ -1337,8 +1188,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1486,8 +1337,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1629,8 +1480,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-09-30",
-      "last_seen": "2026-09-30",
+      "first_seen": "2026-10-01",
+      "last_seen": "2026-10-01",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1774,7 +1625,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1897,7 +1748,7 @@
         }
       },
       "first_seen": "2026-08-20",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-20",
@@ -2033,7 +1884,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2197,7 +2048,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2361,7 +2212,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2489,7 +2340,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2647,7 +2498,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -2798,7 +2649,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2918,7 +2769,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-27",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-27",
@@ -3034,7 +2885,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3196,7 +3047,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3363,7 +3214,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3523,7 +3374,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -3637,7 +3488,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-27",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-27",
@@ -3776,7 +3627,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3919,7 +3770,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4079,7 +3930,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4242,7 +4093,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-26",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-26",
@@ -4363,7 +4214,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4486,7 +4337,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4602,7 +4453,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-25",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-25",
@@ -4716,7 +4567,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4872,7 +4723,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5039,7 +4890,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -5153,7 +5004,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-20",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-20",
@@ -5311,7 +5162,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5458,7 +5309,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5624,7 +5475,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -5780,7 +5631,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-08",
@@ -5936,7 +5787,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -6099,7 +5950,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6255,7 +6106,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6420,7 +6271,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6587,7 +6438,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6743,7 +6594,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-23",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-23",
@@ -6906,7 +6757,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -7020,7 +6871,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7157,7 +7008,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7325,7 +7176,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7491,7 +7342,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7655,7 +7506,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7824,7 +7675,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7980,7 +7831,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -8096,7 +7947,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8258,7 +8109,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8424,7 +8275,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8545,7 +8396,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8705,7 +8556,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8871,7 +8722,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9033,7 +8884,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-18",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-09-18",
@@ -9197,7 +9048,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9363,7 +9214,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9519,7 +9370,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9677,7 +9528,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9798,7 +9649,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9904,7 +9755,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -10062,7 +9913,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10084,164 +9935,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.9,
       "setting": 468
-    },
-    {
-      "id": "ag_917f5252c9",
-      "address": "Milford, Godalming, Godalming",
-      "postcode": "GU7 1AU",
-      "street": "Milford",
-      "lat": 51.185549,
-      "lng": -0.612177,
-      "property_type": "house",
-      "beds": 2,
-      "price": 375000,
-      "price_poa": false,
-      "status": "live",
-      "streetview_url": "",
-      "source": {
-        "portal": "agent",
-        "name": "Warren Powell Richards",
-        "url": "https://www.wpr.co.uk/properties/sale/godalming/godalming/milford-godalming/",
-        "agent": "Warren Powell Richards",
-        "uprn": ""
-      },
-      "source_label": "AGENT",
-      "media": {
-        "photo_count": 1,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD250010/0/0.jpg"
-      },
-      "description_raw": "A beautifully presented 2 double bedroom semi-detached home with a home office, benefiting from a lovely outlook to light woodland, and two parking spaces",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Under Offer",
-          "dom": null,
-          "added_date": "2026-08-07T06:08:04Z"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 8.9,
-      "est_low": 168000,
-      "est_mid": 500000,
-      "est_high": 545000,
-      "est_basis": "nearby (GU7 1)",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "local_comps": [
-        {
-          "addr": "10 Lammas Close",
-          "price": 500000,
-          "year": "2026",
-          "adj": 500000,
-          "pc": "GU7 1YZ"
-        },
-        {
-          "addr": "9 Grayling Close",
-          "price": 545000,
-          "year": "2026",
-          "adj": 545000,
-          "pc": "GU7 1AG"
-        },
-        {
-          "addr": "STUART COURT Town End Street",
-          "price": 110000,
-          "year": "2026",
-          "adj": 110000,
-          "pc": "GU7 1BJ"
-        },
-        {
-          "addr": "38 Alderbank Drive",
-          "price": 820000,
-          "year": "2026",
-          "adj": 820000,
-          "pc": "GU7 1GB"
-        },
-        {
-          "addr": "11 Wey Road",
-          "price": 168000,
-          "year": "2026",
-          "adj": 168000,
-          "pc": "GU7 1ND"
-        },
-        {
-          "addr": "EDISON HOUSE Flambard Way",
-          "price": 245000,
-          "year": "2026",
-          "adj": 245000,
-          "pc": "GU7 1FF"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 30,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 17,
-          "max": 26,
-          "note": "\u00a3375k vs \u00a3500k comps (+25%)"
-        },
-        "Fit": {
-          "score": 5,
-          "max": 21,
-          "note": "8.9 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 83,
-          "max": 100,
-          "note": "\u00d70.83 \u00b7 development-friendly \u00b7 82 approved / 8 refused nearby \u00b7 3 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-07",
-      "last_seen": "2026-09-30",
-      "price_history": [
-        {
-          "date": "2026-08-07",
-          "price": 375000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [
-        "Conservation Area"
-      ],
-      "planning": {
-        "n": 100,
-        "approved": 82,
-        "refused": 8,
-        "decided": 90,
-        "rate": 0.9111111111111111,
-        "classq_seen": 3,
-        "classq_approved": 3
-      },
-      "permission": 0.83,
-      "permission_label": "development-friendly",
-      "feasibility": 0.83,
-      "setting": 0
     },
     {
       "id": "ag_5fa17e75bd",
@@ -10376,7 +10069,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -10399,162 +10092,6 @@
       "permission": 0.83,
       "permission_label": "development-friendly",
       "feasibility": 0.83,
-      "setting": 0
-    },
-    {
-      "id": "ag_e2e7ba546a",
-      "address": "5 bedroom detached house for sale in Bordon Hampshire",
-      "postcode": "GU35 0QB",
-      "street": "5 bedroom detached house for sale in Bordon Hampshire",
-      "lat": 51.121838,
-      "lng": -0.842898,
-      "property_type": "detached",
-      "beds": 5,
-      "price": 695000,
-      "price_poa": false,
-      "status": "live",
-      "streetview_url": "",
-      "source": {
-        "portal": "agent",
-        "name": "Purplebricks (online / ex-Strike)",
-        "url": "https://www.purplebricks.co.uk/property-for-sale/5-bedroom-detached-house-lindford-1838102",
-        "agent": "Purplebricks (online / ex-Strike)",
-        "uprn": ""
-      },
-      "source_label": "AGENT",
-      "media": {
-        "photo_count": 1,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43809/65229",
-        "photo_url": "https://purplebricks-photography.imgix.net/orders2025/1773393/photosfinal/dsc00009-fa-gu350qb.jpg?auto=format&amp;w=1200&amp;h=630&amp;q=70&amp;fit=crop&amp;fill=solid&amp;fill-color=000000"
-      },
-      "description_raw": "**Please take the 360 tour to appreciate this home** **5 Bedroomed Detached family home** **3 Reception rooms, separate utility room and downstairs cloakroom**\u2026",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": null,
-          "dom": null,
-          "added_date": "2026-08-21T05:55:44Z"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.6,
-      "est_low": 542800,
-      "est_mid": 585454,
-      "est_high": 594747,
-      "est_basis": "this postcode",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "local_comps": [
-        {
-          "addr": "2 Grayshott Laurels",
-          "price": 640000,
-          "year": "2025",
-          "adj": 594747,
-          "pc": "GU35 0QB"
-        },
-        {
-          "addr": "10 Grayshott Laurels",
-          "price": 610000,
-          "year": "2025",
-          "adj": 566868,
-          "pc": "GU35 0QB"
-        },
-        {
-          "addr": "28 Grayshott Laurels",
-          "price": 650100,
-          "year": "2024",
-          "adj": 604133,
-          "pc": "GU35 0QB"
-        },
-        {
-          "addr": "21 Grayshott Laurels",
-          "price": 580000,
-          "year": "2024",
-          "adj": 538989,
-          "pc": "GU35 0QB"
-        },
-        {
-          "addr": "26 Grayshott Laurels",
-          "price": 630000,
-          "year": "2024",
-          "adj": 585454,
-          "pc": "GU35 0QB"
-        },
-        {
-          "addr": "14 Grayshott Laurels",
-          "price": 590000,
-          "year": "2022",
-          "adj": 542800,
-          "pc": "GU35 0QB"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 32,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 9,
-          "max": 26,
-          "note": "\u00a3695k vs \u00a3585k comps (-19%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.6 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 90,
-          "max": 100,
-          "note": "\u00d70.90 \u00b7 development-friendly \u00b7 75 approved / 8 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-09-30",
-      "price_history": [
-        {
-          "date": "2026-08-21",
-          "price": 695000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 75,
-        "refused": 8,
-        "decided": 83,
-        "rate": 0.9036144578313253,
-        "classq_seen": 1,
-        "classq_approved": 1
-      },
-      "permission": 0.9,
-      "permission_label": "development-friendly",
-      "feasibility": 0.9,
       "setting": 0
     },
     {
@@ -10648,7 +10185,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10766,7 +10303,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10887,7 +10424,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11008,7 +10545,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -11164,7 +10701,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -11331,7 +10868,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -11498,7 +11035,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -11614,7 +11151,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11728,7 +11265,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11842,7 +11379,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11956,7 +11493,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12070,7 +11607,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12184,7 +11721,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -12298,7 +11835,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -12412,7 +11949,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12568,7 +12105,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12724,7 +12261,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -12882,7 +12419,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -13040,7 +12577,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -13098,7 +12635,7 @@
         "market": {
           "reductions": 0,
           "is_reduced": false,
-          "status": null,
+          "status": "Under Offer",
           "dom": null,
           "added_date": "2026-08-08T12:10:55Z"
         },
@@ -13200,169 +12737,11 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-08",
           "price": 610000
-        }
-      ],
-      "plot_m2": null,
-      "constraints": [
-        "Conservation Area"
-      ],
-      "planning": {
-        "n": 100,
-        "approved": 82,
-        "refused": 8,
-        "decided": 90,
-        "rate": 0.9111111111111111,
-        "classq_seen": 3,
-        "classq_approved": 3
-      },
-      "permission": 0.83,
-      "permission_label": "development-friendly",
-      "feasibility": 0.83,
-      "setting": 0
-    },
-    {
-      "id": "ag_4accb42a89",
-      "address": "Farncombe, Surrey, Surrey",
-      "postcode": "GU7 1AU",
-      "street": "Farncombe",
-      "lat": 51.185549,
-      "lng": -0.612177,
-      "property_type": "house",
-      "beds": 3,
-      "price": 670000,
-      "price_poa": false,
-      "status": "live",
-      "streetview_url": "",
-      "source": {
-        "portal": "agent",
-        "name": "Warren Powell Richards",
-        "url": "https://www.wpr.co.uk/properties/sale/surrey/surrey/farncombe-surrey/",
-        "agent": "Warren Powell Richards",
-        "uprn": ""
-      },
-      "source_label": "AGENT",
-      "media": {
-        "photo_count": 1,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD250074/0/0.jpg"
-      },
-      "description_raw": "Offered with no onward chain and a stones throw from Farncombe mainline station, a three bedroom detached home in a quiet residential location, with a large Westerly facing garden",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": "Under Offer",
-          "dom": null,
-          "added_date": "2026-08-08T12:11:05Z"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 8.9,
-      "est_low": 168000,
-      "est_mid": 500000,
-      "est_high": 545000,
-      "est_basis": "nearby (GU7 1)",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "local_comps": [
-        {
-          "addr": "10 Lammas Close",
-          "price": 500000,
-          "year": "2026",
-          "adj": 500000,
-          "pc": "GU7 1YZ"
-        },
-        {
-          "addr": "9 Grayling Close",
-          "price": 545000,
-          "year": "2026",
-          "adj": 545000,
-          "pc": "GU7 1AG"
-        },
-        {
-          "addr": "STUART COURT Town End Street",
-          "price": 110000,
-          "year": "2026",
-          "adj": 110000,
-          "pc": "GU7 1BJ"
-        },
-        {
-          "addr": "38 Alderbank Drive",
-          "price": 820000,
-          "year": "2026",
-          "adj": 820000,
-          "pc": "GU7 1GB"
-        },
-        {
-          "addr": "11 Wey Road",
-          "price": 168000,
-          "year": "2026",
-          "adj": 168000,
-          "pc": "GU7 1ND"
-        },
-        {
-          "addr": "EDISON HOUSE Flambard Way",
-          "price": 245000,
-          "year": "2026",
-          "adj": 245000,
-          "pc": "GU7 1FF"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 21,
-      "typology": "Candidate",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 6,
-          "max": 26,
-          "note": "\u00a3670k vs \u00a3500k comps (-34%)"
-        },
-        "Fit": {
-          "score": 5,
-          "max": 21,
-          "note": "8.9 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 83,
-          "max": 100,
-          "note": "\u00d70.83 \u00b7 development-friendly \u00b7 82 approved / 8 refused nearby \u00b7 3 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "plot-unverified"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-08-08",
-      "last_seen": "2026-09-30",
-      "price_history": [
-        {
-          "date": "2026-08-08",
-          "price": 670000
         }
       ],
       "plot_m2": null,
@@ -13516,7 +12895,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-09-30",
+      "last_seen": "2026-10-01",
       "price_history": [
         {
           "date": "2026-08-11",
