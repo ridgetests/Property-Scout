@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-01T12:04:01.101942+00:00",
-  "count": 89,
+  "generated_at": "2026-10-02T11:23:31.282222+00:00",
+  "count": 88,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -112,8 +112,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65278"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": 1060,
       "footprints": {
@@ -270,8 +270,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65309"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -419,8 +419,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": 863,
       "footprints": {
@@ -576,8 +576,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -728,8 +728,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": 706,
       "footprints": {
@@ -883,8 +883,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1032,8 +1032,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65241"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": 1583,
       "footprints": {
@@ -1188,8 +1188,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1337,8 +1337,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1480,8 +1480,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
       },
-      "first_seen": "2026-10-01",
-      "last_seen": "2026-10-01",
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1625,7 +1625,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1748,7 +1748,7 @@
         }
       },
       "first_seen": "2026-08-20",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-20",
@@ -1884,7 +1884,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2048,7 +2048,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2212,7 +2212,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2340,7 +2340,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2498,7 +2498,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -2649,7 +2649,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2769,7 +2769,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-27",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-27",
@@ -2885,7 +2885,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3047,7 +3047,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3214,7 +3214,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3374,7 +3374,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -3488,7 +3488,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-27",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-09-27",
@@ -3627,7 +3627,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3770,7 +3770,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3930,7 +3930,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4093,7 +4093,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-26",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-26",
@@ -4214,7 +4214,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4337,7 +4337,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4453,7 +4453,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-25",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-09-25",
@@ -4567,7 +4567,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4723,7 +4723,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4890,7 +4890,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -5004,7 +5004,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-20",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-09-20",
@@ -5162,7 +5162,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5309,7 +5309,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5475,7 +5475,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -5631,7 +5631,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-09-08",
@@ -5653,169 +5653,6 @@
       "permission_label": "development-friendly",
       "feasibility": 0.91,
       "setting": 462
-    },
-    {
-      "id": "ag_6470a2b4e5",
-      "address": "Rye Common Lane, Crondall, Farnham, Hampshire, GU10 5EQ",
-      "postcode": "GU10 5EQ",
-      "street": "Rye Common Lane",
-      "lat": 51.246714,
-      "lng": -0.878582,
-      "property_type": "house",
-      "beds": 0,
-      "price": 300000,
-      "price_poa": false,
-      "status": "live",
-      "streetview_url": "",
-      "source": {
-        "portal": "agent",
-        "name": "Mackenzie Smith",
-        "url": "https://www.mackenziesmith.co.uk/property/rye-common-lane-crondall-farnham-hampshire-gu10-5eq-2/",
-        "agent": "Mackenzie Smith",
-        "uprn": ""
-      },
-      "source_label": "AGENT",
-      "media": {
-        "photo_count": 1,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43736/65216",
-        "photo_url": "https://assets.reapit.net/mck/live/pictures/FLT/25/FLT250316_02.jpg"
-      },
-      "description_raw": "Rye Common Lane, Crondall, Farnham, Hampshire, GU10 5EQ offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Rye Common Lane, Crondall, Farnham, Hampshire, GU10 5EQ to view.",
-      "enrichment": {
-        "market": {
-          "reductions": 0,
-          "is_reduced": false,
-          "status": null,
-          "dom": null,
-          "added_date": "2026-09-12T09:20:03Z"
-        },
-        "plot": {}
-      },
-      "comps": [],
-      "dist_mi": 4.9,
-      "est_low": 478585,
-      "est_mid": 695000,
-      "est_high": 730000,
-      "est_basis": "nearby (GU10 5)",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "local_comps": [
-        {
-          "addr": "7 Somerset Fields",
-          "price": 595000,
-          "year": "2026",
-          "adj": 595000,
-          "pc": "GU10 5BF"
-        },
-        {
-          "addr": "3 Broadlands Close",
-          "price": 220178,
-          "year": "2026",
-          "adj": 220178,
-          "pc": "GU10 5LE"
-        },
-        {
-          "addr": "8 Eggars Field",
-          "price": 787500,
-          "year": "2026",
-          "adj": 787500,
-          "pc": "GU10 5LD"
-        },
-        {
-          "addr": "2 Hole Lane",
-          "price": 730000,
-          "year": "2026",
-          "adj": 730000,
-          "pc": "GU10 5LP"
-        },
-        {
-          "addr": "4A Oakway",
-          "price": 695000,
-          "year": "2026",
-          "adj": 695000,
-          "pc": "GU10 5LR"
-        },
-        {
-          "addr": "27 Babs Field",
-          "price": 515000,
-          "year": "2025",
-          "adj": 478585,
-          "pc": "GU10 5LS"
-        }
-      ],
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "score": 53,
-      "typology": "Development play",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 27,
-          "max": 38,
-          "note": "1,848 m\u00b2 plot (4.9\u00d7 your home) \u00b7 approx, capped"
-        },
-        "Value": {
-          "score": 22,
-          "max": 26,
-          "note": "\u00a3300k vs \u00a3695k comps (+50%)"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.9 mi from home"
-        },
-        "Edge": {
-          "score": 0,
-          "max": 20,
-          "note": "open market"
-        },
-        "Feasibility": {
-          "score": 87,
-          "max": 100,
-          "note": "\u00d70.87 \u00b7 development-friendly \u00b7 69 approved / 10 refused nearby \u00b7 3 Class-Q approved nearby"
-        }
-      },
-      "flags": [
-        "approx-location"
-      ],
-      "reasons": [
-        "In your target area"
-      ],
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-10-01",
-      "price_history": [
-        {
-          "date": "2026-09-12",
-          "price": 300000
-        }
-      ],
-      "plot_m2": 1848,
-      "footprints": {
-        "main_m2": 466,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 25
-      },
-      "floor_area_est_m2": 839,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 69,
-        "refused": 10,
-        "decided": 79,
-        "rate": 0.8734177215189873,
-        "classq_seen": 4,
-        "classq_approved": 3
-      },
-      "permission": 0.87,
-      "permission_label": "development-friendly",
-      "feasibility": 0.87,
-      "setting": 28
     },
     {
       "id": "ag_d3726b3cb7",
@@ -5950,7 +5787,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6106,7 +5943,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6271,7 +6108,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6438,7 +6275,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6594,7 +6431,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-23",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-23",
@@ -6757,7 +6594,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -6871,7 +6708,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7008,7 +6845,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7176,7 +7013,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7342,7 +7179,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7506,7 +7343,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7675,7 +7512,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7831,7 +7668,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7947,7 +7784,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8109,7 +7946,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8275,7 +8112,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8396,7 +8233,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8556,7 +8393,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8722,7 +8559,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8884,7 +8721,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-18",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-09-18",
@@ -9048,7 +8885,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9214,7 +9051,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9370,7 +9207,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9528,7 +9365,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9649,7 +9486,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9755,7 +9592,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9913,7 +9750,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10069,7 +9906,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -10185,7 +10022,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10303,7 +10140,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10424,7 +10261,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10545,7 +10382,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -10701,7 +10538,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -10868,7 +10705,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -11035,7 +10872,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -11151,7 +10988,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11265,7 +11102,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11379,7 +11216,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11493,7 +11330,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11607,7 +11444,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11721,7 +11558,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11835,7 +11672,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -11949,7 +11786,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12105,7 +11942,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12261,7 +12098,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -12419,7 +12256,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -12577,7 +12414,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12737,7 +12574,7 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12895,7 +12732,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-10-01",
+      "last_seen": "2026-10-02",
       "price_history": [
         {
           "date": "2026-08-11",
