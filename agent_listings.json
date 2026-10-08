@@ -1,22 +1,5 @@
 [
  {
-  "address": "Shortheath Road, Farnham, GU9",
-  "postcode": "GU9",
-  "price": 1400000,
-  "price_qualifier": null,
-  "type": "House",
-  "link": "https://andrewlodge.net/properties/sale/uncategorized/farnham/shortheath-road-farnham-gu9/",
-  "image": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/9924243f-aceb-4de6-a359-ce6dcff1087b/0/0.jpg",
-  "desc": "A much loved family home with exceptional potential.",
-  "source": "Andrew Lodge",
-  "beds": 5,
-  "status": "Sold STC",
-  "price_reduced": true,
-  "previous_price": 1595000,
-  "first_seen": "2026-08-05T17:13:30Z",
-  "lastmod": "2026-10-07T09:52:29+00:00"
- },
- {
   "address": "Bowling Alley, Crondall, GU10, Farnham",
   "postcode": "GU10",
   "price": 1300000,
@@ -70,23 +53,6 @@
  {
   "address": "Haslemere, Surrey, Surrey",
   "postcode": "GU26 6LQ",
-  "price": 325000,
-  "price_qualifier": null,
-  "type": "Apartment",
-  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/haslemere-surrey-4/",
-  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/RPT250199/0/0.jpg",
-  "desc": "A delightful ground floor purpose built maisonette situated in an excellent location, quiet yet with easy access to all that Haslemere can offer. The accommodation is light and bright, thoughtfully laid out and comprises a comfortable double aspect sitting room with a door opening onto the garden, a kitchen dining room which opens into the conservatory with doors opening onto the patio and rear garden. There are 2 double bedrooms and a bathroom to complete the accommodation. Outside to the front there is a parking space from which a gate set into a picket fence opens onto a path lined with lav",
-  "source": "Warren Powell Richards",
-  "beds": 2,
-  "status": null,
-  "price_reduced": true,
-  "previous_price": 350000,
-  "first_seen": "2026-08-05T19:15:59Z",
-  "lastmod": "2026-10-06T15:45:45+00:00"
- },
- {
-  "address": "Haslemere, Surrey, Surrey",
-  "postcode": "GU26 6LQ",
   "price": 175000,
   "price_qualifier": null,
   "type": "Accommodation",
@@ -100,6 +66,23 @@
   "previous_price": 179000,
   "first_seen": "2026-08-05T19:16:21Z",
   "lastmod": "2026-10-06T11:45:43+00:00"
+ },
+ {
+  "address": "Haslemere, Surrey, Surrey",
+  "postcode": "GU26 6LQ",
+  "price": 225000,
+  "price_qualifier": null,
+  "type": "Apartment",
+  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/haslemere-surrey-39/",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/FRN250481/0/0.jpg",
+  "desc": "This luxury ground floor retirement apartment enjoys a fabulous outlook within Wallis Court over the communal grounds and woodland beyond. The apartment is light and bright with added benefit of a window in the kitchen. The accommodation comprises an open plan living area with a door opening onto the sunny private patio & grounds, combined with a fully fitted kitchen.; 2 double bedrooms with an ensuite shower room and a family bathroom. There is a deep storage cupboard with plumbing for the washing machine and a new HIU unit which controls the heating. The apartment benefits from being quietly",
+  "source": "Warren Powell Richards",
+  "beds": 2,
+  "status": null,
+  "price_reduced": true,
+  "previous_price": 250000,
+  "first_seen": "2026-08-05T19:18:49Z",
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Alton, Hampshire, Hampshire",
@@ -219,6 +202,23 @@
   "previous_price": 900000,
   "first_seen": "2026-08-08T05:23:43Z",
   "lastmod": "2026-09-10T10:46:26+00:00"
+ },
+ {
+  "address": "House for sale with 2 bedrooms in Southdene Road, Chandler's Ford, Hampshire, SO53 at £350,000",
+  "postcode": "SO53",
+  "price": 350000,
+  "price_qualifier": null,
+  "type": "SingleFamilyResidence",
+  "link": "https://chartersestateagents.co.uk/property-for-sale/2-bedroom-detached-house-for-sale-in-southdene-road-chandlers-ford-hampshire-so53/chf260017/",
+  "image": null,
+  "desc": "Discover this house for sale in Southdene Road, Chandler's Ford, Hampshire, SO53 with 2 bedrooms for £350,000. Book your viewing with Charters today.",
+  "source": "Charters",
+  "beds": 2,
+  "status": null,
+  "price_reduced": true,
+  "previous_price": 380000,
+  "first_seen": "2026-08-08T05:42:07Z",
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "King George's Drive, Liphook",
@@ -714,6 +714,23 @@
   "lastmod": "2026-10-05T10:46:54+00:00"
  },
  {
+  "address": "Hindhead, Surrey, Surrey",
+  "postcode": "GU26 6LQ",
+  "price": 465000,
+  "price_qualifier": null,
+  "type": "Accommodation",
+  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/hindhead-surrey-4/",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/GRY260130/0/0.jpg",
+  "desc": "This beautifully presented three-storey end townhouse offers well-proportioned and versatile accommodation, with a bright and spacious open-plan reception area, modern fitted kitchen, three bedrooms, two bathrooms and a landscaped rear garden. The property also benefits from tandem parking for two vehicles",
+  "source": "Warren Powell Richards",
+  "beds": 3,
+  "status": "Under Offer",
+  "price_reduced": true,
+  "previous_price": 495000,
+  "first_seen": "2026-09-02T08:53:19Z",
+  "lastmod": "2026-10-07T17:46:25+00:00"
+ },
+ {
   "address": "Park Drive, Bramley, Guildford",
   "postcode": "GU1 3TY",
   "price": 550000,
@@ -779,7 +796,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:10:16Z",
-  "lastmod": "2026-10-06T10:51:28+00:00"
+  "lastmod": "2026-10-08T10:51:09+00:00"
  },
  {
   "address": "Abbey Street, Providence Place Abbey Street, GU9, Farnham",
@@ -796,7 +813,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:10:27Z",
-  "lastmod": "2026-10-06T10:51:28+00:00"
+  "lastmod": "2026-10-08T10:51:10+00:00"
  },
  {
   "address": "Castle Street, Farnham, GU9",
@@ -898,7 +915,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:11:42Z",
-  "lastmod": "2026-10-05T10:50:52+00:00"
+  "lastmod": "2026-10-08T10:51:06+00:00"
  },
  {
   "address": "Beacon Close, Farnham, GU10, Farnham",
@@ -915,7 +932,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:11:53Z",
-  "lastmod": "2026-10-05T10:50:52+00:00"
+  "lastmod": "2026-10-08T10:51:08+00:00"
  },
  {
   "address": "Alfred Road, Farnham, GU9",
@@ -932,7 +949,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:12:04Z",
-  "lastmod": "2026-10-06T10:51:26+00:00"
+  "lastmod": "2026-10-08T10:51:09+00:00"
  },
  {
   "address": "Longhope Drive, Farnham, GU10, Farnham",
@@ -1054,6 +1071,23 @@
   "lastmod": "2026-10-07T09:52:29+00:00"
  },
  {
+  "address": "Shortheath Road, Farnham, GU9",
+  "postcode": "GU9",
+  "price": 1400000,
+  "price_qualifier": null,
+  "type": "House",
+  "link": "https://andrewlodge.net/properties/sale/uncategorized/farnham/shortheath-road-farnham-gu9/",
+  "image": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/9924243f-aceb-4de6-a359-ce6dcff1087b/0/0.jpg",
+  "desc": "A much loved family home with exceptional potential.",
+  "source": "Andrew Lodge",
+  "beds": 5,
+  "status": "Sold STC",
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-05T17:13:30Z",
+  "lastmod": "2026-10-08T10:51:11+00:00"
+ },
+ {
   "address": "Mount Pleasant, Farnham, GU9",
   "postcode": "GU9",
   "price": 800000,
@@ -1068,7 +1102,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:13:41Z",
-  "lastmod": "2026-10-01T09:52:45+00:00"
+  "lastmod": "2026-10-08T10:50:59+00:00"
  },
  {
   "address": "Langham Court, Farnham, GU9",
@@ -1085,7 +1119,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:13:52Z",
-  "lastmod": "2026-09-29T09:52:16+00:00"
+  "lastmod": "2026-10-08T10:51:01+00:00"
  },
  {
   "address": "Shortheath Road, Farnham Cloisters, GU9, 41 Shortheath Road",
@@ -1102,7 +1136,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:14:03Z",
-  "lastmod": "2026-10-01T09:52:45+00:00"
+  "lastmod": "2026-10-08T10:51:01+00:00"
  },
  {
   "address": "Frensham Road, Lower Bourne, GU10, 43 Frensham Road",
@@ -1119,7 +1153,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T17:14:13Z",
-  "lastmod": "2026-10-07T09:52:28+00:00"
+  "lastmod": "2026-10-08T10:50:58+00:00"
  },
  {
   "address": "West Street, Farnham, GU9",
@@ -2581,7 +2615,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T18:57:58Z",
-  "lastmod": "2026-10-07T09:52:33+00:00"
+  "lastmod": "2026-10-08T10:50:59+00:00"
  },
  {
   "address": "Lynch Road, Farnham, GU9",
@@ -2598,7 +2632,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T18:58:09Z",
-  "lastmod": "2026-10-07T09:52:33+00:00"
+  "lastmod": "2026-10-08T10:51:02+00:00"
  },
  {
   "address": "Beavers Close, The Lodge Beavers Close, GU9, Farnham",
@@ -2615,7 +2649,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T18:58:20Z",
-  "lastmod": "2026-10-07T09:52:33+00:00"
+  "lastmod": "2026-10-08T10:51:02+00:00"
  },
  {
   "address": "Weydon Hill Road, Farnham, GU9",
@@ -2632,7 +2666,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T18:58:31Z",
-  "lastmod": "2026-10-04T09:54:58+00:00"
+  "lastmod": "2026-10-08T10:50:59+00:00"
  },
  {
   "address": "Lodge Hill Road, Lower Bourne, GU10, Lower Bourne",
@@ -2751,7 +2785,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:00:41Z",
-  "lastmod": "2026-10-07T09:52:34+00:00"
+  "lastmod": "2026-10-08T10:51:02+00:00"
  },
  {
   "address": "Coniston Drive, Farnham, GU9",
@@ -2768,7 +2802,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:00:52Z",
-  "lastmod": "2026-10-07T09:52:33+00:00"
+  "lastmod": "2026-10-08T10:51:00+00:00"
  },
  {
   "address": "Latchwood Lane, Lower Bourne, GU10, Lower Bourne",
@@ -2785,7 +2819,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:01:03Z",
-  "lastmod": "2026-10-07T09:52:30+00:00"
+  "lastmod": "2026-10-08T10:51:00+00:00"
  },
  {
   "address": "Melrose Close, Farnham, GU9",
@@ -2802,7 +2836,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:01:24Z",
-  "lastmod": "2026-10-07T09:52:30+00:00"
+  "lastmod": "2026-10-08T10:51:00+00:00"
  },
  {
   "address": "Heron Close, Farnham, GU9",
@@ -2819,7 +2853,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:01:46Z",
-  "lastmod": "2026-10-07T09:52:34+00:00"
+  "lastmod": "2026-10-08T10:51:03+00:00"
  },
  {
   "address": "Old Compton Lane, Farnham, GU9",
@@ -2836,7 +2870,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:01:57Z",
-  "lastmod": "2026-10-07T09:52:33+00:00"
+  "lastmod": "2026-10-08T10:51:02+00:00"
  },
  {
   "address": "Tilford Road, Farnham, GU9",
@@ -2853,7 +2887,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:03:12Z",
-  "lastmod": "2026-10-04T09:54:59+00:00"
+  "lastmod": "2026-10-08T10:51:01+00:00"
  },
  {
   "address": "Dene Lane, Lower Bourne, Farnham, Surrey, GU10 3PW",
@@ -3470,6 +3504,23 @@
  {
   "address": "Haslemere, Surrey, Surrey",
   "postcode": "GU26 6LQ",
+  "price": 325000,
+  "price_qualifier": null,
+  "type": "Apartment",
+  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/haslemere-surrey-4/",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/RPT250199/0/0.jpg",
+  "desc": "A delightful ground floor purpose built maisonette situated in an excellent location, quiet yet with easy access to all that Haslemere can offer. The accommodation is light and bright, thoughtfully laid out and comprises a comfortable double aspect sitting room with a door opening onto the garden, a kitchen dining room which opens into the conservatory with doors opening onto the patio and rear garden. There are 2 double bedrooms and a bathroom to complete the accommodation. Outside to the front there is a parking space from which a gate set into a picket fence opens onto a path lined with lav",
+  "source": "Warren Powell Richards",
+  "beds": 2,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-05T19:15:59Z",
+  "lastmod": "2026-10-07T11:45:53+00:00"
+ },
+ {
+  "address": "Haslemere, Surrey, Surrey",
+  "postcode": "GU26 6LQ",
   "price": 585000,
   "price_qualifier": null,
   "type": "House",
@@ -3499,7 +3550,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:16:31Z",
-  "lastmod": "2026-10-06T17:46:21+00:00"
+  "lastmod": "2026-10-07T15:46:31+00:00"
  },
  {
   "address": "Farnham, Surrey",
@@ -3689,23 +3740,6 @@
   "lastmod": "2026-10-07T10:46:01+00:00"
  },
  {
-  "address": "Haslemere, Surrey, Surrey",
-  "postcode": "GU26 6LQ",
-  "price": 250000,
-  "price_qualifier": null,
-  "type": "Apartment",
-  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/haslemere-surrey-39/",
-  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/FRN250481/0/0.jpg",
-  "desc": "This luxury ground floor retirement apartment enjoys a fabulous outlook within Wallis Court over the communal grounds and woodland beyond. The apartment is light and bright with added benefit of a window in the kitchen. The accommodation comprises an open plan living area with a door opening onto the sunny private patio & grounds, combined with a fully fitted kitchen.; 2 double bedrooms with an ensuite shower room and a family bathroom. There is a deep storage cupboard with plumbing for the washing machine and a new HIU unit which controls the heating. The apartment benefits from being quietly",
-  "source": "Warren Powell Richards",
-  "beds": 2,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-05T19:18:49Z",
-  "lastmod": "2026-10-01T18:02:09+00:00"
- },
- {
   "address": "Haslemere",
   "postcode": "GU26 6LQ",
   "price": 500000,
@@ -3771,7 +3805,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:20:14Z",
-  "lastmod": "2026-10-06T11:45:43+00:00"
+  "lastmod": "2026-10-07T17:46:25+00:00"
  },
  {
   "address": "The Paddock, Headley, Hampshire, Headley",
@@ -3822,7 +3856,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:20:56Z",
-  "lastmod": "2026-10-01T14:47:28+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Hindhead, Surrey, Surrey",
@@ -3873,7 +3907,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:21:28Z",
-  "lastmod": "2026-10-05T15:46:43+00:00"
+  "lastmod": "2026-10-07T16:46:29+00:00"
  },
  {
   "address": "Hindhead, Surrey, Surrey",
@@ -3924,7 +3958,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-05T19:22:00Z",
-  "lastmod": "2026-10-01T14:47:28+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Hindhead, Surrey, Surrey",
@@ -5644,23 +5678,6 @@
   "lastmod": null
  },
  {
-  "address": "Churt Road, Hindhead, Surrey, GU26",
-  "postcode": "GU26",
-  "price": 1250000,
-  "price_qualifier": null,
-  "type": "Barn",
-  "link": "https://www.winkworth.co.uk/properties/sales/churt-road-hindhead-surrey-gu26/FAR240296",
-  "image": null,
-  "desc": "5 bedroom property House for sale in Churt Road, Hindhead, Surrey, GU26 - &amp;pound;1,250,000",
-  "source": "Winkworth (Farnham)",
-  "beds": 5,
-  "status": "Under Offer",
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-05T20:11:01Z",
-  "lastmod": null
- },
- {
   "address": "The Straits, Wheatley, Hampshire, GU35",
   "postcode": "GU35",
   "price": 2000000,
@@ -5811,7 +5828,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:47:20Z",
-  "lastmod": "2026-10-07T09:52:32+00:00"
+  "lastmod": "2026-10-08T10:50:58+00:00"
  },
  {
   "address": "Burnt Hill Road, Wrecclesham, GU10, Farnham",
@@ -5913,7 +5930,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:49:27Z",
-  "lastmod": "2026-10-07T09:52:28+00:00"
+  "lastmod": "2026-10-08T10:50:59+00:00"
  },
  {
   "address": "Broad Ha'penny, Boundstone, GU10, Farnham",
@@ -5947,7 +5964,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:50:54Z",
-  "lastmod": "2026-10-06T13:50:51+00:00"
+  "lastmod": "2026-10-08T10:14:53+00:00"
  },
  {
   "address": "Burnt Hill Road, Farnham, Surrey, GU10 4RZ",
@@ -5964,7 +5981,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:51:04Z",
-  "lastmod": "2026-10-06T13:50:51+00:00"
+  "lastmod": "2026-10-07T13:53:40+00:00"
  },
  {
   "address": "Upper Hale Road, Farnham, GU9 0NJ",
@@ -5981,7 +5998,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:51:25Z",
-  "lastmod": "2026-10-06T13:50:51+00:00"
+  "lastmod": "2026-10-07T13:53:40+00:00"
  },
  {
   "address": "Thurstons Estate, Binsted, Alton, Hampshire, GU34 4PD",
@@ -5998,7 +6015,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:51:35Z",
-  "lastmod": "2026-10-06T13:50:50+00:00"
+  "lastmod": "2026-10-07T13:53:40+00:00"
  },
  {
   "address": "West Street, Farnham, Surrey, GU9 7EN",
@@ -6015,7 +6032,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:51:47Z",
-  "lastmod": "2026-10-06T13:50:50+00:00"
+  "lastmod": "2026-10-07T13:53:40+00:00"
  },
  {
   "address": "High Street, Rowledge, Farnham, Surrey, GU10 4BS",
@@ -6032,7 +6049,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:51:58Z",
-  "lastmod": "2026-10-06T13:50:48+00:00"
+  "lastmod": "2026-10-07T13:53:38+00:00"
  },
  {
   "address": "Chilworth Road, Albury, Guildford, Surrey, GU5 9BE",
@@ -6049,7 +6066,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:52:18Z",
-  "lastmod": "2026-10-06T13:50:49+00:00"
+  "lastmod": "2026-10-07T13:53:39+00:00"
  },
  {
   "address": "River Hill, Binsted, Alton, Hampshire, GU34 4PQ",
@@ -6066,7 +6083,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:52:29Z",
-  "lastmod": "2026-10-06T13:50:49+00:00"
+  "lastmod": "2026-10-07T13:53:38+00:00"
  },
  {
   "address": "Echo Barn Lane, Farnham, Surrey, GU10 4NQ",
@@ -6083,7 +6100,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:52:40Z",
-  "lastmod": "2026-10-06T13:50:49+00:00"
+  "lastmod": "2026-10-07T13:53:39+00:00"
  },
  {
   "address": "Bishops Mead, Farnham, Surrey, GU9 7DU",
@@ -6100,7 +6117,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:52:50Z",
-  "lastmod": "2026-10-06T13:50:48+00:00"
+  "lastmod": "2026-10-07T13:53:38+00:00"
  },
  {
   "address": "Crondall Lane, Farnham, Surrey, GU9 7BQ",
@@ -6117,7 +6134,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:53:00Z",
-  "lastmod": "2026-10-06T13:50:48+00:00"
+  "lastmod": "2026-10-07T13:53:38+00:00"
  },
  {
   "address": "Farnham Road, Holt Pound, Farnham, GU10 4LA",
@@ -6134,7 +6151,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:53:11Z",
-  "lastmod": "2026-10-06T13:50:46+00:00"
+  "lastmod": "2026-10-07T13:53:37+00:00"
  },
  {
   "address": "Lynch Road, Farnham, Surrey, GU9 8BZ",
@@ -6151,7 +6168,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:53:21Z",
-  "lastmod": "2026-10-06T13:50:47+00:00"
+  "lastmod": "2026-10-07T13:53:38+00:00"
  },
  {
   "address": "8 Pottery Lane, Farnham, Surrey, GU10 4QG",
@@ -6168,7 +6185,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:53:32Z",
-  "lastmod": "2026-10-06T13:50:47+00:00"
+  "lastmod": "2026-10-07T13:53:37+00:00"
  },
  {
   "address": "Sandrock Hill Road, Farnham, Surrey, GU10 4RJ",
@@ -6185,7 +6202,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:53:42Z",
-  "lastmod": "2026-10-06T13:50:47+00:00"
+  "lastmod": "2026-10-07T13:53:37+00:00"
  },
  {
   "address": "Boundstone Road, Farnham, Surrey, GU10 4TW",
@@ -6202,7 +6219,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:53:52Z",
-  "lastmod": "2026-10-06T13:50:45+00:00"
+  "lastmod": "2026-10-07T13:53:36+00:00"
  },
  {
   "address": "Reeve Drive, Farnham, Surrey, GU9 0FH",
@@ -6219,7 +6236,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:54:03Z",
-  "lastmod": "2026-10-06T13:50:45+00:00"
+  "lastmod": "2026-10-07T13:53:36+00:00"
  },
  {
   "address": "Upper Old Park Lane, Farnham, Surrey, GU9 0AR",
@@ -6236,7 +6253,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:54:13Z",
-  "lastmod": "2026-10-06T13:50:46+00:00"
+  "lastmod": "2026-10-07T13:53:36+00:00"
  },
  {
   "address": "Shortfield Common Road, Frensham, Farnham, Surrey, GU10 3BW",
@@ -6253,7 +6270,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:54:23Z",
-  "lastmod": "2026-10-06T13:50:46+00:00"
+  "lastmod": "2026-10-07T13:53:37+00:00"
  },
  {
   "address": "Broadwell Road, Farnham, Surrey, GU10 4QH",
@@ -6270,7 +6287,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:54:34Z",
-  "lastmod": "2026-10-06T13:50:45+00:00"
+  "lastmod": "2026-10-07T13:53:36+00:00"
  },
  {
   "address": "Firgrove Hill, Farnham, GU9 8FR",
@@ -6287,7 +6304,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:54:44Z",
-  "lastmod": "2026-10-06T13:50:45+00:00"
+  "lastmod": "2026-10-07T13:53:36+00:00"
  },
  {
   "address": "Wire Cut, Frensham, Farnham, Surrey, GU10 3DG",
@@ -6304,7 +6321,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:54:55Z",
-  "lastmod": "2026-10-06T13:50:45+00:00"
+  "lastmod": "2026-10-07T13:53:36+00:00"
  },
  {
   "address": "Winchester Road, Chawton, Alton, Hampshire, GU34 1SL",
@@ -6321,7 +6338,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:55:05Z",
-  "lastmod": "2026-10-06T13:50:44+00:00"
+  "lastmod": "2026-10-07T13:53:35+00:00"
  },
  {
   "address": "Newmans Court, Farnham, Surrey, GU9 0SJ",
@@ -6338,7 +6355,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:55:16Z",
-  "lastmod": "2026-10-06T13:50:44+00:00"
+  "lastmod": "2026-10-07T13:53:35+00:00"
  },
  {
   "address": "Old Church Lane, Farnham, GU9 8HQ",
@@ -6355,7 +6372,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:55:26Z",
-  "lastmod": "2026-10-06T13:50:44+00:00"
+  "lastmod": "2026-10-07T13:53:35+00:00"
  },
  {
   "address": "Hale House Lane, Churt, Farnham, Surrey, GU10 2LJ",
@@ -6372,7 +6389,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:55:41Z",
-  "lastmod": "2026-10-06T13:50:44+00:00"
+  "lastmod": "2026-10-07T13:53:35+00:00"
  },
  {
   "address": "Timber Close, The Hart, Farnham, Surrey, GU9 7HE",
@@ -6389,7 +6406,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:55:54Z",
-  "lastmod": "2026-10-06T13:50:45+00:00"
+  "lastmod": "2026-10-07T13:53:35+00:00"
  },
  {
   "address": "Lake Lane, Dockenfield, Farnham, Surrey, GU10 4JB",
@@ -6406,7 +6423,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:56:04Z",
-  "lastmod": "2026-10-06T13:50:44+00:00"
+  "lastmod": "2026-10-07T13:53:35+00:00"
  },
  {
   "address": "Abbots Ride, Farnham, Surrey, GU9 8HZ",
@@ -6423,7 +6440,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:56:15Z",
-  "lastmod": "2026-10-06T13:50:43+00:00"
+  "lastmod": "2026-10-07T13:53:35+00:00"
  },
  {
   "address": "Black Pond Lane, Lower Bourne, Farnham, GU10 3NW",
@@ -6432,7 +6449,7 @@
   "price_qualifier": null,
   "type": "Residence",
   "link": "https://www.truemanandgrundy.co.uk/property/black-pond-lane-lower-bourne-farnham/",
-  "image": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/ouLEiRtODUKqV7fzPEzvag.jpg",
+  "image": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/PodfhWbb-0-SYp_zIg1ivw.jpg",
   "desc": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
   "source": "Trueman & Grundy",
   "beds": 3,
@@ -6440,7 +6457,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:56:25Z",
-  "lastmod": "2026-09-24T13:50:50+00:00"
+  "lastmod": "2026-10-07T17:29:12+00:00"
  },
  {
   "address": "Grove End Road, Farnham, GU9 8RD",
@@ -6457,7 +6474,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:56:36Z",
-  "lastmod": "2026-10-06T13:50:43+00:00"
+  "lastmod": "2026-10-07T13:53:34+00:00"
  },
  {
   "address": "School Road, Rowledge, Farnham, Surrey, GU10 4EJ",
@@ -6474,7 +6491,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:56:46Z",
-  "lastmod": "2026-10-06T13:50:42+00:00"
+  "lastmod": "2026-10-07T13:53:34+00:00"
  },
  {
   "address": "Burnt Hill Road, Lower Bourne, Farnham, Surrey, GU10 3LL",
@@ -6491,7 +6508,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:56:57Z",
-  "lastmod": "2026-10-06T13:50:43+00:00"
+  "lastmod": "2026-10-07T13:53:34+00:00"
  },
  {
   "address": "Rosemary Cottages, Hamlash Lane, Frensham, Farnham, GU10 3AU",
@@ -6508,7 +6525,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:57:08Z",
-  "lastmod": "2026-10-06T13:50:43+00:00"
+  "lastmod": "2026-10-07T13:53:34+00:00"
  },
  {
   "address": "Mayfield, Rowledge, Farnham, GU10 4DZ",
@@ -6551,7 +6568,7 @@
   "price_qualifier": null,
   "type": "Residence",
   "link": "https://www.truemanandgrundy.co.uk/property/lower-church-lane-farnham/",
-  "image": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/-8lsGwmn7kCl3ZKbvtr7pQ.jpg",
+  "image": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/noCuaa89b0GDP1CUdeO-SA.jpg",
   "desc": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
   "source": "Trueman & Grundy",
   "beds": 2,
@@ -6559,7 +6576,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T05:57:51Z",
-  "lastmod": "2026-10-03T13:52:53+00:00"
+  "lastmod": "2026-10-08T10:14:53+00:00"
  },
  {
   "address": "Hindhead, Surrey, Surrey",
@@ -6593,7 +6610,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:03:50Z",
-  "lastmod": "2026-10-06T08:00:46+00:00"
+  "lastmod": "2026-10-07T14:46:13+00:00"
  },
  {
   "address": "Alton, Hampshire, Hampshire",
@@ -6712,7 +6729,24 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:05:04Z",
-  "lastmod": "2026-10-05T10:46:53+00:00"
+  "lastmod": "2026-10-07T12:46:04+00:00"
+ },
+ {
+  "address": "Haslemere, Surrey, Surrey",
+  "postcode": "GU26 6LQ",
+  "price": 650000,
+  "price_qualifier": null,
+  "type": "House",
+  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/haslemere-surrey-20/",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/HAS240095/0/0.jpg",
+  "desc": "A beautifully presented three-bedroom home enjoying impressive elevated views, landscaped gardens, a substantial detached garage and a versatile garden room, with direct access to adjoining National Trust woodland.",
+  "source": "Warren Powell Richards",
+  "beds": 3,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-07T06:05:25Z",
+  "lastmod": "2026-10-08T08:00:53+00:00"
  },
  {
   "address": "Godalming, Surrey, Surrey",
@@ -6729,7 +6763,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:06:07Z",
-  "lastmod": "2026-10-06T17:46:20+00:00"
+  "lastmod": "2026-10-07T15:46:31+00:00"
  },
  {
   "address": "Dunsfold, Godalming, Surrey, Godalming",
@@ -6780,7 +6814,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:06:50Z",
-  "lastmod": "2026-10-05T10:46:51+00:00"
+  "lastmod": "2026-10-07T13:45:48+00:00"
  },
  {
   "address": "Marke Square, Alton, Hampshire, Alton",
@@ -7868,7 +7902,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:26:34Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Bungalow for sale with 2 bedrooms in Battery Hill, Winchester, Hampshire, SO22 at £490,000",
@@ -7885,7 +7919,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:26:57Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in Millbrook Road East, Southampton, Hampshire, SO15 at £135,000",
@@ -7902,7 +7936,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:27:08Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 3 bedrooms in Epsom Close, Horton Heath, Hampshire, SO50 at £370,000",
@@ -7919,7 +7953,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:27:19Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 2 bedrooms in Drayton Road, Portsmouth, Hampshire, PO2 at £230,000",
@@ -7936,7 +7970,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:27:30Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 3 bedrooms in Ambassador Walk, Eastleigh, Hampshire, SO50 at £350,000",
@@ -7953,7 +7987,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:27:41Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in Lenten Street, Alton, Hampshire, GU34 at £140,000",
@@ -7966,11 +8000,11 @@
   "desc": "Discover this apartment for sale in Lenten Street, Alton, Hampshire, GU34 with 1 bedrooms for £140,000. Book your viewing with Charters today.",
   "source": "Charters",
   "beds": 1,
-  "status": null,
+  "status": "Sold STC",
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:27:52Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 3 bedrooms in Powell Road, Wickham, Fareham, Hampshire, PO17 at £375,000",
@@ -7987,7 +8021,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:28:03Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 3 bedrooms in Mayfield Road, Swaythling, Southampton, Hampshire, SO17 at £375,000",
@@ -8000,11 +8034,11 @@
   "desc": "Discover this house for sale in Mayfield Road, Swaythling, Southampton, Hampshire, SO17 with 3 bedrooms for £375,000. Book your viewing with Charters today.",
   "source": "Charters",
   "beds": 3,
-  "status": "Sold STC",
+  "status": null,
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:28:25Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Bungalow for sale with 2 bedrooms in Morleys Green, Ampfield, Romsey, Hampshire, SO51 at £395,000",
@@ -8021,7 +8055,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:28:36Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Weevil Lane, Gosport, Hampshire, PO12 at £160,000",
@@ -8034,11 +8068,11 @@
   "desc": "Discover this apartment for sale in Weevil Lane, Gosport, Hampshire, PO12 with 2 bedrooms for £160,000. Book your viewing with Charters today.",
   "source": "Charters",
   "beds": 2,
-  "status": null,
+  "status": "Sold STC",
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:28:57Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in Oakhill Close, Chandler's Ford, Hampshire, SO53 at £150,000",
@@ -8055,7 +8089,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:29:19Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in Capitol House, Old Station Approach, Winchester, Hampshire, SO23 at £200,000",
@@ -8068,11 +8102,11 @@
   "desc": "Discover this apartment for sale in Capitol House, Old Station Approach, Winchester, Hampshire, SO23 with 1 bedrooms for £200,000. Book your viewing with Charters today.",
   "source": "Charters",
   "beds": 1,
-  "status": null,
+  "status": "Sold STC",
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-07T06:29:30Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Old Glebe, Fernhurst, Haslemere",
@@ -8735,7 +8769,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:01:06Z",
-  "lastmod": "2026-10-07T09:52:30+00:00"
+  "lastmod": "2026-10-08T10:50:57+00:00"
  },
  {
   "address": "Farnham Road, Churt, GU10, Farnham",
@@ -8752,7 +8786,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:01:18Z",
-  "lastmod": "2026-10-07T09:52:30+00:00"
+  "lastmod": "2026-10-08T10:50:57+00:00"
  },
  {
   "address": "Weydon Hill Road, Farnham, GU9",
@@ -8769,7 +8803,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:01:50Z",
-  "lastmod": "2026-10-06T10:51:29+00:00"
+  "lastmod": "2026-10-08T10:50:57+00:00"
  },
  {
   "address": "Stream Farm Close, Lower Bourne, GU10, Farnham",
@@ -8786,7 +8820,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:05:39Z",
-  "lastmod": "2026-10-07T09:52:29+00:00"
+  "lastmod": "2026-10-08T10:50:57+00:00"
  },
  {
   "address": "Westbourne Place, Farnham, Surrey, GU9 8EF",
@@ -9010,6 +9044,23 @@
   "lastmod": "2026-09-16T07:50:06+00:00"
  },
  {
+  "address": "Alton, Hampshire, Hampshire",
+  "postcode": "GU34 1EN",
+  "price": 425000,
+  "price_qualifier": null,
+  "type": "House",
+  "link": "https://www.wpr.co.uk/properties/sale/hampshire/hampshire/alton-hampshire-160/",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/ALT260222/0/0.jpg",
+  "desc": "Enjoying a highly convenient position on Amery Street, one of Alton’s most sought-after town centre addresses, this deceptively spacious and well-presented three-bedroom semi-detached house. The accommodation comprises a generous living room, separate kitchen/diner, study and a ground floor cloakroom. Upstairs, there are three bedrooms, including a principal bedroom with en-suite facilities, together with a family bathroom, providing excellent flexibility for families, professionals and those working from home. Outside, the property benefits from a private courtyard garden, offering an easy-to",
+  "source": "Warren Powell Richards",
+  "beds": 3,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-08T05:24:36Z",
+  "lastmod": "2026-10-01T12:46:17+00:00"
+ },
+ {
   "address": "Hindhead, Surrey, Surrey",
   "postcode": "GU26 6LQ",
   "price": 280000,
@@ -9105,11 +9156,11 @@
   "desc": "Tucked away at the end of a quiet cul-de-sac on the ever-popular Oak Park development, this beautifully presented four-bedroom home combines stylish interiors with generous family living, all within a short stroll of Liphook village centre..",
   "source": "Warren Powell Richards",
   "beds": 4,
-  "status": null,
+  "status": "Under Offer",
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:25:41Z",
-  "lastmod": "2026-10-05T10:46:52+00:00"
+  "lastmod": "2026-10-07T16:46:29+00:00"
  },
  {
   "address": "Headley Down, Hampshire",
@@ -9143,7 +9194,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:26:13Z",
-  "lastmod": "2026-10-05T12:45:43+00:00"
+  "lastmod": "2026-10-07T13:00:42+00:00"
  },
  {
   "address": "Grayshott, Hindhead, Hampshire, Hindhead",
@@ -9160,7 +9211,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:26:24Z",
-  "lastmod": "2026-10-01T14:47:28+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Bordon, Hampshire, Hampshire",
@@ -9177,7 +9228,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:26:35Z",
-  "lastmod": "2026-10-01T14:47:26+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Elstead, Godalming, Surrey, Godalming",
@@ -9211,7 +9262,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:26:56Z",
-  "lastmod": "2026-10-06T09:45:51+00:00"
+  "lastmod": "2026-10-07T14:46:13+00:00"
  },
  {
   "address": "Churt, Farnham, Surrey, Farnham",
@@ -9823,7 +9874,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:39:56Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Canute Road, Southampton, Hampshire, SO14 at £140,000",
@@ -9840,7 +9891,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:40:17Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 4 bedrooms in Heritage Place, North Stoneham Park, North Stoneham, Eastleigh, SO50 at £465,000",
@@ -9857,7 +9908,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:40:28Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Thomas Blake Avenue, Southampton, Hampshire, SO14 at £260,000",
@@ -9874,7 +9925,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:40:39Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 3 bedrooms in Anson Drive, Sholing, Southampton, Hampshire, SO19 at £275,000",
@@ -9891,7 +9942,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:40:50Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 4 bedrooms in The Avenue, Fareham, Hampshire, PO14 at £650,000",
@@ -9908,7 +9959,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:41:13Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "DevelopmentPlot for sale with 0 bedrooms in Firgrove Road, North Baddesley, Southampton, Hampshire, SO52 at £239,950",
@@ -9925,7 +9976,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:41:24Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Penthouse for sale with 3 bedrooms in Winn Road, Highfield, Southampton, Hampshire, SO17 at £450,000",
@@ -9942,7 +9993,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:41:45Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in Lion Terrace, Portsmouth, Hampshire, PO1 at £155,000",
@@ -9959,24 +10010,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:41:56Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
- },
- {
-  "address": "House for sale with 2 bedrooms in Southdene Road, Chandler's Ford, Hampshire, SO53 at £380,000",
-  "postcode": "SO53",
-  "price": 380000,
-  "price_qualifier": null,
-  "type": "SingleFamilyResidence",
-  "link": "https://chartersestateagents.co.uk/property-for-sale/2-bedroom-detached-house-for-sale-in-southdene-road-chandlers-ford-hampshire-so53/chf260017/",
-  "image": null,
-  "desc": "Discover this house for sale in Southdene Road, Chandler's Ford, Hampshire, SO53 with 2 bedrooms for £380,000. Book your viewing with Charters today.",
-  "source": "Charters",
-  "beds": 2,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-08T05:42:07Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in John Thornycroft Road, Woolston, Southampton, Hampshire, SO19 at £165,000",
@@ -9993,7 +10027,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:42:18Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in Capstan Road, Woolston, Southampton, Hampshire, SO19 at £165,000",
@@ -10006,11 +10040,11 @@
   "desc": "Discover this apartment for sale in Capstan Road, Woolston, Southampton, Hampshire, SO19 with 1 bedrooms for £165,000. Book your viewing with Charters today.",
   "source": "Charters",
   "beds": 1,
-  "status": null,
+  "status": "Sold STC",
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:42:29Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 5 bedrooms in Gloucester View, Southsea, Hampshire, PO5 at £450,000",
@@ -10027,7 +10061,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:42:40Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 4 bedrooms in Spring Lane, Colden Common, Winchester, Hampshire, SO21 at £599,950",
@@ -10040,11 +10074,11 @@
   "desc": "Discover this house for sale in Spring Lane, Colden Common, Winchester, Hampshire, SO21 with 4 bedrooms for £599,950. Book your viewing with Charters today.",
   "source": "Charters",
   "beds": 4,
-  "status": "Sold STC",
+  "status": null,
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:42:51Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Malmesbury Gardens, Winchester, Hampshire, SO22 at £300,000",
@@ -10061,7 +10095,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:43:02Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Northlands Road, Banister Park, Southampton, Hampshire, SO15 at £190,000",
@@ -10078,7 +10112,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:43:24Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 2 bedrooms in Campion Road, Curbridge, Southampton, Hampshire, SO30 at £300,000",
@@ -10095,7 +10129,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:43:35Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 4 bedrooms in Norfolk Road, Shirley, Southampton, Hampshire, SO15 at £440,000",
@@ -10146,7 +10180,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:44:19Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Micheldever Station, Winchester, Hampshire, SO21 at £275,000",
@@ -10163,7 +10197,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:44:41Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Harestock Road, Winchester, Hampshire, SO22 at £310,000",
@@ -10265,7 +10299,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:46:20Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in West Park Road, Southampton, Hampshire, SO15 at £140,000",
@@ -10282,7 +10316,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T05:46:42Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Chalcraft Close, Liphook",
@@ -10860,7 +10894,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:13:55Z",
-  "lastmod": "2026-10-07T11:21:42+00:00"
+  "lastmod": "2026-10-08T11:24:38+00:00"
  },
  {
   "address": "Valley View, Godalming",
@@ -10877,7 +10911,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:14:17Z",
-  "lastmod": "2026-10-07T11:21:42+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "Ballfield Road, Godalming",
@@ -10894,7 +10928,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:14:28Z",
-  "lastmod": "2026-10-07T11:21:42+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "Griggs Meadow, Dunsfold, Godalming",
@@ -10911,7 +10945,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:14:38Z",
-  "lastmod": "2026-10-07T11:21:41+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "Harvest Hill, Godalming",
@@ -10928,7 +10962,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:14:49Z",
-  "lastmod": "2026-10-07T11:21:41+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "Thorncombe Street, Bramley",
@@ -10945,7 +10979,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:15:32Z",
-  "lastmod": "2026-10-07T11:21:41+00:00"
+  "lastmod": "2026-10-08T11:24:16+00:00"
  },
  {
   "address": "Thursley, Godalming",
@@ -10962,7 +10996,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:15:53Z",
-  "lastmod": "2026-10-07T11:21:42+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "Gentles Lane, Passfield",
@@ -10979,7 +11013,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:16:25Z",
-  "lastmod": "2026-10-07T11:21:41+00:00"
+  "lastmod": "2026-10-08T11:24:16+00:00"
  },
  {
   "address": "Alfold Road, Cranleigh",
@@ -10996,7 +11030,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:17:19Z",
-  "lastmod": "2026-10-07T11:21:29+00:00"
+  "lastmod": "2026-10-08T11:24:03+00:00"
  },
  {
   "address": "Horse Block Hollow, Cranleigh, Surrey",
@@ -11013,7 +11047,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:17:30Z",
-  "lastmod": "2026-10-07T11:21:28+00:00"
+  "lastmod": "2026-10-08T11:24:03+00:00"
  },
  {
   "address": "Bury Fields, Guildford",
@@ -11030,7 +11064,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:18:02Z",
-  "lastmod": "2026-10-07T11:21:25+00:00"
+  "lastmod": "2026-10-08T11:23:59+00:00"
  },
  {
   "address": "Windrush House, High Street",
@@ -11047,7 +11081,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:19:38Z",
-  "lastmod": "2026-10-07T11:21:15+00:00"
+  "lastmod": "2026-10-08T11:23:49+00:00"
  },
  {
   "address": "Woodyers Farm, Barnett Lane, Guildford, Surrey, GU5 0RX",
@@ -11115,7 +11149,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T06:20:21Z",
-  "lastmod": "2026-09-30T14:06:09+00:00"
+  "lastmod": "2026-10-07T13:27:39+00:00"
  },
  {
   "address": "Pigbush Lane, Loxwood, Billingshurst, West Sussex, RH14 0QY",
@@ -11407,21 +11441,21 @@
   "lastmod": "2026-10-05T10:46:53+00:00"
  },
  {
-  "address": "Alton, Hampshire",
+  "address": "Alton, Hampshire, Hampshire",
   "postcode": "GU34 1EN",
   "price": 825000,
   "price_qualifier": null,
-  "type": null,
+  "type": "House",
   "link": "https://www.wpr.co.uk/properties/sale/hampshire/hampshire/alton-hampshire-37/",
-  "image": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/ALT210140/0/1200.jpg",
-  "desc": "Alton, Hampshire | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Alton, Hampshire Back to search Photos Location Floorplan EPC Brochure Alton, Hampshire 4 bedroom House Under Offer £825,000 4 bedroom 2 bathroom 4 r",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/ALT210140/0/0.jpg",
+  "desc": "A handsome and very spacious wing of a former large period manor house of great character believed to date from the Regency era. The house retains many of the inherent characteristics of a building of this period with well proportioned rooms, high ceilings and large sash windows. Not only notable for scale, but for accommodation flow which is tailor made for modern living and extends to 2,230 square feet plus double garage. Mabula Lodge has been in the same family ownership for many years and the current owners are retiring nearer the coast believing it is time for a new family to take over. S",
   "source": "Warren Powell Richards",
   "beds": 4,
   "status": "Under Offer",
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:32:58Z",
-  "lastmod": "2026-08-26T10:46:13+00:00"
+  "lastmod": "2026-10-07T16:46:28+00:00"
  },
  {
   "address": "Alton, Hampshire, Hampshire",
@@ -11489,7 +11523,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:33:53Z",
-  "lastmod": "2026-10-05T10:46:53+00:00"
+  "lastmod": "2026-10-07T11:45:53+00:00"
  },
  {
   "address": "Surrey",
@@ -11727,7 +11761,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:38:02Z",
-  "lastmod": "2026-10-02T09:46:28+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Hindhead, Surrey, Surrey",
@@ -11744,7 +11778,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:38:13Z",
-  "lastmod": "2026-10-06T08:00:45+00:00"
+  "lastmod": "2026-10-07T13:00:42+00:00"
  },
  {
   "address": "Hindhead, Surrey, Surrey",
@@ -11778,7 +11812,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:38:44Z",
-  "lastmod": "2026-10-05T10:46:53+00:00"
+  "lastmod": "2026-10-07T13:00:42+00:00"
  },
  {
   "address": "Standford, Hampshire",
@@ -12475,7 +12509,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:52:28Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 4 bedrooms in Harland Crescent, Upper Shirley, Southampton, Hampshire, SO15 at £575,000",
@@ -12492,7 +12526,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:53:02Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in Admiralty Road, Portsmouth, Hampshire, PO1 at £170,000",
@@ -12509,7 +12543,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:53:13Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 1 bedrooms in North Square, Knowle, Fareham, Hampshire, PO17 at £140,000",
@@ -12560,7 +12594,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:54:08Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 3 bedrooms in West Road, Barton Stacey, Winchester, Hampshire, SO21 at £645,000",
@@ -12577,7 +12611,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:54:30Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "Apartment for sale with 2 bedrooms in Stoney Lane, Winchester, Hampshire, SO22 at £365,000",
@@ -12594,7 +12628,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T10:54:41Z",
-  "lastmod": "2026-09-21T11:46:23.272Z"
+  "lastmod": "2026-10-06T13:00:02.608Z"
  },
  {
   "address": "House for sale with 3 bedrooms in Hazel Court, Winchester, Hampshire, SO22 at £550,000",
@@ -12767,55 +12801,38 @@
   "lastmod": "2026-09-21T11:46:23.272Z"
  },
  {
-  "address": "Woodcott Terrace, Aldershot, Hampshire, GU12 4EG",
-  "postcode": "GU12 4EG",
-  "price": 335000,
+  "address": "Montgomery Avenue, Wellesley, Aldershot, Hampshire, GU11 4AY",
+  "postcode": "GU11 4AY",
+  "price": 290000,
   "price_qualifier": null,
   "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/woodcott-terrace-aldershot-hampshire-gu12-4eg/",
-  "image": "https://assets.reapit.net/mck/live/pictures/ALD/24/ALD240024_28.jpg",
-  "desc": "Woodcott Terrace, Aldershot, Hampshire, GU12 4EG offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Woodcott Terrace, Aldershot, Hampshire, GU12 4EG to view.",
+  "link": "https://www.mackenziesmith.co.uk/property/montgomery-avenue-wellesley-aldershot-hampshire-gu11-4ay-2/",
+  "image": "https://assets.reapit.net/mck/live/pictures/ALD/24/ALD240020_01.jpg",
+  "desc": "Montgomery Avenue, Wellesley, Aldershot, Hampshire, GU11 4AY offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Montgomery Avenue, Wellesley, Aldershot, Hampshire, GU11 4AY to view.",
   "source": "Mackenzie Smith",
   "beds": null,
   "status": null,
   "price_reduced": false,
   "previous_price": null,
-  "first_seen": "2026-08-08T11:04:51Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
+  "first_seen": "2026-08-08T11:03:11Z",
+  "lastmod": "2026-10-08T07:48:32+00:00"
  },
  {
-  "address": "Hereford House, Ascot Court, Aldershot, Hampshire, GU11 1HE",
-  "postcode": "GU11 1HE",
-  "price": 175000,
+  "address": "Weir Road, Hartley Wintney, Hook, Hampshire, RG27 8EP",
+  "postcode": "RG27 8EP",
+  "price": 425000,
   "price_qualifier": null,
   "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/hereford-house-ascot-court-aldershot-hampshire-gu11-1he/",
-  "image": "https://assets.reapit.net/mck/live/pictures/ALD/24/ALD240032_04.jpg",
-  "desc": "Hereford House, Ascot Court, Aldershot, Hampshire, GU11 1HE offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Hereford House, Ascot Court, Aldershot, Hampshire, GU11 1HE to view.",
+  "link": "https://www.mackenziesmith.co.uk/property/weir-road-hartley-wintney-hook-hampshire-rg27-8ep/",
+  "image": "https://assets.reapit.net/mck/live/pictures/HWI/24/HWI240005_32.jpg",
+  "desc": "Weir Road, Hartley Wintney, Hook, Hampshire, RG27 8EP offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Weir Road, Hartley Wintney, Hook, Hampshire, RG27 8EP to view.",
   "source": "Mackenzie Smith",
   "beds": null,
   "status": null,
   "price_reduced": false,
   "previous_price": null,
-  "first_seen": "2026-08-08T11:05:02Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
- },
- {
-  "address": "Ively Road, Farnborough, Hampshire, GU14 0JP",
-  "postcode": "GU14 0JP",
-  "price": 395000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/ively-road-farnborough-hampshire-gu14-0jp/",
-  "image": "https://assets.reapit.net/mck/live/pictures/FBO/24/FBO240073_18.jpg",
-  "desc": "Ively Road, Farnborough, Hampshire, GU14 0JP offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Ively Road, Farnborough, Hampshire, GU14 0JP to view.",
-  "source": "Mackenzie Smith",
-  "beds": null,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-08T11:05:13Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
+  "first_seen": "2026-08-08T11:03:22Z",
+  "lastmod": "2026-10-08T07:48:32+00:00"
  },
  {
   "address": "Grange Road, Ash, Guildford, Surrey, GU12 6ES",
@@ -12832,24 +12849,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:05:24Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
- },
- {
-  "address": "Montgomery Avenue, Wellesley, Aldershot, Hampshire, GU11 4DH",
-  "postcode": "GU11 4DH",
-  "price": 275000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/grieve-house-1-montgomery-avenue-aldershot-gu11-4dh/",
-  "image": "https://assets.reapit.net/mck/live/pictures/ALD/24/ALD240023_01.jpg",
-  "desc": "Montgomery Avenue, Wellesley, Aldershot, Hampshire, GU11 4DH offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Montgomery Avenue, Wellesley, Aldershot, Hampshire, GU11 4DH to view.",
-  "source": "Mackenzie Smith",
-  "beds": null,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-08T11:05:46Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
+  "lastmod": "2026-10-08T07:48:31+00:00"
  },
  {
   "address": "High Street, Aldershot, Hampshire, GU11 1BH",
@@ -12866,7 +12866,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:05:57Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:30+00:00"
  },
  {
   "address": "Herrett Street, Aldershot, Hampshire, GU12 4EE",
@@ -12883,7 +12883,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:06:08Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:31+00:00"
  },
  {
   "address": "Brookhouse Road, Farnborough, Hampshire, GU14 0BT",
@@ -12900,7 +12900,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:06:19Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:31+00:00"
  },
  {
   "address": "Kennet Close, Ash, Guildford, Surrey, GU12 6NN",
@@ -12917,7 +12917,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:06:41Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:31+00:00"
  },
  {
   "address": "Yeomans Bridge Crescent, Ash, Guildford, Surrey, GU12 6FQ",
@@ -12934,7 +12934,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:06:53Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
+  "lastmod": "2026-10-08T07:48:31+00:00"
  },
  {
   "address": "Twisell Thorne, Church Crookham, Fleet, Hampshire, GU52 0YT",
@@ -12951,7 +12951,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:07:04Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:30+00:00"
  },
  {
   "address": "Overton Close, Aldershot, Hampshire, GU11 3RP",
@@ -12968,7 +12968,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:07:15Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:30+00:00"
  },
  {
   "address": "Shackleton Close, Ash Vale, Guildford, Surrey, GU12 5SB",
@@ -12985,7 +12985,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:07:26Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Thirsk Court, Aldershot, Hampshire, GU12 4HF",
@@ -13002,7 +13002,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:07:37Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:30+00:00"
  },
  {
   "address": "Elvetham Crescent, Fleet, Hampshire, GU51 1BU",
@@ -13019,7 +13019,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:07:48Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:30+00:00"
  },
  {
   "address": "Randell Close, Blackwater, Camberley, GU17 9HF",
@@ -13036,7 +13036,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:08:00Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Aldershot Road, Church Crookham, Fleet, Hampshire, GU52 8JS",
@@ -13053,7 +13053,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:08:11Z",
-  "lastmod": "2026-10-07T07:45:25+00:00"
+  "lastmod": "2026-10-08T07:48:30+00:00"
  },
  {
   "address": "Winchfield Close, Fleet, Hampshire, GU51 1EQ",
@@ -13070,7 +13070,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:08:22Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:30+00:00"
  },
  {
   "address": "Thackhams Lane, Hartley Wintney, Hampshire, RG27 8HW",
@@ -13087,7 +13087,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:08:44Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Sturt road, Haslemere",
@@ -13648,7 +13648,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T11:33:00Z",
-  "lastmod": "2026-09-23T11:46:56+00:00"
+  "lastmod": "2026-10-07T13:27:39+00:00"
  },
  {
   "address": "Walnut Tree Close, Guildford, Surrey, GU1 4UL",
@@ -14090,7 +14090,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:10:23Z",
-  "lastmod": "2026-09-28T07:46:27+00:00"
+  "lastmod": "2026-10-05T10:46:50+00:00"
  },
  {
   "address": "Alton, Hampshire, Hampshire",
@@ -14379,7 +14379,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:14:30Z",
-  "lastmod": "2026-10-06T16:45:50+00:00"
+  "lastmod": "2026-10-07T17:46:25+00:00"
  },
  {
   "address": "Alton, Hampshire, Hampshire",
@@ -14413,7 +14413,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:15:23Z",
-  "lastmod": "2026-10-05T10:46:52+00:00"
+  "lastmod": "2026-10-07T16:46:29+00:00"
  },
  {
   "address": "Midhurst, West Sussex, West Sussex",
@@ -14430,7 +14430,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:15:45Z",
-  "lastmod": "2026-10-05T10:46:53+00:00"
+  "lastmod": "2026-10-07T13:00:42+00:00"
  },
  {
   "address": "Haslemere, Surrey, Surrey",
@@ -15535,7 +15535,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:39:03Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Burke Place, Wellesley, Aldershot, Hampshire, GU11 4BS",
@@ -15552,7 +15552,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:39:14Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Holly Road, Aldershot, Hampshire, GU12 4SE",
@@ -15569,7 +15569,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:39:25Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Elms Road, Hook, Hampshire, RG27 9YL",
@@ -15586,7 +15586,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:39:36Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Bowling Green Drive, Hook, Hampshire, RG27 9TZ",
@@ -15603,7 +15603,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:39:47Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Woodcot Gardens, Farnborough, Hampshire, GU14 9RD",
@@ -15620,7 +15620,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:40:09Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Coppice Square, Aldershot, Hampshire, GU12 4GD",
@@ -15637,7 +15637,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:40:20Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Queens Road, Aldershot, Hampshire, GU11 3JE",
@@ -15654,7 +15654,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:40:31Z",
-  "lastmod": "2026-10-07T07:45:22+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Alexander House, 50 Station Road, Aldershot, Hampshire, GU11 1BG",
@@ -15671,7 +15671,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:40:42Z",
-  "lastmod": "2026-10-07T07:45:22+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Albion Place, Hartley Wintney, Hampshire, RG27 8RL",
@@ -15688,7 +15688,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:40:53Z",
-  "lastmod": "2026-10-07T07:45:22+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Church Lane, Dogmersfield, Hook, Hampshire, RG27 8SZ",
@@ -15705,7 +15705,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:41:04Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Farnborough Road, Farnborough, Hampshire, GU14 7JH",
@@ -15722,7 +15722,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:41:15Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Badshot Lea Road, Badshot Lea, Farnham, Surrey, GU9 9LT",
@@ -15739,7 +15739,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:41:26Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Abbey Way, Farnborough, Hampshire, GU14 7DD",
@@ -15756,7 +15756,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:41:37Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Hound Green Close, Hound Green, Hook, Hampshire, RG27 8LG",
@@ -15773,7 +15773,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:41:48Z",
-  "lastmod": "2026-10-07T07:45:23+00:00"
+  "lastmod": "2026-10-08T07:48:28+00:00"
  },
  {
   "address": "Halimote Road, Aldershot, Hampshire, GU11 1JP",
@@ -15790,7 +15790,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:41:59Z",
-  "lastmod": "2026-10-07T07:45:22+00:00"
+  "lastmod": "2026-10-08T07:48:27+00:00"
  },
  {
   "address": "Woodland Walk, Aldershot, Hampshire, GU12 4FQ",
@@ -15807,7 +15807,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:42:10Z",
-  "lastmod": "2026-10-07T07:45:22+00:00"
+  "lastmod": "2026-10-08T07:48:27+00:00"
  },
  {
   "address": "Willow Way, Farnham, Surrey, GU9 0NU",
@@ -15824,7 +15824,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:42:21Z",
-  "lastmod": "2026-10-07T07:45:22+00:00"
+  "lastmod": "2026-10-08T07:48:27+00:00"
  },
  {
   "address": "Belmont Close, Farnborough, Hampshire, GU14 8RU",
@@ -15841,7 +15841,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:42:32Z",
-  "lastmod": "2026-10-05T07:28:43+00:00"
+  "lastmod": "2026-10-08T07:48:27+00:00"
  },
  {
   "address": "Queens Road, Aldershot, Hampshire, GU11 3LA",
@@ -15858,7 +15858,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-08T12:42:43Z",
-  "lastmod": "2026-09-07T08:25:46+00:00"
+  "lastmod": "2026-10-08T07:48:27+00:00"
  },
  {
   "address": "Firacre Road, Ash Vale, Guildford, Surrey, GU12 5JT",
@@ -16810,7 +16810,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-09T05:28:59Z",
-  "lastmod": "2026-09-28T07:46:32+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Fernhurst, Haslemere, West Sussex, Haslemere",
@@ -16827,7 +16827,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-09T05:29:20Z",
-  "lastmod": "2026-10-02T14:46:36+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Haslemere, Surrey, Surrey",
@@ -16861,7 +16861,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-09T05:29:42Z",
-  "lastmod": "2026-10-01T15:45:43+00:00"
+  "lastmod": "2026-10-05T10:46:51+00:00"
  },
  {
   "address": "Godalming, Surrey, Surrey",
@@ -16878,7 +16878,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-09T05:29:52Z",
-  "lastmod": "2026-09-28T07:46:27+00:00"
+  "lastmod": "2026-10-07T12:46:03+00:00"
  },
  {
   "address": "Witley, Godalming, Surrey, Godalming",
@@ -16912,7 +16912,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-09T05:30:24Z",
-  "lastmod": "2026-09-28T07:46:27+00:00"
+  "lastmod": "2026-10-05T10:46:50+00:00"
  },
  {
   "address": "Guildford, Surrey, Surrey",
@@ -16929,7 +16929,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-09T05:30:34Z",
-  "lastmod": "2026-09-28T07:46:27+00:00"
+  "lastmod": "2026-10-05T10:46:50+00:00"
  },
  {
   "address": "Catteshall Lane, Godalming, Surrey, Godalming",
@@ -16946,7 +16946,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-09T05:30:46Z",
-  "lastmod": "2026-09-28T07:46:27+00:00"
+  "lastmod": "2026-10-07T15:46:31+00:00"
  },
  {
   "address": "Godalming, Surrey, Surrey",
@@ -16998,6 +16998,23 @@
   "previous_price": null,
   "first_seen": "2026-08-09T05:31:17Z",
   "lastmod": "2026-10-07T10:46:01+00:00"
+ },
+ {
+  "address": "Godalming, Surrey, Surrey",
+  "postcode": "GU7 1AU",
+  "price": 425000,
+  "price_qualifier": null,
+  "type": "Apartment",
+  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/godalming-surrey-27/",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD240071/0/0.jpg",
+  "desc": "A charming and spacious two bedroom ground floor home with private garden and parking, located close to Godalming town centre",
+  "source": "Warren Powell Richards",
+  "beds": 2,
+  "status": "Under Offer",
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-09T05:31:38Z",
+  "lastmod": "2026-10-02T13:45:42+00:00"
  },
  {
   "address": "Elstead, Godalming, Surrey, Godalming",
@@ -17066,6 +17083,23 @@
   "previous_price": null,
   "first_seen": "2026-08-09T05:32:41Z",
   "lastmod": "2026-09-15T10:47:48+00:00"
+ },
+ {
+  "address": "Farnham, Surrey, Surrey",
+  "postcode": "GU9 7PD",
+  "price": 725000,
+  "price_qualifier": null,
+  "type": "House",
+  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/farnham-surrey-30/",
+  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/FRN250441/0/0.jpg",
+  "desc": "Presented to the market in immaculate condition throughout and with the added benefit of no onward chain, this beautifully maintained four-bedroom chalet bungalow provides spacious, modern, and versatile accommodation. The ground floor features a generous kitchen/dining room with integrated appliances and French doors opening onto a decked terrace, a bright living room with a bay window, two well-proportioned bedrooms, a contemporary family bathroom, and a utility room. Upstairs, the property comprises the main bedroom with fitted wardrobes, two further single bedrooms, and a modern shower roo",
+  "source": "Warren Powell Richards",
+  "beds": 4,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-09T05:32:51Z",
+  "lastmod": "2026-10-07T17:46:25+00:00"
  },
  {
   "address": "Badshot Lea, Farnham, Surrey, Farnham",
@@ -22117,6 +22151,23 @@
   "lastmod": "2025-09-19T19:32:06+00:00"
  },
  {
+  "address": "Grove Road, Hindhead, Surrey, GU26",
+  "postcode": "GU26",
+  "price": 900000,
+  "price_qualifier": null,
+  "type": null,
+  "link": "https://www.winkworth.co.uk/properties/sales/grove-road-hindhead-surrey-gu26/FAR250316",
+  "image": "https://www.winkworth.co.uk/getmedia/8a691438-cc50-46f6-bb47-9ff9e2a2000e/FAR250316_20.jpg",
+  "desc": "4 bedroom property House for sale in Grove Road, Hindhead, Surrey, GU26 - &amp;pound;900,000",
+  "source": "Winkworth (Farnham)",
+  "beds": 4,
+  "status": "Under Offer",
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-11T06:25:29Z",
+  "lastmod": null
+ },
+ {
   "address": "Tickners Heath, Alfold, Cranleigh, Surrey, GU6 8HU",
   "postcode": "GU6 8HU",
   "price": 2150000,
@@ -24446,23 +24497,6 @@
   "lastmod": "2025-10-30T16:56:29+00:00"
  },
  {
-  "address": "Cherry Tree Lane, Ewhurst",
-  "postcode": "GU1 4SJ",
-  "price": 1050000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://grantley.co.uk/property/cherry-tree-lane-ewhurst-2/",
-  "image": "https://grantley.co.uk/wp-content/uploads/2024/01/GUI240001_04-1.jpg",
-  "desc": "Leading Property Agents in Surrey, West Sussex and Hampshire",
-  "source": "Grantley",
-  "beds": null,
-  "status": "Under Offer",
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-12T07:00:43Z",
-  "lastmod": "2025-10-15T09:41:26+00:00"
- },
- {
   "address": "Crown Lane, Badshot Lea, Farnham, Surrey, GU9 9JP",
   "postcode": "GU9 9JP",
   "price": 255000,
@@ -25973,7 +26007,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-13T07:01:19Z",
-  "lastmod": "2026-10-07T11:21:23+00:00"
+  "lastmod": "2026-10-08T11:23:58+00:00"
  },
  {
   "address": "Ockfields, Milford",
@@ -27795,23 +27829,6 @@
   "lastmod": "2026-08-25T07:46:03+00:00"
  },
  {
-  "address": "Godalming, Surrey, Surrey",
-  "postcode": "GU7 1AU",
-  "price": 279000,
-  "price_qualifier": null,
-  "type": "Accommodation",
-  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/godalming-surrey-17/",
-  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD260024/0/0.jpg",
-  "desc": "A bright and spacious first floor two bedroom maisonette, benefiting from a garage, in the popular Charterhouse area",
-  "source": "Warren Powell Richards",
-  "beds": 2,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-15T04:56:34Z",
-  "lastmod": "2026-09-29T16:45:43+00:00"
- },
- {
   "address": "Medstead, Alton, Hampshire, Alton",
   "postcode": "GU34 1EN",
   "price": 445000,
@@ -28541,23 +28558,6 @@
   "previous_price": null,
   "first_seen": "2026-08-15T05:11:40Z",
   "lastmod": "2025-03-07T10:55:12+00:00"
- },
- {
-  "address": "Campbell Close, Yateley, Hampshire, GU46 6GZ",
-  "postcode": "GU46 6GZ",
-  "price": 210000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/campbell-close-yateley-hampshire-gu46-6gz/",
-  "image": "https://assets.reapit.net/mck/live/pictures/YAT/26/YAT260083_12.jpg",
-  "desc": "Campbell Close, Yateley, Hampshire, GU46 6GZ offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Campbell Close, Yateley, Hampshire, GU46 6GZ to view.",
-  "source": "Mackenzie Smith",
-  "beds": null,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-15T05:23:26Z",
-  "lastmod": "2026-08-18T04:20:05+00:00"
  },
  {
   "address": "Burlington Court, Aldershot, Hampshire, GU11 3EX",
@@ -32198,21 +32198,21 @@
   "lastmod": "2026-08-18T04:21:10+00:00"
  },
  {
-  "address": "Fallowfield, Yateley, Hampshire, GU46 6LW",
-  "postcode": "GU46 6LW",
-  "price": 310000,
+  "address": "Somerville Crescent, Yateley, Hampshire, GU46 6XE",
+  "postcode": "GU46 6XE",
+  "price": 500000,
   "price_qualifier": null,
   "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/fallowfield-yateley-hampshire-gu46-6lw/",
-  "image": "https://assets.reapit.net/mck/live/pictures/YAT/26/YAT260081_12.jpg",
-  "desc": "Fallowfield, Yateley, Hampshire, GU46 6LW offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Fallowfield, Yateley, Hampshire, GU46 6LW to view.",
+  "link": "https://www.mackenziesmith.co.uk/property/somerville-crescent-yateley-hampshire-gu46-6xe/",
+  "image": "https://assets.reapit.net/mck/live/pictures/YAT/26/YAT260078_13.jpg",
+  "desc": "Somerville Crescent, Yateley, Hampshire, GU46 6XE offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Somerville Crescent, Yateley, Hampshire, GU46 6XE to view.",
   "source": "Mackenzie Smith",
   "beds": null,
   "status": null,
   "price_reduced": false,
   "previous_price": null,
-  "first_seen": "2026-08-18T05:20:29Z",
-  "lastmod": "2026-08-18T04:20:23+00:00"
+  "first_seen": "2026-08-18T05:20:18Z",
+  "lastmod": "2026-08-18T04:20:45+00:00"
  },
  {
   "address": "Elmbridge Road, Cranleigh",
@@ -32382,7 +32382,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-19T05:47:47Z",
-  "lastmod": "2026-10-07T11:21:29+00:00"
+  "lastmod": "2026-10-08T11:24:03+00:00"
  },
  {
   "address": "Griggs Meadow, Dunsfold",
@@ -32433,7 +32433,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-20T04:40:41Z",
-  "lastmod": "2026-10-06T10:51:28+00:00"
+  "lastmod": "2026-10-08T10:51:10+00:00"
  },
  {
   "address": "Property",
@@ -32725,23 +32725,6 @@
   "lastmod": "2026-08-25T04:17:26+00:00"
  },
  {
-  "address": "Church Lane West, Aldershot, Hampshire, GU11 3LW",
-  "postcode": "GU11 3LW",
-  "price": 600000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/church-lane-west-aldershot-hampshire-gu11-3lw/",
-  "image": "https://assets.reapit.net/mck/live/pictures/ALD/26/ALD260141_18.jpg",
-  "desc": "Church Lane West, Aldershot, Hampshire, GU11 3LW offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Church Lane West, Aldershot, Hampshire, GU11 3LW to view.",
-  "source": "Mackenzie Smith",
-  "beds": null,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-21T05:25:47Z",
-  "lastmod": "2026-08-25T04:17:00+00:00"
- },
- {
   "address": "Gordon Road, Aldershot, Hampshire, GU11 1NG",
   "postcode": "GU11 1NG",
   "price": 400000,
@@ -32927,23 +32910,6 @@
   "previous_price": null,
   "first_seen": "2026-08-21T05:28:01Z",
   "lastmod": "2026-08-26T04:17:30+00:00"
- },
- {
-  "address": "York Road, Farnborough, Hampshire, GU14 6NF",
-  "postcode": "GU14 6NF",
-  "price": 375000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/york-road-farnborough-hampshire-gu14-6nf/",
-  "image": "https://assets.reapit.net/mck/live/pictures/FBO/26/FBO260213_01.jpg",
-  "desc": "York Road, Farnborough, Hampshire, GU14 6NF offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book York Road, Farnborough, Hampshire, GU14 6NF to view.",
-  "source": "Mackenzie Smith",
-  "beds": null,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-21T05:28:12Z",
-  "lastmod": "2026-08-26T04:17:06+00:00"
  },
  {
   "address": "Oldwood Chase, Farnborough, Hampshire, GU14 0QS",
@@ -33674,7 +33640,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-22T04:39:14Z",
-  "lastmod": "2026-10-06T10:51:30+00:00"
+  "lastmod": "2026-10-08T10:51:10+00:00"
  },
  {
   "address": "Boundstone Road, Farnham, GU10, Farnham",
@@ -33691,7 +33657,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-22T04:40:50Z",
-  "lastmod": "2026-10-06T10:51:28+00:00"
+  "lastmod": "2026-10-08T10:51:10+00:00"
  },
  {
   "address": "Alton, Hampshire",
@@ -34388,7 +34354,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-23T04:48:58Z",
-  "lastmod": "2026-10-06T13:50:43+00:00"
+  "lastmod": "2026-10-07T13:53:34+00:00"
  },
  {
   "address": "Property",
@@ -34457,23 +34423,6 @@
   "previous_price": null,
   "first_seen": "2026-08-23T05:13:08Z",
   "lastmod": "2025-11-24T15:09:36+00:00"
- },
- {
-  "address": "Property",
-  "postcode": "KT22 0SP",
-  "price": 4300000,
-  "price_qualifier": null,
-  "type": null,
-  "link": "https://curchods.com/display/pri240017/",
-  "image": null,
-  "desc": "Award Winning Estate Agents in Surrey and South West London",
-  "source": "Curchods",
-  "beds": 5,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-08-23T05:13:19Z",
-  "lastmod": "2025-11-24T14:09:45+00:00"
  },
  {
   "address": "Ryelaw Road, Church Crookham, Fleet, Hampshire, GU52 6HY",
@@ -34697,8 +34646,8 @@
   "lastmod": "2025-07-17T13:56:43+00:00"
  },
  {
-  "address": "East Shalford Lane, Guildford",
-  "postcode": "GU1 4SJ",
+  "address": "East Shalford Lane, Guildford, Surrey, GU4 8AR",
+  "postcode": "GU4 8AR",
   "price": 1650000,
   "price_qualifier": null,
   "type": "Residence",
@@ -34707,11 +34656,11 @@
   "desc": "Leading Property Agents in Surrey, West Sussex and Hampshire",
   "source": "Grantley",
   "beds": null,
-  "status": "Under Offer",
+  "status": null,
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-24T05:55:18Z",
-  "lastmod": "2025-07-17T13:56:22+00:00"
+  "lastmod": "2026-10-08T06:00:00+00:00"
  },
  {
   "address": "Greencroft, Guildford",
@@ -34864,7 +34813,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-26T04:50:41Z",
-  "lastmod": "2026-10-06T13:50:49+00:00"
+  "lastmod": "2026-10-07T13:53:39+00:00"
  },
  {
   "address": "High Street, Rowledge, Farnham, Surrey, GU10 4BS",
@@ -35170,7 +35119,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-27T15:09:45Z",
-  "lastmod": "2026-10-06T10:51:30+00:00"
+  "lastmod": "2026-10-08T10:51:05+00:00"
  },
  {
   "address": "Isington Road, Isington, GU34, Alton",
@@ -35187,7 +35136,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-27T15:17:06Z",
-  "lastmod": "2026-10-07T09:52:29+00:00"
+  "lastmod": "2026-10-08T10:51:11+00:00"
  },
  {
   "address": "Holybourne, Alton, Hampshire",
@@ -35222,6 +35171,23 @@
   "previous_price": null,
   "first_seen": "2026-08-27T15:36:51Z",
   "lastmod": "2026-10-06T08:00:46+00:00"
+ },
+ {
+  "address": "Ackender Road, Alton, Hampshire",
+  "postcode": "GU34 1EN",
+  "price": 200000,
+  "price_qualifier": null,
+  "type": null,
+  "link": "https://www.wpr.co.uk/properties/sale/alton/alton/ackender-road-alton-hampshire-6/",
+  "image": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/ALT180234/0/1200.jpg",
+  "desc": "Ackender Road, Alton, Hampshire | Warren Powell Richards Skip to content Request a valuation Property Valuation Find a property Register with us Contact Property Valuation Find a property Register with us Contact Home For Sale To Let Auctions Services Residential Sales Residential Lettings Auctions Land & New Homes Commercial Mortgages Property Maintenance Aerial Photography News About Us Careers Register with us Request a Valuation Contact Home Property Search Ackender Road, Alton, Hampshire Back to search Photos Location Floorplan EPC Brochure Ackender Road, Alton, Hampshire 2 bedroom Proper",
+  "source": "Warren Powell Richards",
+  "beds": 2,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-08-27T15:38:14Z",
+  "lastmod": "2026-08-26T10:46:13+00:00"
  },
  {
   "address": "Adams Way, Alton, Hampshire",
@@ -35340,7 +35306,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-27T16:19:51Z",
-  "lastmod": "2026-10-07T11:21:25+00:00"
+  "lastmod": "2026-10-08T11:23:59+00:00"
  },
  {
   "address": "Printing House Square, Martyr Road, Guildford",
@@ -35357,7 +35323,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-27T16:20:12Z",
-  "lastmod": "2026-10-07T11:21:23+00:00"
+  "lastmod": "2026-10-08T11:23:58+00:00"
  },
  {
   "address": "Waterland Farm, Knowle Lane",
@@ -35408,7 +35374,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-28T16:05:06Z",
-  "lastmod": "2026-10-06T10:51:30+00:00"
+  "lastmod": "2026-10-08T10:51:05+00:00"
  },
  {
   "address": "Alton, Hampshire, Hampshire",
@@ -35612,7 +35578,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-08-28T17:07:47Z",
-  "lastmod": "2026-10-07T11:21:32+00:00"
+  "lastmod": "2026-10-08T11:24:07+00:00"
  },
  {
   "address": "The Street, Wonersh",
@@ -35904,23 +35870,6 @@
   "lastmod": "2025-04-04T16:03:00+00:00"
  },
  {
-  "address": "Hindhead, Surrey, Surrey",
-  "postcode": "GU26 6LQ",
-  "price": 495000,
-  "price_qualifier": null,
-  "type": "Accommodation",
-  "link": "https://www.wpr.co.uk/properties/sale/surrey/surrey/hindhead-surrey-4/",
-  "image": "http://warren-powell.iomart.thepropertyjungle.com/resize/GRY260130/0/0.jpg",
-  "desc": "This beautifully presented three-storey end townhouse offers well-proportioned and versatile accommodation, with a bright and spacious open-plan reception area, modern fitted kitchen, three bedrooms, two bathrooms and a landscaped rear garden. The property also benefits from tandem parking for two vehicles",
-  "source": "Warren Powell Richards",
-  "beds": 3,
-  "status": "Under Offer",
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-09-02T08:53:19Z",
-  "lastmod": "2026-10-05T10:46:54+00:00"
- },
- {
   "address": "Oaktree Drive, Hook, Hampshire, RG27 9RA",
   "postcode": "RG27 9RA",
   "price": 519000,
@@ -36139,7 +36088,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-02T09:38:28Z",
-  "lastmod": "2026-10-07T11:21:28+00:00"
+  "lastmod": "2026-10-08T11:24:03+00:00"
  },
  {
   "address": "Loxwood Road, Rudgwick, Horsham, West Sussex, RH12 3DR",
@@ -36207,7 +36156,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-03T09:26:25Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
+  "lastmod": "2026-10-08T07:48:31+00:00"
  },
  {
   "address": "Gostrode Lane, Chiddingfold, Godalming, Surrey, GU8 4SR",
@@ -37227,7 +37176,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-09T08:55:09Z",
-  "lastmod": "2026-10-06T13:50:46+00:00"
+  "lastmod": "2026-10-07T13:53:37+00:00"
  },
  {
   "address": "Badshot Lea, Farnham, Surrey, Farnham",
@@ -37312,7 +37261,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-09T09:52:02Z",
-  "lastmod": "2026-10-07T11:21:41+00:00"
+  "lastmod": "2026-10-08T11:24:16+00:00"
  },
  {
   "address": "Snowdenham Lane, Bramley",
@@ -37839,7 +37788,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-14T09:50:21Z",
-  "lastmod": "2026-10-06T13:50:50+00:00"
+  "lastmod": "2026-10-07T13:53:39+00:00"
  },
  {
   "address": "Harvey Road, Guildford",
@@ -37856,7 +37805,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-14T10:49:32Z",
-  "lastmod": "2026-10-07T11:21:16+00:00"
+  "lastmod": "2026-10-08T11:23:50+00:00"
  },
  {
   "address": "Rydes Hill Road, Guildford",
@@ -37873,7 +37822,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-14T10:49:54Z",
-  "lastmod": "2026-10-07T11:21:22+00:00"
+  "lastmod": "2026-10-08T11:23:57+00:00"
  },
  {
   "address": "West End Grove, Farnham, GU9",
@@ -37890,7 +37839,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-15T09:24:20Z",
-  "lastmod": "2026-10-06T10:51:29+00:00"
+  "lastmod": "2026-10-08T10:51:06+00:00"
  },
  {
   "address": "Farnham, Surrey, Surrey",
@@ -38043,7 +37992,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-15T10:20:28Z",
-  "lastmod": "2026-10-07T11:21:41+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "Jubilee Cottages, Dark Lane, Puttenham",
@@ -38060,7 +38009,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-15T10:24:31Z",
-  "lastmod": "2026-10-07T11:21:21+00:00"
+  "lastmod": "2026-10-08T11:23:56+00:00"
  },
  {
   "address": "Lindford, Hampshire",
@@ -38094,7 +38043,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-16T09:33:29Z",
-  "lastmod": "2026-10-02T09:46:28+00:00"
+  "lastmod": "2026-10-05T10:46:50+00:00"
  },
  {
   "address": "Property",
@@ -38179,7 +38128,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-17T10:22:00Z",
-  "lastmod": "2026-10-07T11:21:42+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "Hale Place, Farnham, Surrey, GU9 9BJ",
@@ -38978,7 +38927,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-19T08:47:48Z",
-  "lastmod": "2026-10-06T13:50:46+00:00"
+  "lastmod": "2026-10-07T13:53:37+00:00"
  },
  {
   "address": "Liphook, Hampshire, Hampshire",
@@ -38995,7 +38944,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-19T09:00:43Z",
-  "lastmod": "2026-10-06T17:46:21+00:00"
+  "lastmod": "2026-10-07T11:45:53+00:00"
  },
  {
   "address": "Headley, Hampshire",
@@ -39012,7 +38961,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-19T09:00:54Z",
-  "lastmod": "2026-10-02T13:45:42+00:00"
+  "lastmod": "2026-10-05T10:46:50+00:00"
  },
  {
   "address": "Property",
@@ -39030,6 +38979,23 @@
   "previous_price": null,
   "first_seen": "2026-09-19T09:10:57Z",
   "lastmod": "2025-12-02T14:09:29+00:00"
+ },
+ {
+  "address": "Elmsleigh Road, Farnborough, Hampshire, GU14 0ET",
+  "postcode": "GU14 0ET",
+  "price": 475000,
+  "price_qualifier": null,
+  "type": "Residence",
+  "link": "https://www.mackenziesmith.co.uk/property/elmsleigh-road-farnborough-hampshire-gu14-0et/",
+  "image": "https://assets.reapit.net/mck/live/pictures/FBO/25/FBO250350_28.jpg",
+  "desc": "Elmsleigh Road, Farnborough, Hampshire, GU14 0ET offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Elmsleigh Road, Farnborough, Hampshire, GU14 0ET to view.",
+  "source": "Mackenzie Smith",
+  "beds": null,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-09-19T09:22:03Z",
+  "lastmod": "2026-09-19T07:46:50+00:00"
  },
  {
   "address": "Marrow Meade, Fleet, Hampshire, GU51 1HH",
@@ -39083,21 +39049,21 @@
   "lastmod": "2026-09-19T07:45:42+00:00"
  },
  {
-  "address": "Silver Court, Hartley Wintney, Hampshire, RG27 8FJ",
-  "postcode": "RG27 8FJ",
-  "price": 850000,
+  "address": "Pierrefondes Avenue, Farnborough, Hampshire, GU14 8NZ",
+  "postcode": "GU14 8NZ",
+  "price": 475000,
   "price_qualifier": null,
   "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/silver-court-hartley-wintney-hampshire-rg27-8fj/",
-  "image": "https://assets.reapit.net/mck/live/pictures/HWI/25/HWI250120_28.jpg",
-  "desc": "Silver Court, Hartley Wintney, Hampshire, RG27 8FJ offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Silver Court, Hartley Wintney, Hampshire, RG27 8FJ to view.",
+  "link": "https://www.mackenziesmith.co.uk/property/pierrefondes-avenue-farnborough-hampshire-gu14-8nz/",
+  "image": "https://assets.reapit.net/mck/live/pictures/FBO/25/FBO250373_23.jpg",
+  "desc": "Pierrefondes Avenue, Farnborough, Hampshire, GU14 8NZ offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Pierrefondes Avenue, Farnborough, Hampshire, GU14 8NZ to view.",
   "source": "Mackenzie Smith",
   "beds": null,
   "status": null,
   "price_reduced": false,
   "previous_price": null,
-  "first_seen": "2026-09-19T09:22:58Z",
-  "lastmod": "2026-09-19T07:44:52+00:00"
+  "first_seen": "2026-09-19T09:22:47Z",
+  "lastmod": "2026-09-19T07:45:18+00:00"
  },
  {
   "address": "Whitewater Road, Fleet, Hampshire, GU51 1GB",
@@ -39709,7 +39675,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-20T09:13:15Z",
-  "lastmod": "2026-10-06T10:51:29+00:00"
+  "lastmod": "2026-10-08T10:51:03+00:00"
  },
  {
   "address": "Waverley Lane, Farnham, GU9",
@@ -39726,7 +39692,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-20T09:13:25Z",
-  "lastmod": "2026-10-07T09:52:29+00:00"
+  "lastmod": "2026-10-08T10:51:03+00:00"
  },
  {
   "address": "Westover Road, Fleet, Hampshire, GU51 3DG",
@@ -39831,23 +39797,6 @@
   "lastmod": "2026-09-20T08:29:53+00:00"
  },
  {
-  "address": "Pegasus Court, Fleet, Hampshire, GU51 4SX",
-  "postcode": "GU51 4SX",
-  "price": 125000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/pegasus-court-fleet-hampshire-gu51-4sx/",
-  "image": "https://assets.reapit.net/mck/live/pictures/FLT/25/FLT250334_05.jpg",
-  "desc": "Pegasus Court, Fleet, Hampshire, GU51 4SX offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Pegasus Court, Fleet, Hampshire, GU51 4SX to view.",
-  "source": "Mackenzie Smith",
-  "beds": null,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-09-20T09:56:31Z",
-  "lastmod": "2026-09-20T08:29:29+00:00"
- },
- {
   "address": "Miles Road, Ash, Guildford, Surrey, GU12 6AU",
   "postcode": "GU12 6AU",
   "price": 360000,
@@ -39897,23 +39846,6 @@
   "previous_price": null,
   "first_seen": "2026-09-20T09:57:03Z",
   "lastmod": "2026-09-20T08:28:20+00:00"
- },
- {
-  "address": "Lynwood Drive, Mytchett, Camberley, Surrey, GU16 6BU",
-  "postcode": "GU16 6BU",
-  "price": 450000,
-  "price_qualifier": null,
-  "type": "Residence",
-  "link": "https://www.mackenziesmith.co.uk/property/lynwood-drive-mytchett-camberley-surrey-gu16-6bu/",
-  "image": "https://assets.reapit.net/mck/live/pictures/AVA/25/AVA250333_02.jpg",
-  "desc": "Lynwood Drive, Mytchett, Camberley, Surrey, GU16 6BU offered by Mackenzie Smith estate agents. View this property & much more with Mackenzie Smith. Book Lynwood Drive, Mytchett, Camberley, Surrey, GU16 6BU to view.",
-  "source": "Mackenzie Smith",
-  "beds": null,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-09-20T09:57:14Z",
-  "lastmod": "2026-09-20T08:27:56+00:00"
  },
  {
   "address": "Calvert Close, Aldershot, Hampshire, GU12 4QX",
@@ -40100,7 +40032,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-22T09:18:03Z",
-  "lastmod": "2026-10-07T09:52:29+00:00"
+  "lastmod": "2026-10-08T10:51:04+00:00"
  },
  {
   "address": "Local area around Waverley",
@@ -40134,7 +40066,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-22T10:19:21Z",
-  "lastmod": "2026-10-07T11:21:26+00:00"
+  "lastmod": "2026-10-08T11:24:01+00:00"
  },
  {
   "address": "Elstead Road, Seale",
@@ -40151,7 +40083,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-22T10:20:14Z",
-  "lastmod": "2026-10-07T11:21:24+00:00"
+  "lastmod": "2026-10-08T11:23:59+00:00"
  },
  {
   "address": "Sydenham Road, Guildford",
@@ -40168,7 +40100,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-22T10:22:10Z",
-  "lastmod": "2026-10-07T11:21:16+00:00"
+  "lastmod": "2026-10-08T11:23:50+00:00"
  },
  {
   "address": "4 bedroom terraced house for sale in Reading Berkshire",
@@ -41375,7 +41307,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-26T10:16:24Z",
-  "lastmod": "2026-10-07T11:21:41+00:00"
+  "lastmod": "2026-10-08T11:24:17+00:00"
  },
  {
   "address": "St. Peters Gardens, Wrecclesham, GU10, Farnham",
@@ -41664,7 +41596,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-28T11:02:52Z",
-  "lastmod": "2026-10-02T16:46:03+00:00"
+  "lastmod": "2026-10-05T10:46:50+00:00"
  },
  {
   "address": "Godalming, Surrey, Surrey",
@@ -42939,7 +42871,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-30T10:22:36Z",
-  "lastmod": "2026-10-07T09:52:29+00:00"
+  "lastmod": "2026-10-08T10:51:04+00:00"
  },
  {
   "address": "Haslemere",
@@ -42956,7 +42888,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-30T10:49:02Z",
-  "lastmod": "2026-10-06T16:45:51+00:00"
+  "lastmod": "2026-10-07T16:46:29+00:00"
  },
  {
   "address": "Alton, Hants, Hants",
@@ -43636,7 +43568,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-09-30T11:11:50Z",
-  "lastmod": "2026-10-07T07:45:24+00:00"
+  "lastmod": "2026-10-08T07:48:29+00:00"
  },
  {
   "address": "Woolmer Lane, Liphook",
@@ -45030,7 +44962,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-10-02T11:20:16Z",
-  "lastmod": "2026-10-07T11:21:19+00:00"
+  "lastmod": "2026-10-08T11:23:53+00:00"
  },
  {
   "address": "Longhope Drive, Farnham, GU10, Farnham",
@@ -45047,7 +44979,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-10-03T09:51:22Z",
-  "lastmod": "2026-10-07T09:52:29+00:00"
+  "lastmod": "2026-10-08T10:51:11+00:00"
  },
  {
   "address": "Littleworth Road, The Sands, GU10, Farnham",
@@ -45064,7 +44996,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-10-03T09:52:58Z",
-  "lastmod": "2026-10-06T10:51:30+00:00"
+  "lastmod": "2026-10-08T10:51:05+00:00"
  },
  {
   "address": "House for sale with 6 bedrooms in Lyndhurst Road, Landford, Salisbury, SP5 at £1,000,000",
@@ -45696,23 +45628,6 @@
   "lastmod": "2026-09-21T11:46:23.272Z"
  },
  {
-  "address": "3 bedroom semi-detached house for sale in Reading Berkshire",
-  "postcode": "RG5 3DY",
-  "price": 450000,
-  "price_qualifier": null,
-  "type": "Semi-Detached",
-  "link": "https://www.purplebricks.co.uk/property-for-sale/3-bedroom-semi-detached-house-reading-2149077",
-  "image": "https://purplebricks-photography.imgix.net/orders2026/ord-eotksa-0001012744/photosfinal/fu5a1732.jpg?auto=format&amp;w=1200&amp;h=630&amp;q=70&amp;fit=crop&amp;fill=solid&amp;fill-color=000000",
-  "desc": "For sale: a three-bedroom house with vacant possession, located in the popular Woodley area of Reading. The property offers an excellent opportunity for buyers…",
-  "source": "Purplebricks (online / ex-Strike)",
-  "beds": 3,
-  "status": null,
-  "price_reduced": false,
-  "previous_price": null,
-  "first_seen": "2026-10-03T10:48:29Z",
-  "lastmod": null
- },
- {
   "address": "Holybourne, Alton, Hampshire, Alton",
   "postcode": "GU34 1EN",
   "price": 175000,
@@ -45812,7 +45727,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-10-07T11:52:33Z",
-  "lastmod": "2026-10-07T07:45:26+00:00"
+  "lastmod": "2026-10-08T07:48:31+00:00"
  },
  {
   "address": "Dapdune Road, Guildford",
@@ -45824,12 +45739,12 @@
   "image": "https://www.clarkegammon.co.uk/wp-content/uploads/2026/10/3heulLxAtESBlXUtSx64dw.jpg",
   "desc": "Estate Agents in Guildford, Haslemere &amp; Liphook",
   "source": "Clarke Gammon",
-  "beds": 2,
+  "beds": 5,
   "status": null,
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-10-07T12:00:21Z",
-  "lastmod": "2026-10-07T10:54:20+00:00"
+  "lastmod": "2026-10-07T13:01:31+00:00"
  },
  {
   "address": "Museum Hill, Haslemere",
@@ -45846,7 +45761,7 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-10-07T12:07:48Z",
-  "lastmod": "2026-10-07T11:21:34+00:00"
+  "lastmod": "2026-10-08T11:24:09+00:00"
  },
  {
   "address": "3 bedroom semi-detached house for sale in Reading Berkshire",
@@ -45863,6 +45778,74 @@
   "price_reduced": false,
   "previous_price": null,
   "first_seen": "2026-10-07T12:12:14Z",
+  "lastmod": null
+ },
+ {
+  "address": "Property",
+  "postcode": "KT12 3RN",
+  "price": 285000,
+  "price_qualifier": null,
+  "type": null,
+  "link": "https://curchods.com/display/cwn250246/",
+  "image": null,
+  "desc": "Award Winning Estate Agents in Surrey and South West London",
+  "source": "Curchods",
+  "beds": 2,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-10-08T11:54:45Z",
+  "lastmod": "2025-12-10T17:09:12+00:00"
+ },
+ {
+  "address": "Scotlands Drive, Haslemere",
+  "postcode": "GU27 2LA",
+  "price": 1295000,
+  "price_qualifier": null,
+  "type": "Residence",
+  "link": "https://www.clarkegammon.co.uk/property/scotlands-drive-haslemere-4/",
+  "image": "https://www.clarkegammon.co.uk/wp-content/uploads/2026/10/uoCL9MBEgUK56ir-K4Q5sg.jpg",
+  "desc": "Estate Agents in Guildford, Haslemere &amp; Liphook",
+  "source": "Clarke Gammon",
+  "beds": 5,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-10-08T12:16:59Z",
+  "lastmod": "2026-10-07T14:06:28+00:00"
+ },
+ {
+  "address": "Peperharow Road, Godalming",
+  "postcode": "GU1 4SJ",
+  "price": 4300000,
+  "price_qualifier": null,
+  "type": "Residence",
+  "link": "https://grantley.co.uk/property/peperharow-road-godalming-2/",
+  "image": "https://grantley.co.uk/wp-content/uploads/2026/10/eZ9V75p31UWLwN5a7dTzDQ.jpg",
+  "desc": "Leading Property Agents in Surrey, West Sussex and Hampshire",
+  "source": "Grantley",
+  "beds": 3,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-10-08T12:27:31Z",
+  "lastmod": "2026-10-08T11:00:18+00:00"
+ },
+ {
+  "address": "2 bedroom semi-detached house for sale in Camberley Surrey",
+  "postcode": "GU15 3TA",
+  "price": 449950,
+  "price_qualifier": null,
+  "type": "Semi-Detached",
+  "link": "https://www.purplebricks.co.uk/property-for-sale/2-bedroom-semi-detached-house-camberley-1873829",
+  "image": "https://purplebricks-photography.imgix.net/orders2025/1799944/photosfinal/4563.jpg?auto=format&amp;w=1200&amp;h=630&amp;q=70&amp;fit=crop&amp;fill=solid&amp;fill-color=000000",
+  "desc": "**Please take the 360 tour to appreciate this Character home** **No Onward Chain** **Modern re-fitted Kitchen and Bathroom** **Garden Cabin/3rd Bedroom - with…",
+  "source": "Purplebricks (online / ex-Strike)",
+  "beds": 2,
+  "status": null,
+  "price_reduced": false,
+  "previous_price": null,
+  "first_seen": "2026-10-08T12:29:28Z",
   "lastmod": null
  }
 ]
