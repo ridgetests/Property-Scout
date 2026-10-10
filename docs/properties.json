@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-09T12:19:27.829629+00:00",
-  "count": 87,
+  "generated_at": "2026-10-10T11:33:15.406960+00:00",
+  "count": 76,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -24,1671 +24,6 @@
     ]
   ],
   "properties": [
-    {
-      "id": "gz_5223186",
-      "address": "3 Bower Road, Farnham \u2014 GU10 4ST",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU10 4ST",
-      "price": 446413,
-      "beds": 0,
-      "property_type": "Detached",
-      "lat": 51.192222,
-      "lng": -0.81054,
-      "precise_location": true,
-      "dist_mi": 0.5,
-      "score": 71,
-      "reasons": [
-        "Est. on market Nov 2026\u2013Apr 2027",
-        "Home \u00b7 69 m\u00b2",
-        "~\u00a3324k\u2013\u00a3467k Farnham-area est"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.192222,-0.81054",
-      "floor_area_m2": 69,
-      "built_form": "Detached",
-      "epc_rating": "D",
-      "market_window": "Est. on market Nov 2026\u2013Apr 2027",
-      "est_low": 324207,
-      "est_high": 467931,
-      "est_mid": 446413,
-      "local_comps": [
-        {
-          "addr": "CEDAR HOUSE, 6 Shrubbs Lane",
-          "price": 1710000,
-          "year": "2026",
-          "adj": 1710000,
-          "pc": "GU10 4AZ"
-        },
-        {
-          "addr": "17 Mayfield",
-          "price": 590000,
-          "year": "2026",
-          "adj": 590000,
-          "pc": "GU10 4DZ"
-        },
-        {
-          "addr": "SKY VIEW, 8A Burnt Hill Road",
-          "price": 2135000,
-          "year": "2025",
-          "adj": 1984040,
-          "pc": "GU10 4RZ"
-        },
-        {
-          "addr": "51 The Street",
-          "price": 450000,
-          "year": "2025",
-          "adj": 418181,
-          "pc": "GU10 4QS"
-        },
-        {
-          "addr": "SUNNYDELL HOUS Sunnydell Lane",
-          "price": 1620000,
-          "year": "2025",
-          "adj": 1505454,
-          "pc": "GU10 4RB"
-        },
-        {
-          "addr": "1 Coleson Hill Road",
-          "price": 550000,
-          "year": "2025",
-          "adj": 511111,
-          "pc": "GU10 4QQ"
-        }
-      ],
-      "est_basis": "\u00a3/m\u00b2, size-matched",
-      "est_n": 3,
-      "est_basis_type": "detached",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5223186",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65240"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": 808,
-      "footprints": {
-        "main_m2": 80,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 10
-      },
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 83,
-        "refused": 5,
-        "decided": 88,
-        "rate": 0.9431818181818182,
-        "classq_seen": 4,
-        "classq_approved": 3
-      },
-      "permission": 0.94,
-      "permission_label": "development-friendly",
-      "feasibility": 0.94,
-      "setting": 530,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Development play",
-      "tier": "High",
-      "signals": {
-        "Potential": {
-          "score": 26,
-          "max": 38,
-          "note": "808 m\u00b2 plot (2.1\u00d7 your home) \u00b7 10% built (room to develop)"
-        },
-        "Value": {
-          "score": 19,
-          "max": 26,
-          "note": "~\u00a3446k"
-        },
-        "Fit": {
-          "score": 20,
-          "max": 21,
-          "note": "0.5 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 94,
-          "max": 100,
-          "note": "\u00d70.94 \u00b7 development-friendly \u00b7 83 approved / 5 refused nearby \u00b7 3 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5213645",
-      "address": "Copse View, Red House Lane, Elstead, Godalming, Surrey \u2014 GU8 6DR",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU8 6DR",
-      "price": 831717,
-      "beds": 0,
-      "property_type": "Detached",
-      "lat": 51.178912,
-      "lng": -0.707116,
-      "precise_location": true,
-      "dist_mi": 4.8,
-      "score": 40,
-      "reasons": [
-        "Likely to market soon (by ~Mar 2027)",
-        "Home \u00b7 206 m\u00b2",
-        "~\u00a3764k\u2013\u00a3926k Farnham-area est"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.178912,-0.707116",
-      "floor_area_m2": 206,
-      "built_form": "Detached",
-      "epc_rating": "D",
-      "market_window": "Likely to market soon (by ~Mar 2027)",
-      "est_low": 764411,
-      "est_high": 926764,
-      "est_mid": 831717,
-      "local_comps": [
-        {
-          "addr": "WHINVERNE Red House Lane",
-          "price": 895000,
-          "year": "2024",
-          "adj": 831717,
-          "pc": "GU8 6DR"
-        },
-        {
-          "addr": "LITTLE TARA Red House Lane",
-          "price": 1110000,
-          "year": "2021",
-          "adj": 1098064,
-          "pc": "GU8 6DR"
-        },
-        {
-          "addr": "KEMAMAN Red House Lane",
-          "price": 694000,
-          "year": "2020",
-          "adj": 709501,
-          "pc": "GU8 6DS"
-        },
-        {
-          "addr": "KEMAMAN Red House Lane",
-          "price": 565000,
-          "year": "2014",
-          "adj": 764411,
-          "pc": "GU8 6DS"
-        },
-        {
-          "addr": "OAKDENE Red House Lane",
-          "price": 685000,
-          "year": "2014",
-          "adj": 926764,
-          "pc": "GU8 6DR"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 5,
-      "est_basis_type": "detached",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5213645",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65278"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": 1060,
-      "footprints": {
-        "main_m2": 158,
-        "buildings": 2,
-        "largest_secondary_m2": 30,
-        "coverage_pct": 18
-      },
-      "constraints": [
-        "AONB"
-      ],
-      "planning": {
-        "n": 100,
-        "approved": 87,
-        "refused": 6,
-        "decided": 93,
-        "rate": 0.9354838709677419,
-        "classq_seen": 5,
-        "classq_approved": 4
-      },
-      "permission": 0.79,
-      "permission_label": "development-friendly",
-      "feasibility": 0.79,
-      "setting": 304,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Development play",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 25,
-          "max": 38,
-          "note": "1,060 m\u00b2 plot (2.8\u00d7 your home)"
-        },
-        "Value": {
-          "score": 3,
-          "max": 26,
-          "note": "~\u00a3832k"
-        },
-        "Fit": {
-          "score": 13,
-          "max": 21,
-          "note": "4.8 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 79,
-          "max": 100,
-          "note": "\u00d70.79 \u00b7 development-friendly \u00b7 87 approved / 6 refused nearby \u00b7 4 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5211996",
-      "address": "26 College Hill, Godalming, Surrey \u2014 GU7 1YA",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU7 1YA",
-      "price": 561342,
-      "beds": 0,
-      "property_type": "Detached",
-      "lat": 51.178005,
-      "lng": -0.622146,
-      "precise_location": true,
-      "dist_mi": 8.5,
-      "score": 42,
-      "reasons": [
-        "Likely to market soon (by ~Mar 2027)",
-        "Home \u00b7 89 m\u00b2",
-        "~\u00a3527k\u2013\u00a3564k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.178005,-0.622146",
-      "floor_area_m2": 89,
-      "built_form": "Detached",
-      "epc_rating": "D",
-      "market_window": "Likely to market soon (by ~Mar 2027)",
-      "est_low": 527613,
-      "est_high": 564851,
-      "est_mid": 561342,
-      "local_comps": [
-        {
-          "addr": "31 College Hill",
-          "price": 555000,
-          "year": "2025",
-          "adj": 515757,
-          "pc": "GU7 1YA"
-        },
-        {
-          "addr": "11 College Hill",
-          "price": 573000,
-          "year": "2025",
-          "adj": 532484,
-          "pc": "GU7 1YA"
-        },
-        {
-          "addr": "28 College Hill",
-          "price": 635000,
-          "year": "2024",
-          "adj": 590101,
-          "pc": "GU7 1YA"
-        },
-        {
-          "addr": "17 College Hill",
-          "price": 710000,
-          "year": "2023",
-          "adj": 653705,
-          "pc": "GU7 1YA"
-        },
-        {
-          "addr": "29 College Hill",
-          "price": 557000,
-          "year": "2023",
-          "adj": 512836,
-          "pc": "GU7 1YA"
-        },
-        {
-          "addr": "23 College Hill",
-          "price": 665000,
-          "year": "2022",
-          "adj": 611800,
-          "pc": "GU7 1YA"
-        }
-      ],
-      "est_basis": "\u00a3/m\u00b2, size-matched",
-      "est_n": 6,
-      "est_basis_type": "detached",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5211996",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65309"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 91,
-        "refused": 4,
-        "decided": 95,
-        "rate": 0.9578947368421052,
-        "classq_seen": 1,
-        "classq_approved": 1
-      },
-      "permission": 0.96,
-      "permission_label": "development-friendly",
-      "feasibility": 0.96,
-      "setting": 0,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 14,
-          "max": 26,
-          "note": "~\u00a3561k"
-        },
-        "Fit": {
-          "score": 6,
-          "max": 21,
-          "note": "8.5 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 96,
-          "max": 100,
-          "note": "\u00d70.96 \u00b7 development-friendly \u00b7 91 approved / 4 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5189748",
-      "address": "Tara, Milford Road, Elstead, Godalming \u2014 GU8 6HS",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU8 6HS",
-      "price": 715634,
-      "beds": 0,
-      "property_type": "Detached",
-      "lat": 51.184013,
-      "lng": -0.695899,
-      "precise_location": true,
-      "dist_mi": 5.3,
-      "score": 40,
-      "reasons": [
-        "Likely to market soon (by ~Feb 2027)",
-        "Home \u00b7 140 m\u00b2",
-        "~\u00a3707k\u2013\u00a3751k Farnham-area est"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.184013,-0.695899",
-      "floor_area_m2": 140,
-      "built_form": "Detached",
-      "epc_rating": "D",
-      "market_window": "Likely to market soon (by ~Feb 2027)",
-      "est_low": 707098,
-      "est_high": 751812,
-      "est_mid": 715634,
-      "local_comps": [
-        {
-          "addr": "DERWENT Milford Road",
-          "price": 710000,
-          "year": "2024",
-          "adj": 659797,
-          "pc": "GU8 6HR"
-        },
-        {
-          "addr": "CROSSWAYS Milford Road",
-          "price": 705000,
-          "year": "2024",
-          "adj": 655151,
-          "pc": "GU8 6HL"
-        },
-        {
-          "addr": "ST MARYS Milford Road",
-          "price": 490500,
-          "year": "2021",
-          "adj": 485225,
-          "pc": "GU8 6HS"
-        },
-        {
-          "addr": "KELOWNA Milford Road",
-          "price": 600000,
-          "year": "2020",
-          "adj": 613401,
-          "pc": "GU8 6HR"
-        },
-        {
-          "addr": "ST MARYS Milford Road",
-          "price": 465000,
-          "year": "2019",
-          "adj": 511722,
-          "pc": "GU8 6HS"
-        },
-        {
-          "addr": "DERWENT Milford Road",
-          "price": 615000,
-          "year": "2019",
-          "adj": 676794,
-          "pc": "GU8 6HR"
-        }
-      ],
-      "est_basis": "\u00a3/m\u00b2, size-matched",
-      "est_n": 4,
-      "est_basis_type": "detached",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5189748",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": 863,
-      "footprints": {
-        "main_m2": 104,
-        "buildings": 2,
-        "largest_secondary_m2": 27,
-        "coverage_pct": 15
-      },
-      "constraints": [
-        "AONB"
-      ],
-      "planning": {
-        "n": 100,
-        "approved": 86,
-        "refused": 9,
-        "decided": 95,
-        "rate": 0.9052631578947369,
-        "classq_seen": 0,
-        "classq_approved": 0
-      },
-      "permission": 0.76,
-      "permission_label": "development-friendly",
-      "feasibility": 0.76,
-      "setting": 373,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "typology": "Development play",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 23,
-          "max": 38,
-          "note": "863 m\u00b2 plot (2.3\u00d7 your home)"
-        },
-        "Value": {
-          "score": 8,
-          "max": 26,
-          "note": "~\u00a3716k"
-        },
-        "Fit": {
-          "score": 12,
-          "max": 21,
-          "note": "5.3 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 76,
-          "max": 100,
-          "note": "\u00d70.76 \u00b7 development-friendly \u00b7 86 approved / 9 refused nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5178685",
-      "address": "The Oast, Farnham \u2014 GU10 5NX",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU10 5NX",
-      "price": 695000,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.23189,
-      "lng": -0.859549,
-      "precise_location": false,
-      "dist_mi": 3.6,
-      "score": 36,
-      "reasons": [
-        "Likely to market soon (by ~Jan 2027)",
-        "~\u00a3478k\u2013\u00a3730k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.23189,-0.859549",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "market_window": "Likely to market soon (by ~Jan 2027)",
-      "est_low": 478585,
-      "est_high": 730000,
-      "est_mid": 695000,
-      "local_comps": [
-        {
-          "addr": "7 Somerset Fields",
-          "price": 595000,
-          "year": "2026",
-          "adj": 595000,
-          "pc": "GU10 5BF"
-        },
-        {
-          "addr": "3 Broadlands Close",
-          "price": 220178,
-          "year": "2026",
-          "adj": 220178,
-          "pc": "GU10 5LE"
-        },
-        {
-          "addr": "8 Eggars Field",
-          "price": 787500,
-          "year": "2026",
-          "adj": 787500,
-          "pc": "GU10 5LD"
-        },
-        {
-          "addr": "2 Hole Lane",
-          "price": 730000,
-          "year": "2026",
-          "adj": 730000,
-          "pc": "GU10 5LP"
-        },
-        {
-          "addr": "4A Oakway",
-          "price": 695000,
-          "year": "2026",
-          "adj": 695000,
-          "pc": "GU10 5LR"
-        },
-        {
-          "addr": "27 Babs Field",
-          "price": 515000,
-          "year": "2025",
-          "adj": 478585,
-          "pc": "GU10 5LS"
-        }
-      ],
-      "est_basis": "nearby (GU10 5)",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5178685",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [
-        "Article 4",
-        "Conservation Area"
-      ],
-      "planning": {
-        "n": 100,
-        "approved": 85,
-        "refused": 5,
-        "decided": 90,
-        "rate": 0.9444444444444444,
-        "classq_seen": 0,
-        "classq_approved": 0
-      },
-      "permission": 0.76,
-      "permission_label": "development-friendly",
-      "feasibility": 0.76,
-      "setting": 0,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 9,
-          "max": 26,
-          "note": "~\u00a3695k"
-        },
-        "Fit": {
-          "score": 15,
-          "max": 21,
-          "note": "3.6 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 76,
-          "max": 100,
-          "note": "\u00d70.76 \u00b7 development-friendly \u00b7 85 approved / 5 refused nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5179126",
-      "address": "108A Weydon Hill Road, Farnham \u2014 GU9 8NZ",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU9 8NZ",
-      "price": 841068,
-      "beds": 0,
-      "property_type": "Detached",
-      "lat": 51.20307,
-      "lng": -0.797636,
-      "precise_location": true,
-      "dist_mi": 1.4,
-      "score": 51,
-      "reasons": [
-        "Likely to market soon (by ~Jan 2027)",
-        "Home \u00b7 143 m\u00b2",
-        "~\u00a3837k\u2013\u00a3857k Farnham-area est"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.20307,-0.797636",
-      "floor_area_m2": 143,
-      "built_form": "Detached",
-      "epc_rating": "D",
-      "market_window": "Likely to market soon (by ~Jan 2027)",
-      "est_low": 837199,
-      "est_high": 857347,
-      "est_mid": 841068,
-      "local_comps": [
-        {
-          "addr": "45 Weydon Hill Road",
-          "price": 800000,
-          "year": "2025",
-          "adj": 743434,
-          "pc": "GU9 8NX"
-        },
-        {
-          "addr": "44 Weydon Hill Road",
-          "price": 945000,
-          "year": "2025",
-          "adj": 878181,
-          "pc": "GU9 8NY"
-        },
-        {
-          "addr": "ONNEN COTTAGE, Weydon Hill Road",
-          "price": 985000,
-          "year": "2025",
-          "adj": 915353,
-          "pc": "GU9 8NZ"
-        },
-        {
-          "addr": "117 Weydon Hill Road",
-          "price": 1100000,
-          "year": "2025",
-          "adj": 1022222,
-          "pc": "GU9 8NZ"
-        },
-        {
-          "addr": "52 Weydon Hill Road",
-          "price": 945000,
-          "year": "2024",
-          "adj": 878181,
-          "pc": "GU9 8NY"
-        },
-        {
-          "addr": "117 Weydon Hill Road",
-          "price": 1000000,
-          "year": "2024",
-          "adj": 929292,
-          "pc": "GU9 8NZ"
-        }
-      ],
-      "est_basis": "\u00a3/m\u00b2, size-matched",
-      "est_n": 5,
-      "est_basis_type": "detached",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5179126",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": 706,
-      "footprints": {
-        "main_m2": 32,
-        "buildings": 1,
-        "largest_secondary_m2": 0,
-        "coverage_pct": 5
-      },
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 91,
-        "refused": 9,
-        "decided": 100,
-        "rate": 0.91,
-        "classq_seen": 5,
-        "classq_approved": 2
-      },
-      "permission": 0.91,
-      "permission_label": "development-friendly",
-      "feasibility": 0.91,
-      "setting": 556,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Motivated seller",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 25,
-          "max": 38,
-          "note": "706 m\u00b2 plot (1.9\u00d7 your home) \u00b7 5% built (room to develop)"
-        },
-        "Value": {
-          "score": 3,
-          "max": 26,
-          "note": "~\u00a3841k"
-        },
-        "Fit": {
-          "score": 19,
-          "max": 21,
-          "note": "1.4 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 91,
-          "max": 100,
-          "note": "\u00d70.91 \u00b7 development-friendly \u00b7 91 approved / 9 refused nearby \u00b7 2 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5166190",
-      "address": "23 Knights Road, Farnham, Surrey \u2014 GU9 9BX",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU9 9BX",
-      "price": 423527,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.234243,
-      "lng": -0.783317,
-      "precise_location": false,
-      "dist_mi": 3.6,
-      "score": 50,
-      "reasons": [
-        "Likely to market soon (by ~Jan 2027)",
-        "~\u00a3402k\u2013\u00a3458k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234243,-0.783317",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "market_window": "Likely to market soon (by ~Jan 2027)",
-      "est_low": 402811,
-      "est_high": 458141,
-      "est_mid": 423527,
-      "local_comps": [
-        {
-          "addr": "1 Knights Road",
-          "price": 420000,
-          "year": "2026",
-          "adj": 420000,
-          "pc": "GU9 9BX"
-        },
-        {
-          "addr": "11 Knights Road",
-          "price": 555000,
-          "year": "2025",
-          "adj": 515757,
-          "pc": "GU9 9BX"
-        },
-        {
-          "addr": "7 Knights Road",
-          "price": 493000,
-          "year": "2024",
-          "adj": 458141,
-          "pc": "GU9 9BX"
-        },
-        {
-          "addr": "44 Knights Road",
-          "price": 460000,
-          "year": "2023",
-          "adj": 423527,
-          "pc": "GU9 9DA"
-        },
-        {
-          "addr": "34 Knights Road",
-          "price": 375000,
-          "year": "2023",
-          "adj": 345267,
-          "pc": "GU9 9DA"
-        },
-        {
-          "addr": "40 Knights Road",
-          "price": 437500,
-          "year": "2023",
-          "adj": 402811,
-          "pc": "GU9 9DA"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5166190",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 79,
-        "refused": 13,
-        "decided": 92,
-        "rate": 0.8586956521739131,
-        "classq_seen": 5,
-        "classq_approved": 3
-      },
-      "permission": 0.86,
-      "permission_label": "development-friendly",
-      "feasibility": 0.86,
-      "setting": 622,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Anomaly",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 20,
-          "max": 26,
-          "note": "~\u00a3424k"
-        },
-        "Fit": {
-          "score": 15,
-          "max": 21,
-          "note": "3.6 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 86,
-          "max": 100,
-          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 79 approved / 13 refused nearby \u00b7 3 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5159166",
-      "address": "13 Burnt Hill Road, Wrecclesham, Farnham, Surrey \u2014 GU10 4RU",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU10 4RU",
-      "price": 773369,
-      "beds": 0,
-      "property_type": "Detached",
-      "lat": 51.196295,
-      "lng": -0.807859,
-      "precise_location": true,
-      "dist_mi": 0.8,
-      "score": 54,
-      "reasons": [
-        "Likely to market soon (by ~Jan 2027)",
-        "Home \u00b7 139 m\u00b2",
-        "~\u00a3761k\u2013\u00a3779k Farnham-area est"
-      ],
-      "flags": [
-        "probate"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.196295,-0.807859",
-      "floor_area_m2": 139,
-      "built_form": "Detached",
-      "epc_rating": "D",
-      "market_window": "Likely to market soon (by ~Jan 2027)",
-      "est_low": 761720,
-      "est_high": 779227,
-      "est_mid": 773369,
-      "local_comps": [
-        {
-          "addr": "SKY VIEW, 8A Burnt Hill Road",
-          "price": 2135000,
-          "year": "2025",
-          "adj": 1984040,
-          "pc": "GU10 4RZ"
-        },
-        {
-          "addr": "77A Burnt Hill Road",
-          "price": 755000,
-          "year": "2023",
-          "adj": 695138,
-          "pc": "GU10 3LL"
-        },
-        {
-          "addr": "CHESTNUT HOUSE Burnt Hill Road",
-          "price": 1650000,
-          "year": "2023",
-          "adj": 1519175,
-          "pc": "GU10 3LN"
-        },
-        {
-          "addr": "43 Burnt Hill Road",
-          "price": 635000,
-          "year": "2022",
-          "adj": 584200,
-          "pc": "GU10 4RU"
-        },
-        {
-          "addr": "89 Burnt Hill Road",
-          "price": 685000,
-          "year": "2022",
-          "adj": 630200,
-          "pc": "GU10 3LH"
-        },
-        {
-          "addr": "EDGWORTH, 72A Burnt Hill Road",
-          "price": 830000,
-          "year": "2021",
-          "adj": 821075,
-          "pc": "GU10 3LN"
-        }
-      ],
-      "est_basis": "\u00a3/m\u00b2, size-matched",
-      "est_n": 3,
-      "est_basis_type": "detached",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5159166",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65241"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": 1583,
-      "footprints": {
-        "main_m2": 524,
-        "buildings": 2,
-        "largest_secondary_m2": 161,
-        "coverage_pct": 43,
-        "outbuilding": "large"
-      },
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 82,
-        "refused": 12,
-        "decided": 94,
-        "rate": 0.8723404255319149,
-        "classq_seen": 1,
-        "classq_approved": 0
-      },
-      "permission": 0.87,
-      "permission_label": "development-friendly",
-      "feasibility": 0.87,
-      "setting": 486,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": false,
-        "agri": false
-      },
-      "typology": "Conversion play",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 27,
-          "max": 38,
-          "note": "1,583 m\u00b2 plot (4.2\u00d7 your home)"
-        },
-        "Value": {
-          "score": 5,
-          "max": 26,
-          "note": "~\u00a3773k"
-        },
-        "Fit": {
-          "score": 20,
-          "max": 21,
-          "note": "0.8 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate, outbuilding ~161 m\u00b2"
-        },
-        "Feasibility": {
-          "score": 87,
-          "max": 100,
-          "note": "\u00d70.87 \u00b7 development-friendly \u00b7 82 approved / 12 refused nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5161424",
-      "address": "4 Clover Lea, Binscombe Lane, Godalming, Surrey \u2014 GU7 3QQ",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU7 3QQ",
-      "price": 515757,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.200964,
-      "lng": -0.612343,
-      "precise_location": false,
-      "dist_mi": 8.9,
-      "score": 42,
-      "reasons": [
-        "Likely to market soon (by ~Dec 2026)",
-        "~\u00a3418k\u2013\u00a3623k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.200964,-0.612343",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": 418181,
-      "est_high": 623225,
-      "est_mid": 515757,
-      "local_comps": [
-        {
-          "addr": "22 Clover Lea",
-          "price": 475000,
-          "year": "2026",
-          "adj": 475000,
-          "pc": "GU7 3QQ"
-        },
-        {
-          "addr": "9 Clover Lea",
-          "price": 750000,
-          "year": "2026",
-          "adj": 750000,
-          "pc": "GU7 3QQ"
-        },
-        {
-          "addr": "22 Clover Lea",
-          "price": 450000,
-          "year": "2025",
-          "adj": 418181,
-          "pc": "GU7 3QQ"
-        },
-        {
-          "addr": "23 Clover Lea",
-          "price": 555000,
-          "year": "2025",
-          "adj": 515757,
-          "pc": "GU7 3QQ"
-        },
-        {
-          "addr": "17 Clover Lea",
-          "price": 630000,
-          "year": "2021",
-          "adj": 623225,
-          "pc": "GU7 3QQ"
-        },
-        {
-          "addr": "14 Clover Lea",
-          "price": 345000,
-          "year": "2019",
-          "adj": 379665,
-          "pc": "GU7 3QQ"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5161424",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65313"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 90,
-        "refused": 6,
-        "decided": 96,
-        "rate": 0.9375,
-        "classq_seen": 8,
-        "classq_approved": 8
-      },
-      "permission": 0.94,
-      "permission_label": "development-friendly",
-      "feasibility": 0.94,
-      "setting": 0,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 16,
-          "max": 26,
-          "note": "~\u00a3516k"
-        },
-        "Fit": {
-          "score": 5,
-          "max": 21,
-          "note": "8.9 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 94,
-          "max": 100,
-          "note": "\u00d70.94 \u00b7 development-friendly \u00b7 90 approved / 6 refused nearby \u00b7 8 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5156304",
-      "address": "12 Field Way, Tongham, Farnham \u2014 GU10 1BQ",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU10 1BQ",
-      "price": 835000,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.236696,
-      "lng": -0.72985,
-      "precise_location": false,
-      "dist_mi": 5.1,
-      "score": 32,
-      "reasons": [
-        "Likely to market soon (by ~Dec 2026)",
-        "~\u00a3205k\u2013\u00a31765k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.236696,-0.72985",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": 205000,
-      "est_high": 1765656,
-      "est_mid": 835000,
-      "local_comps": [
-        {
-          "addr": "THE COURTYARD Moor Park House Way",
-          "price": 835000,
-          "year": "2026",
-          "adj": 835000,
-          "pc": "GU10 1FE"
-        },
-        {
-          "addr": "SANDHURST Guildford Road",
-          "price": 205000,
-          "year": "2026",
-          "adj": 205000,
-          "pc": "GU10 1PG"
-        },
-        {
-          "addr": "HOP KILN COTTA Moor Park Lane",
-          "price": 620000,
-          "year": "2025",
-          "adj": 576161,
-          "pc": "GU10 1NS"
-        },
-        {
-          "addr": "1 Camp Hill",
-          "price": 1900000,
-          "year": "2025",
-          "adj": 1765656,
-          "pc": "GU10 1RJ"
-        },
-        {
-          "addr": "2 Swifts Close",
-          "price": 1915000,
-          "year": "2025",
-          "adj": 1779595,
-          "pc": "GU10 1QX"
-        },
-        {
-          "addr": "SANDHURST Guildford Road",
-          "price": 159000,
-          "year": "2025",
-          "adj": 147757,
-          "pc": "GU10 1PG"
-        }
-      ],
-      "est_basis": "nearby (GU10 1)",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5156304",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65270"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 74,
-        "refused": 14,
-        "decided": 88,
-        "rate": 0.8409090909090909,
-        "classq_seen": 2,
-        "classq_approved": 1
-      },
-      "permission": 0.84,
-      "permission_label": "development-friendly",
-      "feasibility": 0.84,
-      "setting": 153,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 3,
-          "max": 26,
-          "note": "~\u00a3835k"
-        },
-        "Fit": {
-          "score": 12,
-          "max": 21,
-          "note": "5.1 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 84,
-          "max": 100,
-          "note": "\u00d70.84 \u00b7 development-friendly \u00b7 74 approved / 14 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5145468",
-      "address": "High View, Grove Road, Hindhead, Surrey \u2014 GU26 6QS",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU26 6QS",
-      "price": 569626,
-      "beds": 0,
-      "property_type": "Detached",
-      "lat": 51.124057,
-      "lng": -0.757775,
-      "precise_location": true,
-      "dist_mi": 5.0,
-      "score": 43,
-      "reasons": [
-        "Likely to market soon (by ~Dec 2026)",
-        "Home \u00b7 104 m\u00b2",
-        "~\u00a3528k\u2013\u00a3644k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.124057,-0.757775",
-      "floor_area_m2": 104,
-      "built_form": "Detached",
-      "epc_rating": "D",
-      "market_window": "Likely to market soon (by ~Dec 2026)",
-      "est_low": 528378,
-      "est_high": 644498,
-      "est_mid": 569626,
-      "local_comps": [
-        {
-          "addr": "THE JAYS Grove Road",
-          "price": 450000,
-          "year": "2023",
-          "adj": 414320,
-          "pc": "GU26 6QS"
-        },
-        {
-          "addr": "QUINCE COTTAGE Grove Road",
-          "price": 700000,
-          "year": "2023",
-          "adj": 644498,
-          "pc": "GU26 6QS"
-        },
-        {
-          "addr": "ANDRELLE Grove Road",
-          "price": 530000,
-          "year": "2018",
-          "adj": 569626,
-          "pc": "GU26 6QP"
-        },
-        {
-          "addr": "FARASWOOD Grove Road",
-          "price": 670000,
-          "year": "2016",
-          "adj": 770596,
-          "pc": "GU26 6QR"
-        },
-        {
-          "addr": "HEATHERLEIGH Grove Road",
-          "price": 425000,
-          "year": "2015",
-          "adj": 528378,
-          "pc": "GU26 6QR"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 5,
-      "est_basis_type": "detached",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5145468",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43808/65260"
-      },
-      "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 80,
-        "refused": 13,
-        "decided": 93,
-        "rate": 0.8602150537634409,
-        "classq_seen": 2,
-        "classq_approved": 1
-      },
-      "permission": 0.86,
-      "permission_label": "development-friendly",
-      "feasibility": 0.86,
-      "setting": 0,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Motivated seller",
-      "tier": "Low",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 14,
-          "max": 26,
-          "note": "~\u00a3570k"
-        },
-        "Fit": {
-          "score": 12,
-          "max": 21,
-          "note": "5.0 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 86,
-          "max": 100,
-          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 80 approved / 13 refused nearby \u00b7 1 Class-Q approved nearby"
-        }
-      }
-    },
     {
       "id": "ag_386a89be92",
       "address": "Latchwood Lane, Lower Bourne, GU10, Lower Bourne",
@@ -1780,7 +115,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1896,7 +231,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2060,7 +395,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2224,7 +559,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2352,7 +687,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2510,7 +845,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -2661,7 +996,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2781,7 +1116,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-27",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-27",
@@ -2897,7 +1232,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3059,7 +1394,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3226,7 +1561,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3386,7 +1721,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -3500,7 +1835,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-27",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-09-27",
@@ -3639,7 +1974,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3782,7 +2117,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3942,7 +2277,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4105,7 +2440,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-26",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-26",
@@ -4226,7 +2561,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4349,7 +2684,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -4465,7 +2800,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4621,7 +2956,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4788,7 +3123,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -4902,7 +3237,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-20",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-09-20",
@@ -5061,7 +3396,7 @@
         "Recently reduced"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5218,7 +3553,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5384,7 +3719,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -5540,7 +3875,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-09-08",
@@ -5696,7 +4031,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -5859,7 +4194,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6015,7 +4350,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6182,7 +4517,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6338,7 +4673,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-23",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-23",
@@ -6501,7 +4836,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-11",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-09-11",
@@ -6615,7 +4950,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6752,7 +5087,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6920,7 +5255,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7086,7 +5421,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7250,7 +5585,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7419,7 +5754,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7575,7 +5910,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7691,7 +6026,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7853,7 +6188,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8019,7 +6354,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8140,7 +6475,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8300,7 +6635,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8466,7 +6801,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8628,7 +6963,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-18",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-09-18",
@@ -8792,7 +7127,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8958,7 +7293,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9114,7 +7449,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9272,7 +7607,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9393,7 +7728,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9499,7 +7834,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9657,7 +7992,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -9813,7 +8148,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -9929,7 +8264,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10047,7 +8382,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10168,7 +8503,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -10289,7 +8624,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -10445,7 +8780,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -10612,7 +8947,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -10779,7 +9114,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -10895,7 +9230,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11009,7 +9344,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11123,7 +9458,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11237,7 +9572,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11351,7 +9686,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11465,7 +9800,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -11579,7 +9914,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -11693,7 +10028,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -11849,7 +10184,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12005,7 +10340,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -12163,7 +10498,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -12321,7 +10656,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12481,7 +10816,7 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -12639,7 +10974,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-10-10",
       "price_history": [
         {
           "date": "2026-08-11",
