@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-06T13:14:20.170123+00:00",
-  "count": 71,
+  "generated_at": "2026-11-07T12:16:19.081437+00:00",
+  "count": 70,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -119,8 +119,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43753/65244"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": 3086,
       "footprints": {
@@ -276,8 +276,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65302"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -427,8 +427,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65240"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": 808,
       "footprints": {
@@ -575,8 +575,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65278"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": 1060,
       "footprints": {
@@ -733,8 +733,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65309"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -882,8 +882,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": 863,
       "footprints": {
@@ -1039,8 +1039,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -1191,8 +1191,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65245"
       },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-07",
       "days_on_market": 0,
       "plot_m2": 706,
       "footprints": {
@@ -1248,155 +1248,6 @@
           "score": 91,
           "max": 100,
           "note": "\u00d70.91 \u00b7 development-friendly \u00b7 91 approved / 9 refused nearby \u00b7 2 Class-Q approved nearby"
-        }
-      }
-    },
-    {
-      "id": "gz_5166190",
-      "address": "23 Knights Road, Farnham, Surrey \u2014 GU9 9BX",
-      "owner_note": "Probate lead \u2014 see notice",
-      "postcode": "GU9 9BX",
-      "price": 423527,
-      "beds": 0,
-      "property_type": "property",
-      "lat": 51.234243,
-      "lng": -0.783317,
-      "precise_location": false,
-      "dist_mi": 3.6,
-      "score": 50,
-      "reasons": [
-        "Likely to market soon (by ~Jan 2027)",
-        "~\u00a3402k\u2013\u00a3458k Farnham-area est"
-      ],
-      "flags": [
-        "probate",
-        "plot-unverified"
-      ],
-      "is_probate": true,
-      "low_comp": false,
-      "comps": [],
-      "streetview_url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=51.234243,-0.783317",
-      "floor_area_m2": null,
-      "built_form": "",
-      "epc_rating": "",
-      "market_window": "Likely to market soon (by ~Jan 2027)",
-      "est_low": 402811,
-      "est_high": 458141,
-      "est_mid": 423527,
-      "local_comps": [
-        {
-          "addr": "1 Knights Road",
-          "price": 420000,
-          "year": "2026",
-          "adj": 420000,
-          "pc": "GU9 9BX"
-        },
-        {
-          "addr": "11 Knights Road",
-          "price": 555000,
-          "year": "2025",
-          "adj": 515757,
-          "pc": "GU9 9BX"
-        },
-        {
-          "addr": "7 Knights Road",
-          "price": 493000,
-          "year": "2024",
-          "adj": 458141,
-          "pc": "GU9 9BX"
-        },
-        {
-          "addr": "44 Knights Road",
-          "price": 460000,
-          "year": "2023",
-          "adj": 423527,
-          "pc": "GU9 9DA"
-        },
-        {
-          "addr": "34 Knights Road",
-          "price": 375000,
-          "year": "2023",
-          "adj": 345267,
-          "pc": "GU9 9DA"
-        },
-        {
-          "addr": "40 Knights Road",
-          "price": 437500,
-          "year": "2023",
-          "adj": 402811,
-          "pc": "GU9 9DA"
-        }
-      ],
-      "est_basis": "same street",
-      "est_n": 6,
-      "est_basis_type": "mixed",
-      "source": {
-        "name": "The Gazette",
-        "url": "https://www.thegazette.co.uk/notice/5166190",
-        "uprn": ""
-      },
-      "source_label": "PROBATE",
-      "enrichment": {
-        "market": {},
-        "plot": {},
-        "equity": {}
-      },
-      "media": {
-        "photo_count": 0,
-        "has_floorplan": false,
-        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65250"
-      },
-      "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
-      "days_on_market": 0,
-      "plot_m2": null,
-      "constraints": [],
-      "planning": {
-        "n": 100,
-        "approved": 79,
-        "refused": 13,
-        "decided": 92,
-        "rate": 0.8586956521739131,
-        "classq_seen": 5,
-        "classq_approved": 3
-      },
-      "permission": 0.86,
-      "permission_label": "development-friendly",
-      "feasibility": 0.86,
-      "setting": 622,
-      "planning_potential": {
-        "tags": [],
-        "consented": false,
-        "classq": true,
-        "agri": false
-      },
-      "typology": "Anomaly",
-      "tier": "Medium",
-      "signals": {
-        "Potential": {
-          "score": 13,
-          "max": 38,
-          "note": "plot unverified"
-        },
-        "Value": {
-          "score": 20,
-          "max": 26,
-          "note": "~\u00a3424k"
-        },
-        "Fit": {
-          "score": 15,
-          "max": 21,
-          "note": "3.6 mi from home"
-        },
-        "Edge": {
-          "score": 10,
-          "max": 20,
-          "note": "probate"
-        },
-        "Feasibility": {
-          "score": 86,
-          "max": 100,
-          "note": "\u00d70.86 \u00b7 development-friendly \u00b7 79 approved / 13 refused nearby \u00b7 3 Class-Q approved nearby"
         }
       }
     },
@@ -1491,7 +1342,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1541,7 +1392,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d7c-3c92-4f0d-9c5e-68a5a7d14125/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d7c-3c92-4f0d-9c5e-68a5a7d14125/0/0.jpg"
       },
       "description_raw": "* No Onward Chain * A well proportioned two bedroom mid-terrace home with a single garage located within close proximity of Rowledge village",
       "enrichment": {
@@ -1607,7 +1458,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1727,7 +1578,7 @@
         "In your target area"
       ],
       "first_seen": "2026-11-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-11-05",
@@ -1843,7 +1694,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1959,7 +1810,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-27",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-27",
@@ -2075,7 +1926,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2195,7 +2046,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-27",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-09-27",
@@ -2353,7 +2204,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -2516,7 +2367,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -2672,7 +2523,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-25",
@@ -2727,7 +2578,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da7-a6b9-49c3-a875-879fc949fd16/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da7-a6b9-49c3-a875-879fc949fd16/0/0.jpg"
       },
       "description_raw": "A spaciously designed four bedroom semi-detached home tucked away within a small residential development in south Farnham ** No Onward Chain **",
       "enrichment": {
@@ -2793,7 +2644,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -2843,7 +2694,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43765/65245",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da3-4cd6-4646-af9d-ee42aba2fe59/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da3-4cd6-4646-af9d-ee42aba2fe59/0/0.jpg"
       },
       "description_raw": "* A rare and exciting opportunity * An individual 4 bedroom detached family home set on a generous plot of approximately 0.39 acres offering tremendous scope for improvement/enlargement stpp",
       "enrichment": {
@@ -2916,7 +2767,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -3032,7 +2883,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3188,7 +3039,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-25",
@@ -3351,7 +3202,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -3507,7 +3358,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-09-08",
@@ -3663,7 +3514,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -3814,7 +3665,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -3976,7 +3827,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-28",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-28",
@@ -4139,7 +3990,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -4295,7 +4146,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -4453,7 +4304,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -4508,7 +4359,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da7-2ed0-4c25-934e-b0a400c3fe4e/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4da7-2ed0-4c25-934e-b0a400c3fe4e/0/0.jpg"
       },
       "description_raw": "A spacious three bedroom mid-terrace home set over three floors, offering versatile living accommodation, situated in a quiet residential cul-de-sac * No Onward Chain *",
       "enrichment": {
@@ -4574,7 +4425,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4711,7 +4562,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -4875,7 +4726,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-29",
@@ -4989,7 +4840,7 @@
         "In your target area"
       ],
       "first_seen": "2026-11-04",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-11-04",
@@ -5150,7 +5001,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -5315,7 +5166,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -5431,7 +5282,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5551,7 +5402,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5711,7 +5562,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -5873,7 +5724,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-26",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-26",
@@ -6031,7 +5882,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-30",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-30",
@@ -6193,7 +6044,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6351,7 +6202,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6472,7 +6323,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6578,7 +6429,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6626,7 +6477,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD230243/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD230243/0/0.jpg"
       },
       "description_raw": "** NO CHAIN ** A well presented and tucked away 2 bedroom home with private garden and off road parking",
       "enrichment": {
@@ -6734,7 +6585,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -6850,7 +6701,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6902,7 +6753,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4db6-8b69-493b-b318-27fae589b0cd/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4db6-8b69-493b-b318-27fae589b0cd/0/0.jpg"
       },
       "description_raw": "A well maintained two bedroom detached bungalow offering comfortable and versatile accommodation together with exciting potential for further enhancement ** No Onward Chain **",
       "enrichment": {
@@ -6968,7 +6819,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7016,7 +6867,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4dc2-f8ae-4123-995b-39028cc21aee/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4dc2-f8ae-4123-995b-39028cc21aee/0/0.jpg"
       },
       "description_raw": "A 3 bedroom detached family home offering scope for improvement (s.t.p.p.) occupying a delightful plot found most convenient to, mainline station and excellent local schools * No Onward Chain *",
       "enrichment": {
@@ -7089,7 +6940,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7210,7 +7061,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -7366,7 +7217,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7533,7 +7384,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -7700,7 +7551,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -7816,7 +7667,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7930,7 +7781,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8044,7 +7895,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8092,7 +7943,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d10-d031-4d62-a6eb-eccbdbb50308/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4d10-d031-4d62-a6eb-eccbdbb50308/0/0.jpg"
       },
       "description_raw": "A spacious 4 bedroom detached family home offering tremendous scope for improvement and situated in a highly popular location convenient to excellent local schools * No Onward Chain *",
       "enrichment": {
@@ -8158,7 +8009,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8272,7 +8123,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8386,7 +8237,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8500,7 +8351,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -8548,7 +8399,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43752/65246",
-        "photo_url": "http://wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4dc2-44d3-4d07-be7d-eea98a2ea0ad/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/wp-andrew-lodge.iomart.thepropertyjungle.com/resize/a1ef4dc2-44d3-4d07-be7d-eea98a2ea0ad/0/0.jpg"
       },
       "description_raw": "A charming 3 bedroom semi-detached family home situated in a sought after South Farnham road close to schools, the station and amenities",
       "enrichment": {
@@ -8614,7 +8465,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -8770,7 +8621,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -8926,7 +8777,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -9042,7 +8893,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-16",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-16",
@@ -9090,7 +8941,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD230242/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD230242/0/0.jpg"
       },
       "description_raw": "Set in a cul-de-sac in the centre of charming Witley village, a stunning and refurbished 3 bedroom character home",
       "enrichment": {
@@ -9198,7 +9049,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -9248,7 +9099,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD260048/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD260048/0/0.jpg"
       },
       "description_raw": "Set in a stunning rural location and offered to the market chain free, a Bargate stone-built three bedroom semi-detached home, with a garage, spanning 0.25 acres",
       "enrichment": {
@@ -9356,7 +9207,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -9514,7 +9365,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9565,7 +9416,7 @@
         "photo_count": 1,
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43772/65313",
-        "photo_url": "http://warren-powell.iomart.thepropertyjungle.com/resize/GOD240201/0/0.jpg"
+        "photo_url": "https://tpjcdn.co.uk/warren-powell.iomart.thepropertyjungle.com/resize/GOD240201/0/0.jpg"
       },
       "description_raw": "Situated in a private position in the popular and historic village of Elstead, Surrey, a two- bedroom link-detached, beautifully extended bungalow with spacious modern living accommodation, a delightful garden, and easy parking",
       "enrichment": {
@@ -9674,7 +9525,7 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9832,7 +9683,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -9988,7 +9839,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-07",
       "price_history": [
         {
           "date": "2026-10-29",
