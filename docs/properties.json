@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-25T15:15:39.199083+00:00",
-  "count": 72,
+  "generated_at": "2026-11-26T14:52:14.075408+00:00",
+  "count": 85,
   "home_floor_m2": 144,
   "home_footprint_m2": 72,
   "home_plot_m2": 380,
@@ -120,8 +120,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43743/65222"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -271,8 +271,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43753/65244"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": 3086,
       "footprints": {
@@ -428,8 +428,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43764/65302"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -579,8 +579,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43768/65240"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": 808,
       "footprints": {
@@ -727,8 +727,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65278"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": 1060,
       "footprints": {
@@ -885,8 +885,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43776/65309"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [],
@@ -1034,8 +1034,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43773/65282"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": 863,
       "footprints": {
@@ -1191,8 +1191,8 @@
         "has_floorplan": false,
         "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43745/65223"
       },
-      "first_seen": "2026-11-25",
-      "last_seen": "2026-11-25",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
       "days_on_market": 0,
       "plot_m2": null,
       "constraints": [
@@ -1339,7 +1339,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1455,7 +1455,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1492,7 +1492,7 @@
       "lat": 51.19723035096643,
       "lng": -0.7967693062054939,
       "property_type": "house",
-      "beds": 2,
+      "beds": 3,
       "price": 450000,
       "price_poa": false,
       "status": "live",
@@ -1575,7 +1575,7 @@
         "In your target area"
       ],
       "first_seen": "2026-11-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-11-05",
@@ -1599,6 +1599,170 @@
       "permission_label": "development-friendly",
       "feasibility": 0.86,
       "setting": 467
+    },
+    {
+      "id": "ag_c9619f4ef9",
+      "address": "Greenfield Road, Farnham, GU9 8TQ",
+      "postcode": "GU9 8TQ",
+      "street": "Greenfield Road",
+      "lat": 51.200787,
+      "lng": -0.810091,
+      "property_type": "house",
+      "beds": 3,
+      "price": 419000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/greenfield-road-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43763/65241",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/P5lnOxiMcEuPPS8vGiDhWw.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:53:22Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.0,
+      "precise_location": true,
+      "floor_area_m2": 36,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 915353,
+      "est_mid": 1488727,
+      "est_high": 1619292,
+      "est_basis": "nearby (GU9 8)",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "STRATFORD COUR Avon Road",
+          "price": 368000,
+          "year": "2025",
+          "adj": 341979,
+          "pc": "GU9 8PG"
+        },
+        {
+          "addr": "ORCHARD HOUSE, Great Austins",
+          "price": 2350000,
+          "year": "2025",
+          "adj": 2183838,
+          "pc": "GU9 8JQ"
+        },
+        {
+          "addr": "BROOMFIELD, 9 Old Farnham Lane",
+          "price": 1510000,
+          "year": "2025",
+          "adj": 1403232,
+          "pc": "GU9 8JU"
+        },
+        {
+          "addr": "88 Tilford Road",
+          "price": 1742500,
+          "year": "2025",
+          "adj": 1619292,
+          "pc": "GU9 8DS"
+        },
+        {
+          "addr": "ONNEN COTTAGE, Weydon Hill Road",
+          "price": 985000,
+          "year": "2025",
+          "adj": 915353,
+          "pc": "GU9 8NZ"
+        },
+        {
+          "addr": "FAIRFIELD LODG The Fairfield",
+          "price": 1602000,
+          "year": "2024",
+          "adj": 1488727,
+          "pc": "GU9 8AJ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 59,
+      "typology": "Anomaly",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 22,
+          "max": 38,
+          "note": "702 m\u00b2 plot (1.8\u00d7 your home)"
+        },
+        "Value": {
+          "score": 22,
+          "max": 26,
+          "note": "\u00a3419k vs \u00a31489k comps (+50%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.0 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 92,
+          "max": 100,
+          "note": "\u00d70.92 \u00b7 development-friendly \u00b7 89 approved / 8 refused nearby \u00b7 2 Class-Q approved nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 419000
+        }
+      ],
+      "plot_m2": 702,
+      "footprints": {
+        "main_m2": 100,
+        "buildings": 2,
+        "largest_secondary_m2": 50,
+        "coverage_pct": 21
+      },
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 89,
+        "refused": 8,
+        "decided": 97,
+        "rate": 0.9175257731958762,
+        "classq_seen": 2,
+        "classq_approved": 2
+      },
+      "permission": 0.92,
+      "permission_label": "development-friendly",
+      "feasibility": 0.92,
+      "setting": 603
     },
     {
       "id": "ag_59084fc010",
@@ -1691,7 +1855,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -1807,7 +1971,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-27",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-09-27",
@@ -1835,6 +1999,163 @@
       "permission_label": "development-friendly",
       "feasibility": 0.86,
       "setting": 467
+    },
+    {
+      "id": "ag_7e302eb8a5",
+      "address": "Firgrove Hill, Farnham, Surrey, GU9 8LP",
+      "postcode": "GU9 8LP",
+      "street": "Firgrove Hill",
+      "lat": 51.204609,
+      "lng": -0.793445,
+      "property_type": "house",
+      "beds": 3,
+      "price": 450000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/firgrove-hill-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65247",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/rWslHzUEAUu1VeIENKZYMQ.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:53:42Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.6,
+      "precise_location": true,
+      "floor_area_m2": 148,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 908640,
+      "est_mid": 950000,
+      "est_high": 987737,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 4,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "45A Firgrove Hill",
+          "price": 950000,
+          "year": "2026",
+          "adj": 950000,
+          "pc": "GU9 8LP"
+        },
+        {
+          "addr": "9 Firgrove Hill",
+          "price": 850000,
+          "year": "2024",
+          "adj": 789898,
+          "pc": "GU9 8LH"
+        },
+        {
+          "addr": "MINDEN HOUSE,  Firgrove Hill",
+          "price": 985000,
+          "year": "2018",
+          "adj": 1058644,
+          "pc": "GU9 8LQ"
+        },
+        {
+          "addr": "45A Firgrove Hill",
+          "price": 800000,
+          "year": "2017",
+          "adj": 908641,
+          "pc": "GU9 8LP"
+        },
+        {
+          "addr": "64A Firgrove Hill",
+          "price": 735000,
+          "year": "2014",
+          "adj": 994411,
+          "pc": "GU9 8LL"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 54,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 23,
+          "max": 38,
+          "note": "833 m\u00b2 plot (2.2\u00d7 your home)"
+        },
+        "Value": {
+          "score": 21,
+          "max": 26,
+          "note": "\u00a3450k vs \u00a3950k comps (+50%)"
+        },
+        "Fit": {
+          "score": 18,
+          "max": 21,
+          "note": "1.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 87,
+          "max": 100,
+          "note": "\u00d70.87 \u00b7 development-friendly \u00b7 86 approved / 13 refused nearby \u00b7 2 Class-Q approved nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 450000
+        }
+      ],
+      "plot_m2": 833,
+      "footprints": {
+        "main_m2": 135,
+        "buildings": 2,
+        "largest_secondary_m2": 28,
+        "coverage_pct": 20
+      },
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 86,
+        "refused": 13,
+        "decided": 99,
+        "rate": 0.8686868686868687,
+        "classq_seen": 5,
+        "classq_approved": 2
+      },
+      "permission": 0.87,
+      "permission_label": "development-friendly",
+      "feasibility": 0.87,
+      "setting": 482
     },
     {
       "id": "ag_b980437ae4",
@@ -1927,7 +2248,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -2089,7 +2410,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -2252,7 +2573,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -2408,7 +2729,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-25",
@@ -2529,7 +2850,7 @@
         "In your target area"
       ],
       "first_seen": "2026-11-16",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-11-16",
@@ -2553,6 +2874,449 @@
       "permission_label": "development-friendly",
       "feasibility": 0.86,
       "setting": 467
+    },
+    {
+      "id": "ag_6da3b7fd08",
+      "address": "Dene Lane, Lower Bourne, Farnham, Surrey, GU10 3PW",
+      "postcode": "GU10 3PW",
+      "street": "Dene Lane",
+      "lat": 51.195677,
+      "lng": -0.786264,
+      "property_type": "house",
+      "beds": 2,
+      "price": 650000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/dene-lane-lower-bourne-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43766/65249",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/PojskvBoekqSi6M7c749IA.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:49:17Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.5,
+      "precise_location": true,
+      "floor_area_m2": 80,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 571515,
+      "est_mid": 1104855,
+      "est_high": 1249382,
+      "est_basis": "same street",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "15 Dene Lane",
+          "price": 615000,
+          "year": "2025",
+          "adj": 571515,
+          "pc": "GU10 3PW"
+        },
+        {
+          "addr": "DENE COACH HOU Dene Lane",
+          "price": 1200000,
+          "year": "2023",
+          "adj": 1104855,
+          "pc": "GU10 3RJ"
+        },
+        {
+          "addr": "BADGERS, 33 Dene Lane",
+          "price": 1100000,
+          "year": "2017",
+          "adj": 1249382,
+          "pc": "GU10 3RH"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 50,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 23,
+          "max": 38,
+          "note": "853 m\u00b2 plot (2.2\u00d7 your home)"
+        },
+        "Value": {
+          "score": 19,
+          "max": 26,
+          "note": "\u00a3650k vs \u00a31105k comps (+41%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 82,
+          "max": 100,
+          "note": "\u00d70.82 \u00b7 development-friendly \u00b7 75 approved / 17 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 650000
+        }
+      ],
+      "plot_m2": 853,
+      "footprints": {
+        "main_m2": 156,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 18
+      },
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 75,
+        "refused": 17,
+        "decided": 92,
+        "rate": 0.8152173913043478,
+        "classq_seen": 3,
+        "classq_approved": 3
+      },
+      "permission": 0.82,
+      "permission_label": "development-friendly",
+      "feasibility": 0.82,
+      "setting": 362
+    },
+    {
+      "id": "ag_86d66e7893",
+      "address": "Bentley, Farnham, GU10 5JL",
+      "postcode": "GU10 5JL",
+      "street": "Bentley",
+      "lat": 51.1947,
+      "lng": -0.874502,
+      "property_type": "house",
+      "beds": 2,
+      "price": 535000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/bentley-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43767/65217",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/610gHEBna0-pOokgDXYgPQ.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:50:59Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.5,
+      "precise_location": true,
+      "floor_area_m2": 193,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 1493620,
+      "est_mid": 1542352,
+      "est_high": 1603029,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 3,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "BAILEYS WELL",
+          "price": 1725000,
+          "year": "2024",
+          "adj": 1603030,
+          "pc": "GU10 5JL"
+        },
+        {
+          "addr": "BAILEYS WELL",
+          "price": 1623500,
+          "year": "2022",
+          "adj": 1493620,
+          "pc": "GU10 5JL"
+        },
+        {
+          "addr": "BAILEYS WELL",
+          "price": 1140000,
+          "year": "2014",
+          "adj": 1542352,
+          "pc": "GU10 5JL"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 56,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 29,
+          "max": 38,
+          "note": "2,493 m\u00b2 plot (6.6\u00d7 your home)"
+        },
+        "Value": {
+          "score": 20,
+          "max": 26,
+          "note": "\u00a3535k vs \u00a31542k comps (+50%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 85,
+          "max": 100,
+          "note": "\u00d70.85 \u00b7 development-friendly \u00b7 64 approved / 11 refused nearby \u00b7 2 Class-Q approved nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 535000
+        }
+      ],
+      "plot_m2": 2493,
+      "constraints": [],
+      "planning": {
+        "n": 94,
+        "approved": 64,
+        "refused": 11,
+        "decided": 75,
+        "rate": 0.8533333333333334,
+        "classq_seen": 3,
+        "classq_approved": 2
+      },
+      "permission": 0.85,
+      "permission_label": "development-friendly",
+      "feasibility": 0.85,
+      "setting": 104
+    },
+    {
+      "id": "ag_1ef6804b52",
+      "address": "Weydon Hill Road, Farnham, Surrey, GU9 8NY",
+      "postcode": "GU9 8NY",
+      "street": "Weydon Hill Road",
+      "lat": 51.204574,
+      "lng": -0.798771,
+      "property_type": "house",
+      "beds": 2,
+      "price": 495000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/weydon-hill-road-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43761/65245",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/NBLE04MzMEuOu-NoRFwRDg.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:52:41Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.5,
+      "est_low": 420505,
+      "est_mid": 743434,
+      "est_high": 766666,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "93 Weydon Hill Road",
+          "price": 850000,
+          "year": "2026",
+          "adj": 850000,
+          "pc": "GU9 8NY"
+        },
+        {
+          "addr": "45 Weydon Hill Road",
+          "price": 800000,
+          "year": "2025",
+          "adj": 743434,
+          "pc": "GU9 8NX"
+        },
+        {
+          "addr": "15 Weydon Hill Road",
+          "price": 452500,
+          "year": "2025",
+          "adj": 420505,
+          "pc": "GU9 8NX"
+        },
+        {
+          "addr": "67 Weydon Hill Road",
+          "price": 450000,
+          "year": "2025",
+          "adj": 418181,
+          "pc": "GU9 8NY"
+        },
+        {
+          "addr": "68 Weydon Hill Road",
+          "price": 825000,
+          "year": "2025",
+          "adj": 766666,
+          "pc": "GU9 8NY"
+        },
+        {
+          "addr": "104 Weydon Hill Road",
+          "price": 785000,
+          "year": "2025",
+          "adj": 729494,
+          "pc": "GU9 8NZ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 56,
+      "typology": "Anomaly",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 25,
+          "max": 38,
+          "note": "664 m\u00b2 plot (1.7\u00d7 your home) \u00b7 5% built (room to develop)"
+        },
+        "Value": {
+          "score": 19,
+          "max": 26,
+          "note": "\u00a3495k vs \u00a3743k comps (+33%)"
+        },
+        "Fit": {
+          "score": 19,
+          "max": 21,
+          "note": "1.5 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 89,
+          "max": 100,
+          "note": "\u00d70.89 \u00b7 development-friendly \u00b7 88 approved / 11 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 495000
+        }
+      ],
+      "plot_m2": 664,
+      "footprints": {
+        "main_m2": 30,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 5
+      },
+      "floor_area_est_m2": 54,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 88,
+        "refused": 11,
+        "decided": 99,
+        "rate": 0.8888888888888888,
+        "classq_seen": 1,
+        "classq_approved": 1
+      },
+      "permission": 0.89,
+      "permission_label": "development-friendly",
+      "feasibility": 0.89,
+      "setting": 631
     },
     {
       "id": "ag_0c9cdef8e9",
@@ -2645,7 +3409,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -2768,7 +3532,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -2891,7 +3655,7 @@
         }
       },
       "first_seen": "2026-08-20",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-20",
@@ -3058,7 +3822,7 @@
         }
       },
       "first_seen": "2026-11-20",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-11-20",
@@ -3174,7 +3938,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -3330,7 +4094,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-25",
@@ -3493,7 +4257,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-14",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-14",
@@ -3649,7 +4413,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-09-08",
@@ -3805,7 +4569,7 @@
         "In your target area"
       ],
       "first_seen": "2026-09-12",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-09-12",
@@ -3956,7 +4720,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -3984,6 +4748,171 @@
       "permission_label": "development-friendly",
       "feasibility": 0.88,
       "setting": 743
+    },
+    {
+      "id": "ag_ad43e06bfe",
+      "address": "Great Austins Manor, 11 Vicarage Hill, Farnham, Surrey, GU9 8AF",
+      "postcode": "GU9 8AF",
+      "street": "Great Austins Manor",
+      "lat": 51.202185,
+      "lng": -0.791161,
+      "property_type": "house",
+      "beds": 2,
+      "price": 405000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/great-austins-manor-11-vicarage-hill-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43762/65247",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/219P2bL_c0-hvtFk1g2DhQ.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:54:43Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.6,
+      "est_low": 384262,
+      "est_mid": 483644,
+      "est_high": 484864,
+      "est_basis": "this postcode",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "GREAT AUSTINS  Vicarage Hill",
+          "price": 413500,
+          "year": "2025",
+          "adj": 384262,
+          "pc": "GU9 8AF"
+        },
+        {
+          "addr": "GREAT AUSTINS  Vicarage Hill",
+          "price": 410000,
+          "year": "2024",
+          "adj": 381010,
+          "pc": "GU9 8AF"
+        },
+        {
+          "addr": "GREAT AUSTINS  Vicarage Hill",
+          "price": 420000,
+          "year": "2022",
+          "adj": 386400,
+          "pc": "GU9 8AF"
+        },
+        {
+          "addr": "GREAT AUSTINS  Vicarage Hill",
+          "price": 450000,
+          "year": "2018",
+          "adj": 483644,
+          "pc": "GU9 8AF"
+        },
+        {
+          "addr": "GREAT AUSTINS  Vicarage Hill",
+          "price": 390000,
+          "year": "2015",
+          "adj": 484864,
+          "pc": "GU9 8AF"
+        },
+        {
+          "addr": "GREAT AUSTINS  Vicarage Hill",
+          "price": 430000,
+          "year": "2015",
+          "adj": 534594,
+          "pc": "GU9 8AF"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 53,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 27,
+          "max": 38,
+          "note": "2,278 m\u00b2 plot (6.0\u00d7 your home) \u00b7 approx, capped"
+        },
+        "Value": {
+          "score": 16,
+          "max": 26,
+          "note": "\u00a3405k vs \u00a3484k comps (+16%)"
+        },
+        "Fit": {
+          "score": 18,
+          "max": 21,
+          "note": "1.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 87,
+          "max": 100,
+          "note": "\u00d70.87 \u00b7 development-friendly \u00b7 87 approved / 5 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 405000
+        }
+      ],
+      "plot_m2": 2278,
+      "footprints": {
+        "main_m2": 461,
+        "buildings": 2,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 21
+      },
+      "floor_area_est_m2": 830,
+      "constraints": [
+        "Conservation Area"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 5,
+        "decided": 92,
+        "rate": 0.9456521739130435,
+        "classq_seen": 1,
+        "classq_approved": 1
+      },
+      "permission": 0.87,
+      "permission_label": "development-friendly",
+      "feasibility": 0.87,
+      "setting": 324
     },
     {
       "id": "ag_3cb4b8b558",
@@ -4118,7 +5047,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-28",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-28",
@@ -4147,6 +5076,162 @@
       "permission_label": "development-friendly",
       "feasibility": 0.97,
       "setting": 323
+    },
+    {
+      "id": "ag_eb7a2d7ae5",
+      "address": "Waynflete Lane, Farnham, Surrey, GU9 7BH",
+      "postcode": "GU9 7BH",
+      "street": "Waynflete Lane",
+      "lat": 51.213298,
+      "lng": -0.812919,
+      "property_type": "house",
+      "beds": 3,
+      "price": 395000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/waynflete-lane-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65240",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/yNbz9_9GtEqjW0oeLPxHGQ.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:54:03Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 1.9,
+      "est_low": 400200,
+      "est_mid": 458048,
+      "est_high": 461277,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "32 Waynflete Lane",
+          "price": 492900,
+          "year": "2025",
+          "adj": 458048,
+          "pc": "GU9 7BH"
+        },
+        {
+          "addr": "10 Waynflete Lane",
+          "price": 466000,
+          "year": "2025",
+          "adj": 433050,
+          "pc": "GU9 7BH"
+        },
+        {
+          "addr": "4 Waynflete Lane",
+          "price": 600000,
+          "year": "2024",
+          "adj": 557575,
+          "pc": "GU9 7BH"
+        },
+        {
+          "addr": "9 Waynflete Lane",
+          "price": 501000,
+          "year": "2023",
+          "adj": 461277,
+          "pc": "GU9 7BH"
+        },
+        {
+          "addr": "24 Waynflete Lane",
+          "price": 435000,
+          "year": "2022",
+          "adj": 400200,
+          "pc": "GU9 7BH"
+        },
+        {
+          "addr": "40 Waynflete Lane",
+          "price": 418000,
+          "year": "2022",
+          "adj": 384560,
+          "pc": "GU9 7BL"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 41,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 15,
+          "max": 26,
+          "note": "\u00a3395k vs \u00a3458k comps (+14%)"
+        },
+        "Fit": {
+          "score": 18,
+          "max": 21,
+          "note": "1.9 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 89,
+          "max": 100,
+          "note": "\u00d70.89 \u00b7 development-friendly \u00b7 84 approved / 10 refused nearby \u00b7 6 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 395000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 84,
+        "refused": 10,
+        "decided": 94,
+        "rate": 0.8936170212765957,
+        "classq_seen": 7,
+        "classq_approved": 6
+      },
+      "permission": 0.89,
+      "permission_label": "development-friendly",
+      "feasibility": 0.89,
+      "setting": 504
     },
     {
       "id": "ag_7d63eea75e",
@@ -4281,7 +5366,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -4437,7 +5522,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -4595,7 +5680,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -4716,7 +5801,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -4853,7 +5938,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -5017,7 +6102,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-29",
@@ -5131,7 +6216,7 @@
         "In your target area"
       ],
       "first_seen": "2026-11-04",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-11-04",
@@ -5292,7 +6377,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -5323,6 +6408,170 @@
       "permission_label": "restricted",
       "feasibility": 0.41,
       "setting": 112
+    },
+    {
+      "id": "ag_c6073d54a8",
+      "address": "Brooklands Road, Farnham, Surrey, GU9 9BS",
+      "postcode": "GU9 9BS",
+      "street": "Brooklands Road",
+      "lat": 51.235493,
+      "lng": -0.783384,
+      "property_type": "house",
+      "beds": 4,
+      "price": 595000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/brooklands-road-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43743/65250",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/P3IscyishkK7RZDbKn9w5A.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:50:39Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.7,
+      "precise_location": true,
+      "floor_area_m2": 148,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 638431,
+      "est_mid": 740000,
+      "est_high": 762595,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 6,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "VERYAN Wentworth Close",
+          "price": 660000,
+          "year": "2026",
+          "adj": 660000,
+          "pc": "GU9 9HJ"
+        },
+        {
+          "addr": "59 Carpenters Way",
+          "price": 675000,
+          "year": "2026",
+          "adj": 675000,
+          "pc": "GU9 9FT"
+        },
+        {
+          "addr": "8 Weybourne Road",
+          "price": 835000,
+          "year": "2026",
+          "adj": 835000,
+          "pc": "GU9 9ES"
+        },
+        {
+          "addr": "16 Badshot Park",
+          "price": 575000,
+          "year": "2026",
+          "adj": 575000,
+          "pc": "GU9 9JZ"
+        },
+        {
+          "addr": "8 Parkland Grove",
+          "price": 580000,
+          "year": "2025",
+          "adj": 538989,
+          "pc": "GU9 9HA"
+        },
+        {
+          "addr": "2 Oakland Avenue",
+          "price": 657000,
+          "year": "2025",
+          "adj": 610545,
+          "pc": "GU9 9DY"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 44,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 19,
+          "max": 38,
+          "note": "433 m\u00b2 plot (1.1\u00d7 your home)"
+        },
+        "Value": {
+          "score": 16,
+          "max": 26,
+          "note": "\u00a3595k vs \u00a3740k comps (+20%)"
+        },
+        "Fit": {
+          "score": 15,
+          "max": 21,
+          "note": "3.7 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 87,
+          "max": 100,
+          "note": "\u00d70.87 \u00b7 development-friendly \u00b7 81 approved / 12 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 595000
+        }
+      ],
+      "plot_m2": 433,
+      "footprints": {
+        "main_m2": 108,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 25
+      },
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 81,
+        "refused": 12,
+        "decided": 93,
+        "rate": 0.8709677419354839,
+        "classq_seen": 2,
+        "classq_approved": 1
+      },
+      "permission": 0.87,
+      "permission_label": "development-friendly",
+      "feasibility": 0.87,
+      "setting": 607
     },
     {
       "id": "ag_92f288f18e",
@@ -5457,7 +6706,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -5573,7 +6822,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5601,6 +6850,335 @@
       "permission_label": "development-friendly",
       "feasibility": 0.86,
       "setting": 467
+    },
+    {
+      "id": "ag_12ecaede75",
+      "address": "Waverley Heights, 58 Waverley Lane, Farnham, Surrey, GU9 8BN",
+      "postcode": "GU9 8BN",
+      "street": "Waverley Heights",
+      "lat": 51.209472,
+      "lng": -0.778458,
+      "property_type": "house",
+      "beds": 2,
+      "price": 440000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/waverley-heights-58-waverley-lane-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43758/65252",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/px8R_E8jH0uMHWOQuVjoew.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:54:33Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.3,
+      "est_low": 394949,
+      "est_mid": 410000,
+      "est_high": 450000,
+      "est_basis": "this postcode",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "WAVERLEY HEIGH Waverley Lane",
+          "price": 450000,
+          "year": "2026",
+          "adj": 450000,
+          "pc": "GU9 8BN"
+        },
+        {
+          "addr": "WAVERLEY HEIGH Waverley Lane",
+          "price": 410000,
+          "year": "2026",
+          "adj": 410000,
+          "pc": "GU9 8BN"
+        },
+        {
+          "addr": "WAVERLEY HEIGH Waverley Lane",
+          "price": 499950,
+          "year": "2025",
+          "adj": 464600,
+          "pc": "GU9 8BN"
+        },
+        {
+          "addr": "WAVERLEY HEIGH Waverley Lane",
+          "price": 425000,
+          "year": "2024",
+          "adj": 394949,
+          "pc": "GU9 8BN"
+        },
+        {
+          "addr": "WAVERLEY HEIGH Waverley Lane",
+          "price": 280000,
+          "year": "2024",
+          "adj": 260202,
+          "pc": "GU9 8BN"
+        },
+        {
+          "addr": "WAVERLEY HEIGH Waverley Lane",
+          "price": 445000,
+          "year": "2023",
+          "adj": 409717,
+          "pc": "GU9 8BN"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 51,
+      "typology": "Development play",
+      "tier": "Medium",
+      "signals": {
+        "Potential": {
+          "score": 27,
+          "max": 38,
+          "note": "2,996 m\u00b2 plot (7.9\u00d7 your home) \u00b7 approx, capped"
+        },
+        "Value": {
+          "score": 11,
+          "max": 26,
+          "note": "\u00a3440k vs \u00a3410k comps (-7%)"
+        },
+        "Fit": {
+          "score": 17,
+          "max": 21,
+          "note": "2.3 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 93,
+          "max": 100,
+          "note": "\u00d70.93 \u00b7 development-friendly \u00b7 87 approved / 7 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 440000
+        }
+      ],
+      "plot_m2": 2996,
+      "footprints": {
+        "main_m2": 548,
+        "buildings": 2,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 19
+      },
+      "floor_area_est_m2": 986,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 7,
+        "decided": 94,
+        "rate": 0.925531914893617,
+        "classq_seen": 2,
+        "classq_approved": 1
+      },
+      "permission": 0.93,
+      "permission_label": "development-friendly",
+      "feasibility": 0.93,
+      "setting": 215
+    },
+    {
+      "id": "ag_340d0b22bc",
+      "address": "Borelli Mews, Farnham, Surrey, GU9 7YZ",
+      "postcode": "GU9 7YZ",
+      "street": "Borelli Mews",
+      "lat": 51.214455,
+      "lng": -0.797712,
+      "property_type": "house",
+      "beds": 2,
+      "price": 425000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/borelli-mews-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43755/65245",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/wi6NHc8KP02XH_AGskoS0A.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:54:54Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.1,
+      "est_low": 367070,
+      "est_mid": 393599,
+      "est_high": 398710,
+      "est_basis": "same street",
+      "est_n": 6,
+      "est_basis_type": "mixed",
+      "local_comps": [
+        {
+          "addr": "10 Borelli Mews",
+          "price": 395000,
+          "year": "2025",
+          "adj": 367070,
+          "pc": "GU9 7YZ"
+        },
+        {
+          "addr": "7 Borelli Mews",
+          "price": 355000,
+          "year": "2024",
+          "adj": 329898,
+          "pc": "GU9 7YZ"
+        },
+        {
+          "addr": "12 Borelli Mews",
+          "price": 385000,
+          "year": "2020",
+          "adj": 393599,
+          "pc": "GU9 7YZ"
+        },
+        {
+          "addr": "5 Borelli Mews",
+          "price": 372500,
+          "year": "2020",
+          "adj": 380820,
+          "pc": "GU9 7YZ"
+        },
+        {
+          "addr": "10 Borelli Mews",
+          "price": 390000,
+          "year": "2020",
+          "adj": 398710,
+          "pc": "GU9 7YZ"
+        },
+        {
+          "addr": "14 Borelli Mews",
+          "price": 507500,
+          "year": "2017",
+          "adj": 576419,
+          "pc": "GU9 7YZ"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 46,
+      "typology": "Conversion play",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 27,
+          "max": 38,
+          "note": "1,582 m\u00b2 plot (4.2\u00d7 your home) \u00b7 approx, capped"
+        },
+        "Value": {
+          "score": 11,
+          "max": 26,
+          "note": "\u00a3425k vs \u00a3394k comps (-8%)"
+        },
+        "Fit": {
+          "score": 18,
+          "max": 21,
+          "note": "2.1 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "outbuilding ~142 m\u00b2"
+        },
+        "Feasibility": {
+          "score": 83,
+          "max": 100,
+          "note": "\u00d70.83 \u00b7 development-friendly \u00b7 89 approved / 9 refused nearby \u00b7 3 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "approx-location"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 425000
+        }
+      ],
+      "plot_m2": 1582,
+      "footprints": {
+        "main_m2": 240,
+        "buildings": 3,
+        "largest_secondary_m2": 142,
+        "coverage_pct": 27,
+        "outbuilding": "large"
+      },
+      "floor_area_est_m2": 432,
+      "constraints": [
+        "Conservation Area"
+      ],
+      "planning": {
+        "n": 100,
+        "approved": 89,
+        "refused": 9,
+        "decided": 98,
+        "rate": 0.9081632653061225,
+        "classq_seen": 3,
+        "classq_approved": 3
+      },
+      "permission": 0.83,
+      "permission_label": "development-friendly",
+      "feasibility": 0.83,
+      "setting": 755
     },
     {
       "id": "ag_13c26e0c13",
@@ -5693,7 +7271,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -5853,7 +7431,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -6015,7 +7593,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-26",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-26",
@@ -6173,7 +7751,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-30",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-30",
@@ -6335,7 +7913,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6493,7 +8071,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6522,6 +8100,330 @@
       "permission_label": "development-friendly",
       "feasibility": 0.83,
       "setting": 30
+    },
+    {
+      "id": "ag_f950fc1635",
+      "address": "Hill Road, Farnham, Surrey, GU9 0QJ",
+      "postcode": "GU9 0QJ",
+      "street": "Hill Road",
+      "lat": 51.23613,
+      "lng": -0.790974,
+      "property_type": "house",
+      "beds": 3,
+      "price": 565000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/hill-road-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43742/65248",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/1hkWqJwCo0WrAPOCOYgjfg.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:51:09Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 3.6,
+      "precise_location": true,
+      "floor_area_m2": 114,
+      "built_form": "Detached",
+      "epc_rating": "D",
+      "est_low": 420107,
+      "est_mid": 547734,
+      "est_high": 574539,
+      "est_basis": "\u00a3/m\u00b2, size-matched",
+      "est_n": 5,
+      "est_basis_type": "detached",
+      "local_comps": [
+        {
+          "addr": "2 Elm Road",
+          "price": 471700,
+          "year": "2026",
+          "adj": 471700,
+          "pc": "GU9 0QD"
+        },
+        {
+          "addr": "20 Ambleside Crescent",
+          "price": 569500,
+          "year": "2026",
+          "adj": 569500,
+          "pc": "GU9 0RZ"
+        },
+        {
+          "addr": "GLENWOOD Nutshell Lane",
+          "price": 935000,
+          "year": "2026",
+          "adj": 935000,
+          "pc": "GU9 0FE"
+        },
+        {
+          "addr": "21 The Crescent",
+          "price": 615000,
+          "year": "2026",
+          "adj": 615000,
+          "pc": "GU9 0LG"
+        },
+        {
+          "addr": "1 Heath Lane",
+          "price": 615000,
+          "year": "2026",
+          "adj": 615000,
+          "pc": "GU9 0PR"
+        },
+        {
+          "addr": "11 Heath Lane",
+          "price": 465000,
+          "year": "2026",
+          "adj": 465000,
+          "pc": "GU9 0PR"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": false,
+        "agri": false
+      },
+      "score": 43,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 19,
+          "max": 38,
+          "note": "422 m\u00b2 plot (1.1\u00d7 your home)"
+        },
+        "Value": {
+          "score": 12,
+          "max": 26,
+          "note": "\u00a3565k vs \u00a3548k comps (-3%)"
+        },
+        "Fit": {
+          "score": 15,
+          "max": 21,
+          "note": "3.6 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 93,
+          "max": 100,
+          "note": "\u00d70.93 \u00b7 development-friendly \u00b7 86 approved / 6 refused nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 565000
+        }
+      ],
+      "plot_m2": 422,
+      "footprints": {
+        "main_m2": 135,
+        "buildings": 1,
+        "largest_secondary_m2": 0,
+        "coverage_pct": 32
+      },
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 86,
+        "refused": 6,
+        "decided": 92,
+        "rate": 0.9347826086956522,
+        "classq_seen": 1,
+        "classq_approved": 0
+      },
+      "permission": 0.93,
+      "permission_label": "development-friendly",
+      "feasibility": 0.93,
+      "setting": 719
+    },
+    {
+      "id": "ag_12c4a9f99b",
+      "address": "Poyle Road, Tongham, Farnham, Surrey, GU10 1DX",
+      "postcode": "GU10 1DX",
+      "street": "Poyle Road",
+      "lat": 51.234055,
+      "lng": -0.724336,
+      "property_type": "house",
+      "beds": 2,
+      "price": 425000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/poyle-road-tongham-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43744/65272",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/e93TpIfaj0mu2J-0Nf4Ybg.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:54:23Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 5.2,
+      "precise_location": true,
+      "floor_area_m2": 59,
+      "built_form": "Semi-Detached",
+      "epc_rating": "E",
+      "est_low": 435268,
+      "est_mid": 474838,
+      "est_high": 476727,
+      "est_basis": "nearby (GU10 1)",
+      "est_n": 6,
+      "est_basis_type": "semi",
+      "local_comps": [
+        {
+          "addr": "OAK TREE VIEW Runfold St George",
+          "price": 513000,
+          "year": "2025",
+          "adj": 476727,
+          "pc": "GU10 1PP"
+        },
+        {
+          "addr": "GLEN COTTAGES Guildford Road",
+          "price": 440000,
+          "year": "2025",
+          "adj": 408888,
+          "pc": "GU10 1PF"
+        },
+        {
+          "addr": "OAK TREE VIEW Runfold St George",
+          "price": 802000,
+          "year": "2023",
+          "adj": 738411,
+          "pc": "GU10 1PP"
+        },
+        {
+          "addr": "GLEN COTTAGES Guildford Road",
+          "price": 460000,
+          "year": "2021",
+          "adj": 455053,
+          "pc": "GU10 1PF"
+        },
+        {
+          "addr": "11 Tongham Road",
+          "price": 480000,
+          "year": "2021",
+          "adj": 474838,
+          "pc": "GU10 1PH"
+        },
+        {
+          "addr": "GLEN COTTAGES Guildford Road",
+          "price": 440000,
+          "year": "2021",
+          "adj": 435268,
+          "pc": "GU10 1PF"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 29,
+      "typology": "Candidate",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 13,
+          "max": 38,
+          "note": "plot unverified"
+        },
+        "Value": {
+          "score": 15,
+          "max": 26,
+          "note": "\u00a3425k vs \u00a3475k comps (+10%)"
+        },
+        "Fit": {
+          "score": 12,
+          "max": 21,
+          "note": "5.2 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 73,
+          "max": 100,
+          "note": "\u00d70.73 \u00b7 development-friendly \u00b7 58 approved / 21 refused nearby \u00b7 1 Class-Q approved nearby"
+        }
+      },
+      "flags": [
+        "plot-unverified"
+      ],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 425000
+        }
+      ],
+      "plot_m2": null,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 58,
+        "refused": 21,
+        "decided": 79,
+        "rate": 0.7341772151898734,
+        "classq_seen": 1,
+        "classq_approved": 1
+      },
+      "permission": 0.73,
+      "permission_label": "development-friendly",
+      "feasibility": 0.73,
+      "setting": 26
     },
     {
       "id": "ag_28b7737afb",
@@ -6614,7 +8516,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -6720,7 +8622,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -6841,7 +8743,7 @@
         }
       },
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -6867,6 +8769,164 @@
       "permission_label": "development-friendly",
       "feasibility": 0.88,
       "setting": 358
+    },
+    {
+      "id": "ag_3a6c955cff",
+      "address": "The Fairfield, Farnham, Surrey, GU9 8AH",
+      "postcode": "GU9 8AH",
+      "street": "The Fairfield",
+      "lat": 51.213192,
+      "lng": -0.792891,
+      "property_type": "house",
+      "beds": 3,
+      "price": 500000,
+      "price_poa": false,
+      "status": "live",
+      "streetview_url": "",
+      "source": {
+        "portal": "agent",
+        "name": "Trueman & Grundy",
+        "url": "https://truemanandgrundy.co.uk/property/the-fairfield-farnham/",
+        "agent": "Trueman & Grundy",
+        "uprn": ""
+      },
+      "source_label": "AGENT",
+      "media": {
+        "photo_count": 1,
+        "has_floorplan": false,
+        "thumb_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/17/43756/65247",
+        "photo_url": "https://alto2-live.s3.amazonaws.com/qqvQNkbZ9C-bvn4fIV8juFEWq-4/uxExMLHxuMEXwm7gn7fqPlu0PRI/Photo/[3]/Uh4QoIdsKEGbJrq4-nVjlA.jpg"
+      },
+      "description_raw": "Estate Agents Farnham, selling property in Farnham, Surrey and throughout Surrey and Hampshire",
+      "enrichment": {
+        "market": {
+          "reductions": 0,
+          "is_reduced": false,
+          "status": null,
+          "dom": null,
+          "added_date": "2026-11-26T13:52:21Z"
+        },
+        "plot": {}
+      },
+      "comps": [],
+      "dist_mi": 2.1,
+      "precise_location": true,
+      "floor_area_m2": 32,
+      "built_form": "End-Terrace",
+      "epc_rating": "D",
+      "est_low": 301533,
+      "est_mid": 368000,
+      "est_high": 408888,
+      "est_basis": "nearby (GU9 8)",
+      "est_n": 6,
+      "est_basis_type": "terraced",
+      "local_comps": [
+        {
+          "addr": "STRATFORD COUR Avon Road",
+          "price": 325000,
+          "year": "2024",
+          "adj": 302020,
+          "pc": "GU9 8PG"
+        },
+        {
+          "addr": "RIVER ROW COTT River Row",
+          "price": 440000,
+          "year": "2024",
+          "adj": 408888,
+          "pc": "GU9 8UA"
+        },
+        {
+          "addr": "RIVER ROW COTT River Row",
+          "price": 560000,
+          "year": "2023",
+          "adj": 515599,
+          "pc": "GU9 8UA"
+        },
+        {
+          "addr": "STRATFORD COUR Avon Road",
+          "price": 327500,
+          "year": "2023",
+          "adj": 301533,
+          "pc": "GU9 8PG"
+        },
+        {
+          "addr": "WEYDON FARM CO Weydon Farm Lane",
+          "price": 300000,
+          "year": "2022",
+          "adj": 276000,
+          "pc": "GU9 8QJ"
+        },
+        {
+          "addr": "STRATFORD COUR Avon Road",
+          "price": 400000,
+          "year": "2022",
+          "adj": 368000,
+          "pc": "GU9 8PG"
+        }
+      ],
+      "planning_potential": {
+        "tags": [],
+        "consented": false,
+        "classq": true,
+        "agri": false
+      },
+      "score": 39,
+      "typology": "Forever-fit",
+      "tier": "Low",
+      "signals": {
+        "Potential": {
+          "score": 20,
+          "max": 38,
+          "note": "510 m\u00b2 plot (1.3\u00d7 your home)"
+        },
+        "Value": {
+          "score": 6,
+          "max": 26,
+          "note": "\u00a3500k vs \u00a3368k comps (-36%)"
+        },
+        "Fit": {
+          "score": 18,
+          "max": 21,
+          "note": "2.1 mi from home"
+        },
+        "Edge": {
+          "score": 0,
+          "max": 20,
+          "note": "open market"
+        },
+        "Feasibility": {
+          "score": 90,
+          "max": 100,
+          "note": "\u00d70.90 \u00b7 development-friendly \u00b7 87 approved / 10 refused nearby \u00b7 4 Class-Q approved nearby"
+        }
+      },
+      "flags": [],
+      "reasons": [
+        "In your target area"
+      ],
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "price_history": [
+        {
+          "date": "2026-11-26",
+          "price": 500000
+        }
+      ],
+      "plot_m2": 510,
+      "constraints": [],
+      "planning": {
+        "n": 100,
+        "approved": 87,
+        "refused": 10,
+        "decided": 97,
+        "rate": 0.8969072164948454,
+        "classq_seen": 5,
+        "classq_approved": 4
+      },
+      "permission": 0.9,
+      "permission_label": "development-friendly",
+      "feasibility": 0.9,
+      "setting": 468
     },
     {
       "id": "ag_5fa17e75bd",
@@ -7001,7 +9061,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -7117,7 +9177,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7235,7 +9295,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7356,7 +9416,7 @@
         }
       },
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -7512,7 +9572,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -7679,7 +9739,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -7846,7 +9906,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -7962,7 +10022,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8076,7 +10136,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8190,7 +10250,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8304,7 +10364,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8418,7 +10478,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8532,7 +10592,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-05",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-05",
@@ -8646,7 +10706,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-07",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-07",
@@ -8760,7 +10820,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -8916,7 +10976,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9072,7 +11132,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-12",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-12",
@@ -9188,7 +11248,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-16",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-16",
@@ -9344,7 +11404,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-09",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-09",
@@ -9502,7 +11562,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-23",
@@ -9660,7 +11720,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9820,7 +11880,7 @@
         "Priced just above a round number"
       ],
       "first_seen": "2026-08-08",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-08",
@@ -9978,7 +12038,7 @@
         "In your target area"
       ],
       "first_seen": "2026-08-11",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-08-11",
@@ -10134,7 +12194,7 @@
         "In your target area"
       ],
       "first_seen": "2026-10-29",
-      "last_seen": "2026-11-25",
+      "last_seen": "2026-11-26",
       "price_history": [
         {
           "date": "2026-10-29",
